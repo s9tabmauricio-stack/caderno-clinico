@@ -593,3 +593,10 @@ input:autofill{background:transparent!important}
 /* barra de abas com 5 abas */
 .tab{min-width:62px;padding-inline:8px}
 @media (max-width:380px){.tab{min-width:56px;padding-inline:5px}.tab span{font-size:10.5px}}
+
+/* Cartão "Revisão de hoje": botão à direita para economizar altura */
+.review{grid-template-columns:minmax(0,1fr) auto;column-gap:16px;align-items:center;padding:18px 20px}
+.review>*{grid-column:1}
+.review .review-s{margin:2px 0 0}
+.review .btn-white{grid-column:2;grid-row:1 / span 3;align-self:center;justify-self:end;white-space:nowrap}
+@media (max-width:360px){.review .btn-white{padding:11px 14px;font-size:14.5px}}
