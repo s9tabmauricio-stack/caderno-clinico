@@ -595,7 +595,8 @@ input:autofill{background:transparent!important}
 @media (max-width:380px){.tab{min-width:56px;padding-inline:5px}.tab span{font-size:10.5px}}
 
 /* Cartão "Revisão de hoje": botão à direita para economizar altura */
-.review{grid-template-columns:minmax(0,1fr) auto;column-gap:16px;align-items:center;padding:18px 20px}
+.review{grid-template-columns:minmax(0,1fr) auto;column-gap:16px;align-items:center;padding:13px 20px 14px}
+.review .review-n{margin-top:2px}
 .review>*{grid-column:1}
 .review .review-s{margin:2px 0 0}
 .review .btn-white{grid-column:2;grid-row:1 / span 3;align-self:center;justify-self:end;white-space:nowrap}
