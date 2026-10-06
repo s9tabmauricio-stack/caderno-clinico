@@ -42,27 +42,27 @@ export function LoginForm() {
   }
 
   return (
-    <>
-      <div className="login-card">
-        <form onSubmit={entrar} noValidate>
-          <label htmlFor="cpf" className="flabel">
-            CPF
-          </label>
-          <input
-            id="cpf"
-            name="username"
-            autoComplete="username"
-            inputMode="numeric"
-            placeholder="000.000.000-00"
-            value={cpf}
-            onChange={(e) => {
-              setCpf(formatarCpf(e.target.value))
-              setErro('')
-            }}
-            aria-invalid={erro ? true : undefined}
-            aria-describedby={erro ? 'loginErr' : undefined}
-          />
-          <label htmlFor="senha" className="flabel" style={{ marginTop: 6 }}>
+    <form className="lg-form" onSubmit={entrar} noValidate>
+      <div className={`lg-campos${erro ? ' com-erro' : ''}`}>
+        <label htmlFor="cpf" className="sr-only">
+          CPF
+        </label>
+        <input
+          id="cpf"
+          name="username"
+          autoComplete="username"
+          inputMode="numeric"
+          placeholder="CPF"
+          value={cpf}
+          onChange={(e) => {
+            setCpf(formatarCpf(e.target.value))
+            setErro('')
+          }}
+          aria-invalid={erro ? true : undefined}
+          aria-describedby={erro ? 'loginErr' : undefined}
+        />
+        <div className="lg-senha">
+          <label htmlFor="senha" className="sr-only">
             Senha
           </label>
           <input
@@ -70,6 +70,7 @@ export function LoginForm() {
             name="password"
             type="password"
             autoComplete="current-password"
+            placeholder="Senha"
             value={senha}
             onChange={(e) => {
               setSenha(e.target.value)
@@ -78,17 +79,23 @@ export function LoginForm() {
             aria-invalid={erro ? true : undefined}
             aria-describedby={erro ? 'loginErr' : undefined}
           />
-          {erro && (
-            <p id="loginErr" className="err" role="alert">
-              {erro}
-            </p>
-          )}
-          <button className="btn wide" type="submit" disabled={entrando}>
-            {entrando ? 'Entrando…' : 'Entrar'}
+          <button className="lg-ir" type="submit" disabled={entrando} aria-label="Entrar">
+            {entrando ? (
+              <span className="lg-giro" aria-hidden="true" />
+            ) : (
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 12h13M13 6l6 6-6 6" />
+              </svg>
+            )}
           </button>
-        </form>
+        </div>
       </div>
-      <p className="fine">Esqueceu a senha? Fale com quem criou o seu acesso. Seu progresso fica salvo na sua conta.</p>
-    </>
+      {erro && (
+        <p id="loginErr" className="lg-erro" role="alert">
+          {erro}
+        </p>
+      )}
+      <p className="lg-ajuda">Esqueceu a senha? Fale com quem criou o seu acesso.</p>
+    </form>
   )
 }

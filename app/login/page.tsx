@@ -6,15 +6,21 @@ export const metadata: Metadata = { title: 'Entrar' }
 
 export default function LoginPage() {
   return (
-    <main className="wrap">
-      <div className="login view">
-        <div className="brand">
-          <span className="mark">{Icone.pulso}</span>
-          <h1 className="big">Caderno Clínico</h1>
-          <p className="lead">Apostilas, questões e flashcards de cada aula, com o seu progresso salvo.</p>
-        </div>
-        <LoginForm />
+    <main className="lg">
+      <div className="lg-fundo" aria-hidden="true">
+        <span className="o1" />
+        <span className="o2" />
+        <span className="o3" />
       </div>
+
+      <section className="lg-vidro">
+        <span className="lg-icone">{Icone.pulso}</span>
+        <h1>Caderno Clínico</h1>
+        <p className="lg-sub">Entre com seu CPF e senha</p>
+        <LoginForm />
+      </section>
+
+      <footer className="lg-rodape">By Mauricio</footer>
     </main>
   )
 }

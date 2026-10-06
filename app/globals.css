@@ -449,3 +449,40 @@ body{margin:0;min-height:100vh}
 .pill[aria-pressed="true"]{background:var(--btn);border-color:var(--btn);color:#fff}
 .pill small{font-weight:500;opacity:.8;margin-left:4px;font-variant-numeric:tabular-nums}
 .banco-row .num{background:var(--grad);color:#fff}
+
+/* ---------- Tela de entrada: vidro fosco sobre fundo de cor ---------- */
+.lg{position:relative;min-height:100vh;min-height:100dvh;display:grid;place-items:center;align-content:center;gap:28px;padding:32px 16px calc(24px + env(safe-area-inset-bottom));overflow:hidden;isolation:isolate;
+  --lg-bg:#EEF1F8;--lg-vidro:rgba(255,255,255,.55);--lg-borda:rgba(255,255,255,.75);--lg-campo:rgba(255,255,255,.7);--lg-linha:rgba(20,30,60,.12);--lg-sombra:0 30px 80px rgba(30,40,90,.18),0 2px 6px rgba(30,40,90,.06)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .lg{--lg-bg:#07080D;--lg-vidro:rgba(28,30,40,.5);--lg-borda:rgba(255,255,255,.12);--lg-campo:rgba(255,255,255,.07);--lg-linha:rgba(255,255,255,.1);--lg-sombra:0 30px 80px rgba(0,0,0,.55)}}
+.lg{background:var(--lg-bg)}
+.lg-fundo{position:absolute;inset:0;z-index:-1;pointer-events:none}
+.lg-fundo span{position:absolute;border-radius:50%;filter:blur(70px);opacity:.7;animation:lg-flutua 22s ease-in-out infinite alternate}
+.lg-fundo .o1{width:55vmax;height:55vmax;left:-18vmax;top:-20vmax;background:radial-gradient(circle,#4D8DFF 0%,transparent 65%)}
+.lg-fundo .o2{width:50vmax;height:50vmax;right:-20vmax;top:5vmax;background:radial-gradient(circle,#A35BFF 0%,transparent 65%);animation-duration:26s}
+.lg-fundo .o3{width:45vmax;height:45vmax;left:10vmax;bottom:-25vmax;background:radial-gradient(circle,#2FC7D8 0%,transparent 65%);animation-duration:30s;opacity:.5}
+@keyframes lg-flutua{to{transform:translate3d(4vmax,3vmax,0) scale(1.08)}}
+@media (prefers-reduced-motion: reduce){.lg-fundo span{animation:none}}
+
+.lg-vidro{width:min(100%,400px);display:grid;justify-items:center;text-align:center;padding:40px 28px 28px;border-radius:32px;background:var(--lg-vidro);border:1px solid var(--lg-borda);box-shadow:var(--lg-sombra);-webkit-backdrop-filter:blur(40px) saturate(180%);backdrop-filter:blur(40px) saturate(180%)}
+.lg-icone{width:76px;height:76px;border-radius:22px;background:var(--grad);color:#fff;display:grid;place-items:center;box-shadow:0 12px 30px rgba(59,91,219,.4),inset 0 1px 0 rgba(255,255,255,.35);margin-bottom:18px}
+.lg-icone svg{width:40px;height:40px;stroke-width:2}
+.lg-vidro h1{margin:0;font-size:28px;font-weight:600;letter-spacing:-.02em;color:var(--ink)}
+.lg-sub{margin:6px 0 26px;color:var(--muted);font-size:16px}
+
+.lg-form{width:100%;display:grid;gap:0}
+.lg-campos{border-radius:14px;background:var(--lg-campo);border:1px solid var(--lg-linha);overflow:hidden;text-align:left;transition:border-color .2s,box-shadow .2s}
+.lg-campos:focus-within{border-color:var(--accent);box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 18%,transparent)}
+.lg-campos.com-erro{border-color:var(--bad)}
+.lg-campos input{display:block;width:100%;font:inherit;font-size:17px;padding:15px 16px;border:0;background:transparent;color:var(--ink);outline:none;border-radius:0}
+.lg-campos input::placeholder{color:var(--muted)}
+.lg-senha{display:flex;align-items:center;border-top:1px solid var(--lg-linha);padding-right:8px}
+.lg-senha input{flex:1;min-width:0}
+.lg-ir{flex:none;width:36px;height:36px;border-radius:50%;border:1.5px solid var(--lg-linha);background:transparent;color:var(--muted);display:grid;place-items:center;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.lg-campos:focus-within .lg-ir,.lg-ir:hover{background:var(--accent);border-color:var(--accent);color:#fff}
+.lg-ir svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.lg-ir:disabled{cursor:default}
+.lg-giro{width:16px;height:16px;border-radius:50%;border:2px solid currentColor;border-right-color:transparent;animation:lg-gira .8s linear infinite}
+@keyframes lg-gira{to{transform:rotate(360deg)}}
+.lg-erro{margin:12px 0 0;color:var(--bad);font-size:14.5px}
+.lg-ajuda{margin:22px 0 0;color:var(--muted);font-size:14px}
+.lg-rodape{font-size:13px;letter-spacing:.04em;color:var(--muted)}
