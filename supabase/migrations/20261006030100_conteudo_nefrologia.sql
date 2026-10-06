@@ -1,6 +1,6 @@
 -- Conteúdo real de Nefrologia: aulas 1 e 2, banco de questões das provas P2 e flashcards
 
-delete from public.aulas where id in ('lra', 'potassio');  -- exemplos do protótipo (apaga as questões e cards ligados)
+update public.aulas set publicada = false where id in ('lra', 'potassio');  -- esconde os exemplos do protótipo
 update public.materias set descricao = 'Patologias renais com a Dra. Vanessa: definições, doenças císticas e o banco de questões das provas P2.' where id = 'nefro';
 
 insert into public.aulas (id, materia_id, ordem, titulo, resumo, apostila_html, pdf_caminho) values
