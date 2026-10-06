@@ -14,7 +14,13 @@ export const Icone = {
       <path d="M8 3.5h9.5a3 3 0 0 1 3 3V16" />
     </>,
   ),
-  grafico: svg(<path d="M5 20v-8M12 20V5M19 20v-5" />),
+  grafico: svg(
+    <>
+      <path d="M5 20v-4M10 20v-6M15 20v-8M20 20H3.5" />
+      <path d="M4 11.5 9 7l3 2.5L19 4" />
+      <path d="M15 4h4v4" />
+    </>,
+  ),
   pessoa: svg(
     <>
       <circle cx="12" cy="8.5" r="3.75" />
