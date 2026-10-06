@@ -213,8 +213,9 @@ export function Questoes({ questoes, userId, ativo, mostrarTema = true, vazio, a
           {q.alternativas.map((texto, i) => {
             let cls = ''
             if (revelada && resp) {
-              if (i === q.correta) cls = 'right'
-              else if (i === resp.escolhida) cls = 'wrong'
+              // Certa em verde, todas as outras em vermelho; a marcada pelo aluno ganha destaque
+              cls = i === q.correta ? 'right' : 'wrong'
+              if (i === resp.escolhida) cls += ' minha'
             } else if (escolha === i) cls = 'sel'
             return (
               <button
@@ -229,6 +230,7 @@ export function Questoes({ questoes, userId, ativo, mostrarTema = true, vazio, a
               >
                 <span className="l">{LETRAS[i]}</span>
                 <span className="ot">
+                  {revelada && resp && i === resp.escolhida && <span className="sua">Sua resposta</span>}
                   {texto}
                   {revelada && resp && i === q.correta && q.comentario && (
                     <span className="oexp certa">{q.comentario}</span>

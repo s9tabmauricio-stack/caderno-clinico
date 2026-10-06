@@ -624,3 +624,15 @@ h1.big.saudacao{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .opt.wrong .oexp{border-top-color:var(--bad-line)}
 .oexp.certa::before{content:"Por que está certa";display:block;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ok);margin-bottom:3px}
 .opt[disabled] .ot{color:var(--ink)}
+
+/* Depois de responder: certa em verde, todas as erradas em vermelho, a marcada em destaque */
+.opt.wrong{background:rgba(255,92,138,.07);border-color:rgba(255,92,138,.28);color:var(--text)}
+.opt.wrong .l{border-color:rgba(255,92,138,.6);color:#FF7A9E;background:transparent}
+.opt.minha{border-width:2px;padding:11px 13px}
+.opt.wrong.minha{background:rgba(255,92,138,.16);border-color:#FF5C8A;box-shadow:0 0 0 3px rgba(255,92,138,.18),0 0 22px rgba(255,92,138,.22)}
+.opt.wrong.minha .l{background:#FF5C8A;border-color:#FF5C8A;color:#fff}
+.opt.right.minha{border-color:var(--ok);box-shadow:0 0 0 3px rgba(62,230,168,.18),0 0 22px rgba(62,230,168,.22)}
+.opt.right.minha .l{background:var(--ok);border-color:var(--ok);color:#05060E}
+.sua{display:inline-block;font-size:10.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:2px 7px;border-radius:7px;margin-right:7px;vertical-align:1.5px;background:rgba(255,255,255,.14);color:var(--ink)}
+.opt.wrong.minha .sua{background:#FF5C8A;color:#fff}
+.opt.right.minha .sua{background:var(--ok);color:#05060E}
