@@ -9,7 +9,6 @@ const ABAS = [
   { href: '/agenda', chave: 'agenda', rotulo: 'Agenda', icone: Icone.agenda },
   { href: '/revisao', chave: 'revisao', rotulo: 'Revisão', icone: Icone.cards },
   { href: '/desempenho', chave: 'desempenho', rotulo: 'Desempenho', icone: Icone.grafico },
-  { href: '/perfil', chave: 'perfil', rotulo: 'Perfil', icone: Icone.pessoa },
 ] as const
 
 export function TabBar({ pendentes }: { pendentes: number }) {
@@ -20,7 +19,7 @@ export function TabBar({ pendentes }: { pendentes: number }) {
     ? 'revisao'
     : caminho.startsWith('/desempenho')
       ? 'desempenho'
-      : caminho.startsWith('/perfil')
+      : caminho.startsWith('/perfil') || caminho.startsWith('/admin')
         ? 'perfil'
         : 'inicio'
 

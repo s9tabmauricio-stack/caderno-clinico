@@ -62,9 +62,6 @@ export default async function Inicio() {
             {texto}, {nome}
           </h1>
         </div>
-        <Link className="avatar" href="/perfil" aria-label="Abrir perfil">
-          {nome.charAt(0).toUpperCase()}
-        </Link>
       </header>
 
       <section className="review" aria-label="Revisão de hoje">
