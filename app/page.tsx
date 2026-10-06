@@ -58,7 +58,7 @@ export default async function Inicio() {
       <header className="top">
         <div>
           <div className="eyebrow">{data}</div>
-          <h1 className="big">
+          <h1 className="big saudacao">
             {texto}, {nome}
           </h1>
         </div>
