@@ -39,7 +39,9 @@ export default async function Inicio() {
   const aulasRestantes = sits.filter((x) => x.situacao !== 'passou').map((x) => x.evento)
   const canceladasHoje = agendaHoje.filter((e) => e.cancelado)
 
-  const nome = perfil.data?.nome || email.split('@')[0] || 'aluno'
+  const nomeCompleto = perfil.data?.nome || email.split('@')[0] || 'aluno'
+  // Na saudação vai só o primeiro nome, para caber numa linha
+  const nome = /^\d+$/.test(nomeCompleto) ? 'aluno' : nomeCompleto.trim().split(/\s+/)[0]
   const { texto, data } = saudacao()
   const pend = pendentes(progresso)
   const t = totais(progresso)
