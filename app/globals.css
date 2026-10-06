@@ -604,7 +604,7 @@ input:autofill{background:transparent!important}
 
 /* Blocos das matérias mais compactos */
 .tiles{gap:10px}
-.mtile{min-height:0;padding:14px 16px 13px;gap:12px}
+.mtile{min-height:0;padding:10px 16px 10px;gap:8px}
 .mt-name{font-size:20px}
 .mt-meta{font-size:13px;margin-top:1px}
-.mt-p{margin-top:5px;font-size:12.5px}
+.mt-p{margin-top:4px;font-size:12.5px;line-height:1.3}
