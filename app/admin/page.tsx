@@ -1,0 +1,79 @@
+import type { Metadata } from 'next'
+import { notFound } from 'next/navigation'
+import { Pagina, Voltar } from '@/components/Pagina'
+import { CriarAluno, TrocarSenha } from '@/components/AdminForms'
+import { chaveConfigurada, clienteAdmin, ehAdmin } from '@/lib/admin'
+import { cpfDoEmail, formatarCpf } from '@/lib/cpf'
+import { sessao } from '@/lib/dados'
+
+export const metadata: Metadata = { title: 'Alunos' }
+
+export default async function AdminPage() {
+  const { email } = await sessao()
+  if (!ehAdmin(email)) notFound()
+
+  if (!chaveConfigurada()) {
+    return (
+      <Pagina pendentes={0}>
+        <Voltar href="/perfil" rotulo="Perfil" />
+        <header className="top">
+          <h1 className="big">Alunos</h1>
+        </header>
+        <p className="vazio">
+          Falta a chave secreta. No Supabase, em Project Settings → API Keys, copie a secret key. Na Vercel, em Settings →
+          Environment Variables, crie a variável SUPABASE_SECRET_KEY com ela e publique de novo (Deployments → Redeploy).
+        </p>
+      </Pagina>
+    )
+  }
+
+  const admin = await clienteAdmin()
+  const [{ data: usuarios }, { data: perfis }] = await Promise.all([
+    admin.auth.admin.listUsers({ perPage: 1000 }),
+    admin.from('perfis').select('id, nome'),
+  ])
+  const nomes = new Map((perfis ?? []).map((p) => [p.id as string, p.nome as string | null]))
+  const alunos = (usuarios?.users ?? [])
+    .map((u) => {
+      const cpf = cpfDoEmail(u.email ?? '')
+      const nome = nomes.get(u.id)
+      const ident = cpf ? formatarCpf(cpf) : (u.email ?? '')
+      return { id: u.id, nome: nome && nome !== cpf ? nome : '', ident, ultimo: u.last_sign_in_at }
+    })
+    .sort((a, b) => (a.nome || a.ident).localeCompare(b.nome || b.ident, 'pt-BR'))
+
+  return (
+    <Pagina pendentes={0}>
+      <Voltar href="/perfil" rotulo="Perfil" />
+      <header className="top">
+        <div>
+          <div className="eyebrow">Administração</div>
+          <h1 className="big">Alunos</h1>
+        </div>
+      </header>
+
+      <div className="sec">Novo aluno</div>
+      <CriarAluno />
+
+      <div className="sec">Trocar a senha de um aluno</div>
+      <TrocarSenha alunos={alunos.map((a) => ({ id: a.id, rotulo: a.nome ? `${a.nome} · ${a.ident}` : a.ident }))} />
+
+      <div className="sec">
+        {alunos.length} {alunos.length === 1 ? 'conta' : 'contas'}
+      </div>
+      <div className="group">
+        {alunos.map((a) => (
+          <div key={a.id} className="row static">
+            <span className="main">
+              <span className="t">{a.nome || a.ident}</span>
+              <span className="s">
+                {a.nome ? `${a.ident} · ` : ''}
+                {a.ultimo ? `último acesso ${new Date(a.ultimo).toLocaleDateString('pt-BR', { timeZone: 'America/Sao_Paulo' })}` : 'nunca entrou'}
+              </span>
+            </span>
+          </div>
+        ))}
+      </div>
+    </Pagina>
+  )
+}

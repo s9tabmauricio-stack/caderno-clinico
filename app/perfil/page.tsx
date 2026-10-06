@@ -1,7 +1,9 @@
 import type { Metadata } from 'next'
 import { Pagina } from '@/components/Pagina'
 import { PerfilAcoes } from '@/components/PerfilAcoes'
+import Link from 'next/link'
 import { carregarProgresso, pendentes, sessao } from '@/lib/dados'
+import { ehAdmin } from '@/lib/admin'
 
 export const metadata: Metadata = { title: 'Perfil' }
 
@@ -23,6 +25,20 @@ export default async function PerfilPage() {
       </header>
 
       <PerfilAcoes userId={userId} nomeInicial={nome} email={email} />
+
+      {ehAdmin(email) && (
+        <>
+          <div className="sec">Administração</div>
+          <div className="group">
+            <Link className="row" href="/admin">
+              <span className="main">
+                <span className="t">Alunos</span>
+                <span className="s">Criar contas e trocar senhas</span>
+              </span>
+            </Link>
+          </div>
+        </>
+      )}
 
       <div className="sec">Instalar no celular</div>
       <div className="how">

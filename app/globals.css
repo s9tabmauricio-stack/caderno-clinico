@@ -320,6 +320,9 @@ a.row:hover{background:var(--card-2)}
 .linha-form{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
 .linha-form .campo{flex:1 1 200px}
 .senha-form .btn{justify-self:start}
+.admin-form{background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);padding:16px}
+.admin-form .btn{justify-self:start}
+.admin-form .flabel{margin-top:4px}
 .ok-msg{color:var(--ok);font-size:14px;margin:8px 0 0}
 .erro-salvar{display:flex;gap:10px;align-items:flex-start;background:var(--bad-soft);border:1px solid var(--bad-line);color:var(--ink);border-radius:var(--r-md);padding:10px 14px;font-size:14.5px;margin-top:14px}
 .erro-salvar p{margin:0;flex:1}
