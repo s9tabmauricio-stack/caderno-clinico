@@ -6,7 +6,7 @@ export const metadata: Metadata = { title: 'Entrar' }
 
 export default function LoginPage() {
   return (
-    <main className="lg">
+    <main className="tela-entrar">
       <div className="lg-fundo" aria-hidden="true">
         <span className="o1" />
         <span className="o2" />
