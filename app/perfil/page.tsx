@@ -11,7 +11,7 @@ export default async function PerfilPage() {
     supabase.from('perfis').select('nome').eq('id', userId).maybeSingle(),
     carregarProgresso(supabase),
   ])
-  const nome = perfil.data?.nome || email.split('@')[0]
+  const nome = perfil.data?.nome || (/^\d{11}$/.test(email.split('@')[0]) ? 'Aluno' : email.split('@')[0])
 
   return (
     <Pagina pendentes={pendentes(progresso).hoje}>

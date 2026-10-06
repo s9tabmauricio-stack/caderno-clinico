@@ -3,6 +3,7 @@
 import { useMemo, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { createClient } from '@/lib/supabase/client'
+import { cpfDoEmail, formatarCpf } from '@/lib/cpf'
 
 export function PerfilAcoes({ userId, nomeInicial, email }: { userId: string; nomeInicial: string; email: string }) {
   const supabase = useMemo(() => createClient(), [])
@@ -11,6 +12,35 @@ export function PerfilAcoes({ userId, nomeInicial, email }: { userId: string; no
   const [msgNome, setMsgNome] = useState<{ ok: boolean; texto: string } | null>(null)
   const [confirmar, setConfirmar] = useState(false)
   const [msgApagar, setMsgApagar] = useState<{ ok: boolean; texto: string } | null>(null)
+  const [senha, setSenha] = useState('')
+  const [senha2, setSenha2] = useState('')
+  const [msgSenha, setMsgSenha] = useState<{ ok: boolean; texto: string } | null>(null)
+  const cpf = cpfDoEmail(email)
+
+  async function trocarSenha(e: React.FormEvent) {
+    e.preventDefault()
+    if (senha.length < 6) {
+      setMsgSenha({ ok: false, texto: 'A senha precisa ter pelo menos 6 caracteres.' })
+      return
+    }
+    if (senha !== senha2) {
+      setMsgSenha({ ok: false, texto: 'As duas senhas não são iguais.' })
+      return
+    }
+    const { error } = await supabase.auth.updateUser({ password: senha })
+    if (error) {
+      setMsgSenha({
+        ok: false,
+        texto: /different|same/i.test(error.message)
+          ? 'A nova senha precisa ser diferente da atual.'
+          : 'Não deu para trocar a senha. Tente de novo.',
+      })
+      return
+    }
+    setSenha('')
+    setSenha2('')
+    setMsgSenha({ ok: true, texto: 'Senha trocada. Use a nova senha no próximo acesso.' })
+  }
 
   async function salvarNome(e: React.FormEvent) {
     e.preventDefault()
@@ -47,7 +77,7 @@ export function PerfilAcoes({ userId, nomeInicial, email }: { userId: string; no
           </span>
           <span className="main">
             <span className="t">{nomeInicial}</span>
-            <span className="s">{email}</span>
+            <span className="s">{cpf ? `CPF ${formatarCpf(cpf)}` : email}</span>
           </span>
         </div>
       </div>
@@ -75,6 +105,48 @@ export function PerfilAcoes({ userId, nomeInicial, email }: { userId: string; no
       {msgNome && (
         <p className={msgNome.ok ? 'ok-msg' : 'err'} role="status">
           {msgNome.texto}
+        </p>
+      )}
+
+      <div className="sec">Trocar senha</div>
+      <form className="senha-form" onSubmit={trocarSenha} noValidate>
+        <label htmlFor="nova-senha" className="sr-only">
+          Nova senha
+        </label>
+        <input
+          id="nova-senha"
+          className="campo"
+          type="password"
+          autoComplete="new-password"
+          placeholder="Nova senha"
+          value={senha}
+          onChange={(e) => {
+            setSenha(e.target.value)
+            setMsgSenha(null)
+          }}
+        />
+        <label htmlFor="nova-senha2" className="sr-only">
+          Repita a nova senha
+        </label>
+        <input
+          id="nova-senha2"
+          className="campo"
+          type="password"
+          autoComplete="new-password"
+          placeholder="Repita a nova senha"
+          value={senha2}
+          onChange={(e) => {
+            setSenha2(e.target.value)
+            setMsgSenha(null)
+          }}
+        />
+        <button className="btn" type="submit">
+          Trocar senha
+        </button>
+      </form>
+      {msgSenha && (
+        <p className={msgSenha.ok ? 'ok-msg' : 'err'} role="status">
+          {msgSenha.texto}
         </p>
       )}
 

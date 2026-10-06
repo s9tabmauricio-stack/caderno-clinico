@@ -287,7 +287,7 @@ code{font-family:var(--mono);font-size:.86em;background:var(--seg);padding:1px 5
 .or::before,.or::after{content:"";flex:1;height:1px;background:var(--line)}
 form{display:grid;gap:8px;margin:0}
 .flabel{font-size:14px;font-weight:600;color:var(--ink)}
-input[type=email]{font:inherit;font-size:16px;padding:12px 14px;border-radius:12px;border:1px solid var(--line-strong);background:var(--field);color:var(--ink);width:100%}
+input[type=email],.login-card input{font:inherit;font-size:16px;padding:12px 14px;border-radius:12px;border:1px solid var(--line-strong);background:var(--field);color:var(--ink);width:100%}
 input[aria-invalid="true"]{border-color:var(--bad)}
 form .err{margin:0}
 form .btn{margin-top:6px}
@@ -319,6 +319,7 @@ a.row:hover{background:var(--card-2)}
 .campo:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
 .linha-form{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
 .linha-form .campo{flex:1 1 200px}
+.senha-form .btn{justify-self:start}
 .ok-msg{color:var(--ok);font-size:14px;margin:8px 0 0}
 .erro-salvar{display:flex;gap:10px;align-items:flex-start;background:var(--bad-soft);border:1px solid var(--bad-line);color:var(--ink);border-radius:var(--r-md);padding:10px 14px;font-size:14.5px;margin-top:14px}
 .erro-salvar p{margin:0;flex:1}
