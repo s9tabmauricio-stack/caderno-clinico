@@ -556,3 +556,9 @@ h1.big{color:var(--title)}
 .lg-fundo .o2{background:radial-gradient(circle,#7B5CFF 0%,transparent 65%)}
 .lg-fundo .o3{background:radial-gradient(circle,#FF2EC4 0%,transparent 65%);opacity:.4}
 .lg-campos:focus-within .lg-ir,.lg-ir:hover{background:linear-gradient(135deg,#0FB4F5,#6A5CFF);border-color:transparent}
+
+/* Preenchimento automático do navegador: mantém o fundo de vidro (sem a caixa cinza/preta do autofill) */
+input:-webkit-autofill,input:-webkit-autofill:hover,input:-webkit-autofill:focus,input:-webkit-autofill:active{
+  -webkit-text-fill-color:var(--ink);caret-color:var(--ink);-webkit-box-shadow:0 0 0 0 transparent inset;
+  transition:background-color 99999s ease-out 0s,color 99999s ease-out 0s}
+input:autofill{background:transparent!important}
