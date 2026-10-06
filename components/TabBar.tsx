@@ -6,6 +6,7 @@ import { Icone } from './Icones'
 
 const ABAS = [
   { href: '/', chave: 'inicio', rotulo: 'Início', icone: Icone.inicio },
+  { href: '/agenda', chave: 'agenda', rotulo: 'Agenda', icone: Icone.agenda },
   { href: '/revisao', chave: 'revisao', rotulo: 'Revisão', icone: Icone.cards },
   { href: '/desempenho', chave: 'desempenho', rotulo: 'Desempenho', icone: Icone.grafico },
   { href: '/perfil', chave: 'perfil', rotulo: 'Perfil', icone: Icone.pessoa },
@@ -13,7 +14,9 @@ const ABAS = [
 
 export function TabBar({ pendentes }: { pendentes: number }) {
   const caminho = usePathname()
-  const ativa = caminho.startsWith('/revisao')
+  const ativa = caminho.startsWith('/agenda')
+    ? 'agenda'
+    : caminho.startsWith('/revisao')
     ? 'revisao'
     : caminho.startsWith('/desempenho')
       ? 'desempenho'

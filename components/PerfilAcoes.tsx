@@ -5,13 +5,41 @@ import { useRouter } from 'next/navigation'
 import { createClient } from '@/lib/supabase/client'
 import { cpfDoEmail, formatarCpf } from '@/lib/cpf'
 
-export function PerfilAcoes({ userId, nomeInicial, email }: { userId: string; nomeInicial: string; email: string }) {
+export function PerfilAcoes({
+  userId,
+  nomeInicial,
+  email,
+  grupoInicial,
+}: {
+  userId: string
+  nomeInicial: string
+  email: string
+  grupoInicial: number | null
+}) {
   const supabase = useMemo(() => createClient(), [])
   const router = useRouter()
   const [nome, setNome] = useState(nomeInicial)
   const [msgNome, setMsgNome] = useState<{ ok: boolean; texto: string } | null>(null)
   const [confirmar, setConfirmar] = useState(false)
   const [msgApagar, setMsgApagar] = useState<{ ok: boolean; texto: string } | null>(null)
+  const [grupo, setGrupo] = useState(grupoInicial ? String(grupoInicial) : '')
+  const [msgGrupo, setMsgGrupo] = useState<{ ok: boolean; texto: string } | null>(null)
+
+  async function salvarGrupo(e: React.FormEvent) {
+    e.preventDefault()
+    const n = grupo.trim() ? Number(grupo) : null
+    if (n !== null && (!Number.isInteger(n) || n < 1 || n > 99)) {
+      setMsgGrupo({ ok: false, texto: 'Digite o número do grupo, como 7.' })
+      return
+    }
+    const { error } = await supabase.from('perfis').update({ grupo: n }).eq('id', userId)
+    setMsgGrupo(
+      error
+        ? { ok: false, texto: 'Não deu para salvar o grupo. Tente de novo.' }
+        : { ok: true, texto: n ? `Grupo ${n} salvo. A agenda agora mostra as suas práticas.` : 'Grupo removido.' },
+    )
+    if (!error) router.refresh()
+  }
   const [senha, setSenha] = useState('')
   const [senha2, setSenha2] = useState('')
   const [msgSenha, setMsgSenha] = useState<{ ok: boolean; texto: string } | null>(null)
@@ -105,6 +133,34 @@ export function PerfilAcoes({ userId, nomeInicial, email }: { userId: string; no
       {msgNome && (
         <p className={msgNome.ok ? 'ok-msg' : 'err'} role="status">
           {msgNome.texto}
+        </p>
+      )}
+
+      <div className="sec">Seu grupo de prática</div>
+      <form className="linha-form" onSubmit={salvarGrupo} noValidate>
+        <label htmlFor="grupo" className="sr-only">
+          Número do grupo de prática
+        </label>
+        <input
+          id="grupo"
+          className="campo"
+          inputMode="numeric"
+          placeholder="Ex.: 7"
+          value={grupo}
+          maxLength={2}
+          onChange={(e) => {
+            setGrupo(e.target.value.replace(/\D/g, ''))
+            setMsgGrupo(null)
+          }}
+        />
+        <button className="btn" type="submit">
+          Salvar
+        </button>
+      </form>
+      <p className="foot">Com o grupo salvo, a agenda mostra as teóricas da turma e só as práticas do seu grupo.</p>
+      {msgGrupo && (
+        <p className={msgGrupo.ok ? 'ok-msg' : 'err'} role="status">
+          {msgGrupo.texto}
         </p>
       )}
 

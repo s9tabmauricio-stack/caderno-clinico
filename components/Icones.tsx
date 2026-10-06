@@ -23,6 +23,12 @@ export const Icone = {
   ),
   voltar: svg(<path d="M15 5l-7 7 7 7" />),
   seta: svg(<path d="M9 5l7 7-7 7" />),
+  agenda: svg(
+    <>
+      <rect x="3.5" y="5" width="17" height="15.5" rx="3" />
+      <path d="M3.5 10h17M8 3v4M16 3v4" />
+    </>,
+  ),
   arquivo: svg(
     <>
       <path d="M7 3.5h7l4.5 4.5V19a1.5 1.5 0 0 1-1.5 1.5H7A1.5 1.5 0 0 1 5.5 19V5A1.5 1.5 0 0 1 7 3.5z" />

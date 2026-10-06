@@ -10,7 +10,7 @@ export const metadata: Metadata = { title: 'Perfil' }
 export default async function PerfilPage() {
   const { supabase, userId, email } = await sessao()
   const [perfil, progresso] = await Promise.all([
-    supabase.from('perfis').select('nome').eq('id', userId).maybeSingle(),
+    supabase.from('perfis').select('nome, grupo').eq('id', userId).maybeSingle(),
     carregarProgresso(supabase),
   ])
   const nome = perfil.data?.nome || (/^\d{11}$/.test(email.split('@')[0]) ? 'Aluno' : email.split('@')[0])
@@ -24,7 +24,7 @@ export default async function PerfilPage() {
         </div>
       </header>
 
-      <PerfilAcoes userId={userId} nomeInicial={nome} email={email} />
+      <PerfilAcoes userId={userId} nomeInicial={nome} email={email} grupoInicial={perfil.data?.grupo ?? null} />
 
       {ehAdmin(email) && (
         <>
@@ -34,6 +34,12 @@ export default async function PerfilPage() {
               <span className="main">
                 <span className="t">Alunos</span>
                 <span className="s">Criar contas e trocar senhas</span>
+              </span>
+            </Link>
+            <Link className="row" href="/admin/agenda">
+              <span className="main">
+                <span className="t">Agenda da semana</span>
+                <span className="s">Colar o cronograma do WhatsApp</span>
               </span>
             </Link>
           </div>

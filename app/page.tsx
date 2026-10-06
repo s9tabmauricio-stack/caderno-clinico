@@ -14,17 +14,30 @@ import {
   totaisQuestoes,
 } from '@/lib/dados'
 import { plural, saudacao } from '@/lib/formato'
+import { agoraBrasilia, ehDoAluno, situacoes } from '@/lib/agenda'
+import { agendaDoDia } from '@/lib/agenda-dados'
+import { AgendaAvisos, AgendaLista } from '@/components/AgendaLista'
 
 export const metadata: Metadata = { title: { absolute: 'Med Genius · Início' } }
 
 export default async function Inicio() {
   const { supabase, userId, email } = await sessao()
-  const [perfil, materias, progresso, banco] = await Promise.all([
-    supabase.from('perfis').select('nome').eq('id', userId).maybeSingle(),
+  const agora = agoraBrasilia()
+  const [perfil, materias, progresso, banco, agendaHoje] = await Promise.all([
+    supabase.from('perfis').select('nome, grupo').eq('id', userId).maybeSingle(),
     carregarMaterias(supabase),
     carregarProgresso(supabase),
     carregarProgressoMaterias(supabase),
+    agendaDoDia(supabase, agora.data),
   ])
+
+  // Agenda de hoje: teóricas e avisos para todos, práticas só do grupo do aluno
+  const grupo = perfil.data?.grupo ?? null
+  const aulasHoje = agendaHoje.filter((e) => !e.cancelado && e.tipo !== 'aviso' && ehDoAluno(e.grupos, grupo))
+  const sits = situacoes(aulasHoje, agora.minutos)
+  const estados = Object.fromEntries(sits.map((x) => [x.evento.id, { situacao: x.situacao, falta: x.falta }]))
+  const aulasRestantes = sits.filter((x) => x.situacao !== 'passou').map((x) => x.evento)
+  const canceladasHoje = agendaHoje.filter((e) => e.cancelado)
 
   const nome = perfil.data?.nome || email.split('@')[0] || 'aluno'
   const { texto, data } = saudacao()
@@ -79,6 +92,22 @@ export default async function Inicio() {
           </>
         )}
       </section>
+
+      <div className="sec ag-h">
+        <span>{grupo ? 'Suas aulas hoje' : 'Aulas de hoje'}</span>
+        <Link href="/agenda">Semana →</Link>
+      </div>
+      {aulasRestantes.length > 0 ? (
+        <AgendaLista eventos={aulasRestantes} grupo={grupo} estados={estados} />
+      ) : (
+        <p className="vazio">{aulasHoje.length ? 'As aulas de hoje já terminaram.' : 'Nenhuma aula hoje.'}</p>
+      )}
+      <AgendaAvisos eventos={canceladasHoje} />
+      {grupo === null && agendaHoje.length > 0 && (
+        <p className="foot">
+          <Link href="/perfil">Informe seu grupo de prática no Perfil</Link> para ver só as suas práticas.
+        </p>
+      )}
 
       {ultima && (
         <>

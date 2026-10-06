@@ -103,10 +103,34 @@ export type Database = {
         }
         Relationships: []
       }
+      agenda_semanas: {
+        Row: { semana: string; titulo: string | null; aviso: string | null; texto: string | null; atualizado_em: string }
+        Insert: { semana: string; titulo?: string | null; aviso?: string | null; texto?: string | null; atualizado_em?: string }
+        Update: { semana?: string; titulo?: string | null; aviso?: string | null; texto?: string | null; atualizado_em?: string }
+        Relationships: []
+      }
+      agenda_eventos: {
+        Row: {
+          id: number; semana: string; data: string; inicio: string | null; fim: string | null; materia: string | null
+          tipo: string; titulo: string; professor: string | null; local: string | null; grupos: number[] | null
+          cancelado: boolean; notas: string[] | null; ordem: number
+        }
+        Insert: {
+          id?: never; semana: string; data: string; inicio?: string | null; fim?: string | null; materia?: string | null
+          tipo?: string; titulo: string; professor?: string | null; local?: string | null; grupos?: number[] | null
+          cancelado?: boolean; notas?: string[] | null; ordem?: number
+        }
+        Update: {
+          id?: never; semana?: string; data?: string; inicio?: string | null; fim?: string | null; materia?: string | null
+          tipo?: string; titulo?: string; professor?: string | null; local?: string | null; grupos?: number[] | null
+          cancelado?: boolean; notas?: string[] | null; ordem?: number
+        }
+        Relationships: []
+      }
       perfis: {
-        Row: { admin: boolean; criado_em: string; id: string; nome: string | null }
-        Insert: { admin?: boolean; criado_em?: string; id: string; nome?: string | null }
-        Update: { admin?: boolean; criado_em?: string; id?: string; nome?: string | null }
+        Row: { admin: boolean; criado_em: string; id: string; nome: string | null; grupo: number | null }
+        Insert: { admin?: boolean; criado_em?: string; id: string; nome?: string | null; grupo?: number | null }
+        Update: { admin?: boolean; criado_em?: string; id?: string; nome?: string | null; grupo?: number | null }
         Relationships: []
       }
       questoes: {

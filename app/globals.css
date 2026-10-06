@@ -562,3 +562,34 @@ input:-webkit-autofill,input:-webkit-autofill:hover,input:-webkit-autofill:focus
   -webkit-text-fill-color:var(--ink);caret-color:var(--ink);-webkit-box-shadow:0 0 0 0 transparent inset;
   transition:background-color 99999s ease-out 0s,color 99999s ease-out 0s}
 input:autofill{background:transparent!important}
+
+/* ===== Agenda da turma ===== */
+.ag-h{display:flex;align-items:baseline;justify-content:space-between;gap:12px}
+.ag-h a{font-size:13.5px;font-weight:600;letter-spacing:0;text-transform:none;color:var(--accent);text-decoration:none}
+.agenda .row.ev{align-items:stretch;gap:12px}
+.agenda .hora{flex:none;width:50px;text-align:center;font-weight:700;font-size:14px;color:var(--ink);font-variant-numeric:tabular-nums;line-height:1.15;padding-top:2px}
+.agenda .hora small{display:block;font-weight:500;font-size:11.5px;color:var(--muted);margin-top:2px}
+.agenda .barra{flex:none;width:3.5px;border-radius:3px}
+.agenda .row.passou{opacity:.42}
+.agenda .row.cancel .t{text-decoration:line-through;color:var(--muted)}
+.agenda .row.agora{background:rgba(62,230,168,.07);box-shadow:inset 0 0 0 1px rgba(62,230,168,.4)}
+.agenda .notas{display:grid;gap:2px;margin-top:6px;font-size:13px;color:var(--text)}
+.agenda .notas span::before{content:"· ";color:var(--muted)}
+.tg{display:inline-block;font-weight:700;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;padding:2px 7px;border-radius:7px;margin-right:6px;vertical-align:1.5px;text-decoration:none}
+.tg.agora{background:rgba(62,230,168,.16);color:#3EE6A8}
+.tg.prox{background:rgba(79,221,255,.14);color:#4FDDFF}
+.tg.meu{background:rgba(255,92,214,.14);color:#FF7AD9}
+.tg.cancel{background:rgba(255,92,138,.14);color:#FF5C8A}
+.ag-aviso{display:grid;gap:6px;font-size:14px;line-height:1.45;color:#FFC874;background:rgba(255,181,71,.09);border:1px solid rgba(255,181,71,.3);border-radius:var(--r-md);padding:10px 13px;margin:10px 0 0}
+.ag-aviso b{color:#FFB547}
+.ag-aviso-n{display:block;font-size:13px;color:#E8C99A}
+.segm-dias{margin:4px 0 12px}
+.segm-dias button{line-height:1.2;font-size:12.5px}
+.segm-dias button b{display:block;font-size:16px;color:var(--ink)}
+.segm-dias button.hoje:not(.on){color:var(--accent)}
+.ag-filtros{display:flex;gap:8px;margin:0 0 4px}
+.ag-filtros .pill[aria-pressed="true"]{background:rgba(79,221,255,.14);border-color:rgba(79,221,255,.45);color:#4FDDFF}
+.ag-filtros .pill:disabled{opacity:.5;cursor:default}
+/* barra de abas com 5 abas */
+.tab{min-width:62px;padding-inline:8px}
+@media (max-width:380px){.tab{min-width:56px;padding-inline:5px}.tab span{font-size:10.5px}}
