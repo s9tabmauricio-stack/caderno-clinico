@@ -3,10 +3,10 @@ import '@fontsource-variable/inter'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: { default: 'Caderno Clínico', template: '%s · Caderno Clínico' },
+  title: { default: 'Med Genius', template: '%s · Med Genius' },
   description: 'Apostilas, questões e flashcards de cada aula, com o seu progresso salvo.',
-  applicationName: 'Caderno Clínico',
-  appleWebApp: { capable: true, title: 'Caderno Clínico', statusBarStyle: 'default' },
+  applicationName: 'Med Genius',
+  appleWebApp: { capable: true, title: 'Med Genius', statusBarStyle: 'default' },
 }
 
 export const viewport: Viewport = {

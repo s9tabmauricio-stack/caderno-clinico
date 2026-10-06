@@ -1,4 +1,4 @@
-// Ícones de traço simples, desenhados para o Caderno Clínico
+// Ícones de traço simples, desenhados para o Med Genius
 
 const svg = (d: React.ReactNode) => (
   <svg viewBox="0 0 24 24" aria-hidden="true">

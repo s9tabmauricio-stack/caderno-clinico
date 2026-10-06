@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import { Icone } from '@/components/Icones'
 import { LoginForm } from '@/components/LoginForm'
 
 export const metadata: Metadata = { title: 'Entrar' }
@@ -14,8 +13,8 @@ export default function LoginPage() {
       </div>
 
       <section className="lg-vidro">
-        <span className="lg-icone">{Icone.pulso}</span>
-        <h1>Caderno Clínico</h1>
+        <img className="lg-logo" src="/brand/med-genius.svg" width={88} height={88} alt="" />
+        <h1>Med Genius</h1>
         <p className="lg-sub">Entre com seu CPF e senha</p>
         <LoginForm />
       </section>

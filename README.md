@@ -1,4 +1,4 @@
-# Caderno Clínico
+# Med Genius
 
 Site de estudos com apostila, banco de questões e flashcards de cada aula. Cada aluno entra com um link enviado por e-mail e o progresso fica salvo no Supabase.
 

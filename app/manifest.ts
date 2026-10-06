@@ -3,8 +3,8 @@ import type { MetadataRoute } from 'next'
 // Permite instalar o site na tela inicial do celular, como um app
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'Caderno Clínico',
-    short_name: 'Caderno',
+    name: 'Med Genius',
+    short_name: 'Med Genius',
     description: 'Apostilas, questões e flashcards de cada aula, com o seu progresso salvo.',
     lang: 'pt-BR',
     start_url: '/',
