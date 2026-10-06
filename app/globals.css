@@ -601,3 +601,10 @@ input:autofill{background:transparent!important}
 .review .review-s{margin:2px 0 0}
 .review .btn-white{grid-column:2;grid-row:1 / span 3;align-self:center;justify-self:end;white-space:nowrap}
 @media (max-width:360px){.review .btn-white{padding:11px 14px;font-size:14.5px}}
+
+/* Blocos das matérias mais compactos */
+.tiles{gap:10px}
+.mtile{min-height:0;padding:14px 16px 13px;gap:12px}
+.mt-name{font-size:20px}
+.mt-meta{font-size:13px;margin-top:1px}
+.mt-p{margin-top:5px;font-size:12.5px}
