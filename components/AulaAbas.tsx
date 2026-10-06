@@ -1,0 +1,102 @@
+'use client'
+
+import { useState } from 'react'
+import type { CardAluno, QuestaoAluno } from '@/lib/dados'
+import { Icone } from './Icones'
+import { Questoes } from './Questoes'
+import { Flashcards } from './Flashcards'
+
+export type Aba = 'apostila' | 'questoes' | 'flashcards'
+
+type Props = {
+  abaInicial: Aba
+  apostilaHtml: string | null
+  pdfUrl: string | null
+  questoes: QuestaoAluno[]
+  cards: CardAluno[]
+  userId: string
+}
+
+export function AulaAbas({ abaInicial, apostilaHtml, pdfUrl, questoes, cards, userId }: Props) {
+  const [aba, setAba] = useState<Aba>(abaInicial)
+
+  function trocar(nova: Aba, rolar = false) {
+    setAba(nova)
+    const url = new URL(window.location.href)
+    url.searchParams.set('aba', nova)
+    window.history.replaceState(null, '', url)
+    if (rolar) document.querySelector('.segm')?.scrollIntoView({ block: 'start', behavior: 'smooth' })
+  }
+
+  const abas: [Aba, string][] = [
+    ['apostila', 'Apostila'],
+    ['questoes', 'Questões'],
+    ['flashcards', 'Flashcards'],
+  ]
+
+  return (
+    <>
+      <div className="segm" role="tablist" aria-label="Conteúdo da aula">
+        {abas.map(([chave, rotulo]) => (
+          <button
+            key={chave}
+            role="tab"
+            id={`aba-${chave}`}
+            aria-selected={aba === chave}
+            aria-controls={`painel-${chave}`}
+            className={aba === chave ? 'on' : ''}
+            onClick={() => trocar(chave)}
+          >
+            {rotulo}
+          </button>
+        ))}
+      </div>
+
+      <div className="pane" role="tabpanel" id="painel-apostila" aria-labelledby="aba-apostila" hidden={aba !== 'apostila'}>
+        {pdfUrl && (
+          <div className="pdfbar">
+            <span className="pdf-ic">{Icone.arquivo}</span>
+            <span className="main">
+              <span className="t">Apostila completa em PDF</span>
+              <span className="s">Abre numa nova aba.</span>
+            </span>
+            <a className="btn ghost sm" href={pdfUrl} target="_blank" rel="noopener">
+              Abrir
+            </a>
+          </div>
+        )}
+        {apostilaHtml ? (
+          <article className="ap" dangerouslySetInnerHTML={{ __html: apostilaHtml }} />
+        ) : (
+          <p className="vazio">O resumo desta aula ainda não foi publicado.</p>
+        )}
+        <div className="next-steps">
+          {questoes.length > 0 && (
+            <button className="btn" onClick={() => trocar('questoes', true)}>
+              Fazer as {questoes.length} questões
+            </button>
+          )}
+          {cards.length > 0 && (
+            <button className="btn ghost" onClick={() => trocar('flashcards', true)}>
+              Estudar os flashcards
+            </button>
+          )}
+        </div>
+      </div>
+
+      <div className="pane" role="tabpanel" id="painel-questoes" aria-labelledby="aba-questoes" hidden={aba !== 'questoes'}>
+        <Questoes questoes={questoes} userId={userId} ativo={aba === 'questoes'} />
+      </div>
+
+      <div
+        className="pane"
+        role="tabpanel"
+        id="painel-flashcards"
+        aria-labelledby="aba-flashcards"
+        hidden={aba !== 'flashcards'}
+      >
+        <Flashcards cards={cards} userId={userId} modo="aula" ativo={aba === 'flashcards'} />
+      </div>
+    </>
+  )
+}
