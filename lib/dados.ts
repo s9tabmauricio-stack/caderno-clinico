@@ -30,13 +30,22 @@ export type ProgressoAula = {
 
 export type QuestaoAluno = {
   id: string
+  aula_id: string | null
   ordem: number
   enunciado: string
   alternativas: string[]
   correta: number
   comentario: string | null
+  por_que_erradas: string | null
+  tema: string | null
+  prova: string | null
+  fonte: string | null
+  origem: string | null
   resposta: { escolhida: number; acertou: boolean; tentativas: number } | null
 }
+
+export type ProgressoMateria = { materia_id: string; total_questoes: number; respondidas: number; acertos: number }
+export type ProgressoTema = ProgressoMateria & { tema: string }
 
 export type CardAluno = {
   id: string
@@ -90,13 +99,42 @@ export async function carregarProgresso(supabase: SupabaseServidor): Promise<Pro
   }))
 }
 
+export async function carregarProgressoMaterias(supabase: SupabaseServidor): Promise<ProgressoMateria[]> {
+  const { data, error } = await supabase.from('progresso_materias').select('*')
+  if (error) falhou('o progresso das questões', error)
+  return (data ?? []).map((p) => ({
+    materia_id: p.materia_id ?? '',
+    total_questoes: p.total_questoes ?? 0,
+    respondidas: p.respondidas ?? 0,
+    acertos: p.acertos ?? 0,
+  }))
+}
+
+export async function carregarTemas(supabase: SupabaseServidor): Promise<ProgressoTema[]> {
+  const { data, error } = await supabase.from('progresso_temas').select('*').order('tema')
+  if (error) falhou('os temas', error)
+  return (data ?? []).map((p) => ({
+    materia_id: p.materia_id ?? '',
+    tema: p.tema ?? 'Sem tema',
+    total_questoes: p.total_questoes ?? 0,
+    respondidas: p.respondidas ?? 0,
+    acertos: p.acertos ?? 0,
+  }))
+}
+
 type LinhaQuestao = {
   id: string | null
+  aula_id: string | null
   ordem: number | null
   enunciado: string | null
   alternativas: Json | null
   correta: number | null
   comentario: string | null
+  por_que_erradas: string | null
+  tema: string | null
+  prova: string | null
+  fonte: string | null
+  origem: string | null
   escolhida: number | null
   acertou: boolean | null
   tentativas: number | null
@@ -105,11 +143,17 @@ type LinhaQuestao = {
 export function paraQuestao(q: LinhaQuestao): QuestaoAluno {
   return {
     id: q.id ?? '',
+    aula_id: q.aula_id,
     ordem: q.ordem ?? 0,
     enunciado: q.enunciado ?? '',
     alternativas: Array.isArray(q.alternativas) ? q.alternativas.map(String) : [],
     correta: q.correta ?? 0,
     comentario: q.comentario,
+    por_que_erradas: q.por_que_erradas,
+    tema: q.tema,
+    prova: q.prova,
+    fonte: q.fonte,
+    origem: q.origem,
     resposta:
       q.escolhida !== null && q.acertou !== null
         ? { escolhida: q.escolhida, acertou: q.acertou, tentativas: q.tentativas ?? 1 }
@@ -175,6 +219,21 @@ export function pendentes(prog: ProgressoAula[]) {
   const t = totais(prog)
   const novos = t.cards - t.estudados
   return { vencidos: t.vencidos, novos, hoje: t.vencidos + Math.min(novos, LIMITE_NOVOS), emDia: t.estudados - t.vencidos }
+}
+
+// Questões contam pelo banco da matéria (inclui as que não pertencem a nenhuma aula)
+export function totaisQuestoes(prog: ProgressoMateria[]) {
+  return prog.reduce(
+    (t, p) => ({ questoes: t.questoes + p.total_questoes, respondidas: t.respondidas + p.respondidas, acertos: t.acertos + p.acertos }),
+    { questoes: 0, respondidas: 0, acertos: 0 },
+  )
+}
+
+// % da matéria: questões do banco respondidas + flashcards já estudados
+export function concluidoMateria(aulas: ProgressoAula[], pm: ProgressoMateria | undefined) {
+  const t = totais(aulas)
+  const total = (pm?.total_questoes ?? 0) + t.cards
+  return total ? Math.round((100 * ((pm?.respondidas ?? 0) + t.estudados)) / total) : 0
 }
 
 export function concluido(prog: ProgressoAula[]) {

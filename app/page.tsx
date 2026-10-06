@@ -2,24 +2,36 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Pagina } from '@/components/Pagina'
 import { Icone } from '@/components/Icones'
-import { carregarMaterias, carregarProgresso, concluido, pendentes, sessao, totais } from '@/lib/dados'
+import {
+  carregarMaterias,
+  carregarProgresso,
+  carregarProgressoMaterias,
+  concluido,
+  concluidoMateria,
+  pendentes,
+  sessao,
+  totais,
+  totaisQuestoes,
+} from '@/lib/dados'
 import { plural, saudacao } from '@/lib/formato'
 
 export const metadata: Metadata = { title: 'Início' }
 
 export default async function Inicio() {
   const { supabase, userId, email } = await sessao()
-  const [perfil, materias, progresso] = await Promise.all([
+  const [perfil, materias, progresso, banco] = await Promise.all([
     supabase.from('perfis').select('nome').eq('id', userId).maybeSingle(),
     carregarMaterias(supabase),
     carregarProgresso(supabase),
+    carregarProgressoMaterias(supabase),
   ])
 
   const nome = perfil.data?.nome || email.split('@')[0] || 'aluno'
   const { texto, data } = saudacao()
   const pend = pendentes(progresso)
   const t = totais(progresso)
-  const acerto = t.respondidas ? `${Math.round((100 * t.acertos) / t.respondidas)}%` : '–'
+  const tq = totaisQuestoes(banco)
+  const acerto = tq.respondidas ? `${Math.round((100 * tq.acertos) / tq.respondidas)}%` : '–'
 
   const ultima = progresso
     .filter((p) => p.ultima_atividade)
@@ -92,7 +104,8 @@ export default async function Inicio() {
           {materias.map((m) => {
             const prog = progresso.filter((p) => p.materia_id === m.id)
             const tm = totais(prog)
-            const p = concluido(prog)
+            const pm = banco.find((b) => b.materia_id === m.id)
+            const p = concluidoMateria(prog, pm)
             return (
               <Link
                 key={m.id}
@@ -103,7 +116,7 @@ export default async function Inicio() {
                 <span>
                   <span className="mt-name">{m.nome}</span>
                   <span className="mt-meta">
-                    {prog.length} {plural(prog.length, 'aula', 'aulas')} · {tm.questoes} questões · {tm.cards} flashcards
+                    {prog.length} {plural(prog.length, 'aula', 'aulas')} · {pm?.total_questoes ?? 0} questões · {tm.cards} flashcards
                   </span>
                 </span>
                 <span>
@@ -125,8 +138,8 @@ export default async function Inicio() {
         <div className="stat">
           <div className="lab">Questões</div>
           <div className="n">
-            {t.respondidas}
-            <small>/{t.questoes}</small>
+            {tq.respondidas}
+            <small>/{tq.questoes}</small>
           </div>
         </div>
         <div className="stat">

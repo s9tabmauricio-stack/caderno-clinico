@@ -1,15 +1,29 @@
 'use client'
 
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { createClient } from '@/lib/supabase/client'
 import type { QuestaoAluno } from '@/lib/dados'
 import { plural } from '@/lib/formato'
 import { Icone } from './Icones'
 
-type Resposta = NonNullable<QuestaoAluno['resposta']>
+export type Resposta = NonNullable<QuestaoAluno['resposta']>
 const LETRAS = 'ABCDEFGH'
+const ORIGEM: Record<string, { rotulo: string; cls: string }> = {
+  professor: { rotulo: 'Corrigida em sala', cls: 'sala' },
+  inferido: { rotulo: 'Alternativa reconstruída', cls: 'rec' },
+}
 
-export function Questoes({ questoes, userId, ativo }: { questoes: QuestaoAluno[]; userId: string; ativo: boolean }) {
+type Props = {
+  questoes: QuestaoAluno[]
+  userId: string
+  ativo: boolean
+  mostrarTema?: boolean
+  vazio?: string
+  // avisa quem está em volta (o banco de questões) quando uma resposta muda
+  aoResponder?: (id: string, resposta: Resposta | null) => void
+}
+
+export function Questoes({ questoes, userId, ativo, mostrarTema = true, vazio, aoResponder }: Props) {
   const supabase = useMemo(() => createClient(), [])
   const [respostas, setRespostas] = useState<Record<string, Resposta>>(() =>
     Object.fromEntries(questoes.filter((q) => q.resposta).map((q) => [q.id, q.resposta as Resposta])),
@@ -23,7 +37,6 @@ export function Questoes({ questoes, userId, ativo }: { questoes: QuestaoAluno[]
   const [refazendo, setRefazendo] = useState(false)
   const [erro, setErro] = useState('')
   const [falhaSalvar, setFalhaSalvar] = useState('')
-  const raiz = useRef<HTMLDivElement>(null)
 
   const q = questoes[idx]
   const resp = q ? respostas[q.id] : undefined
@@ -44,6 +57,7 @@ export function Questoes({ questoes, userId, ativo }: { questoes: QuestaoAluno[]
     }
     const nova: Resposta = { escolhida: escolha, acertou: escolha === q.correta, tentativas: (resp?.tentativas ?? 0) + 1 }
     setRespostas((r) => ({ ...r, [q.id]: nova }))
+    aoResponder?.(q.id, nova)
     setRefazendo(false)
     setErro('')
     setFalhaSalvar('')
@@ -66,12 +80,13 @@ export function Questoes({ questoes, userId, ativo }: { questoes: QuestaoAluno[]
     const restantes = { ...respostas }
     ids.forEach((id) => delete restantes[id])
     setRespostas(restantes)
+    ids.forEach((id) => aoResponder?.(id, null))
     irPara(primeiraAberta(restantes))
     const { error } = await supabase.from('respostas').delete().eq('user_id', userId).in('questao_id', ids)
     if (error) setFalhaSalvar('Não deu para apagar as respostas antigas. Confira a internet e tente de novo.')
   }
 
-  // Atalhos: A a D (ou 1 a 4) escolhem, Enter responde ou avança
+  // Atalhos: A a E (ou 1 a 5) escolhem, Enter responde ou avança
   useEffect(() => {
     if (!ativo) return
     function tecla(e: KeyboardEvent) {
@@ -79,7 +94,7 @@ export function Questoes({ questoes, userId, ativo }: { questoes: QuestaoAluno[]
       if (e.metaKey || e.ctrlKey || e.altKey || alvo.closest('input, textarea, button, a')) return
       if (!q) return
       const k = e.key.toLowerCase()
-      const mapa: Record<string, number> = { a: 0, b: 1, c: 2, d: 3, '1': 0, '2': 1, '3': 2, '4': 3 }
+      const mapa: Record<string, number> = { a: 0, b: 1, c: 2, d: 3, e: 4, '1': 0, '2': 1, '3': 2, '4': 3, '5': 4 }
       if (!revelada && k in mapa && mapa[k] < q.alternativas.length) {
         e.preventDefault()
         setEscolha(mapa[k])
@@ -94,7 +109,7 @@ export function Questoes({ questoes, userId, ativo }: { questoes: QuestaoAluno[]
     return () => window.removeEventListener('keydown', tecla)
   })
 
-  if (!questoes.length) return <p className="vazio">Esta aula ainda não tem questões.</p>
+  if (!questoes.length) return <p className="vazio">{vazio ?? 'Esta aula ainda não tem questões.'}</p>
 
   const certas = questoes.filter((x) => respostas[x.id]?.acertou).length
   const feitas = questoes.filter((x) => respostas[x.id]).length
@@ -138,7 +153,7 @@ export function Questoes({ questoes, userId, ativo }: { questoes: QuestaoAluno[]
         ? 'Você gabaritou esta aula.'
         : `Você acertou ${certas} de ${questoes.length}. Releia o comentário das erradas e refaça.`
     return (
-      <div ref={raiz}>
+      <div>
         {cabecalho}
         <div className="qcard result">
           <div className="res-n">
@@ -181,9 +196,16 @@ export function Questoes({ questoes, userId, ativo }: { questoes: QuestaoAluno[]
   }
 
   return (
-    <div ref={raiz}>
+    <div>
       {cabecalho}
       <div className="qcard">
+        {(q.fonte || (mostrarTema && q.tema) || (q.origem && ORIGEM[q.origem])) && (
+          <div className="qmeta">
+            {q.fonte && <span className="fonte">{q.fonte}</span>}
+            {mostrarTema && q.tema && <span>{q.tema}</span>}
+            {q.origem && ORIGEM[q.origem] && <span className={ORIGEM[q.origem].cls}>{ORIGEM[q.origem].rotulo}</span>}
+          </div>
+        )}
         <p className="qtext">{q.enunciado}</p>
         <div className="opts">
           {q.alternativas.map((texto, i) => {
@@ -227,6 +249,15 @@ export function Questoes({ questoes, userId, ativo }: { questoes: QuestaoAluno[]
                   Comentário
                 </div>
                 <p>{q.comentario}</p>
+              </div>
+            )}
+            {q.por_que_erradas && (
+              <div className="erradas">
+                <div className="kick">
+                  <span className="dot" />
+                  Por que as outras estão erradas
+                </div>
+                <p>{q.por_que_erradas}</p>
               </div>
             )}
             <div className="actions">

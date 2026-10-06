@@ -112,30 +112,48 @@ export type Database = {
       questoes: {
         Row: {
           alternativas: Json
-          aula_id: string
+          aula_id: string | null
           comentario: string | null
           correta: number
           enunciado: string
+          fonte: string | null
           id: string
+          materia_id: string
           ordem: number
+          origem: string | null
+          por_que_erradas: string | null
+          prova: string | null
+          tema: string | null
         }
         Insert: {
           alternativas: Json
-          aula_id: string
+          aula_id?: string | null
           comentario?: string | null
           correta: number
           enunciado: string
+          fonte?: string | null
           id: string
+          materia_id: string
           ordem?: number
+          origem?: string | null
+          por_que_erradas?: string | null
+          prova?: string | null
+          tema?: string | null
         }
         Update: {
           alternativas?: Json
-          aula_id?: string
+          aula_id?: string | null
           comentario?: string | null
           correta?: number
           enunciado?: string
+          fonte?: string | null
           id?: string
+          materia_id?: string
           ordem?: number
+          origem?: string | null
+          por_que_erradas?: string | null
+          prova?: string | null
+          tema?: string | null
         }
         Relationships: [
           {
@@ -143,6 +161,13 @@ export type Database = {
             columns: ['aula_id']
             isOneToOne: false
             referencedRelation: 'aulas'
+            referencedColumns: ['id']
+          },
+          {
+            foreignKeyName: 'questoes_materia_id_fkey'
+            columns: ['materia_id']
+            isOneToOne: false
+            referencedRelation: 'materias'
             referencedColumns: ['id']
           },
         ]
@@ -271,10 +296,35 @@ export type Database = {
           correta: number | null
           enunciado: string | null
           escolhida: number | null
+          fonte: string | null
           id: string | null
+          materia_id: string | null
           ordem: number | null
+          origem: string | null
+          por_que_erradas: string | null
+          prova: string | null
           respondida_em: string | null
+          tema: string | null
           tentativas: number | null
+        }
+        Relationships: []
+      }
+      progresso_materias: {
+        Row: {
+          acertos: number | null
+          materia_id: string | null
+          respondidas: number | null
+          total_questoes: number | null
+        }
+        Relationships: []
+      }
+      progresso_temas: {
+        Row: {
+          acertos: number | null
+          materia_id: string | null
+          respondidas: number | null
+          tema: string | null
+          total_questoes: number | null
         }
         Relationships: []
       }

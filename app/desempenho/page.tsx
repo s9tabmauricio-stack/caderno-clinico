@@ -1,15 +1,30 @@
 import type { Metadata } from 'next'
 import { Pagina } from '@/components/Pagina'
-import { carregarMaterias, carregarProgresso, pendentes, sessao, totais } from '@/lib/dados'
+import {
+  carregarMaterias,
+  carregarProgresso,
+  carregarProgressoMaterias,
+  carregarTemas,
+  pendentes,
+  sessao,
+  totais,
+  totaisQuestoes,
+} from '@/lib/dados'
 import { plural } from '@/lib/formato'
 
 export const metadata: Metadata = { title: 'Desempenho' }
 
 export default async function DesempenhoPage() {
   const { supabase } = await sessao()
-  const [progresso, materias] = await Promise.all([carregarProgresso(supabase), carregarMaterias(supabase)])
+  const [progresso, materias, banco, temas] = await Promise.all([
+    carregarProgresso(supabase),
+    carregarMaterias(supabase),
+    carregarProgressoMaterias(supabase),
+    carregarTemas(supabase),
+  ])
   const t = totais(progresso)
-  const acerto = t.respondidas ? `${Math.round((100 * t.acertos) / t.respondidas)}%` : '–'
+  const tq = totaisQuestoes(banco)
+  const acerto = tq.respondidas ? `${Math.round((100 * tq.acertos) / tq.respondidas)}%` : '–'
 
   return (
     <Pagina pendentes={pendentes(progresso).hoje}>
@@ -24,8 +39,8 @@ export default async function DesempenhoPage() {
         <div className="stat">
           <div className="lab">Respondidas</div>
           <div className="n">
-            {t.respondidas}
-            <small>/{t.questoes}</small>
+            {tq.respondidas}
+            <small>/{tq.questoes}</small>
           </div>
         </div>
         <div className="stat">
@@ -59,8 +74,8 @@ export default async function DesempenhoPage() {
 
       <div className="perfs">
         {materias.map((m) => {
-          const aulas = progresso.filter((p) => p.materia_id === m.id)
-          const s = totais(aulas)
+          const s = totaisQuestoes(banco.filter((b) => b.materia_id === m.id))
+          const temasM = temas.filter((x) => x.materia_id === m.id)
           const erradas = s.respondidas - s.acertos
           const sem = s.questoes - s.respondidas
           return (
@@ -79,19 +94,23 @@ export default async function DesempenhoPage() {
                 {s.acertos} {plural(s.acertos, 'certa', 'certas')} · {erradas} {plural(erradas, 'errada', 'erradas')} · {sem} sem
                 responder
               </div>
-              <div className="perf-aulas">
-                {aulas.map((a) => (
-                  <div key={a.aula_id} className="pa">
-                    <span>{a.titulo}</span>
-                    <span>{a.respondidas ? `${a.acertos} de ${a.respondidas} certas` : 'não iniciada'}</span>
-                  </div>
-                ))}
-              </div>
+              {temasM.length > 0 && (
+                <div className="perf-aulas">
+                  {temasM.map((x) => (
+                    <div key={x.tema} className="pa">
+                      <span>{x.tema}</span>
+                      <span>
+                        {x.respondidas ? `${x.acertos} de ${x.respondidas} certas` : `${x.total_questoes} sem responder`}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
           )
         })}
       </div>
-      {t.respondidas === 0 && <p className="foot">Responda as questões de uma aula para ver as barras se encherem.</p>}
+      {tq.respondidas === 0 && <p className="foot">Responda as questões de uma aula para ver as barras se encherem.</p>}
     </Pagina>
   )
 }

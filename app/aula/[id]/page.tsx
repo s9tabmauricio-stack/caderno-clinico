@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { Pagina, Voltar } from '@/components/Pagina'
 import { AulaAbas, type Aba } from '@/components/AulaAbas'
-import { carregarProgresso, paraCard, paraQuestao, pendentes, sessao } from '@/lib/dados'
+import { carregarProgresso, carregarProgressoMaterias, paraCard, paraQuestao, pendentes, sessao } from '@/lib/dados'
 import { createClient } from '@/lib/supabase/server'
 
 export async function generateMetadata(props: PageProps<'/aula/[id]'>): Promise<Metadata> {
@@ -18,7 +18,7 @@ export default async function AulaPage(props: PageProps<'/aula/[id]'>) {
   const abaInicial: Aba = aba === 'questoes' || aba === 'flashcards' ? aba : 'apostila'
 
   const { supabase, userId } = await sessao()
-  const [aula, questoes, cards, progresso] = await Promise.all([
+  const [aula, questoes, cards, progresso, banco] = await Promise.all([
     supabase
       .from('aulas')
       .select('id, materia_id, ordem, titulo, apostila_html, pdf_caminho, materias(nome)')
@@ -28,6 +28,7 @@ export default async function AulaPage(props: PageProps<'/aula/[id]'>) {
     supabase.from('questoes_do_aluno').select('*').eq('aula_id', id).order('ordem'),
     supabase.from('flashcards_do_aluno').select('*').eq('aula_id', id).order('ordem'),
     carregarProgresso(supabase),
+    carregarProgressoMaterias(supabase),
   ])
   if (!aula.data) notFound()
   if (questoes.error) throw new Error(`Não foi possível carregar as questões: ${questoes.error.message}`)
@@ -41,6 +42,8 @@ export default async function AulaPage(props: PageProps<'/aula/[id]'>) {
   }
 
   const materiaNome = aula.data.materias?.nome ?? 'Matéria'
+  const materiaId = aula.data.materia_id
+  const totalBanco = banco.find((b) => b.materia_id === materiaId)?.total_questoes ?? 0
 
   return (
     <Pagina pendentes={pendentes(progresso).hoje}>
@@ -60,6 +63,8 @@ export default async function AulaPage(props: PageProps<'/aula/[id]'>) {
         questoes={(questoes.data ?? []).map(paraQuestao)}
         cards={(cards.data ?? []).map(paraCard)}
         userId={userId}
+        materiaId={materiaId}
+        totalBanco={totalBanco}
       />
     </Pagina>
   )

@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Link from 'next/link'
 import type { CardAluno, QuestaoAluno } from '@/lib/dados'
 import { Icone } from './Icones'
 import { Questoes } from './Questoes'
@@ -15,9 +16,11 @@ type Props = {
   questoes: QuestaoAluno[]
   cards: CardAluno[]
   userId: string
+  materiaId: string
+  totalBanco: number
 }
 
-export function AulaAbas({ abaInicial, apostilaHtml, pdfUrl, questoes, cards, userId }: Props) {
+export function AulaAbas({ abaInicial, apostilaHtml, pdfUrl, questoes, cards, userId, materiaId, totalBanco }: Props) {
   const [aba, setAba] = useState<Aba>(abaInicial)
 
   function trocar(nova: Aba, rolar = false) {
@@ -85,7 +88,17 @@ export function AulaAbas({ abaInicial, apostilaHtml, pdfUrl, questoes, cards, us
       </div>
 
       <div className="pane" role="tabpanel" id="painel-questoes" aria-labelledby="aba-questoes" hidden={aba !== 'questoes'}>
-        <Questoes questoes={questoes} userId={userId} ativo={aba === 'questoes'} />
+        <Questoes
+          questoes={questoes}
+          userId={userId}
+          ativo={aba === 'questoes'}
+          vazio="Nenhuma questão das provas anteriores é sobre o assunto desta aula. Treine pelo banco de questões da matéria."
+        />
+        {totalBanco > questoes.length && (
+          <Link className="btn ghost wide" style={{ marginTop: 16 }} href={`/materia/${materiaId}/questoes`}>
+            Ver as {totalBanco} questões do banco da matéria
+          </Link>
+        )}
       </div>
 
       <div
