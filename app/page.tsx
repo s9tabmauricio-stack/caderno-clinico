@@ -15,7 +15,7 @@ import {
 } from '@/lib/dados'
 import { plural, saudacao } from '@/lib/formato'
 
-export const metadata: Metadata = { title: 'Início' }
+export const metadata: Metadata = { title: { absolute: 'Med Genius · Início' } }
 
 export default async function Inicio() {
   const { supabase, userId, email } = await sessao()

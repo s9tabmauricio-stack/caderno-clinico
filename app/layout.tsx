@@ -3,7 +3,7 @@ import '@fontsource-variable/inter'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: { default: 'Med Genius', template: '%s · Med Genius' },
+  title: { default: 'Med Genius', template: 'Med Genius · %s' },
   description: 'Apostilas, questões e flashcards de cada aula, com o seu progresso salvo.',
   applicationName: 'Med Genius',
   appleWebApp: { capable: true, title: 'Med Genius', statusBarStyle: 'default' },
