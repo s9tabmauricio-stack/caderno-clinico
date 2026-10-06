@@ -11,7 +11,8 @@ export type Resposta = NonNullable<QuestaoAluno['resposta']>
 const LETRAS = 'ABCDEFGH'
 const ORIGEM: Record<string, { rotulo: string; cls: string }> = {
   professor: { rotulo: 'Corrigida em sala', cls: 'sala' },
-  inferido: { rotulo: 'Alternativas montadas · gabarito não oficial', cls: 'rec' },
+  inferido: { rotulo: 'Alternativa reconstruída', cls: 'rec' },
+  montada: { rotulo: 'Alternativas montadas · gabarito não oficial', cls: 'rec' },
   resolvida: { rotulo: 'Gabarito não oficial', cls: 'rec' },
 }
 
