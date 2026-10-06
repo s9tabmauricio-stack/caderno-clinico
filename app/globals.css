@@ -487,3 +487,72 @@ body{margin:0;min-height:100vh}
 .lg-erro{margin:12px 0 0;color:var(--bad);font-size:14.5px}
 .lg-ajuda{margin:22px 0 0;color:var(--muted);font-size:14px}
 .lg-rodape{font-size:13px;letter-spacing:.04em;color:var(--muted)}
+
+/* =====================================================================
+   Tema Med Genius: inspirado no ícone (vidro sobre luzes neon)
+   Fundo quase preto com luzes desfocadas em ciano, violeta e magenta,
+   superfícies de vidro e destaques em ciano. Vale para todo o site.
+   ===================================================================== */
+:root:not([data-mg]){
+  --bg:#05060E; --card:rgba(255,255,255,.055); --card-2:rgba(255,255,255,.085);
+  --line:rgba(255,255,255,.10); --line-2:rgba(255,255,255,.07); --line-strong:rgba(255,255,255,.18); --field:rgba(255,255,255,.06);
+  --ink:#F4F7FF; --text:#D4D9E8; --muted:#97A0B8; --title:#F4F7FF;
+  --accent:#4FDDFF; --accent-soft:rgba(0,200,255,.12); --accent-line:rgba(79,221,255,.38); --btn:#2F8BFF;
+  --ok:#3EE6A8; --ok-soft:rgba(62,230,168,.12); --ok-line:rgba(62,230,168,.38);
+  --bad:#FF5C8A; --bad-soft:rgba(255,92,138,.12); --bad-line:rgba(255,92,138,.4);
+  --seg:rgba(255,255,255,.06); --seg-on:rgba(255,255,255,.14); --tab-on:rgba(79,221,255,.14); --badge:#FF2EC4;
+  --glass:rgba(16,18,34,.55); --glass-line:rgba(255,255,255,.14);
+  --glass-shadow:0 12px 40px rgba(0,0,0,.55),inset 0 1px 0 rgba(255,255,255,.08);
+  --lift:0 18px 44px rgba(0,0,0,.45);
+  --grad:linear-gradient(135deg,#00B8F0 0%,#6A5CFF 52%,#E92FC0 100%);
+  --neon:linear-gradient(90deg,#4FDDFF,#9B7BFF 55%,#FF5CD6);
+  --orange:#FFB547; --orange-soft:rgba(255,181,71,.12); --orange-line:rgba(255,181,71,.38);
+  --purple:#C9A2FF; --purple-soft:rgba(155,123,255,.14); --purple-line:rgba(155,123,255,.4);
+  --prova-bg:#E9EDF5; --prova-fg:#0B0C10;
+  color-scheme:dark;
+}
+body{background:var(--bg)}
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:
+    radial-gradient(42vmax 42vmax at 8% 4%,rgba(0,194,255,.20),transparent 70%),
+    radial-gradient(40vmax 40vmax at 96% 22%,rgba(123,92,255,.22),transparent 70%),
+    radial-gradient(38vmax 38vmax at 12% 92%,rgba(255,46,196,.13),transparent 70%),
+    radial-gradient(40vmax 40vmax at 88% 100%,rgba(63,107,255,.16),transparent 70%),
+    linear-gradient(rgba(255,255,255,.028) 1px,transparent 1px) 0 0/32px 32px,
+    linear-gradient(90deg,rgba(255,255,255,.028) 1px,transparent 1px) 0 0/32px 32px}
+
+/* superfícies de vidro */
+.group,.stat,.pdfbar,.qcard,.fc-sum,.flash,.perf,.how,.admin-form,.vazio,.ap:not(:has(> .paginas)){
+  -webkit-backdrop-filter:blur(18px) saturate(160%);backdrop-filter:blur(18px) saturate(160%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.07),0 10px 30px rgba(0,0,0,.25)}
+.flash{background:linear-gradient(160deg,rgba(255,255,255,.09),rgba(255,255,255,.035));border-color:rgba(255,255,255,.14);box-shadow:inset 0 1px 0 rgba(255,255,255,.12),var(--lift)}
+
+/* títulos e detalhes neon */
+h1.big{color:var(--title)}
+.eyebrow,.sec{color:#8FA3C8}
+.row:hover{background:rgba(255,255,255,.035)}
+
+/* botões */
+.btn{background:linear-gradient(135deg,#0FB4F5,#6A5CFF);border-color:rgba(255,255,255,.14);box-shadow:0 6px 20px rgba(60,120,255,.28),inset 0 1px 0 rgba(255,255,255,.25)}
+.btn:hover{filter:brightness(1.1)}
+.btn.ghost,.btn.google{background:rgba(255,255,255,.06);color:var(--accent);border-color:var(--line-strong);box-shadow:none}
+.btn.danger{background:var(--bad-soft);color:var(--bad);border-color:var(--bad-line);box-shadow:none}
+.btn-white{background:rgba(255,255,255,.92);color:#121530}
+
+/* cartão de destaque (revisões do dia) */
+.review{background:linear-gradient(135deg,rgba(0,184,240,.85),rgba(106,92,255,.85) 55%,rgba(233,47,192,.8));box-shadow:0 16px 44px rgba(90,80,255,.35),inset 0 1px 0 rgba(255,255,255,.3)}
+.review::after{background:rgba(255,255,255,.10);border-color:rgba(255,255,255,.3)}
+
+/* abas, alternativas e barras */
+.segm{border:1px solid var(--line)}
+.segm button.on{box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 2px 8px rgba(0,0,0,.3)}
+.opt.sel{box-shadow:0 0 0 1px var(--accent-line),0 0 18px rgba(79,221,255,.15)}
+.opt.sel .l{background:linear-gradient(135deg,#0FB4F5,#6A5CFF);border-color:transparent}
+.tabbar{background:var(--glass);border-color:var(--glass-line)}
+
+/* tela de entrada no mesmo clima */
+.tela-entrar{--lg-bg:#05060E;--lg-vidro:rgba(18,20,38,.5);--lg-borda:rgba(255,255,255,.14);--lg-campo:rgba(255,255,255,.06);--lg-linha:rgba(255,255,255,.12);--lg-sombra:0 30px 80px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,255,255,.1)}
+.lg-fundo .o1{background:radial-gradient(circle,#00C2FF 0%,transparent 65%)}
+.lg-fundo .o2{background:radial-gradient(circle,#7B5CFF 0%,transparent 65%)}
+.lg-fundo .o3{background:radial-gradient(circle,#FF2EC4 0%,transparent 65%);opacity:.4}
+.lg-campos:focus-within .lg-ir,.lg-ir:hover{background:linear-gradient(135deg,#0FB4F5,#6A5CFF);border-color:transparent}
