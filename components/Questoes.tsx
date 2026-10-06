@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useMemo, useState } from 'react'
+import { explicacoesPorAlternativa } from '@/lib/explicacoes'
 import { createClient } from '@/lib/supabase/client'
 import type { QuestaoAluno } from '@/lib/dados'
 import { plural } from '@/lib/formato'
@@ -41,6 +42,7 @@ export function Questoes({ questoes, userId, ativo, mostrarTema = true, vazio, a
   const q = questoes[idx]
   const resp = q ? respostas[q.id] : undefined
   const revelada = Boolean(resp) && !refazendo
+  const expl = explicacoesPorAlternativa(q?.por_que_erradas ?? null)
 
   function irPara(i: number) {
     setIdx(i)
@@ -226,7 +228,13 @@ export function Questoes({ questoes, userId, ativo, mostrarTema = true, vazio, a
                 }}
               >
                 <span className="l">{LETRAS[i]}</span>
-                <span className="ot">{texto}</span>
+                <span className="ot">
+                  {texto}
+                  {revelada && resp && i === q.correta && q.comentario && (
+                    <span className="oexp certa">{q.comentario}</span>
+                  )}
+                  {revelada && resp && i !== q.correta && expl.porAlt[i] && <span className="oexp">{expl.porAlt[i]}</span>}
+                </span>
               </button>
             )
           })}
@@ -242,22 +250,13 @@ export function Questoes({ questoes, userId, ativo, mostrarTema = true, vazio, a
                   : `Você marcou ${LETRAS[resp.escolhida]}. A resposta é ${LETRAS[q.correta]}.`}
               </span>
             </div>
-            {q.comentario && (
-              <div className="coment">
-                <div className="kick">
-                  <span className="dot" />
-                  Comentário
-                </div>
-                <p>{q.comentario}</p>
-              </div>
-            )}
-            {q.por_que_erradas && (
+            {expl.resto && (
               <div className="erradas">
                 <div className="kick">
                   <span className="dot" />
-                  Por que as outras estão erradas
+                  Sobre as alternativas
                 </div>
-                <p>{q.por_que_erradas}</p>
+                <p>{expl.resto}</p>
               </div>
             )}
             <div className="actions">
