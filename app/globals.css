@@ -665,3 +665,18 @@ h1.big.saudacao{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .ed-q .ed-bloco{border:0;border-radius:0;background:none}
 select.campo{appearance:auto}
 select.campo option,select.campo optgroup{background:#161824;color:#F2F5FF}
+
+/* Cortar alternativa: faixa embutida à direita do card (só antes de responder) */
+.optw{display:flex;align-items:stretch;border:1px solid var(--line);border-radius:var(--r-md);background:var(--card);overflow:hidden}
+.optw .opt,.optw .opt.sel,.optw .opt:hover:not([disabled]){flex:1;min-width:0;border:0;border-radius:0;background:transparent;box-shadow:none}
+.optw:has(.opt:hover:not([disabled])){border-color:var(--accent-line);background:var(--card-2)}
+.optw.sel{border-color:var(--accent);background:var(--accent-soft);box-shadow:0 0 0 1px var(--accent-line),0 0 18px rgba(79,221,255,.15)}
+.elim{flex:none;width:52px;border:0;border-left:1px solid var(--line);background:rgba(255,255,255,.025);display:grid;place-items:center;align-content:center;gap:2px;color:var(--muted);cursor:pointer;padding:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+.elim svg{width:17px;height:17px;stroke-width:2}
+.elim:hover{color:var(--ink);background:rgba(255,255,255,.06)}
+.optw.sel .elim{border-left-color:var(--accent-line)}
+.optw.cortada{border-style:dashed;background:transparent}
+.optw.cortada .opt{opacity:.45}
+.optw.cortada .opt .ot{color:var(--text);text-decoration:line-through;text-decoration-color:rgba(255,92,138,.8);text-decoration-thickness:1.5px}
+.optw.cortada .elim{color:var(--accent);background:var(--accent-soft);border-left:1px dashed var(--accent-line)}
+.cort-tag{display:inline-block;font-size:10.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:2px 7px;border-radius:7px;margin-right:7px;vertical-align:1.5px;background:rgba(255,255,255,.1);color:var(--muted)}

@@ -68,4 +68,17 @@ export const Icone = {
       <path d="M4.5 7l7.5 6 7.5-6" />
     </>,
   ),
+  tesoura: svg(
+    <>
+      <circle cx="6" cy="6" r="3" />
+      <circle cx="6" cy="18" r="3" />
+      <path d="M20 4 8.12 15.88M14.47 14.48 20 20M8.12 8.12 12 12" />
+    </>,
+  ),
+  desfazer: svg(
+    <>
+      <path d="M3 12a9 9 0 1 0 3-6.7L3 8" />
+      <path d="M3 3v5h5" />
+    </>,
+  ),
 }
