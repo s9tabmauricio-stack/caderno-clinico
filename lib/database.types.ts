@@ -133,6 +133,18 @@ export type Database = {
         Update: { admin?: boolean; criado_em?: string; id?: string; nome?: string | null; grupo?: number | null }
         Relationships: []
       }
+      recados: {
+        Row: { id: string; questao_id: string; user_id: string; autor: string; tipo: string; texto: string; status: string; criado_em: string }
+        Insert: { id?: string; questao_id: string; user_id?: string; autor?: string; tipo: string; texto: string; status?: string; criado_em?: string }
+        Update: { id?: string; questao_id?: string; user_id?: string; autor?: string; tipo?: string; texto?: string; status?: string; criado_em?: string }
+        Relationships: []
+      }
+      recados_uteis: {
+        Row: { recado_id: string; user_id: string }
+        Insert: { recado_id: string; user_id?: string }
+        Update: { recado_id?: string; user_id?: string }
+        Relationships: []
+      }
       questoes: {
         Row: {
           alternativas: Json

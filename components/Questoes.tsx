@@ -6,6 +6,7 @@ import { createClient } from '@/lib/supabase/client'
 import type { QuestaoAluno } from '@/lib/dados'
 import { plural } from '@/lib/formato'
 import { Icone } from './Icones'
+import { ConversaTurma } from './ConversaTurma'
 
 export type Resposta = NonNullable<QuestaoAluno['resposta']>
 const LETRAS = 'ABCDEFGH'
@@ -325,6 +326,7 @@ export function Questoes({ questoes, userId, ativo, mostrarTema = true, vazio, a
           </>
         )}
       </div>
+      {revelada && <ConversaTurma key={q.id} questaoId={q.id} userId={userId} />}
       {aviso}
     </div>
   )
