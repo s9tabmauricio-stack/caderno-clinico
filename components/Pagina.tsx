@@ -7,7 +7,7 @@ export function Pagina({ pendentes, children }: { pendentes: number; children: R
   return (
     <>
       <main className="wrap">
-        <Link className="avatar engrenagem" href="/perfil" aria-label="Perfil e configurações">
+        <Link className="avatar engrenagem" href="/perfil" aria-label="Configurações">
           {Icone.engrenagem}
         </Link>
         <div className="view">{children}</div>

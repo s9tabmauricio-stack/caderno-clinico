@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { carregarMaterias, carregarProgresso, pendentes, sessao } from '@/lib/dados'
 import { ehAdmin } from '@/lib/admin'
 
-export const metadata: Metadata = { title: 'Perfil' }
+export const metadata: Metadata = { title: 'Configurações' }
 
 export default async function PerfilPage() {
   const { supabase, userId, email } = await sessao()
@@ -24,8 +24,7 @@ export default async function PerfilPage() {
     <Pagina pendentes={pendentes(progresso).hoje}>
       <header className="top">
         <div>
-          <div className="eyebrow">Conta</div>
-          <h1 className="big">Perfil</h1>
+          <h1 className="big">Configurações</h1>
         </div>
       </header>
 

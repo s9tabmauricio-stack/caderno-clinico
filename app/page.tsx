@@ -104,7 +104,7 @@ export default async function Inicio() {
       <AgendaAvisos eventos={canceladasHoje} />
       {grupo === null && agendaHoje.length > 0 && (
         <p className="foot">
-          <Link href="/perfil">Informe seu grupo de prática no Perfil</Link> para ver só as suas práticas.
+          <Link href="/perfil">Informe seu grupo de prática em Configurações</Link> para ver só as suas práticas.
         </p>
       )}
 

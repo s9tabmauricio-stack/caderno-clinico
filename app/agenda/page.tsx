@@ -42,7 +42,7 @@ export default async function AgendaPage() {
 
       {grupo === null && (
         <p className="foot">
-          <Link href="/perfil">Informe seu grupo de prática no Perfil</Link> para filtrar as suas práticas.
+          <Link href="/perfil">Informe seu grupo de prática em Configurações</Link> para filtrar as suas práticas.
         </p>
       )}
     </Pagina>

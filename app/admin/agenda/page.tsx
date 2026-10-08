@@ -14,7 +14,7 @@ export default async function AdminAgendaPage() {
 
   return (
     <Pagina pendentes={0}>
-      <Voltar href="/perfil" rotulo="Perfil" />
+      <Voltar href="/perfil" rotulo="Configurações" />
       <header className="top">
         <div>
           <div className="eyebrow">Administração</div>

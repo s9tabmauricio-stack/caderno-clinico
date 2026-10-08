@@ -15,7 +15,7 @@ export default async function AdminPage() {
   if (!chaveConfigurada()) {
     return (
       <Pagina pendentes={0}>
-        <Voltar href="/perfil" rotulo="Perfil" />
+        <Voltar href="/perfil" rotulo="Configurações" />
         <header className="top">
           <h1 className="big">Alunos</h1>
         </header>
@@ -44,7 +44,7 @@ export default async function AdminPage() {
 
   return (
     <Pagina pendentes={0}>
-      <Voltar href="/perfil" rotulo="Perfil" />
+      <Voltar href="/perfil" rotulo="Configurações" />
       <header className="top">
         <div>
           <div className="eyebrow">Administração</div>
