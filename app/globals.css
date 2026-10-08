@@ -664,3 +664,4 @@ h1.big.saudacao{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .ed-q[open] summary{border-bottom:1px solid var(--line)}
 .ed-q .ed-bloco{border:0;border-radius:0;background:none}
 select.campo{appearance:auto}
+select.campo option,select.campo optgroup{background:#161824;color:#F2F5FF}
