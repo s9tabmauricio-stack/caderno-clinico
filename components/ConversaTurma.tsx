@@ -121,10 +121,10 @@ export function ConversaTurma({ questaoId, userId }: { questaoId: string; userId
         const sit = r.tipo === 'erro' ? situacaoErro(r.status) : null
         return (
           <div key={r.id} className={`msg${meu ? ' meu' : ''}`}>
-            <div className={`av ${r.tipo === 'erro' ? 'err' : ''}`}>{r.autor.charAt(0).toUpperCase()}</div>
+            <div className={`av ${r.tipo === 'erro' ? 'erro' : ''}`}>{r.autor.charAt(0).toUpperCase()}</div>
             <div className="mb">
               <div className="mh">
-                <span className={`tag ${r.tipo === 'erro' ? 'err' : 'ins'}`}>
+                <span className={`tag ${r.tipo === 'erro' ? 'erro' : 'ins'}`}>
                   {r.tipo === 'erro' ? '⚠️' : '💡'} {meu ? (r.tipo === 'erro' ? 'Você achou um erro' : 'Você deixou uma dica') : tituloRecado(r)}
                 </span>
                 <span className="when">{fmtHa(r.criado_em)}</span>
@@ -167,7 +167,7 @@ export function ConversaTurma({ questaoId, userId }: { questaoId: string; userId
           <button type="button" className={`tipo ins${tipo === 'insight' ? ' on' : ''}`} aria-pressed={tipo === 'insight'} onClick={() => setTipo(tipo === 'insight' ? null : 'insight')}>
             <span className="e">💡</span>Insight para os colegas
           </button>
-          <button type="button" className={`tipo err${tipo === 'erro' ? ' on' : ''}`} aria-pressed={tipo === 'erro'} onClick={() => setTipo(tipo === 'erro' ? null : 'erro')}>
+          <button type="button" className={`tipo erro${tipo === 'erro' ? ' on' : ''}`} aria-pressed={tipo === 'erro'} onClick={() => setTipo(tipo === 'erro' ? null : 'erro')}>
             <span className="e">⚠️</span>Erro na questão
           </button>
         </div>

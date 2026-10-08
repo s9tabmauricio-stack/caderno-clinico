@@ -116,7 +116,7 @@ export default async function RecadosPage(props: PageProps<'/admin/recados'>) {
             <article key={r.id} className={`rec${r.status === 'novo' ? ' novo' : ''}`}>
               <div className="mh">
                 {r.status === 'novo' && <span className="dotn" aria-label="Novo" />}
-                <span className={`tag ${r.tipo === 'erro' ? 'err' : 'ins'}`}>
+                <span className={`tag ${r.tipo === 'erro' ? 'erro' : 'ins'}`}>
                   {r.tipo === 'erro' ? '⚠️' : '💡'} {tituloRecado(r)}
                 </span>
                 <span className="when">{fmtHa(r.criado_em)}</span>

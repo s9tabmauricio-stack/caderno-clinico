@@ -689,12 +689,12 @@ select.campo option,select.campo optgroup{background:#161824;color:#F2F5FF}
 .msg{display:flex;gap:10px;padding:12px 0;border-top:1px solid var(--line-2)}
 .turma-sub+.msg{border-top:0}
 .msg .av{flex:none;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-weight:700;font-size:14px;color:#fff;background:linear-gradient(135deg,#FFC93C,#FF8A3D)}
-.msg .av.err{background:linear-gradient(135deg,#FF5C8A,#B04DFF)}
+.msg .av.erro{background:linear-gradient(135deg,#FF5C8A,#B04DFF)}
 .msg .mb{flex:1;min-width:0}
 .msg .mh{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 .tag{font-size:12px;font-weight:700;padding:3px 9px;border-radius:999px;display:inline-flex;gap:5px;align-items:center}
 .tag.ins{background:rgba(255,213,79,.13);color:#FFD54F;border:1px solid rgba(255,213,79,.35)}
-.tag.err{background:var(--bad-soft);color:#FF7A9E;border:1px solid var(--bad-line)}
+.tag.erro{background:var(--bad-soft);color:#FF7A9E;border:1px solid var(--bad-line)}
 .msg .when{font-size:12px;color:var(--muted)}
 .msg .mt{margin:5px 0 0;font-size:14.5px;line-height:1.5;color:var(--text);white-space:pre-line;overflow-wrap:anywhere}
 .situacao{display:inline-block;margin-top:7px;font-size:12px;font-weight:600;padding:3px 9px;border-radius:8px;background:var(--seg);color:var(--muted)}
@@ -712,7 +712,7 @@ select.campo option,select.campo optgroup{background:#161824;color:#F2F5FF}
 .tipo .e{font-size:17px}
 .tipo:hover{background:rgba(255,255,255,.06)}
 .tipo.ins.on{border-color:rgba(255,213,79,.6);background:rgba(255,213,79,.1);color:#FFD54F;box-shadow:0 0 16px rgba(255,213,79,.12)}
-.tipo.err.on{border-color:#FF5C8A;background:rgba(255,92,138,.12);color:#FF9FB6;box-shadow:0 0 16px rgba(255,92,138,.15)}
+.tipo.erro.on{border-color:#FF5C8A;background:rgba(255,92,138,.12);color:#FF9FB6;box-shadow:0 0 16px rgba(255,92,138,.15)}
 .turma-campo{margin-top:10px;min-height:84px;resize:vertical;font-size:15px;line-height:1.45}
 .turma-dica{font-size:12.5px;color:var(--muted);margin:8px 2px 0}
 .turma-dica b.erro{color:#FF9FB6}
