@@ -2,17 +2,22 @@ import type { Metadata } from 'next'
 import { Pagina } from '@/components/Pagina'
 import { PerfilAcoes } from '@/components/PerfilAcoes'
 import Link from 'next/link'
-import { carregarProgresso, pendentes, sessao } from '@/lib/dados'
+import { carregarMaterias, carregarProgresso, pendentes, sessao } from '@/lib/dados'
 import { ehAdmin } from '@/lib/admin'
 
 export const metadata: Metadata = { title: 'Perfil' }
 
 export default async function PerfilPage() {
   const { supabase, userId, email } = await sessao()
-  const [perfil, progresso] = await Promise.all([
+  const [perfil, progresso, materias] = await Promise.all([
     supabase.from('perfis').select('nome, grupo').eq('id', userId).maybeSingle(),
     carregarProgresso(supabase),
+    carregarMaterias(supabase),
   ])
+  // Aulas agrupadas na ordem das matérias, para o seletor de "Apagar progresso"
+  const aulas = materias.flatMap((m) =>
+    progresso.filter((a) => a.materia_id === m.id).map((a) => ({ id: a.aula_id, titulo: a.titulo, materiaId: m.id })),
+  )
   const nome = perfil.data?.nome || (/^\d{11}$/.test(email.split('@')[0]) ? 'Aluno' : email.split('@')[0])
 
   return (
@@ -24,7 +29,14 @@ export default async function PerfilPage() {
         </div>
       </header>
 
-      <PerfilAcoes userId={userId} nomeInicial={nome} email={email} grupoInicial={perfil.data?.grupo ?? null} />
+      <PerfilAcoes
+        userId={userId}
+        nomeInicial={nome}
+        email={email}
+        grupoInicial={perfil.data?.grupo ?? null}
+        materias={materias}
+        aulas={aulas}
+      />
 
       {ehAdmin(email) && (
         <>

@@ -5,16 +5,23 @@ import { useRouter } from 'next/navigation'
 import { createClient } from '@/lib/supabase/client'
 import { cpfDoEmail, formatarCpf } from '@/lib/cpf'
 
+type OQue = 'ambos' | 'questoes' | 'flashcards'
+type Onde = 'tudo' | 'materia' | 'aula'
+
 export function PerfilAcoes({
   userId,
   nomeInicial,
   email,
   grupoInicial,
+  materias,
+  aulas,
 }: {
   userId: string
   nomeInicial: string
   email: string
   grupoInicial: number | null
+  materias: { id: string; nome: string }[]
+  aulas: { id: string; titulo: string; materiaId: string }[]
 }) {
   const supabase = useMemo(() => createClient(), [])
   const router = useRouter()
@@ -22,6 +29,9 @@ export function PerfilAcoes({
   const [msgNome, setMsgNome] = useState<{ ok: boolean; texto: string } | null>(null)
   const [confirmar, setConfirmar] = useState(false)
   const [msgApagar, setMsgApagar] = useState<{ ok: boolean; texto: string } | null>(null)
+  const [oQue, setOQue] = useState<OQue>('ambos')
+  const [onde, setOnde] = useState<Onde>('tudo')
+  const [alvo, setAlvo] = useState('')
   const [grupo, setGrupo] = useState(grupoInicial ? String(grupoInicial) : '')
   const [msgGrupo, setMsgGrupo] = useState<{ ok: boolean; texto: string } | null>(null)
 
@@ -82,16 +92,63 @@ export function PerfilAcoes({
     if (!error) router.refresh()
   }
 
+  // Texto que descreve o que vai ser apagado, ex.: "as respostas das questões de Nefrologia"
+  const aulasDaMateria = aulas.filter((a) => a.materiaId === alvo).map((a) => a.id)
+  const alvoNome =
+    onde === 'materia' ? materias.find((m) => m.id === alvo)?.nome : aulas.find((a) => a.id === alvo)?.titulo
+  const descricaoApagar = [
+    oQue === 'questoes'
+      ? 'as respostas das questões'
+      : oQue === 'flashcards'
+        ? 'as revisões dos flashcards'
+        : 'as respostas das questões e as revisões dos flashcards',
+    onde === 'tudo' ? 'de todas as matérias' : onde === 'materia' ? `de ${alvoNome}` : `da aula ${alvoNome}`,
+  ].join(' ')
+  const pronto = onde === 'tudo' || alvo !== ''
+
   async function apagarProgresso() {
-    const [r1, r2] = await Promise.all([
-      supabase.from('respostas').delete().eq('user_id', userId),
-      supabase.from('revisoes').delete().eq('user_id', userId),
-    ])
+    let falhou = false
+
+    if (oQue !== 'flashcards') {
+      let ids: string[] | null = null
+      if (onde !== 'tudo') {
+        const busca = supabase.from('questoes').select('id')
+        const { data, error } = await (onde === 'materia' ? busca.eq('materia_id', alvo) : busca.eq('aula_id', alvo))
+        falhou ||= Boolean(error)
+        ids = (data ?? []).map((r) => r.id)
+      }
+      if (!falhou && (ids === null || ids.length > 0)) {
+        const del = supabase.from('respostas').delete().eq('user_id', userId)
+        const { error } = await (ids ? del.in('questao_id', ids) : del)
+        falhou ||= Boolean(error)
+      }
+    }
+
+    if (oQue !== 'questoes' && !falhou) {
+      let ids: string[] | null = null
+      if (onde !== 'tudo') {
+        const { data, error } = await supabase
+          .from('flashcards')
+          .select('id')
+          .in('aula_id', onde === 'materia' ? aulasDaMateria : [alvo])
+        falhou ||= Boolean(error)
+        ids = (data ?? []).map((r) => r.id)
+      }
+      if (!falhou && (ids === null || ids.length > 0)) {
+        const del = supabase.from('revisoes').delete().eq('user_id', userId)
+        const { error } = await (ids ? del.in('flashcard_id', ids) : del)
+        falhou ||= Boolean(error)
+      }
+    }
+
     setConfirmar(false)
     setMsgApagar(
-      r1.error || r2.error
-        ? { ok: false, texto: 'Não deu para apagar tudo. Confira a internet e tente de novo.' }
-        : { ok: true, texto: 'Progresso apagado. Você começa do zero.' },
+      falhou
+        ? {
+            ok: false,
+            texto: 'Não deu para apagar tudo. Parte pode já ter sido apagada; confira a internet e tente de novo.',
+          }
+        : { ok: true, texto: `Apagado: ${descricaoApagar}.` },
     )
     router.refresh()
   }
@@ -206,12 +263,105 @@ export function PerfilAcoes({
         </p>
       )}
 
-      <div className="sec">Progresso</div>
-      <div className="group">
-        {confirmar ? (
+      <div className="sec">Apagar progresso</div>
+      <form
+        className="apagar-form"
+        onSubmit={(e) => {
+          e.preventDefault()
+          if (!pronto) return
+          setConfirmar(true)
+          setMsgApagar(null)
+        }}
+        noValidate
+      >
+        <label htmlFor="apagar-o-que" className="rotulo">
+          O que apagar
+        </label>
+        <select
+          id="apagar-o-que"
+          className="campo"
+          value={oQue}
+          onChange={(e) => {
+            setOQue(e.target.value as OQue)
+            setConfirmar(false)
+          }}
+        >
+          <option value="ambos">Questões e flashcards</option>
+          <option value="questoes">Só questões</option>
+          <option value="flashcards">Só flashcards</option>
+        </select>
+
+        <label htmlFor="apagar-onde" className="rotulo">
+          De onde
+        </label>
+        <select
+          id="apagar-onde"
+          className="campo"
+          value={onde}
+          onChange={(e) => {
+            setOnde(e.target.value as Onde)
+            setAlvo('')
+            setConfirmar(false)
+          }}
+        >
+          <option value="tudo">Todas as matérias</option>
+          <option value="materia">Uma matéria</option>
+          <option value="aula">Uma aula</option>
+        </select>
+
+        {onde === 'materia' && (
+          <>
+            <label htmlFor="apagar-materia" className="rotulo">
+              Matéria
+            </label>
+            <select
+              id="apagar-materia"
+              className="campo"
+              value={alvo}
+              onChange={(e) => setAlvo(e.target.value)}
+            >
+              <option value="">Escolha a matéria</option>
+              {materias.map((m) => (
+                <option key={m.id} value={m.id}>
+                  {m.nome}
+                </option>
+              ))}
+            </select>
+          </>
+        )}
+
+        {onde === 'aula' && (
+          <>
+            <label htmlFor="apagar-aula" className="rotulo">
+              Aula
+            </label>
+            <select id="apagar-aula" className="campo" value={alvo} onChange={(e) => setAlvo(e.target.value)}>
+              <option value="">Escolha a aula</option>
+              {materias.map((m) => (
+                <optgroup key={m.id} label={m.nome}>
+                  {aulas
+                    .filter((a) => a.materiaId === m.id)
+                    .map((a) => (
+                      <option key={a.id} value={a.id}>
+                        {a.titulo}
+                      </option>
+                    ))}
+                </optgroup>
+              ))}
+            </select>
+          </>
+        )}
+
+        <button className="btn danger wide" type="submit" disabled={!pronto}>
+          Apagar
+        </button>
+      </form>
+
+      {confirmar && (
+        <div className="group">
           <div className="row static confirm">
             <span className="main">
-              <span className="t">Apagar todas as suas respostas e revisões?</span>
+              <span className="t">Apagar {descricaoApagar}?</span>
               <span className="s">Não dá para desfazer.</span>
             </span>
             <button className="btn ghost sm" onClick={() => setConfirmar(false)}>
@@ -221,21 +371,8 @@ export function PerfilAcoes({
               Apagar
             </button>
           </div>
-        ) : (
-          <button
-            className="row"
-            onClick={() => {
-              setConfirmar(true)
-              setMsgApagar(null)
-            }}
-          >
-            <span className="main">
-              <span className="t danger">Apagar meu progresso</span>
-              <span className="s">Zera questões respondidas e flashcards estudados.</span>
-            </span>
-          </button>
-        )}
-      </div>
+        </div>
+      )}
       {msgApagar && (
         <p className={msgApagar.ok ? 'ok-msg' : 'err'} role="status">
           {msgApagar.texto}

@@ -320,6 +320,9 @@ a.row:hover{background:var(--card-2)}
 .linha-form{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
 .linha-form .campo{flex:1 1 200px}
 .senha-form .btn{justify-self:start}
+.apagar-form{display:grid;gap:8px}
+.apagar-form .rotulo{font-size:13px;color:var(--muted);margin-top:6px}
+.apagar-form .btn:disabled{opacity:.45;cursor:default}
 .admin-form{background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);padding:16px}
 .admin-form .btn{justify-self:start}
 .admin-form .flabel{margin-top:4px}
