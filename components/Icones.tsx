@@ -56,6 +56,12 @@ export const Icone = {
       <path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5" />
     </>,
   ),
+  lixeira: svg(
+    <>
+      <path d="M4.5 7h15M9.5 7V5a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v2" />
+      <path d="M6.5 7l.8 11.5a1.5 1.5 0 0 0 1.5 1.4h6.4a1.5 1.5 0 0 0 1.5-1.4L17.5 7" />
+    </>,
+  ),
   email: svg(
     <>
       <rect x="3.5" y="5.5" width="17" height="13" rx="2.5" />
