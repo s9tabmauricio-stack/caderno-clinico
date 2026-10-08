@@ -4,6 +4,7 @@ import { Pagina, Voltar } from '@/components/Pagina'
 import { AulaAbas, type Aba } from '@/components/AulaAbas'
 import { carregarProgresso, carregarProgressoMaterias, paraCard, paraQuestao, pendentes, sessao } from '@/lib/dados'
 import { createClient } from '@/lib/supabase/server'
+import { ehAdmin } from '@/lib/admin'
 
 export async function generateMetadata(props: PageProps<'/aula/[id]'>): Promise<Metadata> {
   const { id } = await props.params
@@ -17,7 +18,7 @@ export default async function AulaPage(props: PageProps<'/aula/[id]'>) {
   const { aba } = await props.searchParams
   const abaInicial: Aba = aba === 'questoes' || aba === 'flashcards' ? aba : 'apostila'
 
-  const { supabase, userId } = await sessao()
+  const { supabase, userId, email } = await sessao()
   const [aula, questoes, cards, progresso, banco] = await Promise.all([
     supabase
       .from('aulas')
@@ -44,6 +45,10 @@ export default async function AulaPage(props: PageProps<'/aula/[id]'>) {
   const materiaNome = aula.data.materias?.nome ?? 'Matéria'
   const materiaId = aula.data.materia_id
   const totalBanco = banco.find((b) => b.materia_id === materiaId)?.total_questoes ?? 0
+  // Administrador: botão Editar nas questões
+  const edicao = ehAdmin(email)
+    ? { aulas: (await supabase.from('aulas').select('id, titulo').eq('materia_id', materiaId).order('ordem')).data ?? [] }
+    : undefined
 
   return (
     <Pagina pendentes={pendentes(progresso).hoje}>
@@ -65,6 +70,7 @@ export default async function AulaPage(props: PageProps<'/aula/[id]'>) {
         userId={userId}
         materiaId={materiaId}
         totalBanco={totalBanco}
+        edicao={edicao}
       />
     </Pagina>
   )

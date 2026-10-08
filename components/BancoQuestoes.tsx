@@ -19,7 +19,15 @@ function filtrar(lista: QuestaoAluno[], f: Filtros) {
   )
 }
 
-export function BancoQuestoes({ questoes, userId }: { questoes: QuestaoAluno[]; userId: string }) {
+export function BancoQuestoes({
+  questoes,
+  userId,
+  edicao,
+}: {
+  questoes: QuestaoAluno[]
+  userId: string
+  edicao?: { aulas: { id: string; titulo: string }[] }
+}) {
   // Respostas dadas nesta visita (o resto veio do servidor)
   const [extras, setExtras] = useState<Record<string, Resposta | null>>({})
   const [filtros, setFiltros] = useState<Filtros>({ tema: null, prova: null, situacao: 'todas' })
@@ -112,6 +120,7 @@ export function BancoQuestoes({ questoes, userId }: { questoes: QuestaoAluno[]; 
         userId={userId}
         ativo
         mostrarTema={!filtros.tema}
+        edicao={edicao}
         vazio={
           filtros.situacao === 'erradas'
             ? 'Nenhuma questão errada neste filtro. Bom sinal.'

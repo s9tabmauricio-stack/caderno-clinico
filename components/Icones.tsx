@@ -68,6 +68,7 @@ export const Icone = {
       <path d="M4.5 7l7.5 6 7.5-6" />
     </>,
   ),
+  lapis: svg(<path d="M4 20h4L19 9a2.8 2.8 0 0 0-4-4L4 16v4zM13.5 6.5l4 4" />),
   tesoura: svg(
     <>
       <circle cx="6" cy="6" r="3" />
