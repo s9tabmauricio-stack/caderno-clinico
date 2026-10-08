@@ -7,6 +7,7 @@ import type { QuestaoAluno } from '@/lib/dados'
 import { plural } from '@/lib/formato'
 import { Icone } from './Icones'
 import { ConversaTurma } from './ConversaTurma'
+import { EditorQuestao } from './admin/Editores'
 
 export type Resposta = NonNullable<QuestaoAluno['resposta']>
 const LETRAS = 'ABCDEFGH'
@@ -25,9 +26,11 @@ type Props = {
   vazio?: string
   // avisa quem está em volta (o banco de questões) quando uma resposta muda
   aoResponder?: (id: string, resposta: Resposta | null) => void
+  // só para o administrador: botão Editar na questão (aulas da matéria para o seletor)
+  edicao?: { aulas: { id: string; titulo: string }[] }
 }
 
-export function Questoes({ questoes, userId, ativo, mostrarTema = true, vazio, aoResponder }: Props) {
+export function Questoes({ questoes, userId, ativo, mostrarTema = true, vazio, aoResponder, edicao }: Props) {
   const supabase = useMemo(() => createClient(), [])
   const [respostas, setRespostas] = useState<Record<string, Resposta>>(() =>
     Object.fromEntries(questoes.filter((q) => q.resposta).map((q) => [q.id, q.resposta as Resposta])),
@@ -41,6 +44,7 @@ export function Questoes({ questoes, userId, ativo, mostrarTema = true, vazio, a
   // alternativas que o aluno cortou (só enquanto está nesta questão)
   const [cortadas, setCortadas] = useState<number[]>([])
   const [refazendo, setRefazendo] = useState(false)
+  const [editando, setEditando] = useState(false)
   const [erro, setErro] = useState('')
   const [falhaSalvar, setFalhaSalvar] = useState('')
 
@@ -54,6 +58,7 @@ export function Questoes({ questoes, userId, ativo, mostrarTema = true, vazio, a
     setEscolha(null)
     setCortadas([])
     setRefazendo(false)
+    setEditando(false)
     setErro('')
   }
 
@@ -105,7 +110,7 @@ export function Questoes({ questoes, userId, ativo, mostrarTema = true, vazio, a
 
   // Atalhos: A a E (ou 1 a 5) escolhem, Shift + letra corta, Enter responde ou avança
   useEffect(() => {
-    if (!ativo) return
+    if (!ativo || editando) return
     function tecla(e: KeyboardEvent) {
       const alvo = e.target as HTMLElement
       if (e.metaKey || e.ctrlKey || e.altKey || alvo.closest('input, textarea, button, a')) return
@@ -219,110 +224,135 @@ export function Questoes({ questoes, userId, ativo, mostrarTema = true, vazio, a
     <div>
       {cabecalho}
       <div className="qcard">
-        {(q.fonte || (mostrarTema && q.tema) || (q.origem && ORIGEM[q.origem])) && (
+        {(q.fonte || (mostrarTema && q.tema) || (q.origem && ORIGEM[q.origem]) || edicao) && (
           <div className="qmeta">
             {q.fonte && <span className="fonte">{q.fonte}</span>}
             {mostrarTema && q.tema && <span>{q.tema}</span>}
             {q.origem && ORIGEM[q.origem] && <span className={ORIGEM[q.origem].cls}>{ORIGEM[q.origem].rotulo}</span>}
+            {edicao && (
+              <button
+                type="button"
+                className={`editar-q${editando ? ' on' : ''}`}
+                aria-pressed={editando}
+                onClick={() => setEditando(!editando)}
+              >
+                {editando ? Icone.errado : Icone.lapis}
+                {editando ? 'Fechar edição' : 'Editar'}
+              </button>
+            )}
           </div>
         )}
-        <p className="qtext">{q.enunciado}</p>
-        <div className="opts">
-          {q.alternativas.map((texto, i) => {
-            const cortada = cortadas.includes(i)
-            if (revelada && resp) {
-              // Certa em verde, todas as outras em vermelho; a marcada pelo aluno ganha destaque
-              let cls = i === q.correta ? 'right' : 'wrong'
-              if (i === resp.escolhida) cls += ' minha'
-              return (
-                <button key={i} className={`opt ${cls}`} disabled>
-                  <span className="l">{LETRAS[i]}</span>
-                  <span className="ot">
-                    {i === resp.escolhida && <span className="sua">Sua resposta</span>}
-                    {cortada && <span className="cort-tag">Você cortou</span>}
-                    {texto}
-                    {i === q.correta && q.comentario && <span className="oexp certa">{q.comentario}</span>}
-                    {i !== q.correta && expl.porAlt[i] && <span className="oexp">{expl.porAlt[i]}</span>}
-                  </span>
-                </button>
-              )
-            }
-            const sel = escolha === i
-            return (
-              <div key={i} className={`optw${sel ? ' sel' : ''}${cortada ? ' cortada' : ''}`}>
-                <button
-                  className={`opt${sel ? ' sel' : ''}`}
-                  disabled={cortada}
-                  aria-pressed={sel}
-                  onClick={() => {
-                    setEscolha(i)
-                    setErro('')
-                  }}
-                >
-                  <span className="l">{LETRAS[i]}</span>
-                  <span className="ot">{texto}</span>
-                </button>
-                <button
-                  className="elim"
-                  onClick={() => cortar(i)}
-                  aria-pressed={cortada}
-                  aria-label={cortada ? `Trazer de volta a alternativa ${LETRAS[i]}` : `Cortar a alternativa ${LETRAS[i]}`}
-                >
-                  {cortada ? Icone.desfazer : Icone.tesoura}
-                  <span>{cortada ? 'Voltar' : 'Cortar'}</span>
-                </button>
-              </div>
-            )
-          })}
-        </div>
-
-        {revelada && resp ? (
-          <>
-            <div className={`verdict ${resp.acertou ? 'ok' : 'bad'}`}>
-              {resp.acertou ? Icone.certo : Icone.errado}
-              <span>
-                {resp.acertou
-                  ? 'Você acertou.'
-                  : `Você marcou ${LETRAS[resp.escolhida]}. A resposta é ${LETRAS[q.correta]}.`}
-              </span>
-            </div>
-            {expl.resto && (
-              <div className="erradas">
-                <div className="kick">
-                  <span className="dot" />
-                  Sobre as alternativas
-                </div>
-                <p>{expl.resto}</p>
-              </div>
-            )}
+        {editando && edicao ? (
+          <div className="editar-painel">
+            <p className="editar-aviso">Só você vê isto. O que salvar aqui muda a questão para toda a turma.</p>
+            <EditorQuestao key={q.id} q={q} aulas={edicao.aulas} />
             <div className="actions">
-              <button
-                className="btn ghost"
-                onClick={() => {
-                  setRefazendo(true)
-                  setEscolha(null)
-                  setCortadas([])
-                }}
-              >
-                Refazer esta
-              </button>
-              <button className="btn" onClick={() => irPara(idx + 1)}>
-                {idx === questoes.length - 1 ? 'Ver resultado' : 'Próxima questão'}
+              <button className="btn ghost" onClick={() => setEditando(false)}>
+                Voltar para a questão
               </button>
             </div>
-          </>
+          </div>
         ) : (
           <>
-            {erro && (
-              <p className="err" role="alert">
-                {erro}
-              </p>
-            )}
-            <div className="actions">
-              <button className="btn" onClick={responder}>
-                Responder
-              </button>
+            <p className="qtext">{q.enunciado}</p>
+            <div className="opts">
+              {q.alternativas.map((texto, i) => {
+                const cortada = cortadas.includes(i)
+                if (revelada && resp) {
+                  // Certa em verde, todas as outras em vermelho; a marcada pelo aluno ganha destaque
+                  let cls = i === q.correta ? 'right' : 'wrong'
+                  if (i === resp.escolhida) cls += ' minha'
+                  return (
+                    <button key={i} className={`opt ${cls}`} disabled>
+                      <span className="l">{LETRAS[i]}</span>
+                      <span className="ot">
+                        {i === resp.escolhida && <span className="sua">Sua resposta</span>}
+                        {cortada && <span className="cort-tag">Você cortou</span>}
+                        {texto}
+                        {i === q.correta && q.comentario && <span className="oexp certa">{q.comentario}</span>}
+                        {i !== q.correta && expl.porAlt[i] && <span className="oexp">{expl.porAlt[i]}</span>}
+                      </span>
+                    </button>
+                  )
+                }
+                const sel = escolha === i
+                return (
+                  <div key={i} className={`optw${sel ? ' sel' : ''}${cortada ? ' cortada' : ''}`}>
+                    <button
+                      className={`opt${sel ? ' sel' : ''}`}
+                      disabled={cortada}
+                      aria-pressed={sel}
+                      onClick={() => {
+                        setEscolha(i)
+                        setErro('')
+                      }}
+                    >
+                      <span className="l">{LETRAS[i]}</span>
+                      <span className="ot">{texto}</span>
+                    </button>
+                    <button
+                      className="elim"
+                      onClick={() => cortar(i)}
+                      aria-pressed={cortada}
+                      aria-label={cortada ? `Trazer de volta a alternativa ${LETRAS[i]}` : `Cortar a alternativa ${LETRAS[i]}`}
+                    >
+                      {cortada ? Icone.desfazer : Icone.tesoura}
+                      <span>{cortada ? 'Voltar' : 'Cortar'}</span>
+                    </button>
+                  </div>
+                )
+              })}
             </div>
+
+            {revelada && resp ? (
+              <>
+                <div className={`verdict ${resp.acertou ? 'ok' : 'bad'}`}>
+                  {resp.acertou ? Icone.certo : Icone.errado}
+                  <span>
+                    {resp.acertou
+                      ? 'Você acertou.'
+                      : `Você marcou ${LETRAS[resp.escolhida]}. A resposta é ${LETRAS[q.correta]}.`}
+                  </span>
+                </div>
+                {expl.resto && (
+                  <div className="erradas">
+                    <div className="kick">
+                      <span className="dot" />
+                      Sobre as alternativas
+                    </div>
+                    <p>{expl.resto}</p>
+                  </div>
+                )}
+                <div className="actions">
+                  <button
+                    className="btn ghost"
+                    onClick={() => {
+                      setRefazendo(true)
+                      setEscolha(null)
+                      setCortadas([])
+                    }}
+                  >
+                    Refazer esta
+                  </button>
+                  <button className="btn" onClick={() => irPara(idx + 1)}>
+                    {idx === questoes.length - 1 ? 'Ver resultado' : 'Próxima questão'}
+                  </button>
+                </div>
+              </>
+            ) : (
+              <>
+                {erro && (
+                  <p className="err" role="alert">
+                    {erro}
+                  </p>
+                )}
+                <div className="actions">
+                  <button className="btn" onClick={responder}>
+                    Responder
+                  </button>
+                </div>
+              </>
+            )}
           </>
         )}
       </div>

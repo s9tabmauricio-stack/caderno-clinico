@@ -5,6 +5,7 @@ import { BancoQuestoes } from '@/components/BancoQuestoes'
 import { carregarProgresso, paraQuestao, pendentes, sessao } from '@/lib/dados'
 import { createClient } from '@/lib/supabase/server'
 import { plural } from '@/lib/formato'
+import { ehAdmin } from '@/lib/admin'
 
 export async function generateMetadata(props: PageProps<'/materia/[id]/questoes'>): Promise<Metadata> {
   const { id } = await props.params
@@ -15,7 +16,7 @@ export async function generateMetadata(props: PageProps<'/materia/[id]/questoes'
 
 export default async function BancoPage(props: PageProps<'/materia/[id]/questoes'>) {
   const { id } = await props.params
-  const { supabase, userId } = await sessao()
+  const { supabase, userId, email } = await sessao()
   const [materia, questoes, progresso] = await Promise.all([
     supabase.from('materias').select('id, nome').eq('id', id).maybeSingle(),
     supabase.from('questoes_do_aluno').select('*').eq('materia_id', id).order('prova').order('ordem').limit(1000),
@@ -24,6 +25,10 @@ export default async function BancoPage(props: PageProps<'/materia/[id]/questoes
   if (!materia.data) notFound()
   if (questoes.error) throw new Error(`Não foi possível carregar as questões: ${questoes.error.message}`)
   const lista = (questoes.data ?? []).map(paraQuestao)
+  // Administrador: botão Editar nas questões
+  const edicao = ehAdmin(email)
+    ? { aulas: (await supabase.from('aulas').select('id, titulo').eq('materia_id', id).order('ordem')).data ?? [] }
+    : undefined
 
   return (
     <Pagina pendentes={pendentes(progresso).hoje}>
@@ -39,7 +44,7 @@ export default async function BancoPage(props: PageProps<'/materia/[id]/questoes
         </div>
       </header>
       {lista.length ? (
-        <BancoQuestoes questoes={lista} userId={userId} />
+        <BancoQuestoes questoes={lista} userId={userId} edicao={edicao} />
       ) : (
         <p className="vazio">Esta matéria ainda não tem questões no banco.</p>
       )}

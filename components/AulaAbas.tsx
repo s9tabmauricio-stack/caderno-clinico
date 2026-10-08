@@ -18,9 +18,10 @@ type Props = {
   userId: string
   materiaId: string
   totalBanco: number
+  edicao?: { aulas: { id: string; titulo: string }[] }
 }
 
-export function AulaAbas({ abaInicial, apostilaHtml, pdfUrl, questoes, cards, userId, materiaId, totalBanco }: Props) {
+export function AulaAbas({ abaInicial, apostilaHtml, pdfUrl, questoes, cards, userId, materiaId, totalBanco, edicao }: Props) {
   const [aba, setAba] = useState<Aba>(abaInicial)
 
   function trocar(nova: Aba, rolar = false) {
@@ -92,6 +93,7 @@ export function AulaAbas({ abaInicial, apostilaHtml, pdfUrl, questoes, cards, us
           questoes={questoes}
           userId={userId}
           ativo={aba === 'questoes'}
+          edicao={edicao}
           vazio="Nenhuma questão das provas anteriores é sobre o assunto desta aula. Treine pelo banco de questões da matéria."
         />
         {totalBanco > questoes.length && (
