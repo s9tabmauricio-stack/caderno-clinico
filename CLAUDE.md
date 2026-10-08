@@ -36,8 +36,9 @@ Tudo em português do Brasil. O dono do projeto não é programador: explique em
 - Início: saudação (só o primeiro nome), Revisão de hoje, **Suas aulas hoje** (agenda), Matérias, Seu progresso.
 - Barra de baixo: Início, Agenda, Revisão, Desempenho. Perfil fica na engrenagem do canto superior direito (todas as telas).
 - Aula: abas Apostila / Questões / Flashcards. Matéria: aulas + Banco de questões (filtros por tema e prova).
-- Questões: depois de responder, certa em verde, erradas em vermelho, a marcada em destaque; comentário embaixo da certa e o motivo embaixo de cada errada.
-- Administração (engrenagem → Perfil): **Alunos** (`/admin`), **Conteúdo** (`/admin/conteudo`: editar/apagar aulas, questões, flashcards e limpar versões antigas), **Agenda da semana** (`/admin/agenda`: colar o cronograma do WhatsApp).
+- Questões: antes de responder, cada alternativa tem a faixa "Cortar" (tesoura; Shift + letra), que vale só enquanto o aluno está na questão. Depois de responder, certa em verde, erradas em vermelho, a marcada em destaque; comentário embaixo da certa e o motivo embaixo de cada errada.
+- **Conversa da turma** (embaixo da questão, só depois de responder): o aluno deixa "💡 Insight para os colegas" ou "⚠️ Erro na questão"; aparece como "Augusto deixou uma dica" / "Augusto achou um erro" (sem artigo, vale para qualquer nome). Colegas marcam dica como 👍 Útil; o autor apaga o próprio recado.
+- Administração (engrenagem → Perfil): **Recados da turma** (`/admin/recados`: bolinha rosa na engrenagem com os novos; marcar visto/corrigido, abrir a questão, apagar), **Alunos** (`/admin`), **Conteúdo** (`/admin/conteudo`: editar/apagar aulas, questões, flashcards e limpar versões antigas), **Agenda da semana** (`/admin/agenda`: colar o cronograma do WhatsApp).
 
 ## Banco de dados
 
@@ -46,6 +47,7 @@ Tudo em português do Brasil. O dono do projeto não é programador: explique em
 - `questoes` (`materia_id`, `aula_id` opcional, `ordem`, `enunciado`, `alternativas` jsonb, `correta` = índice 0–4, `comentario`, `por_que_erradas`, `tema`, `prova`, `fonte`, `origem`, `substituida_por`)
 - `flashcards` (id `<aula>-fNN`, `frente`, `verso`, `ordem`)
 - Progresso: `respostas`, `revisoes`; alunos: `perfis` (`nome`, `grupo` de prática 1–29; o aluno só pode alterar `nome` e `grupo`)
+- Recados: `recados` (`questao_id`, `user_id`, `autor` = primeiro nome, preenchido por gatilho; `tipo` `insight`/`erro`; `status` `novo`/`visto`/`corrigido`) e `recados_uteis`. Aluno lê todos, cria e apaga os seus; status só muda pelo admin (chave secreta).
 - Agenda: `agenda_semanas` (segunda-feira da semana) e `agenda_eventos` (aulas, cancelamentos, avisos, `grupos int[]`)
 - Visões usadas pelas telas: `questoes_do_aluno`, `progresso_aulas`, `progresso_materias`, `progresso_temas`, `flashcards_do_aluno`.
   Todas escondem aulas não publicadas e questões com `substituida_por` preenchido.
@@ -55,7 +57,7 @@ Tudo em português do Brasil. O dono do projeto não é programador: explique em
 ### Limite do conector do Supabase (importante)
 
 Pelo conector, **incluir dados e alterações curtas funcionam**; **apagar e reescrever textos longos são cancelados** (trava de confirmação que a sessão não consegue mostrar). Não tente contornar.
-- Corrigir uma questão: inclua uma versão nova (`<id>-v2`, mesma ordem) e marque a antiga com `update ... set substituida_por = '<id>-v2'`. Depois o Mauricio limpa em Conteúdo → Limpeza.
+- Corrigir uma questão: inclua uma versão nova (`<id>-v2`, mesma ordem) e marque a antiga com `update ... set substituida_por = '<id>-v2'`. Leve os recados junto: `update public.recados set questao_id = '<id>-v2' where questao_id = '<id>'`. Depois o Mauricio limpa em Conteúdo → Limpeza (a limpeza também move os recados que sobrarem para a versão nova).
 - Apagar ou ajustar texto: o Mauricio faz em Conteúdo.
 
 ## Como subir uma apostila (o jeito aprovado: páginas iguais ao PDF)

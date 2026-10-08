@@ -9,7 +9,7 @@ export const metadata: Metadata = { title: 'Editar questões' }
 
 export default async function EditarQuestoesPage(props: PageProps<'/admin/conteudo/questoes/[materia]'>) {
   const { materia } = await props.params
-  const { aula } = await props.searchParams
+  const { aula, q: abrir } = await props.searchParams
   const { email } = await sessao()
   if (!ehAdmin(email)) notFound()
   const admin = await clienteAdmin()
@@ -40,7 +40,7 @@ export default async function EditarQuestoesPage(props: PageProps<'/admin/conteu
       {lista.length ? (
         <div className="ed-lista">
           {lista.map((q, i) => (
-            <details key={q.id} className="ed-q">
+            <details key={q.id} id={`q-${q.id}`} className="ed-q" open={q.id === abrir}>
               <summary>
                 <span className="num">{i + 1}</span>
                 <span className="main">

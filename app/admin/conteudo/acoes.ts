@@ -16,9 +16,16 @@ function texto(form: FormData, campo: string) {
   return v || null
 }
 
-/** Apaga questões e tudo que depende delas (respostas e referências de versão). */
+/** Apaga questões e tudo que depende delas (respostas e referências de versão).
+ *  Os recados da turma de uma versão antiga passam para a versão nova. */
 async function apagarQuestoes(admin: Admin, ids: string[]) {
   if (!ids.length) return null
+  const { data: antigas, error: e0 } = await admin.from('questoes').select('id, substituida_por').in('id', ids).not('substituida_por', 'is', null)
+  if (e0) return e0.message
+  for (const q of (antigas ?? []) as { id: string; substituida_por: string }[]) {
+    const r0 = await admin.from('recados').update({ questao_id: q.substituida_por }).eq('questao_id', q.id)
+    if (r0.error) return r0.error.message
+  }
   const r1 = await admin.from('respostas').delete().in('questao_id', ids)
   if (r1.error) return r1.error.message
   const r2 = await admin.from('questoes').update({ substituida_por: null }).in('substituida_por', ids)
