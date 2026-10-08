@@ -321,7 +321,8 @@ a.row:hover{background:var(--card-2)}
 .linha-form .campo{flex:1 1 200px}
 .senha-form .btn{justify-self:start}
 .apagar-form{display:grid;gap:8px}
-.apagar-form .rotulo{font-size:13px;color:var(--muted);margin-top:6px}
+.rotulo{display:block;font-size:12.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:6px}
+.editar-form{display:grid;gap:8px;padding:4px 16px 16px;border-top:1px solid var(--line-2)}
 .apagar-form .btn:disabled{opacity:.45;cursor:default}
 .admin-form{background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);padding:16px}
 .admin-form .btn{justify-self:start}

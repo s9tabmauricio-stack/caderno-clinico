@@ -26,29 +26,39 @@ export function PerfilAcoes({
   const supabase = useMemo(() => createClient(), [])
   const router = useRouter()
   const [nome, setNome] = useState(nomeInicial)
-  const [msgNome, setMsgNome] = useState<{ ok: boolean; texto: string } | null>(null)
+  const [grupo, setGrupo] = useState(grupoInicial ? String(grupoInicial) : '')
+  const [editando, setEditando] = useState(false)
+  const [msgDados, setMsgDados] = useState<{ ok: boolean; texto: string } | null>(null)
   const [confirmar, setConfirmar] = useState(false)
   const [msgApagar, setMsgApagar] = useState<{ ok: boolean; texto: string } | null>(null)
   const [oQue, setOQue] = useState<OQue>('ambos')
   const [onde, setOnde] = useState<Onde>('tudo')
   const [alvo, setAlvo] = useState('')
-  const [grupo, setGrupo] = useState(grupoInicial ? String(grupoInicial) : '')
-  const [msgGrupo, setMsgGrupo] = useState<{ ok: boolean; texto: string } | null>(null)
-
-  async function salvarGrupo(e: React.FormEvent) {
+  async function salvarDados(e: React.FormEvent) {
     e.preventDefault()
+    const v = nome.trim()
     const n = grupo.trim() ? Number(grupo) : null
-    if (n !== null && (!Number.isInteger(n) || n < 1 || n > 99)) {
-      setMsgGrupo({ ok: false, texto: 'Digite o número do grupo, como 7.' })
+    if (!v) {
+      setMsgDados({ ok: false, texto: 'Digite um nome.' })
       return
     }
-    const { error } = await supabase.from('perfis').update({ grupo: n }).eq('id', userId)
-    setMsgGrupo(
-      error
-        ? { ok: false, texto: 'Não deu para salvar o grupo. Tente de novo.' }
-        : { ok: true, texto: n ? `Grupo ${n} salvo. A agenda agora mostra as suas práticas.` : 'Grupo removido.' },
-    )
-    if (!error) router.refresh()
+    if (n !== null && (!Number.isInteger(n) || n < 1 || n > 99)) {
+      setMsgDados({ ok: false, texto: 'Digite o número do grupo, como 7.' })
+      return
+    }
+    const { error } = await supabase.from('perfis').update({ nome: v, grupo: n }).eq('id', userId)
+    setMsgDados(error ? { ok: false, texto: 'Não deu para salvar. Tente de novo.' } : { ok: true, texto: 'Dados salvos.' })
+    if (!error) {
+      setEditando(false)
+      router.refresh()
+    }
+  }
+
+  function cancelarEdicao() {
+    setNome(nomeInicial)
+    setGrupo(grupoInicial ? String(grupoInicial) : '')
+    setEditando(false)
+    setMsgDados(null)
   }
   const [senha, setSenha] = useState('')
   const [senha2, setSenha2] = useState('')
@@ -78,18 +88,6 @@ export function PerfilAcoes({
     setSenha('')
     setSenha2('')
     setMsgSenha({ ok: true, texto: 'Senha trocada. Use a nova senha no próximo acesso.' })
-  }
-
-  async function salvarNome(e: React.FormEvent) {
-    e.preventDefault()
-    const v = nome.trim()
-    if (!v) {
-      setMsgNome({ ok: false, texto: 'Digite um nome.' })
-      return
-    }
-    const { error } = await supabase.from('perfis').update({ nome: v }).eq('id', userId)
-    setMsgNome(error ? { ok: false, texto: 'Não deu para salvar o nome. Tente de novo.' } : { ok: true, texto: 'Nome salvo.' })
-    if (!error) router.refresh()
   }
 
   // Texto que descreve o que vai ser apagado, ex.: "as respostas das questões de Nefrologia"
@@ -162,62 +160,63 @@ export function PerfilAcoes({
           </span>
           <span className="main">
             <span className="t">{nomeInicial}</span>
-            <span className="s">{cpf ? `CPF ${formatarCpf(cpf)}` : email}</span>
+            <span className="s">
+              {cpf ? `CPF ${formatarCpf(cpf)}` : email}
+              {grupoInicial ? ` · Grupo ${grupoInicial}` : ''}
+            </span>
           </span>
+          {!editando && (
+            <button
+              className="btn ghost sm"
+              onClick={() => {
+                setEditando(true)
+                setMsgDados(null)
+              }}
+            >
+              Editar
+            </button>
+          )}
         </div>
+        {editando && (
+          <form className="editar-form" onSubmit={salvarDados} noValidate>
+            <label htmlFor="nome" className="rotulo">
+              Como você quer ser chamado
+            </label>
+            <input
+              id="nome"
+              className="campo"
+              value={nome}
+              maxLength={60}
+              autoComplete="given-name"
+              onChange={(e) => setNome(e.target.value)}
+            />
+            <label htmlFor="grupo" className="rotulo">
+              Seu grupo de prática
+            </label>
+            <input
+              id="grupo"
+              className="campo"
+              inputMode="numeric"
+              placeholder="Ex.: 7"
+              value={grupo}
+              maxLength={2}
+              onChange={(e) => setGrupo(e.target.value.replace(/\D/g, ''))}
+            />
+            <p className="foot">Com o grupo salvo, a agenda mostra as teóricas da turma e só as práticas do seu grupo.</p>
+            <div className="actions">
+              <button className="btn ghost" type="button" onClick={cancelarEdicao}>
+                Cancelar
+              </button>
+              <button className="btn" type="submit">
+                Salvar
+              </button>
+            </div>
+          </form>
+        )}
       </div>
-
-      <div className="sec">Como você quer ser chamado</div>
-      <form className="linha-form" onSubmit={salvarNome} noValidate>
-        <label htmlFor="nome" className="sr-only">
-          Nome
-        </label>
-        <input
-          id="nome"
-          className="campo"
-          value={nome}
-          maxLength={60}
-          autoComplete="given-name"
-          onChange={(e) => {
-            setNome(e.target.value)
-            setMsgNome(null)
-          }}
-        />
-        <button className="btn" type="submit">
-          Salvar
-        </button>
-      </form>
-      {msgNome && (
-        <p className={msgNome.ok ? 'ok-msg' : 'err'} role="status">
-          {msgNome.texto}
-        </p>
-      )}
-
-      <div className="sec">Seu grupo de prática</div>
-      <form className="linha-form" onSubmit={salvarGrupo} noValidate>
-        <label htmlFor="grupo" className="sr-only">
-          Número do grupo de prática
-        </label>
-        <input
-          id="grupo"
-          className="campo"
-          inputMode="numeric"
-          placeholder="Ex.: 7"
-          value={grupo}
-          maxLength={2}
-          onChange={(e) => {
-            setGrupo(e.target.value.replace(/\D/g, ''))
-            setMsgGrupo(null)
-          }}
-        />
-        <button className="btn" type="submit">
-          Salvar
-        </button>
-      </form>
-      <p className="foot">Com o grupo salvo, a agenda mostra as teóricas da turma e só as práticas do seu grupo.</p>
-      {msgGrupo && (
-        <p className={msgGrupo.ok ? 'ok-msg' : 'err'} role="status">
-          {msgGrupo.texto}
+      {msgDados && (
+        <p className={msgDados.ok ? 'ok-msg' : 'err'} role="status">
+          {msgDados.texto}
         </p>
       )}
 
