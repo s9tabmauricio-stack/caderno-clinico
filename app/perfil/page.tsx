@@ -36,6 +36,12 @@ export default async function PerfilPage() {
                 <span className="s">Criar contas e trocar senhas</span>
               </span>
             </Link>
+            <Link className="row" href="/admin/conteudo">
+              <span className="main">
+                <span className="t">Conteúdo</span>
+                <span className="s">Editar e apagar aulas, questões e flashcards</span>
+              </span>
+            </Link>
             <Link className="row" href="/admin/agenda">
               <span className="main">
                 <span className="t">Agenda da semana</span>
