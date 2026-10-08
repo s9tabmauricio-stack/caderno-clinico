@@ -96,7 +96,7 @@ export default async function RecadosPage(props: PageProps<'/admin/recados'>) {
       </nav>
 
       {filtro === 'novos' && novos > 1 && (
-        <form action={marcarTodosVistos} style={{ marginBottom: 12 }}>
+        <form action={marcarTodosVistos} className="marcar-todos">
           <button className="btn ghost sm" type="submit">
             Marcar os {novos} como vistos
           </button>

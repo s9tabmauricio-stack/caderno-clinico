@@ -737,3 +737,6 @@ select.campo option,select.campo optgroup{background:#161824;color:#F2F5FF}
 .rec .qref b{color:var(--accent);font-weight:600}
 .rec .bt{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap;align-items:center}
 .rec .bt>form:not(.confirma){display:contents}
+.rec .bt .btn,.marcar-todos .btn{margin-top:0}
+.marcar-todos{margin:0 0 12px}
+.marcar-todos .btn{justify-self:start}
