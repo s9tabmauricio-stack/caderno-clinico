@@ -294,6 +294,7 @@ export function PerfilAcoes({
       )}
 
       <div className="sec">Apagar progresso</div>
+      <div className="group">
       <form
         className="apagar-form"
         onSubmit={(e) => {
@@ -386,6 +387,7 @@ export function PerfilAcoes({
           Apagar
         </button>
       </form>
+      </div>
 
       {confirmar && (
         <div className="group">
