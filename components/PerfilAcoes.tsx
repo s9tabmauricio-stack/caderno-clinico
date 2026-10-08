@@ -31,6 +31,7 @@ export function PerfilAcoes({
   const [editando, setEditando] = useState(false)
   const [msgDados, setMsgDados] = useState<{ ok: boolean; texto: string } | null>(null)
   const [confirmar, setConfirmar] = useState(false)
+  const [abrirApagar, setAbrirApagar] = useState(false)
   const [msgApagar, setMsgApagar] = useState<{ ok: boolean; texto: string } | null>(null)
   const [oQue, setOQue] = useState<OQue>('ambos')
   const [onde, setOnde] = useState<Onde>('tudo')
@@ -150,6 +151,7 @@ export function PerfilAcoes({
     }
 
     setConfirmar(false)
+    setAbrirApagar(false)
     setMsgApagar(
       falhou
         ? {
@@ -293,100 +295,133 @@ export function PerfilAcoes({
         </p>
       )}
 
-      <div className="sec">Apagar progresso</div>
       <div className="group">
-      <form
-        className="apagar-form"
-        onSubmit={(e) => {
-          e.preventDefault()
-          if (!pronto) return
-          setConfirmar(true)
-          setMsgApagar(null)
-        }}
-        noValidate
-      >
-        <label htmlFor="apagar-o-que" className="rotulo">
-          O que apagar
-        </label>
-        <select
-          id="apagar-o-que"
-          className="campo"
-          value={oQue}
-          onChange={(e) => {
-            setOQue(e.target.value as OQue)
-            setConfirmar(false)
-          }}
-        >
-          <option value="ambos">Questões e flashcards</option>
-          <option value="questoes">Só questões</option>
-          <option value="flashcards">Só flashcards</option>
-        </select>
-
-        <label htmlFor="apagar-onde" className="rotulo">
-          De onde
-        </label>
-        <select
-          id="apagar-onde"
-          className="campo"
-          value={onde}
-          onChange={(e) => {
-            setOnde(e.target.value as Onde)
-            setAlvo('')
-            setConfirmar(false)
-          }}
-        >
-          <option value="tudo">Todas as matérias</option>
-          <option value="materia">Uma matéria</option>
-          <option value="aula">Uma aula</option>
-        </select>
-
-        {onde === 'materia' && (
-          <>
-            <label htmlFor="apagar-materia" className="rotulo">
-              Matéria
+        <div className="row static">
+          <span className="avatar lg" aria-hidden="true">
+            {Icone.lixeira}
+          </span>
+          <span className="main">
+            <span className="t">Apagar progresso</span>
+            <span className="s">Questões e flashcards</span>
+          </span>
+          {!abrirApagar && (
+            <button
+              className="btn ghost sm"
+              onClick={() => {
+                setAbrirApagar(true)
+                setMsgApagar(null)
+              }}
+            >
+              Escolher
+            </button>
+          )}
+        </div>
+        {abrirApagar && (
+          <form
+            className="apagar-form"
+            onSubmit={(e) => {
+              e.preventDefault()
+              if (!pronto) return
+              setConfirmar(true)
+              setMsgApagar(null)
+            }}
+            noValidate
+          >
+            <label htmlFor="apagar-o-que" className="rotulo">
+              O que apagar
             </label>
             <select
-              id="apagar-materia"
+              id="apagar-o-que"
               className="campo"
-              value={alvo}
-              onChange={(e) => setAlvo(e.target.value)}
+              value={oQue}
+              onChange={(e) => {
+                setOQue(e.target.value as OQue)
+                setConfirmar(false)
+              }}
             >
-              <option value="">Escolha a matéria</option>
-              {materias.map((m) => (
-                <option key={m.id} value={m.id}>
-                  {m.nome}
-                </option>
-              ))}
+              <option value="ambos">Questões e flashcards</option>
+              <option value="questoes">Só questões</option>
+              <option value="flashcards">Só flashcards</option>
             </select>
-          </>
-        )}
 
-        {onde === 'aula' && (
-          <>
-            <label htmlFor="apagar-aula" className="rotulo">
-              Aula
+            <label htmlFor="apagar-onde" className="rotulo">
+              De onde
             </label>
-            <select id="apagar-aula" className="campo" value={alvo} onChange={(e) => setAlvo(e.target.value)}>
-              <option value="">Escolha a aula</option>
-              {materias.map((m) => (
-                <optgroup key={m.id} label={m.nome}>
-                  {aulas
-                    .filter((a) => a.materiaId === m.id)
-                    .map((a) => (
-                      <option key={a.id} value={a.id}>
-                        {a.titulo}
-                      </option>
-                    ))}
-                </optgroup>
-              ))}
+            <select
+              id="apagar-onde"
+              className="campo"
+              value={onde}
+              onChange={(e) => {
+                setOnde(e.target.value as Onde)
+                setAlvo('')
+                setConfirmar(false)
+              }}
+            >
+              <option value="tudo">Todas as matérias</option>
+              <option value="materia">Uma matéria</option>
+              <option value="aula">Uma aula</option>
             </select>
-          </>
-        )}
 
-        <button className="btn danger wide" type="submit" disabled={!pronto}>
-          Apagar
-        </button>
-      </form>
+            {onde === 'materia' && (
+              <>
+                <label htmlFor="apagar-materia" className="rotulo">
+                  Matéria
+                </label>
+                <select
+                  id="apagar-materia"
+                  className="campo"
+                  value={alvo}
+                  onChange={(e) => setAlvo(e.target.value)}
+                >
+                  <option value="">Escolha a matéria</option>
+                  {materias.map((m) => (
+                    <option key={m.id} value={m.id}>
+                      {m.nome}
+                    </option>
+                  ))}
+                </select>
+              </>
+            )}
+
+            {onde === 'aula' && (
+              <>
+                <label htmlFor="apagar-aula" className="rotulo">
+                  Aula
+                </label>
+                <select id="apagar-aula" className="campo" value={alvo} onChange={(e) => setAlvo(e.target.value)}>
+                  <option value="">Escolha a aula</option>
+                  {materias.map((m) => (
+                    <optgroup key={m.id} label={m.nome}>
+                      {aulas
+                        .filter((a) => a.materiaId === m.id)
+                        .map((a) => (
+                          <option key={a.id} value={a.id}>
+                            {a.titulo}
+                          </option>
+                        ))}
+                    </optgroup>
+                  ))}
+                </select>
+              </>
+            )}
+
+            <div className="actions">
+              <button
+                className="btn ghost"
+                type="button"
+                onClick={() => {
+                  setAbrirApagar(false)
+                  setConfirmar(false)
+                }}
+              >
+                Cancelar
+              </button>
+              <button className="btn danger" type="submit" disabled={!pronto}>
+                Apagar
+              </button>
+            </div>
+          </form>
+        )}
       </div>
 
       {confirmar && (
