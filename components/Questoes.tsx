@@ -37,6 +37,8 @@ export function Questoes({ questoes, userId, ativo, mostrarTema = true, vazio, a
   }
   const [idx, setIdx] = useState(() => primeiraAberta(respostas))
   const [escolha, setEscolha] = useState<number | null>(null)
+  // alternativas que o aluno cortou (só enquanto está nesta questão)
+  const [cortadas, setCortadas] = useState<number[]>([])
   const [refazendo, setRefazendo] = useState(false)
   const [erro, setErro] = useState('')
   const [falhaSalvar, setFalhaSalvar] = useState('')
@@ -49,8 +51,18 @@ export function Questoes({ questoes, userId, ativo, mostrarTema = true, vazio, a
   function irPara(i: number) {
     setIdx(i)
     setEscolha(null)
+    setCortadas([])
     setRefazendo(false)
     setErro('')
+  }
+
+  function cortar(i: number) {
+    if (cortadas.includes(i)) {
+      setCortadas(cortadas.filter((x) => x !== i))
+      return
+    }
+    setCortadas([...cortadas, i])
+    if (escolha === i) setEscolha(null)
   }
 
   async function responder() {
@@ -90,7 +102,7 @@ export function Questoes({ questoes, userId, ativo, mostrarTema = true, vazio, a
     if (error) setFalhaSalvar('Não deu para apagar as respostas antigas. Confira a internet e tente de novo.')
   }
 
-  // Atalhos: A a E (ou 1 a 5) escolhem, Enter responde ou avança
+  // Atalhos: A a E (ou 1 a 5) escolhem, Shift + letra corta, Enter responde ou avança
   useEffect(() => {
     if (!ativo) return
     function tecla(e: KeyboardEvent) {
@@ -101,8 +113,11 @@ export function Questoes({ questoes, userId, ativo, mostrarTema = true, vazio, a
       const mapa: Record<string, number> = { a: 0, b: 1, c: 2, d: 3, e: 4, '1': 0, '2': 1, '3': 2, '4': 3, '5': 4 }
       if (!revelada && k in mapa && mapa[k] < q.alternativas.length) {
         e.preventDefault()
-        setEscolha(mapa[k])
-        setErro('')
+        if (e.shiftKey) cortar(mapa[k])
+        else if (!cortadas.includes(mapa[k])) {
+          setEscolha(mapa[k])
+          setErro('')
+        }
       } else if (e.key === 'Enter') {
         e.preventDefault()
         if (revelada) irPara(idx + 1)
@@ -213,33 +228,49 @@ export function Questoes({ questoes, userId, ativo, mostrarTema = true, vazio, a
         <p className="qtext">{q.enunciado}</p>
         <div className="opts">
           {q.alternativas.map((texto, i) => {
-            let cls = ''
+            const cortada = cortadas.includes(i)
             if (revelada && resp) {
               // Certa em verde, todas as outras em vermelho; a marcada pelo aluno ganha destaque
-              cls = i === q.correta ? 'right' : 'wrong'
+              let cls = i === q.correta ? 'right' : 'wrong'
               if (i === resp.escolhida) cls += ' minha'
-            } else if (escolha === i) cls = 'sel'
+              return (
+                <button key={i} className={`opt ${cls}`} disabled>
+                  <span className="l">{LETRAS[i]}</span>
+                  <span className="ot">
+                    {i === resp.escolhida && <span className="sua">Sua resposta</span>}
+                    {cortada && <span className="cort-tag">Você cortou</span>}
+                    {texto}
+                    {i === q.correta && q.comentario && <span className="oexp certa">{q.comentario}</span>}
+                    {i !== q.correta && expl.porAlt[i] && <span className="oexp">{expl.porAlt[i]}</span>}
+                  </span>
+                </button>
+              )
+            }
+            const sel = escolha === i
             return (
-              <button
-                key={i}
-                className={`opt ${cls}`}
-                disabled={revelada}
-                aria-pressed={revelada ? undefined : escolha === i}
-                onClick={() => {
-                  setEscolha(i)
-                  setErro('')
-                }}
-              >
-                <span className="l">{LETRAS[i]}</span>
-                <span className="ot">
-                  {revelada && resp && i === resp.escolhida && <span className="sua">Sua resposta</span>}
-                  {texto}
-                  {revelada && resp && i === q.correta && q.comentario && (
-                    <span className="oexp certa">{q.comentario}</span>
-                  )}
-                  {revelada && resp && i !== q.correta && expl.porAlt[i] && <span className="oexp">{expl.porAlt[i]}</span>}
-                </span>
-              </button>
+              <div key={i} className={`optw${sel ? ' sel' : ''}${cortada ? ' cortada' : ''}`}>
+                <button
+                  className={`opt${sel ? ' sel' : ''}`}
+                  disabled={cortada}
+                  aria-pressed={sel}
+                  onClick={() => {
+                    setEscolha(i)
+                    setErro('')
+                  }}
+                >
+                  <span className="l">{LETRAS[i]}</span>
+                  <span className="ot">{texto}</span>
+                </button>
+                <button
+                  className="elim"
+                  onClick={() => cortar(i)}
+                  aria-pressed={cortada}
+                  aria-label={cortada ? `Trazer de volta a alternativa ${LETRAS[i]}` : `Cortar a alternativa ${LETRAS[i]}`}
+                >
+                  {cortada ? Icone.desfazer : Icone.tesoura}
+                  <span>{cortada ? 'Voltar' : 'Cortar'}</span>
+                </button>
+              </div>
             )
           })}
         </div>
@@ -269,6 +300,7 @@ export function Questoes({ questoes, userId, ativo, mostrarTema = true, vazio, a
                 onClick={() => {
                   setRefazendo(true)
                   setEscolha(null)
+                  setCortadas([])
                 }}
               >
                 Refazer esta
