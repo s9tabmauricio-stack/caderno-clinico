@@ -4,6 +4,7 @@ import { useMemo, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { createClient } from '@/lib/supabase/client'
 import { cpfDoEmail, formatarCpf } from '@/lib/cpf'
+import { Icone } from './Icones'
 
 type OQue = 'ambos' | 'questoes' | 'flashcards'
 type Onde = 'tudo' | 'materia' | 'aula'
@@ -63,6 +64,7 @@ export function PerfilAcoes({
   const [senha, setSenha] = useState('')
   const [senha2, setSenha2] = useState('')
   const [msgSenha, setMsgSenha] = useState<{ ok: boolean; texto: string } | null>(null)
+  const [editandoSenha, setEditandoSenha] = useState(false)
   const cpf = cpfDoEmail(email)
 
   async function trocarSenha(e: React.FormEvent) {
@@ -87,7 +89,15 @@ export function PerfilAcoes({
     }
     setSenha('')
     setSenha2('')
+    setEditandoSenha(false)
     setMsgSenha({ ok: true, texto: 'Senha trocada. Use a nova senha no próximo acesso.' })
+  }
+
+  function cancelarSenha() {
+    setSenha('')
+    setSenha2('')
+    setEditandoSenha(false)
+    setMsgSenha(null)
   }
 
   // Texto que descreve o que vai ser apagado, ex.: "as respostas das questões de Nefrologia"
@@ -220,42 +230,63 @@ export function PerfilAcoes({
         </p>
       )}
 
-      <div className="sec">Trocar senha</div>
-      <form className="senha-form" onSubmit={trocarSenha} noValidate>
-        <label htmlFor="nova-senha" className="sr-only">
-          Nova senha
-        </label>
-        <input
-          id="nova-senha"
-          className="campo"
-          type="password"
-          autoComplete="new-password"
-          placeholder="Nova senha"
-          value={senha}
-          onChange={(e) => {
-            setSenha(e.target.value)
-            setMsgSenha(null)
-          }}
-        />
-        <label htmlFor="nova-senha2" className="sr-only">
-          Repita a nova senha
-        </label>
-        <input
-          id="nova-senha2"
-          className="campo"
-          type="password"
-          autoComplete="new-password"
-          placeholder="Repita a nova senha"
-          value={senha2}
-          onChange={(e) => {
-            setSenha2(e.target.value)
-            setMsgSenha(null)
-          }}
-        />
-        <button className="btn" type="submit">
-          Trocar senha
-        </button>
-      </form>
+      <div className="group">
+        <div className="row static">
+          <span className="avatar lg" aria-hidden="true">
+            {Icone.cadeado}
+          </span>
+          <span className="main">
+            <span className="t">Segurança</span>
+            <span className="s">Senha de acesso ao app</span>
+          </span>
+          {!editandoSenha && (
+            <button
+              className="btn ghost sm"
+              onClick={() => {
+                setEditandoSenha(true)
+                setMsgSenha(null)
+              }}
+            >
+              Editar
+            </button>
+          )}
+        </div>
+        {editandoSenha && (
+          <form className="editar-form" onSubmit={trocarSenha} noValidate>
+            <label htmlFor="nova-senha" className="rotulo">
+              Nova senha
+            </label>
+            <input
+              id="nova-senha"
+              className="campo"
+              type="password"
+              autoComplete="new-password"
+              value={senha}
+              onChange={(e) => setSenha(e.target.value)}
+            />
+            <label htmlFor="nova-senha2" className="rotulo">
+              Repita a nova senha
+            </label>
+            <input
+              id="nova-senha2"
+              className="campo"
+              type="password"
+              autoComplete="new-password"
+              value={senha2}
+              onChange={(e) => setSenha2(e.target.value)}
+            />
+            <p className="foot">A senha precisa ter pelo menos 6 caracteres.</p>
+            <div className="actions">
+              <button className="btn ghost" type="button" onClick={cancelarSenha}>
+                Cancelar
+              </button>
+              <button className="btn" type="submit">
+                Trocar senha
+              </button>
+            </div>
+          </form>
+        )}
+      </div>
       {msgSenha && (
         <p className={msgSenha.ok ? 'ok-msg' : 'err'} role="status">
           {msgSenha.texto}

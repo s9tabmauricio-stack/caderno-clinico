@@ -50,6 +50,12 @@ export const Icone = {
   pulso: svg(<path d="M3 12.5h4l2-5 3.2 10 2.6-7 1.6 2H21" />),
   certo: svg(<path d="M5 12.5l4.5 4.5L19 7.5" />),
   errado: svg(<path d="M6.5 6.5l11 11M17.5 6.5l-11 11" />),
+  cadeado: svg(
+    <>
+      <rect x="5" y="10.5" width="14" height="10" rx="2.5" />
+      <path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5" />
+    </>,
+  ),
   email: svg(
     <>
       <rect x="3.5" y="5.5" width="17" height="13" rx="2.5" />
