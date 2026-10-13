@@ -46,7 +46,7 @@ export const COR_MATERIA: Record<string, string> = {
   orto: '#FFB547', pass: '#FF5CD6', sem: '#9AA3BD', angio: '#FF5C8A',
 }
 
-const DIA_SEMANA = /^\s*(segunda|ter[cç]a|quarta|quinta|sexta|s[aá]bado|domingo)(?:-feira)?\s*\|\s*(\d{1,2})\s*\/\s*([a-zç]+|\d{1,2})/i
+const DIA_SEMANA = /^\s*(segunda|ter[cç]a|quarta|quinta|sexta|s[aá]bado|domingo)(?:-feira)?\s*\|\s*(\d{1,2})\s*\/\s*([a-zç]+|\d{1,2})(?:\s*[-–—]\s*(.+))?/i
 const HORARIO = /^(\d{1,2})h(\d{2})?(?:\s*[-–a]\s*(\d{1,2})h(\d{2})?)?\s*:\s*(.+)$/i
 const MARCADOR = /^[\s\u2060]*[-*•·]\s*[\u2060]?\s*/
 
@@ -65,7 +65,8 @@ function materiaDe(linha: string, texto: string) {
   return null
 }
 function gruposDe(texto: string): number[] | null {
-  const m = texto.match(/\bgrupos?\s+((?:\d+\s*(?:,|e)?\s*)+)/i)
+  // "grupo 2", "grupos 22, 23 e 24" ou "grupo A (grupos de prática 5, 9 e 10)"
+  const m = texto.match(/\bgrupos?\s+(?:de\s+pr[aá]tica\s+)?((?:\d+\s*(?:,|e)?\s*)+)/i)
   if (!m) return null
   const ns = (m[1].match(/\d+/g) ?? []).map(Number)
   return ns.length ? ns : null
@@ -128,6 +129,8 @@ export function lerCronograma(texto: string, ano = new Date().getFullYear()): Se
   let ultimo: EventoAgenda | null = null
   let vazioDesdeUltimo = false
   let ordem = 0
+  // Nome do dia ("- Feriado de Nossa Senhora"): vira nota do cancelamento seguinte ou um aviso
+  let rotuloDia: string | null = null
   const letras: Record<string, Record<string, [number, number]>> = {}
 
   for (const bruta of linhas) {
@@ -145,6 +148,7 @@ export function lerCronograma(texto: string, ano = new Date().getFullYear()): Se
       data = `${ano}-${String(mes).padStart(2, '0')}-${String(n).padStart(2, '0')}`
       dias.push(data)
       ultimo = null
+      rotuloDia = dia[4]?.trim().replace(/[.!]+$/, '') || null
       continue
     }
 
@@ -159,6 +163,14 @@ export function lerCronograma(texto: string, ano = new Date().getFullYear()): Se
     const mapa = linha.replace(MARCADOR, '').match(/^([A-Z])\s*=\s*pr[aá]ticas?\s*(\d+)\s*a\s*(\d+)/i)
     if (mapa) {
       ;(letras[data] ??= {})[mapa[1].toUpperCase()] = [Number(mapa[2]), Number(mapa[3])]
+    }
+
+    if (rotuloDia && !linha.startsWith('❌')) {
+      eventos.push({
+        data, inicio: null, fim: null, materia: null, tipo: 'aviso', titulo: rotuloDia, professor: null, local: null,
+        grupos: null, cancelado: false, notas: [], ordem: ordem++,
+      })
+      rotuloDia = null
     }
 
     const semEmoji = limparEmoji(linha)
@@ -199,9 +211,10 @@ export function lerCronograma(texto: string, ano = new Date().getFullYear()): Se
         local: d.local,
         grupos: d.grupos,
         cancelado: true,
-        notas: [],
+        notas: rotuloDia ? [rotuloDia] : [],
         ordem: ordem++,
       }
+      rotuloDia = null
       eventos.push(ultimo)
       vazioDesdeUltimo = false
       continue
