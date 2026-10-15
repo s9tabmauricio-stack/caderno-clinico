@@ -179,7 +179,7 @@ export function PerfilAcoes({
           </span>
           {!editando && (
             <button
-              className="btn ghost sm"
+              className="btn ghost sm acao"
               onClick={() => {
                 setEditando(true)
                 setMsgDados(null)
@@ -243,7 +243,7 @@ export function PerfilAcoes({
           </span>
           {!editandoSenha && (
             <button
-              className="btn ghost sm"
+              className="btn ghost sm acao"
               onClick={() => {
                 setEditandoSenha(true)
                 setMsgSenha(null)
@@ -306,7 +306,7 @@ export function PerfilAcoes({
           </span>
           {!abrirApagar && (
             <button
-              className="btn ghost sm"
+              className="btn ghost sm acao"
               onClick={() => {
                 setAbrirApagar(true)
                 setMsgApagar(null)

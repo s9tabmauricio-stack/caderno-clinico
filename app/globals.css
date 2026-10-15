@@ -127,6 +127,7 @@ button.row:hover{background:var(--card-2)}
 .btn.ghost:hover{background:var(--card-2);filter:none}
 .btn.danger{background:var(--bad-soft);color:var(--bad);border-color:var(--bad-line)}
 .btn.sm{padding:8px 13px;font-size:14px;border-radius:11px}
+.btn.acao{min-width:96px}
 .btn.wide{width:100%}
 .btn.google{background:var(--card);color:var(--ink);border-color:var(--line-strong)}
 .actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end;margin-top:16px}
