@@ -16,6 +16,7 @@ const ORIGEM: Record<string, { rotulo: string; cls: string }> = {
   inferido: { rotulo: 'Alternativa reconstruída', cls: 'rec' },
   montada: { rotulo: 'Alternativas montadas · gabarito não oficial', cls: 'rec' },
   resolvida: { rotulo: 'Gabarito não oficial', cls: 'rec' },
+  adaptada: { rotulo: 'Adaptada à aula', cls: 'rec' },
 }
 
 type Props = {
