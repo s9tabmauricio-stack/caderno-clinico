@@ -26,7 +26,23 @@ Eu não sou programador: explique tudo em português do Brasil, em linguagem sim
 - Eu sou sensível a custo: prefira o caminho barato (converter arquivos em vez de reescrever conteúdo; não reenviar textos grandes à toa).
 - Mostre o conteúdo (a questão, a tela) antes de me pedir uma decisão. Um assunto por vez.
 
-## 4) Como conviver com o outro assistente (Claude)
+## 4) Onde fica o layout
+
+O layout está só no código (nada de visual fica no Supabase). Mapa rápido:
+
+| O quê | Onde |
+|---|---|
+| Cores, tamanhos, espaçamentos, botões, tema neon | `app/globals.css`. As regras do tema ficam no fim, no bloco "Tema Med Genius", e valem por cima das de cima. |
+| Partes reaproveitadas das telas | `components/` (ex.: `PerfilAcoes.tsx` = cartões do Perfil, `Questoes.tsx`, `Flashcards.tsx`, `TabBar.tsx` = barra de baixo, `Pagina.tsx` = moldura das telas, `Icones.tsx`) |
+| Cada tela | `app/<rota>/page.tsx`: `app/page.tsx` (Início), `app/agenda`, `app/revisao`, `app/desempenho`, `app/perfil`, `app/aula/[id]`, `app/materia/[id]`, `app/login`, `app/admin/...` |
+| Ícones do app e logo | `public/icons`, `app/icon.png`, `app/apple-icon.png`, `public/brand/med-genius.svg` |
+
+Dicas:
+- Antes de criar uma classe nova, procure no `globals.css` se já existe uma parecida (ex.: `.btn`, `.btn.ghost`, `.btn.sm`, `.group`, `.row`). Mantenha o tema escuro "vidro sobre luzes neon".
+- Teste na largura de celular (cerca de 390 px): é como a turma mais usa.
+- Mostre um print de como ficou antes de pedir para publicar.
+
+## 5) Como conviver com o outro assistente (Claude)
 
 - Podemos estar trabalhando ao mesmo tempo. Trabalhe sempre em um ramo (branch) seu, com nome começando por `antigravity/`. Nunca mande direto para o ramo `main` sem eu pedir.
 - Só o `main` publica o site (a Vercel publica sozinha em 1–2 minutos). Quando uma mudança estiver pronta, me diga e eu autorizo juntar ao `main`.
