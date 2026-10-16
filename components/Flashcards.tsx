@@ -19,12 +19,22 @@ type Props = {
 
 type Sessao = { fila: string[]; atual: string | null; virado: boolean; feitos: number; erros: number }
 
+type HistoricoItem = {
+  cardId: string
+  sessaoAnterior: Sessao
+  estadoAnterior: EstadoCard | null
+  tinhaEmLocais: boolean
+  valorLocalAnterior?: EstadoCard
+  eraNovoNoBanco: boolean
+}
+
 export function Flashcards({ cards, userId, modo, ativo, emDia }: Props) {
   const supabase = useMemo(() => createClient(), [])
   const router = useRouter()
   // Estados alterados nesta visita; o resto vem do servidor
   const [locais, setLocais] = useState<Record<string, EstadoCard>>({})
   const [sessao, setSessao] = useState<Sessao | null>(null)
+  const [historico, setHistorico] = useState<HistoricoItem[]>([])
   const [falhaSalvar, setFalhaSalvar] = useState('')
   const [agora, setAgora] = useState(() => Date.now())
 
@@ -52,6 +62,7 @@ export function Flashcards({ cards, userId, modo, ativo, emDia }: Props) {
     if (!lista.length) return
     const ids = lista.map((c) => c.id)
     setFalhaSalvar('')
+    setHistorico([])
     setSessao({ fila: ids.slice(1), atual: ids[0], virado: false, feitos: 0, erros: 0 })
   }
 
@@ -60,7 +71,25 @@ export function Flashcards({ cards, userId, modo, ativo, emDia }: Props) {
     const card = cards.find((c) => c.id === sessao.atual)
     if (!card) return
     const t = Date.now()
-    const novo = avaliar(estadoDe(card), nota, t)
+    const anterior = estadoDe(card)
+    const tinhaEmLocais = card.id in locais
+    const valorLocalAnterior = locais[card.id]
+    const eraNovoNoBanco = card.estado === null
+
+    // Registra o passo para possibilitar desfazer
+    setHistorico((h) => [
+      ...h,
+      {
+        cardId: card.id,
+        sessaoAnterior: sessao,
+        estadoAnterior: anterior,
+        tinhaEmLocais,
+        valorLocalAnterior,
+        eraNovoNoBanco,
+      },
+    ])
+
+    const novo = avaliar(anterior, nota, t)
     setLocais((l) => ({ ...l, [card.id]: novo }))
     const fila = [...sessao.fila]
     if (nota === 0) fila.push(card.id)
@@ -78,23 +107,68 @@ export function Flashcards({ cards, userId, modo, ativo, emDia }: Props) {
     if (error) setFalhaSalvar('Não deu para salvar a última revisão. Confira a internet; o card vai aparecer de novo.')
   }
 
+  async function desfazer() {
+    if (!historico.length) return
+    const ultimo = historico[historico.length - 1]
+    setHistorico((h) => h.slice(0, -1))
+
+    // Restaura a sessão para o card anterior (já virado, pronto para reavaliar)
+    setSessao(ultimo.sessaoAnterior)
+
+    // Restaura o estado em memória local
+    setLocais((l) => {
+      const copia = { ...l }
+      if (ultimo.tinhaEmLocais && ultimo.valorLocalAnterior) {
+        copia[ultimo.cardId] = ultimo.valorLocalAnterior
+      } else {
+        delete copia[ultimo.cardId]
+      }
+      return copia
+    })
+
+    // Restaura ou remove a revisão no Supabase
+    setFalhaSalvar('')
+    if (ultimo.eraNovoNoBanco && !ultimo.tinhaEmLocais) {
+      const { error } = await supabase
+        .from('revisoes')
+        .delete()
+        .eq('user_id', userId)
+        .eq('flashcard_id', ultimo.cardId)
+      if (error) setFalhaSalvar('Não deu para desfazer a revisão no banco. Confira sua internet.')
+    } else if (ultimo.estadoAnterior) {
+      const { error } = await supabase
+        .from('revisoes')
+        .upsert(
+          { user_id: userId, flashcard_id: ultimo.cardId, ...ultimo.estadoAnterior },
+          { onConflict: 'user_id,flashcard_id' },
+        )
+      if (error) setFalhaSalvar('Não deu para desfazer a revisão no banco. Confira sua internet.')
+    }
+  }
+
   function encerrar() {
     setSessao(null)
+    setHistorico([])
     setAgora(Date.now())
     router.refresh() // atualiza contadores e a fila do dia
   }
 
-  // Atalhos: espaço mostra a resposta; 1 a 4 avaliam
+  // Atalhos: espaço mostra a resposta; 1 a 4 avaliam; Z desfaz
   useEffect(() => {
-    if (!ativo || !sessao?.atual) return
+    if (!ativo || !sessao) return
     function tecla(e: KeyboardEvent) {
       const alvo = e.target as HTMLElement
-      if (e.metaKey || e.ctrlKey || e.altKey || alvo.closest('input, textarea')) return
-      if ((e.key === ' ' || e.key === 'Enter') && alvo.closest('button, a')) return
-      if (!sessao?.virado && (e.key === ' ' || e.key === 'Enter')) {
+      if (alvo.closest('input, textarea')) return
+      if ((e.key === 'z' || e.key === 'Z') && !e.altKey) {
+        e.preventDefault()
+        void desfazer()
+        return
+      }
+      if (e.metaKey || e.ctrlKey || e.altKey || alvo.closest('button, a')) return
+      if (!sessao?.virado && (e.key === ' ' || e.key === 'Enter') && sessao?.atual) {
         e.preventDefault()
         setSessao((s) => (s ? { ...s, virado: true } : s))
-      } else if (sessao?.virado && ['1', '2', '3', '4'].includes(e.key)) {
+      } else if (sessao?.virado && sessao?.atual && ['1', '2', '3', '4'].includes(e.key)) {
         e.preventDefault()
         void avaliarCard((Number(e.key) - 1) as Nota)
       }
@@ -127,9 +201,17 @@ export function Flashcards({ cards, userId, modo, ativo, emDia }: Props) {
               `, e ${sessao.erros} ${plural(sessao.erros, 'card voltou', 'cards voltaram')} para a fila depois de um erro`}
             .{proxima && ` O próximo card volta ${fmtQuando(proxima, agora)}.`}
           </p>
-          <button className="btn" onClick={encerrar}>
-            {modo === 'aula' ? 'Voltar aos cards da aula' : 'Concluir'}
-          </button>
+          <div className="done-acoes">
+            {historico.length > 0 && (
+              <button type="button" className="btn ghost" onClick={desfazer}>
+                {Icone.desfazer}
+                <span>Desfazer última resposta</span>
+              </button>
+            )}
+            <button className="btn" onClick={encerrar}>
+              {modo === 'aula' ? 'Voltar aos cards da aula' : 'Concluir'}
+            </button>
+          </div>
           {aviso}
         </div>
       )
@@ -152,9 +234,23 @@ export function Flashcards({ cards, userId, modo, ativo, emDia }: Props) {
           <span>
             {restam} {plural(restam, 'card restante', 'cards restantes')}
           </span>
-          <button className="link" onClick={encerrar}>
-            Encerrar
-          </button>
+          <div className="sess-acoes">
+            {historico.length > 0 && (
+              <button
+                type="button"
+                className="link link-desfazer"
+                onClick={desfazer}
+                title="Desfazer última avaliação (Z ou Ctrl+Z)"
+                aria-label="Desfazer última avaliação"
+              >
+                {Icone.desfazer}
+                <span>Desfazer</span>
+              </button>
+            )}
+            <button className="link" onClick={encerrar}>
+              Encerrar
+            </button>
+          </div>
         </div>
         <div
           className="pbar"
@@ -193,7 +289,7 @@ export function Flashcards({ cards, userId, modo, ativo, emDia }: Props) {
             Mostrar resposta
           </button>
         )}
-        <p className="hint">No teclado: espaço mostra a resposta; as teclas 1 a 4 avaliam.</p>
+        <p className="hint">No teclado: espaço mostra a resposta; 1 a 4 avaliam; Z desfaz.</p>
         {aviso}
       </div>
     )

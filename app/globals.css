@@ -217,6 +217,13 @@ button.row:hover{background:var(--card-2)}
 .done p{margin:0 0 10px;max-width:42ch}
 .done-ic{width:56px;height:56px;border-radius:18px;background:var(--ok-soft);color:var(--ok);display:grid;place-items:center}
 .done-ic svg{width:28px;height:28px;stroke-width:2.2}
+.done-acoes{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:6px}
+.done-acoes .btn{display:inline-flex;align-items:center;gap:6px}
+.done-acoes .btn svg{width:18px;height:18px}
+.sess-acoes{display:flex;align-items:center;gap:10px}
+.link-desfazer{display:inline-flex;align-items:center;gap:4px;color:var(--muted);transition:color .15s}
+.link-desfazer:hover{color:var(--ink)}
+.link-desfazer svg{width:15px;height:15px;stroke-width:2}
 
 /* desempenho */
 .legend{display:flex;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--muted);margin:0 4px 10px}
