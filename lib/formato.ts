@@ -2,9 +2,6 @@
 
 export const FUSO = 'America/Sao_Paulo'
 
-// Quantos cards novos entram por sessão de revisão (como o limite diário do Anki)
-export const LIMITE_NOVOS = 20
-
 export const plural = (n: number, um: string, varios: string) => (n === 1 ? um : varios)
 
 export function fmtIntervalo(dias: number) {

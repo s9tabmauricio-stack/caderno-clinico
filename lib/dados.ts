@@ -1,7 +1,6 @@
 import { redirect } from 'next/navigation'
 import { createClient, type SupabaseServidor } from '@/lib/supabase/server'
 import type { EstadoCard } from '@/lib/srs'
-import { LIMITE_NOVOS } from '@/lib/formato'
 import type { Json } from '@/lib/database.types'
 
 // ---------- Tipos usados nas telas ----------
@@ -214,11 +213,11 @@ export function totais(prog: ProgressoAula[]) {
   )
 }
 
-// Cards para hoje: os vencidos mais até LIMITE_NOVOS cards novos
+// Cards para hoje: todos os vencidos e todos os novos (sem limite diário)
 export function pendentes(prog: ProgressoAula[]) {
   const t = totais(prog)
   const novos = t.cards - t.estudados
-  return { vencidos: t.vencidos, novos, hoje: t.vencidos + Math.min(novos, LIMITE_NOVOS), emDia: t.estudados - t.vencidos }
+  return { vencidos: t.vencidos, novos, hoje: t.vencidos + novos, emDia: t.estudados - t.vencidos }
 }
 
 // Questões contam pelo banco da matéria (inclui as que não pertencem a nenhuma aula)

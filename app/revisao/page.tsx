@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { Pagina } from '@/components/Pagina'
 import { Flashcards } from '@/components/Flashcards'
 import { carregarMaterias, carregarProgresso, paraCard, pendentes, sessao, totais } from '@/lib/dados'
-import { LIMITE_NOVOS, plural } from '@/lib/formato'
+import { plural } from '@/lib/formato'
 
 export const metadata: Metadata = { title: 'Revisão' }
 
@@ -10,14 +10,14 @@ export default async function RevisaoPage() {
   const { supabase, userId } = await sessao()
   const agora = new Date().toISOString()
 
-  // Fila do dia: todos os vencidos (do mais atrasado ao mais recente) e até LIMITE_NOVOS novos
+  // Fila do dia: todos os vencidos (do mais atrasado ao mais recente) e todos os novos, sem limite
   const [vencidos, novos, progresso, materias] = await Promise.all([
     supabase
       .from('flashcards_do_aluno')
       .select('*')
       .lte('proxima_revisao', agora)
       .order('proxima_revisao')
-      .limit(500),
+      .limit(1000),
     supabase
       .from('flashcards_do_aluno')
       .select('*')
@@ -25,7 +25,7 @@ export default async function RevisaoPage() {
       .order('materia_ordem')
       .order('aula_ordem')
       .order('ordem')
-      .limit(LIMITE_NOVOS),
+      .limit(1000),
     carregarProgresso(supabase),
     carregarMaterias(supabase),
   ])
@@ -43,7 +43,7 @@ export default async function RevisaoPage() {
         </div>
       </header>
       <p className="lead" style={{ margin: '-8px 0 18px' }}>
-        Errou, volta em minutos. Acertou, volta em dias. Até {LIMITE_NOVOS} novos por sessão.
+        Errou, volta em minutos. Acertou, volta em dias. Todos os cards do dia entram, sem limite.
       </p>
 
       <Flashcards key={fila.map((c) => c.id).join()} cards={fila} userId={userId} modo="revisao" ativo emDia={pend.emDia} />
