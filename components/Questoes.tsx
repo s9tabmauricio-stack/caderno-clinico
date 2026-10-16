@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { explicacoesPorAlternativa } from '@/lib/explicacoes'
 import { createClient } from '@/lib/supabase/client'
 import type { QuestaoAluno } from '@/lib/dados'
@@ -135,6 +135,15 @@ export function Questoes({ questoes, userId, ativo, mostrarTema = true, vazio, a
     return () => window.removeEventListener('keydown', tecla)
   })
 
+  // Faixa de quadradinhos: rola de lado para deixar a questão atual no meio
+  const faixa = useRef<HTMLDivElement>(null)
+  useEffect(() => {
+    const el = faixa.current
+    const atual = el?.querySelector<HTMLElement>('.qd.cur')
+    if (!el || !atual) return
+    el.scrollTo({ left: atual.offsetLeft - (el.clientWidth - atual.offsetWidth) / 2, behavior: 'smooth' })
+  }, [idx])
+
   if (!questoes.length) return <p className="vazio">{vazio ?? 'Esta aula ainda não tem questões.'}</p>
 
   const certas = questoes.filter((x) => respostas[x.id]?.acertou).length
@@ -144,7 +153,7 @@ export function Questoes({ questoes, userId, ativo, mostrarTema = true, vazio, a
   const cabecalho = (
     <div className="qhead">
       <span className="qcount">{q ? `Questão ${idx + 1} de ${questoes.length}` : 'Resultado'}</span>
-      <div className="qdots">
+      <div className="qdots" ref={faixa}>
         {questoes.map((x, i) => {
           const r = respostas[x.id]
           return (

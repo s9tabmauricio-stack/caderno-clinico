@@ -782,3 +782,8 @@ select.campo option,select.campo optgroup{background:#161824;color:#F2F5FF}
 .painel-a>svg{flex:none;width:18px;height:18px;color:var(--muted);opacity:.7}
 .num.banco{background:var(--purple-soft);color:var(--purple)}
 .painel-vazio{margin:0;padding:12px 16px;font-size:14px;color:var(--muted)}
+
+/* Quadradinhos das questões: com muitas questões viram uma faixa que rola de lado (não alargam a tela do celular) */
+.qdots{min-width:0;max-width:calc(100% + 8px);overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:none;position:relative;padding:5px 4px;margin:-5px -4px}
+.qdots::-webkit-scrollbar{display:none}
+.qd{flex:none}
