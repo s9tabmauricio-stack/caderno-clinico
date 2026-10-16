@@ -43,8 +43,7 @@ export default async function RevisaoPage() {
         </div>
       </header>
       <p className="lead" style={{ margin: '-8px 0 18px' }}>
-        O card que você erra volta em minutos. O que você acerta volta em dias, e o intervalo cresce a cada acerto. Entram
-        até {LIMITE_NOVOS} cards novos por sessão.
+        Errou, volta em minutos. Acertou, volta em dias. Até {LIMITE_NOVOS} novos por sessão.
       </p>
 
       <Flashcards key={fila.map((c) => c.id).join()} cards={fila} userId={userId} modo="revisao" ativo emDia={pend.emDia} />

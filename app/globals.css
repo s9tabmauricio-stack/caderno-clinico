@@ -1,45 +1,9 @@
 /* Visual do Caderno Clínico: mesma linguagem das apostilas Liquid Glass */
 /* Layout: app de coluna única no estilo iOS, listas agrupadas e barra de abas de vidro flutuante; mesma linguagem das apostilas Liquid Glass (azul = conteúdo, verde = valor, vermelho = alerta) */
 :root{
-  --bg:#F2F2F7; --card:#FFFFFF; --card-2:#F6F7FA; --line:#E3E3E8; --line-2:#ECECF0; --line-strong:#C9CAD3; --field:#FFFFFF;
-  --ink:#1F2933; --text:#3A3A3C; --muted:#6C6C70; --title:#16315C;
-  --accent:#0B5BD3; --accent-soft:#E8F0FE; --accent-line:#C3D8F8; --btn:#0B5BD3;
-  --ok:#1E7A34; --ok-soft:#E7F7EC; --ok-line:#BFE5CB;
-  --bad:#C0362C; --bad-soft:#FDECEB; --bad-line:#F8C9C5;
-  --seg:#E6E6EC; --seg-on:#FFFFFF; --tab-on:rgba(11,91,211,.10); --badge:#E5352B;
-  --glass:rgba(255,255,255,.74); --glass-line:rgba(255,255,255,.95);
-  --glass-shadow:0 10px 30px rgba(22,49,92,.16),0 1px 2px rgba(22,49,92,.08);
-  --lift:0 12px 32px rgba(22,49,92,.08);
-  --grad:linear-gradient(150deg,#0A6FE8 0%,#3B5BDB 45%,#6A3FC0 82%,#8E3BB8 100%);
   --font:"Inter Variable","Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
   --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
   --r-lg:20px; --r-md:14px;
-}
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --bg:#0B0C10; --card:#17181E; --card-2:#1E2028; --line:#2A2C35; --line-2:#23252D; --line-strong:#3A3D48; --field:#101116;
-    --ink:#F3F5F9; --text:#D5D8DF; --muted:#9A9FAA; --title:#DCE6FF;
-    --accent:#6AAEFF; --accent-soft:#15284A; --accent-line:#28497F; --btn:#2F6FE0;
-    --ok:#5BD07F; --ok-soft:#12301D; --ok-line:#1F5233;
-    --bad:#FF8073; --bad-soft:#3A1715; --bad-line:#6B2A23;
-    --seg:#24262E; --seg-on:#3A3D48; --tab-on:rgba(106,174,255,.16); --badge:#E5352B;
-    --glass:rgba(30,32,40,.74); --glass-line:rgba(255,255,255,.08);
-    --glass-shadow:0 10px 30px rgba(0,0,0,.5),0 1px 2px rgba(0,0,0,.4);
-    --lift:0 12px 32px rgba(0,0,0,.35);
-    color-scheme:dark;
-  }
-}
-:root[data-theme="dark"]{
-  --bg:#0B0C10; --card:#17181E; --card-2:#1E2028; --line:#2A2C35; --line-2:#23252D; --line-strong:#3A3D48; --field:#101116;
-  --ink:#F3F5F9; --text:#D5D8DF; --muted:#9A9FAA; --title:#DCE6FF;
-  --accent:#6AAEFF; --accent-soft:#15284A; --accent-line:#28497F; --btn:#2F6FE0;
-  --ok:#5BD07F; --ok-soft:#12301D; --ok-line:#1F5233;
-  --bad:#FF8073; --bad-soft:#3A1715; --bad-line:#6B2A23;
-  --seg:#24262E; --seg-on:#3A3D48; --tab-on:rgba(106,174,255,.16); --badge:#E5352B;
-  --glass:rgba(30,32,40,.74); --glass-line:rgba(255,255,255,.08);
-  --glass-shadow:0 10px 30px rgba(0,0,0,.5),0 1px 2px rgba(0,0,0,.4);
-  --lift:0 12px 32px rgba(0,0,0,.35);
-  color-scheme:dark;
 }
 *{box-sizing:border-box}
 [hidden]{display:none!important}
@@ -343,10 +307,6 @@ a.row:hover{background:var(--card-2)}
 body{margin:0;min-height:100vh}
 .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 
-/* ===== cores extras do padrão das apostilas (laranja = professora, roxo = complemento) ===== */
-:root{--orange:#9A5B00;--orange-soft:#FFF3E1;--orange-line:#F7DCAE;--purple:#6E3AA7;--purple-soft:#F4EBFB;--purple-line:#DEC7F1;--prova-bg:#1F2933;--prova-fg:#FFFFFF}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--orange:#FFB547;--orange-soft:#33240B;--orange-line:#5E4416;--purple:#C9A2FF;--purple-soft:#2A1B40;--purple-line:#4A3170;--prova-bg:#E9EDF5;--prova-fg:#0B0C10}}
-:root[data-theme="dark"]{--orange:#FFB547;--orange-soft:#33240B;--orange-line:#5E4416;--purple:#C9A2FF;--purple-soft:#2A1B40;--purple-line:#4A3170;--prova-bg:#E9EDF5;--prova-fg:#0B0C10}
 
 /* ===== apostila completa ===== */
 .ap h4{font-size:16.5px;font-weight:600;color:var(--title);margin:20px 0 8px;letter-spacing:-.01em;text-wrap:balance}
@@ -459,7 +419,6 @@ body{margin:0;min-height:100vh}
 /* ---------- Tela de entrada: vidro fosco sobre fundo de cor ---------- */
 .tela-entrar{position:relative;min-height:100vh;min-height:100dvh;display:grid;place-items:center;align-content:center;gap:28px;padding:32px 16px calc(24px + env(safe-area-inset-bottom));overflow:hidden;isolation:isolate;
   --lg-bg:#EEF1F8;--lg-vidro:rgba(255,255,255,.55);--lg-borda:rgba(255,255,255,.75);--lg-campo:rgba(255,255,255,.7);--lg-linha:rgba(20,30,60,.12);--lg-sombra:0 30px 80px rgba(30,40,90,.18),0 2px 6px rgba(30,40,90,.06)}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .tela-entrar{--lg-bg:#07080D;--lg-vidro:rgba(28,30,40,.5);--lg-borda:rgba(255,255,255,.12);--lg-campo:rgba(255,255,255,.07);--lg-linha:rgba(255,255,255,.1);--lg-sombra:0 30px 80px rgba(0,0,0,.55)}}
 .tela-entrar{background:var(--lg-bg)}
 .lg-fundo{position:absolute;inset:0;z-index:-1;pointer-events:none}
 .lg-fundo span{position:absolute;border-radius:50%;filter:blur(70px);opacity:.7;animation:lg-flutua 22s ease-in-out infinite alternate}
@@ -724,21 +683,21 @@ select.campo option,select.campo optgroup{background:#161824;color:#F2F5FF}
 /* Recados da turma na administração */
 .cnt{flex:none;min-width:22px;height:22px;padding:0 7px;border-radius:11px;background:#FF2EC4;color:#fff;font-size:12px;font-weight:800;display:grid;place-items:center;font-variant-numeric:tabular-nums}
 .engrenagem .bd{position:absolute;top:-4px;right:-4px;min-width:20px;height:20px;padding:0 5px;border-radius:10px;background:#FF2EC4;color:#fff;font-size:11.5px;font-weight:800;display:grid;place-items:center;box-shadow:0 0 0 2px var(--bg);font-variant-numeric:tabular-nums}
-.filtros{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 12px}
-.filtros a{font-size:13px;font-weight:600;padding:6px 12px;border-radius:999px;background:var(--seg);color:var(--muted);text-decoration:none}
-.filtros a.on{background:var(--seg-on);color:var(--ink)}
-.rec{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:13px 14px;-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px)}
-.rec+.rec{margin-top:10px}
-.rec.novo{border-color:var(--accent-line);box-shadow:0 0 0 1px var(--accent-line)}
-.rec .mh{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-.rec .when{font-size:12px;color:var(--muted)}
-.rec .dotn{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px var(--accent)}
-.rec .mt{margin:6px 0 0;font-size:14.5px;line-height:1.5;color:var(--ink);white-space:pre-line;overflow-wrap:anywhere}
-.rec .qref{display:block;margin-top:8px;font-size:13px;color:var(--muted);line-height:1.4}
-.rec .qref b{color:var(--accent);font-weight:600}
-.rec .bt{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap;align-items:center}
-.rec .bt>form:not(.confirma){display:contents}
-.rec .bt .btn,.marcar-todos .btn{margin-top:0}
+.filtros-rec{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 12px}
+.filtros-rec a{font-size:13px;font-weight:600;padding:6px 12px;border-radius:999px;background:var(--seg);color:var(--muted);text-decoration:none}
+.filtros-rec a.on{background:var(--seg-on);color:var(--ink)}
+.recado{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:13px 14px;-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px)}
+.recado+.recado{margin-top:10px}
+.recado.novo{border-color:var(--accent-line);box-shadow:0 0 0 1px var(--accent-line)}
+.recado .mh{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.recado .when{font-size:12px;color:var(--muted)}
+.recado .dotn{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px var(--accent)}
+.recado .mt{margin:6px 0 0;font-size:14.5px;line-height:1.5;color:var(--ink);white-space:pre-line;overflow-wrap:anywhere}
+.recado .qref{display:block;margin-top:8px;font-size:13px;color:var(--muted);line-height:1.4}
+.recado .qref b{color:var(--accent);font-weight:600}
+.recado .bt{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap;align-items:center}
+.recado .bt>form:not(.confirma){display:contents}
+.recado .bt .btn,.marcar-todos .btn{margin-top:0}
 .marcar-todos{margin:0 0 12px}
 .marcar-todos .btn{justify-self:start}
 
@@ -787,3 +746,12 @@ select.campo option,select.campo optgroup{background:#161824;color:#F2F5FF}
 .qdots{min-width:0;max-width:calc(100% + 8px);overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:none;position:relative;padding:5px 4px;margin:-5px -4px}
 .qdots::-webkit-scrollbar{display:none}
 .qd{flex:none}
+
+/* Matérias do Início em duas colunas no celular (tela mais curta) */
+@media (max-width:599px){
+  .tiles{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .mtile{padding:10px 13px 11px;gap:10px}
+  /* tamanho que faz "Gastroenterologia" caber numa linha em qualquer celular */
+  .mt-name{font-size:clamp(14px,calc((50vw - 47px) / 8.6),17px);overflow-wrap:break-word}
+  .mt-meta{font-size:12.5px}
+}

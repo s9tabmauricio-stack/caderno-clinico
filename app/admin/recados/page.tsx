@@ -87,7 +87,7 @@ export default async function RecadosPage(props: PageProps<'/admin/recados'>) {
         </div>
       </header>
 
-      <nav className="filtros" aria-label="Filtrar recados">
+      <nav className="filtros-rec" aria-label="Filtrar recados">
         {FILTROS.map((x) => (
           <Link key={x.id} href={`/admin/recados?f=${x.id}`} className={x.id === filtro ? 'on' : ''}>
             {x.rotulo} · {recados.filter(passa[x.id]).length}
@@ -113,7 +113,7 @@ export default async function RecadosPage(props: PageProps<'/admin/recados'>) {
             ? `/admin/conteudo/questoes/${q.materia_id}?${q.aula_id ? `aula=${q.aula_id}&` : ''}q=${encodeURIComponent(q.id)}#q-${q.id}`
             : null
           return (
-            <article key={r.id} className={`rec${r.status === 'novo' ? ' novo' : ''}`}>
+            <article key={r.id} className={`recado${r.status === 'novo' ? ' novo' : ''}`}>
               <div className="mh">
                 {r.status === 'novo' && <span className="dotn" aria-label="Novo" />}
                 <span className={`tag ${r.tipo === 'erro' ? 'erro' : 'ins'}`}>
