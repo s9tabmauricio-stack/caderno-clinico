@@ -108,3 +108,4 @@ Rodapé da tela de entrada: "By Mauricio".
 
 - Questões e flashcards das aulas novas (Pneumo 1 já tem 9 questões; as outras ainda não).
 - Proteção contra senhas vazadas do Supabase está desligada (recurso do plano pago).
+- Sugestões e ideias de experiência do usuário (UX): veja [`MELHORIAS-UX.md`](MELHORIAS-UX.md).
