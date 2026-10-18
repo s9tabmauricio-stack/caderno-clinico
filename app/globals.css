@@ -780,3 +780,33 @@ a.pa>span:first-child{min-width:0}
 .pa-r svg{width:16px;height:16px;opacity:.7}
 .perf-dica{margin:0 0 2px;font-size:13px;color:var(--muted)}
 .perf .btn.perf-treino{justify-self:start;min-height:44px;display:inline-flex;align-items:center}
+
+/* Agenda: seletor do grupo de prática ao lado dos filtros */
+.ag-filtros{flex-wrap:wrap;align-items:center}
+.ag-grupo{font:inherit;font-size:13.5px;font-weight:600;padding:6px 12px;border-radius:999px;border:1px solid var(--line-strong);background:var(--card);color:var(--text);cursor:pointer}
+.ag-grupo.vazio-grupo{border-color:var(--accent-line);color:var(--accent)}
+.ag-grupo:disabled{opacity:.6;cursor:default}
+.agenda a.row.ev{text-decoration:none;color:inherit}
+
+/* Início: "Seu progresso" leva ao Desempenho */
+a.stats-link{display:grid;color:inherit;text-decoration:none}
+a.stats-link:hover .stat{border-color:var(--accent-line)}
+
+/* Banco de questões: filtros recolhidos num botão, com as etiquetas dos filtros ligados */
+.filtro-barra{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:12px}
+.filtro-btn[aria-expanded="true"]{border-color:var(--accent-line);color:var(--accent)}
+.pill.ativo{background:var(--accent-soft);border-color:var(--accent-line);color:var(--accent)}
+.res-prox{margin:18px 0 0}
+
+/* "Cortar": rótulo legível a um braço de distância */
+.elim{width:62px;font-size:11px}
+
+/* Tablet e celular: alvos de toque de pelo menos 44 px */
+@media (pointer:coarse){
+  .pill,.ag-grupo,.filtros-rec a{min-height:44px;display:inline-flex;align-items:center}
+  .btn.sm{min-height:44px;display:inline-flex;align-items:center;justify-content:center}
+  .back,.link,.segm button{min-height:44px}
+  .back,.link{display:inline-flex;align-items:center}
+  .qd{width:44px;height:44px}
+  .msg .acts button{min-height:44px;padding-inline:4px}
+}

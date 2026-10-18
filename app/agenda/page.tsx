@@ -1,8 +1,7 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
 import { Pagina } from '@/components/Pagina'
 import { AgendaSemana } from '@/components/AgendaSemana'
-import { carregarProgresso, pendentes, sessao } from '@/lib/dados'
+import { carregarMaterias, carregarProgresso, pendentes, sessao } from '@/lib/dados'
 import { agendaDaSemana, grupoDoAluno } from '@/lib/agenda-dados'
 import { agoraBrasilia } from '@/lib/agenda'
 
@@ -19,10 +18,11 @@ function periodo(semana: string) {
 
 export default async function AgendaPage() {
   const { supabase, userId } = await sessao()
-  const [semana, grupo, progresso] = await Promise.all([
+  const [semana, grupo, progresso, materias] = await Promise.all([
     agendaDaSemana(supabase),
     grupoDoAluno(supabase, userId),
     carregarProgresso(supabase),
+    carregarMaterias(supabase),
   ])
 
   return (
@@ -35,15 +35,17 @@ export default async function AgendaPage() {
       </header>
 
       {semana ? (
-        <AgendaSemana semana={semana.semana} aviso={semana.aviso} eventos={semana.eventos} grupo={grupo} agora={agoraBrasilia()} />
+        <AgendaSemana
+          semana={semana.semana}
+          aviso={semana.aviso}
+          eventos={semana.eventos}
+          grupo={grupo}
+          agora={agoraBrasilia()}
+          userId={userId}
+          materias={materias.map((m) => m.id)}
+        />
       ) : (
         <p className="vazio">O cronograma da semana ainda não foi publicado.</p>
-      )}
-
-      {grupo === null && (
-        <p className="foot">
-          <Link href="/perfil">Informe seu grupo de prática em Configurações</Link> para filtrar as suas práticas.
-        </p>
       )}
     </Pagina>
   )

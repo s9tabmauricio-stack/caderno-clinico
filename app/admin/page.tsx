@@ -14,7 +14,7 @@ export default async function AdminPage() {
 
   if (!chaveConfigurada()) {
     return (
-      <Pagina pendentes={0}>
+      <Pagina>
         <Voltar href="/perfil" rotulo="Configurações" />
         <header className="top">
           <h1 className="big">Alunos</h1>
@@ -43,7 +43,7 @@ export default async function AdminPage() {
     .sort((a, b) => (a.nome || a.ident).localeCompare(b.nome || b.ident, 'pt-BR'))
 
   return (
-    <Pagina pendentes={0}>
+    <Pagina>
       <Voltar href="/perfil" rotulo="Configurações" />
       <header className="top">
         <div>

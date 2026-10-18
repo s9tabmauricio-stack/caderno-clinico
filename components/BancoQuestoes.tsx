@@ -10,6 +10,12 @@ type Filtros = { tema: string | null; prova: string | null; situacao: Situacao }
 
 const ROTULO_PROVA = (p: string) => p.replace(/^p(\d)-t(\d+)$/i, 'P$1 T$2')
 
+// O servidor lê este cookie na próxima visita e já abre o banco com o mesmo tema e prova
+function lembrarFiltros(chave: string, f: Filtros) {
+  const valor = encodeURIComponent(JSON.stringify({ tema: f.tema, prova: f.prova }))
+  document.cookie = `mgf_${chave}=${valor}; path=/; max-age=15552000; samesite=lax`
+}
+
 function filtrar(lista: QuestaoAluno[], f: Filtros) {
   return lista.filter(
     (q) =>
@@ -20,11 +26,14 @@ function filtrar(lista: QuestaoAluno[], f: Filtros) {
 }
 
 export function BancoQuestoes({
+  chave,
   questoes,
   userId,
   inicial,
   edicao,
 }: {
+  // id da matéria: nome do cookie em que o tema e a prova escolhidos ficam lembrados
+  chave: string
   questoes: QuestaoAluno[]
   userId: string
   // filtro já aplicado ao abrir (links do Desempenho)
@@ -38,10 +47,12 @@ export function BancoQuestoes({
   // A lista em estudo só muda quando o aluno troca o filtro, para não pular questões no meio
   const [lista, setLista] = useState(() => filtrar(questoes, filtros))
   const [versao, setVersao] = useState(0)
+  const [aberto, setAberto] = useState(false)
 
   function aplicar(novo: Partial<Filtros>) {
     const f = { ...filtros, ...novo }
     setFiltros(f)
+    lembrarFiltros(chave, f)
     setLista(filtrar(atuais, f))
     setVersao((v) => v + 1)
   }
@@ -60,6 +71,16 @@ export function BancoQuestoes({
   const respondidas = atuais.filter((q) => q.resposta)
   const certas = respondidas.filter((q) => q.resposta?.acertou).length
   const erradas = respondidas.length - certas
+
+  // Filtros ligados, mostrados como etiquetas que se tiram com um toque
+  const ativos = [
+    filtros.situacao !== 'todas' && {
+      rotulo: filtros.situacao === 'abertas' ? 'Não respondidas' : 'Só as que errei',
+      tirar: () => aplicar({ situacao: 'todas' }),
+    },
+    filtros.tema && { rotulo: filtros.tema, tirar: () => aplicar({ tema: null }) },
+    filtros.prova && { rotulo: ROTULO_PROVA(filtros.prova), tirar: () => aplicar({ prova: null }) },
+  ].filter((f): f is { rotulo: string; tirar: () => void } => Boolean(f))
 
   const pill = (ativo: boolean, rotulo: string, onClick: () => void, n?: number) => (
     <button key={rotulo} className="pill" aria-pressed={ativo} onClick={onClick}>
@@ -88,7 +109,25 @@ export function BancoQuestoes({
         </div>
       </div>
 
-      <div className="filtros" aria-label="Filtros">
+      <div className="filtro-barra">
+        <button
+          className="pill filtro-btn"
+          aria-expanded={aberto}
+          aria-controls="painel-filtros"
+          onClick={() => setAberto(!aberto)}
+        >
+          Filtrar
+          {ativos.length > 0 && <small>{ativos.length}</small>}
+        </button>
+        {ativos.map((f) => (
+          <button key={f.rotulo} className="pill ativo" aria-label={`Tirar o filtro ${f.rotulo}`} onClick={f.tirar}>
+            {f.rotulo} <span aria-hidden="true">✕</span>
+          </button>
+        ))}
+      </div>
+
+      {aberto && (
+      <div className="filtros" id="painel-filtros" aria-label="Filtros">
         <div className="filtro">
           <span className="rot">Mostrar</span>
           {pill(filtros.situacao === 'todas', 'Todas', () => aplicar({ situacao: 'todas' }))}
@@ -112,6 +151,7 @@ export function BancoQuestoes({
           </div>
         )}
       </div>
+      )}
 
       <p className="foot" style={{ margin: '0 4px 12px' }}>
         {lista.length} {plural(lista.length, 'questão', 'questões')} neste filtro.

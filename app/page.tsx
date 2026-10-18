@@ -97,14 +97,14 @@ export default async function Inicio() {
         <Link href="/agenda">Semana →</Link>
       </div>
       {aulasRestantes.length > 0 ? (
-        <AgendaLista eventos={aulasRestantes} grupo={grupo} estados={estados} />
+        <AgendaLista eventos={aulasRestantes} grupo={grupo} estados={estados} materias={materias.map((m) => m.id)} />
       ) : (
         <p className="vazio">{aulasHoje.length ? 'As aulas de hoje já terminaram.' : 'Nenhuma aula hoje.'}</p>
       )}
       <AgendaAvisos eventos={canceladasHoje} />
       {grupo === null && agendaHoje.length > 0 && (
         <p className="foot">
-          <Link href="/perfil">Informe seu grupo de prática em Configurações</Link> para ver só as suas práticas.
+          <Link href="/agenda">Escolha seu grupo de prática na Agenda</Link> para ver só as suas práticas.
         </p>
       )}
 
@@ -161,8 +161,11 @@ export default async function Inicio() {
         <p className="vazio">Nenhuma matéria publicada ainda.</p>
       )}
 
-      <div className="sec">Seu progresso</div>
-      <div className="stats">
+      <div className="sec ag-h">
+        <span>Seu progresso</span>
+        <Link href="/desempenho">Desempenho →</Link>
+      </div>
+      <Link className="stats stats-link" href="/desempenho" aria-label="Ver o desempenho completo">
         <div className="stat">
           <div className="lab">Questões</div>
           <div className="n">
@@ -181,7 +184,7 @@ export default async function Inicio() {
             <small>/{t.cards}</small>
           </div>
         </div>
-      </div>
+      </Link>
     </Pagina>
   )
 }

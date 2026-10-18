@@ -15,6 +15,8 @@ type Props = {
   modo: 'aula' | 'revisao'
   ativo: boolean
   emDia?: number // em "revisao", quantos cards estão em dia (não vêm na lista)
+  // em "aula": o que oferecer quando os cards acabam ou já estão em dia (ex.: fazer as questões)
+  proximoPasso?: React.ReactNode
 }
 
 type Sessao = { fila: string[]; atual: string | null; virado: boolean; feitos: number; erros: number }
@@ -28,7 +30,7 @@ type HistoricoItem = {
   eraNovoNoBanco: boolean
 }
 
-export function Flashcards({ cards, userId, modo, ativo, emDia }: Props) {
+export function Flashcards({ cards, userId, modo, ativo, emDia, proximoPasso }: Props) {
   const supabase = useMemo(() => createClient(), [])
   const router = useRouter()
   // Estados alterados nesta visita; o resto vem do servidor
@@ -212,6 +214,7 @@ export function Flashcards({ cards, userId, modo, ativo, emDia }: Props) {
               {modo === 'aula' ? 'Voltar aos cards da aula' : 'Concluir'}
             </button>
           </div>
+          {modo === 'aula' && proximoPasso && <div className="next-steps">{proximoPasso}</div>}
           {aviso}
         </div>
       )
@@ -332,6 +335,7 @@ export function Flashcards({ cards, userId, modo, ativo, emDia }: Props) {
                 Treinar todos mesmo assim
               </button>
             )}
+            {modo === 'aula' && proximoPasso && <div className="next-steps">{proximoPasso}</div>}
           </>
         )}
       </div>

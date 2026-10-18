@@ -27,11 +27,13 @@ type Props = {
   vazio?: string
   // avisa quem está em volta (o banco de questões) quando uma resposta muda
   aoResponder?: (id: string, resposta: Resposta | null) => void
+  // o que oferecer quando as questões acabam (ex.: estudar os flashcards da aula)
+  proximoPasso?: React.ReactNode
   // só para o administrador: botão Editar na questão (aulas da matéria para o seletor)
   edicao?: { aulas: { id: string; titulo: string }[] }
 }
 
-export function Questoes({ questoes, userId, ativo, mostrarTema = true, vazio, aoResponder, edicao }: Props) {
+export function Questoes({ questoes, userId, ativo, mostrarTema = true, vazio, aoResponder, proximoPasso, edicao }: Props) {
   const supabase = useMemo(() => createClient(), [])
   const [respostas, setRespostas] = useState<Record<string, Resposta>>(() =>
     Object.fromEntries(questoes.filter((q) => q.resposta).map((q) => [q.id, q.resposta as Resposta])),
@@ -224,6 +226,12 @@ export function Questoes({ questoes, userId, ativo, mostrarTema = true, vazio, a
               Refazer todas
             </button>
           </div>
+          {proximoPasso && (
+            <>
+              <p className="foot res-prox">Próximo passo</p>
+              <div className="next-steps">{proximoPasso}</div>
+            </>
+          )}
         </div>
         {aviso}
       </div>

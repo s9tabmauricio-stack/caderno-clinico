@@ -1,17 +1,24 @@
+import Link from 'next/link'
 import { COR_MATERIA, fmtFalta, fmtHora, type Situacao } from '@/lib/agenda'
 import type { EventoBanco } from '@/lib/agenda-dados'
+import { Icone } from './Icones'
 
 type Estado = { situacao: Situacao; falta: number }
 
-/** Lista de aulas no estilo das listas do app (hora, faixa de cor da matéria, título e detalhes). */
+/**
+ * Lista de aulas no estilo das listas do app (hora, faixa de cor da matéria, título e detalhes).
+ * Com `materias` (ids das matérias do app), cada aula abre a página da sua matéria.
+ */
 export function AgendaLista({
   eventos,
   grupo,
   estados,
+  materias,
 }: {
   eventos: EventoBanco[]
   grupo: number | null
   estados?: Record<number, Estado>
+  materias?: string[]
 }) {
   return (
     <div className="group agenda">
@@ -23,8 +30,10 @@ export function AgendaLista({
           e.professor,
           e.local,
         ].filter(Boolean)
-        return (
-          <div key={e.id} className={`row static ev ${st?.situacao ?? ''} ${e.cancelado ? 'cancel' : ''}`}>
+        const href = !e.cancelado && e.materia && materias?.includes(e.materia) ? `/materia/${e.materia}` : null
+        const classes = `row ev ${st?.situacao ?? ''} ${e.cancelado ? 'cancel' : ''}`
+        const conteudo = (
+          <>
             <span className="hora">
               {e.inicio ? fmtHora(e.inicio) : '—'}
               {e.fim && <small>{fmtHora(e.fim)}</small>}
@@ -47,6 +56,16 @@ export function AgendaLista({
                 </span>
               )}
             </span>
+            {href && Icone.seta}
+          </>
+        )
+        return href ? (
+          <Link key={e.id} className={classes} href={href}>
+            {conteudo}
+          </Link>
+        ) : (
+          <div key={e.id} className={`${classes} static`}>
+            {conteudo}
           </div>
         )
       })}

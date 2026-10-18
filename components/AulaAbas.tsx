@@ -10,6 +10,7 @@ import { Flashcards } from './Flashcards'
 export type Aba = 'apostila' | 'questoes' | 'flashcards'
 
 type Props = {
+  aulaId: string
   abaInicial: Aba
   apostilaHtml: string | null
   pdfUrl: string | null
@@ -18,10 +19,24 @@ type Props = {
   userId: string
   materiaId: string
   totalBanco: number
+  // próxima aula publicada da matéria, se houver
+  proximaAula: { id: string; titulo: string } | null
   edicao?: { aulas: { id: string; titulo: string }[] }
 }
 
-export function AulaAbas({ abaInicial, apostilaHtml, pdfUrl, questoes, cards, userId, materiaId, totalBanco, edicao }: Props) {
+export function AulaAbas({
+  aulaId,
+  abaInicial,
+  apostilaHtml,
+  pdfUrl,
+  questoes,
+  cards,
+  userId,
+  materiaId,
+  totalBanco,
+  proximaAula,
+  edicao,
+}: Props) {
   const [aba, setAba] = useState<Aba>(abaInicial)
 
   function trocar(nova: Aba, rolar = false) {
@@ -37,6 +52,33 @@ export function AulaAbas({ abaInicial, apostilaHtml, pdfUrl, questoes, cards, us
     ['questoes', 'Questões'],
     ['flashcards', 'Flashcards'],
   ]
+
+  // Próximo passo mostrado quando o aluno termina as questões ou os cards da aula
+  const irParaProxima = proximaAula && (
+    <Link className="btn ghost" href={`/aula/${proximaAula.id}`}>
+      Próxima aula: {proximaAula.titulo}
+    </Link>
+  )
+  const passoDepoisDasQuestoes = (cards.length > 0 || proximaAula) && (
+    <>
+      {cards.length > 0 && (
+        <button className="btn" onClick={() => trocar('flashcards', true)}>
+          Estudar os {cards.length} flashcards
+        </button>
+      )}
+      {irParaProxima}
+    </>
+  )
+  const passoDepoisDosCards = (questoes.length > 0 || proximaAula) && (
+    <>
+      {questoes.length > 0 && (
+        <button className="btn" onClick={() => trocar('questoes', true)}>
+          Fazer as {questoes.length} questões
+        </button>
+      )}
+      {irParaProxima}
+    </>
+  )
 
   return (
     <>
@@ -94,10 +136,11 @@ export function AulaAbas({ abaInicial, apostilaHtml, pdfUrl, questoes, cards, us
           userId={userId}
           ativo={aba === 'questoes'}
           edicao={edicao}
+          proximoPasso={passoDepoisDasQuestoes || undefined}
           vazio="Nenhuma questão das provas anteriores é sobre o assunto desta aula. Treine pelo banco de questões da matéria."
         />
         {totalBanco > questoes.length && (
-          <Link className="btn ghost wide" style={{ marginTop: 16 }} href={`/materia/${materiaId}/questoes`}>
+          <Link className="btn ghost wide" style={{ marginTop: 16 }} href={`/materia/${materiaId}/questoes?de=aula:${aulaId}`}>
             Ver as {totalBanco} questões do banco da matéria
           </Link>
         )}
@@ -110,7 +153,7 @@ export function AulaAbas({ abaInicial, apostilaHtml, pdfUrl, questoes, cards, us
         aria-labelledby="aba-flashcards"
         hidden={aba !== 'flashcards'}
       >
-        <Flashcards cards={cards} userId={userId} modo="aula" ativo={aba === 'flashcards'} />
+        <Flashcards cards={cards} userId={userId} modo="aula" ativo={aba === 'flashcards'} proximoPasso={passoDepoisDosCards || undefined} />
       </div>
     </>
   )

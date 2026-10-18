@@ -34,11 +34,13 @@ Tudo em português do Brasil. O dono do projeto não é programador: explique em
 ## Telas
 
 - Início: saudação (só o primeiro nome), Revisão de hoje, **Suas aulas hoje** (agenda), Matérias, Seu progresso.
-- Barra de baixo: Início, Agenda, Revisão, Desempenho. Perfil fica na engrenagem do canto superior direito (todas as telas).
+- Barra de baixo: Início, Agenda, Questões, Revisão, Desempenho. A tela "Configurações" (`/perfil`) fica na engrenagem do canto superior direito (todas as telas); para o administrador, com recados novos a engrenagem abre direto os Recados.
+- Início: "Seu progresso" e as aulas de hoje são atalhos (Desempenho e a matéria da aula). Desempenho: cada tema abre o banco já filtrado e cada matéria tem "Refazer as erradas".
+- Banco de questões: os filtros ficam recolhidos no botão "Filtrar"; tema e prova escolhidos ficam lembrados (cookie `mgf_<matéria>`). O botão Voltar segue `?de=` (questoes, desempenho ou `aula:<id>`).
 - Aula: abas Apostila / Questões / Flashcards. Matéria: aulas + Banco de questões (filtros por tema e prova).
 - Questões: antes de responder, cada alternativa tem a faixa "Cortar" (tesoura; Shift + letra), que vale só enquanto o aluno está na questão. Depois de responder, certa em verde, erradas em vermelho, a marcada em destaque; comentário embaixo da certa e o motivo embaixo de cada errada. Para o administrador, cada questão tem o botão **Editar** (no canto do cartão) que abre o mesmo editor de Conteúdo ali mesmo.
 - **Conversa da turma** (embaixo da questão, só depois de responder): o aluno deixa "💡 Insight para os colegas" ou "⚠️ Erro na questão"; aparece como "Augusto deixou uma dica" / "Augusto achou um erro" (sem artigo, vale para qualquer nome). Colegas marcam dica como 👍 Útil; o autor apaga o próprio recado.
-- Administração (engrenagem → Perfil): **Recados da turma** (`/admin/recados`: bolinha rosa na engrenagem com os novos; marcar visto/corrigido, abrir a questão, apagar), **Alunos** (`/admin`), **Conteúdo** (`/admin/conteudo`: editar/apagar aulas, questões, flashcards e limpar versões antigas), **Agenda da semana** (`/admin/agenda`: colar o cronograma do WhatsApp).
+- Administração (engrenagem → Perfil): **Recados da turma** (`/admin/recados`: bolinha rosa na engrenagem com os novos; marcar visto/corrigido, abrir a questão, apagar), **Alunos** (`/admin`), **Conteúdo** (`/admin/conteudo`: resumo do que está no ar, editar/apagar aulas, questões, flashcards e limpar versões antigas; `/admin/painel` só redireciona para cá), **Agenda da semana** (`/admin/agenda`: colar o cronograma do WhatsApp).
 
 ## Banco de dados
 
@@ -89,7 +91,7 @@ Título, resumo e professor saem da capa (`pdftotext -f 1 -l 1`). Atualize a `de
 ## Agenda
 
 - O Mauricio cola o cronograma do WhatsApp em `/admin/agenda`; `lib/agenda.ts` separa dias, horários, matéria (emoji ou palavra), professor, local, grupos, cancelamentos (❌) e avisos. Grupos por letra (A = práticas 1 a 7…) viram números.
-- Teóricas valem para todos; práticas, só para os grupos listados. O aluno informa o grupo no Perfil.
+- Teóricas valem para todos; práticas, só para os grupos listados. O aluno informa o grupo na própria Agenda (seletor ao lado dos filtros) ou no Perfil. Tocar numa aula abre a matéria dela.
 
 ## Visual
 

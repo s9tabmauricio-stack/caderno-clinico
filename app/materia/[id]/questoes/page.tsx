@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { cookies } from 'next/headers'
 import { notFound } from 'next/navigation'
 import { Pagina, Voltar } from '@/components/Pagina'
 import { BancoQuestoes } from '@/components/BancoQuestoes'
@@ -16,7 +17,7 @@ export async function generateMetadata(props: PageProps<'/materia/[id]/questoes'
 
 export default async function BancoPage(props: PageProps<'/materia/[id]/questoes'>) {
   const { id } = await props.params
-  const { tema, mostrar } = await props.searchParams
+  const { tema, mostrar, de } = await props.searchParams
   const { supabase, userId, email } = await sessao()
   const [materia, questoes, progresso] = await Promise.all([
     supabase.from('materias').select('id, nome').eq('id', id).maybeSingle(),
@@ -26,10 +27,27 @@ export default async function BancoPage(props: PageProps<'/materia/[id]/questoes
   if (!materia.data) notFound()
   if (questoes.error) throw new Error(`Não foi possível carregar as questões: ${questoes.error.message}`)
   const lista = (questoes.data ?? []).map(paraQuestao)
-  // Filtro vindo do link (ex.: Desempenho → tema); tema que não existe nesta matéria é ignorado
+  // Filtros: um link com filtro (ex.: Desempenho → tema) vale sozinho; sem ele, abre com o último tema e prova deste aluno
+  const comFiltroNoLink = typeof tema === 'string' || typeof mostrar === 'string'
+  let lembrados: { tema?: unknown; prova?: unknown } = {}
+  try {
+    if (!comFiltroNoLink) lembrados = JSON.parse(decodeURIComponent((await cookies()).get(`mgf_${id}`)?.value ?? '{}')) ?? {}
+  } catch {}
+  const existe = (campo: 'tema' | 'prova', v: unknown) => (typeof v === 'string' && lista.some((q) => q[campo] === v) ? v : null)
   const inicial = {
-    tema: typeof tema === 'string' && lista.some((q) => q.tema === tema) ? tema : null,
+    tema: existe('tema', tema) ?? existe('tema', lembrados.tema),
+    prova: existe('prova', lembrados.prova),
     situacao: mostrar === 'erradas' ? ('erradas' as const) : mostrar === 'abertas' ? ('abertas' as const) : ('todas' as const),
+  }
+
+  // "Voltar" leva de volta a quem mandou o aluno para cá (aba Questões, Desempenho ou a aula)
+  let voltar = { href: `/materia/${id}`, rotulo: materia.data.nome }
+  if (de === 'questoes') voltar = { href: '/questoes', rotulo: 'Questões' }
+  else if (de === 'desempenho') voltar = { href: '/desempenho', rotulo: 'Desempenho' }
+  else if (typeof de === 'string' && /^aula:[\w-]{1,60}$/.test(de)) {
+    const aulaId = de.slice(5)
+    const { data: aula } = await supabase.from('aulas').select('titulo').eq('id', aulaId).eq('materia_id', id).maybeSingle()
+    if (aula) voltar = { href: `/aula/${aulaId}?aba=questoes`, rotulo: aula.titulo }
   }
   // Administrador: botão Editar nas questões
   const edicao = ehAdmin(email)
@@ -38,7 +56,7 @@ export default async function BancoPage(props: PageProps<'/materia/[id]/questoes
 
   return (
     <Pagina pendentes={pendentes(progresso).hoje}>
-      <Voltar href={`/materia/${id}`} rotulo={materia.data.nome} />
+      <Voltar href={voltar.href} rotulo={voltar.rotulo} />
       <header className="top">
         <div>
           <div className="eyebrow">Banco de questões</div>
@@ -50,7 +68,14 @@ export default async function BancoPage(props: PageProps<'/materia/[id]/questoes
         </div>
       </header>
       {lista.length ? (
-        <BancoQuestoes key={`${inicial.tema}|${inicial.situacao}`} questoes={lista} userId={userId} inicial={inicial} edicao={edicao} />
+        <BancoQuestoes
+          key={`${inicial.tema}|${inicial.prova}|${inicial.situacao}`}
+          chave={id}
+          questoes={lista}
+          userId={userId}
+          inicial={inicial}
+          edicao={edicao}
+        />
       ) : (
         <p className="vazio">Esta matéria ainda não tem questões no banco.</p>
       )}

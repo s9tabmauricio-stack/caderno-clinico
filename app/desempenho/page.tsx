@@ -97,7 +97,7 @@ export default async function DesempenhoPage() {
                 responder
               </div>
               {erradas > 0 && (
-                <Link className="btn ghost sm perf-treino" href={`/materia/${m.id}/questoes?mostrar=erradas`}>
+                <Link className="btn ghost sm perf-treino" href={`/materia/${m.id}/questoes?mostrar=erradas&de=desempenho`}>
                   Refazer {erradas === 1 ? 'a errada' : `as ${erradas} erradas`}
                 </Link>
               )}
@@ -105,7 +105,7 @@ export default async function DesempenhoPage() {
                 <div className="perf-aulas">
                   <p className="perf-dica">Toque num tema para treinar só ele.</p>
                   {temasM.map((x) => (
-                    <Link key={x.tema} className="pa" href={`/materia/${m.id}/questoes?tema=${encodeURIComponent(x.tema)}`}>
+                    <Link key={x.tema} className="pa" href={`/materia/${m.id}/questoes?tema=${encodeURIComponent(x.tema)}&de=desempenho`}>
                       <span>{x.tema}</span>
                       <span className="pa-r">
                         <span>

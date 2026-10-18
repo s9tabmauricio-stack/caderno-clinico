@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { TabBar } from './TabBar'
 import { Icone } from './Icones'
-import { sessao } from '@/lib/dados'
+import { carregarProgresso, pendentes as contarPendentes, sessao } from '@/lib/dados'
 import { ehAdmin } from '@/lib/admin'
 
 /** Recados da turma ainda não vistos (só conta para o administrador). */
@@ -12,23 +12,30 @@ export async function recadosNovos() {
   return count ?? 0
 }
 
-// Moldura comum das telas logadas: engrenagem do perfil no canto, conteúdo e barra de abas
-export async function Pagina({ pendentes, children }: { pendentes: number; children: React.ReactNode }) {
-  const novos = await recadosNovos()
+/** Flashcards para revisar hoje (o número do selo da aba Revisão). */
+async function revisoesDeHoje() {
+  const { supabase } = await sessao()
+  return contarPendentes(await carregarProgresso(supabase)).hoje
+}
+
+// Moldura comum das telas logadas: engrenagem do perfil no canto, conteúdo e barra de abas.
+// Sem `pendentes`, a própria moldura conta as revisões (as telas de administração não precisam calcular).
+export async function Pagina({ pendentes, children }: { pendentes?: number; children: React.ReactNode }) {
+  const [novos, revisoes] = await Promise.all([recadosNovos(), pendentes ?? revisoesDeHoje()])
   return (
     <>
       <main className="wrap">
         <Link
           className="avatar engrenagem"
-          href="/perfil"
-          aria-label={novos ? `Configurações, ${novos} ${novos === 1 ? 'recado novo' : 'recados novos'} da turma` : 'Configurações'}
+          href={novos ? '/admin/recados' : '/perfil'}
+          aria-label={novos ? `${novos} ${novos === 1 ? 'recado novo' : 'recados novos'} da turma` : 'Configurações'}
         >
           {Icone.engrenagem}
           {novos > 0 && <span className="bd">{novos > 99 ? '99+' : novos}</span>}
         </Link>
         <div className="view">{children}</div>
       </main>
-      <TabBar pendentes={pendentes} />
+      <TabBar pendentes={revisoes} />
     </>
   )
 }

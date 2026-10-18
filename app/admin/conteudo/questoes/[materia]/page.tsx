@@ -29,7 +29,7 @@ export default async function EditarQuestoesPage(props: PageProps<'/admin/conteu
   const lista = (questoes ?? []) as (QuestaoAdmin & { ordem: number })[]
 
   return (
-    <Pagina pendentes={0}>
+    <Pagina>
       <Voltar href="/admin/conteudo" rotulo="Conteúdo" />
       <header className="top">
         <div>

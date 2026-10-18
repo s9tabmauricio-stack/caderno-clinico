@@ -38,7 +38,7 @@ Conforme as melhorias forem implementadas, marque com `[x]`.
 
 - [ ] **Destaque "Acontecendo Agora":** Brilho neon e contagem regressiva para a próxima aula quando o aluno abre o app no horário de aula.
 - [ ] **Exportar para calendário (.ics):** Botão para adicionar a grade da semana ao Google Agenda ou Apple Calendar do celular com alertas.
-- [ ] **Seletor de grupo visível na Agenda:** Atalho direto na aba de Agenda para escolher/alterar o grupo de prática sem precisar ir até Configurações.
+- [x] **Seletor de grupo visível na Agenda:** Atalho direto na aba de Agenda para escolher/alterar o grupo de prática sem precisar ir até Configurações.
 
 ---
 
@@ -53,7 +53,7 @@ Conforme as melhorias forem implementadas, marque com `[x]`.
 ## 6. Sensação de App Nativo (Mobile & PWA)
 
 - [ ] **Feedback tátil (vibração sutil):** Vibração suave (`navigator.vibrate`) no celular ao acertar questões, virar cards ou concluir a fila.
-- [ ] **Esqueletos de carregamento (Skeleton screens):** Animação de carregamento pulsante no formato dos cartões para conexões lentas de 4G.
+- [x] **Esqueletos de carregamento (Skeleton screens):** Animação de carregamento pulsante no formato dos cartões para conexões lentas de 4G.
 
 ---
 

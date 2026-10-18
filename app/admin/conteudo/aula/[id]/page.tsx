@@ -21,7 +21,7 @@ export default async function EditarAulaPage(props: PageProps<'/admin/conteudo/a
   if (!aula) notFound()
 
   return (
-    <Pagina pendentes={0}>
+    <Pagina>
       <Voltar href="/admin/conteudo" rotulo="Conteúdo" />
       <header className="top">
         <div>

@@ -35,7 +35,7 @@ export default async function QuestoesPage() {
           {comQuestoes.map((m) => {
             const pm = banco.find((b) => b.materia_id === m.id)!
             return (
-              <Link key={m.id} className="row banco-row" href={`/materia/${m.id}/questoes`}>
+              <Link key={m.id} className="row banco-row" href={`/materia/${m.id}/questoes?de=questoes`}>
                 <span className="num">{Icone.certo}</span>
                 <span className="main">
                   <span className="t">{m.nome}</span>

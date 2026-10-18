@@ -49,12 +49,6 @@ export default async function PerfilPage() {
               </span>
               {novos > 0 && <span className="cnt" aria-label={`${novos} novos`}>{novos}</span>}
             </Link>
-            <Link className="row" href="/admin/painel">
-              <span className="main">
-                <span className="t">Painel do conteúdo</span>
-                <span className="s">Aulas no ar, questões e flashcards por matéria</span>
-              </span>
-            </Link>
             <Link className="row" href="/admin">
               <span className="main">
                 <span className="t">Alunos</span>
@@ -64,7 +58,7 @@ export default async function PerfilPage() {
             <Link className="row" href="/admin/conteudo">
               <span className="main">
                 <span className="t">Conteúdo</span>
-                <span className="s">Editar e apagar aulas, questões e flashcards</span>
+                <span className="s">O que está no ar; editar e apagar aulas, questões e flashcards</span>
               </span>
             </Link>
             <Link className="row" href="/admin/agenda">

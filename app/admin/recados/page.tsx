@@ -47,7 +47,7 @@ export default async function RecadosPage(props: PageProps<'/admin/recados'>) {
   if (!ehAdmin(email)) notFound()
   if (!chaveConfigurada()) {
     return (
-      <Pagina pendentes={0}>
+      <Pagina>
         <Voltar href="/perfil" rotulo="Configurações" />
         <p className="vazio">Falta a chave secreta do Supabase na Vercel (SUPABASE_SECRET_KEY).</p>
       </Pagina>
@@ -77,7 +77,7 @@ export default async function RecadosPage(props: PageProps<'/admin/recados'>) {
   const lista = recados.filter(passa[filtro])
 
   return (
-    <Pagina pendentes={0}>
+    <Pagina>
       <Voltar href="/perfil" rotulo="Configurações" />
       <header className="top">
         <div>

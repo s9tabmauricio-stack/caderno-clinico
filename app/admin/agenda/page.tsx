@@ -13,7 +13,7 @@ export default async function AdminAgendaPage() {
   const { data: semanas } = await supabase.from('agenda_semanas').select('semana, atualizado_em').order('semana', { ascending: false }).limit(5)
 
   return (
-    <Pagina pendentes={0}>
+    <Pagina>
       <Voltar href="/perfil" rotulo="Configurações" />
       <header className="top">
         <div>
