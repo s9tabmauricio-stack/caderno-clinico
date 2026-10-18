@@ -48,6 +48,12 @@ export const Icone = {
     </>,
   ),
   pulso: svg(<path d="M3 12.5h4l2-5 3.2 10 2.6-7 1.6 2H21" />),
+  estudar: svg(
+    <>
+      <path d="M12 6.5C10.3 5.2 8 4.7 4.5 5v12.5c3.5-.3 5.8.2 7.5 1.5 1.7-1.3 4-1.8 7.5-1.5V5c-3.5-.3-5.8.2-7.5 1.5z" />
+      <path d="M12 6.5V19" />
+    </>,
+  ),
   questoes: svg(
     <>
       <rect x="4" y="3.5" width="16" height="17" rx="3" />

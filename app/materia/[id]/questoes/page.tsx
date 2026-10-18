@@ -3,6 +3,7 @@ import { cookies } from 'next/headers'
 import { notFound } from 'next/navigation'
 import { Pagina, Voltar } from '@/components/Pagina'
 import { BancoQuestoes } from '@/components/BancoQuestoes'
+import { AbasMateria } from '@/components/AbasMateria'
 import { carregarProgresso, paraQuestao, pendentes, sessao } from '@/lib/dados'
 import { createClient } from '@/lib/supabase/server'
 import { plural } from '@/lib/formato'
@@ -40,10 +41,9 @@ export default async function BancoPage(props: PageProps<'/materia/[id]/questoes
     situacao: mostrar === 'erradas' ? ('erradas' as const) : mostrar === 'abertas' ? ('abertas' as const) : ('todas' as const),
   }
 
-  // "Voltar" leva de volta a quem mandou o aluno para cá (aba Questões, Desempenho ou a aula)
-  let voltar = { href: `/materia/${id}`, rotulo: materia.data.nome }
-  if (de === 'questoes') voltar = { href: '/questoes', rotulo: 'Questões' }
-  else if (de === 'desempenho') voltar = { href: '/desempenho', rotulo: 'Desempenho' }
+  // "Voltar" leva de volta a quem mandou o aluno para cá (Estudar, Desempenho ou a aula)
+  let voltar = { href: '/estudar', rotulo: 'Estudar' }
+  if (de === 'desempenho') voltar = { href: '/desempenho', rotulo: 'Desempenho' }
   else if (typeof de === 'string' && /^aula:[\w-]{1,60}$/.test(de)) {
     const aulaId = de.slice(5)
     const { data: aula } = await supabase.from('aulas').select('titulo').eq('id', aulaId).eq('materia_id', id).maybeSingle()
@@ -67,6 +67,7 @@ export default async function BancoPage(props: PageProps<'/materia/[id]/questoes
           </p>
         </div>
       </header>
+      {lista.length > 0 && <AbasMateria id={id} ativa="banco" totalQuestoes={lista.length} />}
       {lista.length ? (
         <BancoQuestoes
           key={`${inicial.tema}|${inicial.prova}|${inicial.situacao}`}

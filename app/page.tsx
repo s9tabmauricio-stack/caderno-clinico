@@ -7,7 +7,6 @@ import {
   carregarProgresso,
   carregarProgressoMaterias,
   concluido,
-  concluidoMateria,
   pendentes,
   sessao,
   totais,
@@ -108,58 +107,30 @@ export default async function Inicio() {
         </p>
       )}
 
-      {ultima && (
-        <>
-          <div className="sec">Continuar</div>
-          <div className="group">
-            <Link className="row" href={`/aula/${ultima.aula_id}`}>
-              <span className="num">{ultima.ordem}</span>
-              <span className="main">
-                <span className="t">{ultima.titulo}</span>
-                <span className="s">
-                  {materiaDaUltima?.nome} · {concluido([ultima])}% concluído
-                </span>
+      <div className="sec">{ultima ? 'Continuar' : 'Estudar'}</div>
+      <div className="group">
+        {ultima && (
+          <Link className="row" href={`/aula/${ultima.aula_id}`}>
+            <span className="num">{ultima.ordem}</span>
+            <span className="main">
+              <span className="t">{ultima.titulo}</span>
+              <span className="s">
+                {materiaDaUltima?.nome} · {concluido([ultima])}% concluído
               </span>
-              {Icone.seta}
-            </Link>
-          </div>
-        </>
-      )}
-
-      <div className="sec">Matérias</div>
-      {materias.length ? (
-        <div className="tiles">
-          {materias.map((m) => {
-            const prog = progresso.filter((p) => p.materia_id === m.id)
-            const tm = totais(prog)
-            const pm = banco.find((b) => b.materia_id === m.id)
-            const p = concluidoMateria(prog, pm)
-            return (
-              <Link
-                key={m.id}
-                className="mtile"
-                href={`/materia/${m.id}`}
-                style={{ '--c1': m.cor_inicio ?? '#0B5BD3', '--c2': m.cor_fim ?? '#3B4FC9' } as React.CSSProperties}
-              >
-                <span>
-                  <span className="mt-name">{m.nome}</span>
-                  <span className="mt-meta">
-                    {prog.length} {plural(prog.length, 'aula', 'aulas')} · {pm?.total_questoes ?? 0} questões · {tm.cards} flashcards
-                  </span>
-                </span>
-                <span>
-                  <span className="mt-bar">
-                    <span style={{ width: `${p}%` }} />
-                  </span>
-                  <span className="mt-p">{p}% concluído</span>
-                </span>
-              </Link>
-            )
-          })}
-        </div>
-      ) : (
-        <p className="vazio">Nenhuma matéria publicada ainda.</p>
-      )}
+            </span>
+            {Icone.seta}
+          </Link>
+        )}
+        <Link className="row" href="/estudar">
+          <span className="main">
+            <span className="t">{ultima ? 'Todas as matérias' : 'Escolher uma matéria'}</span>
+            <span className="s">
+              {materias.length} {plural(materias.length, 'matéria', 'matérias')} · apostilas, questões e flashcards
+            </span>
+          </span>
+          {Icone.seta}
+        </Link>
+      </div>
 
       <div className="sec ag-h">
         <span>Seu progresso</span>

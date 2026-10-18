@@ -7,7 +7,7 @@ import { Icone } from './Icones'
 const ABAS = [
   { href: '/', chave: 'inicio', rotulo: 'Início', icone: Icone.inicio },
   { href: '/agenda', chave: 'agenda', rotulo: 'Agenda', icone: Icone.agenda },
-  { href: '/questoes', chave: 'questoes', rotulo: 'Questões', icone: Icone.questoes },
+  { href: '/estudar', chave: 'estudar', rotulo: 'Estudar', icone: Icone.estudar },
   { href: '/revisao', chave: 'revisao', rotulo: 'Revisão', icone: Icone.cards },
   { href: '/desempenho', chave: 'desempenho', rotulo: 'Desempenho', icone: Icone.grafico },
 ] as const
@@ -16,8 +16,8 @@ export function TabBar({ pendentes }: { pendentes: number }) {
   const caminho = usePathname()
   const ativa = caminho.startsWith('/agenda')
     ? 'agenda'
-    : caminho.startsWith('/questoes') || /^\/materia\/[^/]+\/questoes/.test(caminho)
-    ? 'questoes'
+    : caminho.startsWith('/estudar') || caminho.startsWith('/materia') || caminho.startsWith('/aula')
+    ? 'estudar'
     : caminho.startsWith('/revisao')
     ? 'revisao'
     : caminho.startsWith('/desempenho')

@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { Pagina, Voltar } from '@/components/Pagina'
 import { Icone } from '@/components/Icones'
-import { carregarProgresso, carregarProgressoMaterias, carregarTemas, concluido, pendentes, sessao } from '@/lib/dados'
-import { plural } from '@/lib/formato'
+import { AbasMateria } from '@/components/AbasMateria'
+import { carregarProgresso, carregarProgressoMaterias, concluido, pendentes, sessao } from '@/lib/dados'
 import { createClient } from '@/lib/supabase/server'
 
 export async function generateMetadata(props: PageProps<'/materia/[id]'>): Promise<Metadata> {
@@ -17,20 +17,18 @@ export async function generateMetadata(props: PageProps<'/materia/[id]'>): Promi
 export default async function MateriaPage(props: PageProps<'/materia/[id]'>) {
   const { id } = await props.params
   const { supabase } = await sessao()
-  const [materia, aulas, progresso, banco, temas] = await Promise.all([
+  const [materia, aulas, progresso, banco] = await Promise.all([
     supabase.from('materias').select('id, nome, descricao').eq('id', id).maybeSingle(),
     supabase.from('aulas').select('id, ordem, titulo, resumo').eq('materia_id', id).eq('publicada', true).order('ordem'),
     carregarProgresso(supabase),
     carregarProgressoMaterias(supabase),
-    carregarTemas(supabase),
   ])
   if (!materia.data) notFound()
   const pm = banco.find((b) => b.materia_id === id)
-  const nTemas = temas.filter((t) => t.materia_id === id).length
 
   return (
     <Pagina pendentes={pendentes(progresso).hoje}>
-      <Voltar href="/" rotulo="Início" />
+      <Voltar href="/estudar" rotulo="Estudar" />
       <header className="top">
         <div>
           <div className="eyebrow">Matéria</div>
@@ -39,28 +37,8 @@ export default async function MateriaPage(props: PageProps<'/materia/[id]'>) {
         </div>
       </header>
 
-      {pm && pm.total_questoes > 0 && (
-        <>
-          <div className="sec">Banco de questões</div>
-          <div className="group">
-            <Link className="row banco-row" href={`/materia/${id}/questoes`}>
-              <span className="num">{Icone.certo}</span>
-              <span className="main">
-                <span className="t">
-                  {pm.total_questoes} {plural(pm.total_questoes, 'questão', 'questões')} de provas anteriores
-                </span>
-                <span className="s">
-                  {nTemas} {plural(nTemas, 'tema', 'temas')} · {pm.respondidas} {plural(pm.respondidas, 'respondida', 'respondidas')}
-                  {pm.respondidas > 0 && ` · ${Math.round((100 * pm.acertos) / pm.respondidas)}% de acerto`}
-                </span>
-              </span>
-              {Icone.seta}
-            </Link>
-          </div>
-        </>
-      )}
+      {pm && pm.total_questoes > 0 && <AbasMateria id={id} ativa="aulas" totalQuestoes={pm.total_questoes} />}
 
-      <div className="sec">Aulas</div>
       {aulas.data?.length ? (
         <div className="group">
           {aulas.data.map((a) => {

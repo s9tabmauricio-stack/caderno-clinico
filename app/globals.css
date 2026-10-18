@@ -810,3 +810,20 @@ a.stats-link:hover .stat{border-color:var(--accent-line)}
   .qd{width:44px;height:44px}
   .msg .acts button{min-height:44px;padding-inline:4px}
 }
+
+/* Estudar: cartão da matéria com o atalho do banco de questões embaixo */
+.ecard{border-radius:var(--r-lg);overflow:hidden;display:grid;border:1px solid var(--line)}
+.ecard .mtile{border-radius:0}
+.ecard-banco{display:flex;align-items:center;gap:12px;min-height:56px;padding:10px 16px;background:var(--card);color:var(--text);text-decoration:none}
+.ecard-banco:hover{background:var(--card-2)}
+.ecard-banco .main{flex:1;min-width:0}
+.ecard-banco .t{display:block;font-weight:600;color:var(--ink);font-size:15px}
+.ecard-banco .s{display:block;font-size:13.5px;color:var(--muted)}
+.ecard-banco>svg{width:18px;height:18px;color:var(--muted);opacity:.7}
+
+/* Abas da matéria (Aulas | Banco de questões): links com a cara das abas da aula */
+.segm-nav{grid-template-columns:repeat(2,minmax(0,1fr))}
+.segm a{display:flex;align-items:center;justify-content:center;gap:6px;min-height:40px;padding:9px 4px;border-radius:10px;font-size:14.5px;font-weight:600;color:var(--muted);text-decoration:none;text-align:center}
+.segm a.on{background:var(--seg-on);color:var(--ink);box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 2px 8px rgba(0,0,0,.3)}
+.segm a small{font-weight:500;opacity:.75;font-variant-numeric:tabular-nums}
+@media (pointer:coarse){.segm a{min-height:44px}}

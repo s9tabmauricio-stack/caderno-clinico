@@ -33,12 +33,13 @@ Tudo em português do Brasil. O dono do projeto não é programador: explique em
 
 ## Telas
 
-- Nomes na tela (manter): **Configurações** (nunca "Perfil"; só o endereço `/perfil` e o código usam esse nome), **Revisão** = fila de flashcards do dia, **Flashcards** = os cards de uma aula, **Questões** = a aba e a área, **Banco de questões** = todas as questões de uma matéria.
-- Início: saudação (só o primeiro nome), Revisão de hoje, **Suas aulas hoje** (agenda), Matérias, Seu progresso.
-- Barra de baixo: Início, Agenda, Questões, Revisão, Desempenho. A tela "Configurações" (`/perfil`) fica na engrenagem do canto superior direito (todas as telas); para o administrador, com recados novos a engrenagem abre direto os Recados.
+- Nomes na tela (manter): **Configurações** (nunca "Perfil"; só o endereço `/perfil` e o código usam esse nome), **Revisão** = fila de flashcards do dia, **Flashcards** = os cards de uma aula, **Estudar** = a aba das matérias (aulas e banco), **Questões** = as de uma aula, **Banco de questões** = todas as questões de uma matéria.
+- Início: saudação (só o primeiro nome), Revisão de hoje, **Suas aulas hoje** (agenda), Continuar (última aula e atalho para Estudar), Seu progresso.
+- **Estudar** (`/estudar`): uma carta por matéria (aulas, progresso) com o atalho do Banco de questões embaixo. `/questoes` só redireciona para cá.
+- Barra de baixo: Início, Agenda, Estudar, Revisão, Desempenho. A tela "Configurações" (`/perfil`) fica na engrenagem do canto superior direito (todas as telas); para o administrador, com recados novos a engrenagem abre direto os Recados.
 - Início: "Seu progresso" e as aulas de hoje são atalhos (Desempenho e a matéria da aula). Desempenho: cada tema abre o banco já filtrado e cada matéria tem "Refazer as erradas".
 - Banco de questões: os filtros ficam recolhidos no botão "Filtrar"; tema e prova escolhidos ficam lembrados (cookie `mgf_<matéria>`). O botão Voltar segue `?de=` (questoes, desempenho ou `aula:<id>`).
-- Aula: abas Apostila / Questões / Flashcards. Matéria: aulas + Banco de questões (filtros por tema e prova).
+- Aula: abas Apostila / Questões / Flashcards. Matéria: abas **Aulas | Banco de questões** (as duas telas mostram as mesmas abas; o Banco tem filtros por tema e prova).
 - Questões: antes de responder, cada alternativa tem a faixa "Cortar" (tesoura; Shift + letra), que vale só enquanto o aluno está na questão. Depois de responder, certa em verde, erradas em vermelho, a marcada em destaque; comentário embaixo da certa e o motivo embaixo de cada errada. Para o administrador, cada questão tem o botão **Editar** (no canto do cartão) que abre o mesmo editor de Conteúdo ali mesmo.
 - **Conversa da turma** (embaixo da questão, só depois de responder): o aluno deixa "💡 Insight para os colegas" ou "⚠️ Erro na questão"; aparece como "Augusto deixou uma dica" / "Augusto achou um erro" (sem artigo, vale para qualquer nome). Colegas marcam dica como 👍 Útil; o autor apaga o próprio recado.
 - Administração (engrenagem → Configurações): **Recados da turma** (`/admin/recados`: bolinha rosa na engrenagem com os novos; marcar visto/corrigido, abrir a questão, apagar), **Alunos** (`/admin`), **Conteúdo** (`/admin/conteudo`: resumo do que está no ar, editar/apagar aulas, questões, flashcards e limpar versões antigas; `/admin/painel` só redireciona para cá), **Agenda da semana** (`/admin/agenda`: colar o cronograma do WhatsApp).
