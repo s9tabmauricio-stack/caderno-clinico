@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { Pagina } from '@/components/Pagina'
+import { Icone } from '@/components/Icones'
 import {
   carregarMaterias,
   carregarProgresso,
@@ -94,15 +96,24 @@ export default async function DesempenhoPage() {
                 {s.acertos} {plural(s.acertos, 'certa', 'certas')} · {erradas} {plural(erradas, 'errada', 'erradas')} · {sem} sem
                 responder
               </div>
+              {erradas > 0 && (
+                <Link className="btn ghost sm perf-treino" href={`/materia/${m.id}/questoes?mostrar=erradas`}>
+                  Refazer {erradas === 1 ? 'a errada' : `as ${erradas} erradas`}
+                </Link>
+              )}
               {temasM.length > 0 && (
                 <div className="perf-aulas">
+                  <p className="perf-dica">Toque num tema para treinar só ele.</p>
                   {temasM.map((x) => (
-                    <div key={x.tema} className="pa">
+                    <Link key={x.tema} className="pa" href={`/materia/${m.id}/questoes?tema=${encodeURIComponent(x.tema)}`}>
                       <span>{x.tema}</span>
-                      <span>
-                        {x.respondidas ? `${x.acertos} de ${x.respondidas} certas` : `${x.total_questoes} sem responder`}
+                      <span className="pa-r">
+                        <span>
+                          {x.respondidas ? `${x.acertos} de ${x.respondidas} certas` : `${x.total_questoes} sem responder`}
+                        </span>
+                        {Icone.seta}
                       </span>
-                    </div>
+                    </Link>
                   ))}
                 </div>
               )}

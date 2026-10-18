@@ -16,6 +16,7 @@ export async function generateMetadata(props: PageProps<'/materia/[id]/questoes'
 
 export default async function BancoPage(props: PageProps<'/materia/[id]/questoes'>) {
   const { id } = await props.params
+  const { tema, mostrar } = await props.searchParams
   const { supabase, userId, email } = await sessao()
   const [materia, questoes, progresso] = await Promise.all([
     supabase.from('materias').select('id, nome').eq('id', id).maybeSingle(),
@@ -25,6 +26,11 @@ export default async function BancoPage(props: PageProps<'/materia/[id]/questoes
   if (!materia.data) notFound()
   if (questoes.error) throw new Error(`Não foi possível carregar as questões: ${questoes.error.message}`)
   const lista = (questoes.data ?? []).map(paraQuestao)
+  // Filtro vindo do link (ex.: Desempenho → tema); tema que não existe nesta matéria é ignorado
+  const inicial = {
+    tema: typeof tema === 'string' && lista.some((q) => q.tema === tema) ? tema : null,
+    situacao: mostrar === 'erradas' ? ('erradas' as const) : mostrar === 'abertas' ? ('abertas' as const) : ('todas' as const),
+  }
   // Administrador: botão Editar nas questões
   const edicao = ehAdmin(email)
     ? { aulas: (await supabase.from('aulas').select('id, titulo').eq('materia_id', id).order('ordem')).data ?? [] }
@@ -44,7 +50,7 @@ export default async function BancoPage(props: PageProps<'/materia/[id]/questoes
         </div>
       </header>
       {lista.length ? (
-        <BancoQuestoes questoes={lista} userId={userId} edicao={edicao} />
+        <BancoQuestoes key={`${inicial.tema}|${inicial.situacao}`} questoes={lista} userId={userId} inicial={inicial} edicao={edicao} />
       ) : (
         <p className="vazio">Esta matéria ainda não tem questões no banco.</p>
       )}

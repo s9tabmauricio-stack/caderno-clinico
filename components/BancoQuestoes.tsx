@@ -22,15 +22,18 @@ function filtrar(lista: QuestaoAluno[], f: Filtros) {
 export function BancoQuestoes({
   questoes,
   userId,
+  inicial,
   edicao,
 }: {
   questoes: QuestaoAluno[]
   userId: string
+  // filtro já aplicado ao abrir (links do Desempenho)
+  inicial?: Partial<Filtros>
   edicao?: { aulas: { id: string; titulo: string }[] }
 }) {
   // Respostas dadas nesta visita (o resto veio do servidor)
   const [extras, setExtras] = useState<Record<string, Resposta | null>>({})
-  const [filtros, setFiltros] = useState<Filtros>({ tema: null, prova: null, situacao: 'todas' })
+  const [filtros, setFiltros] = useState<Filtros>({ tema: null, prova: null, situacao: 'todas', ...inicial })
   const atuais = questoes.map((q) => (q.id in extras ? { ...q, resposta: extras[q.id] } : q))
   // A lista em estudo só muda quando o aluno troca o filtro, para não pular questões no meio
   const [lista, setLista] = useState(() => filtrar(questoes, filtros))
