@@ -859,3 +859,7 @@ a.stats-link:hover .stat{border-color:var(--accent-line)}
   .larga .paginas{max-width:900px;margin-inline:auto}
   .larga .estreito{max-width:720px;margin-inline:auto}
 }
+
+/* Revisão por matéria: botões de matéria são links com a cara dos filtros */
+a.pill{display:inline-flex;align-items:center;text-decoration:none}
+.pill[aria-current="true"]{background:var(--btn);border-color:var(--btn);color:#fff}
