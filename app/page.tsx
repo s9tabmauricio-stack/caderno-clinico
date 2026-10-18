@@ -53,7 +53,7 @@ export default async function Inicio() {
   const materiaDaUltima = ultima && materias.find((m) => m.id === ultima.materia_id)
 
   return (
-    <Pagina pendentes={pend.hoje}>
+    <Pagina larga pendentes={pend.hoje}>
       <header className="top">
         <div>
           <div className="eyebrow">{data}</div>
@@ -63,99 +63,109 @@ export default async function Inicio() {
         </div>
       </header>
 
-      <section className="review" aria-label="Revisão de hoje">
-        <div className="review-k">Revisão de hoje</div>
-        {pend.hoje > 0 ? (
-          <>
-            <div className="review-n">
-              <span className="n">{pend.hoje}</span>
-              <span className="u">{plural(pend.hoje, 'flashcard', 'flashcards')}</span>
-            </div>
-            <p className="review-s">
-              {pend.vencidos} para revisar · {Math.min(pend.novos, pend.hoje - pend.vencidos)}{' '}
-              {plural(pend.hoje - pend.vencidos, 'novo', 'novos')}
+      <div className="inicio-cols">
+        <div>
+          <section className="review" aria-label="Revisão de hoje">
+            <div className="review-k">Revisão de hoje</div>
+            {pend.hoje > 0 ? (
+              <>
+                <div className="review-n">
+                  <span className="n">{pend.hoje}</span>
+                  <span className="u">{plural(pend.hoje, 'flashcard', 'flashcards')}</span>
+                </div>
+                <p className="review-s">
+                  {pend.vencidos} para revisar · {Math.min(pend.novos, pend.hoje - pend.vencidos)}{' '}
+                  {plural(pend.hoje - pend.vencidos, 'novo', 'novos')}
+                </p>
+                <Link className="btn-white" href="/revisao">
+                  Começar revisão
+                </Link>
+              </>
+            ) : (
+              <>
+                <div className="review-n">
+                  <span className="u" style={{ fontSize: 26, letterSpacing: '-.02em' }}>
+                    Tudo em dia
+                  </span>
+                </div>
+                <p className="review-s">Nenhum card pendente por agora.</p>
+              </>
+            )}
+          </section>
+
+          <div className="sec ag-h">
+            <span>{grupo ? 'Suas aulas hoje' : 'Aulas de hoje'}</span>
+            <Link href="/agenda">Semana →</Link>
+          </div>
+          {aulasRestantes.length > 0 ? (
+            <AgendaLista
+              eventos={aulasRestantes}
+              grupo={grupo}
+              estados={estados}
+              materias={materias.map((m) => m.id)}
+            />
+          ) : (
+            <p className="vazio">{aulasHoje.length ? 'As aulas de hoje já terminaram.' : 'Nenhuma aula hoje.'}</p>
+          )}
+          <AgendaAvisos eventos={canceladasHoje} />
+          {grupo === null && agendaHoje.length > 0 && (
+            <p className="foot">
+              <Link href="/agenda">Escolha seu grupo de prática na Agenda</Link> para ver só as suas práticas.
             </p>
-            <Link className="btn-white" href="/revisao">
-              Começar revisão
+          )}
+        </div>
+        <div>
+          <div className="sec">{ultima ? 'Continuar' : 'Estudar'}</div>
+          <div className="group">
+            {ultima && (
+              <Link className="row" href={`/aula/${ultima.aula_id}`}>
+                <span className="num">{ultima.ordem}</span>
+                <span className="main">
+                  <span className="t">{ultima.titulo}</span>
+                  <span className="s">
+                    {materiaDaUltima?.nome} · {concluido([ultima])}% concluído
+                  </span>
+                </span>
+                {Icone.seta}
+              </Link>
+            )}
+            <Link className="row" href="/estudar">
+              <span className="main">
+                <span className="t">{ultima ? 'Todas as matérias' : 'Escolher uma matéria'}</span>
+                <span className="s">
+                  {materias.length} {plural(materias.length, 'matéria', 'matérias')} · apostilas, questões e flashcards
+                </span>
+              </span>
+              {Icone.seta}
             </Link>
-          </>
-        ) : (
-          <>
-            <div className="review-n">
-              <span className="u" style={{ fontSize: 26, letterSpacing: '-.02em' }}>
-                Tudo em dia
-              </span>
+          </div>
+
+          <div className="sec ag-h">
+            <span>Seu progresso</span>
+            <Link href="/desempenho">Desempenho →</Link>
+          </div>
+          <Link className="stats stats-link" href="/desempenho" aria-label="Ver o desempenho completo">
+            <div className="stat">
+              <div className="lab">Questões</div>
+              <div className="n">
+                {tq.respondidas}
+                <small>/{tq.questoes}</small>
+              </div>
             </div>
-            <p className="review-s">Nenhum card pendente por agora.</p>
-          </>
-        )}
-      </section>
-
-      <div className="sec ag-h">
-        <span>{grupo ? 'Suas aulas hoje' : 'Aulas de hoje'}</span>
-        <Link href="/agenda">Semana →</Link>
-      </div>
-      {aulasRestantes.length > 0 ? (
-        <AgendaLista eventos={aulasRestantes} grupo={grupo} estados={estados} materias={materias.map((m) => m.id)} />
-      ) : (
-        <p className="vazio">{aulasHoje.length ? 'As aulas de hoje já terminaram.' : 'Nenhuma aula hoje.'}</p>
-      )}
-      <AgendaAvisos eventos={canceladasHoje} />
-      {grupo === null && agendaHoje.length > 0 && (
-        <p className="foot">
-          <Link href="/agenda">Escolha seu grupo de prática na Agenda</Link> para ver só as suas práticas.
-        </p>
-      )}
-
-      <div className="sec">{ultima ? 'Continuar' : 'Estudar'}</div>
-      <div className="group">
-        {ultima && (
-          <Link className="row" href={`/aula/${ultima.aula_id}`}>
-            <span className="num">{ultima.ordem}</span>
-            <span className="main">
-              <span className="t">{ultima.titulo}</span>
-              <span className="s">
-                {materiaDaUltima?.nome} · {concluido([ultima])}% concluído
-              </span>
-            </span>
-            {Icone.seta}
+            <div className="stat">
+              <div className="lab">Acerto</div>
+              <div className="n">{acerto}</div>
+            </div>
+            <div className="stat">
+              <div className="lab">Cards</div>
+              <div className="n">
+                {t.estudados}
+                <small>/{t.cards}</small>
+              </div>
+            </div>
           </Link>
-        )}
-        <Link className="row" href="/estudar">
-          <span className="main">
-            <span className="t">{ultima ? 'Todas as matérias' : 'Escolher uma matéria'}</span>
-            <span className="s">
-              {materias.length} {plural(materias.length, 'matéria', 'matérias')} · apostilas, questões e flashcards
-            </span>
-          </span>
-          {Icone.seta}
-        </Link>
+        </div>
       </div>
-
-      <div className="sec ag-h">
-        <span>Seu progresso</span>
-        <Link href="/desempenho">Desempenho →</Link>
-      </div>
-      <Link className="stats stats-link" href="/desempenho" aria-label="Ver o desempenho completo">
-        <div className="stat">
-          <div className="lab">Questões</div>
-          <div className="n">
-            {tq.respondidas}
-            <small>/{tq.questoes}</small>
-          </div>
-        </div>
-        <div className="stat">
-          <div className="lab">Acerto</div>
-          <div className="n">{acerto}</div>
-        </div>
-        <div className="stat">
-          <div className="lab">Cards</div>
-          <div className="n">
-            {t.estudados}
-            <small>/{t.cards}</small>
-          </div>
-        </div>
-      </Link>
     </Pagina>
   )
 }

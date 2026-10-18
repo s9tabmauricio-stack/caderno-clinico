@@ -827,3 +827,35 @@ a.stats-link:hover .stat{border-color:var(--accent-line)}
 .segm a.on{background:var(--seg-on);color:var(--ink);box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 2px 8px rgba(0,0,0,.3)}
 .segm a small{font-weight:500;opacity:.75;font-variant-numeric:tabular-nums}
 @media (pointer:coarse){.segm a{min-height:44px}}
+
+/* ===== Tablet deitado (tela larga e alta): abas na lateral e telas de estudo mais largas ===== */
+@media (min-width:900px) and (min-height:560px){
+  /* a barra de baixo vira uma coluna de vidro à esquerda; o conteúdo se centraliza no espaço que sobra */
+  body:has(.tabbar){padding-left:calc(112px + env(safe-area-inset-left,0px))}
+  .tabbar{left:calc(14px + env(safe-area-inset-left,0px));top:50%;bottom:auto;transform:translateY(-50%);flex-direction:column;gap:4px;padding:8px 6px;max-width:none;border-radius:30px}
+  .tab{width:86px;min-width:0;padding:10px 4px 9px;border-radius:24px}
+  .badge{top:0;right:6px}
+  .wrap{padding-block:32px 40px}
+  .wrap.larga{max-width:1040px}
+
+  /* Início em duas colunas: o que fazer agora à esquerda, onde continuar e o progresso à direita */
+  .inicio-cols{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);column-gap:28px;align-items:start}
+  .inicio-cols>div>.sec:first-child{margin-top:0}
+
+  /* Estudar e Desempenho aproveitam as colunas */
+  .larga .tiles{grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+  .larga .perfs{grid-template-columns:repeat(2,minmax(0,1fr));align-items:start}
+  .larga .segm{max-width:560px}
+
+  /* Questão: enunciado de um lado (fica à vista ao rolar) e alternativas do outro */
+  .larga .qcard:not(.result){display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);column-gap:28px;align-items:start}
+  .larga .qcard:not(.result)>*{grid-column:1/-1}
+  .larga .qcard:not(.result)>.qtext{grid-column:1;position:sticky;top:24px;margin:0}
+  .larga .qcard:not(.result)>.opts{grid-column:2}
+  .larga .qcard.result,.larga .turma{max-width:760px}
+  .larga .qcard.result{margin-inline:auto}
+
+  /* Apostila em páginas e flashcards: largura de leitura, centralizados */
+  .larga .paginas{max-width:900px;margin-inline:auto}
+  .larga .estreito{max-width:720px;margin-inline:auto}
+}

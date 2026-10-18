@@ -26,7 +26,7 @@ export default async function EstudarPage() {
   ])
 
   return (
-    <Pagina pendentes={pendentes(progresso).hoje}>
+    <Pagina larga pendentes={pendentes(progresso).hoje}>
       <header className="top">
         <div>
           <div className="eyebrow">Apostilas, questões e flashcards</div>

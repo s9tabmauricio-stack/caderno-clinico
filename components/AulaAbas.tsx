@@ -147,7 +147,7 @@ export function AulaAbas({
       </div>
 
       <div
-        className="pane"
+        className="pane estreito"
         role="tabpanel"
         id="painel-flashcards"
         aria-labelledby="aba-flashcards"

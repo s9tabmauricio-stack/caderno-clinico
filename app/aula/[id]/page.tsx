@@ -62,7 +62,7 @@ export default async function AulaPage(props: PageProps<'/aula/[id]'>) {
   const edicao = aulasDaMateria ? { aulas: aulasDaMateria.data ?? [] } : undefined
 
   return (
-    <Pagina pendentes={pendentes(progresso).hoje}>
+    <Pagina larga pendentes={pendentes(progresso).hoje}>
       <Voltar href={`/materia/${aula.data.materia_id}`} rotulo={materiaNome} />
       <header className="top">
         <div>

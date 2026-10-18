@@ -20,11 +20,12 @@ async function revisoesDeHoje() {
 
 // Moldura comum das telas logadas: engrenagem do perfil no canto, conteúdo e barra de abas.
 // Sem `pendentes`, a própria moldura conta as revisões (as telas de administração não precisam calcular).
-export async function Pagina({ pendentes, children }: { pendentes?: number; children: React.ReactNode }) {
+// `larga`: telas de estudo, que no tablet deitado usam mais largura (o resto fica numa coluna só).
+export async function Pagina({ pendentes, larga, children }: { pendentes?: number; larga?: boolean; children: React.ReactNode }) {
   const [novos, revisoes] = await Promise.all([recadosNovos(), pendentes ?? revisoesDeHoje()])
   return (
     <>
-      <main className="wrap">
+      <main className={`wrap${larga ? ' larga' : ''}`}>
         <Link
           className="avatar engrenagem"
           href={novos ? '/admin/recados' : '/perfil'}

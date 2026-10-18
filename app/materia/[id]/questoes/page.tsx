@@ -55,7 +55,7 @@ export default async function BancoPage(props: PageProps<'/materia/[id]/questoes
     : undefined
 
   return (
-    <Pagina pendentes={pendentes(progresso).hoje}>
+    <Pagina larga pendentes={pendentes(progresso).hoje}>
       <Voltar href={voltar.href} rotulo={voltar.rotulo} />
       <header className="top">
         <div>

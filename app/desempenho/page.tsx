@@ -29,7 +29,7 @@ export default async function DesempenhoPage() {
   const acerto = tq.respondidas ? `${Math.round((100 * tq.acertos) / tq.respondidas)}%` : '–'
 
   return (
-    <Pagina pendentes={pendentes(progresso).hoje}>
+    <Pagina larga pendentes={pendentes(progresso).hoje}>
       <header className="top">
         <div>
           <div className="eyebrow">Suas estatísticas</div>

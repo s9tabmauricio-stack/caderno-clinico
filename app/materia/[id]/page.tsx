@@ -27,7 +27,7 @@ export default async function MateriaPage(props: PageProps<'/materia/[id]'>) {
   const pm = banco.find((b) => b.materia_id === id)
 
   return (
-    <Pagina pendentes={pendentes(progresso).hoje}>
+    <Pagina larga pendentes={pendentes(progresso).hoje}>
       <Voltar href="/estudar" rotulo="Estudar" />
       <header className="top">
         <div>
