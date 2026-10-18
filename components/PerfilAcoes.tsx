@@ -130,6 +130,12 @@ export function PerfilAcoes({
         const del = supabase.from('respostas').delete().eq('user_id', userId)
         const { error } = await (ids ? del.in('questao_id', ids) : del)
         falhou ||= Boolean(error)
+        // o histórico de tentativas dessas questões vai junto (refazer uma questão não o apaga, só este botão)
+        if (!falhou) {
+          const delHistorico = supabase.from('historico_respostas').delete().eq('user_id', userId)
+          const { error: erroHistorico } = await (ids ? delHistorico.in('questao_id', ids) : delHistorico)
+          falhou ||= Boolean(erroHistorico)
+        }
       }
     }
 
@@ -429,7 +435,10 @@ export function PerfilAcoes({
           <div className="row static confirm">
             <span className="main">
               <span className="t">Apagar {descricaoApagar}?</span>
-              <span className="s">Não dá para desfazer.</span>
+              <span className="s">
+                Não dá para desfazer.
+                {oQue !== 'flashcards' && ' O histórico de tentativas dessas questões também é apagado.'}
+              </span>
             </span>
             <button className="btn ghost sm" onClick={() => setConfirmar(false)}>
               Cancelar

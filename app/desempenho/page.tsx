@@ -7,10 +7,12 @@ import {
   carregarProgresso,
   carregarProgressoMaterias,
   carregarTemas,
+  carregarTentativas,
   pendentes,
   sessao,
   totais,
   totaisQuestoes,
+  totaisTentativas,
 } from '@/lib/dados'
 import { plural } from '@/lib/formato'
 
@@ -18,14 +20,17 @@ export const metadata: Metadata = { title: 'Desempenho' }
 
 export default async function DesempenhoPage() {
   const { supabase } = await sessao()
-  const [progresso, materias, banco, temas] = await Promise.all([
+  const [progresso, materias, banco, temas, tentativas] = await Promise.all([
     carregarProgresso(supabase),
     carregarMaterias(supabase),
     carregarProgressoMaterias(supabase),
     carregarTemas(supabase),
+    carregarTentativas(supabase),
   ])
   const t = totais(progresso)
   const tq = totaisQuestoes(banco)
+  const tt = totaisTentativas(tentativas)
+  const pct = (a: number, n: number) => (n ? `${Math.round((100 * a) / n)}%` : '–')
   const acerto = tq.respondidas ? `${Math.round((100 * tq.acertos) / tq.respondidas)}%` : '–'
 
   return (
@@ -37,7 +42,7 @@ export default async function DesempenhoPage() {
         </div>
       </header>
 
-      <div className="stats">
+      <div className="stats quatro">
         <div className="stat">
           <div className="lab">Respondidas</div>
           <div className="n">
@@ -46,8 +51,12 @@ export default async function DesempenhoPage() {
           </div>
         </div>
         <div className="stat">
-          <div className="lab">Acerto</div>
+          <div className="lab">Acerto atual</div>
           <div className="n">{acerto}</div>
+        </div>
+        <div className="stat">
+          <div className="lab">Acerto na 1ª vez</div>
+          <div className="n">{pct(tt.acertos_primeira, tt.primeiras)}</div>
         </div>
         <div className="stat">
           <div className="lab">Cards</div>
@@ -57,6 +66,13 @@ export default async function DesempenhoPage() {
           </div>
         </div>
       </div>
+
+      {tt.tentativas > 0 && (
+        <p className="foot">
+          “Acerto atual” vale pela última resposta de cada questão. “Acerto na 1ª vez” conta só a primeira resposta, então
+          refazer não o altera. Você já deu {tt.tentativas} {plural(tt.tentativas, 'resposta', 'respostas')} no total.
+        </p>
+      )}
 
       <div className="sec">Por matéria</div>
       <div className="legend">
@@ -78,6 +94,7 @@ export default async function DesempenhoPage() {
         {materias.map((m) => {
           const s = totaisQuestoes(banco.filter((b) => b.materia_id === m.id))
           const temasM = temas.filter((x) => x.materia_id === m.id)
+          const h = totaisTentativas(tentativas.filter((x) => x.materia_id === m.id))
           const erradas = s.respondidas - s.acertos
           const sem = s.questoes - s.respondidas
           return (
@@ -96,6 +113,12 @@ export default async function DesempenhoPage() {
                 {s.acertos} {plural(s.acertos, 'certa', 'certas')} · {erradas} {plural(erradas, 'errada', 'erradas')} · {sem} sem
                 responder
               </div>
+              {h.tentativas > 0 && (
+                <div className="perf-s">
+                  Na 1ª vez: {pct(h.acertos_primeira, h.primeiras)} de acerto · {h.tentativas}{' '}
+                  {plural(h.tentativas, 'resposta', 'respostas')} no total
+                </div>
+              )}
               {erradas > 0 && (
                 <Link className="btn ghost sm perf-treino" href={`/materia/${m.id}/questoes?mostrar=erradas&de=desempenho`}>
                   Refazer {erradas === 1 ? 'a errada' : `as ${erradas} erradas`}

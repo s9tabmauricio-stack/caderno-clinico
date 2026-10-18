@@ -863,3 +863,7 @@ a.stats-link:hover .stat{border-color:var(--accent-line)}
 /* Revisão por matéria: botões de matéria são links com a cara dos filtros */
 a.pill{display:inline-flex;align-items:center;text-decoration:none}
 .pill[aria-current="true"]{background:var(--btn);border-color:var(--btn);color:#fff}
+
+/* Desempenho: quatro números (2 por linha em tela estreita) */
+.stats.quatro{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media (max-width:560px){.stats.quatro{grid-template-columns:repeat(2,minmax(0,1fr))}}

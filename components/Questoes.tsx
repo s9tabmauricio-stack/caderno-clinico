@@ -226,6 +226,7 @@ export function Questoes({ questoes, userId, ativo, mostrarTema = true, vazio, a
               Refazer todas
             </button>
           </div>
+          <p className="foot">Refazer não apaga o histórico: o Desempenho continua contando a sua primeira resposta.</p>
           {proximoPasso && (
             <>
               <p className="foot res-prox">Próximo passo</p>

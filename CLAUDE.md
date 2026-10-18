@@ -52,10 +52,10 @@ Tudo em português do Brasil. O dono do projeto não é programador: explique em
 - `aulas` (id `<materia>-a<N>`, ex.: `uro-a2`; `titulo`, `resumo`, `apostila_html`, `publicada`, `ordem`)
 - `questoes` (`materia_id`, `aula_id` opcional, `ordem`, `enunciado`, `alternativas` jsonb, `correta` = índice 0–4, `comentario`, `por_que_erradas`, `tema`, `prova`, `fonte`, `origem`, `substituida_por`)
 - `flashcards` (id `<aula>-fNN`, `frente`, `verso`, `ordem`)
-- Progresso: `respostas`, `revisoes`; alunos: `perfis` (`nome`, `grupo` de prática 1–29; o aluno só pode alterar `nome` e `grupo`)
+- Progresso: `respostas` (só a última resposta de cada questão), `historico_respostas` (todas as respostas dadas: um gatilho do banco grava uma linha a cada resposta nova ou refeita; só o gatilho grava e o aluno só lê e apaga o seu; "Refazer" não apaga, só "Apagar progresso"), `revisoes`; alunos: `perfis` (`nome`, `grupo` de prática 1–29; o aluno só pode alterar `nome` e `grupo`)
 - Recados: `recados` (`questao_id`, `user_id`, `autor` = primeiro nome, preenchido por gatilho; `tipo` `insight`/`erro`; `status` `novo`/`visto`/`corrigido`) e `recados_uteis`. Aluno lê todos, cria e apaga os seus; status só muda pelo admin (chave secreta).
 - Agenda: `agenda_semanas` (segunda-feira da semana) e `agenda_eventos` (aulas, cancelamentos, avisos, `grupos int[]`)
-- Visões usadas pelas telas: `questoes_do_aluno`, `progresso_aulas`, `progresso_materias`, `progresso_temas`, `flashcards_do_aluno`.
+- Visões usadas pelas telas: `questoes_do_aluno`, `progresso_aulas`, `progresso_materias`, `progresso_temas`, `progresso_tentativas` (tentativas e acerto "na 1ª vez", mostrados no Desempenho), `flashcards_do_aluno`.
   Todas escondem aulas não publicadas e questões com `substituida_por` preenchido.
 - RLS: alunos leem conteúdo e só gravam o próprio progresso. Escrita de conteúdo: só pelo conector (Claude) ou pelas telas de admin (chave secreta).
 - A pasta `supabase/migrations/` não reflete tudo o que foi aplicado; a verdade é o banco (`list_migrations`).

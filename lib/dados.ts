@@ -45,6 +45,8 @@ export type QuestaoAluno = {
 
 export type ProgressoMateria = { materia_id: string; total_questoes: number; respondidas: number; acertos: number }
 export type ProgressoTema = ProgressoMateria & { tema: string }
+// Histórico por matéria: todas as respostas dadas e as de "primeira vez" (a primeira de cada questão)
+export type ProgressoTentativas = { materia_id: string; tentativas: number; primeiras: number; acertos_primeira: number }
 
 export type CardAluno = {
   id: string
@@ -107,6 +109,28 @@ export async function carregarProgressoMaterias(supabase: SupabaseServidor): Pro
     respondidas: p.respondidas ?? 0,
     acertos: p.acertos ?? 0,
   }))
+}
+
+export async function carregarTentativas(supabase: SupabaseServidor): Promise<ProgressoTentativas[]> {
+  const { data, error } = await supabase.from('progresso_tentativas').select('*')
+  if (error) falhou('o histórico de tentativas', error)
+  return (data ?? []).map((p) => ({
+    materia_id: p.materia_id ?? '',
+    tentativas: p.tentativas ?? 0,
+    primeiras: p.primeiras ?? 0,
+    acertos_primeira: p.acertos_primeira ?? 0,
+  }))
+}
+
+export function totaisTentativas(prog: ProgressoTentativas[]) {
+  return prog.reduce(
+    (t, p) => ({
+      tentativas: t.tentativas + p.tentativas,
+      primeiras: t.primeiras + p.primeiras,
+      acertos_primeira: t.acertos_primeira + p.acertos_primeira,
+    }),
+    { tentativas: 0, primeiras: 0, acertos_primeira: 0 },
+  )
 }
 
 export async function carregarTemas(supabase: SupabaseServidor): Promise<ProgressoTema[]> {

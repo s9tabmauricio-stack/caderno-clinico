@@ -73,6 +73,41 @@ export type Database = {
           },
         ]
       }
+      historico_respostas: {
+        Row: {
+          correta: boolean
+          escolhida: number
+          id: number
+          questao_id: string
+          respondida_em: string
+          user_id: string
+        }
+        Insert: {
+          correta: boolean
+          escolhida: number
+          id?: number
+          questao_id: string
+          respondida_em?: string
+          user_id?: string
+        }
+        Update: {
+          correta?: boolean
+          escolhida?: number
+          id?: number
+          questao_id?: string
+          respondida_em?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: 'historico_respostas_questao_id_fkey'
+            columns: ['questao_id']
+            isOneToOne: false
+            referencedRelation: 'questoes'
+            referencedColumns: ['id']
+          },
+        ]
+      }
       materias: {
         Row: {
           cor_fim: string | null
@@ -361,6 +396,15 @@ export type Database = {
           respondidas: number | null
           tema: string | null
           total_questoes: number | null
+        }
+        Relationships: []
+      }
+      progresso_tentativas: {
+        Row: {
+          acertos_primeira: number | null
+          materia_id: string | null
+          primeiras: number | null
+          tentativas: number | null
         }
         Relationships: []
       }
