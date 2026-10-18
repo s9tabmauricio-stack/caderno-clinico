@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next'
 
-// Permite instalar o site na tela inicial do celular, como um app
+// Permite instalar o site na tela inicial do celular ou do tablet, como um app
 export default function manifest(): MetadataRoute.Manifest {
   return {
     name: 'Med Genius',

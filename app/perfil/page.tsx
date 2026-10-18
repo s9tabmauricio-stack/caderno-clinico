@@ -71,14 +71,14 @@ export default async function PerfilPage() {
         </>
       )}
 
-      <div className="sec">Instalar no celular</div>
+      <div className="sec">Instalar o app</div>
       <div className="how">
         <div className="how-i">
-          <div className="kick">iPhone</div>
+          <div className="kick">iPhone e iPad</div>
           <p>No Safari, toque em Compartilhar e depois em Adicionar à Tela de Início.</p>
         </div>
         <div className="how-i">
-          <div className="kick">Android</div>
+          <div className="kick">Android (celular e tablet)</div>
           <p>No Chrome, abra o menu de três pontos e toque em Instalar app ou Adicionar à tela inicial.</p>
         </div>
       </div>

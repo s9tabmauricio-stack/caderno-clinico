@@ -38,7 +38,7 @@ export default async function RevisaoPage() {
     <Pagina pendentes={pend.hoje}>
       <header className="top">
         <div>
-          <div className="eyebrow">Flashcards</div>
+          <div className="eyebrow">Flashcards de hoje</div>
           <h1 className="big">Revisão</h1>
         </div>
       </header>
