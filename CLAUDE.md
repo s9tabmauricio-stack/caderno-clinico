@@ -51,7 +51,7 @@ Tudo em português do Brasil. O dono do projeto não é programador: explique em
 - `materias` (id curto: `nefro`, `pneumo`, `gastro`, `orto`, `uro`, `pass`; `cor_inicio`/`cor_fim`, `descricao`, `ordem`)
 - `aulas` (id `<materia>-a<N>`, ex.: `uro-a2`; `titulo`, `resumo`, `apostila_html`, `publicada`, `ordem`)
 - `questoes` (`materia_id`, `aula_id` opcional, `ordem`, `enunciado`, `alternativas` jsonb, `correta` = índice 0–4, `comentario`, `por_que_erradas`, `tema`, `prova`, `fonte`, `origem`, `substituida_por`)
-- `flashcards` (id `<aula>-fNN`, `frente`, `verso`, `ordem`)
+- `flashcards` (id `<aula>-fNN`, `frente`, `verso`, `ordem`); frente começando com `PROVA · ` vira o selo **Prova** no card (o que o professor destacou para a prova)
 - Progresso: `respostas` (só a última resposta de cada questão), `historico_respostas` (todas as respostas dadas: um gatilho do banco grava uma linha a cada resposta nova ou refeita; só o gatilho grava e o aluno só lê e apaga o seu; "Refazer" não apaga, só "Apagar progresso"), `revisoes`; alunos: `perfis` (`nome`, `grupo` de prática 1–29; o aluno só pode alterar `nome` e `grupo`)
 - Recados: `recados` (`questao_id`, `user_id`, `autor` = primeiro nome, preenchido por gatilho; `tipo` `insight`/`erro`; `status` `novo`/`visto`/`corrigido`) e `recados_uteis`. Aluno lê todos, cria e apaga os seus; status só muda pelo admin (chave secreta).
 - Agenda: `agenda_semanas` (segunda-feira da semana) e `agenda_eventos` (aulas, cancelamentos, avisos, `grupos int[]`)
