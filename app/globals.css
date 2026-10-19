@@ -466,7 +466,7 @@ body{margin:0;min-height:100vh}
    superfícies de vidro e destaques em ciano. Vale para todo o site.
    ===================================================================== */
 :root:not([data-mg]){
-  --bg:#05060E; --card:rgba(255,255,255,.055); --card-2:rgba(255,255,255,.085);
+  --bg:#0E1124; --card:rgba(255,255,255,.055); --card-2:rgba(255,255,255,.085);
   --line:rgba(255,255,255,.10); --line-2:rgba(255,255,255,.07); --line-strong:rgba(255,255,255,.18); --field:rgba(255,255,255,.06);
   --ink:#F4F7FF; --text:#D4D9E8; --muted:#97A0B8; --title:#F4F7FF;
   --accent:#4FDDFF; --accent-soft:rgba(0,200,255,.12); --accent-line:rgba(79,221,255,.38); --btn:#2F8BFF;
@@ -486,10 +486,10 @@ body{margin:0;min-height:100vh}
 body{background:var(--bg)}
 body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
   background:
-    radial-gradient(42vmax 42vmax at 8% 4%,rgba(0,194,255,.20),transparent 70%),
-    radial-gradient(40vmax 40vmax at 96% 22%,rgba(123,92,255,.22),transparent 70%),
-    radial-gradient(38vmax 38vmax at 12% 92%,rgba(255,46,196,.13),transparent 70%),
-    radial-gradient(40vmax 40vmax at 88% 100%,rgba(63,107,255,.16),transparent 70%),
+    radial-gradient(42vmax 42vmax at 8% 4%,rgba(0,194,255,.26),transparent 70%),
+    radial-gradient(40vmax 40vmax at 96% 22%,rgba(123,92,255,.28),transparent 70%),
+    radial-gradient(38vmax 38vmax at 12% 92%,rgba(255,46,196,.17),transparent 70%),
+    radial-gradient(40vmax 40vmax at 88% 100%,rgba(63,107,255,.21),transparent 70%),
     linear-gradient(rgba(255,255,255,.028) 1px,transparent 1px) 0 0/32px 32px,
     linear-gradient(90deg,rgba(255,255,255,.028) 1px,transparent 1px) 0 0/32px 32px}
 
@@ -523,7 +523,7 @@ h1.big{color:var(--title)}
 .tabbar{background:var(--glass);border-color:var(--glass-line)}
 
 /* tela de entrada no mesmo clima */
-.tela-entrar{--lg-bg:#05060E;--lg-vidro:rgba(18,20,38,.5);--lg-borda:rgba(255,255,255,.14);--lg-campo:rgba(255,255,255,.06);--lg-linha:rgba(255,255,255,.12);--lg-sombra:0 30px 80px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,255,255,.1)}
+.tela-entrar{--lg-bg:#0E1124;--lg-vidro:rgba(18,20,38,.5);--lg-borda:rgba(255,255,255,.14);--lg-campo:rgba(255,255,255,.06);--lg-linha:rgba(255,255,255,.12);--lg-sombra:0 30px 80px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,255,255,.1)}
 .lg-fundo .o1{background:radial-gradient(circle,#00C2FF 0%,transparent 65%)}
 .lg-fundo .o2{background:radial-gradient(circle,#7B5CFF 0%,transparent 65%)}
 .lg-fundo .o3{background:radial-gradient(circle,#FF2EC4 0%,transparent 65%);opacity:.4}
