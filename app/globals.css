@@ -637,7 +637,7 @@ h1.big.saudacao{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .ed-q[open] summary{border-bottom:1px solid var(--line)}
 .ed-q .ed-bloco{border:0;border-radius:0;background:none}
 select.campo{appearance:auto}
-select.campo option,select.campo optgroup{background:#161824;color:#F2F5FF}
+select.campo option,select.campo optgroup{background:#0E1526;color:#F3EFE4}
 
 /* Cortar alternativa: faixa embutida à direita do card (só antes de responder) */
 .optw{display:flex;align-items:stretch;border:1px solid var(--line);border-radius:var(--r-md);background:var(--card);overflow:hidden}
@@ -920,3 +920,13 @@ a.pill{display:inline-flex;align-items:center;text-decoration:none}
 .pill[aria-pressed="true"]{background:var(--accent-soft);border-color:var(--accent-line);color:#9FE1FF}
 .g1{background:rgba(14,21,38,.6);border-color:rgba(216,180,106,.3)}
 .qd{background:rgba(14,21,38,.6);border-color:rgba(216,180,106,.2)}
+/* Configurações: selos dourados nas linhas (inicial do nome, segurança, apagar), campos em vidro e "Sair" discreto */
+.avatar.lg{border-radius:16px;background:linear-gradient(160deg,rgba(32,45,74,.9),rgba(14,21,38,.9));border:1px solid rgba(216,180,106,.55);color:#E9D6A8;font-family:var(--serif);font-weight:600;box-shadow:inset 0 1px 0 rgba(242,221,164,.25),0 0 0 3px rgba(216,180,106,.06)}
+.avatar.lg svg{stroke:#E9D6A8}
+.campo{background:rgba(11,18,32,.7);border-color:rgba(216,180,106,.22);transition:border-color .2s,box-shadow .2s}
+.campo:focus-visible{outline:0;border-color:var(--accent-line);box-shadow:0 0 0 3px rgba(111,211,255,.14)}
+.rotulo{color:#C9B48A}
+.editar-form{border-top-color:rgba(216,180,106,.16)}
+.how .kick{color:var(--gold)}
+.btn.out{background:rgba(14,21,38,.6);color:var(--text);border-color:rgba(216,180,106,.3)}
+.btn.out:hover{color:var(--ink);border-color:var(--gold-line);background:rgba(216,180,106,.08)}
