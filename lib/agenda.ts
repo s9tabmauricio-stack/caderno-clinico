@@ -56,6 +56,10 @@ function hora(h?: string, m?: string) {
 function semAcento(s: string) {
   return s.normalize('NFD').replace(/[\u0300-\u036f]/g, '')
 }
+/** Tira a formatação do WhatsApp: *negrito*, _itálico_ e ~riscado~. */
+function semFormatacao(s: string) {
+  return s.replace(/([*_~])(\S(?:[^\n]*?\S)?)\1/g, '$2')
+}
 function limparEmoji(s: string) {
   return s.replace(/^[^\p{L}\p{N}]+/u, '').trim()
 }
@@ -84,6 +88,7 @@ function primeiraMaiuscula(s: string) {
 /** Separa título, professor e local de "aula prática de X para o grupo 2 com Dra. Fulana no CAE." */
 function destrinchar(textoBruto: string) {
   let t = textoBruto.trim().replace(/[.!]+$/, '')
+  t = t.replace(/\s+(?:est[aá]|foi|foram|est[aã]o)\s+cancelad[ao]s?$/i, '').replace(/\s+para\s+(?:a\s+)?toda\s+(?:a\s+)?turma$/i, '')
   let local: string | null = null
   let professor: string | null = null
   const prof = t.match(/\s+com\s+(?:[oa]\s+)?((?:Dr|Dra|Prof|Profa)\.?\s.+)$/i)
@@ -103,7 +108,7 @@ function destrinchar(textoBruto: string) {
     }
   }
   const grupos = gruposDe(t)
-  t = t.replace(/\s+para\s+(?:o|os)\s+grupos?\s+.*$/i, '')
+  t = t.replace(/\s+(?:para|d)\s*(?:o|os)\s+grupos?\s+.*$/i, '')
   t = t.replace(/^aula\s+/i, '')
   if (local) local = primeiraMaiuscula(local.replace(/^d[oa]\s+/i, ''))
   return { titulo: primeiraMaiuscula(t.trim()), professor: professor?.trim() ?? null, local, grupos }
@@ -120,7 +125,7 @@ function tipoDe(texto: string): EventoAgenda['tipo'] {
 
 /** Lê o texto do cronograma semanal colado do WhatsApp. */
 export function lerCronograma(texto: string, ano = new Date().getFullYear()): SemanaLida {
-  const linhas = texto.replace(/\r/g, '').split('\n')
+  const linhas = texto.replace(/\r/g, '').split('\n').map(semFormatacao)
   const eventos: EventoAgenda[] = []
   const dias: string[] = []
   let titulo: string | null = null
@@ -237,6 +242,11 @@ export function lerCronograma(texto: string, ano = new Date().getFullYear()): Se
       eventos.push(ultimo)
     }
     vazioDesdeUltimo = false
+  }
+
+  // Cancelamento sem grupo na linha: os grupos citados nas notas ("as práticas dos grupos 4 e 5 serão repostas")
+  for (const ev of eventos) {
+    if (ev.cancelado && !ev.grupos && ev.tipo === 'pratica') ev.grupos = gruposDe(ev.notas.join(' '))
   }
 
   // Aulas divididas por letra ("Grupo A: Dr. Eduardo") valem para os grupos daquelas letras
