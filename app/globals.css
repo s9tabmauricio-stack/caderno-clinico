@@ -897,3 +897,10 @@ a.pill{display:inline-flex;align-items:center;text-decoration:none}
 .tab.on{color:#9FE1FF;background:rgba(111,211,255,.12);box-shadow:inset 0 0 0 1px rgba(111,211,255,.35),0 0 16px rgba(111,211,255,.14)}
 .tab.on svg{filter:drop-shadow(0 0 5px rgba(111,211,255,.55))}
 .badge{box-shadow:0 0 0 2px #0E1526}
+/* cartões das telas: vidro azul-noite com filete dourado discreto (o ouro forte fica para o que é importante) */
+.group,.stat,.pdfbar,.qcard,.fc-sum,.done,.perf,.how,.admin-form,.ed-q,.turma,.recado,.painel-m,.ap:not(:has(> .paginas)){
+  background:linear-gradient(160deg,rgba(30,43,72,.72),rgba(14,21,38,.72));border-color:rgba(216,180,106,.2);
+  box-shadow:inset 0 1px 0 rgba(242,221,164,.10),0 10px 30px rgba(0,0,0,.3)}
+.flash{background:linear-gradient(160deg,rgba(34,49,82,.82),rgba(14,21,38,.82));border-color:rgba(216,180,106,.38);box-shadow:inset 0 1px 0 rgba(242,221,164,.18),0 0 0 3px rgba(216,180,106,.05),var(--lift)}
+.vazio{border-color:rgba(216,180,106,.3)}
+.ecard-banco{background:rgba(14,21,38,.72)}
