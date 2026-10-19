@@ -53,11 +53,14 @@ export type CardAluno = {
   aula_id: string
   frente: string
   verso: string
+  prova: boolean // o professor destacou para a prova (frente gravada começando com "PROVA · ")
   aula_titulo: string
   materia_id: string
   materia_nome: string
   estado: EstadoCard | null
 }
+
+const MARCA_PROVA = /^PROVA\s*·\s*/
 
 // ---------- Sessão ----------
 export async function sessao() {
@@ -201,11 +204,13 @@ type LinhaCard = {
 }
 
 export function paraCard(c: LinhaCard): CardAluno {
+  const frente = c.frente ?? ''
   return {
     id: c.id ?? '',
     aula_id: c.aula_id ?? '',
-    frente: c.frente ?? '',
+    frente: frente.replace(MARCA_PROVA, ''),
     verso: c.verso ?? '',
+    prova: MARCA_PROVA.test(frente),
     aula_titulo: c.aula_titulo ?? '',
     materia_id: c.materia_id ?? '',
     materia_nome: c.materia_nome ?? '',

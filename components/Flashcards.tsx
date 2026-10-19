@@ -273,6 +273,7 @@ export function Flashcards({ cards, userId, modo, ativo, emDia, proximoPasso }: 
           <div className="side">
             {card.materia_nome} · {card.aula_titulo}
           </div>
+          {card.prova && <span className="fc-prova">Prova</span>}
           <div className="front">{card.frente}</div>
           {sessao.virado ? (
             <div className="verso">{card.verso}</div>
@@ -351,7 +352,10 @@ export function Flashcards({ cards, userId, modo, ativo, emDia, proximoPasso }: 
               return (
                 <div key={c.id} className="row static">
                   <span className="main">
-                    <span className="t2">{c.frente}</span>
+                    <span className="t2">
+                      {c.prova && <span className="fc-prova">Prova</span>}
+                      {c.frente}
+                    </span>
                   </span>
                   <span className={`chip ${st}`}>{rotulo}</span>
                 </div>
