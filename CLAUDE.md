@@ -100,7 +100,7 @@ Título, resumo e professor saem da capa (`pdftotext -f 1 -l 1`). Atualize a `de
 ## Visual
 
 Tema escuro "vidro sobre luzes neon", inspirado no ícone (neurônio de vidro em ciano, violeta e magenta).
-Tokens e regras no fim de `app/globals.css` (bloco "Tema Med Genius"). Ícones do app em `public/icons`, `app/icon.png`, `app/apple-icon.png`; logo em `public/brand/med-genius.svg`.
+Tokens e regras no fim de `app/globals.css` (bloco "Tema Med Genius"). Ícones do app em `public/icons`, `app/icon.png`, `app/apple-icon.png`; logo em `public/brand/med-genius.webp` (ícone de neurônios em "M" com moldura dourada; o original está em `public/brand/med-genius-original.jpg`).
 Rodapé da tela de entrada: "By Mauricio".
 
 ## Como trabalhar com o Mauricio

@@ -35,7 +35,7 @@ O layout está só no código (nada de visual fica no Supabase). Mapa rápido:
 | Cores, tamanhos, espaçamentos, botões, tema neon | `app/globals.css`. As regras do tema ficam no fim, no bloco "Tema Med Genius", e valem por cima das de cima. |
 | Partes reaproveitadas das telas | `components/` (ex.: `PerfilAcoes.tsx` = cartões do Perfil, `Questoes.tsx`, `Flashcards.tsx`, `TabBar.tsx` = barra de baixo, `Pagina.tsx` = moldura das telas, `Icones.tsx`) |
 | Cada tela | `app/<rota>/page.tsx`: `app/page.tsx` (Início), `app/agenda`, `app/revisao`, `app/desempenho`, `app/perfil`, `app/aula/[id]`, `app/materia/[id]`, `app/login`, `app/admin/...` |
-| Ícones do app e logo | `public/icons`, `app/icon.png`, `app/apple-icon.png`, `public/brand/med-genius.svg` |
+| Ícones do app e logo | `public/icons`, `app/icon.png`, `app/apple-icon.png`, `public/brand/med-genius.webp` |
 
 Dicas:
 - Antes de criar uma classe nova, procure no `globals.css` se já existe uma parecida (ex.: `.btn`, `.btn.ghost`, `.btn.sm`, `.group`, `.row`). Mantenha o tema escuro "vidro sobre luzes neon".
