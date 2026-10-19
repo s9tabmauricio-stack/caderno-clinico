@@ -42,8 +42,8 @@ export const NOME_MATERIA: Record<string, string> = {
   orto: 'Ortopedia', pass: 'PASS', sem: 'Seminário', angio: 'Angiologia',
 }
 export const COR_MATERIA: Record<string, string> = {
-  pneumo: '#4FDDFF', gastro: '#3EE6A8', nefro: '#6A8BFF', uro: '#B07BFF',
-  orto: '#FFB547', pass: '#FF5CD6', sem: '#9AA3BD', angio: '#FF5C8A',
+  pneumo: '#4FB8D6', gastro: '#3FBF93', nefro: '#5B8DEF', uro: '#9C7BE0',
+  orto: '#D8B46A', pass: '#D9667F', sem: '#9AA3BD', angio: '#FF8A6B',
 }
 
 const DIA_SEMANA = /^\s*(segunda|ter[cç]a|quarta|quinta|sexta|s[aá]bado|domingo)(?:-feira)?\s*\|\s*(\d{1,2})\s*\/\s*([a-zç]+|\d{1,2})(?:\s*[-–—]\s*(.+))?/i

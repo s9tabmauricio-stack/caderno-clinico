@@ -46,7 +46,7 @@ export default async function EstudarPage() {
                 <Link
                   className="mtile"
                   href={`/materia/${m.id}`}
-                  style={{ '--c1': m.cor_inicio ?? '#0B5BD3', '--c2': m.cor_fim ?? '#3B4FC9' } as React.CSSProperties}
+                  style={{ '--c1': m.cor_inicio ?? '#1E4FA8', '--c2': m.cor_fim ?? '#14306B' } as React.CSSProperties}
                 >
                   <span>
                     <span className="mt-name">{m.nome}</span>

@@ -881,3 +881,7 @@ a.pill{display:inline-flex;align-items:center;text-decoration:none}
 .pbar span{background:linear-gradient(90deg,#3A8DFF,#6FD3FF)}
 .qmeta .editar-q{color:#9FE1FF}
 .pill[aria-current="true"]{background:var(--accent-soft);border-color:var(--accent-line);color:#9FE1FF}
+/* cartas das matérias em tons de joia, com filete dourado como a moldura do ícone */
+.mtile{box-shadow:inset 0 1px 0 rgba(255,255,255,.14)}
+.ecard{border-color:rgba(216,180,106,.32);box-shadow:0 10px 26px rgba(0,0,0,.35)}
+.mt-bar span{background:#F2DDA4}

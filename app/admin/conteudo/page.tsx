@@ -154,7 +154,7 @@ export default async function ConteudoPage() {
           <section
             key={m.id}
             className="painel-m"
-            style={{ '--c1': m.cor_inicio ?? '#4FDDFF', '--c2': m.cor_fim ?? '#9B7BFF' } as React.CSSProperties}
+            style={{ '--c1': m.cor_inicio ?? '#1E4FA8', '--c2': m.cor_fim ?? '#14306B' } as React.CSSProperties}
           >
             <div className="painel-h">
               <span className="pdot" />
