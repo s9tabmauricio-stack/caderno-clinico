@@ -44,7 +44,7 @@ Tudo em português do Brasil. O dono do projeto não é programador: explique em
 - Aula: abas Apostila / Questões / Flashcards. Matéria: abas **Aulas | Banco de questões** (as duas telas mostram as mesmas abas; o Banco tem filtros por tema e prova).
 - Questões: antes de responder, cada alternativa tem a faixa "Cortar" (tesoura; Shift + letra), que vale só enquanto o aluno está na questão. Depois de responder, certa em verde, erradas em vermelho, a marcada em destaque; comentário embaixo da certa e o motivo embaixo de cada errada. Para o administrador, cada questão tem o botão **Editar** (no canto do cartão) que abre o mesmo editor de Conteúdo ali mesmo.
 - **Conversa da turma** (embaixo da questão, só depois de responder): o aluno deixa "💡 Insight para os colegas" ou "⚠️ Erro na questão"; aparece como "Augusto deixou uma dica" / "Augusto achou um erro" (sem artigo, vale para qualquer nome). Colegas marcam dica como 👍 Útil; o autor apaga o próprio recado.
-- Administração (engrenagem → Configurações): **Recados da turma** (`/admin/recados`: bolinha ciano na engrenagem dourada com os novos; marcar visto/corrigido, abrir a questão, apagar), **Alunos** (`/admin`), **Conteúdo** (`/admin/conteudo`: resumo do que está no ar, editar/apagar aulas, questões, flashcards e limpar versões antigas; `/admin/painel` só redireciona para cá), **Agenda da semana** (`/admin/agenda`: colar o cronograma do WhatsApp).
+- Administração (engrenagem → Configurações): **Recados da turma** (`/admin/recados`: bolinha rosa na engrenagem com os novos; marcar visto/corrigido, abrir a questão, apagar), **Alunos** (`/admin`), **Conteúdo** (`/admin/conteudo`: resumo do que está no ar, editar/apagar aulas, questões, flashcards e limpar versões antigas; `/admin/painel` só redireciona para cá), **Agenda da semana** (`/admin/agenda`: colar o cronograma do WhatsApp).
 
 ## Banco de dados
 
@@ -99,10 +99,7 @@ Título, resumo e professor saem da capa (`pdftotext -f 1 -l 1`). Atualize a `de
 
 ## Visual
 
-Tema escuro **"Ouro & Sinapse"**, inspirado no ícone (neurônios de vidro em "M" com moldura dourada): fundo azul-noite `#0B1220`, vidro escuro com borda dourada fina.
-Ouro (`--gold`, botão principal `.btn`, cartão da Revisão, nomes de matéria) marca o que é importante; ciano `#6FD3FF` (`--accent`) marca toque, seleção e progresso. Errado em coral `#FF8A6B`, certo em verde `#4FD1A1`.
-Matérias em tons de joia (no banco, `cor_inicio` → `cor_fim`): nefro safira `#1E4FA8`, pneumo petróleo `#0F6E8C`, gastro esmeralda `#11735A`, orto bronze `#9A6A1F`, uro ametista `#5B3A9E`, pass granada `#8E2F45`; texto branco por cima. Na Agenda, versões mais claras em `COR_MATERIA` (`lib/agenda.ts`).
-Fontes: Inter no texto; Cinzel (`--serif`, pacote `@fontsource/cinzel`) só no nome do app na entrada e nos nomes de matéria (só em telas de 600 px ou mais).
+Tema escuro "vidro sobre luzes neon", inspirado no ícone (neurônio de vidro em ciano, violeta e magenta).
 Tokens e regras no fim de `app/globals.css` (bloco "Tema Med Genius"). Ícones do app em `public/icons`, `app/icon.png`, `app/apple-icon.png`; logo em `public/brand/med-genius.webp` (ícone de neurônios em "M" com moldura dourada; o original está em `public/brand/med-genius-original.jpg`).
 Rodapé da tela de entrada: "By Mauricio".
 
