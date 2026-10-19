@@ -99,7 +99,9 @@ Título, resumo e professor saem da capa (`pdftotext -f 1 -l 1`). Atualize a `de
 
 ## Visual
 
-Tema escuro "vidro sobre luzes neon", inspirado no ícone (neurônio de vidro em ciano, violeta e magenta).
+Tema escuro **"Ouro & Sinapse"**, inspirado no ícone (neurônios de vidro em "M" com moldura dourada): fundo azul-noite `#0B1220`, vidro escuro com borda dourada fina.
+Ouro (`--gold`, botão principal `.btn`, cartão da Revisão, nomes de matéria) marca o que é importante; ciano `#6FD3FF` (`--accent`) marca toque, seleção e progresso. Errado em coral `#FF8A6B`, certo em verde `#4FD1A1`.
+Fontes: Inter no texto; Cinzel (`--serif`, pacote `@fontsource/cinzel`) só no nome do app na entrada e nos nomes de matéria (só em telas de 600 px ou mais).
 Tokens e regras no fim de `app/globals.css` (bloco "Tema Med Genius"). Ícones do app em `public/icons`, `app/icon.png`, `app/apple-icon.png`; logo em `public/brand/med-genius.webp` (ícone de neurônios em "M" com moldura dourada; o original está em `public/brand/med-genius-original.jpg`).
 Rodapé da tela de entrada: "By Mauricio".
 
