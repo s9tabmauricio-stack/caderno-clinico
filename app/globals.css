@@ -897,3 +897,6 @@ a.pill{display:inline-flex;align-items:center;text-decoration:none}
 .filtro-barra.revisao{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
 .filtro-barra.revisao .pill{justify-content:center;text-align:center;min-width:0;padding:6px 8px;font-size:13px;overflow:hidden;text-overflow:ellipsis}
 .filtro-barra.revisao .pill.todas{grid-column:1/-1;font-size:13.5px}
+
+/* Revisão: números centralizados nos três quadros */
+.counts .cp{text-align:center}
