@@ -99,16 +99,19 @@ Título, resumo e professor saem da capa (`pdftotext -f 1 -l 1`). Atualize a `de
 
 ## Visual
 
-Tema escuro "vidro sobre luzes neon", inspirado no ícone (neurônio de vidro em ciano, violeta e magenta), na versão **"Neon com foco"** (`visual-v3`): cada cor tem um só trabalho.
-- Degradê da marca só no destaque (cartão "Revisão de hoje", tela de entrada). Ciano `#4FDDFF` = toque e ação (botão principal ciano com texto escuro). Verde-menta `#34D399` = certo; coral `#FF6B5E` = errado (nunca rosa); âmbar = atenção; magenta `#FF4FD8` só na bolinha de novidade.
-- Fundo `#0A0D1C` com 2 luzes suaves, sem quadriculado. Engrenagem em vidro discreto.
-- Matérias em tons de pedra preciosa (texto branco legível): nefro `#2563EB`/`#1E3A8A`, pneumo `#0E7490`/`#155E75`, gastro `#047857`/`#065F46`, orto `#B45309`/`#7C2D12`, uro `#6D28D9`/`#4C1D95`, pass `#BE185D`/`#831843`. A cor clara de cada matéria (agenda, brilho do bloco) fica em `COR_MATERIA` (`lib/agenda.ts`).
-Tokens e regras no fim de `app/globals.css` (bloco "Tema Med Genius"). Ícones do app em `public/icons`, `app/icon.png`, `app/apple-icon.png`; logo em `public/brand/med-genius.webp` (ícone de neurônios em "M" com moldura dourada; o original está em `public/brand/med-genius-original.jpg`).
-Tela de entrada: cartão de vidro com logo, campos de CPF e senha centralizados (ícone à esquerda, olho para mostrar a senha) e botão Entrar ciano largo. Sem rodapé e sem aviso de senha esquecida.
+Tema escuro **"Ouro, Cromo & Sinapse"** (`visual-v4`, no ar desde 20/10/2026), inspirado nos ícones em ouro, cromo e neurônios azuis: fundo grafite `#0B0C0F` com um holofote suave no alto e um brilho azul embaixo. Cada cor tem um só trabalho.
+- **Ouro** (`#D6B15C`, botão em degradê metálico com texto escuro) = ação principal e destaque: botões principais, cartão "Revisão de hoje" (vidro azul-noite com moldura de ouro e neurônios ao fundo), aba aberta, botão Entrar.
+- **Azul sinapse** `#5CB8FF` = progresso e seleção (barras, filtros ligados, alternativa marcada, links). **Cromo** = molduras finas dos cartões, barra de abas, engrenagem e letras das alternativas.
+- Verde-menta `#34D399` = certo; coral `#FF6B5E` = errado (nunca rosa); âmbar = atenção; bolinha de novidade em azul `#2F6FEB`.
+- Títulos na Cinzel; rótulos pequenos em maiúsculas na Inter espaçada (`.eyebrow`, `.sec`, `.review-k`…).
+- Matérias em tons de pedra preciosa com moldura de cromo, como ícones de app: nefro `#2563EB`/`#1E3A8A`, pneumo `#0E7490`/`#155E75`, gastro `#047857`/`#065F46`, orto `#B45309`/`#7C2D12`, uro `#6D28D9`/`#4C1D95`, pass `#BE185D`/`#831843`. A cor clara de cada matéria (agenda, brilho do bloco) fica em `COR_MATERIA` (`lib/agenda.ts`).
+Tokens e regras no fim de `app/globals.css`: bloco "Tema Med Genius" (base), "Neon com foco" (v3) e, por último, "Ouro, Cromo & Sinapse" (v4), que sobrescreve os anteriores. Ícones do app em `public/icons`, `app/icon.png`, `app/apple-icon.png`; logo em `public/brand/med-genius.webp` (ícone de neurônios em "M" com moldura dourada; o original está em `public/brand/med-genius-original.jpg`).
+Tela de entrada: cartão de vidro com moldura de cromo, logo, "MED GENIUS" prateado com "Medicina · FAG" embaixo, campos de CPF e senha centralizados (ícone à esquerda, olho para mostrar a senha) e botão ENTRAR de ouro largo. Sem rodapé e sem aviso de senha esquecida.
 
 Versões do visual salvas no GitHub (ramos fixos, não publicados; não apague):
 - `visual-v1`: o tema neon anterior, como estava em 20/10/2026. Para voltar a ele: `git revert` do commit "Neon com foco" e as cores da v1 abaixo no banco.
-- `visual-v3`: "Neon com foco" (no ar).
+- `visual-v4`: "Ouro, Cromo & Sinapse" (no ar). Quadro da proposta: https://claude.ai/artifact/19dnhpGriy7UQL9NA4Fn4d
+- `visual-v3`: "Neon com foco" (ciano para toque, degradê neon no destaque). Para voltar a ele: `git revert` do commit "Ouro, Cromo & Sinapse" (as cores das matérias no banco são as mesmas).
 - `visual-v2`: "Ouro & Sinapse" (azul-noite, vidro com filete dourado, botão principal dourado, ciano para toque, coral para erro, fonte Cinzel). Foi feito nos commits `21ce774`…`82f847c` e desfeito em `773ce11`. Para voltar a ele: `git revert 773ce11` (resolvendo conflitos com o que mudou depois) e trocar as cores das matérias no banco (`cor_inicio`/`cor_fim`): nefro `#1E4FA8`/`#14306B`, pneumo `#0F6E8C`/`#0B4560`, gastro `#11735A`/`#0A4A3C`, orto `#9A6A1F`/`#5E3F10`, uro `#5B3A9E`/`#352263`, pass `#8E2F45`/`#561B2A`. As cores da v1: nefro `#0B5BD3`/`#3B4FC9`, pneumo `#00B8F0`/`#3F6BFF`, gastro `#3EE6A8`/`#00B8F0`, orto `#FFB547`/`#FF5C8A`, uro `#6A5CFF`/`#E92FC0`, pass `#4FDDFF`/`#9B7BFF`. O quadro com a proposta: https://claude.ai/artifact/Dzu7Jr27Wc7WTo7ZMLq5G6
 
 ## Como trabalhar com o Mauricio

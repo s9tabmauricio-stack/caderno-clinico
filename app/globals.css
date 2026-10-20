@@ -912,3 +912,89 @@ a.pill{display:inline-flex;align-items:center;text-decoration:none}
 
 /* Senhas na letra antiga: na Cinzel minúscula e maiúscula ficam quase iguais */
 input[type=password],input[autocomplete$=password]{font-family:var(--font-texto)}
+
+/* =====================================================================
+   "Ouro, Cromo & Sinapse" (visual-v4): inspirado nos ícones em ouro, cromo e
+   neurônios azuis. Fundo grafite com um holofote no alto; cada cor com um só trabalho:
+   ouro = ação principal e destaque (botões, Revisão de hoje, aba aberta);
+   azul sinapse = progresso e seleção; cromo = molduras finas e ícones parados;
+   verde-menta = certo; coral = errado. Para voltar ao "Neon com foco": git revert deste bloco.
+   ===================================================================== */
+:root:not([data-mg]){
+  --bg:#0B0C0F; --card:rgba(255,255,255,.045); --card-2:rgba(255,255,255,.075);
+  --line:rgba(255,255,255,.10); --line-2:rgba(255,255,255,.07); --line-strong:rgba(255,255,255,.18); --field:rgba(0,0,0,.28);
+  --ink:#F4F6FA; --text:#DCE0E8; --muted:#A3A9B4; --title:#F6F7FA;
+  --accent:#5CB8FF; --accent-soft:rgba(79,178,255,.13); --accent-line:rgba(92,184,255,.42);
+  --btn:#D6B15C; --btn-fg:#1B1407; --tab-on:rgba(214,177,92,.13); --badge:#2F6FEB;
+  --glass:rgba(14,15,19,.82); --glass-line:rgba(255,255,255,.14);
+  --grad:linear-gradient(160deg,#1C2640 0%,#0E1322 100%);
+  --ouro:#E6C877;
+  --ouro-metal:linear-gradient(135deg,#F8E9B5,#C9A24A 28%,#6B4E18 52%,#EBCF7E 78%,#9A782C);
+  --ouro-botao:linear-gradient(180deg,#F6DE94,#D6B15C 48%,#A8812E);
+  --cromo:linear-gradient(160deg,rgba(255,255,255,.42),rgba(255,255,255,.08) 38%,rgba(255,255,255,.04) 62%,rgba(255,255,255,.24));
+  --cromo-forte:linear-gradient(140deg,#F2F4F7,#8D949E 35%,#3E434B 60%,#D5D9DF);
+  --vidro:linear-gradient(165deg,rgba(255,255,255,.065),rgba(255,255,255,.022));
+  --sinapse:linear-gradient(90deg,#2F7BFF,#6FC3FF);
+}
+body::before{background:
+  radial-gradient(90vmax 55vmax at 50% -12%,rgba(255,255,255,.075),transparent 62%),
+  radial-gradient(50vmax 40vmax at 0% 100%,rgba(47,123,255,.08),transparent 70%)}
+
+/* rótulos pequenos em Inter espaçada; títulos seguem na Cinzel */
+.eyebrow,.sec,.review-k,.stat .lab,.flash .side,.filtro .rot,.rotulo{font-family:var(--font-texto);letter-spacing:.2em;color:var(--muted)}
+.eyebrow,.sec{font-size:11.5px}
+
+/* superfícies de vidro com moldura de cromo */
+.group,.stat,.qcard,.perf,.fc-sum,.pdfbar,.how,.admin-form,.turma,.painel-m,.ed-q,.recado,.done,.flash,.ecard,.ap:not(:has(> .paginas)){
+  border-color:transparent;background:var(--vidro) padding-box,var(--cromo) border-box}
+.flash{box-shadow:inset 0 1px 0 rgba(255,255,255,.1),var(--lift)}
+
+/* matérias como ícones de app: cores de pedra preciosa com moldura de cromo */
+.mtile{border:1px solid transparent;background:linear-gradient(150deg,var(--c1),var(--c2)) padding-box,var(--cromo-forte) border-box;box-shadow:inset 0 1px 0 rgba(255,255,255,.3),0 10px 24px rgba(0,0,0,.45)}
+.ecard .mtile{border:0;background:linear-gradient(150deg,var(--c1),var(--c2))}
+
+/* botões: ouro para a ação principal; vidro com texto azul para as outras */
+.btn{background:var(--ouro-botao);color:var(--btn-fg);box-shadow:inset 0 1px 0 rgba(255,255,255,.55),inset 0 -1px 0 rgba(0,0,0,.25),0 8px 22px rgba(214,177,92,.24)}
+.btn:hover{filter:brightness(1.06)}
+.btn.ghost,.btn.google{background:var(--vidro) padding-box,var(--cromo) border-box;border-color:transparent;color:var(--accent)}
+
+/* Revisão de hoje: vidro azul-noite com moldura de ouro e neurônios ao fundo */
+.review{border:1px solid transparent;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 260 160' fill='none'%3E%3Cg stroke='%234FB2FF' stroke-width='1.2' stroke-linecap='round' opacity='.55'%3E%3Cpath d='M90 30C120 50 140 40 170 60S220 70 250 50'/%3E%3Cpath d='M170 60C180 90 160 110 190 140'/%3E%3Cpath d='M120 50C110 80 130 100 110 130'/%3E%3Cpath d='M140 10C150 30 165 35 170 60'/%3E%3C/g%3E%3Cg fill='%23FFE7A8'%3E%3Ccircle cx='170' cy='60' r='2.6'/%3E%3Ccircle cx='120' cy='50' r='2'/%3E%3Ccircle cx='190' cy='140' r='2.2'/%3E%3Ccircle cx='110' cy='130' r='1.6'/%3E%3C/g%3E%3C/svg%3E") right -30px top -10px/260px auto no-repeat padding-box,
+  var(--grad) padding-box,var(--ouro-metal) border-box;
+  box-shadow:0 18px 40px rgba(0,0,0,.55),inset 0 1px 0 rgba(255,240,200,.22)}
+.review-k{color:var(--ouro)}
+.review-s{color:#B9C0CC}
+.review .btn-white{background:var(--ouro-botao);color:var(--btn-fg);border:0;-webkit-backdrop-filter:none;backdrop-filter:none;box-shadow:inset 0 1px 0 rgba(255,255,255,.55),0 8px 20px rgba(214,177,92,.25)}
+.review .btn-white:hover{background:var(--ouro-botao);filter:brightness(1.06)}
+
+/* barra de abas e engrenagem em vidro com moldura de cromo; aba aberta em ouro */
+.tabbar{border-color:transparent;background:linear-gradient(var(--glass),var(--glass)) padding-box,var(--cromo) border-box;border-radius:28px}
+.tab{border-radius:22px}
+.tab.on{color:var(--ouro);background:var(--tab-on)}
+.engrenagem{border-radius:14px;border:1px solid transparent;background:var(--vidro) padding-box,var(--cromo) border-box;box-shadow:0 6px 16px rgba(0,0,0,.4)}
+.engrenagem:hover{background:linear-gradient(rgba(255,255,255,.1),rgba(255,255,255,.1)) padding-box,var(--cromo) border-box}
+.engrenagem .bd{box-shadow:0 0 0 2px var(--bg),0 0 10px rgba(47,111,235,.7)}
+
+/* progresso e seleção em azul sinapse */
+.pbar span,.stat .bar i{background:var(--sinapse);box-shadow:0 0 8px rgba(79,178,255,.5)}
+.pill[aria-pressed="true"],.pill[aria-current="true"],.ag-filtros .pill[aria-pressed="true"]{background:var(--accent-soft);border-color:var(--accent-line);color:var(--accent)}
+.opt .l{border-color:transparent;background:linear-gradient(160deg,#2A2E36,#15171C) padding-box,var(--cromo-forte) border-box;color:#E4E7EC}
+.opt.sel .l{background:var(--accent);border-color:var(--accent);color:#04121F}
+.opt.right .l,.opt.wrong .l{background:transparent}
+.optw.sel{box-shadow:0 0 0 1px var(--accent-line),0 0 18px rgba(79,178,255,.16)}
+.banco-row .num{color:var(--ouro)}
+.tg.prox,.tg.meu{background:var(--accent-soft);color:var(--accent)}
+.ag-item.i .ic{background:var(--accent-soft);color:var(--accent)}
+
+/* tela de entrada: holofote sobre o grafite, título prateado e botão de ouro */
+.tela-entrar{--lg-bg:#0B0C0F;--lg-vidro:rgba(20,22,28,.55);--lg-borda:transparent;--lg-campo:rgba(0,0,0,.28);--lg-linha:rgba(255,255,255,.12);--lg-sombra:0 30px 80px rgba(0,0,0,.6)}
+.lg-fundo .o1{background:radial-gradient(circle,rgba(255,255,255,.55) 0%,transparent 60%);left:-5vmax;right:-5vmax;margin:auto;opacity:.12}
+.lg-fundo .o2{background:radial-gradient(circle,#2F7BFF 0%,transparent 65%);opacity:.22}
+.lg-fundo .o3{background:radial-gradient(circle,#D6B15C 0%,transparent 65%);opacity:.14}
+.lg-vidro{border-color:transparent;background:var(--vidro) padding-box,var(--cromo) border-box}
+.lg-logo{width:120px;border-radius:20px;box-shadow:0 22px 50px rgba(0,0,0,.65),0 0 40px rgba(63,169,255,.2)}
+.lg-vidro h1{margin-bottom:4px;font-size:30px;letter-spacing:.12em;text-transform:uppercase;background:linear-gradient(180deg,#FFFFFF,#C9CED6 60%,#9AA1AB);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lg-sub{margin:0 0 24px;font-family:var(--font-texto);font-size:11px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--muted)}
+.lg-campo{box-shadow:inset 0 1px 2px rgba(0,0,0,.5)}
+.lg-entrar{background:var(--ouro-botao);color:var(--btn-fg);font-weight:700;letter-spacing:.1em;text-transform:uppercase;box-shadow:inset 0 1px 0 rgba(255,255,255,.55),inset 0 -1px 0 rgba(0,0,0,.25),0 10px 26px rgba(214,177,92,.28)}
