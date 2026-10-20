@@ -28,7 +28,7 @@ export default async function MateriaPage(props: PageProps<'/materia/[id]'>) {
 
   return (
     <Pagina larga pendentes={pendentes(progresso).hoje}>
-      <Voltar href="/estudar" rotulo="Estudar" />
+      <Voltar href="/estudar" rotulo="Matérias" />
       <header className="top">
         <div>
           <div className="eyebrow">Matéria</div>

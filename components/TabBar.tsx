@@ -7,7 +7,7 @@ import { Icone } from './Icones'
 const ABAS = [
   { href: '/', chave: 'inicio', rotulo: 'Início', icone: Icone.inicio },
   { href: '/agenda', chave: 'agenda', rotulo: 'Agenda', icone: Icone.agenda },
-  { href: '/estudar', chave: 'estudar', rotulo: 'Estudar', icone: Icone.estudar },
+  { href: '/estudar', chave: 'estudar', rotulo: 'Matérias', icone: Icone.estudar },
   { href: '/revisao', chave: 'revisao', rotulo: 'Revisão', icone: Icone.cards },
   { href: '/desempenho', chave: 'desempenho', rotulo: 'Desempenho', icone: Icone.grafico },
 ] as const

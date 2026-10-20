@@ -13,7 +13,7 @@ import {
 } from '@/lib/dados'
 import { plural } from '@/lib/formato'
 
-export const metadata: Metadata = { title: 'Estudar' }
+export const metadata: Metadata = { title: 'Matérias' }
 
 // Porta de entrada do conteúdo: cada matéria leva às aulas (apostila, questões e flashcards)
 // e, logo abaixo, direto ao banco de questões dela.
@@ -30,7 +30,7 @@ export default async function EstudarPage() {
       <header className="top">
         <div>
           <div className="eyebrow">Apostilas, questões e flashcards</div>
-          <h1 className="big">Estudar</h1>
+          <h1 className="big">Matérias</h1>
         </div>
       </header>
 

@@ -41,8 +41,8 @@ export default async function BancoPage(props: PageProps<'/materia/[id]/questoes
     situacao: mostrar === 'erradas' ? ('erradas' as const) : mostrar === 'abertas' ? ('abertas' as const) : ('todas' as const),
   }
 
-  // "Voltar" leva de volta a quem mandou o aluno para cá (Estudar, Desempenho ou a aula)
-  let voltar = { href: '/estudar', rotulo: 'Estudar' }
+  // "Voltar" leva de volta a quem mandou o aluno para cá (Matérias, Desempenho ou a aula)
+  let voltar = { href: '/estudar', rotulo: 'Matérias' }
   if (de === 'desempenho') voltar = { href: '/desempenho', rotulo: 'Desempenho' }
   else if (typeof de === 'string' && /^aula:[\w-]{1,60}$/.test(de)) {
     const aulaId = de.slice(5)

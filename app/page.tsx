@@ -115,7 +115,7 @@ export default async function Inicio() {
           )}
         </div>
         <div>
-          <div className="sec">{ultima ? 'Continuar' : 'Estudar'}</div>
+          <div className="sec">{ultima ? 'Continuar' : 'Matérias'}</div>
           <div className="group">
             {ultima && (
               <Link className="row" href={`/aula/${ultima.aula_id}`}>
