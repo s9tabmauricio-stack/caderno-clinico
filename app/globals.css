@@ -446,8 +446,6 @@ body{margin:0;min-height:100vh}
 .lg-giro{width:16px;height:16px;border-radius:50%;border:2px solid currentColor;border-right-color:transparent;animation:lg-gira .8s linear infinite}
 @keyframes lg-gira{to{transform:rotate(360deg)}}
 .lg-erro{margin:12px 0 0;color:var(--bad);font-size:14.5px}
-.lg-ajuda{margin:22px 0 0;color:var(--muted);font-size:14px}
-.lg-rodape{font-size:13px;letter-spacing:.04em;color:var(--muted)}
 
 /* =====================================================================
    Tema Med Genius: inspirado no ícone (vidro sobre luzes neon)
@@ -903,7 +901,6 @@ a.pill{display:inline-flex;align-items:center;text-decoration:none}
 .lg-entrar{margin-top:4px;width:100%;min-height:50px;border:0;border-radius:14px;background:var(--btn);color:var(--btn-fg);font:inherit;font-size:17px;font-weight:600;cursor:pointer;display:grid;place-items:center;box-shadow:0 8px 24px rgba(79,221,255,.28)}
 .lg-entrar:disabled{cursor:default;opacity:.85}
 .lg-erro{margin:0}
-.lg-ajuda{margin:12px 0 0}
 .lg-logo{width:104px;height:auto;box-shadow:0 14px 40px rgba(0,180,255,.35),0 4px 12px rgba(0,0,0,.35)}
 .tela-entrar{grid-template-columns:minmax(0,1fr)}
 .lg-vidro{justify-self:center}

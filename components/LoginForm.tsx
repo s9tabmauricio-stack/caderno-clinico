@@ -111,7 +111,6 @@ export function LoginForm() {
       <button className="lg-entrar" type="submit" disabled={entrando}>
         {entrando ? <span className="lg-giro" aria-hidden="true" /> : 'Entrar'}
       </button>
-      <p className="lg-ajuda">Esqueceu a senha? Fale com quem criou o seu acesso.</p>
     </form>
   )
 }

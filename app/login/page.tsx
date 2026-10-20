@@ -18,8 +18,6 @@ export default function LoginPage() {
         <p className="lg-sub">Entre com seu CPF e senha</p>
         <LoginForm />
       </section>
-
-      <footer className="lg-rodape">By Mauricio</footer>
     </main>
   )
 }
