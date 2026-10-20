@@ -440,7 +440,7 @@ body{margin:0;min-height:100vh}
 .lg-icone svg{width:40px;height:40px;stroke-width:2}
 .lg-logo{display:block;width:88px;height:86px;border-radius:13px;margin-bottom:18px;box-shadow:0 14px 34px rgba(0,180,255,.25),0 4px 12px rgba(0,0,0,.35)}
 .lg-vidro h1{margin:0;font-size:28px;font-weight:600;letter-spacing:-.02em;color:var(--ink)}
-.lg-sub{margin:6px 0 26px;color:var(--muted);font-size:16px}
+.lg-vidro h1{margin-bottom:24px}
 
 .lg-form{width:100%;display:grid;gap:10px}
 .lg-giro{width:16px;height:16px;border-radius:50%;border:2px solid currentColor;border-right-color:transparent;animation:lg-gira .8s linear infinite}
