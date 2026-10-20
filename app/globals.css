@@ -2,7 +2,8 @@
 /* Layout: app de coluna única no estilo iOS, listas agrupadas e barra de abas de vidro flutuante; mesma linguagem das apostilas Liquid Glass (azul = conteúdo, verde = valor, vermelho = alerta) */
 :root{
   --font-texto:"Inter Variable","Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-  --font:"Cinzel Variable","Cinzel",var(--font-texto);
+  --font-marca:"Cinzel Variable","Cinzel",var(--font-texto);
+  --font:var(--font-texto);
   --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
   --r-lg:20px; --r-md:14px;
 }
@@ -742,7 +743,7 @@ select.campo option,select.campo optgroup{background:#161824;color:#F2F5FF}
 @media (max-width:599px){
   .tiles{grid-template-columns:repeat(2,minmax(0,1fr))}
   .mtile{padding:10px 13px 11px;gap:10px}
-  /* tamanho que faz "Gastroenterologia" caber numa linha em qualquer celular */
+  /* tamanho que faz "Pneumologia" caber numa linha em qualquer celular ("Gastroenterologia" quebra com hífen) */
   .mt-name{font-size:clamp(14px,calc((50vw - 47px) / 8.6),17px);overflow-wrap:break-word}
   .mt-meta{font-size:12.5px}
 }
@@ -910,9 +911,6 @@ a.pill{display:inline-flex;align-items:center;text-decoration:none}
 .lg-campo:not(:has(.lg-olho)){padding-right:42px}
 .lg-campo:has(.lg-olho){padding-right:2px}
 
-/* Senhas na letra antiga: na Cinzel minúscula e maiúscula ficam quase iguais */
-input[type=password],input[autocomplete$=password]{font-family:var(--font-texto)}
-
 /* =====================================================================
    Tela de entrada da v4 ("Ouro, Cromo & Sinapse") sobre o tema v3: logo na moldura de ouro,
    título prateado, cartão com moldura de cromo e botão Entrar de ouro. As cores da v4 valem só aqui.
@@ -944,3 +942,24 @@ input[type=password],input[autocomplete$=password]{font-family:var(--font-texto)
 .lg-olho{color:#9AA1AB}
 .lg-entrar{margin-top:12px;min-height:52px;border-radius:16px;background:var(--ouro-botao);color:var(--btn-fg);font-size:16px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;box-shadow:inset 0 1px 0 rgba(255,255,255,.6),inset 0 -1px 0 rgba(0,0,0,.25),0 10px 26px rgba(214,177,92,.3)}
 .lg-erro{margin:6px 0 0;text-align:center}
+
+/* =====================================================================
+   Letras: Inter em tudo o que se lê e se digita (enunciado, alternativas, flashcards,
+   recados, campos, números); a Cinzel, letra da marca, só nos títulos, nos nomes das
+   matérias, nos rótulos em maiúsculas e nos números grandes isolados.
+   A Cinzel não tem minúsculas de verdade (mg e Mg ficam quase iguais), nem algarismos
+   de largura fixa, nem símbolos como β, ≥ e →.
+   ===================================================================== */
+h1.big,.centro h1,.done h2,.enviado h2,.lg-marca h1,.lg-entrar,
+.eyebrow,.sec,.review-k,.review-n .n,.res-n .n,
+.mt-name,.perf-h .t,.painel-h .t{font-family:var(--font-marca)}
+.sec a{font-family:var(--font-texto)}
+/* letras romanas pedem ar: sem o espaçamento negativo pensado para a Inter */
+h1.big,.centro h1,.done h2,.enviado h2,.review-n .n,.res-n .n,.mt-name,.perf-h .t,.painel-h .t{letter-spacing:0}
+/* "Gastroenterologia" não cabe inteira no bloco estreito: quebra com hífen, não no meio da sílaba */
+.mt-name{-webkit-hyphens:auto;hyphens:auto}
+/* saudação do Início numa linha: "Boa noite, Mauricio" cabe na Cinzel em qualquer celular (100vw - margens - engrenagem) */
+h1.big.saudacao{font-size:clamp(20px,calc((100vw - 86px) / 11.2),34px)}
+/* "Revisão de hoje" por cima do botão, para o rótulo não quebrar em duas linhas */
+.review .review-k{grid-column:1 / -1}
+.review .btn-white{grid-row:2 / span 2}
