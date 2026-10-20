@@ -54,8 +54,8 @@ export default async function RevisaoPage(props: PageProps<'/revisao'>) {
         Errou, volta em minutos. Acertou, volta em dias. Todos os cards do dia entram, sem limite.
       </p>
 
-      <nav className="filtro-barra" aria-label="Revisar por matéria">
-        <Link className="pill" href="/revisao" aria-current={alvo ? undefined : 'true'}>
+      <nav className="filtro-barra revisao" aria-label="Revisar por matéria">
+        <Link className="pill todas" href="/revisao" aria-current={alvo ? undefined : 'true'}>
           Todas
           {pend.hoje > 0 && <small>{pend.hoje}</small>}
         </Link>
