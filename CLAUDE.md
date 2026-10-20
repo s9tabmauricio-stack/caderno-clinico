@@ -20,7 +20,7 @@ Tudo em português do Brasil. O dono do projeto não é programador: explique em
 
 - Next.js 16 (App Router, `proxy.ts` no lugar de middleware, `params`/`searchParams` assíncronos, tipos `PageProps<'/rota'>`).
   Rotas novas: rode `npx next build` antes do `tsc`, porque os tipos das rotas são gerados no build.
-- React 19, `@supabase/ssr` com chave publicável (`lib/supabase/config.ts`), fonte Inter.
+- React 19, `@supabase/ssr` com chave publicável (`lib/supabase/config.ts`). Fonte: Cinzel em todo o app (`--font`); os campos de senha usam a Inter (`--font-texto`), porque na Cinzel minúscula e maiúscula ficam quase iguais.
 - Leitura de dados: `lib/dados.ts`; agenda: `lib/agenda.ts` (leitor do cronograma) e `lib/agenda-dados.ts`; admin: `lib/admin.ts`.
 - Repetição espaçada: `lib/srs.ts`. Explicação por alternativa: `lib/explicacoes.ts`.
 

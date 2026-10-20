@@ -1,7 +1,8 @@
 /* Visual do Caderno Clínico: mesma linguagem das apostilas Liquid Glass */
 /* Layout: app de coluna única no estilo iOS, listas agrupadas e barra de abas de vidro flutuante; mesma linguagem das apostilas Liquid Glass (azul = conteúdo, verde = valor, vermelho = alerta) */
 :root{
-  --font:"Cinzel Variable","Cinzel","Inter Variable","Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --font-texto:"Inter Variable","Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --font:"Cinzel Variable","Cinzel",var(--font-texto);
   --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
   --r-lg:20px; --r-md:14px;
 }
@@ -908,3 +909,6 @@ a.pill{display:inline-flex;align-items:center;text-decoration:none}
 .lg-form{grid-template-columns:minmax(0,1fr)}
 .lg-campo:not(:has(.lg-olho)){padding-right:42px}
 .lg-campo:has(.lg-olho){padding-right:2px}
+
+/* Senhas na letra antiga: na Cinzel minúscula e maiúscula ficam quase iguais */
+input[type=password],input[autocomplete$=password]{font-family:var(--font-texto)}
