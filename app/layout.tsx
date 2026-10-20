@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from 'next'
+import '@fontsource-variable/cinzel'
 import '@fontsource-variable/inter'
 import './globals.css'
 

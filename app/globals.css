@@ -1,7 +1,7 @@
 /* Visual do Caderno Clínico: mesma linguagem das apostilas Liquid Glass */
 /* Layout: app de coluna única no estilo iOS, listas agrupadas e barra de abas de vidro flutuante; mesma linguagem das apostilas Liquid Glass (azul = conteúdo, verde = valor, vermelho = alerta) */
 :root{
-  --font:"Inter Variable","Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --font:"Cinzel Variable","Cinzel","Inter Variable","Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
   --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
   --r-lg:20px; --r-md:14px;
 }
