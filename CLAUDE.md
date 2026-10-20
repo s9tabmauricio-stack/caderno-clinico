@@ -104,7 +104,7 @@ Tema escuro "vidro sobre luzes neon", inspirado no ícone (neurônio de vidro em
 - Fundo `#0A0D1C` com 2 luzes suaves, sem quadriculado. Engrenagem em vidro discreto.
 - Matérias em tons de pedra preciosa (texto branco legível): nefro `#2563EB`/`#1E3A8A`, pneumo `#0E7490`/`#155E75`, gastro `#047857`/`#065F46`, orto `#B45309`/`#7C2D12`, uro `#6D28D9`/`#4C1D95`, pass `#BE185D`/`#831843`. A cor clara de cada matéria (agenda, brilho do bloco) fica em `COR_MATERIA` (`lib/agenda.ts`).
 Tokens e regras no fim de `app/globals.css` (bloco "Tema Med Genius"). Ícones do app em `public/icons`, `app/icon.png`, `app/apple-icon.png`; logo em `public/brand/med-genius.webp` (ícone de neurônios em "M" com moldura dourada; o original está em `public/brand/med-genius-original.jpg`).
-Rodapé da tela de entrada: "By Mauricio".
+Tela de entrada: cartão de vidro com logo, campos de CPF e senha centralizados (ícone à esquerda, olho para mostrar a senha) e botão Entrar ciano largo. Sem rodapé e sem aviso de senha esquecida.
 
 Versões do visual salvas no GitHub (ramos fixos, não publicados; não apague):
 - `visual-v1`: o tema neon anterior, como estava em 20/10/2026. Para voltar a ele: `git revert` do commit "Neon com foco" e as cores da v1 abaixo no banco.
