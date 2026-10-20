@@ -13,7 +13,7 @@ export default function LoginPage() {
       </div>
 
       <section className="lg-vidro">
-        <img className="lg-logo" src="/brand/med-genius.webp" width={88} height={86} alt="" />
+        <img className="lg-logo" src="/brand/med-genius.webp" width={104} height={101} alt="" />
         <h1>Med Genius</h1>
         <p className="lg-sub">Entre com seu CPF e senha</p>
         <LoginForm />
