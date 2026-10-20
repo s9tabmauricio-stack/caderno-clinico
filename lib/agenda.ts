@@ -43,7 +43,7 @@ export const NOME_MATERIA: Record<string, string> = {
 }
 export const COR_MATERIA: Record<string, string> = {
   pneumo: '#22D3EE', gastro: '#34D399', nefro: '#60A5FA', uro: '#A78BFA',
-  orto: '#FBBF24', pass: '#F472B6', sem: '#9AA3BD', angio: '#F87171',
+  orto: '#FBBF24', pass: '#F472B6', sem: '#9AA3BD', angio: '#FB923C',
 }
 
 const DIA_SEMANA = /^\s*(segunda|ter[cç]a|quarta|quinta|sexta|s[aá]bado|domingo)(?:-feira)?\s*\|\s*(\d{1,2})\s*\/\s*([a-zç]+|\d{1,2})(?:\s*[-–—]\s*(.+))?/i
@@ -294,11 +294,23 @@ export function fmtHora(h: string | null) {
   return `${Number(a)}h${b === '00' ? '' : b}`
 }
 
-export function fmtFalta(min: number) {
-  if (min < 60) return `Em ${min} min`
+/** 32 → "32 min", 319 → "5h19", 120 → "2h" */
+export function fmtDuracao(min: number) {
+  if (min < 60) return `${min} min`
   const h = Math.floor(min / 60)
   const m = min % 60
-  return m ? `Em ${h}h${String(m).padStart(2, '0')}` : `Em ${h}h`
+  return m ? `${h}h${String(m).padStart(2, '0')}` : `${h}h`
+}
+
+export function fmtFalta(min: number) {
+  return `Em ${fmtDuracao(min)}`
+}
+
+/** Evento de 6h ou mais (ex.: "coordenação disponível das 8h às 22h30") vale o dia todo: não é uma aula da lista. */
+export function ehDiaTodo(e: { inicio: string | null; fim: string | null; cancelado: boolean; tipo: string }) {
+  const ini = minutos(e.inicio)
+  const fim = minutos(e.fim)
+  return !e.cancelado && e.tipo !== 'aviso' && ini !== null && fim !== null && fim - ini >= 360
 }
 
 export type Situacao = 'passou' | 'agora' | 'proxima' | 'depois'
@@ -309,17 +321,18 @@ export function situacoes<T extends { inicio: string | null; fim: string | null;
   agoraMin: number,
 ) {
   let achouProxima = false
-  return eventos.map((e) => {
+  return eventos.map((e): { evento: T; situacao: Situacao; falta: number; feito?: number } => {
     const ini = minutos(e.inicio)
-    if (e.cancelado || e.tipo === 'aviso' || ini === null) return { evento: e, situacao: 'depois' as Situacao, falta: 0 }
+    if (e.cancelado || e.tipo === 'aviso' || ini === null) return { evento: e, situacao: 'depois', falta: 0 }
     const fim = minutos(e.fim) ?? ini + 60
-    if (agoraMin >= fim) return { evento: e, situacao: 'passou' as Situacao, falta: 0 }
-    if (agoraMin >= ini) return { evento: e, situacao: 'agora' as Situacao, falta: 0 }
+    if (agoraMin >= fim) return { evento: e, situacao: 'passou', falta: 0 }
+    // Na aula em andamento, `falta` é o tempo até o fim e `feito` a fração já passada (0 a 1)
+    if (agoraMin >= ini) return { evento: e, situacao: 'agora', falta: fim - agoraMin, feito: (agoraMin - ini) / (fim - ini) }
     if (!achouProxima) {
       achouProxima = true
-      return { evento: e, situacao: 'proxima' as Situacao, falta: ini - agoraMin }
+      return { evento: e, situacao: 'proxima', falta: ini - agoraMin }
     }
-    return { evento: e, situacao: 'depois' as Situacao, falta: ini - agoraMin }
+    return { evento: e, situacao: 'depois', falta: ini - agoraMin }
   })
 }
 

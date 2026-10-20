@@ -13,9 +13,9 @@ import {
   totaisQuestoes,
 } from '@/lib/dados'
 import { plural, saudacao } from '@/lib/formato'
-import { COR_MATERIA, agoraBrasilia, ehDoAluno, situacoes } from '@/lib/agenda'
+import { COR_MATERIA, agoraBrasilia, ehDiaTodo, ehDoAluno, situacoes } from '@/lib/agenda'
 import { agendaDoDia } from '@/lib/agenda-dados'
-import { AgendaAvisos, AgendaLista } from '@/components/AgendaLista'
+import { AgendaAvisos, AgendaDiaTodo, AgendaLista } from '@/components/AgendaLista'
 
 export const metadata: Metadata = { title: { absolute: 'Med Genius · Início' } }
 
@@ -32,20 +32,14 @@ export default async function Inicio() {
 
   // Agenda de hoje: teóricas e avisos para todos, práticas só do grupo do aluno
   const grupo = perfil.data?.grupo ?? null
-  // Evento de 10h ou mais (ex.: "coordenação disponível") é um aviso do dia, não uma aula
-  const duracao = (e: { inicio: string | null; fim: string | null }) => {
-    if (!e.inicio || !e.fim) return 0
-    const m = (h: string) => Number(h.slice(0, 2)) * 60 + Number(h.slice(3, 5))
-    return m(e.fim) - m(e.inicio)
-  }
-  const diaTodo = agendaHoje.filter((e) => !e.cancelado && e.tipo !== 'aviso' && duracao(e) >= 600)
+  const diaTodo = agendaHoje.filter(ehDiaTodo)
   const aulasHoje = agendaHoje.filter(
-    (e) => !e.cancelado && e.tipo !== 'aviso' && duracao(e) < 600 && ehDoAluno(e.grupos, grupo),
+    (e) => !e.cancelado && e.tipo !== 'aviso' && !ehDiaTodo(e) && ehDoAluno(e.grupos, grupo),
   )
   const sits = situacoes(aulasHoje, agora.minutos)
-  const estados = Object.fromEntries(sits.map((x) => [x.evento.id, { situacao: x.situacao, falta: x.falta }]))
+  const estados = Object.fromEntries(sits.map((x) => [x.evento.id, { situacao: x.situacao, falta: x.falta, feito: x.feito }]))
   const aulasRestantes = sits.filter((x) => x.situacao !== 'passou').map((x) => x.evento)
-  const avisosHoje = [...agendaHoje.filter((e) => e.cancelado), ...diaTodo]
+  const avisosHoje = agendaHoje.filter((e) => e.cancelado)
 
   const nomeCompleto = perfil.data?.nome || email.split('@')[0] || 'aluno'
   // Na saudação vai só o primeiro nome, para caber numa linha
@@ -121,6 +115,7 @@ export default async function Inicio() {
             <span>{grupo ? 'Suas aulas hoje' : 'Aulas de hoje'}</span>
             <Link href="/agenda">Semana →</Link>
           </div>
+          <AgendaDiaTodo eventos={diaTodo} materias={materias.map((m) => m.id)} />
           {aulasRestantes.length > 0 ? (
             <AgendaLista
               eventos={aulasRestantes}

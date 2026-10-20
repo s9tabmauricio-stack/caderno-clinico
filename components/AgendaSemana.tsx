@@ -3,9 +3,9 @@
 import { useMemo, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { createClient } from '@/lib/supabase/client'
-import { ehDoAluno, situacoes } from '@/lib/agenda'
+import { ehDiaTodo, ehDoAluno, situacoes } from '@/lib/agenda'
 import type { EventoBanco } from '@/lib/agenda-dados'
-import { AgendaAvisos, AgendaLista } from './AgendaLista'
+import { AgendaAvisos, AgendaDiaTodo, AgendaLista } from './AgendaLista'
 
 const DIAS = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb']
 
@@ -67,11 +67,14 @@ export function AgendaSemana({
   }
 
   const doDia = eventos.filter((e) => e.data === dia)
-  const aulas = doDia.filter((e) => !e.cancelado && e.tipo !== 'aviso' && (filtro === 'todas' || ehDoAluno(e.grupos, grupoAtual)))
+  const diaTodo = doDia.filter(ehDiaTodo)
+  const aulas = doDia.filter(
+    (e) => !e.cancelado && e.tipo !== 'aviso' && !ehDiaTodo(e) && (filtro === 'todas' || ehDoAluno(e.grupos, grupoAtual)),
+  )
   const avisos = doDia.filter((e) => e.cancelado || e.tipo === 'aviso')
   const estados =
     dia === agora.data
-      ? Object.fromEntries(situacoes(aulas, agora.minutos).map((x) => [x.evento.id, { situacao: x.situacao, falta: x.falta }]))
+      ? Object.fromEntries(situacoes(aulas, agora.minutos).map((x) => [x.evento.id, { situacao: x.situacao, falta: x.falta, feito: x.feito }]))
       : undefined
 
   const nomeDia = new Intl.DateTimeFormat('pt-BR', { weekday: 'long', day: 'numeric', month: 'long', timeZone: 'UTC' }).format(
@@ -136,10 +139,11 @@ export function AgendaSemana({
       <div className="sec" style={{ textTransform: 'none', letterSpacing: 0, fontSize: 14 }}>
         {nomeDia.charAt(0).toUpperCase() + nomeDia.slice(1)}
       </div>
+      <AgendaDiaTodo eventos={diaTodo} materias={materias} />
       {aulas.length ? (
         <AgendaLista eventos={aulas} grupo={grupoAtual} estados={estados} materias={materias} />
       ) : (
-        <p className="vazio">{doDia.length ? 'Nenhuma aula do seu grupo neste dia.' : 'Nenhuma aula neste dia.'}</p>
+        <p className="vazio">{doDia.length > diaTodo.length ? 'Nenhuma aula do seu grupo neste dia.' : 'Nenhuma aula neste dia.'}</p>
       )}
 
       {aviso && <p className="foot">⚠️ {aviso}</p>}

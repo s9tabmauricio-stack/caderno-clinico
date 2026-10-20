@@ -1,9 +1,9 @@
 import Link from 'next/link'
-import { COR_MATERIA, fmtFalta, fmtHora, type Situacao } from '@/lib/agenda'
+import { COR_MATERIA, fmtDuracao, fmtHora, type Situacao } from '@/lib/agenda'
 import type { EventoBanco } from '@/lib/agenda-dados'
 import { Icone } from './Icones'
 
-type Estado = { situacao: Situacao; falta: number }
+type Estado = { situacao: Situacao; falta: number; feito?: number }
 
 /**
  * Lista de aulas no estilo das listas do app (hora, faixa de cor da matéria, título e detalhes).
@@ -25,11 +25,10 @@ export function AgendaLista({
       {eventos.map((e) => {
         const st = estados?.[e.id]
         const meu = grupo !== null && !!e.grupos?.length && e.grupos.includes(grupo)
-        const detalhes = [
-          e.grupos?.length && e.grupos.length <= 6 ? `${e.grupos.length > 1 ? 'Grupos' : 'Grupo'} ${juntar(e.grupos)}` : null,
-          e.professor,
-          e.local,
-        ].filter(Boolean)
+        // Do grupo do aluno: "Seu grupo" no lugar da lista de grupos
+        const grupos =
+          meu ? null : e.grupos?.length && e.grupos.length <= 6 ? `${e.grupos.length > 1 ? 'Grupos' : 'Grupo'} ${juntar(e.grupos)}` : null
+        const detalhes = [grupos, e.professor, e.local].filter(Boolean)
         const href = !e.cancelado && e.materia && materias?.includes(e.materia) ? `/materia/${e.materia}` : null
         const classes = `row ev ${st?.situacao ?? ''} ${e.cancelado ? 'cancel' : ''}`
         const conteudo = (
@@ -40,14 +39,26 @@ export function AgendaLista({
             </span>
             <span className="barra" style={{ background: COR_MATERIA[e.materia ?? ''] ?? 'var(--line-strong)' }} />
             <span className="main">
-              <span className="t">
-                {e.cancelado && <span className="tg cancel">Cancelada</span>}
-                {st?.situacao === 'agora' && <span className="tg agora">Agora</span>}
-                {st?.situacao === 'proxima' && <span className="tg prox">{fmtFalta(st.falta)}</span>}
-                {meu && <span className="tg meu">Seu grupo</span>}
-                {e.titulo}
-              </span>
-              {detalhes.length > 0 && <span className="s">{detalhes.join(' · ')}</span>}
+              {e.cancelado ? (
+                <span className="olho cancel">Cancelada</span>
+              ) : st?.situacao === 'agora' ? (
+                <span className="olho agora">
+                  <i aria-hidden />
+                  Agora<span> · termina em {fmtDuracao(st.falta)}</span>
+                </span>
+              ) : st?.situacao === 'proxima' ? (
+                <span className="olho prox">
+                  Próxima<span> · em {fmtDuracao(st.falta)}</span>
+                </span>
+              ) : null}
+              <span className="t">{e.titulo}</span>
+              {(meu || detalhes.length > 0) && (
+                <span className="s">
+                  {meu && <span className="meu">Seu grupo</span>}
+                  {meu && detalhes.length > 0 && ' · '}
+                  {detalhes.join(' · ')}
+                </span>
+              )}
               {!!e.notas?.length && (
                 <span className="notas">
                   {e.notas.map((n, i) => (
@@ -57,6 +68,9 @@ export function AgendaLista({
               )}
             </span>
             {href && Icone.seta}
+            {st?.situacao === 'agora' && st.feito !== undefined && (
+              <span className="prog" style={{ width: `${Math.round(st.feito * 100)}%` }} aria-hidden />
+            )}
           </>
         )
         return href ? (
@@ -98,6 +112,38 @@ export function AgendaAvisos({ eventos }: { eventos: EventoBanco[] }) {
           </span>
         </div>
       ))}
+    </div>
+  )
+}
+
+/** Eventos que duram o dia todo (ex.: "coordenação disponível das 8h às 22h30"), num cartão pequeno acima da lista. */
+export function AgendaDiaTodo({ eventos, materias }: { eventos: EventoBanco[]; materias?: string[] }) {
+  if (!eventos.length) return null
+  return (
+    <div className="ag-dia">
+      {eventos.map((e) => {
+        const detalhes = [`${fmtHora(e.inicio)} às ${fmtHora(e.fim)}`, e.professor, e.local].filter(Boolean)
+        const href = e.materia && materias?.includes(e.materia) ? `/materia/${e.materia}` : null
+        const conteudo = (
+          <>
+            <span className="ic">Dia todo</span>
+            <span className="main">
+              <span className="t">{e.titulo}</span>
+              <span className="s">{detalhes.join(' · ')}</span>
+            </span>
+            {href && Icone.seta}
+          </>
+        )
+        return href ? (
+          <Link key={e.id} className="row" href={href}>
+            {conteudo}
+          </Link>
+        ) : (
+          <div key={e.id} className="row static">
+            {conteudo}
+          </div>
+        )
+      })}
     </div>
   )
 }
