@@ -76,7 +76,6 @@ export default async function BancoPage(props: PageProps<'/materia/[id]/questoes
           userId={userId}
           inicial={inicial}
           edicao={edicao}
-          rotulo={materia.data.nome}
         />
       ) : (
         <p className="vazio">Esta matéria ainda não tem questões no banco.</p>

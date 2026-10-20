@@ -18,7 +18,6 @@ type Props = {
   cards: CardAluno[]
   userId: string
   materiaId: string
-  materiaNome?: string
   totalBanco: number
   // próxima aula publicada da matéria, se houver
   proximaAula: { id: string; titulo: string } | null
@@ -34,7 +33,6 @@ export function AulaAbas({
   cards,
   userId,
   materiaId,
-  materiaNome,
   totalBanco,
   proximaAula,
   edicao,
@@ -137,7 +135,6 @@ export function AulaAbas({
           questoes={questoes}
           userId={userId}
           ativo={aba === 'questoes'}
-          rotulo={materiaNome}
           edicao={edicao}
           proximoPasso={passoDepoisDasQuestoes || undefined}
           vazio="Nenhuma questão das provas anteriores é sobre o assunto desta aula. Treine pelo banco de questões da matéria."

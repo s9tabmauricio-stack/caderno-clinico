@@ -81,7 +81,6 @@ export default async function AulaPage(props: PageProps<'/aula/[id]'>) {
         cards={(cards.data ?? []).map(paraCard)}
         userId={userId}
         materiaId={materiaId}
-        materiaNome={materiaNome}
         totalBanco={totalBanco}
         proximaAula={proxima.data}
         edicao={edicao}
