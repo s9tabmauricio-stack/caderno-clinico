@@ -12,6 +12,7 @@ import {
   totais,
 } from '@/lib/dados'
 import { plural } from '@/lib/formato'
+import { COR_MATERIA } from '@/lib/agenda'
 
 export const metadata: Metadata = { title: 'Matérias' }
 
@@ -46,7 +47,7 @@ export default async function EstudarPage() {
                 <Link
                   className="mtile"
                   href={`/materia/${m.id}`}
-                  style={{ '--c1': m.cor_inicio ?? '#0B5BD3', '--c2': m.cor_fim ?? '#3B4FC9' } as React.CSSProperties}
+                  style={{ '--c1': m.cor_inicio ?? '#2563EB', '--c2': m.cor_fim ?? '#1E3A8A', '--glow': COR_MATERIA[m.id] } as React.CSSProperties}
                 >
                   <span>
                     <span className="mt-name">{m.nome}</span>
