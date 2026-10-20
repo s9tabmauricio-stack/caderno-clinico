@@ -77,23 +77,25 @@ function juntar(ns: number[]) {
   return ns.length === 1 ? String(ns[0]) : `${ns.slice(0, -1).join(', ')} e ${ns[ns.length - 1]}`
 }
 
-/** Avisos do dia (cancelamentos e recados) num quadro de destaque. */
+/** Avisos do dia (cancelamentos e recados) num quadro discreto, uma linha por aviso. */
 export function AgendaAvisos({ eventos }: { eventos: EventoBanco[] }) {
   if (!eventos.length) return null
   return (
     <div className="ag-aviso">
       {eventos.map((e) => (
-        <div key={e.id}>
-          {e.cancelado ? (
-            <>
-              <b>Cancelada:</b> {e.titulo}
-              {e.professor ? ` com ${e.professor}` : ''}
-              {e.local ? ` (${e.local})` : ''}.
-            </>
-          ) : (
-            e.titulo
-          )}
-          {!!e.notas?.length && <span className="ag-aviso-n">{e.notas.join(' · ')}</span>}
+        <div key={e.id} className={`ag-item ${e.cancelado ? 'c' : 'i'}`}>
+          <span className="ic" aria-hidden>
+            {e.cancelado ? '✕' : 'i'}
+          </span>
+          <span>
+            <b>
+              {e.cancelado ? 'Cancelada: ' : ''}
+              {e.titulo}
+            </b>
+            {e.cancelado && e.professor ? ` com ${e.professor}` : ''}
+            {e.cancelado && e.local ? ` (${e.local})` : ''}
+            {!!e.notas?.length && <span className="ag-aviso-n">{e.notas.join(' · ')}</span>}
+          </span>
         </div>
       ))}
     </div>

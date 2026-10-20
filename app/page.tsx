@@ -13,7 +13,7 @@ import {
   totaisQuestoes,
 } from '@/lib/dados'
 import { plural, saudacao } from '@/lib/formato'
-import { agoraBrasilia, ehDoAluno, situacoes } from '@/lib/agenda'
+import { COR_MATERIA, agoraBrasilia, ehDoAluno, situacoes } from '@/lib/agenda'
 import { agendaDoDia } from '@/lib/agenda-dados'
 import { AgendaAvisos, AgendaLista } from '@/components/AgendaLista'
 
@@ -32,11 +32,20 @@ export default async function Inicio() {
 
   // Agenda de hoje: teóricas e avisos para todos, práticas só do grupo do aluno
   const grupo = perfil.data?.grupo ?? null
-  const aulasHoje = agendaHoje.filter((e) => !e.cancelado && e.tipo !== 'aviso' && ehDoAluno(e.grupos, grupo))
+  // Evento de 10h ou mais (ex.: "coordenação disponível") é um aviso do dia, não uma aula
+  const duracao = (e: { inicio: string | null; fim: string | null }) => {
+    if (!e.inicio || !e.fim) return 0
+    const m = (h: string) => Number(h.slice(0, 2)) * 60 + Number(h.slice(3, 5))
+    return m(e.fim) - m(e.inicio)
+  }
+  const diaTodo = agendaHoje.filter((e) => !e.cancelado && e.tipo !== 'aviso' && duracao(e) >= 600)
+  const aulasHoje = agendaHoje.filter(
+    (e) => !e.cancelado && e.tipo !== 'aviso' && duracao(e) < 600 && ehDoAluno(e.grupos, grupo),
+  )
   const sits = situacoes(aulasHoje, agora.minutos)
   const estados = Object.fromEntries(sits.map((x) => [x.evento.id, { situacao: x.situacao, falta: x.falta }]))
   const aulasRestantes = sits.filter((x) => x.situacao !== 'passou').map((x) => x.evento)
-  const canceladasHoje = agendaHoje.filter((e) => e.cancelado)
+  const avisosHoje = [...agendaHoje.filter((e) => e.cancelado), ...diaTodo]
 
   const nomeCompleto = perfil.data?.nome || email.split('@')[0] || 'aluno'
   // Na saudação vai só o primeiro nome, para caber numa linha
@@ -67,25 +76,40 @@ export default async function Inicio() {
         <div>
           <section className="review" aria-label="Revisão de hoje">
             <div className="review-k">Revisão de hoje</div>
-            {pend.hoje > 0 ? (
+            {pend.vencidos > 0 ? (
               <>
                 <div className="review-n">
-                  <span className="n">{pend.hoje}</span>
-                  <span className="u">{plural(pend.hoje, 'flashcard', 'flashcards')}</span>
+                  <span className="n">{pend.vencidos}</span>
+                  <span className="u">{plural(pend.vencidos, 'card para revisar', 'cards para revisar')}</span>
                 </div>
                 <p className="review-s">
-                  {pend.vencidos} para revisar · {Math.min(pend.novos, pend.hoje - pend.vencidos)}{' '}
-                  {plural(pend.hoje - pend.vencidos, 'novo', 'novos')}
+                  {pend.hoje > pend.vencidos
+                    ? `e mais ${pend.hoje - pend.vencidos} ${plural(pend.hoje - pend.vencidos, 'novo', 'novos')} para começar`
+                    : 'Revisar agora ajuda a fixar o conteúdo.'}
                 </p>
                 <Link className="btn-white" href="/revisao">
                   Começar revisão
                 </Link>
               </>
+            ) : pend.hoje > 0 ? (
+              <>
+                <div className="review-n">
+                  <span className="u" style={{ fontSize: 28, letterSpacing: '-.02em' }}>
+                    Revisões em dia ✓
+                  </span>
+                </div>
+                <p className="review-s">
+                  {pend.hoje} {plural(pend.hoje, 'card novo esperando', 'cards novos esperando')} · sem pressa
+                </p>
+                <Link className="btn-white" href="/revisao">
+                  Estudar cards novos
+                </Link>
+              </>
             ) : (
               <>
                 <div className="review-n">
-                  <span className="u" style={{ fontSize: 26, letterSpacing: '-.02em' }}>
-                    Tudo em dia
+                  <span className="u" style={{ fontSize: 28, letterSpacing: '-.02em' }}>
+                    Tudo em dia ✓
                   </span>
                 </div>
                 <p className="review-s">Nenhum card pendente por agora.</p>
@@ -107,7 +131,7 @@ export default async function Inicio() {
           ) : (
             <p className="vazio">{aulasHoje.length ? 'As aulas de hoje já terminaram.' : 'Nenhuma aula hoje.'}</p>
           )}
-          <AgendaAvisos eventos={canceladasHoje} />
+          <AgendaAvisos eventos={avisosHoje} />
           {grupo === null && agendaHoje.length > 0 && (
             <p className="foot">
               <Link href="/agenda">Escolha seu grupo de prática na Agenda</Link> para ver só as suas práticas.
@@ -119,7 +143,12 @@ export default async function Inicio() {
           <div className="group">
             {ultima && (
               <Link className="row" href={`/aula/${ultima.aula_id}`}>
-                <span className="num">{ultima.ordem}</span>
+                <span
+                  className="num"
+                  style={{ background: `${COR_MATERIA[ultima.materia_id] ?? 'var(--accent)'}33`, color: COR_MATERIA[ultima.materia_id] }}
+                >
+                  {ultima.ordem}
+                </span>
                 <span className="main">
                   <span className="t">{ultima.titulo}</span>
                   <span className="s">
@@ -129,6 +158,7 @@ export default async function Inicio() {
                 {Icone.seta}
               </Link>
             )}
+            {!ultima && (
             <Link className="row" href="/estudar">
               <span className="main">
                 <span className="t">{ultima ? 'Todas as matérias' : 'Escolher uma matéria'}</span>
@@ -138,6 +168,7 @@ export default async function Inicio() {
               </span>
               {Icone.seta}
             </Link>
+            )}
           </div>
 
           <div className="sec ag-h">
@@ -151,10 +182,12 @@ export default async function Inicio() {
                 {tq.respondidas}
                 <small>/{tq.questoes}</small>
               </div>
+              <div className="bar"><i style={{ width: `${tq.questoes ? Math.round((100 * tq.respondidas) / tq.questoes) : 0}%` }} /></div>
             </div>
             <div className="stat">
               <div className="lab">Acerto</div>
-              <div className="n">{acerto}</div>
+              <div className={`n ${tq.respondidas ? (tq.acertos / tq.respondidas >= 0.7 ? 'ok' : 'alerta') : ''}`}>{acerto}</div>
+              <div className="bar"><i style={{ width: acerto === '–' ? '0%' : acerto }} /></div>
             </div>
             <div className="stat">
               <div className="lab">Cards</div>
@@ -162,6 +195,7 @@ export default async function Inicio() {
                 {t.estudados}
                 <small>/{t.cards}</small>
               </div>
+              <div className="bar"><i style={{ width: `${t.cards ? Math.round((100 * t.estudados) / t.cards) : 0}%` }} /></div>
             </div>
           </Link>
         </div>

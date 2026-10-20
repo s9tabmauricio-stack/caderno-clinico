@@ -867,3 +867,19 @@ a.pill{display:inline-flex;align-items:center;text-decoration:none}
 /* Desempenho: quatro números (2 por linha em tela estreita) */
 .stats.quatro{grid-template-columns:repeat(4,minmax(0,1fr))}
 @media (max-width:560px){.stats.quatro{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* Início mais limpo: avisos, revisão e progresso */
+.ag-aviso{gap:10px;color:var(--text);background:rgba(255,255,255,.04);border-color:var(--line);padding:12px 14px}
+.ag-aviso b{color:var(--title);font-weight:600}
+.ag-item{display:flex;gap:10px;align-items:flex-start}
+.ag-item .ic{flex:none;width:20px;height:20px;border-radius:50%;display:grid;place-items:center;font-size:11px;font-weight:700;margin-top:1px}
+.ag-item.c .ic{background:rgba(255,92,138,.16);color:#FF5C8A}
+.ag-item.i .ic{background:rgba(79,221,255,.16);color:#4FDDFF}
+.ag-aviso-n{color:var(--muted)}
+.review::after{display:none}
+.review .btn-white{background:rgba(255,255,255,.16);color:#fff;border:1px solid rgba(255,255,255,.4);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.review .btn-white:hover{background:rgba(255,255,255,.26)}
+.stat .bar{height:4px;border-radius:4px;background:rgba(255,255,255,.1);margin-top:8px;overflow:hidden}
+.stat .bar i{display:block;height:100%;border-radius:4px;background:linear-gradient(90deg,#00B8F0,#9B6BFF)}
+.stat .n.ok~.bar i{background:var(--ok)}
+.stat .n.alerta~.bar i{background:var(--orange)}
