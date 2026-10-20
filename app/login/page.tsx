@@ -12,9 +12,14 @@ export default function LoginPage() {
         <span className="o3" />
       </div>
 
-      <section className="lg-vidro">
-        <img className="lg-logo" src="/brand/med-genius.webp" width={104} height={101} alt="" />
+      <div className="lg-moldura">
+        <img className="lg-logo" src="/brand/med-genius.webp" width={132} height={132} alt="Logo Med Genius" />
+      </div>
+      <div className="lg-marca">
         <h1>Med Genius</h1>
+        <p className="lg-sub">Medicina · FAG</p>
+      </div>
+      <section className="lg-vidro" aria-label="Entrar">
         <LoginForm />
       </section>
     </main>

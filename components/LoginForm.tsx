@@ -44,20 +44,20 @@ export function LoginForm() {
 
   return (
     <form className="lg-form" onSubmit={entrar} noValidate>
+      <label className="lg-rotulo" htmlFor="cpf">
+        CPF
+      </label>
       <div className={`lg-campo${erro ? ' com-erro' : ''}`}>
         <svg className="lg-ico" viewBox="0 0 24 24" aria-hidden="true">
-          <rect x="3" y="5" width="18" height="14" rx="3" />
-          <path d="M8 11h4M8 15h8" />
+          <circle cx="12" cy="8" r="4" />
+          <path d="M4 21a8 8 0 0 1 16 0" />
         </svg>
-        <label htmlFor="cpf" className="sr-only">
-          CPF
-        </label>
         <input
           id="cpf"
           name="username"
           autoComplete="username"
           inputMode="numeric"
-          placeholder="CPF"
+          placeholder="000.000.000-00"
           value={cpf}
           onChange={(e) => {
             setCpf(formatarCpf(e.target.value))
@@ -67,20 +67,20 @@ export function LoginForm() {
           aria-describedby={erro ? 'loginErr' : undefined}
         />
       </div>
+      <label className="lg-rotulo" htmlFor="senha">
+        Senha
+      </label>
       <div className={`lg-campo${erro ? ' com-erro' : ''}`}>
         <svg className="lg-ico" viewBox="0 0 24 24" aria-hidden="true">
-          <rect x="5" y="11" width="14" height="9" rx="2" />
-          <path d="M8 11V8a4 4 0 0 1 8 0v3" />
+          <rect x="4" y="11" width="16" height="10" rx="2" />
+          <path d="M8 11V7a4 4 0 0 1 8 0v4" />
         </svg>
-        <label htmlFor="senha" className="sr-only">
-          Senha
-        </label>
         <input
           id="senha"
           name="password"
           type={ver ? 'text' : 'password'}
           autoComplete="current-password"
-          placeholder="Senha"
+          placeholder="Sua senha"
           value={senha}
           onChange={(e) => {
             setSenha(e.target.value)
