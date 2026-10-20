@@ -4,9 +4,15 @@ import type { EventoBanco } from '@/lib/agenda-dados'
 import { Icone } from './Icones'
 
 type Estado = { situacao: Situacao; falta: number }
+/** Nome e cores de cada matéria (id → nome, cor_inicio, cor_fim), para o quadradinho com a inicial. */
+export type CoresMaterias = Record<string, { nome: string; c1: string | null; c2: string | null }>
+
+export function coresDasMaterias(ms: { id: string; nome: string; cor_inicio: string | null; cor_fim: string | null }[]): CoresMaterias {
+  return Object.fromEntries(ms.map((m) => [m.id, { nome: m.nome, c1: m.cor_inicio, c2: m.cor_fim }]))
+}
 
 /**
- * Lista de aulas no estilo das listas do app (hora, faixa de cor da matéria, título e detalhes).
+ * Lista de aulas no estilo das listas do app (hora, quadradinho da matéria com a inicial, título e detalhes).
  * Com `materias` (ids das matérias do app), cada aula abre a página da sua matéria.
  */
 export function AgendaLista({
@@ -14,11 +20,13 @@ export function AgendaLista({
   grupo,
   estados,
   materias,
+  cores,
 }: {
   eventos: EventoBanco[]
   grupo: number | null
   estados?: Record<number, Estado>
   materias?: string[]
+  cores?: CoresMaterias
 }) {
   return (
     <div className="group agenda">
@@ -38,7 +46,19 @@ export function AgendaLista({
               {e.inicio ? fmtHora(e.inicio) : '—'}
               {e.fim && <small>{fmtHora(e.fim)}</small>}
             </span>
-            <span className="barra" style={{ background: COR_MATERIA[e.materia ?? ''] ?? 'var(--line-strong)' }} />
+            {(() => {
+              const m = cores?.[e.materia ?? '']
+              const c1 = m?.c1 ?? COR_MATERIA[e.materia ?? '']
+              return (
+                <span
+                  className="mat-ic"
+                  aria-hidden="true"
+                  style={c1 ? ({ '--c1': c1, '--c2': m?.c2 ?? c1 } as React.CSSProperties) : undefined}
+                >
+                  {m?.nome.charAt(0) ?? ''}
+                </span>
+              )
+            })()}
             <span className="main">
               <span className="t">
                 {e.cancelado && <span className="tg cancel">Cancelada</span>}

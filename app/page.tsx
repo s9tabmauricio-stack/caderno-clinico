@@ -7,15 +7,14 @@ import {
   carregarProgresso,
   carregarProgressoMaterias,
   concluido,
+  concluidoMateria,
   pendentes,
   sessao,
-  totais,
-  totaisQuestoes,
 } from '@/lib/dados'
 import { plural, saudacao } from '@/lib/formato'
 import { COR_MATERIA, agoraBrasilia, ehDoAluno, situacoes } from '@/lib/agenda'
 import { agendaDoDia } from '@/lib/agenda-dados'
-import { AgendaAvisos, AgendaLista } from '@/components/AgendaLista'
+import { AgendaAvisos, AgendaLista, coresDasMaterias } from '@/components/AgendaLista'
 
 export const metadata: Metadata = { title: { absolute: 'Med Genius · Início' } }
 
@@ -52,9 +51,24 @@ export default async function Inicio() {
   const nome = /^\d+$/.test(nomeCompleto) ? 'aluno' : nomeCompleto.trim().split(/\s+/)[0]
   const { texto, data } = saudacao()
   const pend = pendentes(progresso)
-  const t = totais(progresso)
-  const tq = totaisQuestoes(banco)
-  const acerto = tq.respondidas ? `${Math.round((100 * tq.acertos) / tq.respondidas)}%` : '–'
+  // Revisão de hoje: quantos cards vencidos em cada matéria e o tempo aproximado (cerca de 30 s por card)
+  const porMateria = materias
+    .map((m) => ({
+      nome: m.id === 'pass' ? 'PASS' : m.id.charAt(0).toUpperCase() + m.id.slice(1),
+      n: progresso.filter((p) => p.materia_id === m.id).reduce((s, p) => s + p.cards_vencidos, 0),
+    }))
+    .filter((x) => x.n > 0)
+  const minutos = Math.max(1, Math.round(pend.vencidos / 2))
+  const resumoRevisao = [...porMateria.map((x) => `${x.nome} ${x.n}`), `cerca de ${minutos} min`].join(' · ')
+  // Seu progresso: % concluído de cada matéria (questões do banco + flashcards estudados)
+  const progressoMaterias = materias.map((m) => ({
+    id: m.id,
+    nome: m.nome,
+    pct: concluidoMateria(
+      progresso.filter((p) => p.materia_id === m.id),
+      banco.find((b) => b.materia_id === m.id),
+    ),
+  }))
 
   const ultima = progresso
     .filter((p) => p.ultima_atividade)
@@ -80,13 +94,9 @@ export default async function Inicio() {
               <>
                 <div className="review-n">
                   <span className="n">{pend.vencidos}</span>
-                  <span className="u">{plural(pend.vencidos, 'card para revisar', 'cards para revisar')}</span>
+                  <span className="u">{plural(pend.vencidos, 'card', 'cards')}</span>
                 </div>
-                <p className="review-s">
-                  {pend.hoje > pend.vencidos
-                    ? `e mais ${pend.hoje - pend.vencidos} ${plural(pend.hoje - pend.vencidos, 'novo', 'novos')} para começar`
-                    : 'Revisar agora ajuda a fixar o conteúdo.'}
-                </p>
+                <p className="review-s">{resumoRevisao}</p>
                 <Link className="btn-white" href="/revisao">
                   Começar revisão
                 </Link>
@@ -117,16 +127,14 @@ export default async function Inicio() {
             )}
           </section>
 
-          <div className="sec ag-h">
-            <span>{grupo ? 'Suas aulas hoje' : 'Aulas de hoje'}</span>
-            <Link href="/agenda">Semana →</Link>
-          </div>
+          <h2 className="sec">{grupo ? 'Suas aulas hoje' : 'Aulas de hoje'}</h2>
           {aulasRestantes.length > 0 ? (
             <AgendaLista
               eventos={aulasRestantes}
               grupo={grupo}
               estados={estados}
               materias={materias.map((m) => m.id)}
+              cores={coresDasMaterias(materias)}
             />
           ) : (
             <p className="vazio">{aulasHoje.length ? 'As aulas de hoje já terminaram.' : 'Nenhuma aula hoje.'}</p>
@@ -139,7 +147,7 @@ export default async function Inicio() {
           )}
         </div>
         <div>
-          <div className="sec">{ultima ? 'Continuar' : 'Matérias'}</div>
+          <h2 className="sec">{ultima ? 'Continuar' : 'Matérias'}</h2>
           <div className="group">
             {ultima && (
               <Link className="row" href={`/aula/${ultima.aula_id}`}>
@@ -171,32 +179,19 @@ export default async function Inicio() {
             )}
           </div>
 
-          <div className="sec ag-h">
-            <span>Seu progresso</span>
-            <Link href="/desempenho">Desempenho →</Link>
-          </div>
-          <Link className="stats stats-link" href="/desempenho" aria-label="Ver o desempenho completo">
-            <div className="stat">
-              <div className="lab">Questões</div>
-              <div className="n">
-                {tq.respondidas}
-                <small>/{tq.questoes}</small>
-              </div>
-              <div className="bar"><i style={{ width: `${tq.questoes ? Math.round((100 * tq.respondidas) / tq.questoes) : 0}%` }} /></div>
-            </div>
-            <div className="stat">
-              <div className="lab">Acerto</div>
-              <div className={`n ${tq.respondidas ? (tq.acertos / tq.respondidas >= 0.7 ? 'ok' : 'alerta') : ''}`}>{acerto}</div>
-              <div className="bar"><i style={{ width: acerto === '–' ? '0%' : acerto }} /></div>
-            </div>
-            <div className="stat">
-              <div className="lab">Cards</div>
-              <div className="n">
-                {t.estudados}
-                <small>/{t.cards}</small>
-              </div>
-              <div className="bar"><i style={{ width: `${t.cards ? Math.round((100 * t.estudados) / t.cards) : 0}%` }} /></div>
-            </div>
+          <h2 className="sec">Seu progresso</h2>
+          <Link className="group progresso" href="/desempenho" aria-label="Seu progresso: ver o desempenho completo">
+            {progressoMaterias.map((m) => (
+              <span key={m.id} className="pm">
+                <span className="pm-h">
+                  <span>{m.nome}</span>
+                  <span className="pm-p">{m.pct}%</span>
+                </span>
+                <span className="pm-bar">
+                  <i style={{ width: `${m.pct}%` }} />
+                </span>
+              </span>
+            ))}
           </Link>
         </div>
       </div>

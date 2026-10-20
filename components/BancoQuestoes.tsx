@@ -31,6 +31,7 @@ export function BancoQuestoes({
   userId,
   inicial,
   edicao,
+  rotulo,
 }: {
   // id da matéria: nome do cookie em que o tema e a prova escolhidos ficam lembrados
   chave: string
@@ -39,6 +40,7 @@ export function BancoQuestoes({
   // filtro já aplicado ao abrir (links do Desempenho)
   inicial?: Partial<Filtros>
   edicao?: { aulas: { id: string; titulo: string }[] }
+  rotulo?: string
 }) {
   // Respostas dadas nesta visita (o resto veio do servidor)
   const [extras, setExtras] = useState<Record<string, Resposta | null>>({})
@@ -164,6 +166,7 @@ export function BancoQuestoes({
         ativo
         mostrarTema={!filtros.tema}
         edicao={edicao}
+        rotulo={rotulo}
         vazio={
           filtros.situacao === 'erradas'
             ? 'Nenhuma questão errada neste filtro. Bom sinal.'

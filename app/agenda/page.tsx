@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Pagina } from '@/components/Pagina'
+import { coresDasMaterias } from '@/components/AgendaLista'
 import { AgendaSemana } from '@/components/AgendaSemana'
 import { carregarMaterias, carregarProgresso, pendentes, sessao } from '@/lib/dados'
 import { agendaDaSemana, grupoDoAluno } from '@/lib/agenda-dados'
@@ -43,6 +44,7 @@ export default async function AgendaPage() {
           agora={agoraBrasilia()}
           userId={userId}
           materias={materias.map((m) => m.id)}
+          cores={coresDasMaterias(materias)}
         />
       ) : (
         <p className="vazio">O cronograma da semana ainda não foi publicado.</p>

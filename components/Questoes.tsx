@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { explicacoesPorAlternativa } from '@/lib/explicacoes'
 import { createClient } from '@/lib/supabase/client'
 import type { QuestaoAluno } from '@/lib/dados'
@@ -31,9 +31,11 @@ type Props = {
   proximoPasso?: React.ReactNode
   // só para o administrador: botão Editar na questão (aulas da matéria para o seletor)
   edicao?: { aulas: { id: string; titulo: string }[] }
+  // nome da matéria, mostrado no alto (ex.: "Nefrologia · 4 de 12")
+  rotulo?: string
 }
 
-export function Questoes({ questoes, userId, ativo, mostrarTema = true, vazio, aoResponder, proximoPasso, edicao }: Props) {
+export function Questoes({ questoes, userId, ativo, mostrarTema = true, vazio, aoResponder, proximoPasso, edicao, rotulo }: Props) {
   const supabase = useMemo(() => createClient(), [])
   const [respostas, setRespostas] = useState<Record<string, Resposta>>(() =>
     Object.fromEntries(questoes.filter((q) => q.resposta).map((q) => [q.id, q.resposta as Resposta])),
@@ -137,38 +139,21 @@ export function Questoes({ questoes, userId, ativo, mostrarTema = true, vazio, a
     return () => window.removeEventListener('keydown', tecla)
   })
 
-  // Faixa de quadradinhos: rola de lado para deixar a questão atual no meio
-  const faixa = useRef<HTMLDivElement>(null)
-  useEffect(() => {
-    const el = faixa.current
-    const atual = el?.querySelector<HTMLElement>('.qd.cur')
-    if (!el || !atual) return
-    el.scrollTo({ left: atual.offsetLeft - (el.clientWidth - atual.offsetWidth) / 2, behavior: 'smooth' })
-  }, [idx])
-
   if (!questoes.length) return <p className="vazio">{vazio ?? 'Esta aula ainda não tem questões.'}</p>
 
   const certas = questoes.filter((x) => respostas[x.id]?.acertou).length
   const feitas = questoes.filter((x) => respostas[x.id]).length
   const erradas = questoes.filter((x) => respostas[x.id] && !respostas[x.id].acertou).map((x) => x.id)
 
+  // Matéria e posição no alto, com a barra de progresso azul
   const cabecalho = (
     <div className="qhead">
-      <span className="qcount">{q ? `Questão ${idx + 1} de ${questoes.length}` : 'Resultado'}</span>
-      <div className="qdots" ref={faixa}>
-        {questoes.map((x, i) => {
-          const r = respostas[x.id]
-          return (
-            <button
-              key={x.id}
-              className={`qd ${r ? (r.acertou ? 'ok' : 'bad') : ''} ${i === idx ? 'cur' : ''}`}
-              onClick={() => irPara(i)}
-              aria-label={`Questão ${i + 1}${r ? (r.acertou ? ', acertou' : ', errou') : ''}`}
-            >
-              {i + 1}
-            </button>
-          )
-        })}
+      <div className="qhead-l">
+        <span>{rotulo ?? 'Questões'}</span>
+        <span>{q ? `${idx + 1} de ${questoes.length}` : `${feitas} de ${questoes.length}`}</span>
+      </div>
+      <div className="qbar" aria-hidden="true">
+        <i style={{ width: `${Math.round((100 * (q ? idx + 1 : feitas)) / questoes.length)}%` }} />
       </div>
     </div>
   )
@@ -285,12 +270,21 @@ export function Questoes({ questoes, userId, ativo, mostrarTema = true, vazio, a
                     <button key={i} className={`opt ${cls}`} disabled>
                       <span className="l">{LETRAS[i]}</span>
                       <span className="ot">
-                        {i === resp.escolhida && <span className="sua">Sua resposta</span>}
                         {cortada && <span className="cort-tag">Você cortou</span>}
                         {texto}
-                        {i === q.correta && q.comentario && <span className="oexp certa">{q.comentario}</span>}
-                        {i !== q.correta && expl.porAlt[i] && <span className="oexp">{expl.porAlt[i]}</span>}
                       </span>
+                      {(() => {
+                        const motivo = i === q.correta ? q.comentario : expl.porAlt[i]
+                        const minha = i === resp.escolhida
+                        if (!motivo && !minha) return null
+                        return (
+                          <span className={`oexp${i === q.correta ? ' certa' : ''}`}>
+                            {minha && <b className="sua">Sua resposta.</b>}
+                            {minha && motivo ? ' ' : ''}
+                            {motivo}
+                          </span>
+                        )
+                      })()}
                     </button>
                   )
                 }
@@ -325,14 +319,11 @@ export function Questoes({ questoes, userId, ativo, mostrarTema = true, vazio, a
 
             {revelada && resp ? (
               <>
-                <div className={`verdict ${resp.acertou ? 'ok' : 'bad'}`}>
-                  {resp.acertou ? Icone.certo : Icone.errado}
-                  <span>
-                    {resp.acertou
-                      ? 'Você acertou.'
-                      : `Você marcou ${LETRAS[resp.escolhida]}. A resposta é ${LETRAS[q.correta]}.`}
-                  </span>
-                </div>
+                <p className="sr-only" role="status">
+                  {resp.acertou
+                    ? 'Você acertou.'
+                    : `Você marcou ${LETRAS[resp.escolhida]}. A resposta é ${LETRAS[q.correta]}.`}
+                </p>
                 {expl.resto && (
                   <div className="erradas">
                     <div className="kick">
@@ -342,21 +333,6 @@ export function Questoes({ questoes, userId, ativo, mostrarTema = true, vazio, a
                     <p>{expl.resto}</p>
                   </div>
                 )}
-                <div className="actions">
-                  <button
-                    className="btn ghost"
-                    onClick={() => {
-                      setRefazendo(true)
-                      setEscolha(null)
-                      setCortadas([])
-                    }}
-                  >
-                    Refazer esta
-                  </button>
-                  <button className="btn" onClick={() => irPara(idx + 1)}>
-                    {idx === questoes.length - 1 ? 'Ver resultado' : 'Próxima questão'}
-                  </button>
-                </div>
               </>
             ) : (
               <>
@@ -365,16 +341,43 @@ export function Questoes({ questoes, userId, ativo, mostrarTema = true, vazio, a
                     {erro}
                   </p>
                 )}
-                <div className="actions">
-                  <button className="btn" onClick={responder}>
-                    Responder
-                  </button>
-                </div>
               </>
             )}
           </>
         )}
       </div>
+      {!editando &&
+        (revelada ? (
+          <>
+            <div className="q-acoes">
+              <button
+                className="btn ghost"
+                onClick={() => document.querySelector('.turma')?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
+              >
+                Conversa da turma
+              </button>
+              <button className="btn" onClick={() => irPara(idx + 1)}>
+                {idx === questoes.length - 1 ? 'Ver resultado' : 'Próxima'}
+              </button>
+            </div>
+            <button
+              className="link q-refazer"
+              onClick={() => {
+                setRefazendo(true)
+                setEscolha(null)
+                setCortadas([])
+              }}
+            >
+              Refazer esta questão
+            </button>
+          </>
+        ) : (
+          <div className="q-acoes">
+            <button className="btn" onClick={responder}>
+              Responder
+            </button>
+          </div>
+        ))}
       {revelada && <ConversaTurma key={q.id} questaoId={q.id} userId={userId} />}
       {aviso}
     </div>
