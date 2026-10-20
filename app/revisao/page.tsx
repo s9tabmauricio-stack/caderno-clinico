@@ -1,10 +1,8 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Pagina } from '@/components/Pagina'
-import { Icone } from '@/components/Icones'
 import { Flashcards } from '@/components/Flashcards'
-import { carregarMaterias, carregarProgresso, paraCard, pendentes, sessao, totais } from '@/lib/dados'
-import { plural } from '@/lib/formato'
+import { carregarMaterias, carregarProgresso, paraCard, pendentes, sessao } from '@/lib/dados'
 
 export const metadata: Metadata = { title: 'Revisão' }
 
@@ -85,26 +83,6 @@ export default async function RevisaoPage(props: PageProps<'/revisao'>) {
         ativo
         emDia={emDiaDaFila}
       />
-
-      <div className="sec">Por matéria</div>
-      <div className="group">
-        {materias.map((m) => {
-          const t = totais(progresso.filter((p) => p.materia_id === m.id))
-          const novosM = t.cards - t.estudados
-          const emDia = t.estudados - t.vencidos
-          return (
-            <Link key={m.id} className="row" href={`/revisao?materia=${m.id}`}>
-              <span className="main">
-                <span className="t">{m.nome}</span>
-                <span className="s">
-                  {t.vencidos} para revisar · {novosM} {plural(novosM, 'novo', 'novos')} · {emDia} em dia
-                </span>
-              </span>
-              {Icone.seta}
-            </Link>
-          )
-        })}
-      </div>
     </Pagina>
   )
 }
