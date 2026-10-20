@@ -103,6 +103,10 @@ Tema escuro "vidro sobre luzes neon", inspirado no ícone (neurônio de vidro em
 Tokens e regras no fim de `app/globals.css` (bloco "Tema Med Genius"). Ícones do app em `public/icons`, `app/icon.png`, `app/apple-icon.png`; logo em `public/brand/med-genius.webp` (ícone de neurônios em "M" com moldura dourada; o original está em `public/brand/med-genius-original.jpg`).
 Rodapé da tela de entrada: "By Mauricio".
 
+Versões do visual salvas no GitHub (ramos fixos, não publicados; não apague):
+- `visual-v1`: o tema neon atual (no ar), como estava em 20/10/2026.
+- `visual-v2`: "Ouro & Sinapse" (azul-noite, vidro com filete dourado, botão principal dourado, ciano para toque, coral para erro, fonte Cinzel). Foi feito nos commits `21ce774`…`82f847c` e desfeito em `773ce11`. Para voltar a ele: `git revert 773ce11` (resolvendo conflitos com o que mudou depois) e trocar as cores das matérias no banco (`cor_inicio`/`cor_fim`): nefro `#1E4FA8`/`#14306B`, pneumo `#0F6E8C`/`#0B4560`, gastro `#11735A`/`#0A4A3C`, orto `#9A6A1F`/`#5E3F10`, uro `#5B3A9E`/`#352263`, pass `#8E2F45`/`#561B2A`. As cores da v1: nefro `#0B5BD3`/`#3B4FC9`, pneumo `#00B8F0`/`#3F6BFF`, gastro `#3EE6A8`/`#00B8F0`, orto `#FFB547`/`#FF5C8A`, uro `#6A5CFF`/`#E92FC0`, pass `#4FDDFF`/`#9B7BFF`. O quadro com a proposta: https://claude.ai/artifact/Dzu7Jr27Wc7WTo7ZMLq5G6
+
 ## Como trabalhar com o Mauricio
 
 - Ele é sensível a custo: prefira o caminho barato (converter arquivos em vez de reescrever conteúdo; não reenviar textos grandes à toa).
