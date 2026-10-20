@@ -893,7 +893,7 @@ a.pill{display:inline-flex;align-items:center;text-decoration:none}
 .lg-campo{display:flex;align-items:center;gap:10px;padding:0 8px 0 14px;border-radius:14px;background:var(--lg-campo);border:1px solid var(--lg-linha);text-align:left;transition:border-color .2s,box-shadow .2s}
 .lg-campo:focus-within{border-color:var(--accent);box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 18%,transparent)}
 .lg-campo.com-erro{border-color:var(--bad)}
-.lg-campo input{flex:1;min-width:0;font:inherit;font-size:17px;padding:15px 0;border:0;background:transparent;color:var(--ink);outline:none;border-radius:0}
+.lg-campo input{flex:1;min-width:0;text-align:center;font:inherit;font-size:17px;padding:15px 0;border:0;background:transparent;color:var(--ink);outline:none;border-radius:0}
 .lg-campo input::placeholder{color:var(--muted)}
 .lg-ico,.lg-olho svg{width:18px;height:18px;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .lg-ico{color:var(--muted)}
@@ -909,3 +909,5 @@ a.pill{display:inline-flex;align-items:center;text-decoration:none}
 .lg-vidro{justify-self:center}
 .lg-vidro{grid-template-columns:minmax(0,1fr)}
 .lg-form{grid-template-columns:minmax(0,1fr)}
+.lg-campo:not(:has(.lg-olho)){padding-right:42px}
+.lg-campo:has(.lg-olho){padding-right:2px}
