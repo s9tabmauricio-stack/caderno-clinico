@@ -1260,10 +1260,10 @@ h1.big{background:var(--metal-titulo);-webkit-background-clip:text;background-cl
 .in-mats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
 .in-mat{display:flex;flex-direction:column;overflow:hidden;isolation:isolate;border-radius:20px}
 .in-mat::before{content:"";position:absolute;right:-40px;top:-50px;width:130px;height:130px;border-radius:50%;background:radial-gradient(circle,var(--glow,transparent),transparent 70%);opacity:.28;z-index:-1;pointer-events:none}
-.in-mat-a{flex:1;display:grid;grid-template-columns:36px minmax(0,1fr);align-content:start;align-items:center;gap:8px 10px;padding:14px;color:inherit;text-decoration:none}
+.in-mat-a{flex:1;display:grid;grid-template-columns:minmax(0,1fr);align-content:start;align-items:center;gap:8px 10px;padding:14px;color:inherit;text-decoration:none}
 .in-mat-a:hover,.in-mat-c:hover{background:var(--seg)}
-.in-mat .gema{width:36px;height:36px;border-radius:11px;font-size:11.5px}
-.in-mat .mt-name{font-size:14.5px;overflow-wrap:break-word}
+/* o nome da matéria escrito dentro da gema colorida */
+.in-mat .in-mat-nome{justify-self:start;width:auto;height:auto;max-width:100%;min-height:32px;padding:6px 11px;border-radius:11px;font-size:12.5px;letter-spacing:.02em;line-height:1.2;text-align:center;overflow-wrap:break-word}
 .in-mat .mt-meta,.in-mat-p{grid-column:1 / -1;font-size:12.5px}
 .in-mat-p{display:flex;align-items:center;gap:8px;color:var(--muted);font-weight:600}
 .in-mat-p .mt-bar{flex:1;height:5px}
@@ -1294,11 +1294,10 @@ h1.big{background:var(--metal-titulo);-webkit-background-clip:text;background-cl
   .in-card .btn-white,.in-card .btn{min-height:44px;padding:8px 10px;font-size:14px}
   .in-mats{grid-template-columns:minmax(0,1fr);gap:8px}
   .in-mat{border-radius:18px}
-  .in-mat-a{grid-template-columns:36px minmax(0,1fr) auto;gap:3px 12px;padding:11px 14px}
-  .in-mat .gema{grid-row:1 / span 2}
-  .in-mat .mt-name{grid-column:2;font-size:14px;-webkit-hyphens:manual;hyphens:manual;overflow-wrap:normal}
-  .in-mat .mt-meta{grid-column:2}
-  .in-mat-p{grid-column:3;grid-row:1 / span 2;font-size:12.5px}
+  .in-mat-a{grid-template-columns:minmax(0,1fr) auto;gap:6px 12px;padding:12px 14px}
+  .in-mat .in-mat-nome{grid-column:1}
+  .in-mat .mt-meta{grid-column:1}
+  .in-mat-p{grid-column:2;grid-row:1 / span 2;font-size:12.5px}
   .in-mat-p .mt-bar{flex:none;width:52px}
   .in-mat-c{min-height:44px}
 }
