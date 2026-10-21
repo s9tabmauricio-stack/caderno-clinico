@@ -1227,3 +1227,6 @@ h1.big{background:var(--metal-titulo);-webkit-background-clip:text;background-cl
 .tela-entrar .tema-seg button[aria-pressed="true"]{background:var(--seg-on)}
 .view .tema-seg{max-width:440px}
 @media (max-height:700px){.tela-entrar .tema-seg{margin-top:16px}}
+/* Configurações: "Sair" bem abaixo do resto, no coral do app (o mesmo vermelho de "errado") */
+.btn.out{margin-top:44px;min-height:50px;font-weight:700}
+.btn.danger.out:hover{background:var(--bad-soft);filter:brightness(1.15)}

@@ -89,7 +89,7 @@ export default async function PerfilPage() {
       </div>
 
       <form action="/auth/sair" method="post">
-        <button className="btn ghost wide out" type="submit">
+        <button className="btn danger wide out" type="submit">
           Sair
         </button>
       </form>
