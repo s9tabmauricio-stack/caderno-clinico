@@ -1225,7 +1225,8 @@ h1.big{background:var(--metal-titulo);-webkit-background-clip:text;background-cl
 .tela-entrar .tema-seg{width:min(100%,300px);margin-top:28px;border-color:transparent;background:var(--glass);box-shadow:var(--vidro-sombra);
   -webkit-backdrop-filter:blur(20px) saturate(180%);backdrop-filter:blur(20px) saturate(180%)}
 .tela-entrar .tema-seg button[aria-pressed="true"]{background:var(--seg-on)}
-.view .tema-seg{max-width:440px}
+/* em Configurações, da mesma largura das outras caixas */
+.view .tema-seg{max-width:none}
 @media (max-height:700px){.tela-entrar .tema-seg{margin-top:16px}}
 /* Configurações: "Sair" bem abaixo do resto, no coral do app (o mesmo vermelho de "errado") */
 .btn.out{margin-top:44px;min-height:50px;font-weight:700}
