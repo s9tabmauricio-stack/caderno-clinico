@@ -12,8 +12,12 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   viewportFit: 'cover',
-  themeColor: '#0E1124',
-  colorScheme: 'dark',
+  // O app segue o modo do aparelho (dia ou noite); a barra do navegador acompanha
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#E4E7EC' },
+    { media: '(prefers-color-scheme: dark)', color: '#0C0D11' },
+  ],
+  colorScheme: 'light dark',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

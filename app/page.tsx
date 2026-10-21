@@ -13,7 +13,7 @@ import {
   totaisQuestoes,
 } from '@/lib/dados'
 import { plural, saudacao } from '@/lib/formato'
-import { COR_MATERIA, agoraBrasilia, ehDiaTodo, ehDoAluno, situacoes } from '@/lib/agenda'
+import { agoraBrasilia, ehDiaTodo, ehDoAluno, situacoes } from '@/lib/agenda'
 import { agendaDoDia } from '@/lib/agenda-dados'
 import { AgendaAvisos, AgendaDiaTodo, AgendaLista } from '@/components/AgendaLista'
 
@@ -139,8 +139,8 @@ export default async function Inicio() {
             {ultima && (
               <Link className="row" href={`/aula/${ultima.aula_id}`}>
                 <span
-                  className="num"
-                  style={{ background: `${COR_MATERIA[ultima.materia_id] ?? 'var(--accent)'}33`, color: COR_MATERIA[ultima.materia_id] }}
+                  className="num gema"
+                  style={{ '--c1': materiaDaUltima?.cor_inicio ?? '#2563EB', '--c2': materiaDaUltima?.cor_fim ?? '#1E3A8A' } as React.CSSProperties}
                 >
                   {ultima.ordem}
                 </span>

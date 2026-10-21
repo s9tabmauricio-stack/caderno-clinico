@@ -12,7 +12,7 @@ export const viewport: Viewport = {
   colorScheme: 'light dark',
 }
 
-// Dendritos de ouro saindo de trás do logo, com as pontas acesas em azul.
+// Dendritos de titânio saindo de trás do logo, com as pontas acesas em azul.
 // Desenho de 390 × 844 com o centro do logo em (195, 191); as cores vêm do CSS (bloco "Tela de entrada").
 const RAMOS = [
   'M150 154C120 134 95 104 80 64',
