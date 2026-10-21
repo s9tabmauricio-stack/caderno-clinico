@@ -227,7 +227,7 @@ export default async function Inicio() {
                   style={{ '--c1': m.cor_inicio ?? '#2563EB', '--c2': m.cor_fim ?? '#1E3A8A', '--glow': COR_MATERIA[m.id] } as React.CSSProperties}
                 >
                   <Link className="in-mat-a" href={`/materia/${m.id}`}>
-                    <span className="gema in-mat-nome">{m.nome}</span>
+                    <span className="gema nome-gema">{m.nome}</span>
                     <span className="mt-meta">{meta.join(' · ')}</span>
                     {q + tm.cards > 0 ? (
                       <span className="in-mat-p">

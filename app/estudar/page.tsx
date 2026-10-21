@@ -49,14 +49,9 @@ export default async function EstudarPage() {
                   href={`/materia/${m.id}`}
                   style={{ '--c1': m.cor_inicio ?? '#2563EB', '--c2': m.cor_fim ?? '#1E3A8A', '--glow': COR_MATERIA[m.id] } as React.CSSProperties}
                 >
-                  <span className="gema" aria-hidden="true">
-                    {m.nome.slice(0, 2).toUpperCase()}
-                  </span>
-                  <span>
-                    <span className="mt-name">{m.nome}</span>
-                    <span className="mt-meta">
-                      {prog.length} {plural(prog.length, 'aula', 'aulas')} · {pm?.total_questoes ?? 0} questões · {tm.cards} flashcards
-                    </span>
+                  <span className="gema nome-gema">{m.nome}</span>
+                  <span className="mt-meta">
+                    {prog.length} {plural(prog.length, 'aula', 'aulas')} · {pm?.total_questoes ?? 0} questões · {tm.cards} flashcards
                   </span>
                   <span>
                     <span className="mt-bar">

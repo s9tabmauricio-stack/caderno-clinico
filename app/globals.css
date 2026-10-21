@@ -1142,12 +1142,11 @@ h1.big{background:var(--metal-titulo);-webkit-background-clip:text;background-cl
   background:linear-gradient(145deg,var(--c1,#2563EB),var(--c2,#1E3A8A));box-shadow:inset 0 1.5px 0 rgba(255,255,255,.5),inset 0 -2px 5px rgba(0,0,0,.28),0 4px 12px rgba(0,0,0,.22)}
 .num.gema{width:36px;height:36px;border-radius:12px;color:#fff;font-family:var(--font-texto);font-size:14px;letter-spacing:0}
 .ecard{border:0}
-.ecard .mtile,.mtile{display:grid;grid-template-columns:44px minmax(0,1fr);column-gap:14px;row-gap:6px;align-items:center;min-height:0;padding:14px 16px;
+.ecard .mtile,.mtile{display:grid;grid-template-columns:minmax(0,1fr);align-content:start;column-gap:14px;row-gap:6px;align-items:center;min-height:0;padding:14px 16px;
   background:transparent;color:var(--ink);box-shadow:none;border-radius:0}
 .mtile::before{display:none}
 .mtile:hover{filter:none;background:var(--seg)}
-.mtile .gema{grid-row:1 / span 2}
-.mtile>span:not(.gema){grid-column:2;min-width:0}
+.mtile>span{min-width:0}
 .mt-name{font-size:16px;line-height:1.25;color:var(--ink)}
 .mt-meta{color:var(--muted);font-size:13px}
 .mt-bar{background:var(--trilho)}
@@ -1262,8 +1261,8 @@ h1.big{background:var(--metal-titulo);-webkit-background-clip:text;background-cl
 .in-mat::before{content:"";position:absolute;right:-40px;top:-50px;width:130px;height:130px;border-radius:50%;background:radial-gradient(circle,var(--glow,transparent),transparent 70%);opacity:.28;z-index:-1;pointer-events:none}
 .in-mat-a{flex:1;display:grid;grid-template-columns:minmax(0,1fr);align-content:start;align-items:center;gap:8px 10px;padding:14px;color:inherit;text-decoration:none}
 .in-mat-a:hover,.in-mat-c:hover{background:var(--seg)}
-/* o nome da matéria escrito dentro da gema colorida */
-.in-mat .in-mat-nome{justify-self:start;width:auto;height:auto;max-width:100%;min-height:32px;padding:6px 11px;border-radius:11px;font-size:12.5px;letter-spacing:.02em;line-height:1.2;text-align:center;overflow-wrap:break-word}
+/* o nome da matéria escrito dentro da gema colorida (Início e Estudar) */
+.gema.nome-gema{justify-self:start;width:auto;height:auto;max-width:100%;min-height:32px;padding:6px 11px;border-radius:11px;font-size:12.5px;letter-spacing:.02em;line-height:1.2;text-align:center;overflow-wrap:break-word}
 .in-mat .mt-meta,.in-mat-p{grid-column:1 / -1;font-size:12.5px}
 .in-mat-p{display:flex;align-items:center;gap:8px;color:var(--muted);font-weight:600}
 .in-mat-p .mt-bar{flex:1;height:5px}
@@ -1295,7 +1294,7 @@ h1.big{background:var(--metal-titulo);-webkit-background-clip:text;background-cl
   .in-mats{grid-template-columns:minmax(0,1fr);gap:8px}
   .in-mat{border-radius:18px}
   .in-mat-a{grid-template-columns:minmax(0,1fr) auto;gap:6px 12px;padding:12px 14px}
-  .in-mat .in-mat-nome{grid-column:1}
+  .in-mat .nome-gema{grid-column:1}
   .in-mat .mt-meta{grid-column:1}
   .in-mat-p{grid-column:2;grid-row:1 / span 2;font-size:12.5px}
   .in-mat-p .mt-bar{flex:none;width:52px}
