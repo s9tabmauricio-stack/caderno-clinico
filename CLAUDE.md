@@ -11,7 +11,7 @@ Tudo em português do Brasil. O dono do projeto não é programador: explique em
 |---|---|
 | Site | https://medgenius.vercel.app (o endereço antigo caderno-clinico.vercel.app não existe mais) |
 | Código | GitHub `s9tabmauricio-stack/caderno-clinico`, ramo `main` |
-| Publicação | A Vercel publica sozinha a cada `git push origin main` (1–2 min) |
+| Publicação | A Vercel publica sozinha a cada `git push origin main` (1–2 min). Ramos `claude/**` não geram publicação de prévia (`vercel.json`), para não encher o "Deployment Storage" (limite de 10 GB no plano gratuito) |
 | Banco | Supabase, projeto `xtlpmtylifbalzxnfkib` (São Paulo), plano gratuito |
 | Administrador | CPF 086.994.266-23 (variável `ADMIN_CPFS` na Vercel; padrão no código) |
 | Chave secreta | `SUPABASE_SECRET_KEY` na Vercel (usada só no servidor: alunos, agenda, conteúdo) |
