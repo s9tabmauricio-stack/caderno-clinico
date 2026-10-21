@@ -1233,7 +1233,6 @@ h1.big{background:var(--metal-titulo);-webkit-background-clip:text;background-cl
    Quadro com a proposta (E · Tudo do dia): https://claude.ai/artifact/BjQhu55DNueYG5a7zFWucg
    ===================================================================== */
 .in-status{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-@media (max-width:560px){.in-status{grid-template-columns:minmax(0,1fr)}}
 .in-card,.in-mat{position:relative;min-width:0;border-radius:var(--r-lg);background:var(--vidro);box-shadow:var(--vidro-sombra);
   -webkit-backdrop-filter:blur(22px) saturate(180%);backdrop-filter:blur(22px) saturate(180%)}
 .in-card{display:flex;flex-direction:column;gap:12px;padding:18px}
@@ -1264,13 +1263,14 @@ h1.big{background:var(--metal-titulo);-webkit-background-clip:text;background-cl
 .in-mat-a{flex:1;display:grid;grid-template-columns:36px minmax(0,1fr);align-content:start;align-items:center;gap:8px 10px;padding:14px;color:inherit;text-decoration:none}
 .in-mat-a:hover,.in-mat-c:hover{background:var(--seg)}
 .in-mat .gema{width:36px;height:36px;border-radius:11px;font-size:11.5px}
-.in-mat .mt-name{font-size:14.5px}
+.in-mat .mt-name{font-size:14.5px;overflow-wrap:break-word}
 .in-mat .mt-meta,.in-mat-p{grid-column:1 / -1;font-size:12.5px}
 .in-mat-p{display:flex;align-items:center;gap:8px;color:var(--muted);font-weight:600}
 .in-mat-p .mt-bar{flex:1;height:5px}
 .in-mat-c{display:flex;align-items:center;gap:6px;min-height:44px;padding:0 14px;border-top:1px solid var(--line-2);font-size:13px;font-weight:600;color:var(--accent);text-decoration:none}
 .in-mat-c span{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .in-mat-c svg{flex:none;width:16px;height:16px}
+.curto{display:none}
 @media (min-width:900px) and (min-height:560px){
   .inicio{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.3fr);grid-template-areas:"agenda status" "agenda materias";column-gap:24px;align-items:start}
   .in-status{grid-area:status}
@@ -1279,3 +1279,27 @@ h1.big{background:var(--metal-titulo);-webkit-background-clip:text;background-cl
   .in-agenda>.sec:first-child{margin-top:0}
   .in-mats{grid-template-columns:repeat(3,minmax(0,1fr))}
 }
+/* Celular: Cards e Questões lado a lado e baixos; matérias em lista (o nome inteiro numa linha) */
+@media (max-width:599px){
+  .in-status{gap:10px}
+  .in-card{padding:14px;gap:10px}
+  .in-h a,.longo{display:none}
+  .curto{display:inline}
+  .in-k{font-size:11px;letter-spacing:.14em}
+  .in-n{flex-direction:column;align-items:flex-start;gap:4px}
+  .in-n .n{font-size:34px}
+  .in-n .u{font-size:12.5px;line-height:1.35}
+  .in-nums{grid-template-columns:minmax(0,1fr);gap:2px;font-size:12.5px}
+  .in-nums b{display:inline;font-size:14px;margin-right:5px}
+  .in-card .btn-white,.in-card .btn{min-height:44px;padding:8px 10px;font-size:14px}
+  .in-mats{grid-template-columns:minmax(0,1fr);gap:8px}
+  .in-mat{border-radius:18px}
+  .in-mat-a{grid-template-columns:36px minmax(0,1fr) auto;gap:3px 12px;padding:11px 14px}
+  .in-mat .gema{grid-row:1 / span 2}
+  .in-mat .mt-name{grid-column:2;font-size:14px;-webkit-hyphens:manual;hyphens:manual;overflow-wrap:normal}
+  .in-mat .mt-meta{grid-column:2}
+  .in-mat-p{grid-column:3;grid-row:1 / span 2;font-size:12.5px}
+  .in-mat-p .mt-bar{flex:none;width:52px}
+  .in-mat-c{min-height:44px}
+}
+@media (max-width:359px){.in-status{grid-template-columns:minmax(0,1fr)}}

@@ -121,7 +121,9 @@ export default async function Inicio() {
               </Link>
             ) : pend.novos > 0 ? (
               <Link className="btn-white" href="/revisao">
-                Estudar cards novos
+                <span>
+                  Estudar <span className="longo">cards </span>novos
+                </span>
               </Link>
             ) : (
               <p className="in-fim">Nenhum card pendente por agora.</p>
@@ -159,7 +161,10 @@ export default async function Inicio() {
             </div>
             {erradas > 0 ? (
               <Link className="btn ghost" href={refazer}>
-                Refazer {erradas === 1 ? 'a errada' : `as ${erradas} erradas`}
+                <span>
+                  Refazer <span className="longo">{erradas === 1 ? 'a ' : `as ${erradas} `}</span>
+                  {erradas === 1 ? 'errada' : 'erradas'}
+                </span>
               </Link>
             ) : (
               <Link className="btn ghost" href="/estudar">
@@ -235,7 +240,10 @@ export default async function Inicio() {
                         {p}%
                       </span>
                     ) : (
-                      <span className="in-mat-p">Questões em breve</span>
+                      <span className="in-mat-p">
+                        <span className="longo">Questões em breve</span>
+                        <span className="curto">Em breve</span>
+                      </span>
                     )}
                   </Link>
                   {continuar && (
