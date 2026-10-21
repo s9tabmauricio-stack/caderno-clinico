@@ -1,9 +1,10 @@
 import type { Metadata, Viewport } from 'next'
 import { LoginForm } from '@/components/LoginForm'
+import { TemaEscolha } from '@/components/TemaEscolha'
 
 export const metadata: Metadata = { title: { absolute: 'Med Genius · Entrar' } }
 
-// A entrada segue o modo do aparelho (dia ou noite); a barra do navegador acompanha
+// A entrada segue o modo do aparelho (dia ou noite) ou a escolha Auto | Dia | Noite embaixo do cartão
 export const viewport: Viewport = {
   themeColor: [
     { media: '(prefers-color-scheme: light)', color: '#E4E7EC' },
@@ -120,6 +121,7 @@ export default function LoginPage() {
           <LoginForm />
         </section>
       </div>
+      <TemaEscolha />
     </main>
   )
 }

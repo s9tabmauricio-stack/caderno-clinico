@@ -877,7 +877,7 @@ a.pill{display:inline-flex;align-items:center;text-decoration:none}
 /* =====================================================================
    Tela de entrada: ícone de titânio + vidro líquido (como o do iPhone), segue o modo do aparelho.
    Noite (padrão): fundo preto, dendritos de titânio com pontas azuis atrás do logo, cartão de vidro escuro.
-   Dia (@media prefers-color-scheme: light): fundo prateado, vidro branco, texto grafite.
+   Dia (data-tema="dia" no <html>, posto pelo script do app/layout.tsx): fundo prateado, vidro branco, texto grafite.
    Só as cores mudam entre os dois; titânio no botão ENTRAR, azul no campo em uso.
    O desenho do fundo (app/login/page.tsx) tem 390 × 844 com o centro do logo em (195, 191).
    ===================================================================== */
@@ -898,8 +898,8 @@ a.pill{display:inline-flex;align-items:center;text-decoration:none}
   --lg-trilha:rgba(255,255,255,.07); --lg-halo:#3FC8FF; --lg-halo-op:.28; --lg-ponto:#BDF1FF;
   color-scheme:dark}
 body:has(.tela-entrar){background:#07080B}
-@media (prefers-color-scheme: light){
-  .tela-entrar{
+/* dia: o script do app/layout.tsx põe data-tema="dia" no <html> (escolha do aluno ou modo do aparelho) */
+:root[data-tema="dia"] .tela-entrar{
     --ink:#15171C; --lg-texto:#15171C; --lg-rotulo:#4B515C; --lg-sub:#4E555E; --lg-ico:#646A75; --lg-placeholder:#646A75;
     --lg-titulo:linear-gradient(180deg,#4A505A 0%,#15171C 100%);
     --lg-fundo:radial-gradient(120% 80% at 50% 20%,#F5F6F8 0%,#E1E4E9 55%,#CDD1D8 100%);
@@ -916,8 +916,7 @@ body:has(.tela-entrar){background:#07080B}
     --lg-trilha:rgba(20,25,35,.08); --lg-halo:#2BB8F0; --lg-halo-op:.3; --lg-ponto:#14A8EA;
     --bad:#C2362A;
     color-scheme:light}
-  body:has(.tela-entrar){background:#D5D8DE}
-}
+:root[data-tema="dia"] body:has(.tela-entrar){background:#D5D8DE}
 .tela-entrar{position:relative;min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;
   padding:max(32px,env(safe-area-inset-top,0px)) 24px max(clamp(32px,10vh,96px),env(safe-area-inset-bottom,0px));
   overflow:hidden;background:var(--lg-fundo);color:var(--lg-texto)}
@@ -1002,8 +1001,8 @@ h1.big.saudacao{font-size:clamp(20px,calc((100vw - 86px) / 11.2),34px)}
 
 /* =====================================================================
    Vidro líquido em titânio, dia e noite (visual-v6): o app inteiro com a cara da tela de entrada.
-   Noite (padrão): fundo preto com luz fria no alto e azul embaixo. Dia (prefers-color-scheme: light):
-   fundo prateado e vidro branco. Só as cores mudam entre os dois.
+   Noite (padrão): fundo preto com luz fria no alto e azul embaixo. Dia (data-tema="dia" no <html>):
+   fundo prateado e vidro branco. O aluno escolhe Auto (segue o aparelho), Dia ou Noite na entrada e em Configurações. Só as cores mudam entre os dois.
    Cada cor com um só trabalho: titânio = ação principal (botão polido) e números grandes;
    azul = toque, seleção e progresso; verde = certo; coral = errado; âmbar = aviso.
    Quadro com a proposta: https://claude.ai/artifact/PCHBA8oq7akRzq53ihLkSm
@@ -1043,8 +1042,7 @@ h1.big.saudacao{font-size:clamp(20px,calc((100vw - 86px) / 11.2),34px)}
   --decor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='390' height='300' viewBox='0 0 390 300'%3E%3Cg fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M390 210H360L344 226V280' stroke='rgba(255,255,255,.07)' stroke-width='1.5'/%3E%3Cpath d='M284 18C300 52 326 80 372 100' stroke='%23A9B0B8' stroke-width='2' opacity='.28'/%3E%3Cpath d='M322 70C340 62 352 46 358 26' stroke='%23A9B0B8' stroke-width='1.2' opacity='.22'/%3E%3C/g%3E%3Ccircle cx='344' cy='284' r='3' fill='rgba(255,255,255,.07)'/%3E%3Ccircle cx='372' cy='100' r='8' fill='rgba(63,200,255,.22)'/%3E%3Ccircle cx='372' cy='100' r='2.6' fill='%23BDF1FF'/%3E%3Ccircle cx='358' cy='26' r='7' fill='rgba(63,200,255,.22)'/%3E%3Ccircle cx='358' cy='26' r='2.2' fill='%23BDF1FF'/%3E%3C/svg%3E");
   color-scheme:dark;
 }
-@media (prefers-color-scheme: light){
-  :root:not([data-mg]){
+:root[data-tema="dia"]:not([data-mg]){
     --bg:#D5D8DE; --card:rgba(255,255,255,.55); --card-2:rgba(255,255,255,.72);
     --line:rgba(20,25,35,.10); --line-2:rgba(20,25,35,.07); --line-strong:rgba(20,25,35,.18); --field:rgba(255,255,255,.58);
     --ink:#15171C; --text:#2B3038; --muted:#535A68; --title:#15171C;
@@ -1074,8 +1072,7 @@ h1.big.saudacao{font-size:clamp(20px,calc((100vw - 86px) / 11.2),34px)}
     --decor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='390' height='300' viewBox='0 0 390 300'%3E%3Cg fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M390 210H360L344 226V280' stroke='rgba(20,25,35,.08)' stroke-width='1.5'/%3E%3Cpath d='M284 18C300 52 326 80 372 100' stroke='%237D848C' stroke-width='2' opacity='.28'/%3E%3Cpath d='M322 70C340 62 352 46 358 26' stroke='%237D848C' stroke-width='1.2' opacity='.22'/%3E%3C/g%3E%3Ccircle cx='344' cy='284' r='3' fill='rgba(20,25,35,.08)'/%3E%3Ccircle cx='372' cy='100' r='8' fill='rgba(43,184,240,.2)'/%3E%3Ccircle cx='372' cy='100' r='2.6' fill='%2314A8EA'/%3E%3Ccircle cx='358' cy='26' r='7' fill='rgba(43,184,240,.2)'/%3E%3Ccircle cx='358' cy='26' r='2.2' fill='%2314A8EA'/%3E%3C/svg%3E");
     color-scheme:light;
   }
-  select.campo option,select.campo optgroup{background:#FFFFFF;color:#15171C}
-}
+:root[data-tema="dia"] select.campo option,:root[data-tema="dia"] select.campo optgroup{background:#FFFFFF;color:#15171C}
 
 /* fundo: luzes da entrada e, no canto, um dendrito de titânio com pontas azuis */
 body{background:var(--bg)}
@@ -1218,3 +1215,15 @@ h1.big{background:var(--metal-titulo);-webkit-background-clip:text;background-cl
 .tipo:hover{background:var(--seg)}
 .tipo.ins.on{border-color:var(--ins-line);background:var(--ins-soft);color:var(--ins)}
 .tipo.erro.on{border-color:var(--bad);background:var(--bad-soft);color:var(--bad-txt)}
+
+/* Escolha da aparência: Auto | Dia | Noite (entrada e Configurações) */
+.tema-seg{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:3px;padding:3px;border-radius:25px;border:1px solid var(--line);background:var(--field);box-shadow:var(--campo-sombra)}
+.tema-seg button{min-height:44px;border:0;border-radius:22px;background:transparent;color:var(--muted);font:600 13.5px/1 var(--font-texto);display:flex;align-items:center;justify-content:center;gap:6px;cursor:pointer;padding:0 6px}
+.tema-seg button svg{width:16px;height:16px;stroke-width:1.9}
+.tema-seg button[aria-pressed="true"]{color:var(--ink);background:var(--vidro);box-shadow:var(--vidro-sombra)}
+.tema-seg button:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+.tela-entrar .tema-seg{width:min(100%,300px);margin-top:28px;border-color:transparent;background:var(--glass);box-shadow:var(--vidro-sombra);
+  -webkit-backdrop-filter:blur(20px) saturate(180%);backdrop-filter:blur(20px) saturate(180%)}
+.tela-entrar .tema-seg button[aria-pressed="true"]{background:var(--seg-on)}
+.view .tema-seg{max-width:440px}
+@media (max-height:700px){.tela-entrar .tema-seg{margin-top:16px}}

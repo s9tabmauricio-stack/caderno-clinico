@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Pagina, recadosNovos } from '@/components/Pagina'
 import { PerfilAcoes } from '@/components/PerfilAcoes'
+import { TemaEscolha } from '@/components/TemaEscolha'
 import Link from 'next/link'
 import { carregarMaterias, carregarProgresso, pendentes, sessao } from '@/lib/dados'
 import { ehAdmin } from '@/lib/admin'
@@ -37,6 +38,10 @@ export default async function PerfilPage() {
         materias={materias}
         aulas={aulas}
       />
+
+      <div className="sec">Aparência</div>
+      <TemaEscolha />
+      <p className="foot">Auto segue o modo do celular (claro de dia, escuro à noite). A escolha vale só neste aparelho.</p>
 
       {ehAdmin(email) && (
         <>
