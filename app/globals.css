@@ -425,30 +425,6 @@ body{margin:0;min-height:100vh}
 .pill small{font-weight:500;opacity:.8;margin-left:4px;font-variant-numeric:tabular-nums}
 .banco-row .num{background:var(--grad);color:#fff}
 
-/* ---------- Tela de entrada: vidro fosco sobre fundo de cor ---------- */
-.tela-entrar{position:relative;min-height:100vh;min-height:100dvh;display:grid;place-items:center;align-content:center;gap:28px;padding:32px 16px calc(24px + env(safe-area-inset-bottom));overflow:hidden;isolation:isolate;
-  --lg-bg:#EEF1F8;--lg-vidro:rgba(255,255,255,.55);--lg-borda:rgba(255,255,255,.75);--lg-campo:rgba(255,255,255,.7);--lg-linha:rgba(20,30,60,.12);--lg-sombra:0 30px 80px rgba(30,40,90,.18),0 2px 6px rgba(30,40,90,.06)}
-.tela-entrar{background:var(--lg-bg)}
-.lg-fundo{position:absolute;inset:0;z-index:-1;pointer-events:none}
-.lg-fundo span{position:absolute;border-radius:50%;filter:blur(70px);opacity:.7;animation:lg-flutua 22s ease-in-out infinite alternate}
-.lg-fundo .o1{width:55vmax;height:55vmax;left:-18vmax;top:-20vmax;background:radial-gradient(circle,#4D8DFF 0%,transparent 65%)}
-.lg-fundo .o2{width:50vmax;height:50vmax;right:-20vmax;top:5vmax;background:radial-gradient(circle,#A35BFF 0%,transparent 65%);animation-duration:26s}
-.lg-fundo .o3{width:45vmax;height:45vmax;left:10vmax;bottom:-25vmax;background:radial-gradient(circle,#2FC7D8 0%,transparent 65%);animation-duration:30s;opacity:.5}
-@keyframes lg-flutua{to{transform:translate3d(4vmax,3vmax,0) scale(1.08)}}
-@media (prefers-reduced-motion: reduce){.lg-fundo span{animation:none}}
-
-.lg-vidro{width:min(100%,400px);display:grid;justify-items:center;text-align:center;padding:40px 28px 28px;border-radius:32px;background:var(--lg-vidro);border:1px solid var(--lg-borda);box-shadow:var(--lg-sombra);-webkit-backdrop-filter:blur(40px) saturate(180%);backdrop-filter:blur(40px) saturate(180%)}
-.lg-icone{width:76px;height:76px;border-radius:22px;background:var(--grad);color:#fff;display:grid;place-items:center;box-shadow:0 12px 30px rgba(59,91,219,.4),inset 0 1px 0 rgba(255,255,255,.35);margin-bottom:18px}
-.lg-icone svg{width:40px;height:40px;stroke-width:2}
-.lg-logo{display:block;width:88px;height:86px;border-radius:13px;margin-bottom:18px;box-shadow:0 14px 34px rgba(0,180,255,.25),0 4px 12px rgba(0,0,0,.35)}
-.lg-vidro h1{margin:0;font-size:28px;font-weight:600;letter-spacing:-.02em;color:var(--ink)}
-.lg-vidro h1{margin-bottom:24px}
-
-.lg-form{width:100%;display:grid;gap:10px}
-.lg-giro{width:16px;height:16px;border-radius:50%;border:2px solid currentColor;border-right-color:transparent;animation:lg-gira .8s linear infinite}
-@keyframes lg-gira{to{transform:rotate(360deg)}}
-.lg-erro{margin:12px 0 0;color:var(--bad);font-size:14.5px}
-
 /* =====================================================================
    Tema Med Genius: inspirado no ícone (vidro sobre luzes neon)
    Fundo quase preto com luzes desfocadas em ciano, violeta e magenta,
@@ -506,12 +482,6 @@ h1.big{color:var(--title)}
 .opt.sel{box-shadow:0 0 0 1px var(--accent-line),0 0 18px rgba(79,221,255,.15)}
 .opt.sel .l{background:var(--btn);border-color:transparent;color:var(--btn-fg)}
 .tabbar{background:var(--glass);border-color:var(--glass-line)}
-
-/* tela de entrada no mesmo clima */
-.tela-entrar{--lg-bg:#0A0D1C;--lg-vidro:rgba(18,20,38,.5);--lg-borda:rgba(255,255,255,.14);--lg-campo:rgba(255,255,255,.06);--lg-linha:rgba(255,255,255,.12);--lg-sombra:0 30px 80px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,255,255,.1)}
-.lg-fundo .o1{background:radial-gradient(circle,#00C2FF 0%,transparent 65%)}
-.lg-fundo .o2{background:radial-gradient(circle,#7B5CFF 0%,transparent 65%)}
-.lg-fundo .o3{background:radial-gradient(circle,#FF2EC4 0%,transparent 65%);opacity:.4}
 
 /* Preenchimento automático do navegador: mantém o fundo de vidro (sem a caixa cinza/preta do autofill) */
 input:-webkit-autofill,input:-webkit-autofill:hover,input:-webkit-autofill:focus,input:-webkit-autofill:active{
@@ -904,59 +874,110 @@ a.pill{display:inline-flex;align-items:center;text-decoration:none}
 /* Revisão: números centralizados nos três quadros */
 .counts .cp{text-align:center}
 
-/* Tela de entrada: campos com ícone, olho da senha e botão ciano largo */
-.lg-campo{display:flex;align-items:center;gap:10px;padding:0 8px 0 14px;border-radius:14px;background:var(--lg-campo);border:1px solid var(--lg-linha);text-align:left;transition:border-color .2s,box-shadow .2s}
-.lg-campo:focus-within{border-color:var(--accent);box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 18%,transparent)}
-.lg-campo.com-erro{border-color:var(--bad)}
-.lg-campo input{flex:1;min-width:0;text-align:center;font:inherit;font-size:17px;padding:15px 0;border:0;background:transparent;color:var(--ink);outline:none;border-radius:0}
-.lg-campo input::placeholder{color:var(--muted)}
-.lg-ico,.lg-olho svg{width:18px;height:18px;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-.lg-ico{color:var(--muted)}
-.lg-campo:focus-within .lg-ico{color:var(--accent)}
-.lg-olho{flex:none;width:40px;height:40px;border:0;border-radius:50%;background:transparent;color:var(--muted);display:grid;place-items:center;cursor:pointer}
-.lg-olho:hover,.lg-olho[aria-pressed=true]{color:var(--accent)}
-.lg-entrar{margin-top:4px;width:100%;min-height:50px;border:0;border-radius:14px;background:var(--btn);color:var(--btn-fg);font:inherit;font-size:17px;font-weight:600;cursor:pointer;display:grid;place-items:center;box-shadow:0 8px 24px rgba(79,221,255,.28)}
-.lg-entrar:disabled{cursor:default;opacity:.85}
-.lg-erro{margin:0}
-.lg-logo{width:104px;height:auto;box-shadow:0 14px 40px rgba(0,180,255,.35),0 4px 12px rgba(0,0,0,.35)}
-.tela-entrar{grid-template-columns:minmax(0,1fr)}
-.lg-vidro{justify-self:center}
-.lg-vidro{grid-template-columns:minmax(0,1fr)}
-.lg-form{grid-template-columns:minmax(0,1fr)}
-.lg-campo:not(:has(.lg-olho)){padding-right:42px}
-.lg-campo:has(.lg-olho){padding-right:2px}
-
 /* =====================================================================
-   Tela de entrada da v4 ("Ouro, Cromo & Sinapse") sobre o tema v3: logo na moldura de ouro,
-   título prateado, cartão com moldura de cromo e botão Entrar de ouro. As cores da v4 valem só aqui.
+   Tela de entrada: ícone de ouro + vidro líquido (como o do iPhone), segue o modo do aparelho.
+   Noite (padrão): fundo preto, dendritos de ouro com pontas azuis atrás do logo, cartão de vidro escuro.
+   Dia (@media prefers-color-scheme: light): fundo prateado, vidro branco, texto grafite.
+   Só as cores mudam entre os dois; ouro no botão ENTRAR, azul no campo em uso.
+   O desenho do fundo (app/login/page.tsx) tem 390 × 844 com o centro do logo em (195, 191).
    ===================================================================== */
-.tela-entrar{--accent:#5CB8FF;--btn-fg:#1B1407;--ink:#F4F6FA;--muted:#A3A9B4;--rotulo-cor:#A3A9B4;
-  --ouro-botao:linear-gradient(180deg,#F6DE94,#D6B15C 48%,#A8812E)}
-.tela-entrar{display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:28px;padding:96px 24px calc(40px + env(safe-area-inset-bottom,0px));
-  --lg-bg:#090A0D;background:radial-gradient(90% 55% at 50% 22%,#2C3038 0%,#15171C 50%,#090A0D 100%)}
-.lg-fundo{display:none}
-.lg-moldura{flex:none;width:138px;height:138px;border-radius:34px;overflow:hidden;border:3px solid transparent;
-  background:linear-gradient(160deg,#18213A,#0B0F1C) padding-box,linear-gradient(135deg,#FBEFC4,#CFA74E 25%,#6B4E18 50%,#EED487 75%,#8E6C25) border-box;
-  box-shadow:0 22px 50px rgba(0,0,0,.65),0 0 40px rgba(63,169,255,.18),inset 0 2px 0 rgba(255,245,215,.35)}
-.lg-moldura .lg-logo{display:block;width:100%;height:100%;object-fit:cover;margin:0;border-radius:0;box-shadow:none}
+.tela-entrar{
+  --ink:#F4F6FA; --lg-texto:#E8EAEE; --lg-rotulo:#B7BCC6; --lg-sub:#D9B868; --lg-ico:#9EA4AE; --lg-placeholder:#8E95A1;
+  --lg-titulo:linear-gradient(180deg,#FFFFFF 0%,#DADDE3 45%,#9EA4AE 100%);
+  --lg-fundo:linear-gradient(180deg,#0C0D11,#050608);
+  --lg-azul:#5AD8FF; --lg-anel:rgba(63,200,255,.18); --lg-anel-luz:0 0 18px rgba(63,200,255,.25);
+  --lg-campo-fundo:rgba(0,0,0,.32); --lg-campo-borda:rgba(255,255,255,.10);
+  --lg-campo-sombra:inset 0 1px 3px rgba(0,0,0,.55),inset 0 -1px 0 rgba(255,255,255,.08);
+  --lg-vidro-fundo:linear-gradient(155deg,rgba(255,255,255,.13),rgba(255,255,255,.04) 55%,rgba(255,255,255,.07));
+  --lg-vidro-sombra:inset 0 1.5px 0 rgba(255,255,255,.45),inset 0 0 0 1px rgba(255,255,255,.14),inset 0 -1px 0 rgba(255,255,255,.12),0 30px 60px rgba(0,0,0,.55);
+  --lg-vidro-reflexo:rgba(255,255,255,.16);
+  --lg-logo-sombra:drop-shadow(0 26px 30px rgba(0,0,0,.7)) drop-shadow(0 0 26px rgba(63,200,255,.16));
+  --lg-botao-sombra:0 12px 30px rgba(214,177,92,.32),0 2px 6px rgba(0,0,0,.4);
+  --lg-ouro1:#F6DD94; --lg-ouro2:#D4AF5F; --lg-ouro3:#9C7630; --lg-ramos-op:.9;
+  --lg-luz-ouro:#D6B15C; --lg-luz-ouro-op:.2; --lg-luz-azul:#28B4FF; --lg-luz-azul-op:.24;
+  --lg-trilha:rgba(255,255,255,.07); --lg-halo:#3FC8FF; --lg-halo-op:.28; --lg-ponto:#BDF1FF;
+  color-scheme:dark}
+body:has(.tela-entrar){background:#07080B}
+@media (prefers-color-scheme: light){
+  .tela-entrar{
+    --ink:#15171C; --lg-texto:#15171C; --lg-rotulo:#4B515C; --lg-sub:#74561F; --lg-ico:#646A75; --lg-placeholder:#646A75;
+    --lg-titulo:linear-gradient(180deg,#4A505A 0%,#15171C 100%);
+    --lg-fundo:radial-gradient(120% 80% at 50% 20%,#F5F6F8 0%,#E1E4E9 55%,#CDD1D8 100%);
+    --lg-azul:#1495D0; --lg-anel:rgba(26,163,224,.2); --lg-anel-luz:0 0 0 transparent;
+    --lg-campo-fundo:rgba(255,255,255,.6); --lg-campo-borda:rgba(20,25,35,.10);
+    --lg-campo-sombra:inset 0 1px 3px rgba(20,25,35,.12),inset 0 -1px 0 rgba(255,255,255,.9);
+    --lg-vidro-fundo:linear-gradient(155deg,rgba(255,255,255,.62),rgba(255,255,255,.30) 55%,rgba(255,255,255,.42));
+    --lg-vidro-sombra:inset 0 1.5px 0 #FFFFFF,inset 0 0 0 1px rgba(255,255,255,.6),inset 0 -1px 0 rgba(255,255,255,.5),0 26px 50px rgba(30,35,50,.18),0 2px 8px rgba(30,35,50,.08);
+    --lg-vidro-reflexo:rgba(255,255,255,.5);
+    --lg-logo-sombra:drop-shadow(0 22px 24px rgba(25,30,45,.35));
+    --lg-botao-sombra:0 12px 26px rgba(168,124,44,.35),0 2px 6px rgba(30,35,50,.15);
+    --lg-ouro1:#E6C778; --lg-ouro2:#B8913F; --lg-ouro3:#8C6A2A; --lg-ramos-op:.85;
+    --lg-luz-ouro-op:.28; --lg-luz-azul:#28AAF0; --lg-luz-azul-op:.26;
+    --lg-trilha:rgba(20,25,35,.08); --lg-halo:#2BB8F0; --lg-halo-op:.3; --lg-ponto:#14A8EA;
+    --bad:#C2362A;
+    color-scheme:light}
+  body:has(.tela-entrar){background:#D5D8DE}
+}
+.tela-entrar{position:relative;min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:max(32px,env(safe-area-inset-top,0px)) 24px max(clamp(32px,10vh,96px),env(safe-area-inset-bottom,0px));
+  overflow:hidden;background:var(--lg-fundo);color:var(--lg-texto)}
+.lg-palco{position:relative;isolation:isolate;width:min(100%,400px);display:flex;flex-direction:column;align-items:center;gap:22px}
+/* o desenho acompanha o logo: o topo do palco é o topo do logo (y 116 no desenho) */
+.lg-fundo{position:absolute;z-index:-1;top:-116px;left:50%;width:390px;height:844px;margin-left:-195px;overflow:visible;pointer-events:none;transform-origin:195px 191px;stroke:none}
+.lg-fundo .o1{stop-color:var(--lg-ouro1)}
+.lg-fundo .o2{stop-color:var(--lg-ouro2)}
+.lg-fundo .o3{stop-color:var(--lg-ouro3)}
+.lg-fundo .lo{stop-color:var(--lg-luz-ouro);stop-opacity:var(--lg-luz-ouro-op)}
+.lg-fundo .la{stop-color:var(--lg-luz-azul);stop-opacity:var(--lg-luz-azul-op)}
+.lg-fundo .fim{stop-opacity:0}
+.lg-fundo .trilhas{fill:none;stroke:var(--lg-trilha);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.lg-fundo .ramos,.lg-fundo .galhos{fill:none;stroke:url(#lg-ouro);stroke-linecap:round;opacity:var(--lg-ramos-op)}
+.lg-fundo .ramos{stroke-width:2.6}
+.lg-fundo .galhos{stroke-width:1.4}
+.lg-fundo .halo{fill:var(--lg-halo);opacity:var(--lg-halo-op)}
+.lg-fundo .ponto{fill:var(--lg-ponto)}
+.lg-logo{flex:none;display:block;width:150px;height:150px;border-radius:34px;filter:var(--lg-logo-sombra)}
 .lg-marca{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center}
-.lg-marca h1{margin:0;font-size:34px;font-weight:600;letter-spacing:.12em;line-height:normal;text-transform:uppercase;background:linear-gradient(180deg,#FFFFFF,#C9CED6 60%,#9AA1AB);-webkit-background-clip:text;background-clip:text;color:transparent}
-.lg-sub{margin:0;font-family:var(--font-texto);font-size:11px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--rotulo-cor)}
-.lg-vidro{display:block;width:min(100%,400px);padding:22px 18px;border-radius:28px;text-align:left;border:1px solid transparent;
-  background:linear-gradient(165deg,rgba(255,255,255,.075),rgba(255,255,255,.025)) padding-box,linear-gradient(160deg,rgba(255,255,255,.5),rgba(255,255,255,.07) 40%,rgba(255,255,255,.04) 60%,rgba(255,255,255,.28)) border-box;
-  box-shadow:0 24px 60px rgba(0,0,0,.55);-webkit-backdrop-filter:none;backdrop-filter:none}
-.lg-form{gap:6px}
-.lg-rotulo{font-family:var(--font-texto);font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--rotulo-cor)}
-.lg-rotulo:not(:first-child){margin-top:8px}
-.lg-campo{height:50px;gap:10px;padding:0 6px 0 14px;border-radius:14px;border:1px solid rgba(255,255,255,.12);background:rgba(0,0,0,.28);box-shadow:inset 0 1px 2px rgba(0,0,0,.5)}
-.lg-campo:not(:has(.lg-olho)){padding-right:42px}
-.lg-campo:focus-within{border-color:var(--accent);box-shadow:inset 0 1px 2px rgba(0,0,0,.5),0 0 0 4px rgba(79,178,255,.15)}
-.lg-ico{color:#9AA1AB}
-.lg-campo input{font-size:16px;padding:0;height:100%;color:#F4F6FA}
-.lg-campo input::placeholder{color:#8B92A0}
-.lg-olho{color:#9AA1AB}
-.lg-entrar{margin-top:12px;min-height:52px;border-radius:16px;background:var(--ouro-botao);color:var(--btn-fg);font-size:16px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;box-shadow:inset 0 1px 0 rgba(255,255,255,.6),inset 0 -1px 0 rgba(0,0,0,.25),0 10px 26px rgba(214,177,92,.3)}
-.lg-erro{margin:6px 0 0;text-align:center}
+/* o espaço entre letras também entra depois da última: o recuo à esquerda devolve o centro */
+.lg-marca h1{margin:0;padding-left:.12em;font-size:33px;font-weight:600;letter-spacing:.12em;line-height:1.3;text-transform:uppercase;background:var(--lg-titulo);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lg-sub{margin:0;padding-left:.3em;font-size:11px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--lg-sub)}
+.lg-vidro{position:relative;overflow:hidden;width:100%;margin-top:8px;padding:24px 20px 22px;border-radius:34px;background:var(--lg-vidro-fundo);
+  -webkit-backdrop-filter:blur(26px) saturate(180%);backdrop-filter:blur(26px) saturate(180%);box-shadow:var(--lg-vidro-sombra)}
+.lg-vidro::before{content:"";position:absolute;inset:0 0 auto;height:130px;background:radial-gradient(120% 100% at 15% 0%,var(--lg-vidro-reflexo),transparent 60%);pointer-events:none}
+.lg-form{position:relative;display:flex;flex-direction:column;gap:6px}
+.lg-rotulo{padding-left:18px;font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--lg-rotulo)}
+.lg-rotulo:not(:first-child){margin-top:10px}
+.lg-campo{height:52px;display:flex;align-items:center;gap:10px;padding:0 46px 0 18px;border-radius:26px;border:1px solid var(--lg-campo-borda);background:var(--lg-campo-fundo);box-shadow:var(--lg-campo-sombra);transition:border-color .2s,box-shadow .2s}
+.lg-campo:has(.lg-olho){padding-right:4px}
+.lg-campo:focus-within{border-color:var(--lg-azul);box-shadow:var(--lg-campo-sombra),0 0 0 4px var(--lg-anel),var(--lg-anel-luz)}
+.lg-campo.com-erro{border-color:var(--bad)}
+.lg-campo input{flex:1;min-width:0;height:100%;padding:0;border:0;border-radius:0;background:transparent;color:var(--ink);font:inherit;font-size:16px;text-align:center;outline:none}
+.lg-campo input::placeholder{color:var(--lg-placeholder);opacity:1}
+.lg-ico,.lg-olho svg{width:18px;height:18px;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.lg-ico{color:var(--lg-ico)}
+.lg-campo:focus-within .lg-ico{color:var(--lg-azul)}
+.lg-olho{flex:none;width:44px;height:44px;border:0;border-radius:50%;background:transparent;color:var(--lg-ico);display:grid;place-items:center;cursor:pointer}
+.lg-olho:hover,.lg-olho[aria-pressed=true]{color:var(--lg-azul)}
+.lg-olho:focus-visible{outline:2px solid var(--lg-azul);outline-offset:-2px}
+/* botão de ouro polido: o reflexo (::before) fica atrás do texto */
+.lg-entrar{position:relative;isolation:isolate;overflow:hidden;margin-top:18px;width:100%;min-height:54px;border:0;border-radius:27px;display:grid;place-items:center;cursor:pointer;
+  background:linear-gradient(180deg,#F8E6A8 0%,#E3C06C 42%,#C29440 70%,#A87C2C 100%);color:#1B1407;font-size:16px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.8),inset 0 -2px 4px rgba(110,70,15,.35),var(--lg-botao-sombra)}
+.lg-entrar::before{content:"";position:absolute;z-index:-1;left:12px;right:12px;top:3px;height:46%;border-radius:24px 24px 12px 12px;background:linear-gradient(180deg,rgba(255,255,255,.55),rgba(255,255,255,0));pointer-events:none}
+.lg-entrar:hover{filter:brightness(1.04)}
+.lg-entrar:focus-visible{outline:2px solid var(--lg-azul);outline-offset:3px}
+.lg-entrar:disabled{cursor:default;opacity:.85}
+.lg-giro{width:18px;height:18px;border-radius:50%;border:2px solid currentColor;border-right-color:transparent;animation:lg-gira .8s linear infinite}
+@keyframes lg-gira{to{transform:rotate(360deg)}}
+.lg-erro{margin:10px 0 0;text-align:center;color:var(--bad);font-size:14.5px;font-weight:500}
+/* celular baixo (iPhone SE): logo menor, desenho junto */
+@media (max-height:700px){
+  .lg-palco{gap:16px}
+  .lg-logo{width:120px;height:120px;border-radius:27px}
+  .lg-fundo{top:-131px;transform:scale(.8)}
+}
+/* telas largas (tablet): o desenho cresce em volta do logo */
+@media (min-width:600px) and (min-height:701px){.lg-fundo{transform:scale(1.4)}}
 
 /* =====================================================================
    Letras: Inter em tudo o que se lê e se digita (enunciado, alternativas, flashcards,
