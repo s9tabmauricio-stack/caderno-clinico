@@ -1236,9 +1236,11 @@ h1.big{background:var(--metal-titulo);-webkit-background-clip:text;background-cl
   -webkit-backdrop-filter:blur(22px) saturate(180%);backdrop-filter:blur(22px) saturate(180%)}
 .in-card{display:flex;flex-direction:column;gap:12px;padding:18px}
 .in-card.destaque,.in-mat.destaque{box-shadow:var(--vidro-sombra),inset 0 0 0 1px var(--destaque-borda)}
-.in-h{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
+/* Cards e Questões: título fora do cartão, como o da agenda */
+.in-col{display:flex;flex-direction:column;min-width:0}
+.in-col>.sec{margin-top:0}
+.in-col>.in-card{flex:1}
 .in-k{font-family:var(--font-marca);font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--rotulo-marca)}
-.in-h a{font-size:13.5px;font-weight:600;color:var(--accent);text-decoration:none}
 .in-n{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 10px}
 .in-n .n{font-family:var(--font-marca);font-size:44px;font-weight:700;line-height:1;background:var(--metal-num);-webkit-background-clip:text;background-clip:text;color:transparent}
 .in-n .u{font-size:14px;color:var(--muted)}
@@ -1286,9 +1288,8 @@ h1.big{background:var(--metal-titulo);-webkit-background-clip:text;background-cl
 @media (max-width:599px){
   .in-status{gap:10px}
   .in-card{padding:14px;gap:10px}
-  .in-h a,.longo{display:none}
+  .in-col .ag-h a,.longo{display:none}
   .curto{display:inline}
-  .in-k{font-size:11px;letter-spacing:.14em}
   .in-n{flex-direction:column;align-items:flex-start;gap:4px}
   .in-n .n{font-size:34px}
   .in-n .u{font-size:12.5px;line-height:1.35}

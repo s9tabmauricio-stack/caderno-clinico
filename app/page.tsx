@@ -87,91 +87,95 @@ export default async function Inicio() {
 
       <div className="inicio">
         <div className="in-status">
-          <section className="in-card destaque" aria-label="Cards">
-            <div className="in-h">
-              <span className="in-k">Cards</span>
+          <div className="in-col">
+            <div className="sec ag-h">
+              <span>Cards</span>
               <Link href="/revisao">Revisão →</Link>
             </div>
-            <div className="in-n">
-              <span className="n">{pend.vencidos}</span>
-              <span className="u">
-                para revisar hoje
-                {pend.vencidos === 0 && t.estudados > 0 && <b className="ok"> · em dia ✓</b>}
-              </span>
-            </div>
-            <div className="in-nums">
-              <span>
-                <b>{pend.novos}</b>
-                {plural(pend.novos, 'novo', 'novos')}
-              </span>
-              <span>
-                <b className={pend.vencidos ? 'alerta' : ''}>{pend.vencidos}</b>a revisar
-              </span>
-              <span>
-                <b>{pend.emDia}</b>em dia
-              </span>
-            </div>
-            <div className="bar" role="img" aria-label={`${pend.emDia} em dia, ${pend.vencidos} a revisar, ${pend.novos} novos`}>
-              <span className="b-ac" style={{ width: `${t.cards ? (100 * pend.emDia) / t.cards : 0}%` }} />
-              <span className="b-al" style={{ width: `${t.cards ? (100 * pend.vencidos) / t.cards : 0}%` }} />
-            </div>
-            {pend.vencidos > 0 ? (
-              <Link className="btn-white" href="/revisao">
-                Começar revisão
-              </Link>
-            ) : pend.novos > 0 ? (
-              <Link className="btn-white" href="/revisao">
-                <span>
-                  Estudar <span className="longo">cards </span>novos
+            <section className="in-card destaque" aria-label="Cards">
+              <div className="in-n">
+                <span className="n">{pend.vencidos}</span>
+                <span className="u">
+                  para revisar hoje
+                  {pend.vencidos === 0 && t.estudados > 0 && <b className="ok"> · em dia ✓</b>}
                 </span>
-              </Link>
-            ) : (
-              <p className="in-fim">Nenhum card pendente por agora.</p>
-            )}
-          </section>
+              </div>
+              <div className="in-nums">
+                <span>
+                  <b>{pend.novos}</b>
+                  {plural(pend.novos, 'novo', 'novos')}
+                </span>
+                <span>
+                  <b className={pend.vencidos ? 'alerta' : ''}>{pend.vencidos}</b>a revisar
+                </span>
+                <span>
+                  <b>{pend.emDia}</b>em dia
+                </span>
+              </div>
+              <div className="bar" role="img" aria-label={`${pend.emDia} em dia, ${pend.vencidos} a revisar, ${pend.novos} novos`}>
+                <span className="b-ac" style={{ width: `${t.cards ? (100 * pend.emDia) / t.cards : 0}%` }} />
+                <span className="b-al" style={{ width: `${t.cards ? (100 * pend.vencidos) / t.cards : 0}%` }} />
+              </div>
+              {pend.vencidos > 0 ? (
+                <Link className="btn-white" href="/revisao">
+                  Começar revisão
+                </Link>
+              ) : pend.novos > 0 ? (
+                <Link className="btn-white" href="/revisao">
+                  <span>
+                    Estudar <span className="longo">cards </span>novos
+                  </span>
+                </Link>
+              ) : (
+                <p className="in-fim">Nenhum card pendente por agora.</p>
+              )}
+            </section>
+          </div>
 
-          <section className="in-card" aria-label="Questões">
-            <div className="in-h">
-              <span className="in-k">Questões</span>
+          <div className="in-col">
+            <div className="sec ag-h">
+              <span>Questões</span>
               <Link href="/desempenho">Desempenho →</Link>
             </div>
-            <div className="in-n">
-              <span className="n">{tq.respondidas}</span>
-              <span className="u">
-                de {tq.questoes} {plural(tq.respondidas, 'respondida', 'respondidas')}
-                {acerto !== null && <b className={acerto >= 70 ? 'ok' : 'alerta'}> · {acerto}% de acerto</b>}
-              </span>
-            </div>
-            <div className="in-nums">
-              <span>
-                <b className="ok">{tq.acertos}</b>
-                {plural(tq.acertos, 'certa', 'certas')}
-              </span>
-              <span>
-                <b className="ruim">{erradas}</b>
-                {plural(erradas, 'errada', 'erradas')}
-              </span>
-              <span>
-                <b>{afazer}</b>a fazer
-              </span>
-            </div>
-            <div className="bar" role="img" aria-label={`${tq.acertos} certas, ${erradas} erradas, ${afazer} a fazer`}>
-              <span className="b-ok" style={{ width: `${tq.questoes ? (100 * tq.acertos) / tq.questoes : 0}%` }} />
-              <span className="b-bad" style={{ width: `${tq.questoes ? (100 * erradas) / tq.questoes : 0}%` }} />
-            </div>
-            {erradas > 0 ? (
-              <Link className="btn ghost" href={refazer}>
-                <span>
-                  Refazer <span className="longo">{erradas === 1 ? 'a ' : `as ${erradas} `}</span>
-                  {erradas === 1 ? 'errada' : 'erradas'}
+            <section className="in-card" aria-label="Questões">
+              <div className="in-n">
+                <span className="n">{tq.respondidas}</span>
+                <span className="u">
+                  de {tq.questoes} {plural(tq.respondidas, 'respondida', 'respondidas')}
+                  {acerto !== null && <b className={acerto >= 70 ? 'ok' : 'alerta'}> · {acerto}% de acerto</b>}
                 </span>
-              </Link>
-            ) : (
-              <Link className="btn ghost" href="/estudar">
-                Responder questões
-              </Link>
-            )}
-          </section>
+              </div>
+              <div className="in-nums">
+                <span>
+                  <b className="ok">{tq.acertos}</b>
+                  {plural(tq.acertos, 'certa', 'certas')}
+                </span>
+                <span>
+                  <b className="ruim">{erradas}</b>
+                  {plural(erradas, 'errada', 'erradas')}
+                </span>
+                <span>
+                  <b>{afazer}</b>a fazer
+                </span>
+              </div>
+              <div className="bar" role="img" aria-label={`${tq.acertos} certas, ${erradas} erradas, ${afazer} a fazer`}>
+                <span className="b-ok" style={{ width: `${tq.questoes ? (100 * tq.acertos) / tq.questoes : 0}%` }} />
+                <span className="b-bad" style={{ width: `${tq.questoes ? (100 * erradas) / tq.questoes : 0}%` }} />
+              </div>
+              {erradas > 0 ? (
+                <Link className="btn ghost" href={refazer}>
+                  <span>
+                    Refazer <span className="longo">{erradas === 1 ? 'a ' : `as ${erradas} `}</span>
+                    {erradas === 1 ? 'errada' : 'erradas'}
+                  </span>
+                </Link>
+              ) : (
+                <Link className="btn ghost" href="/estudar">
+                  Responder questões
+                </Link>
+              )}
+            </section>
+          </div>
         </div>
 
         <section className="in-agenda" aria-label="Agenda de hoje">
