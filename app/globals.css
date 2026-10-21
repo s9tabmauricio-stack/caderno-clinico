@@ -785,7 +785,6 @@ a.pa>span:first-child{min-width:0}
   .wrap{padding-block:32px 40px}
   .wrap.larga{max-width:1040px}
 
-
   /* Estudar e Desempenho aproveitam as colunas */
   .larga .tiles{grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
   .larga .perfs{grid-template-columns:repeat(2,minmax(0,1fr));align-items:start}
