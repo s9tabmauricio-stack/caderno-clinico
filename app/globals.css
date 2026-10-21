@@ -790,9 +790,7 @@ a.pa>span:first-child{min-width:0}
   .larga .perfs{grid-template-columns:repeat(2,minmax(0,1fr));align-items:start}
   .larga .segm{max-width:560px}
 
-  /* Questão: enunciado em cima e alternativas embaixo (largura de leitura, centralizada) */
-  .larga .qcard,.larga .turma{max-width:760px}
-  .larga .qcard{margin-inline:auto}
+  /* Questão: enunciado em cima e alternativas embaixo, na largura toda da coluna (alinhada com o resto da tela) */
 
   /* Apostila em páginas e flashcards: largura de leitura, centralizados */
   .larga .paginas{max-width:900px;margin-inline:auto}
