@@ -738,8 +738,6 @@ a.pa>span:first-child{min-width:0}
 .agenda a.row.ev{text-decoration:none;color:inherit}
 
 /* Início: "Seu progresso" leva ao Desempenho */
-a.stats-link{display:grid;color:inherit;text-decoration:none}
-a.stats-link:hover .stat{border-color:var(--accent-line)}
 
 /* Banco de questões: filtros recolhidos num botão, com as etiquetas dos filtros ligados */
 .filtro-barra{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:12px}
@@ -787,9 +785,6 @@ a.stats-link:hover .stat{border-color:var(--accent-line)}
   .wrap{padding-block:32px 40px}
   .wrap.larga{max-width:1040px}
 
-  /* Início em duas colunas: o que fazer agora à esquerda, onde continuar e o progresso à direita */
-  .inicio-cols{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);column-gap:28px;align-items:start}
-  .inicio-cols>div>.sec:first-child{margin-top:0}
 
   /* Estudar e Desempenho aproveitam as colunas */
   .larga .tiles{grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
@@ -1231,3 +1226,56 @@ h1.big{background:var(--metal-titulo);-webkit-background-clip:text;background-cl
 /* Configurações: "Sair" bem abaixo do resto, no coral do app (o mesmo vermelho de "errado") */
 .btn.out{margin-top:44px;min-height:50px;font-weight:700}
 .btn.danger.out:hover{background:var(--bad-soft);filter:brightness(1.15)}
+
+/* =====================================================================
+   Início (21/10/2026): cards e questões no alto, agenda do dia inteira e as matérias.
+   No celular, um embaixo do outro; no tablet deitado, a agenda é a coluna da esquerda.
+   Quadro com a proposta (E · Tudo do dia): https://claude.ai/artifact/BjQhu55DNueYG5a7zFWucg
+   ===================================================================== */
+.in-status{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+@media (max-width:560px){.in-status{grid-template-columns:minmax(0,1fr)}}
+.in-card,.in-mat{position:relative;min-width:0;border-radius:var(--r-lg);background:var(--vidro);box-shadow:var(--vidro-sombra);
+  -webkit-backdrop-filter:blur(22px) saturate(180%);backdrop-filter:blur(22px) saturate(180%)}
+.in-card{display:flex;flex-direction:column;gap:12px;padding:18px}
+.in-card.destaque,.in-mat.destaque{box-shadow:var(--vidro-sombra),inset 0 0 0 1px var(--destaque-borda)}
+.in-h{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
+.in-k{font-family:var(--font-marca);font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--rotulo-marca)}
+.in-h a{font-size:13.5px;font-weight:600;color:var(--accent);text-decoration:none}
+.in-n{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 10px}
+.in-n .n{font-family:var(--font-marca);font-size:44px;font-weight:700;line-height:1;background:var(--metal-num);-webkit-background-clip:text;background-clip:text;color:transparent}
+.in-n .u{font-size:14px;color:var(--muted)}
+.in-n b{font-weight:600}
+.in-card .ok{color:var(--ok)}
+.in-card .alerta{color:var(--orange)}
+.in-card .ruim{color:var(--bad-txt)}
+.in-nums{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;font-size:13px;color:var(--muted)}
+.in-nums b{display:block;font-size:19px;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums}
+.in-card .bar{height:6px;border-radius:4px;background:var(--trilho)}
+.b-ac{background:var(--accent)}
+.b-al{background:var(--orange)}
+.in-card .btn-white,.in-card .btn{margin-top:auto;min-height:48px;display:grid;place-items:center;justify-self:stretch;text-decoration:none}
+.in-fim{margin:auto 0 0;font-size:14px;color:var(--muted)}
+.in-agenda,.in-materias{min-width:0}
+.in-amanha{display:flex;flex-direction:column;gap:3px;margin:12px 4px 0;font-size:14px;color:var(--text)}
+.in-amanha b{color:var(--ink)}
+.in-mats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.in-mat{display:flex;flex-direction:column;overflow:hidden;isolation:isolate;border-radius:20px}
+.in-mat::before{content:"";position:absolute;right:-40px;top:-50px;width:130px;height:130px;border-radius:50%;background:radial-gradient(circle,var(--glow,transparent),transparent 70%);opacity:.28;z-index:-1;pointer-events:none}
+.in-mat-a{flex:1;display:grid;grid-template-columns:36px minmax(0,1fr);align-content:start;align-items:center;gap:8px 10px;padding:14px;color:inherit;text-decoration:none}
+.in-mat-a:hover,.in-mat-c:hover{background:var(--seg)}
+.in-mat .gema{width:36px;height:36px;border-radius:11px;font-size:11.5px}
+.in-mat .mt-name{font-size:14.5px}
+.in-mat .mt-meta,.in-mat-p{grid-column:1 / -1;font-size:12.5px}
+.in-mat-p{display:flex;align-items:center;gap:8px;color:var(--muted);font-weight:600}
+.in-mat-p .mt-bar{flex:1;height:5px}
+.in-mat-c{display:flex;align-items:center;gap:6px;min-height:44px;padding:0 14px;border-top:1px solid var(--line-2);font-size:13px;font-weight:600;color:var(--accent);text-decoration:none}
+.in-mat-c span{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.in-mat-c svg{flex:none;width:16px;height:16px}
+@media (min-width:900px) and (min-height:560px){
+  .inicio{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.3fr);grid-template-areas:"agenda status" "agenda materias";column-gap:24px;align-items:start}
+  .in-status{grid-area:status}
+  .in-agenda{grid-area:agenda}
+  .in-materias{grid-area:materias}
+  .in-agenda>.sec:first-child{margin-top:0}
+  .in-mats{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
