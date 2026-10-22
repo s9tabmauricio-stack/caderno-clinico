@@ -92,6 +92,15 @@ Título, resumo e professor saem da capa (`pdftotext -f 1 -l 1`). Atualize a `de
 - `origem`: `professor` (corrigida em sala), `unica`, `inferido` (alternativa reconstruída), `montada` (alternativas montadas, gabarito não oficial), `resolvida` (gabarito não oficial), `adaptada` (questão oficial alterada para seguir a aula; o comentário diz o que mudou).
 - Quando a prova não tem gabarito: resolva com base na apostila da aula, marque como não oficial e **discuta as duvidosas com o Mauricio uma a uma, mostrando o texto completo da questão** antes de pedir decisão.
 
+## Flashcards
+
+- Feitos a partir da apostila da aula, na ordem dela, cobrindo a apostila inteira com folga (Pneumonia, `pneumo-a2`: 101 cards).
+- **Frente:** pergunta curta e direta ("Qual é a definição de enfisema?"); comparação com × ("Asma × DPOC: o que muda…?"); mini-caso quando ajuda ("70 anos, PA 100 por 70…: quantos pontos e qual conduta?").
+- **Verso:** a resposta em 1 a 3 frases, linguagem simples, sem tópicos.
+- **"PROVA · "** no começo da frente quando o professor diz que cai na prova ou que é importante (marca PROVA da apostila, "isso vocês precisam saber", "a definição importa muito", slides de "questões de prova").
+- O que vem do "Complemento: fora da aula" da apostila entra avisando no próprio card ("Fora da aula: …").
+- ids `<aula>-f01`, `-f02`… (acima de 99 seguem `-f100`, `-f101`); `ordem` = número do card. Mostrar a lista ao Mauricio antes de incluir.
+
 ## Agenda
 
 - O Mauricio cola o cronograma do WhatsApp em `/admin/agenda`; `lib/agenda.ts` separa dias, horários, matéria (emoji ou palavra), professor, local, grupos, cancelamentos (❌) e avisos. Grupos por letra (A = práticas 1 a 7…) viram números.
@@ -124,6 +133,7 @@ Versões do visual salvas no GitHub (ramos fixos, não publicados; não apague):
 
 ## Pendências e ideias
 
-- Questões e flashcards das aulas novas (Pneumo 1 já tem 9 questões; as outras ainda não).
+- Questões e flashcards das aulas novas (Pneumo 1 já tem 9 questões; Pneumo 2 tem 11 questões, 8 do Revalida, e 101 flashcards; as outras ainda não).
+- Provas do Revalida (INEP): o servidor manda o certificado incompleto; baixe com `curl --cacert` num arquivo que junte `/root/.ccr/ca-bundle.crt` e o intermediário "RNP ICPEdu GR46 OV TLS CA 2025" (http://secure.globalsign.com/cacert/rnpicpedugr46ovtlsca2025.crt, convertido para PEM). A prova de 2022.1 tem a fonte embaralhada no PDF: confira o texto na imagem da página.
 - Proteção contra senhas vazadas do Supabase está desligada (recurso do plano pago).
 - Sugestões e ideias de experiência do usuário (UX): veja [`MELHORIAS-UX.md`](MELHORIAS-UX.md).
