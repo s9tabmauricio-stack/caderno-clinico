@@ -156,3 +156,13 @@ export async function apagarCard(form: FormData) {
   if (erro) throw new Error(erro)
   atualizarTelas()
 }
+
+/** Apaga todos os flashcards de uma aula (para refazer no padrão novo); a aula e as questões ficam. */
+export async function apagarCardsDaAula(form: FormData) {
+  const admin = await clienteAdmin()
+  const { data: cards, error } = await admin.from('flashcards').select('id').eq('aula_id', String(form.get('id')))
+  if (error) throw new Error(error.message)
+  const erro = await apagarCards(admin, (cards ?? []).map((c: { id: string }) => c.id))
+  if (erro) throw new Error(erro)
+  atualizarTelas()
+}

@@ -2,7 +2,7 @@
 
 import { useActionState, useState } from 'react'
 import { useFormStatus } from 'react-dom'
-import { apagarAula, apagarCard, apagarQuestao, limparVersoesAntigas, salvarAula, salvarCard, salvarQuestao, type Msg } from '@/app/admin/conteudo/acoes'
+import { apagarAula, apagarCard, apagarCardsDaAula, apagarQuestao, limparVersoesAntigas, salvarAula, salvarCard, salvarQuestao, type Msg } from '@/app/admin/conteudo/acoes'
 
 const LETRAS = 'ABCDE'
 
@@ -211,5 +211,16 @@ export function EditorCard({ card, n }: { card: { id: string; frente: string; ve
       </form>
       <Apagar acao={apagarCard} id={card.id} rotulo="Apagar card" aviso="Apaga o card e as revisões dos alunos." />
     </div>
+  )
+}
+
+export function ApagarCardsDaAula({ aulaId, total }: { aulaId: string; total: number }) {
+  return (
+    <Apagar
+      acao={apagarCardsDaAula}
+      id={aulaId}
+      rotulo={total === 1 ? 'Apagar o flashcard' : `Apagar os ${total} flashcards`}
+      aviso="Apaga todos os flashcards desta aula e as revisões dos alunos neles. A aula e as questões ficam."
+    />
   )
 }

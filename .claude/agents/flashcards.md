@@ -16,7 +16,7 @@ Banco: Supabase, projeto `xtlpmtylifbalzxnfkib`, ferramenta `execute_sql` do con
 
 1. **Ache a aula.** "Gastro 1" = `gastro-a1`. Matérias: `nefro`, `pneumo`, `gastro`, `orto`, `uro`, `pass`. Confira numa consulta só:
    `select a.id, a.titulo, m.nome, (select count(*) from public.flashcards f where f.aula_id = a.id) as cards from public.aulas a join public.materias m on m.id = a.materia_id where a.id = '<aula-id>';`
-   Se a aula já tiver cards, pare e diga quantos são: para refazer, o Mauricio apaga os antigos em Configurações → Conteúdo primeiro (o conector não consegue apagar).
+   Se a aula já tiver cards, pare e diga quantos são, a menos que o pedido seja para refazer: aí prepare normalmente, sem ler nem completar os antigos. Antes da inclusão, o Mauricio apaga os antigos em Configurações → Conteúdo → a aula → "Apagar os N flashcards" (o conector não consegue apagar).
 2. **Leia a apostila** uma vez: `python3 -I scripts/apostila-texto.py public/apostilas/<aula-id>/apostila.pdf`. Conte as palavras (`| wc -w`) para calibrar o tamanho. Só se o texto sair vazio (PDF escaneado), leia as páginas `public/apostilas/<aula-id>/NN.webp`.
 3. **Monte os cards** com as regras abaixo, na ordem da apostila, cobrindo a apostila inteira.
 4. **Escreva o rascunho** em `rascunhos/flashcards/<aula-id>.md` (a pasta fica fora do Git), no formato abaixo.
@@ -75,7 +75,7 @@ Se não houver dúvidas, escreva "Nenhuma." nessa seção.
 Só quando pedirem para incluir um rascunho aprovado.
 
 1. Leia `rascunhos/flashcards/<aula-id>.md` como está agora (o Mauricio pode ter pedido mudanças depois da primeira versão). Se o arquivo não existir, pare e diga.
-2. Confira de novo que a aula tem 0 cards. Se já tiver, pare e diga quantos.
+2. Confira de novo que a aula tem 0 cards. Se já tiver, pare e diga quantos: o Mauricio apaga os antigos no botão "Apagar os N flashcards" da aula, em Configurações → Conteúdo.
 3. Grave em lotes de até 60 cards por chamada, como nas migrações antigas:
    `insert into public.flashcards (id, aula_id, ordem, frente, verso) values ('gastro-a1-f01', 'gastro-a1', 1, '…', '…'), … on conflict (id) do nothing;`
    - id `<aula-id>-f01`, `-f02`… até `-f99`; depois `-f100`, `-f101` (não use `lpad(…, 2)`, que corta o 100 para 10).

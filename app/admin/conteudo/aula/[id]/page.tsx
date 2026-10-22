@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { Pagina, Voltar } from '@/components/Pagina'
-import { EditorAula, EditorCard } from '@/components/admin/Editores'
+import { ApagarCardsDaAula, EditorAula, EditorCard } from '@/components/admin/Editores'
 import { clienteAdmin, ehAdmin } from '@/lib/admin'
 import { sessao } from '@/lib/dados'
 
@@ -40,6 +40,10 @@ export default async function EditarAulaPage(props: PageProps<'/admin/conteudo/a
       <div className="sec">Flashcards ({cards?.length ?? 0})</div>
       {cards?.length ? (
         <div className="ed-lista">
+          <div className="ed-bloco">
+            <p style={{ margin: 0 }}>Para refazer os flashcards desta aula, apague todos de uma vez.</p>
+            <ApagarCardsDaAula aulaId={aula.id} total={cards.length} />
+          </div>
           {cards.map((c: { id: string; frente: string; verso: string }, i: number) => (
             <EditorCard key={c.id} card={c} n={i + 1} />
           ))}
