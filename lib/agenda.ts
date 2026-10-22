@@ -271,14 +271,19 @@ export function lerCronograma(texto: string, ano = new Date().getFullYear()): Se
 
 export const FUSO_AGENDA = 'America/Sao_Paulo'
 
-/** Data (AAAA-MM-DD) e minutos do dia agora, no horário de Brasília. */
+/** Data (AAAA-MM-DD) e minutos do dia agora, no horário de Brasília (e o instante, em milissegundos). */
 export function agoraBrasilia(base = new Date()) {
   const p = Object.fromEntries(
     new Intl.DateTimeFormat('en-CA', { timeZone: FUSO_AGENDA, year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' })
       .formatToParts(base)
       .map((x) => [x.type, x.value]),
   )
-  return { data: `${p.year}-${p.month}-${p.day}`, minutos: Number(p.hour) * 60 + Number(p.minute) }
+  return { data: `${p.year}-${p.month}-${p.day}`, minutos: Number(p.hour) * 60 + Number(p.minute), ms: base.getTime() }
+}
+
+/** Começo do evento em milissegundos (Brasília não tem mais horário de verão: sempre UTC−3). */
+export function inicioMs(e: { data: string; inicio: string | null }) {
+  return Date.parse(`${e.data}T${(e.inicio ?? '00:00').slice(0, 5)}:00-03:00`)
 }
 
 export function minutos(h: string | null) {

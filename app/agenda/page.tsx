@@ -54,7 +54,9 @@ export default async function AgendaPage() {
 
       {provas.length > 0 && (
         <>
-          <div className="sec">Próximas provas</div>
+          <div className="sec" id="provas">
+            Próximas provas
+          </div>
           <AgendaProvas eventos={provas} hoje={agora.data} materias={idsMaterias} />
         </>
       )}

@@ -1036,7 +1036,22 @@ h1.big{background:var(--metal-titulo);-webkit-background-clip:text;background-cl
 .b-al{background:var(--orange)}
 .in-card .btn-white,.in-card .btn{margin-top:auto;min-height:48px;display:grid;place-items:center;justify-self:stretch;text-decoration:none}
 .in-fim{margin:auto 0 0;font-size:14px;color:var(--muted)}
-.in-agenda,.in-materias{min-width:0}
+.in-esq,.in-agenda,.in-provas,.in-materias{min-width:0}
+/* Próxima prova (22/10/2026): título, dia e hora, contagem regressiva em dias, horas e minutos e as seguintes em lista */
+.in-prova{overflow:hidden;isolation:isolate}
+.in-prova::before{content:"";position:absolute;right:-50px;top:-60px;width:170px;height:170px;border-radius:50%;background:radial-gradient(circle,var(--glow,transparent),transparent 70%);opacity:.3;z-index:-1;pointer-events:none}
+.pv-topo{display:flex;align-items:stretch;gap:12px}
+.pv-barra{flex:none;width:4px;border-radius:3px}
+.pv-t{display:block;font-size:18px;font-weight:700;line-height:1.25;color:var(--ink)}
+.pv-s{display:block;margin-top:3px;font-size:13.5px;color:var(--muted)}
+.pv-s b{font-weight:600;color:var(--text)}
+.pv-s b.alerta{color:var(--orange)}
+.pv-conta{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.pv-conta span{display:flex;flex-direction:column;align-items:center;gap:5px;padding:12px 4px 10px;border-radius:14px;background:var(--seg);
+  font-family:var(--font-marca);font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--rotulo-marca)}
+.pv-conta b{font-family:var(--font-marca);font-size:38px;font-weight:700;line-height:1;letter-spacing:0;background:var(--metal-num);-webkit-background-clip:text;background-clip:text;color:transparent}
+.pv-boa{margin:0;font-size:16px;font-weight:600;color:var(--ink)}
+.in-provas .group{margin-top:10px}
 .in-amanha{display:flex;flex-direction:column;gap:3px;margin:12px 4px 0;font-size:14px;color:var(--text)}
 .in-amanha b{color:var(--ink)}
 .in-mats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
@@ -1058,9 +1073,10 @@ h1.big{background:var(--metal-titulo);-webkit-background-clip:text;background-cl
 .in-mat-c svg{flex:none;width:16px;height:16px}
 .curto{display:none}
 @media (min-width:900px) and (min-height:560px){
-  .inicio{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.3fr);grid-template-areas:"agenda status" "agenda materias";column-gap:24px;align-items:start}
+  /* a coluna da esquerda (agenda e provas) pode ser mais alta: a sobra fica embaixo das matérias, não entre elas e os cartões */
+  .inicio{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.3fr);grid-template-rows:auto 1fr;grid-template-areas:"agenda status" "agenda materias";column-gap:24px;align-items:start}
   .in-status{grid-area:status}
-  .in-agenda{grid-area:agenda}
+  .in-esq{grid-area:agenda}
   .in-materias{grid-area:materias}
   .in-agenda>.sec:first-child{margin-top:0}
   .in-mats{grid-template-columns:repeat(3,minmax(0,1fr))}
@@ -1073,6 +1089,7 @@ h1.big{background:var(--metal-titulo);-webkit-background-clip:text;background-cl
   .curto{display:inline}
   .in-n{flex-direction:column;align-items:flex-start;gap:4px}
   .in-n .n{font-size:34px}
+  .pv-conta b{font-size:32px}
   .in-n .u{font-size:12.5px;line-height:1.35}
   .in-nums{grid-template-columns:minmax(0,1fr);gap:2px;font-size:12.5px}
   .in-nums b{display:inline;font-size:14px;margin-right:5px}
