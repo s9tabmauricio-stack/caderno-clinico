@@ -1,8 +1,9 @@
 import type { Metadata } from 'next'
 import { Pagina } from '@/components/Pagina'
 import { AgendaSemana } from '@/components/AgendaSemana'
+import { AgendaProvas } from '@/components/AgendaLista'
 import { carregarMaterias, carregarProgresso, pendentes, sessao } from '@/lib/dados'
-import { agendaDaSemana, grupoDoAluno } from '@/lib/agenda-dados'
+import { agendaDaSemana, grupoDoAluno, proximasProvas } from '@/lib/agenda-dados'
 import { agoraBrasilia } from '@/lib/agenda'
 
 export const metadata: Metadata = { title: 'Agenda' }
@@ -18,12 +19,15 @@ function periodo(semana: string) {
 
 export default async function AgendaPage() {
   const { supabase, userId } = await sessao()
-  const [semana, grupo, progresso, materias] = await Promise.all([
+  const [semana, grupo, progresso, materias, provas] = await Promise.all([
     agendaDaSemana(supabase),
     grupoDoAluno(supabase, userId),
     carregarProgresso(supabase),
     carregarMaterias(supabase),
+    proximasProvas(supabase),
   ])
+  const agora = agoraBrasilia()
+  const idsMaterias = materias.map((m) => m.id)
 
   return (
     <Pagina pendentes={pendentes(progresso).hoje}>
@@ -40,12 +44,19 @@ export default async function AgendaPage() {
           aviso={semana.aviso}
           eventos={semana.eventos}
           grupo={grupo}
-          agora={agoraBrasilia()}
+          agora={agora}
           userId={userId}
-          materias={materias.map((m) => m.id)}
+          materias={idsMaterias}
         />
       ) : (
         <p className="vazio">O cronograma da semana ainda não foi publicado.</p>
+      )}
+
+      {provas.length > 0 && (
+        <>
+          <div className="sec">Próximas provas</div>
+          <AgendaProvas eventos={provas} hoje={agora.data} materias={idsMaterias} />
+        </>
       )}
     </Pagina>
   )

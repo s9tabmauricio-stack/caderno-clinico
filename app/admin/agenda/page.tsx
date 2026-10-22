@@ -10,7 +10,13 @@ export const metadata: Metadata = { title: 'Agenda da semana' }
 export default async function AdminAgendaPage() {
   const { supabase, email } = await sessao()
   if (!ehAdmin(email)) notFound()
-  const { data: semanas } = await supabase.from('agenda_semanas').select('semana, atualizado_em').order('semana', { ascending: false }).limit(5)
+  // Semanas sem texto existem só por causa das provas: não foram publicadas
+  const { data: semanas } = await supabase
+    .from('agenda_semanas')
+    .select('semana, atualizado_em')
+    .not('texto', 'is', null)
+    .order('semana', { ascending: false })
+    .limit(5)
 
   return (
     <Pagina>

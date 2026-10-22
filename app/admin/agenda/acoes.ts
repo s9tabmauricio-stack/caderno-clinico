@@ -20,8 +20,8 @@ export async function publicarAgenda(_: ResultadoAgenda, form: FormData): Promis
       .from('agenda_semanas')
       .upsert({ semana: s.semana, titulo: s.titulo, aviso: s.aviso, texto, atualizado_em: new Date().toISOString() })
     if (r1.error) return { ok: false, texto: `Não deu para salvar: ${r1.error.message}` }
-    // A semana publicada substitui a versão anterior da mesma semana
-    const r2 = await admin.from('agenda_eventos').delete().eq('semana', s.semana)
+    // A semana publicada substitui a versão anterior da mesma semana (as provas incluídas à parte ficam)
+    const r2 = await admin.from('agenda_eventos').delete().eq('semana', s.semana).eq('fixo', false)
     if (r2.error) return { ok: false, texto: `Não deu para atualizar: ${r2.error.message}` }
     const r3 = await admin.from('agenda_eventos').insert(s.eventos.map((e) => ({ ...e, semana: s.semana })))
     if (r3.error) return { ok: false, texto: `Não deu para salvar as aulas: ${r3.error.message}` }

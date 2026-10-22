@@ -54,7 +54,7 @@ Tudo em português do Brasil. O dono do projeto não é programador: explique em
 - `flashcards` (id `<aula>-fNN`, `frente`, `verso`, `ordem`)
 - Progresso: `respostas` (só a última resposta de cada questão), `historico_respostas` (todas as respostas dadas: um gatilho do banco grava uma linha a cada resposta nova ou refeita; só o gatilho grava e o aluno só lê e apaga o seu; "Refazer" não apaga, só "Apagar progresso"), `revisoes`; alunos: `perfis` (`nome`, `grupo` de prática 1–29; o aluno só pode alterar `nome` e `grupo`)
 - Recados: `recados` (`questao_id`, `user_id`, `autor` = primeiro nome, preenchido por gatilho; `tipo` `insight`/`erro`; `status` `novo`/`visto`/`corrigido`) e `recados_uteis`. Aluno lê todos, cria e apaga os seus; status só muda pelo admin (chave secreta).
-- Agenda: `agenda_semanas` (segunda-feira da semana) e `agenda_eventos` (aulas, cancelamentos, avisos, `grupos int[]`)
+- Agenda: `agenda_semanas` (segunda-feira da semana; `texto` vazio = semana criada só para as provas) e `agenda_eventos` (aulas, cancelamentos, avisos, `grupos int[]`; `fixo` = incluído à parte, como as provas da P2, e a publicação da semana não apaga)
 - Visões usadas pelas telas: `questoes_do_aluno`, `progresso_aulas`, `progresso_materias`, `progresso_temas`, `progresso_tentativas` (tentativas e acerto "na 1ª vez", mostrados no Desempenho), `flashcards_do_aluno`.
   Todas escondem aulas não publicadas e questões com `substituida_por` preenchido.
 - RLS: alunos leem conteúdo e só gravam o próprio progresso. Escrita de conteúdo: só pelo conector (Claude) ou pelas telas de admin (chave secreta).
@@ -106,6 +106,7 @@ Título, resumo e professor saem da capa (`pdftotext -f 1 -l 1`). Atualize a `de
 
 - O Mauricio cola o cronograma do WhatsApp em `/admin/agenda`; `lib/agenda.ts` separa dias, horários, matéria (emoji ou palavra), professor, local, grupos, cancelamentos (❌) e avisos. Grupos por letra (A = práticas 1 a 7…) viram números.
 - Teóricas valem para todos; práticas, só para os grupos listados. O aluno informa o grupo na própria Agenda (seletor ao lado dos filtros) ou em Configurações. Tocar numa aula abre a matéria dela.
+- **Provas (P2 de 10 a 25/11/2026)**: entram pelo conector em `agenda_eventos` com `tipo = 'prova'`, `fixo = true`, título "P2 de <Matéria>" (crie antes a semana em `agenda_semanas` só com a segunda-feira, se ela ainda não existir). Aparecem no dia (Início e Agenda) e no quadro "Próximas provas" no fim da Agenda. Publicar a semana não apaga; se o cronograma do WhatsApp trouxer a prova da mesma matéria no mesmo dia, no dia vale a do cronograma. Semana só de provas não aparece em "Semanas publicadas" nem vira "a próxima semana" antes de chegar.
 
 ## Visual
 

@@ -148,17 +148,17 @@ export type Database = {
         Row: {
           id: number; semana: string; data: string; inicio: string | null; fim: string | null; materia: string | null
           tipo: string; titulo: string; professor: string | null; local: string | null; grupos: number[] | null
-          cancelado: boolean; notas: string[] | null; ordem: number
+          cancelado: boolean; notas: string[] | null; ordem: number; fixo: boolean
         }
         Insert: {
           id?: never; semana: string; data: string; inicio?: string | null; fim?: string | null; materia?: string | null
           tipo?: string; titulo: string; professor?: string | null; local?: string | null; grupos?: number[] | null
-          cancelado?: boolean; notas?: string[] | null; ordem?: number
+          cancelado?: boolean; notas?: string[] | null; ordem?: number; fixo?: boolean
         }
         Update: {
           id?: never; semana?: string; data?: string; inicio?: string | null; fim?: string | null; materia?: string | null
           tipo?: string; titulo?: string; professor?: string | null; local?: string | null; grupos?: number[] | null
-          cancelado?: boolean; notas?: string[] | null; ordem?: number
+          cancelado?: boolean; notas?: string[] | null; ordem?: number; fixo?: boolean
         }
         Relationships: []
       }

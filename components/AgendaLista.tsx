@@ -87,6 +87,53 @@ export function AgendaLista({
   )
 }
 
+/** Próximas provas: a data no lugar da hora e, embaixo do título, o horário e quanto falta. */
+export function AgendaProvas({ eventos, hoje, materias }: { eventos: EventoBanco[]; hoje: string; materias?: string[] }) {
+  if (!eventos.length) return null
+  const base = new Date(`${hoje}T12:00:00Z`).getTime()
+  return (
+    <div className="group agenda">
+      {eventos.map((e) => {
+        const dt = new Date(`${e.data}T12:00:00Z`)
+        const dias = Math.round((dt.getTime() - base) / 86_400_000)
+        const falta = dias === 0 ? 'Hoje' : dias === 1 ? 'Amanhã' : `Em ${dias} dias`
+        const detalhes = [fmtHora(e.inicio), e.local, falta].filter(Boolean)
+        const href = e.materia && materias?.includes(e.materia) ? `/materia/${e.materia}` : null
+        const conteudo = (
+          <>
+            <span className="hora">
+              {new Intl.DateTimeFormat('pt-BR', { day: '2-digit', month: '2-digit', timeZone: 'UTC' }).format(dt)}
+              <small>{new Intl.DateTimeFormat('pt-BR', { weekday: 'short', timeZone: 'UTC' }).format(dt).replace('.', '')}</small>
+            </span>
+            <span className="barra" style={{ background: COR_MATERIA[e.materia ?? ''] ?? 'var(--line-strong)' }} />
+            <span className="main">
+              <span className="t">{e.titulo}</span>
+              <span className="s">{detalhes.join(' · ')}</span>
+              {!!e.notas?.length && (
+                <span className="notas">
+                  {e.notas.map((n, i) => (
+                    <span key={i}>{n}</span>
+                  ))}
+                </span>
+              )}
+            </span>
+            {href && Icone.seta}
+          </>
+        )
+        return href ? (
+          <Link key={e.id} className="row ev" href={href}>
+            {conteudo}
+          </Link>
+        ) : (
+          <div key={e.id} className="row ev static">
+            {conteudo}
+          </div>
+        )
+      })}
+    </div>
+  )
+}
+
 function juntar(ns: number[]) {
   return ns.length === 1 ? String(ns[0]) : `${ns.slice(0, -1).join(', ')} e ${ns[ns.length - 1]}`
 }
