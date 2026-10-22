@@ -194,6 +194,7 @@ export type Database = {
           origem: string | null
           por_que_erradas: string | null
           prova: string | null
+          substituida_por: string | null
           tema: string | null
         }
         Insert: {
@@ -209,6 +210,7 @@ export type Database = {
           origem?: string | null
           por_que_erradas?: string | null
           prova?: string | null
+          substituida_por?: string | null
           tema?: string | null
         }
         Update: {
@@ -224,6 +226,7 @@ export type Database = {
           origem?: string | null
           por_que_erradas?: string | null
           prova?: string | null
+          substituida_por?: string | null
           tema?: string | null
         }
         Relationships: [
@@ -239,6 +242,13 @@ export type Database = {
             columns: ['materia_id']
             isOneToOne: false
             referencedRelation: 'materias'
+            referencedColumns: ['id']
+          },
+          {
+            foreignKeyName: 'questoes_substituida_por_fkey'
+            columns: ['substituida_por']
+            isOneToOne: false
+            referencedRelation: 'questoes'
             referencedColumns: ['id']
           },
         ]

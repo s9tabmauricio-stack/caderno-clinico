@@ -1,6 +1,6 @@
 'use client'
 
-import { useActionState, useEffect, useRef, useState } from 'react'
+import { useActionState, useRef, useState } from 'react'
 import { criarAluno, trocarSenhaAluno, type Resultado } from '@/app/admin/acoes'
 import { formatarCpf } from '@/lib/cpf'
 
@@ -14,15 +14,17 @@ function Mensagem({ r }: { r: Resultado }) {
 }
 
 export function CriarAluno() {
-  const [r, acao, enviando] = useActionState(criarAluno, null)
   const [cpf, setCpf] = useState('')
   const form = useRef<HTMLFormElement>(null)
-  useEffect(() => {
-    if (r?.ok) {
+  // Depois de criar o aluno, limpa o formulário para o próximo
+  const [r, acao, enviando] = useActionState(async (antes: Resultado, dados: FormData) => {
+    const res = await criarAluno(antes, dados)
+    if (res?.ok) {
       form.current?.reset()
       setCpf('')
     }
-  }, [r])
+    return res
+  }, null)
 
   return (
     <form ref={form} action={acao} className="admin-form" noValidate>
