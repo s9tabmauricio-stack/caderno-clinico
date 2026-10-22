@@ -35,7 +35,7 @@ Banco: Supabase, projeto `xtlpmtylifbalzxnfkib`, ferramenta `execute_sql` do con
 
 - **Frente:** pergunta curta e direta ("Qual é a definição de enfisema?"); comparação com × ("Asma × DPOC: o que muda…?"); mini-caso quando ajuda ("70 anos, PA 100 por 70…: quantos pontos e qual conduta?").
 - **Verso:** a resposta em 1 a 3 frases, linguagem simples, sem tópicos. Uma lista grande vira vários cards ou uma pergunta do tipo "Quais são os 3 componentes…?".
-- **"PROVA · "** no começo da frente quando o professor diz que cai na prova ou que é importante: seção com o selo PROVA no título (o texto sai como "Regra de Goodsall PROVA"), "cai em prova", "a prova gosta", "muito cobrada", "isso vocês precisam saber", "a definição importa muito", slides de "questões de prova". Na seção com o selo, marque os cards do ponto central dela, não cada detalhe.
+- **"PROVA · "** no começo da frente quando o professor diz que cai na prova ou que é importante: seção com o selo PROVA no título (o texto sai como "Regra de Goodsall PROVA"), "cai em prova", "a prova gosta", "muito cobrada", "isso vocês precisam saber", "a definição importa muito", slides de "questões de prova". Marque também tudo o que o professor só dá a entender que é importante: fez questão de perguntar à turma ("o professor fez questão de perguntar cada tríade"), repetiu, frisou, insistiu, chamou a atenção. Na seção com o selo, todos os cards do assunto dela levam PROVA. Na dúvida, marque como PROVA, sem perguntar ao Mauricio: a regra é dele.
 - **"Fora da aula: "** no começo da frente para o que vem dos quadros "COMPLEMENTO: FORA DA AULA".
 - Siglas por extenso na primeira vez. Nada de "o aluno deve saber": vá direto ao conteúdo.
 
