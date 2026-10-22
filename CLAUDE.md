@@ -135,7 +135,7 @@ Versões do visual salvas no GitHub (ramos fixos, não publicados; não apague):
 
 ## Pendências e ideias
 
-- Questões e flashcards das aulas novas (Pneumo 1 já tem 9 questões; Pneumo 2 tem 11 questões, 8 do Revalida, e 101 flashcards; Pneumo 1 tem 171, Pneumo 3 tem 113 e Gastro 1 tem 152 flashcards no padrão novo; as outras ainda não).
+- Questões e flashcards das aulas novas (Pneumo 1 já tem 9 questões; Pneumo 2 tem 11 questões, 8 do Revalida, e 101 flashcards; Pneumo 1 tem 171, Pneumo 3 tem 113, Gastro 1 tem 152 e Gastro 2 tem 133 flashcards no padrão novo; as outras ainda não).
 - Provas do Revalida (INEP): o servidor manda o certificado incompleto; baixe com `curl --cacert` num arquivo que junte `/root/.ccr/ca-bundle.crt` e o intermediário "RNP ICPEdu GR46 OV TLS CA 2025" (http://secure.globalsign.com/cacert/rnpicpedugr46ovtlsca2025.crt, convertido para PEM). A prova de 2022.1 tem a fonte embaralhada no PDF: confira o texto na imagem da página.
 - Proteção contra senhas vazadas do Supabase está desligada (recurso do plano pago).
 - Sugestões e ideias de experiência do usuário (UX): veja [`MELHORIAS-UX.md`](MELHORIAS-UX.md).
