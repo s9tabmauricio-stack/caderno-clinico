@@ -6,6 +6,8 @@ import { carregarProgresso, carregarProgressoMaterias, paraCard, paraQuestao, pe
 import { createClient } from '@/lib/supabase/server'
 import { ehAdmin } from '@/lib/admin'
 
+const dataCurta = (d: string) => d.split('-').reverse().join('/')
+
 export async function generateMetadata(props: PageProps<'/aula/[id]'>): Promise<Metadata> {
   const { id } = await props.params
   const supabase = await createClient()
@@ -22,7 +24,7 @@ export default async function AulaPage(props: PageProps<'/aula/[id]'>) {
   const [aula, questoes, cards, progresso, banco] = await Promise.all([
     supabase
       .from('aulas')
-      .select('id, materia_id, ordem, titulo, apostila_html, pdf_caminho, materias(nome)')
+      .select('id, materia_id, ordem, titulo, data_aula, apostila_html, pdf_caminho, materias(nome)')
       .eq('id', id)
       .eq('publicada', true)
       .maybeSingle(),
@@ -68,6 +70,7 @@ export default async function AulaPage(props: PageProps<'/aula/[id]'>) {
         <div>
           <div className="eyebrow">
             {materiaNome} · Aula {aula.data.ordem}
+            {aula.data.data_aula && ` · ${dataCurta(aula.data.data_aula)}`}
           </div>
           <h1 className="big">{aula.data.titulo}</h1>
         </div>

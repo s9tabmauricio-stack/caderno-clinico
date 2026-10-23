@@ -19,6 +19,7 @@ export type Database = {
         Row: {
           apostila_html: string | null
           criado_em: string
+          data_aula: string | null
           id: string
           materia_id: string
           ordem: number
@@ -30,6 +31,7 @@ export type Database = {
         Insert: {
           apostila_html?: string | null
           criado_em?: string
+          data_aula?: string | null
           id: string
           materia_id: string
           ordem: number
@@ -41,6 +43,7 @@ export type Database = {
         Update: {
           apostila_html?: string | null
           criado_em?: string
+          data_aula?: string | null
           id?: string
           materia_id?: string
           ordem?: number
