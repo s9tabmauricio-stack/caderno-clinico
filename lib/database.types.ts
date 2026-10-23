@@ -24,6 +24,7 @@ export type Database = {
           materia_id: string
           ordem: number
           pdf_caminho: string | null
+          professor: string | null
           publicada: boolean
           resumo: string | null
           titulo: string
@@ -36,6 +37,7 @@ export type Database = {
           materia_id: string
           ordem: number
           pdf_caminho?: string | null
+          professor?: string | null
           publicada?: boolean
           resumo?: string | null
           titulo: string
@@ -48,6 +50,7 @@ export type Database = {
           materia_id?: string
           ordem?: number
           pdf_caminho?: string | null
+          professor?: string | null
           publicada?: boolean
           resumo?: string | null
           titulo?: string

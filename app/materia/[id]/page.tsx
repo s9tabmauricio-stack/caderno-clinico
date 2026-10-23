@@ -19,7 +19,7 @@ export default async function MateriaPage(props: PageProps<'/materia/[id]'>) {
   const { supabase } = await sessao()
   const [materia, aulas, progresso, banco] = await Promise.all([
     supabase.from('materias').select('id, nome, descricao').eq('id', id).maybeSingle(),
-    supabase.from('aulas').select('id, ordem, titulo, resumo, data_aula').eq('materia_id', id).eq('publicada', true).order('ordem'),
+    supabase.from('aulas').select('id, ordem, titulo, resumo, data_aula, professor').eq('materia_id', id).eq('publicada', true).order('ordem'),
     carregarProgresso(supabase),
     carregarProgressoMaterias(supabase),
   ])
@@ -50,7 +50,7 @@ export default async function MateriaPage(props: PageProps<'/materia/[id]'>) {
                   <span className="t">{a.titulo}</span>
                   {a.resumo && <span className="s">{a.resumo}</span>}
                   <span className="meta">
-                    {a.data_aula && `Aula de ${a.data_aula.split('-').reverse().join('/')} · `}Apostila · {p?.total_questoes ?? 0} questões · {p?.total_cards ?? 0} flashcards
+                    {a.data_aula && `Aula de ${a.data_aula.split('-').reverse().join('/')}${a.professor ? ` com ${a.professor}` : ''} · `}Apostila · {p?.total_questoes ?? 0} questões · {p?.total_cards ?? 0} flashcards
                     {p && p.cards_vencidos > 0 && <span className="chip revisar">{p.cards_vencidos} para revisar</span>}
                   </span>
                 </span>

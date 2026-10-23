@@ -24,7 +24,7 @@ export default async function AulaPage(props: PageProps<'/aula/[id]'>) {
   const [aula, questoes, cards, progresso, banco] = await Promise.all([
     supabase
       .from('aulas')
-      .select('id, materia_id, ordem, titulo, data_aula, apostila_html, pdf_caminho, materias(nome)')
+      .select('id, materia_id, ordem, titulo, data_aula, professor, apostila_html, pdf_caminho, materias(nome)')
       .eq('id', id)
       .eq('publicada', true)
       .maybeSingle(),
@@ -71,6 +71,7 @@ export default async function AulaPage(props: PageProps<'/aula/[id]'>) {
           <div className="eyebrow">
             {materiaNome} · Aula {aula.data.ordem}
             {aula.data.data_aula && ` · ${dataCurta(aula.data.data_aula)}`}
+            {aula.data.professor && ` · ${aula.data.professor}`}
           </div>
           <h1 className="big">{aula.data.titulo}</h1>
         </div>
