@@ -12,6 +12,8 @@ São dois trabalhos separados. Faça só o que pediram:
 
 Banco: Supabase, projeto `xtlpmtylifbalzxnfkib`, ferramenta `execute_sql` do conector. Tabela `public.flashcards (id, aula_id, ordem, frente, verso)`.
 
+Arquivos temporários (texto da apostila, lotes de SQL, scripts): ponha o id da aula no nome (ex.: `<aula-id>-lote1.sql`), porque outros agentes podem estar trabalhando em outras aulas ao mesmo tempo na mesma pasta, e apague-os no fim.
+
 ## Preparar
 
 1. **Ache a aula.** "Gastro 1" = `gastro-a1`. Matérias: `nefro`, `pneumo`, `gastro`, `orto`, `uro`, `pass`. Confira numa consulta só:
