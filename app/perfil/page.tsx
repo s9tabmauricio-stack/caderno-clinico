@@ -47,6 +47,12 @@ export default async function PerfilPage() {
         <>
           <div className="sec">Administração</div>
           <div className="group">
+            <Link className="row" href="/admin/central">
+              <span className="main">
+                <span className="t">Central</span>
+                <span className="s">Tudo sobre o app num lugar só: uso da turma, conteúdo, avisos</span>
+              </span>
+            </Link>
             <Link className="row" href="/admin/recados">
               <span className="main">
                 <span className="t">Recados da turma</span>

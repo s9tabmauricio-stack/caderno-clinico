@@ -114,6 +114,41 @@ export type Database = {
           },
         ]
       }
+      historico_revisoes: {
+        Row: {
+          errou: boolean
+          flashcard_id: string
+          id: number
+          intervalo_dias: number
+          revisada_em: string
+          user_id: string
+        }
+        Insert: {
+          errou: boolean
+          flashcard_id: string
+          id?: number
+          intervalo_dias: number
+          revisada_em?: string
+          user_id: string
+        }
+        Update: {
+          errou?: boolean
+          flashcard_id?: string
+          id?: number
+          intervalo_dias?: number
+          revisada_em?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: 'historico_revisoes_flashcard_id_fkey'
+            columns: ['flashcard_id']
+            isOneToOne: false
+            referencedRelation: 'flashcards'
+            referencedColumns: ['id']
+          },
+        ]
+      }
       materias: {
         Row: {
           cor_fim: string | null
@@ -425,7 +460,9 @@ export type Database = {
         Relationships: []
       }
     }
-    Functions: { [_ in never]: never }
+    Functions: {
+      central_resumo: { Args: never; Returns: Json }
+    }
     Enums: { [_ in never]: never }
     CompositeTypes: { [_ in never]: never }
   }
