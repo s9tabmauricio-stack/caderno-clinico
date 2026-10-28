@@ -136,7 +136,7 @@ Versões do visual salvas no GitHub (ramos fixos, não publicados; não apague):
 ## Pendências e ideias
 
 - Questões das aulas novas (Pneumo 1 já tem 9 questões; Pneumo 2 tem 11, 8 do Revalida; as outras aulas ainda não).
-- Flashcards: todas as aulas no ar estão no padrão novo desde 23/10/2026 (2.337 cards): Pneumo 1 tem 171, Pneumo 2 tem 101, Pneumo 3 tem 113, Gastro 1 tem 152, Gastro 2 tem 133, Gastro 3 tem 198, Nefro 1 tem 99, Nefro 2 tem 156, Nefro 3 tem 147, Nefro 4 tem 154, Orto 1 tem 166, Uro 1 tem 175, Uro 2 tem 160, PASS 1 tem 141, PASS 2 tem 153 e PASS 3 tem 118. Aula nova: peça ao agente `flashcards`.
+- Flashcards: todas as aulas no ar estão no padrão novo desde 23/10/2026 (2.470 cards): Pneumo 1 tem 171, Pneumo 2 tem 101, Pneumo 3 tem 113, Gastro 1 tem 152, Gastro 2 tem 133, Gastro 3 tem 198, Nefro 1 tem 99, Nefro 2 tem 156, Nefro 3 tem 147, Nefro 4 tem 154, Nefro 5 tem 133 (quatro trechos duvidosos da apostila conferidos em literatura em 28/10/2026), Orto 1 tem 166, Uro 1 tem 175, Uro 2 tem 160, PASS 1 tem 141, PASS 2 tem 153 e PASS 3 tem 118. Aula nova: peça ao agente `flashcards`.
 - Provas do Revalida (INEP): o servidor manda o certificado incompleto; baixe com `curl --cacert` num arquivo que junte `/root/.ccr/ca-bundle.crt` e o intermediário "RNP ICPEdu GR46 OV TLS CA 2025" (http://secure.globalsign.com/cacert/rnpicpedugr46ovtlsca2025.crt, convertido para PEM). A prova de 2022.1 tem a fonte embaralhada no PDF: confira o texto na imagem da página.
 - Proteção contra senhas vazadas do Supabase está desligada (recurso do plano pago).
 - Sugestões e ideias de experiência do usuário (UX): veja [`MELHORIAS-UX.md`](MELHORIAS-UX.md).
