@@ -10,9 +10,9 @@ type Filtros = { tema: string | null; prova: string | null; situacao: Situacao }
 
 const ROTULO_PROVA = (p: string) => p.replace(/^p(\d)-t(\d+)$/i, 'P$1 T$2')
 
-// O servidor lê este cookie na próxima visita e já abre o banco com o mesmo tema e prova
+// O servidor lê este cookie na próxima visita e já abre o banco com o mesmos filtros
 function lembrarFiltros(chave: string, f: Filtros) {
-  const valor = encodeURIComponent(JSON.stringify({ tema: f.tema, prova: f.prova }))
+  const valor = encodeURIComponent(JSON.stringify(f))
   document.cookie = `mgf_${chave}=${valor}; path=/; max-age=15552000; samesite=lax`
 }
 
@@ -32,7 +32,7 @@ export function BancoQuestoes({
   inicial,
   edicao,
 }: {
-  // id da matéria: nome do cookie em que o tema e a prova escolhidos ficam lembrados
+  // id da matéria: nome do cookie em que os filtros escolhidos ficam lembrados
   chave: string
   questoes: QuestaoAluno[]
   userId: string
@@ -53,6 +53,11 @@ export function BancoQuestoes({
     const f = { ...filtros, ...novo }
     setFiltros(f)
     lembrarFiltros(chave, f)
+    const url = new URL(window.location.href)
+    url.searchParams.set('tema', f.tema ?? '')
+    url.searchParams.set('prova', f.prova ?? '')
+    url.searchParams.set('mostrar', f.situacao)
+    window.history.replaceState(null, '', url)
     setLista(filtrar(atuais, f))
     setVersao((v) => v + 1)
   }

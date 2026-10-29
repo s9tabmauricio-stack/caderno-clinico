@@ -42,8 +42,10 @@ export default async function RevisaoPage(props: PageProps<'/revisao'>) {
         </div>
       </header>
       <p className="lead" style={{ margin: '-8px 0 14px' }}>
-        Errou, volta em minutos. Acertou, volta em dias. Todos os cards do dia entram, sem limite.
+        Aqui estão os flashcards novos e os que precisam de revisão hoje. Suas respostas definem quando cada card volta.
       </p>
+
+      <p className="foot">Quer escolher uma aula ou consultar todos os cards? <Link href={alvo ? `/materia/${alvo.id}/flashcards` : "/estudar"}>Abra os Flashcards em Matérias.</Link></p>
 
       <nav className="filtro-barra revisao" aria-label="Revisar por matéria">
         <Link className="pill todas" href="/revisao" aria-current={alvo ? undefined : 'true'}>

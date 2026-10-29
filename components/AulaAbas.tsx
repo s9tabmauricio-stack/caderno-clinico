@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import { useSearchParams } from 'next/navigation'
 import type { CardAluno, QuestaoAluno } from '@/lib/dados'
 import { Icone } from './Icones'
 import { Questoes } from './Questoes'
@@ -37,6 +38,10 @@ export function AulaAbas({
   proximaAula,
   edicao,
 }: Props) {
+  const parametros = useSearchParams()
+  const contexto = new URLSearchParams(parametros.toString())
+  contexto.set('aba', 'questoes')
+  const voltarParaAula = `/aula/${aulaId}?${contexto}`
   const [aba, setAba] = useState<Aba>(abaInicial)
 
   function trocar(nova: Aba, rolar = false) {
@@ -140,13 +145,14 @@ export function AulaAbas({
           vazio="Nenhuma questão das provas anteriores é sobre o assunto desta aula. Treine pelo banco de questões da matéria."
         />
         {totalBanco > questoes.length && (
-          <Link className="btn ghost wide" style={{ marginTop: 16 }} href={`/materia/${materiaId}/questoes?de=aula:${aulaId}`}>
+          <Link className="btn ghost wide" style={{ marginTop: 16 }} href={`/materia/${materiaId}/questoes?${new URLSearchParams({ de: `aula:${aulaId}`, retorno: voltarParaAula })}`}>
             Ver as {totalBanco} questões do banco da matéria
           </Link>
         )}
       </div>
 
       <div className="pane" role="tabpanel" id="painel-flashcards" aria-labelledby="aba-flashcards" hidden={aba !== 'flashcards'}>
+        <p className="foot">Estude livremente os cards desta aula. Suas avaliações atualizam a próxima revisão. <Link href={`/revisao?materia=${materiaId}`}>Ver a fila de hoje</Link>.</p>
         <Flashcards cards={cards} userId={userId} modo="aula" ativo={aba === 'flashcards'} proximoPasso={passoDepoisDosCards || undefined} />
       </div>
     </>

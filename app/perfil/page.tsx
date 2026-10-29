@@ -1,20 +1,17 @@
 import type { Metadata } from 'next'
-import { Pagina, recadosNovos } from '@/components/Pagina'
+import { Pagina } from '@/components/Pagina'
 import { PerfilAcoes } from '@/components/PerfilAcoes'
 import { TemaEscolha } from '@/components/TemaEscolha'
-import Link from 'next/link'
 import { carregarMaterias, carregarProgresso, pendentes, sessao } from '@/lib/dados'
-import { ehAdmin } from '@/lib/admin'
 
 export const metadata: Metadata = { title: 'Configurações' }
 
 export default async function PerfilPage() {
   const { supabase, userId, email } = await sessao()
-  const [perfil, progresso, materias, novos] = await Promise.all([
+  const [perfil, progresso, materias] = await Promise.all([
     supabase.from('perfis').select('nome, grupo').eq('id', userId).maybeSingle(),
     carregarProgresso(supabase),
     carregarMaterias(supabase),
-    recadosNovos(),
   ])
   // Aulas agrupadas na ordem das matérias, para o seletor de "Apagar progresso"
   const aulas = materias.flatMap((m) =>
@@ -42,45 +39,6 @@ export default async function PerfilPage() {
       <div className="sec">Aparência</div>
       <TemaEscolha />
       <p className="foot">Auto segue o modo do celular (claro de dia, escuro à noite). A escolha vale só neste aparelho.</p>
-
-      {ehAdmin(email) && (
-        <>
-          <div className="sec">Administração</div>
-          <div className="group">
-            <Link className="row" href="/admin/central">
-              <span className="main">
-                <span className="t">Central</span>
-                <span className="s">Tudo sobre o app num lugar só: uso da turma, conteúdo, avisos</span>
-              </span>
-            </Link>
-            <Link className="row" href="/admin/recados">
-              <span className="main">
-                <span className="t">Recados da turma</span>
-                <span className="s">Dicas e erros que os alunos deixaram nas questões</span>
-              </span>
-              {novos > 0 && <span className="cnt" aria-label={`${novos} novos`}>{novos}</span>}
-            </Link>
-            <Link className="row" href="/admin">
-              <span className="main">
-                <span className="t">Alunos</span>
-                <span className="s">Criar contas e trocar senhas</span>
-              </span>
-            </Link>
-            <Link className="row" href="/admin/conteudo">
-              <span className="main">
-                <span className="t">Conteúdo</span>
-                <span className="s">O que está no ar; editar e apagar aulas, questões e flashcards</span>
-              </span>
-            </Link>
-            <Link className="row" href="/admin/agenda">
-              <span className="main">
-                <span className="t">Agenda da semana</span>
-                <span className="s">Colar o cronograma do WhatsApp</span>
-              </span>
-            </Link>
-          </div>
-        </>
-      )}
 
       <div className="sec">Instalar o app</div>
       <div className="how">

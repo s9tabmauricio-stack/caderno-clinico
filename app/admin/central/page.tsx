@@ -14,7 +14,7 @@ export default async function CentralPage() {
   if (!chaveConfigurada()) {
     return (
       <Pagina>
-        <Voltar href="/perfil" rotulo="Configurações" />
+        <Voltar href="/" rotulo="Início" />
         <p className="vazio">Falta a chave secreta do Supabase na Vercel (SUPABASE_SECRET_KEY).</p>
       </Pagina>
     )
@@ -22,7 +22,7 @@ export default async function CentralPage() {
   const c = await carregarCentral()
   return (
     <Pagina larga>
-      <Voltar href="/perfil" rotulo="Configurações" />
+      <Voltar href="/" rotulo="Início" />
       <Central c={c} />
     </Pagina>
   )

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { retornoSeguro, rotuloRetorno } from '@/lib/navegacao'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { Pagina, Voltar } from '@/components/Pagina'
@@ -16,6 +17,8 @@ export async function generateMetadata(props: PageProps<'/materia/[id]'>): Promi
 
 export default async function MateriaPage(props: PageProps<'/materia/[id]'>) {
   const { id } = await props.params
+  const { retorno } = await props.searchParams
+  const origem = retornoSeguro(retorno)
   const { supabase } = await sessao()
   const [materia, aulas, progresso, banco] = await Promise.all([
     supabase.from('materias').select('id, nome, descricao').eq('id', id).maybeSingle(),
@@ -29,7 +32,7 @@ export default async function MateriaPage(props: PageProps<'/materia/[id]'>) {
 
   return (
     <Pagina larga pendentes={pendentes(progresso).hoje}>
-      <Voltar href="/estudar" rotulo="Matérias" />
+      <Voltar href={origem ?? "/estudar"} rotulo={origem ? rotuloRetorno(origem) : "Matérias"} />
       <header className="top">
         <div>
           <div className="eyebrow">Matéria</div>
@@ -45,7 +48,7 @@ export default async function MateriaPage(props: PageProps<'/materia/[id]'>) {
           {aulas.data.map((a) => {
             const p = progresso.find((x) => x.aula_id === a.id)
             return (
-              <Link key={a.id} className="row" href={`/aula/${a.id}`}>
+              <Link key={a.id} className="row" href={`/aula/${a.id}?${new URLSearchParams({ retorno: `/materia/${id}${origem ? `?${new URLSearchParams({ retorno: origem })}` : ""}` })}`}>
                 <span className="num">{a.ordem}</span>
                 <span className="main">
                   <span className="t">{a.titulo}</span>

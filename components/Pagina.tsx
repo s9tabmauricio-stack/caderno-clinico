@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { TabBar } from './TabBar'
+import { NavegacaoAdmin } from './NavegacaoAdmin'
 import { Icone } from './Icones'
 import { carregarProgresso, pendentes as contarPendentes, sessao } from '@/lib/dados'
 import { ehAdmin } from '@/lib/admin'
@@ -22,18 +23,24 @@ async function revisoesDeHoje() {
 // Sem `pendentes`, a própria moldura conta as revisões (as telas de administração não precisam calcular).
 // `larga`: telas de estudo, que no tablet deitado usam mais largura (o resto fica numa coluna só).
 export async function Pagina({ pendentes, larga, children }: { pendentes?: number; larga?: boolean; children: React.ReactNode }) {
-  const [novos, revisoes] = await Promise.all([recadosNovos(), pendentes ?? revisoesDeHoje()])
+  const [novos, revisoes, { email }] = await Promise.all([recadosNovos(), pendentes ?? revisoesDeHoje(), sessao()])
   return (
     <>
       <main className={`wrap${larga ? ' larga' : ''}`}>
-        <Link
-          className="avatar engrenagem"
-          href={novos ? '/admin/recados' : '/perfil'}
-          aria-label={novos ? `${novos} ${novos === 1 ? 'recado novo' : 'recados novos'} da turma` : 'Configurações'}
-        >
-          {Icone.engrenagem}
-          {novos > 0 && <span className="bd">{novos > 99 ? '99+' : novos}</span>}
-        </Link>
+        <nav className="atalhos-globais" aria-label="Conta e administração">
+          {ehAdmin(email) && (
+            <>
+              <Link className="pill" href="/admin/central">Administração</Link>
+              <Link className="pill" href="/admin/recados">
+                Recados <span className="cnt" aria-label={`${novos} novos`}>{novos}</span>
+              </Link>
+            </>
+          )}
+          <Link className="avatar engrenagem" href="/perfil" aria-label="Configurações" title="Configurações">
+            {Icone.engrenagem}
+          </Link>
+        </nav>
+        {ehAdmin(email) && <NavegacaoAdmin />}
         <div className="view">{children}</div>
       </main>
       <TabBar pendentes={revisoes} />

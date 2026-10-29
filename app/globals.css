@@ -1152,3 +1152,17 @@ h1.big{background:var(--metal-titulo);-webkit-background-clip:text;background-cl
   .central{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:24px;align-items:start}
   .central>div>.sec:first-child{margin-top:0}
 }
+
+/* Ações com destino fixo, em uma linha própria também no celular. */
+.atalhos-globais{display:flex;align-items:center;justify-content:flex-end;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.atalhos-globais .engrenagem{position:static;flex-shrink:0}
+.atalhos-globais .pill{min-height:44px;text-decoration:none}
+.view>.top:first-child,.view>.back:first-child{padding-right:0}
+.nav-admin{margin-bottom:20px}
+.nav-admin [aria-current="page"]{background:var(--accent);color:var(--bg)}
+.busca-aulas{margin:0 0 24px}
+.busca-aulas label{display:block;margin-bottom:8px;font-weight:600}
+.busca-campos{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.busca-campos input{flex:1;min-width:160px;min-height:44px;padding:12px;border:1px solid var(--muted);border-radius:12px;background:var(--vidro);color:var(--text);font:inherit}
+.busca-resultados{margin-bottom:24px}
+.perf[id]{scroll-margin-top:24px}

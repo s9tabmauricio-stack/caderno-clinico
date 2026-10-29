@@ -98,7 +98,7 @@ export default async function DesempenhoPage() {
           const erradas = s.respondidas - s.acertos
           const sem = s.questoes - s.respondidas
           return (
-            <div key={m.id} className="perf">
+            <div key={m.id} id={`materia-${m.id}`} className="perf">
               <div className="perf-h">
                 <span className="t">{m.nome}</span>
                 <span className="pv">
@@ -120,7 +120,7 @@ export default async function DesempenhoPage() {
                 </div>
               )}
               {erradas > 0 && (
-                <Link className="btn ghost sm perf-treino" href={`/materia/${m.id}/questoes?mostrar=erradas&de=desempenho`}>
+                <Link className="btn ghost sm perf-treino" href={`/materia/${m.id}/questoes?mostrar=erradas&de=desempenho&retorno=${encodeURIComponent(`/desempenho#materia-${m.id}`)}`}>
                   Refazer {erradas === 1 ? 'a errada' : `as ${erradas} erradas`}
                 </Link>
               )}
@@ -128,7 +128,7 @@ export default async function DesempenhoPage() {
                 <div className="perf-aulas">
                   <p className="perf-dica">Toque num tema para treinar só ele.</p>
                   {temasM.map((x) => (
-                    <Link key={x.tema} className="pa" href={`/materia/${m.id}/questoes?tema=${encodeURIComponent(x.tema)}&de=desempenho`}>
+                    <Link key={x.tema} className="pa" href={`/materia/${m.id}/questoes?tema=${encodeURIComponent(x.tema)}&de=desempenho&retorno=${encodeURIComponent(`/desempenho#materia-${m.id}`)}`}>
                       <span>{x.tema}</span>
                       <span className="pa-r">
                         <span>

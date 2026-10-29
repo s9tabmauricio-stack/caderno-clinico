@@ -38,7 +38,7 @@ export default async function ConteudoPage() {
   if (!chaveConfigurada()) {
     return (
       <Pagina>
-        <Voltar href="/perfil" rotulo="Configurações" />
+        <Voltar href="/admin/central" rotulo="Administração" />
         <p className="vazio">Falta a chave secreta do Supabase na Vercel (SUPABASE_SECRET_KEY).</p>
       </Pagina>
     )
@@ -77,7 +77,7 @@ export default async function ConteudoPage() {
 
   return (
     <Pagina>
-      <Voltar href="/perfil" rotulo="Configurações" />
+      <Voltar href="/admin/central" rotulo="Administração" />
       <header className="top">
         <div>
           <div className="eyebrow">Administração</div>

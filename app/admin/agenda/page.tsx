@@ -20,7 +20,7 @@ export default async function AdminAgendaPage() {
 
   return (
     <Pagina>
-      <Voltar href="/perfil" rotulo="Configurações" />
+      <Voltar href="/admin/central" rotulo="Administração" />
       <header className="top">
         <div>
           <div className="eyebrow">Administração</div>
