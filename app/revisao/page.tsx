@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Pagina } from '@/components/Pagina'
 import { Flashcards } from '@/components/Flashcards'
-import { carregarMaterias, carregarProgresso, paraCard, pendentes, sessao } from '@/lib/dados'
+import { carregarMaterias, carregarProgresso, lerTudo, paraCard, pendentes, sessao } from '@/lib/dados'
 
 export const metadata: Metadata = { title: 'Revisão' }
 
@@ -16,28 +16,19 @@ export default async function RevisaoPage(props: PageProps<'/revisao'>) {
   const alvo = typeof materia === 'string' ? materias.find((m) => m.id === materia) : undefined
 
   // Fila do dia: todos os vencidos (do mais atrasado ao mais recente) e todos os novos, sem limite
-  let consultaVencidos = supabase
-    .from('flashcards_do_aluno')
-    .select('*')
-    .lte('proxima_revisao', agora)
-    .order('proxima_revisao')
-    .limit(1000)
-  let consultaNovos = supabase
-    .from('flashcards_do_aluno')
-    .select('*')
-    .is('proxima_revisao', null)
-    .order('materia_ordem')
-    .order('aula_ordem')
-    .order('ordem')
-    .limit(1000)
-  if (alvo) {
-    consultaVencidos = consultaVencidos.eq('materia_id', alvo.id)
-    consultaNovos = consultaNovos.eq('materia_id', alvo.id)
+  // (lidos de 1000 em 1000, o máximo de cada leitura do Supabase)
+  const cardsDaFila = () => {
+    const consulta = supabase.from('flashcards_do_aluno').select('*')
+    return alvo ? consulta.eq('materia_id', alvo.id) : consulta
   }
-  const [vencidos, novos] = await Promise.all([consultaVencidos, consultaNovos])
-  if (vencidos.error || novos.error) throw new Error('Não foi possível carregar a revisão.')
+  const [vencidos, novos] = await Promise.all([
+    lerTudo('a revisão', (de, ate) => cardsDaFila().lte('proxima_revisao', agora).order('proxima_revisao').order('id').range(de, ate)),
+    lerTudo('a revisão', (de, ate) =>
+      cardsDaFila().is('proxima_revisao', null).order('materia_ordem').order('aula_ordem').order('ordem').order('id').range(de, ate),
+    ),
+  ])
 
-  const fila = [...(vencidos.data ?? []), ...(novos.data ?? [])].map(paraCard)
+  const fila = [...vencidos, ...novos].map(paraCard)
   const pend = pendentes(progresso)
   // Quantos cards estão em dia na fila mostrada (da matéria escolhida ou de todas)
   const emDiaDaFila = alvo ? pendentes(progresso.filter((p) => p.materia_id === alvo.id)).emDia : pend.emDia

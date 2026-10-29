@@ -603,14 +603,8 @@ a.pa>span:first-child{min-width:0}
   /* Estudar e Desempenho aproveitam as colunas */
   .larga .tiles{grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
   .larga .perfs{grid-template-columns:repeat(2,minmax(0,1fr));align-items:start}
-  .larga .segm{max-width:560px}
-  .larga .segm-nav{max-width:none} /* abas da matéria na largura toda, alinhadas com as aulas e as questões embaixo */
 
-  /* Questão: enunciado em cima e alternativas embaixo, na largura toda da coluna (alinhada com o resto da tela) */
-
-  /* Apostila em páginas e flashcards: largura de leitura, centralizados */
-  .larga .paginas{max-width:900px;margin-inline:auto}
-  .larga .estreito{max-width:720px;margin-inline:auto}
+  /* Abas (da matéria e da aula), questões, apostila em páginas e flashcards: na largura toda da coluna, alinhados com o resto da tela */
 }
 
 /* Revisão por matéria: botões de matéria são links com a cara dos filtros */

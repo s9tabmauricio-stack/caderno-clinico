@@ -146,13 +146,7 @@ export function AulaAbas({
         )}
       </div>
 
-      <div
-        className="pane estreito"
-        role="tabpanel"
-        id="painel-flashcards"
-        aria-labelledby="aba-flashcards"
-        hidden={aba !== 'flashcards'}
-      >
+      <div className="pane" role="tabpanel" id="painel-flashcards" aria-labelledby="aba-flashcards" hidden={aba !== 'flashcards'}>
         <Flashcards cards={cards} userId={userId} modo="aula" ativo={aba === 'flashcards'} proximoPasso={passoDepoisDosCards || undefined} />
       </div>
     </>

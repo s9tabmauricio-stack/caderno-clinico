@@ -146,22 +146,32 @@ export async function carregarTemas(supabase: SupabaseServidor): Promise<Progres
   }))
 }
 
-// Todos os flashcards de uma matéria, na ordem das aulas; lê de 1000 em 1000 (o máximo de cada leitura do Supabase)
-export async function carregarCardsDaMateria(supabase: SupabaseServidor, materiaId: string): Promise<CardAluno[]> {
-  const cards: CardAluno[] = []
+// Lê todas as linhas de uma consulta, de 1000 em 1000 (o máximo de cada leitura do Supabase).
+// `pagina` monta a consulta com uma ordem estável e aplica o intervalo pedido.
+type Leitura<T> = PromiseLike<{ data: T[] | null; error: { message: string } | null }>
+export async function lerTudo<T>(contexto: string, pagina: (de: number, ate: number) => Leitura<T>): Promise<T[]> {
+  const linhas: T[] = []
   for (let de = 0; ; de += 1000) {
-    const { data, error } = await supabase
+    const { data, error } = await pagina(de, de + 999)
+    if (error) falhou(contexto, error)
+    linhas.push(...(data ?? []))
+    if ((data ?? []).length < 1000) return linhas
+  }
+}
+
+// Todos os flashcards de uma matéria, na ordem das aulas
+export async function carregarCardsDaMateria(supabase: SupabaseServidor, materiaId: string): Promise<CardAluno[]> {
+  const linhas = await lerTudo('os flashcards', (de, ate) =>
+    supabase
       .from('flashcards_do_aluno')
       .select('*')
       .eq('materia_id', materiaId)
       .order('aula_ordem')
       .order('ordem')
       .order('id')
-      .range(de, de + 999)
-    if (error) falhou('os flashcards', error)
-    cards.push(...(data ?? []).map(paraCard))
-    if ((data ?? []).length < 1000) return cards
-  }
+      .range(de, ate),
+  )
+  return linhas.map(paraCard)
 }
 
 type LinhaQuestao = {
