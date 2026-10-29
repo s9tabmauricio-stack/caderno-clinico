@@ -1,19 +1,34 @@
 import Link from 'next/link'
 
-/** Duas seções da matéria, iguais nas duas telas: as aulas e o banco de questões. */
-export function AbasMateria({ id, ativa, totalQuestoes }: { id: string; ativa: 'aulas' | 'banco'; totalQuestoes: number }) {
+type Aba = 'aulas' | 'banco' | 'flashcards'
+
+/** Seções da matéria, iguais nas três telas: as aulas, o banco de questões e os flashcards (só aparecem as que têm conteúdo). */
+export function AbasMateria({
+  id,
+  ativa,
+  totalQuestoes,
+  totalCards,
+}: {
+  id: string
+  ativa: Aba
+  totalQuestoes: number
+  totalCards: number
+}) {
+  const abas: [Aba, string, string, number | null][] = [
+    ['aulas', `/materia/${id}`, 'Aulas', null],
+    ['banco', `/materia/${id}/questoes`, 'Banco de questões', totalQuestoes],
+    ['flashcards', `/materia/${id}/flashcards`, 'Flashcards', totalCards],
+  ]
+  const visiveis = abas.filter(([chave, , , total]) => chave === ativa || total === null || total > 0)
+  if (visiveis.length < 2) return null
+
   return (
     <nav className="segm segm-nav" aria-label="Seções da matéria">
-      <Link href={`/materia/${id}`} className={ativa === 'aulas' ? 'on' : ''} aria-current={ativa === 'aulas' ? 'page' : undefined}>
-        Aulas
-      </Link>
-      <Link
-        href={`/materia/${id}/questoes`}
-        className={ativa === 'banco' ? 'on' : ''}
-        aria-current={ativa === 'banco' ? 'page' : undefined}
-      >
-        Banco de questões <small>{totalQuestoes}</small>
-      </Link>
+      {visiveis.map(([chave, href, rotulo, total]) => (
+        <Link key={chave} href={href} className={ativa === chave ? 'on' : ''} aria-current={ativa === chave ? 'page' : undefined}>
+          {rotulo} {total !== null && <small>{total}</small>}
+        </Link>
+      ))}
     </nav>
   )
 }

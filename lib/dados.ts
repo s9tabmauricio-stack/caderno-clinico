@@ -54,6 +54,7 @@ export type CardAluno = {
   frente: string
   verso: string
   aula_titulo: string
+  aula_ordem: number
   materia_id: string
   materia_nome: string
   estado: EstadoCard | null
@@ -145,6 +146,24 @@ export async function carregarTemas(supabase: SupabaseServidor): Promise<Progres
   }))
 }
 
+// Todos os flashcards de uma matéria, na ordem das aulas; lê de 1000 em 1000 (o máximo de cada leitura do Supabase)
+export async function carregarCardsDaMateria(supabase: SupabaseServidor, materiaId: string): Promise<CardAluno[]> {
+  const cards: CardAluno[] = []
+  for (let de = 0; ; de += 1000) {
+    const { data, error } = await supabase
+      .from('flashcards_do_aluno')
+      .select('*')
+      .eq('materia_id', materiaId)
+      .order('aula_ordem')
+      .order('ordem')
+      .order('id')
+      .range(de, de + 999)
+    if (error) falhou('os flashcards', error)
+    cards.push(...(data ?? []).map(paraCard))
+    if ((data ?? []).length < 1000) return cards
+  }
+}
+
 type LinhaQuestao = {
   id: string | null
   aula_id: string | null
@@ -190,6 +209,7 @@ type LinhaCard = {
   frente: string | null
   verso: string | null
   aula_titulo: string | null
+  aula_ordem: number | null
   materia_id: string | null
   materia_nome: string | null
   repeticoes: number | null
@@ -207,6 +227,7 @@ export function paraCard(c: LinhaCard): CardAluno {
     frente: c.frente ?? '',
     verso: c.verso ?? '',
     aula_titulo: c.aula_titulo ?? '',
+    aula_ordem: c.aula_ordem ?? 0,
     materia_id: c.materia_id ?? '',
     materia_nome: c.materia_nome ?? '',
     estado: c.proxima_revisao

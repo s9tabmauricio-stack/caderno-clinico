@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation'
 import { Pagina, Voltar } from '@/components/Pagina'
 import { Icone } from '@/components/Icones'
 import { AbasMateria } from '@/components/AbasMateria'
-import { carregarProgresso, carregarProgressoMaterias, concluido, pendentes, sessao } from '@/lib/dados'
+import { carregarProgresso, carregarProgressoMaterias, concluido, pendentes, sessao, totais } from '@/lib/dados'
 import { createClient } from '@/lib/supabase/server'
 
 export async function generateMetadata(props: PageProps<'/materia/[id]'>): Promise<Metadata> {
@@ -25,6 +25,7 @@ export default async function MateriaPage(props: PageProps<'/materia/[id]'>) {
   ])
   if (!materia.data) notFound()
   const pm = banco.find((b) => b.materia_id === id)
+  const totalCards = totais(progresso.filter((p) => p.materia_id === id)).cards
 
   return (
     <Pagina larga pendentes={pendentes(progresso).hoje}>
@@ -37,7 +38,7 @@ export default async function MateriaPage(props: PageProps<'/materia/[id]'>) {
         </div>
       </header>
 
-      {pm && pm.total_questoes > 0 && <AbasMateria id={id} ativa="aulas" totalQuestoes={pm.total_questoes} />}
+      <AbasMateria id={id} ativa="aulas" totalQuestoes={pm?.total_questoes ?? 0} totalCards={totalCards} />
 
       {aulas.data?.length ? (
         <div className="group">

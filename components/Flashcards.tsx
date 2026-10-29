@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useMemo, useState } from 'react'
+import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { createClient } from '@/lib/supabase/client'
 import type { CardAluno } from '@/lib/dados'
@@ -11,8 +12,8 @@ import { Icone } from './Icones'
 type Props = {
   cards: CardAluno[]
   userId: string
-  // "aula": todos os cards de uma aula; "revisao": a fila do dia (vencidos + novos)
-  modo: 'aula' | 'revisao'
+  // "aula": todos os cards de uma aula; "materia": todos os cards de uma matéria; "revisao": a fila do dia (vencidos + novos)
+  modo: 'aula' | 'materia' | 'revisao'
   ativo: boolean
   emDia?: number // em "revisao", quantos cards estão em dia (não vêm na lista)
   // em "aula": o que oferecer quando os cards acabam ou já estão em dia (ex.: fazer as questões)
@@ -58,6 +59,16 @@ export function Flashcards({ cards, userId, modo, ativo, emDia, proximoPasso }: 
     .filter((s): s is EstadoCard => s !== null && new Date(s.proxima_revisao).getTime() > agora)
     .map((s) => s.proxima_revisao)
     .sort()[0]
+
+  // Em "materia": os cards separados por aula (já vêm na ordem das aulas)
+  const porAula = new Map<string, { id: string; ordem: number; titulo: string; lista: CardAluno[] }>()
+  if (modo === 'materia') {
+    for (const c of cards) {
+      const grupo = porAula.get(c.aula_id)
+      if (grupo) grupo.lista.push(c)
+      else porAula.set(c.aula_id, { id: c.aula_id, ordem: c.aula_ordem, titulo: c.aula_titulo, lista: [c] })
+    }
+  }
 
   function comecar(todos: boolean) {
     const lista = todos ? cards : [...paraRevisar, ...novos]
@@ -189,6 +200,7 @@ export function Flashcards({ cards, userId, modo, ativo, emDia, proximoPasso }: 
   )
 
   if (!cards.length && modo === 'aula') return <p className="vazio">Esta aula ainda não tem flashcards.</p>
+  if (!cards.length && modo === 'materia') return <p className="vazio">Esta matéria ainda não tem flashcards.</p>
 
   // ---------- Sessão em andamento ----------
   if (sessao) {
@@ -211,7 +223,7 @@ export function Flashcards({ cards, userId, modo, ativo, emDia, proximoPasso }: 
               </button>
             )}
             <button className="btn" onClick={encerrar}>
-              {modo === 'aula' ? 'Voltar aos cards da aula' : 'Concluir'}
+              {modo === 'aula' ? 'Voltar aos cards da aula' : modo === 'materia' ? 'Voltar aos cards da matéria' : 'Concluir'}
             </button>
           </div>
           {modo === 'aula' && proximoPasso && <div className="next-steps">{proximoPasso}</div>}
@@ -322,15 +334,15 @@ export function Flashcards({ cards, userId, modo, ativo, emDia, proximoPasso }: 
         {contagem}
         {pendentes > 0 ? (
           <button className="btn wide" onClick={() => comecar(false)}>
-            {modo === 'aula' ? 'Estudar' : 'Revisar'} {pendentes} {plural(pendentes, 'card', 'cards')}
+            {modo === 'revisao' ? 'Revisar' : 'Estudar'} {pendentes} {plural(pendentes, 'card', 'cards')}
           </button>
         ) : (
           <>
             <p className="muted">
-              {modo === 'aula' ? 'Tudo em dia nesta aula.' : 'Tudo em dia.'}
+              {modo === 'aula' ? 'Tudo em dia nesta aula.' : modo === 'materia' ? 'Tudo em dia nesta matéria.' : 'Tudo em dia.'}
               {proxima && ` O próximo card volta ${fmtQuando(proxima, agora)}.`}
             </p>
-            {modo === 'aula' && (
+            {modo !== 'revisao' && (
               <button className="btn ghost wide" onClick={() => comecar(true)}>
                 Treinar todos mesmo assim
               </button>
@@ -355,6 +367,31 @@ export function Flashcards({ cards, userId, modo, ativo, emDia, proximoPasso }: 
                   </span>
                   <span className={`chip ${st}`}>{rotulo}</span>
                 </div>
+              )
+            })}
+          </div>
+        </>
+      )}
+      {modo === 'materia' && (
+        <>
+          <div className="sec">Cards por aula</div>
+          <div className="group">
+            {[...porAula.values()].map(({ id, ordem, titulo, lista }) => {
+              const novosAula = lista.filter((c) => statusDe(c) === 'novo').length
+              const revisarAula = lista.filter((c) => statusDe(c) === 'revisar').length
+              return (
+                <Link key={id} className="row" href={`/aula/${id}?aba=flashcards`}>
+                  <span className="num">{ordem}</span>
+                  <span className="main">
+                    <span className="t">{titulo}</span>
+                    <span className="meta">
+                      {lista.length} {plural(lista.length, 'flashcard', 'flashcards')}
+                      {novosAula > 0 && ` · ${novosAula} ${plural(novosAula, 'novo', 'novos')}`}
+                      {revisarAula > 0 && <span className="chip revisar">{revisarAula} para revisar</span>}
+                    </span>
+                  </span>
+                  {Icone.seta}
+                </Link>
               )
             })}
           </div>

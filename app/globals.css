@@ -581,7 +581,10 @@ a.pa>span:first-child{min-width:0}
 .ecard-banco>svg{width:18px;height:18px;color:var(--muted);opacity:.7}
 
 /* Abas da matéria (Aulas | Banco de questões): links com a cara das abas da aula */
-.segm-nav{grid-template-columns:repeat(2,minmax(0,1fr))}
+/* abas da matéria (Aulas | Banco de questões | Flashcards): colunas iguais, quantas houver */
+.segm-nav{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr)}
+/* no celular as três não cabem em colunas iguais: cada aba fica com a largura do próprio nome, e o número vai embaixo dele */
+@media (max-width:520px){.segm-nav{grid-auto-columns:auto}.segm-nav a{flex-direction:column;gap:0;padding-inline:10px;line-height:1.2}.segm-nav a small{font-size:11.5px}}
 .segm a{display:flex;align-items:center;justify-content:center;gap:6px;min-height:40px;padding:9px 4px;border-radius:10px;font-size:14.5px;font-weight:600;color:var(--muted);text-decoration:none;text-align:center}
 .segm a.on{background:var(--seg-on);color:var(--ink);box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 2px 8px rgba(0,0,0,.3)}
 .segm a small{font-weight:500;opacity:.75;font-variant-numeric:tabular-nums}
@@ -601,6 +604,7 @@ a.pa>span:first-child{min-width:0}
   .larga .tiles{grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
   .larga .perfs{grid-template-columns:repeat(2,minmax(0,1fr));align-items:start}
   .larga .segm{max-width:560px}
+  .larga .segm-nav{max-width:none} /* abas da matéria na largura toda, alinhadas com as aulas e as questões embaixo */
 
   /* Questão: enunciado em cima e alternativas embaixo, na largura toda da coluna (alinhada com o resto da tela) */
 
