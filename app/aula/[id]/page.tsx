@@ -1,9 +1,11 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { Pagina, Voltar } from '@/components/Pagina'
 import { AulaAbas, type Aba } from '@/components/AulaAbas'
 import { carregarProgresso, carregarProgressoMaterias, paraCard, paraQuestao, pendentes, sessao } from '@/lib/dados'
 import { createClient } from '@/lib/supabase/server'
+import { retornoSeguro, rotuloRetorno } from '@/lib/navegacao'
 import { ehAdmin } from '@/lib/admin'
 
 const dataCurta = (d: string) => d.split('-').reverse().join('/')
@@ -17,7 +19,8 @@ export async function generateMetadata(props: PageProps<'/aula/[id]'>): Promise<
 
 export default async function AulaPage(props: PageProps<'/aula/[id]'>) {
   const { id } = await props.params
-  const { aba } = await props.searchParams
+  const { aba, retorno } = await props.searchParams
+  const origem = retornoSeguro(retorno)
   const abaInicial: Aba = aba === 'questoes' || aba === 'flashcards' ? aba : 'apostila'
 
   const { supabase, userId, email } = await sessao()
@@ -65,11 +68,11 @@ export default async function AulaPage(props: PageProps<'/aula/[id]'>) {
 
   return (
     <Pagina larga pendentes={pendentes(progresso).hoje}>
-      <Voltar href={`/materia/${aula.data.materia_id}`} rotulo={materiaNome} />
+      <Voltar href={origem ?? `/materia/${aula.data.materia_id}`} rotulo={origem ? rotuloRetorno(origem) : materiaNome} />
       <header className="top">
         <div>
           <div className="eyebrow">
-            {materiaNome} · Aula {aula.data.ordem}
+            <Link href={`/materia/${materiaId}`}>{materiaNome}</Link> · Aula {aula.data.ordem}
             {aula.data.data_aula && ` · ${dataCurta(aula.data.data_aula)}`}
             {aula.data.professor && ` · ${aula.data.professor}`}
           </div>

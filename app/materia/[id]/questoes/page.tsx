@@ -7,6 +7,7 @@ import { AbasMateria } from '@/components/AbasMateria'
 import { carregarProgresso, paraQuestao, pendentes, sessao, totais } from '@/lib/dados'
 import { createClient } from '@/lib/supabase/server'
 import { plural } from '@/lib/formato'
+import { retornoSeguro, rotuloRetorno } from '@/lib/navegacao'
 import { ehAdmin } from '@/lib/admin'
 
 export async function generateMetadata(props: PageProps<'/materia/[id]/questoes'>): Promise<Metadata> {
@@ -18,7 +19,7 @@ export async function generateMetadata(props: PageProps<'/materia/[id]/questoes'
 
 export default async function BancoPage(props: PageProps<'/materia/[id]/questoes'>) {
   const { id } = await props.params
-  const { tema, mostrar, de } = await props.searchParams
+  const { tema, prova, mostrar, de, retorno } = await props.searchParams
   const { supabase, userId, email } = await sessao()
   const [materia, questoes, progresso] = await Promise.all([
     supabase.from('materias').select('id, nome').eq('id', id).maybeSingle(),
@@ -28,17 +29,18 @@ export default async function BancoPage(props: PageProps<'/materia/[id]/questoes
   if (!materia.data) notFound()
   if (questoes.error) throw new Error(`Não foi possível carregar as questões: ${questoes.error.message}`)
   const lista = (questoes.data ?? []).map(paraQuestao)
-  // Filtros: um link com filtro (ex.: Desempenho → tema) vale sozinho; sem ele, abre com o último tema e prova deste aluno
-  const comFiltroNoLink = typeof tema === 'string' || typeof mostrar === 'string'
-  let lembrados: { tema?: unknown; prova?: unknown } = {}
+  // Filtros: um link com filtro (ex.: Desempenho → tema) vale sozinho; sem ele, abre com o últimos filtros deste aluno
+  const comFiltroNoLink = typeof tema === 'string' || typeof prova === 'string' || typeof mostrar === 'string'
+  let lembrados: { tema?: unknown; prova?: unknown; situacao?: unknown } = {}
   try {
     if (!comFiltroNoLink) lembrados = JSON.parse(decodeURIComponent((await cookies()).get(`mgf_${id}`)?.value ?? '{}')) ?? {}
   } catch {}
   const existe = (campo: 'tema' | 'prova', v: unknown) => (typeof v === 'string' && lista.some((q) => q[campo] === v) ? v : null)
+  const situacao = comFiltroNoLink ? mostrar : lembrados.situacao
   const inicial = {
     tema: existe('tema', tema) ?? existe('tema', lembrados.tema),
-    prova: existe('prova', lembrados.prova),
-    situacao: mostrar === 'erradas' ? ('erradas' as const) : mostrar === 'abertas' ? ('abertas' as const) : ('todas' as const),
+    prova: existe('prova', prova) ?? existe('prova', lembrados.prova),
+    situacao: situacao === 'erradas' ? ('erradas' as const) : situacao === 'abertas' ? ('abertas' as const) : ('todas' as const),
   }
 
   // "Voltar" leva de volta a quem mandou o aluno para cá (Matérias, Desempenho ou a aula)
@@ -49,6 +51,8 @@ export default async function BancoPage(props: PageProps<'/materia/[id]/questoes
     const { data: aula } = await supabase.from('aulas').select('titulo').eq('id', aulaId).eq('materia_id', id).maybeSingle()
     if (aula) voltar = { href: `/aula/${aulaId}?aba=questoes`, rotulo: aula.titulo }
   }
+  const origem = retornoSeguro(retorno)
+  if (origem) voltar = { href: origem, rotulo: rotuloRetorno(origem) }
   // Administrador: botão Editar nas questões
   const edicao = ehAdmin(email)
     ? { aulas: (await supabase.from('aulas').select('id, titulo').eq('materia_id', id).order('ordem')).data ?? [] }

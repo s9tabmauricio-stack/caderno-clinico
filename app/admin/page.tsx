@@ -15,7 +15,7 @@ export default async function AdminPage() {
   if (!chaveConfigurada()) {
     return (
       <Pagina>
-        <Voltar href="/perfil" rotulo="Configurações" />
+        <Voltar href="/admin/central" rotulo="Administração" />
         <header className="top">
           <h1 className="big">Alunos</h1>
         </header>
@@ -44,7 +44,7 @@ export default async function AdminPage() {
 
   return (
     <Pagina>
-      <Voltar href="/perfil" rotulo="Configurações" />
+      <Voltar href="/admin/central" rotulo="Administração" />
       <header className="top">
         <div>
           <div className="eyebrow">Administração</div>

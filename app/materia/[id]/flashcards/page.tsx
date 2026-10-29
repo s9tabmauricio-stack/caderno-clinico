@@ -1,4 +1,6 @@
 import type { Metadata } from 'next'
+import { retornoSeguro, rotuloRetorno } from '@/lib/navegacao'
+import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { Pagina, Voltar } from '@/components/Pagina'
 import { Flashcards } from '@/components/Flashcards'
@@ -16,6 +18,8 @@ export async function generateMetadata(props: PageProps<'/materia/[id]/flashcard
 
 export default async function FlashcardsMateriaPage(props: PageProps<'/materia/[id]/flashcards'>) {
   const { id } = await props.params
+  const { retorno } = await props.searchParams
+  const origem = retornoSeguro(retorno)
   const { supabase, userId } = await sessao()
   const [materia, cards, progresso, banco] = await Promise.all([
     supabase.from('materias').select('id, nome').eq('id', id).maybeSingle(),
@@ -28,18 +32,18 @@ export default async function FlashcardsMateriaPage(props: PageProps<'/materia/[
 
   return (
     <Pagina larga pendentes={pendentes(progresso).hoje}>
-      <Voltar href="/estudar" rotulo="Matérias" />
+      <Voltar href={origem ?? "/estudar"} rotulo={origem ? rotuloRetorno(origem) : "Matérias"} />
       <header className="top">
         <div>
           <div className="eyebrow">Flashcards</div>
           <h1 className="big">{materia.data.nome}</h1>
           <p className="lead">
-            {cards.length} {plural(cards.length, 'flashcard', 'flashcards')} de todas as aulas da matéria. Errou, volta em minutos;
-            acertou, volta em dias.
+            {cards.length} {plural(cards.length, 'flashcard', 'flashcards')} de todas as aulas da matéria para consultar e estudar livremente. As avaliações também atualizam sua próxima revisão.
           </p>
         </div>
       </header>
       <AbasMateria id={id} ativa="flashcards" totalQuestoes={totalBanco} totalCards={cards.length} />
+      <p className="foot">Para fazer apenas a fila de hoje, <Link href={`/revisao?materia=${id}`}>abrir Revisão desta matéria</Link>.</p>
       <Flashcards cards={cards} userId={userId} modo="materia" ativo />
     </Pagina>
   )
