@@ -53,6 +53,8 @@ export function Questoes({ questoes, userId, ativo, mostrarTema = true, vazio, a
   // Gravação que não deu certo: de qual questão (null = apagar respostas), o motivo e como tentar de novo
   const [falha, setFalha] = useState<{ questaoId: string | null; texto: string; sessao: boolean; tentar?: () => void } | null>(null)
   const [tentando, setTentando] = useState(false)
+  // "Refazer todas" apaga todas as respostas da lista: pede confirmação antes
+  const [confirmarTodas, setConfirmarTodas] = useState(false)
 
   const q = questoes[idx]
   const resp = q ? respostas[q.id] : undefined
@@ -66,6 +68,7 @@ export function Questoes({ questoes, userId, ativo, mostrarTema = true, vazio, a
     setRefazendo(false)
     setEditando(false)
     setErro('')
+    setConfirmarTodas(false)
   }
 
   function cortar(i: number) {
@@ -270,10 +273,30 @@ export function Questoes({ questoes, userId, ativo, mostrarTema = true, vazio, a
                 Refazer {erradas.length === 1 ? 'a errada' : `as ${erradas.length} erradas`}
               </button>
             )}
-            <button className="btn ghost" onClick={() => apagar(questoes.map((x) => x.id))}>
-              Refazer todas
-            </button>
+            {!confirmarTodas && (
+              <button
+                className="btn ghost"
+                onClick={() => (feitas > 0 ? setConfirmarTodas(true) : apagar(questoes.map((x) => x.id)))}
+              >
+                Refazer todas
+              </button>
+            )}
           </div>
+          {confirmarTodas && (
+            <div className="confirmar" role="alertdialog" aria-labelledby="confirmar-todas">
+              <p id="confirmar-todas">
+                Apagar {feitas === 1 ? 'a sua resposta' : `as suas ${feitas} respostas`} e refazer {questoes.length === 1 ? 'a questão' : `as ${questoes.length} questões`}?
+              </p>
+              <div className="actions">
+                <button className="btn ghost" onClick={() => setConfirmarTodas(false)}>
+                  Cancelar
+                </button>
+                <button className="btn" onClick={() => apagar(questoes.map((x) => x.id))}>
+                  Apagar e refazer
+                </button>
+              </div>
+            </div>
+          )}
           <p className="foot">Refazer não apaga o histórico: o Desempenho continua contando a sua primeira resposta.</p>
           {proximoPasso && (
             <>

@@ -1223,3 +1223,7 @@ h1.big{background:var(--metal-titulo);-webkit-background-clip:text;background-cl
 .verdict+.erro-salvar{margin:0 0 12px}
 /* iPad e iPhone dão zoom sozinhos ao tocar num campo com letra menor que 16 px */
 .ag-grupo,.turma-campo,.ed-form textarea.campo{font-size:16px}
+/* Confirmação de "Refazer todas" (no fim das questões) */
+.confirmar{border:1px solid var(--line-strong);border-radius:var(--r-md);background:var(--card-2);padding:12px 14px}
+.confirmar p{margin:0;color:var(--ink);font-weight:600}
+.confirmar .actions{margin-top:10px}
