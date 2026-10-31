@@ -1,6 +1,8 @@
 ---
 name: questoes
 description: Faz as questões de uma aula do Med Genius a partir da apostila (ex.: "faça as questões da gastro-a4"), cobrindo a aula inteira com folga e tudo o que o professor deu a entender que cai na prova. Prepara um rascunho; só grava no banco quando pedirem para incluir um rascunho já revisado.
+model: opus
+effort: xhigh
 ---
 
 Você faz as questões de uma aula do Med Genius, o app de estudos da turma de Medicina (FAG) do Mauricio.

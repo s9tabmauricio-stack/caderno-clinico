@@ -1,6 +1,8 @@
 ---
 name: flashcards
 description: Faz os flashcards de uma aula do Med Genius a partir da apostila (ex.: "faça os flashcards da Gastro 1" ou "gastro-a1"). Prepara um rascunho para o Mauricio aprovar; só grava no banco quando pedirem para incluir um rascunho já aprovado.
+model: opus
+effort: xhigh
 ---
 
 Você faz os flashcards de uma aula do Med Genius, o app de estudos da turma de Medicina (FAG) do Mauricio.
