@@ -7,6 +7,7 @@ import { createClient } from '@/lib/supabase/client'
 import type { CardAluno } from '@/lib/dados'
 import { avaliar, intervalos, vencido, type EstadoCard, type Nota } from '@/lib/srs'
 import { fmtIntervalo, fmtQuando, plural } from '@/lib/formato'
+import { explicarFalha } from '@/lib/falhas'
 import { Icone } from './Icones'
 
 type Props = {
@@ -117,7 +118,10 @@ export function Flashcards({ cards, userId, modo, ativo, emDia, proximoPasso }: 
     const { error } = await supabase
       .from('revisoes')
       .upsert({ user_id: userId, flashcard_id: card.id, ...novo }, { onConflict: 'user_id,flashcard_id' })
-    if (error) setFalhaSalvar('Não deu para salvar a última revisão. Confira a internet; o card vai aparecer de novo.')
+    if (error) {
+      const { texto, sessao } = await explicarFalha(supabase, 'a última revisão')
+      setFalhaSalvar(sessao ? texto : `${texto} O card vai aparecer de novo.`)
+    }
   }
 
   async function desfazer() {

@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { explicacoesPorAlternativa } from '@/lib/explicacoes'
+import { explicarFalha } from '@/lib/falhas'
 import { createClient } from '@/lib/supabase/client'
 import type { QuestaoAluno } from '@/lib/dados'
 import { plural } from '@/lib/formato'
@@ -49,7 +50,9 @@ export function Questoes({ questoes, userId, ativo, mostrarTema = true, vazio, a
   const [refazendo, setRefazendo] = useState(false)
   const [editando, setEditando] = useState(false)
   const [erro, setErro] = useState('')
-  const [falhaSalvar, setFalhaSalvar] = useState('')
+  // Gravação que não deu certo: de qual questão (null = apagar respostas), o motivo e como tentar de novo
+  const [falha, setFalha] = useState<{ questaoId: string | null; texto: string; sessao: boolean; tentar?: () => void } | null>(null)
+  const [tentando, setTentando] = useState(false)
 
   const q = questoes[idx]
   const resp = q ? respostas[q.id] : undefined
@@ -85,19 +88,30 @@ export function Questoes({ questoes, userId, ativo, mostrarTema = true, vazio, a
     aoResponder?.(q.id, nova)
     setRefazendo(false)
     setErro('')
-    setFalhaSalvar('')
+    await salvar(q.id, nova)
+  }
+
+  async function salvar(id: string, r: Resposta) {
+    setFalha(null)
     const { error } = await supabase.from('respostas').upsert(
       {
         user_id: userId,
-        questao_id: q.id,
-        escolhida: nova.escolhida,
-        correta: nova.acertou,
-        tentativas: nova.tentativas,
+        questao_id: id,
+        escolhida: r.escolhida,
+        correta: r.acertou,
+        tentativas: r.tentativas,
         respondida_em: new Date().toISOString(),
       },
       { onConflict: 'user_id,questao_id' },
     )
-    if (error) setFalhaSalvar('Não deu para salvar esta resposta. Confira a internet e responda de novo.')
+    if (error) setFalha({ questaoId: id, ...(await explicarFalha(supabase, 'esta resposta')), tentar: () => salvar(id, r) })
+  }
+
+  async function tentarDeNovo() {
+    if (!falha?.tentar || tentando) return
+    setTentando(true)
+    await falha.tentar()
+    setTentando(false)
   }
 
   async function apagar(ids: string[]) {
@@ -107,8 +121,9 @@ export function Questoes({ questoes, userId, ativo, mostrarTema = true, vazio, a
     setRespostas(restantes)
     ids.forEach((id) => aoResponder?.(id, null))
     irPara(primeiraAberta(restantes))
+    setFalha(null)
     const { error } = await supabase.from('respostas').delete().eq('user_id', userId).in('questao_id', ids)
-    if (error) setFalhaSalvar('Não deu para apagar as respostas antigas. Confira a internet e tente de novo.')
+    if (error) setFalha({ questaoId: null, texto: 'Não deu para apagar as respostas antigas. Confira a internet e tente de novo.', sessao: false })
   }
 
   // Atalhos: A a E (ou 1 a 5) escolhem, Shift + letra corta, Enter responde ou avança
@@ -185,14 +200,35 @@ export function Questoes({ questoes, userId, ativo, mostrarTema = true, vazio, a
     </div>
   )
 
-  const aviso = falhaSalvar && (
+  // Aviso de gravação que falhou: aparece logo abaixo do resultado da questão (ou no topo, se o aluno já
+  // passou para outra), com o motivo e o botão para tentar de novo
+  const nDaFalha = falha?.questaoId ? questoes.findIndex((x) => x.id === falha.questaoId) + 1 : 0
+  const aviso = falha && (
     <div className="erro-salvar" role="alert">
-      <p>{falhaSalvar}</p>
-      <button className="link" onClick={() => setFalhaSalvar('')}>
-        Fechar
-      </button>
+      <p>
+        {nDaFalha > 0 && falha.questaoId !== q?.id && <b>Questão {nDaFalha}: </b>}
+        {falha.texto}
+      </p>
+      <div className="erro-acoes">
+        {falha.sessao ? (
+          <a className="btn sm" href="/login">
+            Entrar de novo
+          </a>
+        ) : (
+          falha.tentar && (
+            <button className="btn sm" onClick={tentarDeNovo} disabled={tentando}>
+              {tentando ? 'Salvando…' : 'Tentar de novo'}
+            </button>
+          )
+        )}
+        <button className="link" onClick={() => setFalha(null)}>
+          Fechar
+        </button>
+      </div>
     </div>
   )
+  // Na questão da falha, já respondida na tela: o aviso vai logo abaixo do "Você acertou/marcou"
+  const avisoAqui = falha !== null && falha.questaoId === q?.id && revelada
 
   if (!q) {
     const faltam = questoes.length - feitas
@@ -254,6 +290,7 @@ export function Questoes({ questoes, userId, ativo, mostrarTema = true, vazio, a
   return (
     <div>
       {cabecalho}
+      {!avisoAqui && aviso}
       <div className="qcard">
         {(q.fonte || (mostrarTema && q.tema) || (q.origem && ORIGEM[q.origem]) || edicao) && (
           <div className="qmeta">
@@ -345,6 +382,7 @@ export function Questoes({ questoes, userId, ativo, mostrarTema = true, vazio, a
                       : `Você marcou ${LETRAS[resp.escolhida]}. A resposta é ${LETRAS[q.correta]}.`}
                   </span>
                 </div>
+                {avisoAqui && aviso}
                 {expl.resto && (
                   <div className="erradas">
                     <div className="kick">
@@ -388,7 +426,6 @@ export function Questoes({ questoes, userId, ativo, mostrarTema = true, vazio, a
         )}
       </div>
       {revelada && <ConversaTurma key={q.id} questaoId={q.id} userId={userId} />}
-      {aviso}
     </div>
   )
 }

@@ -1215,3 +1215,9 @@ h1.big{background:var(--metal-titulo);-webkit-background-clip:text;background-cl
 /* ===== Melhorias de UX (31/10/2026) ===== */
 /* Questões: ao trocar de questão, o "Questão X de Y" para um pouco abaixo da borda da tela */
 .qhead{scroll-margin-top:calc(12px + env(safe-area-inset-top,0px))}
+/* Aviso de gravação que falhou: motivo, "Tentar de novo" (ou "Entrar de novo") e Fechar */
+.erro-salvar{flex-wrap:wrap;align-items:center}
+.erro-salvar p{min-width:min(100%,220px)}
+.erro-acoes{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.erro-acoes .btn{text-decoration:none}
+.verdict+.erro-salvar{margin:0 0 12px}
