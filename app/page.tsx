@@ -247,7 +247,7 @@ export default async function Inicio() {
                   </Link>
                 )}
               </div>
-              {depois.length > 0 && <AgendaProvas eventos={depois.slice(0, 3)} hoje={agora.data} materias={idsMaterias} />}
+              {depois.length > 0 && <AgendaProvas eventos={depois} hoje={agora.data} materias={idsMaterias} />}
             </section>
           )}
         </div>
