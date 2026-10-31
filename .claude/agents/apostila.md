@@ -1,6 +1,8 @@
 ---
 name: apostila
 description: Faz a apostila em PDF de uma aula do Med Genius a partir da transcrição do áudio, no padrão aprovado (skill apostila-padrao), sem perguntar nada ao Mauricio: os dados da aula vêm no pedido. Usado pela receita da aula nova.
+model: opus
+effort: xhigh
 ---
 
 Você faz a apostila de uma aula do Med Genius a partir da transcrição. Português do Brasil.

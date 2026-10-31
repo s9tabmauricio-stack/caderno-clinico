@@ -119,7 +119,7 @@ Título, resumo e professor saem da capa (`pdftotext -f 1 -l 1`). Atualize a `de
 Regra do Mauricio (31/10/2026): ele manda o áudio da aula na conversa ("aula nova") e não encosta em mais nada até publicar. A receita está na skill `aula-nova` (`.claude/skills/aula-nova/SKILL.md`):
 1. Transcrição grátis nesta máquina com Whisper large-v3 (`scripts/transcrever.py`, demora algumas horas por aula).
 2. Matéria, professor, data e número da aula saem da Agenda (horário da gravação) e da própria transcrição, no lugar das quatro perguntas da skill `apostila-padrao`.
-3. Agente `apostila` faz o PDF no padrão aprovado; `scripts/publicar-apostila.sh` gera as páginas; a aula entra escondida (`publicada = false`) até tudo estar pronto.
+3. Agente `apostila` faz o PDF no padrão aprovado, sempre no modelo Opus com esforço extra-alto (regra do Mauricio); `scripts/publicar-apostila.sh` gera as páginas; a aula entra escondida (`publicada = false`) até tudo estar pronto.
 4. Agentes `flashcards` e `questoes` em paralelo; o agente `revisor` confere tudo contra a apostila e aprova no lugar do Mauricio (o que fica duvidoso sai e vai para o relatório).
 5. Grava, publica (`publicada = true`), atualiza este manual e manda um relatório curto com o PDF e o que vale conferir.
 
