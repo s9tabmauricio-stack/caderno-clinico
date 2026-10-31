@@ -1063,6 +1063,10 @@ h1.big{background:var(--metal-titulo);-webkit-background-clip:text;background-cl
 .in-mat .mt-meta,.in-mat-p{grid-column:1 / -1;font-size:12.5px}
 /* todas as etiquetas da largura de "Gastroenterologia", centralizadas com o texto do cartão */
 .in-mat .nome-gema{justify-self:center}
+/* Estudar: a caixa do nome ocupa a largura toda do cartão (alinhada com a barra) e a letra
+   é a maior em que "Gastroenterologia" ainda cabe numa linha só; vale para todas as matérias */
+.mtile{container-type:inline-size}
+.mtile .gema.nome-gema{justify-self:stretch;width:100%;padding:8px 11px;border-radius:12px;font-size:clamp(12.5px,calc((100cqw - 26px) / 12),26px);line-height:1.15;white-space:nowrap;overflow-wrap:normal}
 .in-mat .mt-meta{text-align:center}
 .in-mat-p{justify-content:center}
 .in-mat-p{display:flex;align-items:center;gap:8px;color:var(--muted);font-weight:600}
