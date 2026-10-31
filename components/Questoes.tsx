@@ -415,7 +415,7 @@ export function Questoes({ questoes, userId, ativo, mostrarTema = true, vazio, a
                     <p>{expl.resto}</p>
                   </div>
                 )}
-                <div className="actions">
+                <div className="actions qacoes">
                   <button
                     className="btn ghost"
                     onClick={() => {
@@ -438,7 +438,7 @@ export function Questoes({ questoes, userId, ativo, mostrarTema = true, vazio, a
                     {erro}
                   </p>
                 )}
-                <div className="actions">
+                <div className="actions qacoes">
                   <button className="btn" onClick={responder}>
                     Responder
                   </button>

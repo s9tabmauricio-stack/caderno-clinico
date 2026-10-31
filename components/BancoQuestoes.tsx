@@ -96,25 +96,7 @@ export function BancoQuestoes({
 
   return (
     <>
-      <div className="stats" style={{ marginBottom: 16 }}>
-        <div className="stat">
-          <div className="lab">Respondidas</div>
-          <div className="n">
-            {respondidas.length}
-            <small>/{questoes.length}</small>
-          </div>
-        </div>
-        <div className="stat">
-          <div className="lab">Acerto</div>
-          <div className="n">{respondidas.length ? `${Math.round((100 * certas) / respondidas.length)}%` : '–'}</div>
-        </div>
-        <div className="stat">
-          <div className="lab">Para rever</div>
-          <div className="n">{erradas}</div>
-        </div>
-      </div>
-
-      <div className="filtro-barra">
+      <div className="filtro-barra banco-barra">
         <button
           className="pill filtro-btn"
           aria-expanded={aberto}
@@ -129,6 +111,30 @@ export function BancoQuestoes({
             {f.rotulo} <span aria-hidden="true">✕</span>
           </button>
         ))}
+        {/* Resumo numa linha só (antes eram três quadros), para a questão começar mais acima na tela */}
+        <p className="banco-resumo">
+          {ativos.length > 0 && (
+            <>
+              <b>{lista.length}</b> neste filtro ·{' '}
+            </>
+          )}
+          <b>
+            {respondidas.length}/{questoes.length}
+          </b>{' '}
+          {plural(respondidas.length, 'respondida', 'respondidas')}
+          {respondidas.length > 0 && (
+            <>
+              {' '}
+              · <b>{Math.round((100 * certas) / respondidas.length)}%</b> de acerto
+            </>
+          )}
+          {erradas > 0 && (
+            <>
+              {' '}
+              · <b>{erradas}</b> para rever
+            </>
+          )}
+        </p>
       </div>
 
       {aberto && (
@@ -157,10 +163,6 @@ export function BancoQuestoes({
         )}
       </div>
       )}
-
-      <p className="foot" style={{ margin: '0 4px 12px' }}>
-        {lista.length} {plural(lista.length, 'questão', 'questões')} neste filtro.
-      </p>
 
       <Questoes
         key={versao}
