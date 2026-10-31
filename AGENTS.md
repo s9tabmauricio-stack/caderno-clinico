@@ -22,6 +22,7 @@ Tudo em português do Brasil. O dono do projeto não é programador: explique em
 | Publicação | A Vercel publica sozinha a cada `git push origin main` (1–2 min). Ramos `claude/**` não geram publicação de prévia (`vercel.json`), para não encher o "Deployment Storage" (limite de 10 GB no plano gratuito) |
 | Banco | Supabase, projeto `xtlpmtylifbalzxnfkib` (São Paulo), plano gratuito |
 | Administrador | CPF 086.994.266-23 (variável `ADMIN_CPFS` na Vercel; padrão no código) |
+| Arquivos do projeto | Pasta **MEDGENIUS** no Google Drive do Mauricio (s9tabmauricio@gmail.com), https://drive.google.com/drive/folders/1i6ftIjwzgyfExlT8PYXXOhe5bFI8vMqR. Desde 31/10/2026, tudo o que for guardado fora do Git (PDFs, rascunhos, apostilas, materiais) vai para lá |
 | Chave secreta | `SUPABASE_SECRET_KEY` na Vercel (usada só no servidor: alunos, agenda, conteúdo) |
 
 ## Tecnologia
