@@ -1084,7 +1084,9 @@ h1.big{background:var(--metal-titulo);-webkit-background-clip:text;background-cl
   .in-esq{grid-area:agenda}
   .in-materias{grid-area:materias}
   .in-agenda>.sec:first-child{margin-top:0}
-  .in-mats{grid-template-columns:repeat(3,minmax(0,1fr))}
+  /* duas colunas: o nome da matéria fica 50% maior (cerca de 20 px), o que não caberia em três */
+  .in-mats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .in-mat .gema.nome-gema{font-size:clamp(10px,calc((100cqw - 18px) / 11.6),20px)}
 }
 /* Celular: Cards e Questões lado a lado e baixos; matérias em lista (o nome inteiro numa linha) */
 @media (max-width:599px){
