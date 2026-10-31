@@ -1054,6 +1054,7 @@ h1.big{background:var(--metal-titulo);-webkit-background-clip:text;background-cl
 /* provas do Início: sem margem em cima e embaixo, a barra colorida vai de uma linha divisória à outra */
 .in-provas .group>.row.ev{padding-block:0}
 .in-provas .row.ev .main,.in-provas .row.ev .hora{padding-block:7px}
+.in-provas .row.ev .hora{display:flex;flex-direction:column;justify-content:center}
 .in-amanha{display:flex;flex-direction:column;gap:3px;margin:12px 4px 0;font-size:14px;color:var(--text)}
 .in-amanha b{color:var(--ink)}
 .in-mats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
