@@ -7,6 +7,8 @@ description: Produção automática de uma aula do Med Genius a partir do áudio
 
 Regra do Mauricio (31/10/2026): ele manda o áudio e não aprova nada no meio. Não pergunte; decida pelo manual (`AGENTS.md`) e pelas regras abaixo, e deixe as dúvidas para o relatório final. Só pare se faltar algo impossível de contornar (sem áudio, áudio sem fala) e diga o porquê.
 
+**Economia (regra do Mauricio, 31/10/2026):** uma chamada de agente por etapa, só as desta receita. Não acrescente agentes, workflows, conferências nem correções extras, nem com o modo ultracode ligado. A conversa principal não relê a transcrição, a apostila nem os rascunhos: trabalha com o resumo que cada agente devolve. Enquanto um agente trabalha, espere o aviso de que terminou, sem ficar checando.
+
 Pasta de trabalho: `rascunhos/aulas/<aula-id>/` (fora do Git). Enquanto não souber o id, use `rascunhos/aulas/<AAAA-MM-DD>/` e renomeie depois.
 
 ## 1. Achar o áudio e o dia da aula
@@ -57,9 +59,9 @@ Chame o agente `apostila` no modelo Opus com esforço extra-alto (regra do Mauri
 4. Commit `Apostila <Matéria> <N>: <tema> (<P> páginas)` e publique no `main` (regra do manual: `git fetch origin main && git rebase origin/main && git push origin HEAD:main`; depois empurre também o ramo da sessão).
 5. Espere a Vercel: repita `curl -s -o /dev/null -w '%{http_code}' https://medgenius.vercel.app/apostilas/<aula-id>/01.webp` (com a ferramenta Monitor) até dar 200.
 
-## 6. Flashcards e questões (ao mesmo tempo)
+## 6. Flashcards e questões (um agente só)
 
-Chame, em paralelo, o agente `flashcards` ("prepare os flashcards da `<aula-id>`") e o agente `questoes` ("prepare as questões da `<aula-id>`").
+Chame o agente `conteudo` ("prepare os flashcards e as questões da `<aula-id>`"). Ele lê a apostila uma vez e escreve os dois rascunhos.
 
 ## 7. Revisão
 
@@ -67,7 +69,7 @@ Chame o agente `revisor` para a `<aula-id>`. Ele corrige ou tira o que não bate
 
 ## 8. Gravar e pôr no ar
 
-1. Em paralelo: agente `flashcards` ("inclua o rascunho aprovado da `<aula-id>`") e agente `questoes` ("inclua o rascunho revisado da `<aula-id>`").
+1. Agente `conteudo` ("inclua os rascunhos revisados da `<aula-id>`"): grava os flashcards e as questões.
 2. Confira as contagens e então: `update public.aulas set publicada = true where id = '<aula-id>';`
 3. Atualize no `AGENTS.md` a lista de "Pendências e ideias" (cards e questões da aula nova), commit e publique no `main` como no passo 5.
 4. Apague o áudio, o `.log` e os arquivos temporários; deixe a transcrição e os rascunhos na pasta de trabalho (servem para refazer sem transcrever de novo, enquanto a sessão durar).

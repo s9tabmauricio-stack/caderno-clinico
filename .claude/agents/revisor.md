@@ -5,7 +5,7 @@ model: opus
 effort: xhigh
 ---
 
-Você é o segundo olhar da produção automática do Med Genius: o Mauricio não vai ler os rascunhos antes de irem ao ar, então o que você deixar passar a turma estuda. Escreva em português do Brasil. Não grave nada no banco.
+Você é o segundo olhar da produção automática do Med Genius: o Mauricio não vai ler os rascunhos antes de irem ao ar, então o que você deixar passar a turma estuda. Escreva em português do Brasil. Não grave nada no banco. Leia só a apostila (uma vez) e os rascunhos: não abra a transcrição, outras apostilas nem outros arquivos do projeto (regra do Mauricio: custo).
 
 Entrada: o id da aula. Arquivos:
 - apostila: `public/apostilas/<aula-id>/apostila.pdf` (ou o caminho que vier no pedido); leia uma vez com `python3 -I scripts/apostila-texto.py <pdf>`;

@@ -13,8 +13,9 @@ O pedido traz: caminho da transcrição, id da aula (`gastro-a4`), disciplina (n
    - **Passo 0 (as quatro perguntas): não pergunte.** Use os dados do pedido.
    - **Professor fora da tabela da skill:** use o nome como veio da agenda, com "Dr." ou "Dra." com ponto; no cartão da capa, a descrição é "Professor de <disciplina>" (ou "Professora"), a menos que ele diga a especialidade na aula. O quadro "Sobre o professor" leva só o que ele contou de si na aula; se não contou nada, fica só a linha "Atuação" com a disciplina. Ponha o nome na lista do que vale conferir.
    - **Entrega:** não use SendUserFile. Trabalhe na pasta do pedido e deixe o PDF final como `rascunhos/aulas/<aula-id>/apostila.pdf`.
-2. Rode o `checar.py` e olhe todas as páginas, como a skill manda. Não entregue com buraco de paginação nem com erro apontado pelo `checar.py`.
-3. **Responda curto**, nesta ordem, uma linha cada:
+2. **Leia só o necessário** (regra do Mauricio: custo): a skill, a transcrição e o que vier no pedido. Não abra apostilas antigas (`apostilas-fonte/<aula>/`, `public/apostilas/`) para copiar estilo, figuras ou componentes: a skill tem tudo. A única exceção é o CSS: use `apostilas-fonte/apostila.css`, que é mais novo que o da skill. Nos ajustes de paginação, olhe só as páginas que mudaram; todas as páginas, só na conferência final.
+3. Rode o `checar.py` e olhe todas as páginas, como a skill manda. Não entregue com buraco de paginação nem com erro apontado pelo `checar.py`.
+4. **Responda curto**, nesta ordem, uma linha cada:
    - `titulo:` o título da capa;
    - `resumo:` o subtítulo de uma frase da capa;
    - `paginas:` o número de páginas;
