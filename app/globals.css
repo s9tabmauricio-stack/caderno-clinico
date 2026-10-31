@@ -1062,7 +1062,9 @@ h1.big{background:var(--metal-titulo);-webkit-background-clip:text;background-cl
 .gema.nome-gema{justify-self:start;box-sizing:border-box;width:164px;height:auto;max-width:100%;min-height:32px;padding:6px 11px;border-radius:11px;font-size:12.5px;letter-spacing:.02em;line-height:1.2;text-align:center;overflow-wrap:break-word}
 .in-mat .mt-meta,.in-mat-p{grid-column:1 / -1;font-size:12.5px}
 /* todas as etiquetas da largura de "Gastroenterologia", centralizadas com o texto do cartão */
-.in-mat .nome-gema{justify-self:center}
+/* Início: a caixa do nome ocupa a largura do cartão (alinhada com a barra) e a letra é a maior em que "Gastroenterologia" cabe numa linha só */
+.in-mat-a{container-type:inline-size}
+.in-mat .gema.nome-gema{justify-self:stretch;width:100%;padding:7px 8px;border-radius:12px;font-size:clamp(10px,calc((100cqw - 18px) / 11.6),26px);line-height:1.15;white-space:nowrap;overflow-wrap:normal}
 /* Estudar: a caixa do nome ocupa a largura toda do cartão (alinhada com a barra) e a letra
    é a maior em que "Gastroenterologia" ainda cabe numa linha só; vale para todas as matérias */
 .mtile{container-type:inline-size}
@@ -1100,7 +1102,8 @@ h1.big{background:var(--metal-titulo);-webkit-background-clip:text;background-cl
   .in-mats{grid-template-columns:minmax(0,1fr);gap:8px}
   .in-mat{border-radius:18px}
   .in-mat-a{grid-template-columns:minmax(0,1fr) auto;gap:6px 12px;padding:12px 14px}
-  .in-mat .nome-gema{grid-column:1;justify-self:start}
+  /* no celular o progresso fica à direita (cerca de 104 px com o espaço entre eles): a caixa usa o resto */
+  .in-mat .gema.nome-gema{grid-column:1;font-size:clamp(10px,calc((100cqw - 122px) / 11.6),26px)}
   .in-mat .mt-meta{grid-column:1;text-align:left}
   .in-mat-p{justify-content:flex-end}
   .in-mat-p{grid-column:2;grid-row:1 / span 2;font-size:12.5px}
