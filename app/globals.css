@@ -477,6 +477,7 @@ select.campo option,select.campo optgroup{background:#161824;color:#F2F5FF}
 .qmeta .editar-q{margin-left:auto;appearance:none;display:inline-flex;align-items:center;gap:5px;font:inherit;font-size:12px;font-weight:700;padding:3px 10px;border-radius:999px;border:1px solid var(--line-strong);background:rgba(255,255,255,.05);color:var(--accent);cursor:pointer}
 .qmeta .editar-q svg{width:14px;height:14px;stroke-width:2}
 .qmeta .editar-q.on{background:var(--accent-soft);border-color:var(--accent-line)}
+.qmeta .copiar-q + .editar-q{margin-left:0}
 .editar-aviso{font-size:13px;color:var(--orange);background:var(--orange-soft);border-radius:10px;padding:8px 12px;margin:0 0 10px}
 .editar-painel .ed-bloco{padding:0;border:0;background:none;-webkit-backdrop-filter:none;backdrop-filter:none}
 

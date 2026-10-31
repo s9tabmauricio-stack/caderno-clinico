@@ -49,6 +49,8 @@ export function Questoes({ questoes, userId, ativo, mostrarTema = true, vazio, a
   const [cortadas, setCortadas] = useState<number[]>([])
   const [refazendo, setRefazendo] = useState(false)
   const [editando, setEditando] = useState(false)
+  // botão Copiar: 'ok' = copiou; 'erro' = o aparelho não deixou copiar
+  const [copiado, setCopiado] = useState<'ok' | 'erro' | null>(null)
   const [erro, setErro] = useState('')
   // Gravação que não deu certo: de qual questão (null = apagar respostas), o motivo e como tentar de novo
   const [falha, setFalha] = useState<{ questaoId: string | null; texto: string; sessao: boolean; tentar?: () => void } | null>(null)
@@ -69,6 +71,31 @@ export function Questoes({ questoes, userId, ativo, mostrarTema = true, vazio, a
     setEditando(false)
     setErro('')
     setConfirmarTodas(false)
+  }
+
+  // Copia só o enunciado e as alternativas (sem gabarito nem comentário), para o aluno conferir em outra IA
+  async function copiarQuestao() {
+    const texto = [q.enunciado.trim(), '', ...q.alternativas.map((t, i) => `${LETRAS[i]}) ${t}`)].join('\n')
+    let ok = false
+    try {
+      await navigator.clipboard.writeText(texto)
+      ok = true
+    } catch {
+      // celulares antigos ou sem permissão: cópia pelo jeito antigo
+      const area = document.createElement('textarea')
+      area.value = texto
+      area.setAttribute('readonly', '')
+      area.style.position = 'fixed'
+      area.style.opacity = '0'
+      document.body.appendChild(area)
+      area.select()
+      try {
+        ok = document.execCommand('copy')
+      } catch {}
+      area.remove()
+    }
+    setCopiado(ok ? 'ok' : 'erro')
+    setTimeout(() => setCopiado(null), 2000)
   }
 
   function cortar(i: number) {
@@ -315,24 +342,34 @@ export function Questoes({ questoes, userId, ativo, mostrarTema = true, vazio, a
       {cabecalho}
       {!avisoAqui && aviso}
       <div className="qcard">
-        {(q.fonte || (mostrarTema && q.tema) || (q.origem && ORIGEM[q.origem]) || edicao) && (
-          <div className="qmeta">
-            {q.fonte && <span className="fonte">{q.fonte}</span>}
-            {mostrarTema && q.tema && <span>{q.tema}</span>}
-            {q.origem && ORIGEM[q.origem] && <span className={ORIGEM[q.origem].cls}>{ORIGEM[q.origem].rotulo}</span>}
-            {edicao && (
-              <button
-                type="button"
-                className={`editar-q${editando ? ' on' : ''}`}
-                aria-pressed={editando}
-                onClick={() => setEditando(!editando)}
-              >
-                {editando ? Icone.errado : Icone.lapis}
-                {editando ? 'Fechar edição' : 'Editar'}
-              </button>
-            )}
-          </div>
-        )}
+        <div className="qmeta">
+          {q.fonte && <span className="fonte">{q.fonte}</span>}
+          {mostrarTema && q.tema && <span>{q.tema}</span>}
+          {q.origem && ORIGEM[q.origem] && <span className={ORIGEM[q.origem].cls}>{ORIGEM[q.origem].rotulo}</span>}
+          {!editando && (
+            <button
+              type="button"
+              className={`editar-q copiar-q${copiado === 'ok' ? ' on' : ''}`}
+              onClick={copiarQuestao}
+              title="Copia o enunciado e as alternativas, sem a resposta"
+              aria-live="polite"
+            >
+              {copiado === 'ok' ? Icone.certo : Icone.copiar}
+              {copiado === 'ok' ? 'Copiada' : copiado === 'erro' ? 'Não deu para copiar' : 'Copiar'}
+            </button>
+          )}
+          {edicao && (
+            <button
+              type="button"
+              className={`editar-q${editando ? ' on' : ''}`}
+              aria-pressed={editando}
+              onClick={() => setEditando(!editando)}
+            >
+              {editando ? Icone.errado : Icone.lapis}
+              {editando ? 'Fechar edição' : 'Editar'}
+            </button>
+          )}
+        </div>
         {editando && edicao ? (
           <div className="editar-painel">
             <p className="editar-aviso">Só você vê isto. O que salvar aqui muda a questão para toda a turma.</p>
