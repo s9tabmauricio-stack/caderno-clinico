@@ -1055,6 +1055,10 @@ h1.big{background:var(--metal-titulo);-webkit-background-clip:text;background-cl
 .in-provas .group>.row.ev{padding-block:0}
 .in-provas .row.ev .main,.in-provas .row.ev .hora{padding-block:7px}
 .in-provas .row.ev .hora{display:flex;flex-direction:column;justify-content:center}
+/* provas num bloco só: a lista fica dentro do cartão da próxima prova, de uma borda à outra */
+.in-prova{--pad:var(--espaco-card)}
+@media (max-width:599px){.in-prova{--pad:14px}}
+.in-prova .group{margin:0 calc(-1 * var(--pad)) calc(-1 * var(--pad));border:0;border-top:1px solid var(--line-2);border-radius:0;background:none;box-shadow:none;-webkit-backdrop-filter:none;backdrop-filter:none}
 .in-amanha{display:flex;flex-direction:column;gap:3px;margin:12px 4px 0;font-size:14px;color:var(--text)}
 .in-amanha b{color:var(--ink)}
 .in-mats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
