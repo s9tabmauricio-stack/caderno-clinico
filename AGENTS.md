@@ -22,7 +22,7 @@ Tudo em português do Brasil. O dono do projeto não é programador: explique em
 | Publicação | A Vercel publica sozinha a cada `git push origin main` (1–2 min). Ramos `claude/**` não geram publicação de prévia (`vercel.json`), para não encher o "Deployment Storage" (limite de 10 GB no plano gratuito) |
 | Banco | Supabase, projeto `xtlpmtylifbalzxnfkib` (São Paulo), plano gratuito |
 | Administrador | CPF 086.994.266-23 (variável `ADMIN_CPFS` na Vercel; padrão no código) |
-| Arquivos do projeto | Pasta **MEDGENIUS** no Google Drive do Mauricio (s9tabmauricio@gmail.com), https://drive.google.com/drive/folders/1i6ftIjwzgyfExlT8PYXXOhe5bFI8vMqR. Desde 31/10/2026, tudo o que for guardado fora do Git (PDFs, rascunhos, apostilas, materiais) vai para lá |
+| Arquivos do projeto | Pasta **MEDGENIUS** no Google Drive do Mauricio (s9tabmauricio@gmail.com), https://drive.google.com/drive/folders/1i6ftIjwzgyfExlT8PYXXOhe5bFI8vMqR. Desde 31/10/2026, tudo o que for guardado fora do Git (PDFs, rascunhos, apostilas, materiais) vai para lá. Subpastas: `1 - ENTRADA (coloque os áudios aqui)` (id `13zTV8kYtmAWZyUJA9TOo5yC0tFfw3gk-`: o Mauricio só solta o áudio da aula; o Claude descobre a aula pela data e pela Agenda, faz o resto e tira o áudio daqui), `2 - Aulas` (id `1_ND6Ao_6W11oNyhQwAKEWxwuxi8FsiQi`: uma pasta por aula, `<aula-id> · <Título>`, com áudio original, transcrição, apostila PDF/HTML e rascunhos de flashcards e questões), `3 - Provas e fontes` (id `1Eff4u0H9F15JVkfMvUN_lLTnqzIFFHLD`: provas antigas, Revalida, slides e referências) |
 | Chave secreta | `SUPABASE_SECRET_KEY` na Vercel (usada só no servidor: alunos, agenda, conteúdo) |
 
 ## Tecnologia
