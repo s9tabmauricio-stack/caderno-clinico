@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { explicacoesPorAlternativa } from '@/lib/explicacoes'
+import { explicarFalha } from '@/lib/falhas'
 import { createClient } from '@/lib/supabase/client'
 import type { QuestaoAluno } from '@/lib/dados'
 import { plural } from '@/lib/formato'
@@ -49,7 +50,11 @@ export function Questoes({ questoes, userId, ativo, mostrarTema = true, vazio, a
   const [refazendo, setRefazendo] = useState(false)
   const [editando, setEditando] = useState(false)
   const [erro, setErro] = useState('')
-  const [falhaSalvar, setFalhaSalvar] = useState('')
+  // Gravação que não deu certo: de qual questão (null = apagar respostas), o motivo e como tentar de novo
+  const [falha, setFalha] = useState<{ questaoId: string | null; texto: string; sessao: boolean; tentar?: () => void } | null>(null)
+  const [tentando, setTentando] = useState(false)
+  // "Refazer todas" apaga todas as respostas da lista: pede confirmação antes
+  const [confirmarTodas, setConfirmarTodas] = useState(false)
 
   const q = questoes[idx]
   const resp = q ? respostas[q.id] : undefined
@@ -63,6 +68,7 @@ export function Questoes({ questoes, userId, ativo, mostrarTema = true, vazio, a
     setRefazendo(false)
     setEditando(false)
     setErro('')
+    setConfirmarTodas(false)
   }
 
   function cortar(i: number) {
@@ -85,19 +91,30 @@ export function Questoes({ questoes, userId, ativo, mostrarTema = true, vazio, a
     aoResponder?.(q.id, nova)
     setRefazendo(false)
     setErro('')
-    setFalhaSalvar('')
+    await salvar(q.id, nova)
+  }
+
+  async function salvar(id: string, r: Resposta) {
+    setFalha(null)
     const { error } = await supabase.from('respostas').upsert(
       {
         user_id: userId,
-        questao_id: q.id,
-        escolhida: nova.escolhida,
-        correta: nova.acertou,
-        tentativas: nova.tentativas,
+        questao_id: id,
+        escolhida: r.escolhida,
+        correta: r.acertou,
+        tentativas: r.tentativas,
         respondida_em: new Date().toISOString(),
       },
       { onConflict: 'user_id,questao_id' },
     )
-    if (error) setFalhaSalvar('Não deu para salvar esta resposta. Confira a internet e responda de novo.')
+    if (error) setFalha({ questaoId: id, ...(await explicarFalha(supabase, 'esta resposta')), tentar: () => salvar(id, r) })
+  }
+
+  async function tentarDeNovo() {
+    if (!falha?.tentar || tentando) return
+    setTentando(true)
+    await falha.tentar()
+    setTentando(false)
   }
 
   async function apagar(ids: string[]) {
@@ -107,8 +124,9 @@ export function Questoes({ questoes, userId, ativo, mostrarTema = true, vazio, a
     setRespostas(restantes)
     ids.forEach((id) => aoResponder?.(id, null))
     irPara(primeiraAberta(restantes))
+    setFalha(null)
     const { error } = await supabase.from('respostas').delete().eq('user_id', userId).in('questao_id', ids)
-    if (error) setFalhaSalvar('Não deu para apagar as respostas antigas. Confira a internet e tente de novo.')
+    if (error) setFalha({ questaoId: null, texto: 'Não deu para apagar as respostas antigas. Confira a internet e tente de novo.', sessao: false })
   }
 
   // Atalhos: A a E (ou 1 a 5) escolhem, Shift + letra corta, Enter responde ou avança
@@ -139,11 +157,23 @@ export function Questoes({ questoes, userId, ativo, mostrarTema = true, vazio, a
 
   // Faixa de quadradinhos: rola de lado para deixar a questão atual no meio
   const faixa = useRef<HTMLDivElement>(null)
+  // Ao trocar de questão, a tela volta ao "Questão X de Y" se ele tiver ficado para cima
+  // (depois de ler o comentário, o aluno está lá embaixo e cairia no meio da próxima questão)
+  const topo = useRef<HTMLDivElement>(null)
+  const primeira = useRef(true)
   useEffect(() => {
     const el = faixa.current
     const atual = el?.querySelector<HTMLElement>('.qd.cur')
-    if (!el || !atual) return
-    el.scrollTo({ left: atual.offsetLeft - (el.clientWidth - atual.offsetWidth) / 2, behavior: 'smooth' })
+    if (el && atual) el.scrollTo({ left: atual.offsetLeft - (el.clientWidth - atual.offsetWidth) / 2, behavior: 'smooth' })
+    if (primeira.current) {
+      primeira.current = false
+      return
+    }
+    const cab = topo.current
+    if (cab && cab.getBoundingClientRect().top < 0) {
+      const suave = !window.matchMedia('(prefers-reduced-motion: reduce)').matches
+      cab.scrollIntoView({ block: 'start', behavior: suave ? 'smooth' : 'auto' })
+    }
   }, [idx])
 
   if (!questoes.length) return <p className="vazio">{vazio ?? 'Esta aula ainda não tem questões.'}</p>
@@ -153,7 +183,7 @@ export function Questoes({ questoes, userId, ativo, mostrarTema = true, vazio, a
   const erradas = questoes.filter((x) => respostas[x.id] && !respostas[x.id].acertou).map((x) => x.id)
 
   const cabecalho = (
-    <div className="qhead">
+    <div className="qhead" ref={topo}>
       <span className="qcount">{q ? `Questão ${idx + 1} de ${questoes.length}` : 'Resultado'}</span>
       <div className="qdots" ref={faixa}>
         {questoes.map((x, i) => {
@@ -173,14 +203,35 @@ export function Questoes({ questoes, userId, ativo, mostrarTema = true, vazio, a
     </div>
   )
 
-  const aviso = falhaSalvar && (
+  // Aviso de gravação que falhou: aparece logo abaixo do resultado da questão (ou no topo, se o aluno já
+  // passou para outra), com o motivo e o botão para tentar de novo
+  const nDaFalha = falha?.questaoId ? questoes.findIndex((x) => x.id === falha.questaoId) + 1 : 0
+  const aviso = falha && (
     <div className="erro-salvar" role="alert">
-      <p>{falhaSalvar}</p>
-      <button className="link" onClick={() => setFalhaSalvar('')}>
-        Fechar
-      </button>
+      <p>
+        {nDaFalha > 0 && falha.questaoId !== q?.id && <b>Questão {nDaFalha}: </b>}
+        {falha.texto}
+      </p>
+      <div className="erro-acoes">
+        {falha.sessao ? (
+          <a className="btn sm" href="/login">
+            Entrar de novo
+          </a>
+        ) : (
+          falha.tentar && (
+            <button className="btn sm" onClick={tentarDeNovo} disabled={tentando}>
+              {tentando ? 'Salvando…' : 'Tentar de novo'}
+            </button>
+          )
+        )}
+        <button className="link" onClick={() => setFalha(null)}>
+          Fechar
+        </button>
+      </div>
     </div>
   )
+  // Na questão da falha, já respondida na tela: o aviso vai logo abaixo do "Você acertou/marcou"
+  const avisoAqui = falha !== null && falha.questaoId === q?.id && revelada
 
   if (!q) {
     const faltam = questoes.length - feitas
@@ -222,10 +273,30 @@ export function Questoes({ questoes, userId, ativo, mostrarTema = true, vazio, a
                 Refazer {erradas.length === 1 ? 'a errada' : `as ${erradas.length} erradas`}
               </button>
             )}
-            <button className="btn ghost" onClick={() => apagar(questoes.map((x) => x.id))}>
-              Refazer todas
-            </button>
+            {!confirmarTodas && (
+              <button
+                className="btn ghost"
+                onClick={() => (feitas > 0 ? setConfirmarTodas(true) : apagar(questoes.map((x) => x.id)))}
+              >
+                Refazer todas
+              </button>
+            )}
           </div>
+          {confirmarTodas && (
+            <div className="confirmar" role="alertdialog" aria-labelledby="confirmar-todas">
+              <p id="confirmar-todas">
+                Apagar {feitas === 1 ? 'a sua resposta' : `as suas ${feitas} respostas`} e refazer {questoes.length === 1 ? 'a questão' : `as ${questoes.length} questões`}?
+              </p>
+              <div className="actions">
+                <button className="btn ghost" onClick={() => setConfirmarTodas(false)}>
+                  Cancelar
+                </button>
+                <button className="btn" onClick={() => apagar(questoes.map((x) => x.id))}>
+                  Apagar e refazer
+                </button>
+              </div>
+            </div>
+          )}
           <p className="foot">Refazer não apaga o histórico: o Desempenho continua contando a sua primeira resposta.</p>
           {proximoPasso && (
             <>
@@ -242,6 +313,7 @@ export function Questoes({ questoes, userId, ativo, mostrarTema = true, vazio, a
   return (
     <div>
       {cabecalho}
+      {!avisoAqui && aviso}
       <div className="qcard">
         {(q.fonte || (mostrarTema && q.tema) || (q.origem && ORIGEM[q.origem]) || edicao) && (
           <div className="qmeta">
@@ -333,6 +405,7 @@ export function Questoes({ questoes, userId, ativo, mostrarTema = true, vazio, a
                       : `Você marcou ${LETRAS[resp.escolhida]}. A resposta é ${LETRAS[q.correta]}.`}
                   </span>
                 </div>
+                {avisoAqui && aviso}
                 {expl.resto && (
                   <div className="erradas">
                     <div className="kick">
@@ -342,7 +415,7 @@ export function Questoes({ questoes, userId, ativo, mostrarTema = true, vazio, a
                     <p>{expl.resto}</p>
                   </div>
                 )}
-                <div className="actions">
+                <div className="actions qacoes">
                   <button
                     className="btn ghost"
                     onClick={() => {
@@ -365,7 +438,7 @@ export function Questoes({ questoes, userId, ativo, mostrarTema = true, vazio, a
                     {erro}
                   </p>
                 )}
-                <div className="actions">
+                <div className="actions qacoes">
                   <button className="btn" onClick={responder}>
                     Responder
                   </button>
@@ -376,7 +449,6 @@ export function Questoes({ questoes, userId, ativo, mostrarTema = true, vazio, a
         )}
       </div>
       {revelada && <ConversaTurma key={q.id} questaoId={q.id} userId={userId} />}
-      {aviso}
     </div>
   )
 }

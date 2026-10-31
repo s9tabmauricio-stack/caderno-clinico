@@ -1211,3 +1211,58 @@ h1.big{background:var(--metal-titulo);-webkit-background-clip:text;background-cl
   .in-mat-a{grid-template-columns:minmax(0,1fr)}
   .in-mat-p{grid-column:1;grid-row:auto;justify-content:flex-start}
 }
+
+/* ===== Melhorias de UX (31/10/2026) ===== */
+/* Questões: ao trocar de questão, o "Questão X de Y" para um pouco abaixo da borda da tela */
+.qhead{scroll-margin-top:calc(12px + env(safe-area-inset-top,0px))}
+/* Aviso de gravação que falhou: motivo, "Tentar de novo" (ou "Entrar de novo") e Fechar */
+.erro-salvar{flex-wrap:wrap;align-items:center}
+.erro-salvar p{min-width:min(100%,220px)}
+.erro-acoes{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.erro-acoes .btn{text-decoration:none}
+.verdict+.erro-salvar{margin:0 0 12px}
+/* iPad e iPhone dão zoom sozinhos ao tocar num campo com letra menor que 16 px */
+.ag-grupo,.turma-campo,.ed-form textarea.campo{font-size:16px}
+/* Confirmação de "Refazer todas" (no fim das questões) */
+.confirmar{border:1px solid var(--line-strong);border-radius:var(--r-md);background:var(--card-2);padding:12px 14px}
+.confirmar p{margin:0;color:var(--ink);font-weight:600}
+.confirmar .actions{margin-top:10px}
+/* Revisão: botões das matérias do tamanho do nome (nada cortado), ocupando a linha toda */
+.filtro-barra.revisao{display:flex;flex-wrap:wrap}
+.filtro-barra.revisao .pill{flex:1 1 auto;overflow:visible;text-overflow:clip;white-space:nowrap;padding-inline:12px}
+.filtro-barra.revisao .pill.todas{flex-basis:100%}
+/* Links pequenos ("Revisão →", "Semana →", "Ver a fila de hoje"…): área de toque de ~44 px sem mudar o desenho
+   (o espaço extra fica invisível e a margem negativa devolve o lugar que ele ocuparia) */
+.ag-h a{padding:12px 8px;margin:-12px -8px}
+.foot a{padding:12px 4px;margin:-12px -4px}
+/* Banco de questões: resumo numa linha ao lado do Filtrar, no lugar dos três quadros */
+.banco-barra{margin-bottom:16px}
+.banco-resumo{margin:0 0 0 auto;padding:0 4px;font-size:14px;color:var(--muted);font-variant-numeric:tabular-nums}
+.banco-resumo b{color:var(--ink);font-weight:700}
+@media (max-width:599px){.banco-resumo{margin-left:0;flex-basis:100%}}
+/* Questões: "Responder" / "Próxima questão" ficam presos no pé da tela enquanto a questão está à vista
+   (no celular, logo acima da barra de abas; no tablet deitado, a barra fica à esquerda) */
+.qacoes{position:sticky;bottom:calc(92px + env(safe-area-inset-bottom,0px));z-index:4;width:fit-content;max-width:calc(100% + 16px);margin:16px -8px -8px auto;padding:6px;border-radius:30px;
+  background:var(--glass);box-shadow:var(--glass-shadow);-webkit-backdrop-filter:blur(20px) saturate(170%);backdrop-filter:blur(20px) saturate(170%)}
+@media (min-width:900px) and (min-height:560px){.qacoes{bottom:calc(14px + env(safe-area-inset-bottom,0px))}}
+/* Apostila em páginas: contador flutuante "Página X de Y" e tela cheia com zoom (components/Apostila.tsx) */
+.paginas img[role=button]{cursor:zoom-in}
+.ap-contador{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(92px + env(safe-area-inset-bottom,0px));z-index:6;display:flex;align-items:center;gap:2px;padding:4px;border-radius:999px;
+  background:var(--glass);box-shadow:var(--glass-shadow);-webkit-backdrop-filter:blur(20px) saturate(170%);backdrop-filter:blur(20px) saturate(170%);
+  font-size:14px;font-weight:600;color:var(--text);font-variant-numeric:tabular-nums;white-space:nowrap}
+.ap-contador span{padding:0 4px}
+.ap-contador button,.ap-visor-b{min-width:44px;min-height:44px;border:0;border-radius:999px;background:none;color:var(--accent);display:grid;place-items:center;cursor:pointer}
+.ap-contador button:disabled,.ap-visor-b:disabled{opacity:.35;cursor:default}
+@media (min-width:900px) and (min-height:560px){.ap-contador{left:calc(50% + 56px);bottom:calc(16px + env(safe-area-inset-bottom,0px))}}
+.ap-visor{position:fixed;inset:0;width:100%;height:100%;max-width:none;max-height:none;margin:0;padding:0;border:0;background:var(--bg);color:var(--text)}
+.ap-visor[open]{display:flex;flex-direction:column}
+.ap-visor::backdrop{background:rgba(0,0,0,.6)}
+.ap-visor-topo,.ap-visor-pe{display:flex;align-items:center;gap:4px;padding:8px calc(12px + env(safe-area-inset-right,0px)) 8px calc(12px + env(safe-area-inset-left,0px));border-bottom:1px solid var(--line)}
+.ap-visor-topo{padding-top:calc(8px + env(safe-area-inset-top,0px))}
+.ap-visor-pe{justify-content:space-between;border-bottom:0;border-top:1px solid var(--line);padding-bottom:calc(8px + env(safe-area-inset-bottom,0px))}
+.ap-visor-pe .btn{display:inline-flex;align-items:center;gap:4px;min-height:44px}
+.ap-visor-t{flex:1;font-weight:600;color:var(--ink);font-variant-numeric:tabular-nums}
+.ap-visor-z{min-width:48px;text-align:center;font-size:14px;color:var(--muted);font-variant-numeric:tabular-nums}
+.ap-visor-fechar{margin-left:8px;min-height:44px}
+.ap-visor-area{flex:1;overflow:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
+.ap-visor-area img{display:block;max-width:none;height:auto;margin:0 auto;background:#fff}

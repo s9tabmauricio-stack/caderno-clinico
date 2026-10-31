@@ -94,4 +94,7 @@ export const Icone = {
       <path d="M3 3v5h5" />
     </>,
   ),
+  ampliar: svg(<path d="M14 4h6v6M20 4l-7 7M10 20H4v-6M4 20l7-7" />),
+  mais: svg(<path d="M12 5v14M5 12h14" />),
+  menos: svg(<path d="M5 12h14" />),
 }

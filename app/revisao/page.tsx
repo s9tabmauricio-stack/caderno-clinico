@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Pagina } from '@/components/Pagina'
 import { Flashcards } from '@/components/Flashcards'
-import { carregarMaterias, carregarProgresso, lerTudo, paraCard, pendentes, sessao } from '@/lib/dados'
+import { carregarMaterias, carregarProgresso, lerTudo, paraCard, pendentes, sessao, totais } from '@/lib/dados'
 
 export const metadata: Metadata = { title: 'Revisão' }
 
@@ -52,20 +52,23 @@ export default async function RevisaoPage(props: PageProps<'/revisao'>) {
           Todas
           {pend.hoje > 0 && <small>{pend.hoje}</small>}
         </Link>
-        {materias.map((m) => {
-          const t = pendentes(progresso.filter((p) => p.materia_id === m.id))
-          return (
-            <Link
-              key={m.id}
-              className="pill"
-              href={`/revisao?materia=${m.id}`}
-              aria-current={alvo?.id === m.id ? 'true' : undefined}
-            >
-              {m.nome}
-              {t.hoje > 0 && <small>{t.hoje}</small>}
-            </Link>
-          )
-        })}
+        {/* Só as matérias que já têm flashcards (e a escolhida, se for o caso) */}
+        {materias
+          .filter((m) => m.id === alvo?.id || totais(progresso.filter((p) => p.materia_id === m.id)).cards > 0)
+          .map((m) => {
+            const t = pendentes(progresso.filter((p) => p.materia_id === m.id))
+            return (
+              <Link
+                key={m.id}
+                className="pill"
+                href={`/revisao?materia=${m.id}`}
+                aria-current={alvo?.id === m.id ? 'true' : undefined}
+              >
+                {m.nome}
+                {t.hoje > 0 && <small>{t.hoje}</small>}
+              </Link>
+            )
+          })}
       </nav>
 
       <Flashcards
