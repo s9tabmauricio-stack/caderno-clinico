@@ -11,7 +11,7 @@ Pasta de trabalho: `rascunhos/aulas/<aula-id>/` (fora do Git). Enquanto não sou
 
 ## 1. Achar o áudio e o dia da aula
 
-- O áudio vem anexado na conversa. Ache o arquivo: `find / -xdev \( -path /proc -o -path /sys -o -path '*/node_modules' -o -path /root/.cache \) -prune -o -type f \( -iname '*.m4a' -o -iname '*.mp3' -o -iname '*.wav' -o -iname '*.aac' -o -iname '*.ogg' -o -iname '*.opus' -o -iname '*.webm' -o -iname '*.mp4' -o -iname '*.amr' -o -iname '*.3gp' \) -mmin -600 -print 2>/dev/null`. Copie para a pasta de trabalho. Se vierem vários, cada um é uma aula (ou partes da mesma, se ele disser).
+- O áudio vem anexado na conversa. Ache o arquivo: `find / -xdev \( -path /proc -o -path /sys -o -path '*/node_modules' -o -path /root/.cache \) -prune -o -type f \( -iname '*.m4a' -o -iname '*.mp3' -o -iname '*.wav' -o -iname '*.aac' -o -iname '*.ogg' -o -iname '*.opus' -o -iname '*.webm' -o -iname '*.mp4' -o -iname '*.amr' -o -iname '*.3gp' \) -mmin -600 -print 2>/dev/null`. No Windows, procure só na pasta do usuário (no Git Bash: `find ~ \( -path '*/node_modules' -o -path '*/AppData/Local/Temp' -o -path '*/.cache' \) -prune -o -type f \( …mesmas extensões… \) -mmin -600 -print 2>/dev/null`). Copie para a pasta de trabalho. Se vierem vários, cada um é uma aula (ou partes da mesma, se ele disser).
 - Dia e hora da gravação, nesta ordem de confiança: o que o Mauricio escreveu na mensagem; `ffprobe -v error -show_entries format_tags=creation_time:format=duration -of default=nw=1 <audio>` (o horário vem em UTC: Cascavel é UTC−3); o nome do arquivo; senão, a teórica mais recente antes de agora.
 
 ## 2. Transcrever (grátis, Whisper large-v3, nesta máquina)
@@ -20,6 +20,12 @@ Rode desligado da conversa, porque demora horas e o limite de um comando em segu
 
 ```bash
 mkdir -p rascunhos/aulas/<pasta> && nohup setsid python3 -I scripts/transcrever.py <audio> rascunhos/aulas/<pasta>/transcricao.txt --prompt "<prompt>" > rascunhos/aulas/<pasta>/transcricao.log 2>&1 &
+```
+
+No Windows (não há `setsid`), rode pelo PowerShell:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts/transcrever-fundo.ps1 <audio> rascunhos/aulas/<pasta> "<prompt>"
 ```
 
 - `<prompt>`: "Aula de <disciplina> do curso de Medicina, em português do Brasil." mais uns 10 termos técnicos prováveis do tema (ajuda o Whisper a acertar os nomes).

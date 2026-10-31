@@ -123,6 +123,14 @@ Regra do Mauricio (31/10/2026): ele manda o áudio da aula na conversa ("aula no
 4. Agentes `flashcards` e `questoes` em paralelo; o agente `revisor` confere tudo contra a apostila e aprova no lugar do Mauricio (o que fica duvidoso sai e vai para o relatório).
 5. Grava, publica (`publicada = true`), atualiza este manual e manda um relatório curto com o PDF e o que vale conferir.
 
+### No computador Windows do Mauricio (desde 31/10/2026)
+
+O PC (Windows 11, Ryzen 5 8600G, 24 GB, sem placa de vídeo NVIDIA) já tem tudo o que a receita usa: Git, ffmpeg e Poppler (`winget`), Python 3.12 com faster-whisper (modelo large-v3 já baixado), Pillow, pdfplumber e WeasyPrint, a fonte Inter (Regular, Medium, SemiBold e Bold, em `~/.fonts` e instalada no Windows) e o `gh` com login feito.
+- `python3` funciona (cópia do `python.exe` em `...\Python312\python3.exe`); os comandos `python3 -I ...` do manual valem como estão.
+- O WeasyPrint usa o Pango do MSYS2 (`C:\msys64\mingw64\bin`, na variável `WEASYPRINT_DLL_DIRECTORIES`). Na skill `apostila-padrao`, o bloco "Ambiente" não precisa instalar nada: só extraia os três arquivos (a skill fica em `%LOCALAPPDATA%\Claude-Data\...\skills-plugin\...\skills\apostila-padrao\SKILL.md`; ache com `find ~/AppData/Local/Claude-Data -path '*apostila-padrao/SKILL.md'`).
+- Transcrição em segundo plano: `scripts/transcrever-fundo.ps1` (no lugar do `nohup setsid`). Velocidade medida em 31/10/2026: 6 min de áudio em 2 min (cerca de 1/3 do tempo do áudio), então uma aula de 2 h leva perto de 45 min a 1 h 15. Limitar a 6 núcleos (`cpu_threads`) quase não muda. `scripts/publicar-apostila.sh` roda no Git Bash.
+- Caminhos longos: o Windows corta caminhos com mais de 260 letras. O repositório usa `core.longpaths = true`; prefira pastas de trabalho curtas.
+
 Todos os agentes de conteúdo (`apostila`, `flashcards`, `questoes`, `revisor`) rodam sempre no modelo Opus com esforço extra-alto (regra do Mauricio: não abrir mão de qualidade). Está no topo de cada arquivo em `.claude/agents/`.
 
 ## Agenda
