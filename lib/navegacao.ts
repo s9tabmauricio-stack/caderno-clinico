@@ -8,16 +8,8 @@ export function retornoSeguro(valor: unknown): string | null {
 }
 
 export function rotuloRetorno(href: string): string {
-  if (href.startsWith('/estudar?')) return 'Resultados da busca'
   if (href.startsWith('/estudar')) return 'Matérias'
   if (href.startsWith('/desempenho')) return 'Desempenho'
   if (href.startsWith('/aula/')) return 'Aula'
   return 'Matéria'
-}
-
-export function correspondeBusca(consulta: string, ...campos: (string | null | undefined)[]): boolean {
-  const normalizar = (texto: string) => texto.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLocaleLowerCase('pt-BR')
-  const termos = normalizar(consulta).trim().split(/\s+/).filter(Boolean)
-  const texto = normalizar(campos.filter(Boolean).join(' '))
-  return termos.every((termo) => texto.includes(termo))
 }

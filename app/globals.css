@@ -1178,11 +1178,6 @@ h1.big{background:var(--metal-titulo);-webkit-background-clip:text;background-cl
 .view>.top:first-child,.view>.back:first-child{padding-right:0}
 .nav-admin{margin-bottom:20px}
 .nav-admin [aria-current="page"]{background:var(--accent);color:var(--bg)}
-.busca-aulas{margin:0 0 24px}
-.busca-aulas label{display:block;margin-bottom:8px;font-weight:600}
-.busca-campos{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
-.busca-campos input{flex:1;min-width:160px;min-height:44px;padding:12px;border:1px solid var(--muted);border-radius:12px;background:var(--vidro);color:var(--text);font:inherit}
-.busca-resultados{margin-bottom:24px}
 .perf[id]{scroll-margin-top:24px}
 
 /* Alinhamento e leitura: mesma margem nos painéis e espaço para textos longos. */
@@ -1215,7 +1210,6 @@ h1.big{background:var(--metal-titulo);-webkit-background-clip:text;background-cl
 .ct-mat .main{min-width:0;flex-basis:180px}
 .ed-form,.ed-form .flabel,.ed-linha>.flabel{min-width:0}
 .ed-form textarea.campo{line-height:1.6;min-height:120px}
-.busca-campos input{min-width:0;flex-basis:180px;max-width:100%}
 .campo{max-width:100%;min-width:0}
 .btn,.btn-white{overflow-wrap:anywhere}
 @media (max-width:599px){

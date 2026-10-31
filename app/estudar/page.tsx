@@ -1,10 +1,8 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Pagina } from '@/components/Pagina'
-import { correspondeBusca } from '@/lib/navegacao'
 import { Icone } from '@/components/Icones'
 import {
-  lerTudo,
   carregarMaterias,
   carregarProgresso,
   carregarProgressoMaterias,
@@ -20,21 +18,13 @@ export const metadata: Metadata = { title: 'Matérias' }
 
 // Porta de entrada do conteúdo: cada matéria leva às aulas (apostila, questões e flashcards)
 // e, logo abaixo, direto ao banco de questões dela.
-export default async function EstudarPage(props: PageProps<'/estudar'>) {
-  const { q } = await props.searchParams
-  const busca = typeof q === 'string' ? q.trim().slice(0, 200) : ''
+export default async function EstudarPage() {
   const { supabase } = await sessao()
   const [materias, progresso, banco] = await Promise.all([
     carregarMaterias(supabase),
     carregarProgresso(supabase),
     carregarProgressoMaterias(supabase),
   ])
-
-  const aulas = busca ? await lerTudo('as aulas para busca', (de, ate) =>
-    supabase.from('aulas').select('id, titulo, resumo, materia_id').eq('publicada', true).order('id').range(de, ate),
-  ) : []
-  const resultados = aulas.filter((a) => correspondeBusca(busca, a.titulo, a.resumo, materias.find((m) => m.id === a.materia_id)?.nome))
-  const retorno = `/estudar?${new URLSearchParams({ q: busca })}`
 
   return (
     <Pagina larga pendentes={pendentes(progresso).hoje}>
@@ -44,31 +34,6 @@ export default async function EstudarPage(props: PageProps<'/estudar'>) {
           <h1 className="big">Matérias</h1>
         </div>
       </header>
-
-      <form action="/estudar" className="busca-aulas" role="search">
-        <label htmlFor="busca-aulas">Buscar aulas por título ou tema</label>
-        <div className="busca-campos">
-          <input id="busca-aulas" name="q" type="search" defaultValue={busca} key={busca} maxLength={200} placeholder="Ex.: pneumonia, nefrologia…" />
-          <button className="btn" type="submit">Buscar</button>
-          {busca && <Link className="btn ghost" href="/estudar">Limpar</Link>}
-        </div>
-        <p className="foot">Busca nos títulos, resumos e nomes das matérias.</p>
-      </form>
-      {busca && (
-        <section className="busca-resultados" aria-label="Resultados da busca">
-          <h2 className="sec">{resultados.length} {plural(resultados.length, 'aula encontrada', 'aulas encontradas')} para “{busca}”</h2>
-          {resultados.length ? <div className="group">{resultados.map((a) => (
-            <Link key={a.id} className="row" href={`/aula/${a.id}?${new URLSearchParams({ retorno })}`}>
-              <span className="main">
-                <span className="s">{materias.find((m) => m.id === a.materia_id)?.nome}</span>
-                <span className="t">{a.titulo}</span>
-                {a.resumo && <span className="s">{a.resumo}</span>}
-              </span>
-              {Icone.seta}
-            </Link>
-          ))}</div> : <p className="vazio">Nenhuma aula encontrada. Tente outro termo ou escolha uma matéria abaixo.</p>}
-        </section>
-      )}
 
       {materias.length ? (
         <div className="tiles">

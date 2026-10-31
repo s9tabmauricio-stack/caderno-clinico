@@ -160,5 +160,5 @@ Versões do visual salvas no GitHub (ramos fixos, não publicados; não apague):
 
 ## Encontrar conteúdo e voltar
 
-- Matérias tem busca por título, resumo e nome da matéria, sem distinguir acentos ou maiúsculas; só inclui aulas publicadas. O termo fica em `?q=` e é preservado ao voltar de uma aula.
+- A tela Matérias não tem busca (retirada a pedido do Mauricio em 31/10/2026).
 - Flashcards de aula/matéria permitem estudar livremente; Revisão reúne cards novos e pendentes para hoje. As telas explicam a diferença e oferecem atalhos entre elas.
