@@ -1064,11 +1064,11 @@ h1.big{background:var(--metal-titulo);-webkit-background-clip:text;background-cl
 /* todas as etiquetas da largura de "Gastroenterologia", centralizadas com o texto do cartão */
 /* Início: a caixa do nome ocupa a largura do cartão (alinhada com a barra) e a letra é a maior em que "Gastroenterologia" cabe numa linha só */
 .in-mat-a{container-type:inline-size}
-.in-mat .gema.nome-gema{justify-self:stretch;width:100%;padding:7px 8px;border-radius:12px;font-size:clamp(10px,calc((100cqw - 18px) / 11.6),26px);line-height:1.15;white-space:nowrap;overflow-wrap:normal}
+.in-mat .gema.nome-gema{justify-self:stretch;width:100%;min-height:0;padding:2px 8px 0;border-radius:12px;font-size:clamp(10px,calc((100cqw - 18px) / 11.6),26px);line-height:1;white-space:nowrap;overflow-wrap:normal}
 /* Estudar: a caixa do nome ocupa a largura toda do cartão (alinhada com a barra) e a letra
    é a maior em que "Gastroenterologia" ainda cabe numa linha só; vale para todas as matérias */
 .mtile{container-type:inline-size}
-.mtile .gema.nome-gema{justify-self:stretch;width:100%;padding:8px 11px;border-radius:12px;font-size:clamp(12.5px,calc((100cqw - 26px) / 12),26px);line-height:1.15;white-space:nowrap;overflow-wrap:normal}
+.mtile .gema.nome-gema{justify-self:stretch;width:100%;min-height:0;padding:2px 11px 0;border-radius:12px;font-size:clamp(12.5px,calc((100cqw - 26px) / 12),26px);line-height:1;white-space:nowrap;overflow-wrap:normal}
 .in-mat .mt-meta{text-align:center}
 .in-mat-p{justify-content:center}
 .in-mat-p{display:flex;align-items:center;gap:8px;color:var(--muted);font-weight:600}
