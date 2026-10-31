@@ -1051,6 +1051,9 @@ h1.big{background:var(--metal-titulo);-webkit-background-clip:text;background-cl
 .pv-conta b{font-family:var(--font-marca);font-size:38px;font-weight:700;line-height:1;letter-spacing:0;background:var(--metal-num);-webkit-background-clip:text;background-clip:text;color:transparent}
 .pv-boa{margin:0;font-size:16px;font-weight:600;color:var(--ink)}
 .in-provas .group{margin-top:10px}
+/* provas do Início: sem margem em cima e embaixo, a barra colorida vai de uma linha divisória à outra */
+.in-provas .group>.row.ev{padding-block:0}
+.in-provas .row.ev .main,.in-provas .row.ev .hora{padding-block:7px}
 .in-amanha{display:flex;flex-direction:column;gap:3px;margin:12px 4px 0;font-size:14px;color:var(--text)}
 .in-amanha b{color:var(--ink)}
 .in-mats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
