@@ -102,6 +102,7 @@ Título, resumo e professor saem da capa (`pdftotext -f 1 -l 1`). Atualize a `de
 - `por_que_erradas`: uma linha por letra (`B: …`, ou `A, C e E: …` para várias). Linhas sem letra viram o quadro "Sobre as alternativas".
 - `origem`: `professor` (corrigida em sala), `unica`, `inferido` (alternativa reconstruída), `montada` (alternativas montadas, gabarito não oficial), `resolvida` (gabarito não oficial), `adaptada` (questão oficial alterada para seguir a aula; o comentário diz o que mudou).
 - Quando a prova não tem gabarito: resolva com base na apostila da aula, marque como não oficial e **discuta as duvidosas com o Mauricio uma a uma, mostrando o texto completo da questão** antes de pedir decisão.
+- Questões montadas pela aula (agente `questoes`): cobrem a apostila inteira com folga, com pelo menos uma questão para cada ponto de PROVA, cada coisa que o professor frisou, repetiu ou deu a entender que cai (os de PROVA ganham duas ou mais); só o que está na apostila; cinco alternativas, gabarito espalhado, `origem = 'montada'`, ids `<aula>-q01`… Na produção automática, a duvidosa não entra: fica no relatório.
 
 ## Flashcards
 
@@ -110,8 +111,17 @@ Título, resumo e professor saem da capa (`pdftotext -f 1 -l 1`). Atualize a `de
 - **Verso:** a resposta em 1 a 3 frases, linguagem simples, sem tópicos.
 - **"PROVA · "** no começo da frente quando o professor diz que cai na prova ou que é importante (marca PROVA da apostila, "isso vocês precisam saber", "a definição importa muito", slides de "questões de prova") **e também quando ele só dá a entender que é importante**: fez questão de perguntar à turma, repetiu, frisou, insistiu, chamou a atenção. Na dúvida, marque como PROVA, sem perguntar ao Mauricio (regra dele, 22/10/2026).
 - O que vem do "Complemento: fora da aula" da apostila entra avisando no próprio card ("Fora da aula: …").
-- ids `<aula>-f01`, `-f02`… (acima de 99 seguem `-f100`, `-f101`); `ordem` = número do card. Mostrar a lista ao Mauricio antes de incluir.
+- ids `<aula>-f01`, `-f02`… (acima de 99 seguem `-f100`, `-f101`); `ordem` = número do card. Mostrar a lista ao Mauricio antes de incluir (menos na produção automática de aula nova, em que o agente `revisor` aprova).
 - **Agente `flashcards`** (`.claude/agents/flashcards.md`) faz tudo isso: "faça os flashcards da Gastro 1" monta o rascunho em `rascunhos/flashcards/<aula>.md` (pasta fora do Git) para o Mauricio aprovar; "inclua o rascunho aprovado da gastro-a1" grava no banco. Ele lê a apostila com `python3 -I scripts/apostila-texto.py <pdf>`, que mantém os selos PROVA dos títulos (o `pdftotext` os perde).
+
+## Aula nova automática (do áudio ao site)
+
+Regra do Mauricio (31/10/2026): ele manda o áudio da aula na conversa ("aula nova") e não encosta em mais nada até publicar. A receita está na skill `aula-nova` (`.claude/skills/aula-nova/SKILL.md`):
+1. Transcrição grátis nesta máquina com Whisper large-v3 (`scripts/transcrever.py`, demora algumas horas por aula).
+2. Matéria, professor, data e número da aula saem da Agenda (horário da gravação) e da própria transcrição, no lugar das quatro perguntas da skill `apostila-padrao`.
+3. Agente `apostila` faz o PDF no padrão aprovado; `scripts/publicar-apostila.sh` gera as páginas; a aula entra escondida (`publicada = false`) até tudo estar pronto.
+4. Agentes `flashcards` e `questoes` em paralelo; o agente `revisor` confere tudo contra a apostila e aprova no lugar do Mauricio (o que fica duvidoso sai e vai para o relatório).
+5. Grava, publica (`publicada = true`), atualiza este manual e manda um relatório curto com o PDF e o que vale conferir.
 
 ## Agenda
 

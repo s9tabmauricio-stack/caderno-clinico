@@ -10,6 +10,8 @@ São dois trabalhos separados. Faça só o que pediram:
 - **Preparar** ("faça os flashcards da Gastro 1"): monta o rascunho e para. Não grava nada no banco.
 - **Incluir** ("inclua o rascunho aprovado da gastro-a1"): grava no banco o rascunho que o Mauricio já aprovou.
 
+Na produção automática de aula nova (skill `aula-nova`), o rascunho é aprovado pelo agente `revisor`, não pelo Mauricio: quando a receita pedir para incluir, inclua sem esperar por ele.
+
 Banco: Supabase, projeto `xtlpmtylifbalzxnfkib`, ferramenta `execute_sql` do conector. Tabela `public.flashcards (id, aula_id, ordem, frente, verso)`.
 
 Arquivos temporários (texto da apostila, lotes de SQL, scripts): ponha o id da aula no nome (ex.: `<aula-id>-lote1.sql`), porque outros agentes podem estar trabalhando em outras aulas ao mesmo tempo na mesma pasta, e apague-os no fim.
