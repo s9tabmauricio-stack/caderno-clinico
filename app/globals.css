@@ -1221,3 +1221,5 @@ h1.big{background:var(--metal-titulo);-webkit-background-clip:text;background-cl
 .erro-acoes{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
 .erro-acoes .btn{text-decoration:none}
 .verdict+.erro-salvar{margin:0 0 12px}
+/* iPad e iPhone dão zoom sozinhos ao tocar num campo com letra menor que 16 px */
+.ag-grupo,.turma-campo,.ed-form textarea.campo{font-size:16px}
