@@ -139,11 +139,23 @@ export function Questoes({ questoes, userId, ativo, mostrarTema = true, vazio, a
 
   // Faixa de quadradinhos: rola de lado para deixar a questão atual no meio
   const faixa = useRef<HTMLDivElement>(null)
+  // Ao trocar de questão, a tela volta ao "Questão X de Y" se ele tiver ficado para cima
+  // (depois de ler o comentário, o aluno está lá embaixo e cairia no meio da próxima questão)
+  const topo = useRef<HTMLDivElement>(null)
+  const primeira = useRef(true)
   useEffect(() => {
     const el = faixa.current
     const atual = el?.querySelector<HTMLElement>('.qd.cur')
-    if (!el || !atual) return
-    el.scrollTo({ left: atual.offsetLeft - (el.clientWidth - atual.offsetWidth) / 2, behavior: 'smooth' })
+    if (el && atual) el.scrollTo({ left: atual.offsetLeft - (el.clientWidth - atual.offsetWidth) / 2, behavior: 'smooth' })
+    if (primeira.current) {
+      primeira.current = false
+      return
+    }
+    const cab = topo.current
+    if (cab && cab.getBoundingClientRect().top < 0) {
+      const suave = !window.matchMedia('(prefers-reduced-motion: reduce)').matches
+      cab.scrollIntoView({ block: 'start', behavior: suave ? 'smooth' : 'auto' })
+    }
   }, [idx])
 
   if (!questoes.length) return <p className="vazio">{vazio ?? 'Esta aula ainda não tem questões.'}</p>
@@ -153,7 +165,7 @@ export function Questoes({ questoes, userId, ativo, mostrarTema = true, vazio, a
   const erradas = questoes.filter((x) => respostas[x.id] && !respostas[x.id].acertou).map((x) => x.id)
 
   const cabecalho = (
-    <div className="qhead">
+    <div className="qhead" ref={topo}>
       <span className="qcount">{q ? `Questão ${idx + 1} de ${questoes.length}` : 'Resultado'}</span>
       <div className="qdots" ref={faixa}>
         {questoes.map((x, i) => {

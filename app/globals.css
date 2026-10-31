@@ -1211,3 +1211,7 @@ h1.big{background:var(--metal-titulo);-webkit-background-clip:text;background-cl
   .in-mat-a{grid-template-columns:minmax(0,1fr)}
   .in-mat-p{grid-column:1;grid-row:auto;justify-content:flex-start}
 }
+
+/* ===== Melhorias de UX (31/10/2026) ===== */
+/* Questões: ao trocar de questão, o "Questão X de Y" para um pouco abaixo da borda da tela */
+.qhead{scroll-margin-top:calc(12px + env(safe-area-inset-top,0px))}
