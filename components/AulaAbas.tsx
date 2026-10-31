@@ -7,6 +7,7 @@ import type { CardAluno, QuestaoAluno } from '@/lib/dados'
 import { Icone } from './Icones'
 import { Questoes } from './Questoes'
 import { Flashcards } from './Flashcards'
+import { Apostila } from './Apostila'
 
 export type Aba = 'apostila' | 'questoes' | 'flashcards'
 
@@ -117,7 +118,7 @@ export function AulaAbas({
           </div>
         )}
         {apostilaHtml ? (
-          <article className="ap" dangerouslySetInnerHTML={{ __html: apostilaHtml }} />
+          <Apostila html={apostilaHtml} />
         ) : (
           <p className="vazio">O resumo desta aula ainda não foi publicado.</p>
         )}

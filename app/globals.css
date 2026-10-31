@@ -1245,3 +1245,24 @@ h1.big{background:var(--metal-titulo);-webkit-background-clip:text;background-cl
 .qacoes{position:sticky;bottom:calc(92px + env(safe-area-inset-bottom,0px));z-index:4;width:fit-content;max-width:calc(100% + 16px);margin:16px -8px -8px auto;padding:6px;border-radius:30px;
   background:var(--glass);box-shadow:var(--glass-shadow);-webkit-backdrop-filter:blur(20px) saturate(170%);backdrop-filter:blur(20px) saturate(170%)}
 @media (min-width:900px) and (min-height:560px){.qacoes{bottom:calc(14px + env(safe-area-inset-bottom,0px))}}
+/* Apostila em páginas: contador flutuante "Página X de Y" e tela cheia com zoom (components/Apostila.tsx) */
+.paginas img[role=button]{cursor:zoom-in}
+.ap-contador{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(92px + env(safe-area-inset-bottom,0px));z-index:6;display:flex;align-items:center;gap:2px;padding:4px;border-radius:999px;
+  background:var(--glass);box-shadow:var(--glass-shadow);-webkit-backdrop-filter:blur(20px) saturate(170%);backdrop-filter:blur(20px) saturate(170%);
+  font-size:14px;font-weight:600;color:var(--text);font-variant-numeric:tabular-nums;white-space:nowrap}
+.ap-contador span{padding:0 4px}
+.ap-contador button,.ap-visor-b{min-width:44px;min-height:44px;border:0;border-radius:999px;background:none;color:var(--accent);display:grid;place-items:center;cursor:pointer}
+.ap-contador button:disabled,.ap-visor-b:disabled{opacity:.35;cursor:default}
+@media (min-width:900px) and (min-height:560px){.ap-contador{left:calc(50% + 56px);bottom:calc(16px + env(safe-area-inset-bottom,0px))}}
+.ap-visor{position:fixed;inset:0;width:100%;height:100%;max-width:none;max-height:none;margin:0;padding:0;border:0;background:var(--bg);color:var(--text)}
+.ap-visor[open]{display:flex;flex-direction:column}
+.ap-visor::backdrop{background:rgba(0,0,0,.6)}
+.ap-visor-topo,.ap-visor-pe{display:flex;align-items:center;gap:4px;padding:8px calc(12px + env(safe-area-inset-right,0px)) 8px calc(12px + env(safe-area-inset-left,0px));border-bottom:1px solid var(--line)}
+.ap-visor-topo{padding-top:calc(8px + env(safe-area-inset-top,0px))}
+.ap-visor-pe{justify-content:space-between;border-bottom:0;border-top:1px solid var(--line);padding-bottom:calc(8px + env(safe-area-inset-bottom,0px))}
+.ap-visor-pe .btn{display:inline-flex;align-items:center;gap:4px;min-height:44px}
+.ap-visor-t{flex:1;font-weight:600;color:var(--ink);font-variant-numeric:tabular-nums}
+.ap-visor-z{min-width:48px;text-align:center;font-size:14px;color:var(--muted);font-variant-numeric:tabular-nums}
+.ap-visor-fechar{margin-left:8px;min-height:44px}
+.ap-visor-area{flex:1;overflow:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
+.ap-visor-area img{display:block;max-width:none;height:auto;margin:0 auto;background:#fff}
