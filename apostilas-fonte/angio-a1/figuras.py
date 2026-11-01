@@ -1,4 +1,4 @@
-# Figuras da apostila de Angiologia · Aula 1 · Pé diabético
+# Figuras da apostila de Angiologia · Aula 2 · Pé diabético
 # uso: python3 figuras.py  (gera frentes.svg e conduta.svg na pasta atual)
 import os, html, math, glob
 from PIL import ImageFont
