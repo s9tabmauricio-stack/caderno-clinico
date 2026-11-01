@@ -83,7 +83,7 @@ git add -A public/apostilas apostilas-fonte && git commit && git push origin HEA
 | `pneumo-a2` | Pneumologia · Aula 2 · Pneumonia adquirida na comunidade | 19 |
 | `pneumo-a3` | Pneumologia · Aula 3 · Doença pulmonar obstrutiva crônica | 21 |
 | `pneumo-a4` | Pneumologia · Aula 4 · Pneumonia hospitalar | 21 |
-| `angio-a1` | Angiologia · Aula 1 · Pé diabético | 26 |
+| `angio-a1` | Angiologia · Aula 2 · Pé diabético | 26 |
 
 As quatro estão no padrão de capítulos de 31/10/2026 (cartão com a coluna do
 número em degradê) e foram conferidas: gerar o PDF a partir destes arquivos dá
