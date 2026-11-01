@@ -158,6 +158,7 @@ Todos os agentes de conteúdo (`apostila`, `conteudo`, `flashcards`, `questoes`,
 - Mostre o conteúdo (a questão, a tela) antes de pedir uma decisão; um assunto por vez.
 - Publique e diga em uma ou duas frases o que mudou; diga claramente o que não foi testado.
 - Não deixe lixo: o que for substituído deve poder ser limpo (Conteúdo → Limpeza).
+- `/melhorar <pedido>` (skill `.claude/skills/melhorar/SKILL.md`, desde 01/11/2026): o Claude reescreve o pedido no padrão dos manuais da Anthropic e recomenda modelo, esforço e se vale o ultracode, sem executar nada; quando o Mauricio responde "pode fazer", aí executa.
 
 ## Pendências e ideias
 
