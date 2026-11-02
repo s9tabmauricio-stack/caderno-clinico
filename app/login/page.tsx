@@ -111,17 +111,21 @@ export default function LoginPage() {
   return (
     <main className="tela-entrar">
       <div className="lg-palco">
-        <Dendritos />
-        <img className="lg-logo" src="/brand/med-genius.webp" width={150} height={150} alt="Logo Med Genius" />
-        <div className="lg-marca">
-          <h1>Med Genius</h1>
-          <p className="lg-sub">Medicina · FAG</p>
+        <div className="lg-identidade">
+          <Dendritos />
+          <img className="lg-logo" src="/brand/med-genius.webp" width={150} height={150} alt="Logo Med Genius" />
+          <div className="lg-marca">
+            <h1>Med Genius</h1>
+            <p className="lg-sub">Medicina · FAG</p>
+          </div>
         </div>
-        <section className="lg-vidro" aria-label="Entrar">
-          <LoginForm />
-        </section>
+        <div className="lg-acesso">
+          <section className="lg-vidro" aria-label="Entrar">
+            <LoginForm />
+          </section>
+          <TemaEscolha />
+        </div>
       </div>
-      <TemaEscolha />
     </main>
   )
 }
