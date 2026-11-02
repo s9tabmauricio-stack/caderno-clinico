@@ -67,7 +67,7 @@ Este manual tem só as regras de sempre. Os detalhes ficam onde são usados; lei
 - Conteúdo: `materias` (`nefro`, `pneumo`, `gastro`, `orto`, `uro`, `pass`…), `aulas` (id `<materia>-a<N>`, `publicada`), `questoes`, `flashcards`. Progresso do aluno: `respostas`, `revisoes` e os históricos. Também `perfis`, `recados` e a agenda. Detalhes em `docs/banco.md`.
 - As visões das telas escondem aulas não publicadas e questões com `substituida_por` preenchido.
 - RLS: alunos leem conteúdo e só gravam o próprio progresso. Escrita de conteúdo: só pelo conector (Claude) ou pelas telas de admin (chave secreta).
-- A pasta `supabase/migrations/` guarda só a estrutura (as migrações que só incluíam conteúdo saíram em 02/11/2026) e não reflete tudo o que foi aplicado; a verdade é o banco (`list_migrations`).
+- A estrutura completa do banco (tabelas, visões, funções, gatilhos, regras de acesso) está copiada em `supabase/estrutura-atual.sql`: leia ali antes de consultar o banco. A pasta `supabase/migrations/` não reflete tudo o que foi aplicado. Mudou a estrutura? Atualize a cópia no mesmo trabalho (como em `docs/banco.md`).
 
 ### Limite do conector do Supabase (importante)
 
