@@ -43,6 +43,7 @@ Este manual tem só as regras de sempre. Os detalhes ficam onde são usados; lei
 
 - Next.js 16 (App Router, `proxy.ts` no lugar de middleware, `params`/`searchParams` assíncronos, tipos `PageProps<'/rota'>`).
   Rotas novas: rode `npx next build` antes do `tsc`, porque os tipos das rotas são gerados no build.
+- Antes de publicar código, rode `npm test` (testes em `tests/`). Mudou um comportamento de propósito? Atualize o teste junto.
 - React 19, `@supabase/ssr` com chave publicável (`lib/supabase/config.ts`). Letras: Inter no que se lê e se digita, Cinzel só em títulos e rótulos (regras em `docs/visual.md`).
 - Leitura de dados: `lib/dados.ts`; agenda: `lib/agenda.ts` (leitor do cronograma) e `lib/agenda-dados.ts`; admin: `lib/admin.ts`.
 - Repetição espaçada: `lib/srs.ts`. Explicação por alternativa: `lib/explicacoes.ts`.
