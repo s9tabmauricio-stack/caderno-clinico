@@ -13,6 +13,20 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 App de estudos da turma de Medicina (FAG) do Mauricio: apostilas de cada aula, banco de questões, flashcards com repetição espaçada, agenda da semana e desempenho.
 Tudo em português do Brasil. O dono do projeto não é programador: explique em linguagem simples.
 
+Este manual tem só as regras de sempre. Os detalhes ficam onde são usados; leia o arquivo antes de mexer naquele assunto:
+
+| Assunto | Onde |
+|---|---|
+| Como cada tela funciona (Início, Revisão, Banco, Aula, Admin, tablet deitado, Agenda) | [`docs/telas.md`](docs/telas.md) |
+| Tabelas, visões e gatilhos do banco; subpastas do Drive | [`docs/banco.md`](docs/banco.md) |
+| Visual: cores, letras, ícones, versões antigas | [`docs/visual.md`](docs/visual.md) |
+| Subir ou trocar uma apostila | skill `subir-apostila` (`.claude/skills/subir-apostila/SKILL.md`) |
+| Regras das questões e dos flashcards (formato, origem, PROVA, Revalida) | skill `questoes-e-flashcards` e os agentes em `.claude/agents/` |
+| Lançar provas na Agenda | skill `provas-agenda` |
+| Aula nova a partir do áudio | skill `aula-nova` |
+| Computador Windows do Mauricio | [`docs/windows.md`](docs/windows.md) |
+| Ideias de experiência do usuário (UX) | [`MELHORIAS-UX.md`](MELHORIAS-UX.md) |
+
 ## Onde fica cada coisa
 
 | | |
@@ -22,14 +36,14 @@ Tudo em português do Brasil. O dono do projeto não é programador: explique em
 | Publicação | A Vercel publica sozinha a cada `git push origin main` (1–2 min). Ramos `claude/**` não geram publicação de prévia (`vercel.json`), para não encher o "Deployment Storage" (limite de 10 GB no plano gratuito) |
 | Banco | Supabase, projeto `xtlpmtylifbalzxnfkib` (São Paulo), plano gratuito |
 | Administrador | CPF 086.994.266-23 (variável `ADMIN_CPFS` na Vercel; padrão no código) |
-| Arquivos do projeto | Pasta **MEDGENIUS** no Google Drive do Mauricio (s9tabmauricio@gmail.com), https://drive.google.com/drive/folders/1i6ftIjwzgyfExlT8PYXXOhe5bFI8vMqR. Desde 31/10/2026, tudo o que for guardado fora do Git (PDFs, rascunhos, apostilas, materiais) vai para lá. Subpastas: `1 - ENTRADA (coloque os áudios aqui)` (id `13zTV8kYtmAWZyUJA9TOo5yC0tFfw3gk-`: o Mauricio só solta o áudio da aula; o Claude descobre a aula pela data e pela Agenda, faz o resto e tira o áudio daqui), `2 - Aulas` (id `1_ND6Ao_6W11oNyhQwAKEWxwuxi8FsiQi`: uma pasta por aula, `<aula-id> · <Título>`, com áudio original, transcrição, apostila PDF/HTML e rascunhos de flashcards e questões), `3 - Provas e fontes` (id `1Eff4u0H9F15JVkfMvUN_lLTnqzIFFHLD`: provas antigas, Revalida, slides e referências) |
+| Arquivos do projeto | Pasta **MEDGENIUS** no Google Drive do Mauricio (s9tabmauricio@gmail.com), https://drive.google.com/drive/folders/1i6ftIjwzgyfExlT8PYXXOhe5bFI8vMqR. Desde 31/10/2026, tudo o que for guardado fora do Git (PDFs, rascunhos, apostilas, materiais) vai para lá. Subpastas e ids em `docs/banco.md` |
 | Chave secreta | `SUPABASE_SECRET_KEY` na Vercel (usada só no servidor: alunos, agenda, conteúdo) |
 
 ## Tecnologia
 
 - Next.js 16 (App Router, `proxy.ts` no lugar de middleware, `params`/`searchParams` assíncronos, tipos `PageProps<'/rota'>`).
   Rotas novas: rode `npx next build` antes do `tsc`, porque os tipos das rotas são gerados no build.
-- React 19, `@supabase/ssr` com chave publicável (`lib/supabase/config.ts`). Letras: Inter (`--font-texto`) em tudo o que se lê e se digita (enunciado, alternativas, flashcards, recados, campos, números); Cinzel (`--font-marca`) só nos títulos das telas, nomes das matérias, rótulos em maiúsculas, números grandes isolados e na tela de entrada (MED GENIUS, ENTRAR). A Cinzel não tem minúsculas de verdade (mg e Mg ficam quase iguais), nem algarismos de largura fixa, nem símbolos como β, ≥ e →. A lista fica no bloco "Letras" no fim de `app/globals.css`.
+- React 19, `@supabase/ssr` com chave publicável (`lib/supabase/config.ts`). Letras: Inter no que se lê e se digita, Cinzel só em títulos e rótulos (regras em `docs/visual.md`).
 - Leitura de dados: `lib/dados.ts`; agenda: `lib/agenda.ts` (leitor do cronograma) e `lib/agenda-dados.ts`; admin: `lib/admin.ts`.
 - Repetição espaçada: `lib/srs.ts`. Explicação por alternativa: `lib/explicacoes.ts`.
 
@@ -39,33 +53,18 @@ Tudo em português do Brasil. O dono do projeto não é programador: explique em
   (`DOMINIO_LOGIN` em `lib/cpf.ts`). **Nunca mude esse domínio**: as contas existentes dependem dele (é só um identificador, não o endereço do site).
 - Contas são criadas pelo administrador em Configurações → Alunos (`/admin`). Cadastro aberto deve ficar desligado no Supabase.
 - Nunca digite senhas ou chaves em sites; quem cria contas e configura chaves é o Mauricio.
+- Proteção contra senhas vazadas do Supabase está desligada (recurso do plano pago).
 
 ## Telas
 
 - Nomes na tela (manter): **Configurações** (nunca "Perfil"; só o endereço `/perfil` e o código usam esse nome), **Revisão** = fila de flashcards do dia, **Flashcards** = os cards de uma aula (ou, na aba da matéria, de todas as aulas dela), **Estudar** = a aba das matérias (aulas e banco), **Questões** = as de uma aula, **Banco de questões** = todas as questões de uma matéria.
-- **Tablet deitado** (tela de pelo menos 900 × 560 px): a barra de abas vira uma coluna de vidro à esquerda e as telas de estudo (Início, Estudar, Matéria, Banco, Aula, Desempenho) usam mais largura (`<Pagina larga>`). Início com a agenda na coluna da esquerda e cards, questões e matérias à direita; a questão fica como no celular (enunciado em cima, alternativas embaixo, na largura toda da coluna, alinhada com o resto da tela); as barras de abas (da matéria e da aula), a apostila e os flashcards também usam a largura toda da coluna; Desempenho em duas colunas. Em pé ou no celular nada muda. O CSS está no fim de `app/globals.css`.
-- Início (proposta E do quadro https://claude.ai/artifact/BjQhu55DNueYG5a7zFWucg): saudação, cartões **Cards** e **Questões**, **Agenda de hoje**, **Próximas provas** (contagem regressiva em `components/ContagemProva.tsx`; "Todas →" abre `/agenda#provas`) e **Matérias** (a da última aula estudada tem "Continuar").
-- **Revisão** (`/revisao`): fila do dia com todos os cards (lidos de 1000 em 1000 por `lerTudo` em `lib/dados.ts`, porque cada leitura do Supabase para em 1000). Os botões de matéria no topo (e a lista "Por matéria") abrem `/revisao?materia=<id>`, que revisa só os cards daquela matéria.
-- **Estudar** (`/estudar`): uma carta por matéria (aulas, progresso) com o atalho do Banco de questões embaixo. `/questoes` só redireciona para cá.
-- Barra de baixo: Início, Agenda, Matérias, Revisão, Desempenho. A tela "Configurações" (`/perfil`) fica na engrenagem do canto superior direito (todas as telas); a engrenagem sempre abre Configurações. Para o administrador, há atalhos próprios de Administração e Recados com contador no topo.
-- Início: as aulas de hoje e as matérias abrem a matéria; "Refazer as erradas" abre o banco filtrado (erradas numa matéria só) ou o Desempenho. Desempenho: cada tema abre o banco já filtrado e cada matéria tem "Refazer as erradas".
-- Banco de questões: os filtros ficam recolhidos no botão "Filtrar"; tema, prova e situação ficam na URL e lembrados no cookie `mgf_<matéria>`. O botão Voltar aceita `?retorno=` apenas para rotas internas de estudo e mantém compatibilidade com `?de=` (desempenho ou `aula:<id>`). No Desempenho, retorna à seção da matéria; nas aulas, preserva a aba e a origem da busca.
-- Aula: abas Apostila / Questões / Flashcards. Matéria: abas **Aulas | Banco de questões | Flashcards** (as três telas mostram as mesmas abas, na largura toda, alinhadas com o que vem embaixo; no celular o número de cada aba fica embaixo do nome; o Banco tem filtros por tema e prova; Flashcards, `/materia/<id>/flashcards`, estuda os cards de todas as aulas da matéria e lista os cards por aula).
-- Questões: antes de responder, cada alternativa tem a faixa "Cortar" (tesoura; Shift + letra), que vale só enquanto o aluno está na questão. Depois de responder, certa em verde, erradas em vermelho, a marcada em destaque; comentário embaixo da certa e o motivo embaixo de cada errada. No topo do cartão, o botão **Copiar** (todos os alunos) copia só o enunciado e as alternativas (A) …, B) …), sem gabarito nem comentário, para o aluno conferir na IA dele. Para o administrador, cada questão tem o botão **Editar** (no canto do cartão) que abre o mesmo editor de Conteúdo ali mesmo.
-- **Conversa da turma** (embaixo da questão, só depois de responder): o aluno deixa "💡 Insight para os colegas" ou "⚠️ Erro na questão"; aparece como "Augusto deixou uma dica" / "Augusto achou um erro" (sem artigo, vale para qualquer nome). Colegas marcam dica como 👍 Útil; o autor apaga o próprio recado.
-- Administração (atalho próprio no topo → Central, com menu persistente entre as seções): **Central** (`/admin/central`, desenho em https://claude.ai/artifact/4hnQkbH11HogQ5NMYGAhq6: avisos, uso da turma, alunos, conteúdo, questões mais erradas e espaço do banco; números da função `central_resumo()` do banco, só pela chave secreta; código em `lib/central.ts` e `components/admin/Central.tsx`), **Recados da turma** (`/admin/recados`: contador no atalho Recados com os novos; marcar visto/corrigido, abrir a questão, apagar), **Alunos** (`/admin`), **Conteúdo** (`/admin/conteudo`: resumo do que está no ar, editar/apagar aulas, questões, flashcards (na aula, "Apagar os N flashcards" apaga todos de uma vez, para refazer no padrão novo) e limpar versões antigas; `/admin/painel` só redireciona para cá), **Agenda da semana** (`/admin/agenda`: colar o cronograma do WhatsApp).
+- Barra de baixo: Início, Agenda, Matérias, Revisão, Desempenho; engrenagem no canto (Configurações); para o administrador, atalhos de Administração e Recados.
+- O resto (cada tela, tablet deitado, Administração) está em `docs/telas.md`.
 
 ## Banco de dados
 
-- `materias` (id curto: `nefro`, `pneumo`, `gastro`, `orto`, `uro`, `pass`; `cor_inicio`/`cor_fim`, `descricao`, `ordem`)
-- `aulas` (id `<materia>-a<N>`, ex.: `uro-a2`; `titulo`, `resumo`, `apostila_html`, `publicada`, `ordem`)
-- `questoes` (`materia_id`, `aula_id` opcional, `ordem`, `enunciado`, `alternativas` jsonb, `correta` = índice 0–4, `comentario`, `por_que_erradas`, `tema`, `prova`, `fonte`, `origem`, `substituida_por`)
-- `flashcards` (id `<aula>-fNN`, `frente`, `verso`, `ordem`)
-- Progresso: `respostas` (só a última resposta de cada questão), `historico_revisoes` (cada avaliação de flashcard, com `errou` e `intervalo_dias`; gravada por gatilho em `revisoes`: "Desfazer" tira a linha desfeita e apagar o card de `revisoes` apaga o histórico dele; desde 27/10/2026, antes disso só a última revisão de cada card), `historico_respostas` (todas as respostas dadas: um gatilho do banco grava uma linha a cada resposta nova ou refeita; só o gatilho grava e o aluno só lê e apaga o seu; "Refazer" não apaga, só "Apagar progresso"), `revisoes`; alunos: `perfis` (`nome`, `grupo` de prática 1–29; o aluno só pode alterar `nome` e `grupo`)
-- Recados: `recados` (`questao_id`, `user_id`, `autor` = primeiro nome, preenchido por gatilho; `tipo` `insight`/`erro`; `status` `novo`/`visto`/`corrigido`) e `recados_uteis`. Aluno lê todos, cria e apaga os seus; status só muda pelo admin (chave secreta).
-- Agenda: `agenda_semanas` (segunda-feira da semana; `texto` vazio = semana criada só para as provas) e `agenda_eventos` (aulas, cancelamentos, avisos, `grupos int[]`; `fixo` = incluído à parte, como as provas da P2, e a publicação da semana não apaga)
-- Visões usadas pelas telas: `questoes_do_aluno`, `progresso_aulas`, `progresso_materias`, `progresso_temas`, `progresso_tentativas` (tentativas e acerto "na 1ª vez", mostrados no Desempenho), `flashcards_do_aluno`.
-  Todas escondem aulas não publicadas e questões com `substituida_por` preenchido.
+- Conteúdo: `materias` (`nefro`, `pneumo`, `gastro`, `orto`, `uro`, `pass`…), `aulas` (id `<materia>-a<N>`, `publicada`), `questoes`, `flashcards`. Progresso do aluno: `respostas`, `revisoes` e os históricos. Também `perfis`, `recados` e a agenda. Detalhes em `docs/banco.md`.
+- As visões das telas escondem aulas não publicadas e questões com `substituida_por` preenchido.
 - RLS: alunos leem conteúdo e só gravam o próprio progresso. Escrita de conteúdo: só pelo conector (Claude) ou pelas telas de admin (chave secreta).
 - A pasta `supabase/migrations/` guarda só a estrutura (as migrações que só incluíam conteúdo saíram em 02/11/2026) e não reflete tudo o que foi aplicado; a verdade é o banco (`list_migrations`).
 
@@ -75,69 +74,18 @@ Pelo conector, **incluir dados e alterações curtas funcionam**; **apagar e ree
 - Corrigir uma questão: inclua uma versão nova (`<id>-v2`, mesma ordem) e marque a antiga com `update ... set substituida_por = '<id>-v2'`. Leve os recados junto: `update public.recados set questao_id = '<id>-v2' where questao_id = '<id>'`. Depois o Mauricio limpa em Conteúdo → Limpeza (a limpeza também move os recados que sobrarem para a versão nova).
 - Apagar ou ajustar texto: o Mauricio faz em Conteúdo.
 
-## Como subir uma apostila (o jeito aprovado: páginas iguais ao PDF)
+## Conteúdo (apostilas, questões, flashcards)
 
-1. `pdftoppm -scale-to-x 1400 -scale-to-y -1 -jpeg -jpegopt quality=80 arquivo.pdf public/apostilas/<aula-id>/p`
-2. Converter cada página para `NN.webp` (qualidade 78) e apagar os .jpg; copiar o PDF como `public/apostilas/<aula-id>/apostila.pdf`.
-3. Commit + push (as imagens precisam estar no ar).
-4. Incluir a aula pelo conector:
-
-```sql
-insert into public.aulas (id, materia_id, ordem, titulo, resumo, publicada, apostila_html)
-select '<aula-id>', '<materia>', <N>, '<Título>', '<Resumo da capa>', true,
-  '<div class="paginas"><div class="pdfbar"><span class="main"><span class="t">Apostila em PDF</span><span class="s"><P> páginas · abre numa nova aba</span></span><a class="btn ghost sm" href="/apostilas/<aula-id>/apostila.pdf" target="_blank" rel="noopener">Abrir</a></div>'
-  || (select string_agg(format('<img src="/apostilas/<aula-id>/%s.webp" width="1400" height="1980" alt="Página %s de <P>"%s decoding="async">', lpad(i::text, 2, '0'), i, case when i = 1 then '' else ' loading="lazy"' end), '' order by i) from generate_series(1, <P>) i)
-  || '</div>'
-on conflict (id) do nothing;
-```
-
-Título, resumo e professor saem da capa (`pdftotext -f 1 -l 1`). Atualize a `descricao` da matéria com o professor. Trocar uma apostila = sobrescrever as imagens e o PDF e publicar. **Se o número de páginas mudar**, refaça também o `apostila_html` da aula (mesmo modelo acima, com o número novo), senão as páginas a mais não aparecem; pelo conector isso funciona, porque o comando é curto mesmo gerando um texto longo.
-
-**Guarde o HTML da apostila em [`apostilas-fonte/<aula-id>/`](apostilas-fonte/README.md)** (o arquivo de onde o PDF é gerado, com as figuras e os programas que as desenham). Sem ele, mudar o visual obriga a remontar a apostila inteira a partir do PDF. As apostilas anteriores a 31/10/2026 ainda não têm esse arquivo; as de Pneumologia 1 a 4 já têm.
-
-## Questões
-
-- `alternativas`: lista de textos sem a letra; `correta`: índice (0 = A).
-- `comentario`: aparece embaixo da alternativa certa.
-- `por_que_erradas`: uma linha por letra (`B: …`, ou `A, C e E: …` para várias). Linhas sem letra viram o quadro "Sobre as alternativas".
-- `origem`: `professor` (corrigida em sala), `unica`, `inferido` (alternativa reconstruída), `montada` (alternativas montadas, gabarito não oficial), `resolvida` (gabarito não oficial), `adaptada` (questão oficial alterada para seguir a aula; o comentário diz o que mudou).
-- Quando a prova não tem gabarito: resolva com base na apostila da aula, marque como não oficial e **discuta as duvidosas com o Mauricio uma a uma, mostrando o texto completo da questão** antes de pedir decisão.
-- Questões montadas pela aula (agente `questoes`): cobrem a apostila inteira com folga, com pelo menos uma questão para cada ponto de PROVA, cada coisa que o professor frisou, repetiu ou deu a entender que cai (os de PROVA ganham duas ou mais); só o que está na apostila; cinco alternativas, gabarito espalhado, `origem = 'montada'`, ids `<aula>-q01`… Na produção automática, a duvidosa não entra: fica no relatório.
-
-## Flashcards
-
-- Feitos a partir da apostila da aula, na ordem dela, cobrindo a apostila inteira com folga (Pneumonia, `pneumo-a2`: 101 cards).
-- **Frente:** pergunta curta e direta ("Qual é a definição de enfisema?"); comparação com × ("Asma × DPOC: o que muda…?"); mini-caso quando ajuda ("70 anos, PA 100 por 70…: quantos pontos e qual conduta?").
-- **Verso:** a resposta em 1 a 3 frases, linguagem simples, sem tópicos.
-- **"PROVA · "** no começo da frente quando o professor diz que cai na prova ou que é importante (marca PROVA da apostila, "isso vocês precisam saber", "a definição importa muito", slides de "questões de prova") **e também quando ele só dá a entender que é importante**: fez questão de perguntar à turma, repetiu, frisou, insistiu, chamou a atenção. Na dúvida, marque como PROVA, sem perguntar ao Mauricio (regra dele, 22/10/2026).
-- O que vem do "Complemento: fora da aula" da apostila entra avisando no próprio card ("Fora da aula: …").
-- ids `<aula>-f01`, `-f02`… (acima de 99 seguem `-f100`, `-f101`); `ordem` = número do card. Mostrar a lista ao Mauricio antes de incluir (menos na produção automática de aula nova, em que o agente `revisor` aprova).
-- **Agente `flashcards`** (`.claude/agents/flashcards.md`) faz tudo isso: "faça os flashcards da Gastro 1" monta o rascunho em `rascunhos/flashcards/<aula>.md` (pasta fora do Git) para o Mauricio aprovar; "inclua o rascunho aprovado da gastro-a1" grava no banco. Ele lê a apostila com `python3 -I scripts/apostila-texto.py <pdf>`, que mantém os selos PROVA dos títulos (o `pdftotext` os perde).
-
-## Aula nova automática (do áudio ao site)
-
-Regra do Mauricio (31/10/2026): ele manda o áudio da aula na conversa ("aula nova") e não encosta em mais nada até publicar. A receita está na skill `aula-nova` (`.claude/skills/aula-nova/SKILL.md`):
-1. Transcrição grátis nesta máquina com Whisper large-v3 (`scripts/transcrever.py`, demora algumas horas por aula).
-2. Matéria, professor, data e número da aula saem da Agenda (horário da gravação) e da própria transcrição, no lugar das quatro perguntas da skill `apostila-padrao`.
-3. Agente `apostila` faz o PDF no padrão aprovado; `scripts/publicar-apostila.sh` gera as páginas; a aula entra escondida (`publicada = false`) até tudo estar pronto.
-4. Agente `conteudo` faz flashcards e questões de uma vez (lê a apostila uma vez só); o agente `revisor` confere tudo contra a apostila e aprova no lugar do Mauricio (o que fica duvidoso sai e vai para o relatório).
-5. Grava, publica (`publicada = true`), atualiza este manual e manda um relatório curto com o PDF e o que vale conferir.
-
-No computador Windows do Mauricio (aula nova, transcrição): leia [`docs/windows.md`](docs/windows.md).
-
-Todos os agentes de conteúdo (`apostila`, `conteudo`, `flashcards`, `questoes`, `revisor`) rodam sempre no modelo Opus com esforço extra-alto (regra do Mauricio: não abrir mão de qualidade). Está no topo de cada arquivo em `.claude/agents/`.
-
-## Agenda
-
-- O Mauricio cola o cronograma do WhatsApp em `/admin/agenda`; `lib/agenda.ts` separa dias, horários, matéria (emoji ou palavra), professor, local, grupos, cancelamentos (❌) e avisos. Grupos por letra (A = práticas 1 a 7…) viram números.
-- Teóricas valem para todos; práticas, só para os grupos listados. O aluno informa o grupo na própria Agenda (seletor ao lado dos filtros) ou em Configurações. Tocar numa aula abre a matéria dela.
-- **Provas (P2 de 10 a 25/11/2026)**: entram pelo conector em `agenda_eventos` com `tipo = 'prova'`, `fixo = true`, título "P2 de <Matéria>" (crie antes a semana em `agenda_semanas` só com a segunda-feira, se ela ainda não existir). Aparecem no dia (Início e Agenda) e no quadro "Próximas provas" no fim da Agenda. Publicar a semana não apaga; se o cronograma do WhatsApp trouxer a prova da mesma matéria no mesmo dia, no dia vale a do cronograma. Semana só de provas não aparece em "Semanas publicadas" nem vira "a próxima semana" antes de chegar.
+- Toda apostila nova ou refeita guarda o HTML de origem em [`apostilas-fonte/<aula-id>/`](apostilas-fonte/README.md). Como publicar: skill `subir-apostila`.
+- Questões e flashcards da aula saem dos agentes `questoes`, `flashcards` ou `conteudo` e passam pelo `revisor`. Regras: skill `questoes-e-flashcards`.
+- Todos os agentes de conteúdo (`apostila`, `conteudo`, `flashcards`, `questoes`, `revisor`) rodam sempre no modelo Opus com esforço extra-alto (regra do Mauricio: não abrir mão de qualidade). Está no topo de cada arquivo em `.claude/agents/`.
+- **Aula nova** (regra do Mauricio, 31/10/2026): ele manda o áudio da aula na conversa ("aula nova") e não encosta em mais nada até publicar. Siga a skill `aula-nova`: transcrição, apostila, flashcards e questões, revisão e publicação, sem perguntar nada.
 
 ## Visual
 
 **"Vidro líquido em titânio, dia e noite"** (`visual-v6`, no ar desde 21/10/2026). Noite (padrão) e dia: o aluno escolhe Auto | Dia | Noite (`components/TemaEscolha.tsx`, salvo em `localStorage` `mg-tema`); `lib/tema.ts` põe `data-tema` no `<html>` antes de pintar e o CSS do dia usa `:root[data-tema="dia"]`, nunca `@media (prefers-color-scheme)`. Cada cor tem um só trabalho: titânio (prata fria, nunca dourado) = ação principal, títulos e números grandes; azul = toque, seleção, aba ativa e progresso; verde = certo; coral = errado; âmbar = aviso e aula cancelada. Tokens e regras no fim de `app/globals.css`; cor clara de cada matéria em `COR_MATERIA` (`lib/agenda.ts`).
 
-**Antes de mexer no visual, leia [`docs/visual.md`](docs/visual.md)**: cores das matérias, flashcards, ícones e logo, tela de entrada e as versões antigas guardadas nos ramos `visual-v1` a `visual-v6` (não apague esses ramos).
+**Antes de mexer no visual, leia [`docs/visual.md`](docs/visual.md)**: cores das matérias, letras, flashcards, ícones e logo, tela de entrada e as versões antigas guardadas nos ramos `visual-v1` a `visual-v6` (não apague esses ramos).
 
 ## Claude e Codex (dois assistentes no mesmo projeto)
 
@@ -152,17 +100,5 @@ Todos os agentes de conteúdo (`apostila`, `conteudo`, `flashcards`, `questoes`,
 - Mostre o conteúdo (a questão, a tela) antes de pedir uma decisão; um assunto por vez.
 - Publique e diga em uma ou duas frases o que mudou; diga claramente o que não foi testado.
 - Não deixe lixo: o que for substituído deve poder ser limpo (Conteúdo → Limpeza).
-- `/melhorar <pedido>` (skill `.claude/skills/melhorar/SKILL.md`, desde 01/11/2026): o Claude reescreve o pedido no padrão dos manuais da Anthropic e recomenda modelo, esforço e se vale o ultracode. Desde 02/11/2026 ela é mais automática: entra sozinha quando o pedido vem vago (sem digitar `/melhorar`); executa na hora o que é pequeno e claro (sem banco, sem conteúdo, no modelo atual); no resto mostra o pedido melhorado com os botões **Fazer agora / Ajustar / Só copiar** (ou "pode fazer").
-
-## Pendências e ideias
-
-- Questões: várias aulas ainda não têm. Para saber quais, conte no banco (ou veja a Central). O Revalida quase não cobra pneumonia hospitalar (procurado de 2016 a 2026/2).
-- Flashcards: todas as aulas no ar têm cards no padrão novo. Quantos cada uma tem: conte no banco, não anote aqui. A aula de Angiologia (pé diabético) tem o id `angio-a1`.
-- Provas do Revalida (INEP): o servidor manda o certificado incompleto; baixe com `curl --cacert` num arquivo que junte `/root/.ccr/ca-bundle.crt` e o intermediário "RNP ICPEdu GR46 OV TLS CA 2025" (http://secure.globalsign.com/cacert/rnpicpedugr46ovtlsca2025.crt, convertido para PEM). A prova de 2022.1 tem a fonte embaralhada no PDF: confira o texto na imagem da página.
-- Proteção contra senhas vazadas do Supabase está desligada (recurso do plano pago).
-- Sugestões e ideias de experiência do usuário (UX): veja [`MELHORIAS-UX.md`](MELHORIAS-UX.md).
-
-## Encontrar conteúdo e voltar
-
-- A tela Matérias não tem busca (retirada a pedido do Mauricio em 31/10/2026).
-- Flashcards de aula/matéria permitem estudar livremente; Revisão reúne cards novos e pendentes para hoje. As telas explicam a diferença e oferecem atalhos entre elas.
+- Pedido vago ou `/melhorar <pedido>`: skill `melhorar` (melhora o pedido, recomenda modelo e esforço, faz na hora o que é pequeno).
+- Não anote contagens neste manual (quantos cards ou questões cada aula tem): conte no banco ou veja a Central. Várias aulas ainda não têm questões.
