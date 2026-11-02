@@ -25,7 +25,6 @@ Este manual tem só as regras de sempre. Os detalhes ficam onde são usados; lei
 | Lançar provas na Agenda | skill `provas-agenda` |
 | Aula nova a partir do áudio | skill `aula-nova` |
 | Computador Windows do Mauricio | [`docs/windows.md`](docs/windows.md) |
-| Ideias de experiência do usuário (UX) | [`MELHORIAS-UX.md`](MELHORIAS-UX.md) |
 
 ## Onde fica cada coisa
 
