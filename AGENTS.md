@@ -66,7 +66,7 @@ Este manual tem só as regras de sempre. Os detalhes ficam onde são usados; lei
 
 - Conteúdo: `materias` (`nefro`, `pneumo`, `gastro`, `orto`, `uro`, `pass`…), `aulas` (id `<materia>-a<N>`, `publicada`), `questoes`, `flashcards`. Progresso do aluno: `respostas`, `revisoes` e os históricos. Também `perfis`, `recados` e a agenda. Detalhes em `docs/banco.md`.
 - As visões das telas escondem aulas não publicadas e questões com `substituida_por` preenchido.
-- RLS: alunos leem conteúdo e só gravam o próprio progresso. Escrita de conteúdo: só pelo conector (Claude) ou pelas telas de admin (chave secreta).
+- RLS: alunos leem conteúdo e só gravam o próprio progresso. Escrita de conteúdo: só pelo conector (Claude ou Antigravity) ou pelas telas de admin (chave secreta).
 - A estrutura completa do banco (tabelas, visões, funções, gatilhos, regras de acesso) está copiada em `supabase/estrutura-atual.sql`: leia ali antes de consultar o banco. A pasta `supabase/migrations/` não reflete tudo o que foi aplicado. Mudou a estrutura? Atualize a cópia no mesmo trabalho (como em `docs/banco.md`).
 
 ### Limite do conector do Supabase (importante)
@@ -96,7 +96,7 @@ Pelo conector, **incluir dados e alterações curtas funcionam**; **apagar e ree
 - Como o Claude publica (pôr no `main`):
   - **Conversa pela nuvem** (claude.ai/code, app do celular): trabalha no ramo `claude/...` da sessão, abre um PR e, com o trabalho pronto e conferido, junta ao `main` (squash) pelo GitHub. Se o Mauricio pediu para ver antes, espera o "pode publicar". Depois de juntado, o PR não recebe mais nada: o trabalho seguinte começa de novo do `main`, num PR novo.
   - **Computador do Mauricio e aula nova** (que não espera aprovação): publica direto com `git fetch origin main && git rebase origin/main && git push origin HEAD:main` e empurra também o ramo da sessão.
-- Só o Claude tem o conector do Supabase. Sem ele (Codex, Antigravity), não tente gravar no banco: mexa só no código e deixe questões, flashcards, aulas, apostilas e provas para o Claude.
+- O Claude e o Antigravity têm o conector do Supabase (o do Antigravity, desde 01/11/2026, fica em `~/.gemini/config/mcp_config.json`, preso ao projeto `xtlpmtylifbalzxnfkib`); os dois seguem as mesmas regras do conector (seção "Limite do conector do Supabase"), e mudança na estrutura do banco só com o "pode" do Mauricio. O Codex não tem: não tente gravar no banco, mexa só no código e deixe questões, flashcards, aulas, apostilas e provas para os outros dois.
 - Um assunto por vez para cada um, para as mudanças não baterem na mesma tela.
 
 ## Como trabalhar com o Mauricio
