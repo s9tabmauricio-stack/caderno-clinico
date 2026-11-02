@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="478" height="372" viewBox="0 0 478 372">
+<rect x="129.0" y="1.0" width="220.0" height="26.0" rx="6" fill="#E8F0FE" stroke="#C3D8F8" stroke-width="1"/>
+<text x="239.0" y="16.9" font-family="Inter" font-size="8.2" font-weight="600" fill="#16315C" text-anchor="middle">Pneumonia com derrame pleural</text>
+<rect x="0.0" y="44.0" width="144.0" height="44.0" rx="6" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="1"/>
+<text x="72.0" y="63.9" font-family="Inter" font-size="7.4" font-weight="400" fill="#1F2933" text-anchor="middle">Derrame menor que 10 mm (coluna</text>
+<text x="72.0" y="73.3" font-family="Inter" font-size="7.4" font-weight="400" fill="#1F2933" text-anchor="middle">menor que 1 cm, deitado de lado)</text>
+<rect x="330.0" y="51.0" width="148.0" height="30.0" rx="6" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="1"/>
+<text x="404.0" y="68.7" font-family="Inter" font-size="7.6" font-weight="400" fill="#1F2933" text-anchor="middle">Derrame maior que 10 mm</text>
+<rect x="0.0" y="108.0" width="144.0" height="44.0" rx="6" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="1"/>
+<text x="72.0" y="127.9" font-family="Inter" font-size="7.4" font-weight="400" fill="#1F2933" text-anchor="middle">Não punciona: trata a pneumonia e</text>
+<text x="72.0" y="137.3" font-family="Inter" font-size="7.4" font-weight="400" fill="#1F2933" text-anchor="middle">repete a radiografia</text>
+<rect x="330.0" y="115.0" width="148.0" height="30.0" rx="6" fill="#E8F0FE" stroke="#C3D8F8" stroke-width="1"/>
+<text x="404.0" y="132.9" font-family="Inter" font-size="8.2" font-weight="600" fill="#16315C" text-anchor="middle">Toracocentese</text>
+<polygon points="238.9,26.3 78.4,42.6 77.9,38.2 72.0,44.0 79.0,48.5 78.5,44.1 239.1,27.7" fill="#8AA9DF"/>
+<polygon points="238.9,27.7 397.5,50.8 396.8,55.2 404.0,51.0 398.3,44.9 397.7,49.3 239.1,26.3" fill="#8AA9DF"/>
+<polygon points="71.2,88.0 71.2,101.5 66.8,101.5 72.0,108.0 77.2,101.5 72.8,101.5 72.8,88.0" fill="#8AA9DF"/>
+<polygon points="403.2,81.0 403.2,108.5 398.8,108.5 404.0,115.0 409.2,108.5 404.8,108.5 404.8,81.0" fill="#8AA9DF"/>
+<polygon points="144.0,130.8 323.5,130.8 323.5,135.2 330.0,130.0 323.5,124.8 323.5,129.2 144.0,129.2" fill="#8AA9DF"/>
+<rect x="219.8" y="124.0" width="34.4" height="11.0" rx="4" fill="#FFFFFF"/>
+<text x="237.0" y="132.3" font-family="Inter" font-size="6.8" font-weight="600" fill="#0B5BD3" text-anchor="middle">cresceu</text>
+<rect x="159.0" y="182.0" width="158.0" height="64.0" rx="6" fill="#F5F8FF" stroke="#8AA9DF" stroke-width="1" stroke-dasharray="3 2"/>
+<rect x="163.8" y="176.0" width="34.5" height="10.0" rx="3" fill="#1F2933"/>
+<text x="181.0" y="183.1" font-family="Inter" font-size="5.6" font-weight="600" fill="#FFFFFF" text-anchor="middle" letter-spacing="1.6">PROVA</text>
+<text x="238.0" y="216.7" font-family="Inter" font-size="7.8" font-weight="600" fill="#16315C" text-anchor="middle">Turvo ou pus · Gram ou cultura com</text>
+<text x="238.0" y="226.7" font-family="Inter" font-size="7.8" font-weight="600" fill="#16315C" text-anchor="middle">bactéria · pH abaixo de 7,2</text>
+<rect x="330.0" y="182.0" width="148.0" height="64.0" rx="6" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="1"/>
+<text x="404.0" y="211.9" font-family="Inter" font-size="7.4" font-weight="400" fill="#1F2933" text-anchor="middle">Pouco líquido, claro, sem bactéria e</text>
+<text x="404.0" y="221.3" font-family="Inter" font-size="7.4" font-weight="400" fill="#1F2933" text-anchor="middle">pH de 7,2 ou mais</text>
+<polygon points="403.8,144.3 244.2,179.9 243.2,175.5 238.0,182.0 245.5,185.7 244.5,181.3 404.2,145.7" fill="#8AA9DF"/>
+<rect x="296.4" y="157.5" width="49.2" height="11.0" rx="4" fill="#FFFFFF"/>
+<text x="321.0" y="165.8" font-family="Inter" font-size="6.8" font-weight="600" fill="#0B5BD3" text-anchor="middle">qualquer um</text>
+<polygon points="403.2,145.0 403.2,175.5 398.8,175.5 404.0,182.0 409.2,175.5 404.8,175.5 404.8,145.0" fill="#8AA9DF"/>
+<rect x="386.6" y="157.5" width="34.8" height="11.0" rx="4" fill="#FFFFFF"/>
+<text x="404.0" y="165.8" font-family="Inter" font-size="6.8" font-weight="600" fill="#0B5BD3" text-anchor="middle">nenhum</text>
+<rect x="159.0" y="273.0" width="158.0" height="34.0" rx="6" fill="#16315C" stroke="#16315C" stroke-width="1"/>
+<text x="238.0" y="287.7" font-family="Inter" font-size="7.8" font-weight="600" fill="#FFFFFF" text-anchor="middle">Drenagem fechada: dreno em selo</text>
+<text x="238.0" y="297.7" font-family="Inter" font-size="7.8" font-weight="600" fill="#FFFFFF" text-anchor="middle">d&#x27;água</text>
+<rect x="330.0" y="268.0" width="148.0" height="44.0" rx="6" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="1"/>
+<text x="404.0" y="287.9" font-family="Inter" font-size="7.2" font-weight="400" fill="#1F2933" text-anchor="middle">Esvazia, mantém o antibiótico e</text>
+<text x="404.0" y="297.1" font-family="Inter" font-size="7.2" font-weight="400" fill="#1F2933" text-anchor="middle">reavalia; voltou: nova punção</text>
+<polygon points="237.2,246.0 237.2,266.5 232.8,266.5 238.0,273.0 243.2,266.5 238.8,266.5 238.8,246.0" fill="#8AA9DF"/>
+<polygon points="403.2,246.0 403.2,261.5 398.8,261.5 404.0,268.0 409.2,261.5 404.8,261.5 404.8,246.0" fill="#8AA9DF"/>
+<polygon points="330.0,289.2 323.5,289.2 323.5,284.8 317.0,290.0 323.5,295.2 323.5,290.8 330.0,290.8" fill="#8AA9DF"/>
+<rect x="309.0" y="284.0" width="29.0" height="11.0" rx="4" fill="#FFFFFF"/>
+<text x="323.5" y="292.3" font-family="Inter" font-size="6.8" font-weight="600" fill="#0B5BD3" text-anchor="middle">piorou</text>
+<rect x="159.0" y="331.0" width="158.0" height="38.0" rx="6" fill="#16315C" stroke="#16315C" stroke-width="1"/>
+<text x="238.0" y="347.9" font-family="Inter" font-size="7.4" font-weight="600" fill="#FFFFFF" text-anchor="middle">Sem resposta: cirurgia (vídeo ou aberta,</text>
+<text x="238.0" y="357.3" font-family="Inter" font-size="7.4" font-weight="600" fill="#FFFFFF" text-anchor="middle">decorticação)</text>
+<polygon points="237.2,307.0 237.2,324.5 232.8,324.5 238.0,331.0 243.2,324.5 238.8,324.5 238.8,307.0" fill="#8AA9DF"/>
+<rect x="0.0" y="273.0" width="144.0" height="34.0" rx="6" fill="#FFFFFF" stroke="#E3E3E8" stroke-width="1" stroke-dasharray="3 2"/>
+<text x="72.0" y="292.5" font-family="Inter" font-size="7.2" font-weight="400" fill="#4A4A4F" text-anchor="middle">Fibrinolítico: pouco usado aqui</text>
+<rect x="330.0" y="335.0" width="148.0" height="30.0" rx="6" fill="#FFFFFF" stroke="#E3E3E8" stroke-width="1" stroke-dasharray="3 2"/>
+<text x="404.0" y="352.5" font-family="Inter" font-size="7.2" font-weight="400" fill="#4A4A4F" text-anchor="middle">Melhorou: segue o tratamento</text>
+<polygon points="403.2,312.0 403.2,328.5 398.8,328.5 404.0,335.0 409.2,328.5 404.8,328.5 404.8,312.0" fill="#8AA9DF"/>
+</svg>

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="478" height="250" viewBox="0 0 478 250">
+<image href="il-bolhas-0.png" x="28.3" y="0.0" width="421.3" height="250.0" preserveAspectRatio="none"/>
+<line x1="93.9" y1="82.7" x2="133.7" y2="103.9" stroke="#16315C" stroke-width="0.8" stroke-linecap="round"/>
+<circle cx="133.7" cy="103.9" r="2.0" fill="#16315C" stroke="#FFFFFF" stroke-width="0.8"/>
+<line x1="196.5" y1="51.8" x2="175.8" y2="81.5" stroke="#16315C" stroke-width="0.8" stroke-linecap="round"/>
+<circle cx="175.8" cy="81.5" r="2.0" fill="#16315C" stroke="#FFFFFF" stroke-width="0.8"/>
+<line x1="285.4" y1="64.2" x2="306.4" y2="103.9" stroke="#16315C" stroke-width="0.8" stroke-linecap="round"/>
+<circle cx="306.4" cy="103.9" r="2.0" fill="#16315C" stroke="#FFFFFF" stroke-width="0.8"/>
+<line x1="320.2" y1="172.9" x2="365.4" y2="132.0" stroke="#16315C" stroke-width="0.8" stroke-linecap="round"/>
+<circle cx="365.4" cy="132.0" r="2.0" fill="#16315C" stroke="#FFFFFF" stroke-width="0.8"/>
+<line x1="414.2" y1="69.8" x2="390.7" y2="101.1" stroke="#16315C" stroke-width="0.8" stroke-linecap="round"/>
+<circle cx="390.7" cy="101.1" r="2.0" fill="#16315C" stroke="#FFFFFF" stroke-width="0.8"/>
+<line x1="261.6" y1="225.0" x2="270.6" y2="148.9" stroke="#16315C" stroke-width="0.8" stroke-linecap="round"/>
+<circle cx="270.6" cy="148.9" r="2.0" fill="#16315C" stroke="#FFFFFF" stroke-width="0.8"/>
+<rect x="87.9" y="2.8" width="83.1" height="14.0" rx="3.5" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="0.8"/>
+<text x="129.4" y="12.4" font-family="Inter" font-size="7.2" font-weight="600" fill="#16315C" text-anchor="middle">Antes: bolha rompida</text>
+<rect x="312.9" y="2.8" width="71.3" height="14.0" rx="3.5" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="0.8"/>
+<text x="348.6" y="12.4" font-family="Inter" font-size="7.2" font-weight="600" fill="#16315C" text-anchor="middle">Cirurgia por vídeo</text>
+<rect x="27.1" y="58.7" width="86.6" height="23.0" rx="3.5" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="0.8"/>
+<text x="70.5" y="68.3" font-family="Inter" font-size="7.2" font-weight="600" fill="#16315C" text-anchor="middle">Bolhas no ápice, sob a</text>
+<text x="70.5" y="77.3" font-family="Inter" font-size="7.2" font-weight="600" fill="#16315C" text-anchor="middle">pleura</text>
+<rect x="164.8" y="27.8" width="80.9" height="23.0" rx="3.5" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="0.8"/>
+<text x="205.3" y="37.4" font-family="Inter" font-size="7.2" font-weight="600" fill="#16315C" text-anchor="middle">Ar escapando para a</text>
+<text x="205.3" y="46.4" font-family="Inter" font-size="7.2" font-weight="600" fill="#16315C" text-anchor="middle">pleura</text>
+<rect x="112.0" y="195.2" width="34.9" height="14.0" rx="3.5" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="0.8"/>
+<text x="129.4" y="204.8" font-family="Inter" font-size="7.2" font-weight="600" fill="#16315C" text-anchor="middle">Pulmão</text>
+<rect x="263.1" y="49.2" width="36.1" height="14.0" rx="3.5" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="0.8"/>
+<text x="281.1" y="58.8" font-family="Inter" font-size="7.2" font-weight="600" fill="#16315C" text-anchor="middle">Câmera</text>
+<rect x="267.7" y="173.9" width="77.4" height="23.0" rx="3.5" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="0.8"/>
+<text x="306.4" y="183.5" font-family="Inter" font-size="7.2" font-weight="600" fill="#16315C" text-anchor="middle">Grampeador abaixo</text>
+<text x="306.4" y="192.5" font-family="Inter" font-size="7.2" font-weight="600" fill="#16315C" text-anchor="middle">das bolhas</text>
+<rect x="392.1" y="54.8" width="56.2" height="14.0" rx="3.5" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="0.8"/>
+<text x="420.2" y="64.4" font-family="Inter" font-size="7.2" font-weight="600" fill="#16315C" text-anchor="middle">Parte retirada</text>
+<rect x="211.6" y="226.0" width="96.9" height="23.0" rx="3.5" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="0.8"/>
+<text x="260.1" y="235.6" font-family="Inter" font-size="7.2" font-weight="600" fill="#16315C" text-anchor="middle">Orifício pequeno entre as</text>
+<text x="260.1" y="244.6" font-family="Inter" font-size="7.2" font-weight="600" fill="#16315C" text-anchor="middle">costelas</text>
+</svg>

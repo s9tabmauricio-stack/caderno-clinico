@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="478" height="290" viewBox="0 0 478 290">
+<rect x="124.0" y="1.0" width="230.0" height="26.0" rx="6" fill="#E8F0FE" stroke="#C3D8F8" stroke-width="1"/>
+<text x="239.0" y="16.9" font-family="Inter" font-size="8.2" font-weight="600" fill="#16315C" text-anchor="middle">Câncer conhecido com derrame pleural</text>
+<rect x="124.0" y="39.0" width="230.0" height="30.0" rx="6" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="1"/>
+<text x="239.0" y="56.7" font-family="Inter" font-size="7.6" font-weight="400" fill="#1F2933" text-anchor="middle">Toracocentese de alívio (guiada por ultrassom)</text>
+<rect x="139.0" y="82.0" width="200.0" height="28.0" rx="6" fill="#F5F8FF" stroke="#8AA9DF" stroke-width="1" stroke-dasharray="3 2"/>
+<text x="239.0" y="98.8" font-family="Inter" font-size="8" font-weight="600" fill="#16315C" text-anchor="middle">A falta de ar melhorou?</text>
+<polygon points="238.2,27.0 238.2,32.5 233.8,32.5 239.0,39.0 244.2,32.5 239.8,32.5 239.8,27.0" fill="#8AA9DF"/>
+<polygon points="238.2,69.0 238.2,75.5 233.8,75.5 239.0,82.0 244.2,75.5 239.8,75.5 239.8,69.0" fill="#8AA9DF"/>
+<rect x="1.0" y="128.0" width="150.0" height="36.0" rx="6" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="1"/>
+<text x="76.0" y="143.9" font-family="Inter" font-size="7.4" font-weight="400" fill="#1F2933" text-anchor="middle">Não: procurar outra causa da falta de</text>
+<text x="76.0" y="153.3" font-family="Inter" font-size="7.4" font-weight="400" fill="#1F2933" text-anchor="middle">ar</text>
+<rect x="322.0" y="128.0" width="156.0" height="36.0" rx="6" fill="#F5F8FF" stroke="#8AA9DF" stroke-width="1" stroke-dasharray="3 2"/>
+<text x="400.0" y="143.8" font-family="Inter" font-size="7.6" font-weight="600" fill="#16315C" text-anchor="middle">Sim: o pulmão reexpandiu? (exame de</text>
+<text x="400.0" y="153.5" font-family="Inter" font-size="7.6" font-weight="600" fill="#16315C" text-anchor="middle">imagem)</text>
+<polygon points="138.7,95.3 81.5,124.4 79.4,120.4 76.0,128.0 84.2,129.7 82.1,125.7 139.3,96.7" fill="#8AA9DF"/>
+<rect x="97.4" y="106.0" width="20.2" height="11.0" rx="4" fill="#FFFFFF"/>
+<text x="107.5" y="114.3" font-family="Inter" font-size="6.8" font-weight="600" fill="#0B5BD3" text-anchor="middle">não</text>
+<polygon points="338.7,96.7 393.9,125.6 391.8,129.6 400.0,128.0 396.7,120.4 394.6,124.3 339.3,95.3" fill="#8AA9DF"/>
+<rect x="359.7" y="106.0" width="19.6" height="11.0" rx="4" fill="#FFFFFF"/>
+<text x="369.5" y="114.3" font-family="Inter" font-size="6.8" font-weight="600" fill="#0B5BD3" text-anchor="middle">sim</text>
+<rect x="155.0" y="182.0" width="168.0" height="36.0" rx="6" fill="#F5F8FF" stroke="#8AA9DF" stroke-width="1" stroke-dasharray="3 2"/>
+<text x="239.0" y="197.8" font-family="Inter" font-size="7.6" font-weight="600" fill="#16315C" text-anchor="middle">Reexpandiu: quanto tempo de vida se</text>
+<text x="239.0" y="207.5" font-family="Inter" font-size="7.6" font-weight="600" fill="#16315C" text-anchor="middle">espera?</text>
+<rect x="326.0" y="182.0" width="152.0" height="64.0" rx="6" fill="#FFFFFF" stroke="#E3E3E8" stroke-width="1" stroke-dasharray="3 2"/>
+<text x="402.0" y="207.6" font-family="Inter" font-size="6.9" font-weight="400" fill="#4A4A4F" text-anchor="middle">Não reexpandiu (slide): cateter pleural</text>
+<text x="402.0" y="216.4" font-family="Inter" font-size="6.9" font-weight="400" fill="#4A4A4F" text-anchor="middle">tunelizado se viver mais de 1 semana; se</text>
+<text x="402.0" y="225.2" font-family="Inter" font-size="6.9" font-weight="400" fill="#4A4A4F" text-anchor="middle">não, punções, oxigênio ou morfina</text>
+<polygon points="399.9,163.3 245.4,180.5 244.9,176.1 239.0,182.0 246.0,186.4 245.5,182.0 400.1,164.7" fill="#8AA9DF"/>
+<rect x="309.7" y="167.0" width="19.6" height="11.0" rx="4" fill="#FFFFFF"/>
+<text x="319.5" y="175.3" font-family="Inter" font-size="6.8" font-weight="600" fill="#0B5BD3" text-anchor="middle">sim</text>
+<polygon points="399.3,164.1 400.5,175.6 396.1,176.1 402.0,182.0 406.5,175.0 402.0,175.5 400.7,163.9" fill="#8AA9DF"/>
+<rect x="390.9" y="167.0" width="20.2" height="11.0" rx="4" fill="#FFFFFF"/>
+<text x="401.0" y="175.3" font-family="Inter" font-size="6.8" font-weight="600" fill="#0B5BD3" text-anchor="middle">não</text>
+<rect x="1.0" y="241.0" width="150.0" height="46.0" rx="6" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="1"/>
+<text x="76.0" y="261.9" font-family="Inter" font-size="7.2" font-weight="400" fill="#1F2933" text-anchor="middle">Pouco tempo (1 a 2 meses):</text>
+<text x="76.0" y="271.1" font-family="Inter" font-size="7.2" font-weight="400" fill="#1F2933" text-anchor="middle">toracocentese a cada 15 a 20 dias</text>
+<rect x="174.0" y="241.0" width="150.0" height="46.0" rx="6" fill="#16315C" stroke="#16315C" stroke-width="1"/>
+<text x="249.0" y="261.9" font-family="Inter" font-size="7.2" font-weight="600" fill="#FFFFFF" text-anchor="middle">Bom tempo (1 a 2 anos): pleurodese</text>
+<text x="249.0" y="271.1" font-family="Inter" font-size="7.2" font-weight="600" fill="#FFFFFF" text-anchor="middle">com talco ou iodopovidona</text>
+<polygon points="238.9,217.3 82.3,239.3 81.7,234.9 76.0,241.0 83.2,245.2 82.5,240.8 239.1,218.7" fill="#8AA9DF"/>
+<polygon points="238.3,218.3 245.7,235.3 241.6,237.1 249.0,241.0 251.2,233.0 247.1,234.7 239.7,217.7" fill="#8AA9DF"/>
+</svg>

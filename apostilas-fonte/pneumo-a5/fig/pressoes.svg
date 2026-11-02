@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="478" height="244" viewBox="0 0 478 244">
+<rect x="0.0" y="0.0" width="154.0" height="198.0" rx="9" fill="#F5F8FF" stroke="#C3D8F8" stroke-width="1"/>
+<text x="77.0" y="15.0" font-family="Inter" font-size="8.6" font-weight="700" fill="#16315C" text-anchor="middle">Parede do tórax</text>
+<text x="77.0" y="26.0" font-family="Inter" font-size="7" font-weight="400" fill="#6C6C70" text-anchor="middle">capilar da pleura parietal</text>
+<rect x="163.0" y="0.0" width="152.0" height="198.0" rx="9" fill="#E8F0FE" stroke="#C3D8F8" stroke-width="1"/>
+<text x="239.0" y="15.0" font-family="Inter" font-size="8.6" font-weight="700" fill="#16315C" text-anchor="middle">Espaço pleural</text>
+<text x="239.0" y="26.0" font-family="Inter" font-size="7" font-weight="400" fill="#6C6C70" text-anchor="middle">onde o líquido fica</text>
+<rect x="330.0" y="0.0" width="148.0" height="198.0" rx="9" fill="#F5F8FF" stroke="#C3D8F8" stroke-width="1"/>
+<text x="404.0" y="15.0" font-family="Inter" font-size="8.6" font-weight="700" fill="#16315C" text-anchor="middle">Pulmão</text>
+<text x="404.0" y="26.0" font-family="Inter" font-size="7" font-weight="400" fill="#6C6C70" text-anchor="middle">capilar da pleura visceral</text>
+<text x="74.0" y="48.0" font-family="Inter" font-size="15" font-weight="700" fill="#16315C" text-anchor="middle">35</text>
+<text x="74.0" y="66.0" font-family="Inter" font-size="7.2" font-weight="400" fill="#1F2933" text-anchor="middle">empurra o líquido</text>
+<text x="74.0" y="75.4" font-family="Inter" font-size="7.2" font-weight="400" fill="#1F2933" text-anchor="middle">para fora</text>
+<polygon points="112.0,59.1 197.0,59.1 197.0,64.0 205.0,58.0 197.0,52.0 197.0,56.9 112.0,56.9" fill="#8AA9DF"/>
+<circle cx="128.0" cy="48.0" r="7.0" fill="#0B5BD3"/>
+<text x="128.0" y="50.6" font-family="Inter" font-size="7.2" font-weight="700" fill="#FFFFFF" text-anchor="middle">1</text>
+<text x="239.0" y="55.0" font-family="Inter" font-size="7.2" font-weight="600" fill="#16315C" text-anchor="middle">entra líquido</text>
+<text x="74.0" y="116.0" font-family="Inter" font-size="15" font-weight="700" fill="#16315C" text-anchor="middle">29</text>
+<text x="74.0" y="128.0" font-family="Inter" font-size="7.2" font-weight="400" fill="#1F2933" text-anchor="middle">as proteínas puxam</text>
+<text x="74.0" y="137.4" font-family="Inter" font-size="7.2" font-weight="400" fill="#1F2933" text-anchor="middle">de volta</text>
+<polygon points="205.0,118.9 120.0,118.9 120.0,114.0 112.0,120.0 120.0,126.0 120.0,121.1 205.0,121.1" fill="#8AA9DF"/>
+<circle cx="128.0" cy="110.0" r="7.0" fill="#0B5BD3"/>
+<text x="128.0" y="112.6" font-family="Inter" font-size="7.2" font-weight="700" fill="#FFFFFF" text-anchor="middle">2</text>
+<text x="239.0" y="117.0" font-family="Inter" font-size="7.2" font-weight="600" fill="#16315C" text-anchor="middle">volta para o vaso</text>
+<rect x="12.0" y="152.0" width="124.0" height="30.0" rx="7" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="1"/>
+<text x="74.0" y="164.0" font-family="Inter" font-size="7.2" font-weight="400" fill="#1F2933" text-anchor="middle">vaso linfático</text>
+<text x="74.0" y="173.4" font-family="Inter" font-size="7.2" font-weight="400" fill="#1F2933" text-anchor="middle">leva o que sobra</text>
+<polygon points="205.0,165.9 146.0,165.9 146.0,161.0 138.0,167.0 146.0,173.0 146.0,168.1 205.0,168.1" fill="#8AA9DF"/>
+<circle cx="152.0" cy="157.0" r="7.0" fill="#0B5BD3"/>
+<text x="152.0" y="159.6" font-family="Inter" font-size="7.2" font-weight="700" fill="#FFFFFF" text-anchor="middle">3</text>
+<text x="239.0" y="164.0" font-family="Inter" font-size="7.2" font-weight="600" fill="#16315C" text-anchor="middle">sobram cerca de 6:</text>
+<text x="239.0" y="173.4" font-family="Inter" font-size="7.2" font-weight="600" fill="#16315C" text-anchor="middle">saem pela linfa</text>
+<text x="404.0" y="60.0" font-family="Inter" font-size="8" font-weight="600" fill="#16315C" text-anchor="middle">empurra 29</text>
+<text x="404.0" y="70.4" font-family="Inter" font-size="8" font-weight="600" fill="#16315C" text-anchor="middle">puxa 29</text>
+<polygon points="368.0,83.1 307.0,83.1 307.0,79.0 300.0,84.0 307.0,89.0 307.0,84.9 368.0,84.9" fill="#8AA9DF"/>
+<polygon points="300.0,96.9 361.0,96.9 361.0,101.0 368.0,96.0 361.0,91.0 361.0,95.1 300.0,95.1" fill="#8AA9DF"/>
+<text x="404.0" y="92.0" font-family="Inter" font-size="7.6" font-weight="700" fill="#16315C" text-anchor="middle">saldo: zero</text>
+<circle cx="404.0" cy="126.0" r="7.0" fill="#0B5BD3"/>
+<text x="404.0" y="128.6" font-family="Inter" font-size="7.2" font-weight="700" fill="#FFFFFF" text-anchor="middle">4</text>
+<text x="404.0" y="144.0" font-family="Inter" font-size="7.2" font-weight="400" fill="#1F2933" text-anchor="middle">inflamação abre a</text>
+<text x="404.0" y="153.4" font-family="Inter" font-size="7.2" font-weight="400" fill="#1F2933" text-anchor="middle">membrana: passam</text>
+<text x="404.0" y="162.7" font-family="Inter" font-size="7.2" font-weight="400" fill="#1F2933" text-anchor="middle">proteínas e células</text>
+<text x="0.0" y="214.0" font-family="Inter" font-size="7.4" font-weight="400" fill="#6C6C70" text-anchor="start">Números do slide 4, em centímetros de água. Os selos marcam onde age cada mecanismo: 1 mais pressão no vaso, 2 menos proteína</text>
+<text x="0.0" y="223.6" font-family="Inter" font-size="7.4" font-weight="400" fill="#6C6C70" text-anchor="start">no sangue, 3 linfa entupida, 4 pleura inflamada.</text>
+</svg>

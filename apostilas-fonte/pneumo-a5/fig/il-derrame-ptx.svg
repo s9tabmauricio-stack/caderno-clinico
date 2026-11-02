@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="478" height="252" viewBox="0 0 478 252">
+<image href="il-derrame-ptx-0.png" x="0.0" y="0.0" width="478.0" height="251.7" preserveAspectRatio="none"/>
+<line x1="57.4" y1="235.7" x2="57.4" y2="197.6" stroke="#16315C" stroke-width="0.8" stroke-linecap="round"/>
+<circle cx="57.4" cy="197.6" r="2.0" fill="#16315C" stroke="#FFFFFF" stroke-width="0.8"/>
+<line x1="61.1" y1="44.4" x2="76.5" y2="95.6" stroke="#16315C" stroke-width="0.8" stroke-linecap="round"/>
+<circle cx="76.5" cy="95.6" r="2.0" fill="#16315C" stroke="#FFFFFF" stroke-width="0.8"/>
+<line x1="279.0" y1="27.1" x2="286.8" y2="63.7" stroke="#16315C" stroke-width="0.8" stroke-linecap="round"/>
+<circle cx="286.8" cy="63.7" r="2.0" fill="#16315C" stroke="#FFFFFF" stroke-width="0.8"/>
+<line x1="285.8" y1="226.7" x2="281.1" y2="165.7" stroke="#16315C" stroke-width="0.8" stroke-linecap="round"/>
+<circle cx="281.1" cy="165.7" r="2.0" fill="#16315C" stroke="#FFFFFF" stroke-width="0.8"/>
+<rect x="87.1" y="1.0" width="64.7" height="14.0" rx="3.5" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="0.8"/>
+<text x="119.5" y="10.6" font-family="Inter" font-size="7.2" font-weight="600" fill="#16315C" text-anchor="middle">Derrame pleural</text>
+<rect x="330.8" y="1.0" width="55.5" height="14.0" rx="3.5" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="0.8"/>
+<text x="358.5" y="10.6" font-family="Inter" font-size="7.2" font-weight="600" fill="#16315C" text-anchor="middle">Pneumotórax</text>
+<rect x="25.5" y="236.7" width="63.7" height="14.0" rx="3.5" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="0.8"/>
+<text x="57.4" y="246.3" font-family="Inter" font-size="7.2" font-weight="600" fill="#16315C" text-anchor="middle">Líquido na base</text>
+<rect x="120.3" y="236.7" width="74.8" height="14.0" rx="3.5" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="0.8"/>
+<text x="157.7" y="246.3" font-family="Inter" font-size="7.2" font-weight="600" fill="#16315C" text-anchor="middle">Percussão: maciça</text>
+<rect x="19.8" y="20.4" width="75.1" height="23.0" rx="3.5" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="0.8"/>
+<text x="57.4" y="30.0" font-family="Inter" font-size="7.2" font-weight="600" fill="#16315C" text-anchor="middle">Pulmão empurrado</text>
+<text x="57.4" y="39.0" font-family="Inter" font-size="7.2" font-weight="600" fill="#16315C" text-anchor="middle">para cima</text>
+<rect x="246.5" y="12.1" width="61.4" height="14.0" rx="3.5" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="0.8"/>
+<text x="277.2" y="21.7" font-family="Inter" font-size="7.2" font-weight="600" fill="#16315C" text-anchor="middle">Ar (sem vasos)</text>
+<rect x="242.5" y="227.7" width="88.6" height="23.0" rx="3.5" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="0.8"/>
+<text x="286.8" y="237.3" font-family="Inter" font-size="7.2" font-weight="600" fill="#16315C" text-anchor="middle">Borda do pulmão: linha</text>
+<text x="286.8" y="246.3" font-family="Inter" font-size="7.2" font-weight="600" fill="#16315C" text-anchor="middle">pleural</text>
+<rect x="354.7" y="236.7" width="84.0" height="14.0" rx="3.5" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="0.8"/>
+<text x="396.7" y="246.3" font-family="Inter" font-size="7.2" font-weight="600" fill="#16315C" text-anchor="middle">Percussão: timpânica</text>
+</svg>

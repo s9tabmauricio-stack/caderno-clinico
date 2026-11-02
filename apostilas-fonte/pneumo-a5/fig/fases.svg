@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="478" height="160" viewBox="0 0 478 160">
+<rect x="0.0" y="30.0" width="150.0" height="12.0" rx="3" fill="#DCDCE2"/>
+<line x1="0.0" y1="44.0" x2="150.0" y2="44.0" stroke="#9AA5B5" stroke-width="1.4" stroke-linecap="round"/>
+<rect x="0.0" y="86.0" width="150.0" height="26.0" rx="3" fill="#C3D8F8"/>
+<rect x="0.0" y="45.0" width="150.0" height="40.0" rx="0" fill="#E3EEFD"/>
+<line x1="0.0" y1="86.0" x2="150.0" y2="86.0" stroke="#16315C" stroke-width="1.4" stroke-linecap="round"/>
+<text x="75.0" y="100.0" font-family="Inter" font-size="7" font-weight="400" fill="#16315C" text-anchor="middle">pulmão</text>
+<text x="2.0" y="126.0" font-family="Inter" font-size="8.6" font-weight="700" fill="#16315C" text-anchor="start">1 · Exsudativa</text>
+<text x="2.0" y="138.0" font-family="Inter" font-size="7.6" font-weight="400" fill="#1F2933" text-anchor="start">Líquido ainda fino, junto com a</text>
+<text x="2.0" y="147.9" font-family="Inter" font-size="7.6" font-weight="400" fill="#1F2933" text-anchor="start">pneumonia.</text>
+<polygon points="152.0,65.8 156.0,65.8 156.0,69.5 162.0,65.0 156.0,60.5 156.0,64.2 152.0,64.2" fill="#8AA9DF"/>
+<rect x="164.0" y="30.0" width="150.0" height="12.0" rx="3" fill="#DCDCE2"/>
+<line x1="164.0" y1="44.0" x2="314.0" y2="44.0" stroke="#9AA5B5" stroke-width="1.4" stroke-linecap="round"/>
+<rect x="164.0" y="86.0" width="150.0" height="26.0" rx="3" fill="#C3D8F8"/>
+<rect x="164.0" y="45.0" width="150.0" height="40.0" rx="0" fill="#E3EEFD"/>
+<path d="M178,45 C186,58 172,70 182,85" fill="none" stroke="#7F9CC9" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M202,45 C210,58 196,70 206,85" fill="none" stroke="#7F9CC9" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M226,45 C234,58 220,70 230,85" fill="none" stroke="#7F9CC9" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M250,45 C258,58 244,70 254,85" fill="none" stroke="#7F9CC9" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M274,45 C282,58 268,70 278,85" fill="none" stroke="#7F9CC9" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M298,45 C306,58 292,70 302,85" fill="none" stroke="#7F9CC9" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="186.0" cy="58.0" r="2.2" fill="#B9C3D3"/>
+<circle cx="224.0" cy="70.0" r="2.2" fill="#B9C3D3"/>
+<circle cx="262.0" cy="55.0" r="2.2" fill="#B9C3D3"/>
+<circle cx="292.0" cy="72.0" r="2.2" fill="#B9C3D3"/>
+<circle cx="208.0" cy="76.0" r="2.2" fill="#B9C3D3"/>
+<line x1="164.0" y1="86.0" x2="314.0" y2="86.0" stroke="#16315C" stroke-width="1.4" stroke-linecap="round"/>
+<text x="239.0" y="100.0" font-family="Inter" font-size="7" font-weight="400" fill="#16315C" text-anchor="middle">pulmão</text>
+<text x="166.0" y="126.0" font-family="Inter" font-size="8.6" font-weight="700" fill="#16315C" text-anchor="start">2 · Fibrinopurulenta</text>
+<text x="166.0" y="138.0" font-family="Inter" font-size="7.6" font-weight="400" fill="#1F2933" text-anchor="start">Traves de fibrina e pus dividem o líquido</text>
+<text x="166.0" y="147.9" font-family="Inter" font-size="7.6" font-weight="400" fill="#1F2933" text-anchor="start">em lojas.</text>
+<polygon points="316.0,65.8 320.0,65.8 320.0,69.5 326.0,65.0 320.0,60.5 320.0,64.2 316.0,64.2" fill="#8AA9DF"/>
+<rect x="328.0" y="30.0" width="150.0" height="12.0" rx="3" fill="#DCDCE2"/>
+<line x1="328.0" y1="44.0" x2="478.0" y2="44.0" stroke="#9AA5B5" stroke-width="1.4" stroke-linecap="round"/>
+<rect x="328.0" y="86.0" width="150.0" height="26.0" rx="3" fill="#C3D8F8"/>
+<rect x="328.0" y="45.0" width="150.0" height="13.0" rx="0" fill="#A9B8D0"/>
+<rect x="328.0" y="73.0" width="150.0" height="13.0" rx="0" fill="#A9B8D0"/>
+<rect x="328.0" y="58.0" width="150.0" height="15.0" rx="0" fill="#E3EEFD"/>
+<line x1="343.0" y1="58.0" x2="343.0" y2="73.0" stroke="#7F9CC9" stroke-width="1.3" stroke-linecap="round"/>
+<line x1="373.0" y1="58.0" x2="373.0" y2="73.0" stroke="#7F9CC9" stroke-width="1.3" stroke-linecap="round"/>
+<line x1="403.0" y1="58.0" x2="403.0" y2="73.0" stroke="#7F9CC9" stroke-width="1.3" stroke-linecap="round"/>
+<line x1="433.0" y1="58.0" x2="433.0" y2="73.0" stroke="#7F9CC9" stroke-width="1.3" stroke-linecap="round"/>
+<line x1="463.0" y1="58.0" x2="463.0" y2="73.0" stroke="#7F9CC9" stroke-width="1.3" stroke-linecap="round"/>
+<line x1="328.0" y1="86.0" x2="478.0" y2="86.0" stroke="#16315C" stroke-width="1.4" stroke-linecap="round"/>
+<text x="403.0" y="100.0" font-family="Inter" font-size="7" font-weight="400" fill="#16315C" text-anchor="middle">pulmão</text>
+<text x="330.0" y="126.0" font-family="Inter" font-size="8.6" font-weight="700" fill="#16315C" text-anchor="start">3 · Organização</text>
+<text x="330.0" y="138.0" font-family="Inter" font-size="7.6" font-weight="400" fill="#1F2933" text-anchor="start">Fibrose: pleura grossa que prende o</text>
+<text x="330.0" y="147.9" font-family="Inter" font-size="7.6" font-weight="400" fill="#1F2933" text-anchor="start">pulmão (paquipleuris).</text>
+<path d="M2,22 L2,14 L312,14 L312,22" fill="none" stroke="#0B5BD3" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="157.0" y="9.0" font-family="Inter" font-size="7.8" font-weight="700" fill="#0B5BD3" text-anchor="middle">Tratar aqui, no máximo aqui</text>
+<text x="0.0" y="40.0" font-family="Inter" font-size="6" font-weight="400" fill="#1F2933" text-anchor="start"></text>
+</svg>

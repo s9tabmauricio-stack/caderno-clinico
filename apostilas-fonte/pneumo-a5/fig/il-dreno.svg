@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="478" height="258" viewBox="0 0 478 258">
+<image href="il-dreno-0.png" x="45.5" y="0.0" width="387.0" height="258.0" preserveAspectRatio="none"/>
+<line x1="133.5" y1="46.0" x2="170.1" y2="89.0" stroke="#16315C" stroke-width="0.8" stroke-linecap="round"/>
+<circle cx="170.1" cy="89.0" r="2.0" fill="#16315C" stroke="#FFFFFF" stroke-width="0.8"/>
+<line x1="151.4" y1="224.2" x2="200.3" y2="219.3" stroke="#16315C" stroke-width="0.8" stroke-linecap="round"/>
+<circle cx="200.3" cy="219.3" r="2.0" fill="#16315C" stroke="#FFFFFF" stroke-width="0.8"/>
+<line x1="164.5" y1="242.0" x2="188.7" y2="237.4" stroke="#6E3AA7" stroke-width="0.8" stroke-linecap="round"/>
+<circle cx="188.7" cy="237.4" r="2.0" fill="#6E3AA7" stroke="#FFFFFF" stroke-width="0.8"/>
+<line x1="296.3" y1="133.1" x2="331.1" y2="173.4" stroke="#16315C" stroke-width="0.8" stroke-linecap="round"/>
+<circle cx="331.1" cy="173.4" r="2.0" fill="#16315C" stroke="#FFFFFF" stroke-width="0.8"/>
+<line x1="324.5" y1="167.8" x2="331.1" y2="169.0" stroke="#6E3AA7" stroke-width="0.8" stroke-linecap="round"/>
+<circle cx="331.1" cy="169.0" r="2.0" fill="#6E3AA7" stroke="#FFFFFF" stroke-width="0.8"/>
+<line x1="383.5" y1="75.2" x2="355.1" y2="55.5" stroke="#16315C" stroke-width="0.8" stroke-linecap="round"/>
+<circle cx="355.1" cy="55.5" r="2.0" fill="#16315C" stroke="#FFFFFF" stroke-width="0.8"/>
+<line x1="381.2" y1="154.4" x2="342.7" y2="178.0" stroke="#16315C" stroke-width="0.8" stroke-linecap="round"/>
+<circle cx="342.7" cy="178.0" r="2.0" fill="#16315C" stroke="#FFFFFF" stroke-width="0.8"/>
+<rect x="77.9" y="22.0" width="90.1" height="23.0" rx="3.5" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="0.8"/>
+<text x="122.9" y="31.6" font-family="Inter" font-size="7.2" font-weight="600" fill="#16315C" text-anchor="middle">Dreno de tórax entre as</text>
+<text x="122.9" y="40.6" font-family="Inter" font-size="7.2" font-weight="600" fill="#16315C" text-anchor="middle">costelas</text>
+<rect x="95.4" y="220.0" width="55.0" height="14.0" rx="3.5" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="0.8"/>
+<text x="122.9" y="229.6" font-family="Inter" font-size="7.2" font-weight="600" fill="#16315C" text-anchor="middle">Um frasco só</text>
+<rect x="65.0" y="243.0" width="115.7" height="14.0" rx="3.5" fill="#F4EBFB" stroke="#DEC7F1" stroke-width="0.8"/>
+<text x="122.9" y="252.6" font-family="Inter" font-size="7.2" font-weight="600" fill="#6E3AA7" text-anchor="middle">Frasco sempre abaixo do tórax</text>
+<rect x="234.9" y="100.1" width="93.3" height="32.0" rx="3.5" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="0.8"/>
+<text x="281.6" y="109.7" font-family="Inter" font-size="7.2" font-weight="600" fill="#16315C" text-anchor="middle">Tubo do paciente: ponta</text>
+<text x="281.6" y="118.7" font-family="Inter" font-size="7.2" font-weight="600" fill="#16315C" text-anchor="middle">embaixo da água (selo</text>
+<text x="281.6" y="127.7" font-family="Inter" font-size="7.2" font-weight="600" fill="#16315C" text-anchor="middle">d&#x27;água)</text>
+<rect x="239.6" y="148.5" width="83.9" height="23.0" rx="3.5" fill="#F4EBFB" stroke="#DEC7F1" stroke-width="0.8"/>
+<text x="281.6" y="158.1" font-family="Inter" font-size="7.2" font-weight="600" fill="#6E3AA7" text-anchor="middle">Cerca de 2 cm abaixo</text>
+<text x="281.6" y="167.1" font-family="Inter" font-size="7.2" font-weight="600" fill="#6E3AA7" text-anchor="middle">da água</text>
+<rect x="362.7" y="76.2" width="77.8" height="23.0" rx="3.5" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="0.8"/>
+<text x="401.5" y="85.8" font-family="Inter" font-size="7.2" font-weight="600" fill="#16315C" text-anchor="middle">Respiro: tubo curto,</text>
+<text x="401.5" y="94.8" font-family="Inter" font-size="7.2" font-weight="600" fill="#16315C" text-anchor="middle">aberto</text>
+<rect x="363.3" y="130.4" width="76.6" height="23.0" rx="3.5" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="0.8"/>
+<text x="401.5" y="140.0" font-family="Inter" font-size="7.2" font-weight="600" fill="#16315C" text-anchor="middle">Bolhas: o ar que sai</text>
+<text x="401.5" y="149.0" font-family="Inter" font-size="7.2" font-weight="600" fill="#16315C" text-anchor="middle">do tórax</text>
+</svg>
