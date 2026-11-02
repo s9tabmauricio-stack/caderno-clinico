@@ -90,7 +90,10 @@ Pelo conector, **incluir dados e alterações curtas funcionam**; **apagar e ree
 ## Claude e Codex (dois assistentes no mesmo projeto)
 
 - Este manual vale para os dois. O `CLAUDE.md` só aponta para cá: mudanças no manual vão neste arquivo.
-- Cada um trabalha no seu ramo (`claude/...` ou `codex/...`); os dois tipos de ramo não geram prévia na Vercel (`vercel.json`). O Claude publica com `git push origin main`. O Codex entrega por PR de um ramo `codex/...`, e o GitHub junta sozinho ao `main` se o site compilar (`.github/workflows/codex-automerge.yml`); se não compilar, o PR fica aberto e nada vai para o ar.
+- Cada um trabalha no seu ramo (`claude/...` ou `codex/...`); os dois tipos de ramo não geram prévia na Vercel (`vercel.json`). O Codex entrega por PR de um ramo `codex/...`, e o GitHub junta sozinho ao `main` se o site compilar (`.github/workflows/codex-automerge.yml`); se não compilar, o PR fica aberto e nada vai para o ar.
+- Como o Claude publica (pôr no `main`):
+  - **Conversa pela nuvem** (claude.ai/code, app do celular): trabalha no ramo `claude/...` da sessão, abre um PR e, com o trabalho pronto e conferido, junta ao `main` (squash) pelo GitHub. Se o Mauricio pediu para ver antes, espera o "pode publicar". Depois de juntado, o PR não recebe mais nada: o trabalho seguinte começa de novo do `main`, num PR novo.
+  - **Computador do Mauricio e aula nova** (que não espera aprovação): publica direto com `git fetch origin main && git rebase origin/main && git push origin HEAD:main` e empurra também o ramo da sessão.
 - Só o Claude tem o conector do Supabase. Sem ele (Codex), não tente gravar no banco: mexa só no código e deixe questões, flashcards, aulas e provas para o Claude.
 - Um assunto por vez para cada um, para as mudanças não baterem na mesma tela.
 
