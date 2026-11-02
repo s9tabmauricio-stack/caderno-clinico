@@ -10,17 +10,30 @@ export function LoginForm() {
   const [cpf, setCpf] = useState('')
   const [senha, setSenha] = useState('')
   const [entrando, setEntrando] = useState(false)
+  const [entrou, setEntrou] = useState(false)
   const [erro, setErro] = useState('')
+  const [tremendo, setTremendo] = useState(false)
   const [ver, setVer] = useState(false)
+  const [capsLock, setCapsLock] = useState(false)
+
+  function dispararErro(mensagem: string) {
+    setErro(mensagem)
+    setTremendo(false)
+    requestAnimationFrame(() => setTremendo(true))
+  }
+
+  function checarCapsLock(e: React.KeyboardEvent<HTMLInputElement> | React.MouseEvent<HTMLInputElement>) {
+    setCapsLock(e.getModifierState('CapsLock'))
+  }
 
   async function entrar(e: React.FormEvent) {
     e.preventDefault()
     if (soDigitos(cpf).length !== 11) {
-      setErro('Digite os 11 números do CPF.')
+      dispararErro('Digite os 11 números do CPF.')
       return
     }
     if (!senha) {
-      setErro('Digite a senha.')
+      dispararErro('Digite a senha.')
       return
     }
     setErro('')
@@ -28,7 +41,7 @@ export function LoginForm() {
     const supabase = createClient()
     const { error } = await supabase.auth.signInWithPassword({ email: cpfParaEmail(cpf), password: senha })
     if (error) {
-      setErro(
+      dispararErro(
         error.status === 429
           ? 'Muitas tentativas em pouco tempo. Espere alguns minutos e tente de novo.'
           : /invalid/i.test(error.message)
@@ -38,12 +51,18 @@ export function LoginForm() {
       setEntrando(false)
       return
     }
+    setEntrou(true)
     router.replace('/')
     router.refresh()
   }
 
   return (
-    <form className="lg-form" onSubmit={entrar} noValidate>
+    <form
+      className={`lg-form${tremendo ? ' treme' : ''}`}
+      onSubmit={entrar}
+      onAnimationEnd={() => setTremendo(false)}
+      noValidate
+    >
       <label className="lg-rotulo" htmlFor="cpf">
         CPF
       </label>
@@ -86,6 +105,10 @@ export function LoginForm() {
             setSenha(e.target.value)
             setErro('')
           }}
+          onKeyDown={checarCapsLock}
+          onKeyUp={checarCapsLock}
+          onClick={checarCapsLock}
+          onBlur={() => setCapsLock(false)}
           aria-invalid={erro ? true : undefined}
           aria-describedby={erro ? 'loginErr' : undefined}
         />
@@ -103,13 +126,39 @@ export function LoginForm() {
           </svg>
         </button>
       </div>
-      {erro && (
-        <p id="loginErr" className="lg-erro" role="alert">
-          {erro}
+      {capsLock && (
+        <p className="lg-caps" role="status">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 4l-7 8h4v4h6v-4h4zM9 19h6" />
+          </svg>
+          Caps Lock ativado
         </p>
       )}
-      <button className="lg-entrar" type="submit" disabled={entrando}>
-        {entrando ? <span className="lg-giro" aria-hidden="true" /> : 'Entrar'}
+      {erro && (
+        <p id="loginErr" className="lg-erro" role="alert">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="9" />
+            <path d="M12 8v4.5M12 16h.01" />
+          </svg>
+          <span>{erro}</span>
+        </p>
+      )}
+      <button className="lg-entrar" type="submit" disabled={entrando || entrou}>
+        {entrou ? (
+          <span className="lg-status">
+            <svg className="lg-check" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5 12.5l4.5 4.5L19 7.5" />
+            </svg>
+            Entrando…
+          </span>
+        ) : entrando ? (
+          <span className="lg-status">
+            <span className="lg-giro" aria-hidden="true" />
+            Entrando…
+          </span>
+        ) : (
+          'Entrar'
+        )}
       </button>
     </form>
   )
