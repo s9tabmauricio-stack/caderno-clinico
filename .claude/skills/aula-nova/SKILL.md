@@ -49,7 +49,7 @@ where data = '<dia>' and tipo in ('teorica', 'pratica') order by inicio;
 
 ## 4. Apostila
 
-Chame o agente `apostila` no modelo Opus com esforço extra-alto (regra do Mauricio: na chamada, `model: opus` e `effort: xhigh`, que já são o padrão do agente) com: caminho da transcrição, id da aula, disciplina, número, data, professor e a pasta de trabalho. Ele devolve título, resumo, número de páginas, professor e o que vale conferir.
+Chame o agente `apostila` no modelo Opus com esforço extra-alto (regra do Mauricio: na chamada, `model: opus` e `effort: xhigh`, que já são o padrão do agente) com: caminho da transcrição (e dos slides, se o Mauricio mandou), id da aula, disciplina, número, data, professor e a pasta de trabalho. Ele devolve título, resumo, número de páginas, professor e o que vale conferir.
 
 ## 5. Publicar a apostila (escondida)
 
