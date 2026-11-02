@@ -1,7 +1,8 @@
-# Junta ao main, sozinho, os PRs do Codex (ramos codex/...), depois de
+# Junta ao main, sozinho, os PRs do Codex e do Antigravity (ramos codex/...
+# e antigravity/...), depois de
 # conferir que o site compila. Se a compilação falhar, o PR fica aberto
 # e nada vai para o ar.
-name: Codex junta ao main
+name: Codex e Antigravity juntam ao main
 
 on:
   pull_request:
@@ -18,9 +19,9 @@ concurrency:
 
 jobs:
   juntar:
-    # Só ramos codex/ deste repositório (nunca de cópias de fora) e PRs que não são rascunho.
+    # Só ramos codex/ ou antigravity/ deste repositório (nunca de cópias de fora) e PRs que não são rascunho.
     if: >-
-      startsWith(github.head_ref, 'codex/') &&
+      (startsWith(github.head_ref, 'codex/') || startsWith(github.head_ref, 'antigravity/')) &&
       github.event.pull_request.head.repo.full_name == github.repository &&
       !github.event.pull_request.draft
     runs-on: ubuntu-latest

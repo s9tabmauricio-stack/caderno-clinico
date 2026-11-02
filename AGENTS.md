@@ -88,14 +88,15 @@ Pelo conector, **incluir dados e alterações curtas funcionam**; **apagar e ree
 
 **Antes de mexer no visual, leia [`docs/visual.md`](docs/visual.md)**: cores das matérias, letras, flashcards, ícones e logo, tela de entrada e as versões antigas guardadas nos ramos `visual-v1` a `visual-v6` (não apague esses ramos).
 
-## Claude e Codex (dois assistentes no mesmo projeto)
+## Claude, Codex e Antigravity (três assistentes no mesmo projeto)
 
-- Este manual vale para os dois. O `CLAUDE.md` só aponta para cá: mudanças no manual vão neste arquivo.
-- Cada um trabalha no seu ramo (`claude/...` ou `codex/...`); os dois tipos de ramo não geram prévia na Vercel (`vercel.json`). O Codex entrega por PR de um ramo `codex/...`, e o GitHub junta sozinho ao `main` se o site compilar (`.github/workflows/codex-automerge.yml`); se não compilar, o PR fica aberto e nada vai para o ar.
+- Este manual vale para os três. O `CLAUDE.md` só aponta para cá, e o Antigravity lê a regra `.agent/rules/medgenius.md`, que também aponta para cá: mudanças no manual vão neste arquivo.
+- Cada um trabalha sozinho, no seu ramo (`claude/...`, `codex/...` ou `antigravity/...`); nenhum desses ramos gera prévia na Vercel (`vercel.json`). O Codex e o Antigravity entregam por PR do seu ramo, e o GitHub junta sozinho ao `main` se o site compilar (`.github/workflows/codex-automerge.yml`); se não compilar, o PR fica aberto e nada vai para o ar. Nunca empurre direto para o `main` nem use ramos com outro nome.
+- **Antigravity** (Google, no PC Windows do Mauricio, na pasta do projeto): comece cada trabalho de um `main` atualizado (`git fetch origin main && git checkout -B antigravity/<assunto> origin/main`), rode `npm test` e `npx next build`, faça o commit, `git push -u origin antigravity/<assunto>` e abra o PR com `gh pr create --fill --base main`.
 - Como o Claude publica (pôr no `main`):
   - **Conversa pela nuvem** (claude.ai/code, app do celular): trabalha no ramo `claude/...` da sessão, abre um PR e, com o trabalho pronto e conferido, junta ao `main` (squash) pelo GitHub. Se o Mauricio pediu para ver antes, espera o "pode publicar". Depois de juntado, o PR não recebe mais nada: o trabalho seguinte começa de novo do `main`, num PR novo.
   - **Computador do Mauricio e aula nova** (que não espera aprovação): publica direto com `git fetch origin main && git rebase origin/main && git push origin HEAD:main` e empurra também o ramo da sessão.
-- Só o Claude tem o conector do Supabase. Sem ele (Codex), não tente gravar no banco: mexa só no código e deixe questões, flashcards, aulas e provas para o Claude.
+- Só o Claude tem o conector do Supabase. Sem ele (Codex, Antigravity), não tente gravar no banco: mexa só no código e deixe questões, flashcards, aulas, apostilas e provas para o Claude.
 - Um assunto por vez para cada um, para as mudanças não baterem na mesma tela.
 
 ## Como trabalhar com o Mauricio
