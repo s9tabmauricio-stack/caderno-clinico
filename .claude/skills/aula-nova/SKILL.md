@@ -54,7 +54,7 @@ Chame o agente `apostila` no modelo Opus com esforço extra-alto (regra do Mauri
 ## 5. Publicar a apostila (escondida)
 
 1. `scripts/publicar-apostila.sh rascunhos/aulas/<aula-id>/apostila.pdf <aula-id>` (devolve o número de páginas).
-2. Inclua a aula pelo conector com o SQL de "Como subir uma apostila" do `AGENTS.md`, mas com `publicada = false` (a turma ainda não vê). Use a altura real das páginas no `height` (`python3 -I -c "from PIL import Image; print(Image.open('public/apostilas/<aula-id>/01.webp').size)"`).
+2. Inclua a aula pelo conector com o SQL da skill `subir-apostila` (`.claude/skills/subir-apostila/SKILL.md`), mas com `publicada = false` (a turma ainda não vê). Use a altura real das páginas no `height` (`python3 -I -c "from PIL import Image; print(Image.open('public/apostilas/<aula-id>/01.webp').size)"`).
 3. Se a `descricao` da matéria não citar o professor, acrescente o nome dele.
 4. Commit `Apostila <Matéria> <N>: <tema> (<P> páginas)` e publique no `main` (regra do manual: `git fetch origin main && git rebase origin/main && git push origin HEAD:main`; depois empurre também o ramo da sessão).
 5. Espere a Vercel: repita `curl -s -o /dev/null -w '%{http_code}' https://medgenius.vercel.app/apostilas/<aula-id>/01.webp` (com a ferramenta Monitor) até dar 200.
@@ -71,7 +71,7 @@ Chame o agente `revisor` para a `<aula-id>`. Ele corrige ou tira o que não bate
 
 1. Agente `conteudo` ("inclua os rascunhos revisados da `<aula-id>`"): grava os flashcards e as questões.
 2. Confira as contagens e então: `update public.aulas set publicada = true where id = '<aula-id>';`
-3. Atualize no `AGENTS.md` a lista de "Pendências e ideias" (cards e questões da aula nova), commit e publique no `main` como no passo 5.
+3. Não anote contagens no `AGENTS.md` (regra do manual: conte no banco). Só atualize o manual se a aula trouxer algo que ele precisa saber (matéria nova, id fora do padrão); nesse caso, commit e publique no `main` como no passo 5.
 4. Apague o áudio, o `.log` e os arquivos temporários; deixe a transcrição e os rascunhos na pasta de trabalho (servem para refazer sem transcrever de novo, enquanto a sessão durar).
 
 ## 9. Relatório (curto, no chat)
