@@ -90,7 +90,7 @@ Pelo conector, **incluir dados e alterações curtas funcionam**; **apagar e ree
 
 ## Claude, Codex e Antigravity (três assistentes no mesmo projeto)
 
-- Este manual vale para os três. O `CLAUDE.md` só aponta para cá, e o Antigravity lê a regra `.agent/rules/medgenius.md`, que também aponta para cá: mudanças no manual vão neste arquivo.
+- Este manual vale para os três. O `CLAUDE.md` só aponta para cá, e o Antigravity (versão 2.28 em diante) lê a regra `.agents/rules/medgenius.md` (com "s"; a pasta antiga `.agent/` não é mais lida), que também aponta para cá: mudanças no manual vão neste arquivo.
 - Cada um trabalha sozinho, no seu ramo (`claude/...`, `codex/...` ou `antigravity/...`); nenhum desses ramos gera prévia na Vercel (`vercel.json`). O Codex e o Antigravity entregam por PR do seu ramo, e o GitHub junta sozinho ao `main` se o site compilar (`.github/workflows/codex-automerge.yml`); se não compilar, o PR fica aberto e nada vai para o ar. Nunca empurre direto para o `main` nem use ramos com outro nome.
 - **Antigravity** (Google, no PC Windows do Mauricio, na pasta do projeto): comece cada trabalho de um `main` atualizado (`git fetch origin main && git checkout -B antigravity/<assunto> origin/main`), rode `npm test` e `npx next build`, faça o commit, `git push -u origin antigravity/<assunto>` e abra o PR com `gh pr create --fill --base main`.
 - Como o Claude publica (pôr no `main`):
