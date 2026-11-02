@@ -1,0 +1,617 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<title>Pneumologia · Aula 5 · Doenças da pleura</title>
+<meta name="rodape" content="Mauricio Faria · Pneumologia · Aula 5 — Doenças da pleura">
+<link rel="stylesheet" href="apostila.css">
+<style>
+/* ===== componentes do molde novo (em teste na pneumo-a5) ===== */
+.simples { background: #FFFFFF; border: 1px solid #C3D8F8; border-left: 4pt solid #0B5BD3; border-radius: 12pt; padding: 9pt 14pt 10pt; margin: 0 0 10pt; break-inside: avoid; }
+.simples p { font-size: 10.2pt; line-height: 1.5; color: #1F2933; margin: 0; }
+.aqui { display: flex; margin-top: 7pt; }
+.aqui span { flex: 1; border-top: 3pt solid #DCDCE2; padding-top: 2.5pt; margin-right: 2.5pt; font-family: "Inter Medium"; font-size: 6pt; line-height: 1.25; color: #8E8E93; }
+.aqui span:last-child { margin-right: 0; }
+.aqui span.feito { border-top-color: #A9C4EE; color: #6C6C70; }
+.aqui span.on { border-top-color: #0B5BD3; color: #0B5BD3; font-family: "Inter SemiBold"; }
+.aqui span.ramo { border-top-style: dashed; }
+.figure .olhar { margin-top: 8pt; }
+.figure .olhar .kick { margin-bottom: 3pt; }
+.figure .olhar ul { margin: 0; }
+.figure .olhar li { padding-left: 0; font-size: 8.7pt; line-height: 1.45; margin-bottom: 2pt; }
+.figure .olhar li::before { display: none; }
+.figure .olhar li b { color: #0B5BD3; }
+.figure .leg { font-size: 7.8pt; color: #8E8E93; margin: 5pt 0 0; }
+.reg { font-size: 8.3pt; line-height: 1.45; color: #6C6C70; background: #F7F7FA; border: 1px solid #E3E3E8; border-radius: 9pt; padding: 5pt 10pt; margin: 6pt 0 9pt; break-inside: avoid; }
+.reg b { font-family: "Inter SemiBold"; color: #4F5B70; }
+.livros { font-size: 8.3pt; line-height: 1.45; color: #6E3AA7; background: #F4EBFB; border: 1px solid #DEC7F1; border-radius: 9pt; padding: 5pt 10pt; margin: 6pt 0 9pt; break-inside: avoid; }
+.livros b { color: #6E3AA7; }
+.sw.simples-sw { background: #FFFFFF; border-color: #C3D8F8; border-left: 3pt solid #0B5BD3; }
+.sw.aqui-sw { background: linear-gradient(90deg, #A9C4EE 0, #A9C4EE 45%, #0B5BD3 45%, #0B5BD3 70%, #DCDCE2 70%); border: 0; height: 4pt; border-radius: 2pt; }
+.sw.exame-sw { background: #1F2933; border-color: #1F2933; }
+.cmp .destaque { font-family: "Inter SemiBold"; color: #0B5BD3; }
+.cmp.c4 .k { width: 62pt; }
+.cmp.c4 .c { font-size: 8.3pt; padding-right: 8pt; }
+.vesp { break-before: page; }
+.vesp .item { display: flex; align-items: baseline; background: #FFFFFF; border: 1px solid #E3E3E8; border-radius: 12pt; padding: 7pt 12pt; margin: 0 0 6pt; break-inside: avoid; }
+.vesp .item .prova { flex: none; margin: 0 9pt 0 0; }
+.vesp .item p { margin: 0; font-size: 9.2pt; }
+.tiles.t4 { margin: 6pt 0 8pt; }
+.figure.lado { display: flex; align-items: center; }
+.figure.lado > img { flex: none; }
+.figure.lado .olhar { flex: 1; margin: 0 0 0 12pt; }
+.cover .toc a { padding: 3.6pt 0; }
+</style>
+</head><body>
+
+<div class="cover">
+  <div class="kicker">Pneumologia · Aula 5 · Doenças da pleura</div>
+  <h1>Derrame pleural e pneumotórax</h1>
+  <p class="sub">Do líquido que se acumula ao ar que entra na pleura: como reconhecer no exame e na imagem, separar transudato de exsudato e decidir quando drenar.</p>
+  <div class="author"><span class="av">G</span><div><b>Dr. Vinícius André Guerra</b><span>Pneumologista e médico do sono · 28 de outubro de 2026</span></div></div>
+  <div class="keynums"><div class="kick">Três números para levar</div>
+    <div class="kn-grid">
+      <div class="kn"><div class="n">pH &lt; 7,2</div><div class="l">no líquido do derrame da pneumonia: é empiema, drena (regra da prova)</div></div>
+      <div class="kn"><div class="n">&gt; 40 U/L</div><div class="l">de adenosina deaminase num exsudato linfocítico: tuberculose pleural</div></div>
+      <div class="kn"><div class="n">20%</div><div class="l">do hemitórax: abaixo disso, o pneumotórax estável pode ser só observado</div></div>
+    </div></div>
+  <div class="toc"><div class="kick">Nesta apostila</div>
+    <a href="#s00"><span class="tn">00</span><span class="tt">Recados da disciplina</span><span class="pg">{{s00}}</span></a>
+    <a href="#s01"><span class="tn">01</span><span class="tt">A pleura normal</span><span class="pg">{{s01}}</span></a>
+    <a href="#s02"><span class="tn">02</span><span class="tt">Por que o líquido se acumula</span><span class="pg">{{s02}}</span></a>
+    <a href="#s03"><span class="tn">03</span><span class="tt">Sintomas e exame físico</span><span class="pg">{{s03}}</span></a>
+    <a href="#s04"><span class="tn">04</span><span class="tt">As imagens do derrame</span><span class="pg">{{s04}}</span></a>
+    <a href="#s05"><span class="tn">05</span><span class="tt">Punção e critérios de Light</span><span class="pg">{{s05}}</span></a>
+    <a href="#s06"><span class="tn">06</span><span class="tt">Derrame da pneumonia e empiema</span><span class="pg">{{s06}}</span></a>
+    <a href="#s07"><span class="tn">07</span><span class="tt">Tuberculose e câncer na pleura</span><span class="pg">{{s07}}</span></a>
+    <a href="#s08"><span class="tn">08</span><span class="tt">Pneumotórax</span><span class="pg">{{s08}}</span></a>
+    <a href="#s09"><span class="tn">09</span><span class="tt">Véspera da prova, glossário e anotações</span><span class="pg">{{s09}}</span></a>
+    <p class="note">Organizada a partir da transcrição da aula e dos slides do professor, com os erros da transcrição automática corrigidos e a linguagem ajustada. A legenda de cores está na página 2.</p>
+  </div>
+</div>
+
+<div class="legend"><div class="kick">Como ler esta apostila</div><div class="lg-grid">
+  <div class="lg"><span class="sw blue"></span><div><b>Azul</b> conteúdo da aula e raciocínio</div></div>
+  <div class="lg"><span class="sw green"></span><div><b>Verde</b> dose ou valor de referência</div></div>
+  <div class="lg"><span class="sw red"></span><div><b>Vermelho</b> alerta, erro comum ou armadilha</div></div>
+  <div class="lg"><span class="sw orange"></span><div><b>Laranja</b> fala ou parêntese do professor</div></div>
+  <div class="lg"><span class="sw purple"></span><div><b>Roxo</b> complemento que não foi dito em aula</div></div>
+  <div class="lg"><span class="prova">PROVA</span><div><b>Marca de prova</b> o ponto que ele disse que cai</div></div>
+  <div class="lg"><span class="sw simples-sw"></span><div><b>Em palavras simples</b> o capítulo em duas linhas, antes do texto</div></div>
+  <div class="lg"><span class="sw red"></span><div><b>Pegadinha do professor</b> o erro que ele avisou, onde ele acontece</div></div>
+  <div class="lg"><span class="sw aqui-sw"></span><div><b>Você está aqui</b> a etapa da trilha da aula, no topo de cada capítulo</div></div>
+  <div class="lg"><span class="sw exame-sw"></span><div><b>Exames</b> imagens dos slides, com setas e "O que olhar" nossos</div></div>
+</div></div>
+
+<div class="prof"><div class="kick">Sobre o professor · Dr. Vinícius André Guerra</div>
+<div class="rows">
+  <div class="row"><div class="k">Atuação</div><div class="v">Pneumologia e medicina do sono.</div></div>
+  <div class="row"><div class="k">Na aula</div><div class="v">Pneumologista em Cascavel; interna e acompanha pneumonias graves e passa drenos de tórax. A parte de pneumonia da disciplina foi dada por ele e pelo professor Cássio.</div></div>
+</div></div>
+
+<section id="s00">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">00</span></div>
+    <div class="corpo"><div class="de">Antes de começar</div><h2>Recados da disciplina</h2></div></div>
+
+  <div class="date"><div class="d"><span class="m">Novembro</span><span class="dd">10</span></div><div class="t"><b>P2 de Pneumologia</b><span>Terça-feira, 10 de novembro de 2026, pela Agenda. No fim desta aula ele avisou: "semana que vem tem a prova".</span></div></div>
+
+  <div class="grid2">
+    <div class="card"><span class="tag">Ele disse que cai</span><h4>Três pontos marcados com PROVA</h4>
+      <ul><li><span class="medium">O fluxograma do derrame da pneumonia</span>, com o pH abaixo de 7,2 (capítulo 06).</li>
+      <li><span class="medium">Exsudato linfocítico com adenosina deaminase acima de 40</span> = tuberculose (capítulo 07).</li>
+      <li><span class="medium">Ultrassom do pneumotórax</span>: ausência de deslizamento pleural com ponto P (capítulo 08).</li></ul></div>
+    <div class="card"><span class="tag">Fora ou só citado</span><h4>O que ele tirou ou não detalhou</h4>
+      <ul><li><span class="medium">Tumores de pleura e mesotelioma</span>: "hoje em dia a gente não fala mais", por serem raros.</li>
+      <li><span class="medium">Pneumotórax hipertensivo</span>: vem em urgência e emergência.</li>
+      <li><span class="medium">Todas as causas de derrame</span>: basta saber as três principais de cada tipo.</li></ul></div>
+  </div>
+
+  <div class="rows">
+    <div class="row"><div class="k">Leitura</div><div class="v">Revisão "Pleural Disease", de Feller-Kopman e Light, no New England Journal of Medicine de 2018 (páginas 740 a 751). Segundo ele, o artigo "resume toda essa minha aula de derrame pleural".</div></div>
+    <div class="row"><div class="k">Vídeos</div><div class="v">Para ver a toracocentese e a ausência de deslizamento pleural, procure no YouTube; "pode colocar em português mesmo".</div></div>
+  </div>
+</section>
+
+<div class="figure"><div class="kick">A trilha da aula</div><img src="fig/trilha.svg" alt="Trilha da aula em oito etapas"></div>
+
+<section id="s01">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">01</span></div>
+    <div class="corpo"><div class="de">Você está aqui · etapa 1 de 8</div><h2>A pleura normal</h2>
+    <div class="aqui"><span class="on">1 · Pleura</span><span>2 · Líquido a mais</span><span>3 · Exame físico</span><span>4 · Imagem</span><span>5 · Punção e Light</span><span>6 · Empiema</span><span>7 · Tuberculose e câncer</span><span class="ramo">8 · Pneumotórax</span></div></div></div>
+
+  <div class="simples"><div class="kick"><span class="dot"></span>Em palavras simples</div><p>Cada pulmão é embrulhado por duas películas finas: uma colada nele e outra forrando a parede do tórax. Entre elas só há um fio de líquido, que deixa o pulmão deslizar quando a gente respira. Se entra líquido a mais ou ar nesse espaço, o pulmão perde lugar para encher: é a doença da pleura.</p></div>
+
+  <div class="figure"><img src="fig/il-pleura.svg" alt="Corte frontal do tórax mostrando pleuras, fissuras e seio costofrênico, com detalhe ampliado das camadas"><p class="leg">Ilustração feita para esta apostila. As duas pleuras são formadas por células mesoteliais. O seio costofrênico, no canto de baixo, é onde o derrame aparece primeiro na radiografia (capítulo 04); a fissura horizontal é onde se forma o "tumor fantasma".</p></div>
+
+  <div class="quote"><p>“O pneumologista faz todos os procedimentos que vão estar aqui, exceto cirurgias abertas. Mas drenagem de tórax, punção de alívio, tudo isso pode ser feito também pelo clínico, pelo emergencista, pelo intensivista.”</p><div class="who">Dr. Guerra, sobre por que a aula importa para o generalista</div></div>
+
+  <h3 data-bm="Duas películas e um espaço virtual">Duas películas e um espaço virtual</h3>
+  <p>A pleura é uma camada de <b>células mesoteliais</b>. A pleura visceral reveste o pulmão; a pleura parietal reveste a parede do tórax. Entre as duas fica o espaço pleural, "um espaço que não deveria existir": um espaço virtual, porque as duas pleuras ficam praticamente juntas.</p>
+  <p>Elas só não estão grudadas porque há um pouco de líquido entre elas. Esse líquido funciona como um lubrificante: deixa uma pleura deslizar sobre a outra, e assim o pulmão consegue encher e esvaziar dentro da cavidade torácica. Os dois lados, direito e esquerdo, são espaços independentes.</p>
+  <div class="ref"><div class="txt"><div class="kick"><span class="dot"></span>Líquido pleural normal</div><p>A quantidade que fica entre as pleuras, segundo a aula.</p></div><div class="val">50 a 100 mL</div></div>
+  <p class="livros"><b>Nos livros:</b> costuma-se citar um volume menor, por volta de 0,1 a 0,3 mL por quilo de peso em cada lado.</p>
+  <p>Quando aparece alguma coisa dentro desse espaço, está caracterizada uma doença da pleura: <b>ar</b> é pneumotórax; <b>líquido</b> é derrame pleural. Nos dois casos, a mecânica de inspirar e expirar se altera.</p>
+
+  
+</section>
+
+<section id="s02">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">02</span></div>
+    <div class="corpo"><div class="de">Você está aqui · etapa 2 de 8</div><h2>Por que o líquido se acumula</h2>
+    <div class="aqui"><span class="feito">1 · Pleura</span><span class="on">2 · Líquido a mais</span><span>3 · Exame físico</span><span>4 · Imagem</span><span>5 · Punção e Light</span><span>6 · Empiema</span><span>7 · Tuberculose e câncer</span><span class="ramo">8 · Pneumotórax</span></div></div></div>
+
+  <div class="simples"><div class="kick"><span class="dot"></span>Em palavras simples</div><p>O líquido da pleura entra e sai o tempo todo. Ele junta quando entra mais do que sai: pressão alta dentro dos vasos, pouca proteína no sangue, linfa entupida ou pleura inflamada. Descobrir qual desses mecanismos aconteceu já aponta a causa.</p></div>
+
+  <h3 data-bm="Um equilíbrio entre entrar e sair">Um equilíbrio entre entrar e sair</h3>
+  <p>O líquido sai do capilar para a pleura empurrado pela <b>pressão hidrostática</b> e volta puxado pela <b>pressão oncótica</b>, a força das proteínas do plasma. A reabsorção acontece pela circulação venosa, e o excedente vai pelos vasos linfáticos: "a pressão é de 35 e a resultante de reabsorção é de 29; esses 5, 6 centímetros de água que sobram" saem pela linfa.</p>
+  <p>Diante de um derrame, a pergunta é: está aumentando a formação do líquido, diminuindo a reabsorção, ou os dois mecanismos ao mesmo tempo? A resposta já ajuda no diagnóstico diferencial, porque cada mecanismo aponta para um grupo diferente de causas.</p>
+
+  <div class="figure"><img src="fig/pressoes.svg" alt="Balanço de pressões entre parede, espaço pleural e pulmão, com os quatro mecanismos"></div>
+  
+
+  <h3 data-bm="Os quatro mecanismos">Os quatro mecanismos</h3>
+  <div class="grid2">
+    <div class="card"><span class="tag">1 · Pressão hidrostática alta</span><h4>Mais pressão dentro do vaso</h4><p>Hipertensão descompensada, pressão venosa central alta. Pense em causas do coração, do rim e do fígado: aumentam o volume que circula e empurram mais líquido para fora.</p></div>
+    <div class="card"><span class="tag">2 · Pressão oncótica baixa</span><h4>Menos proteína no sangue</h4><p>Paciente desnutrido, com albumina baixa, grande queimado, com sepse, câncer ou doença inflamatória grave. Perde a força que puxa o líquido de volta.</p></div>
+  </div>
+  <div class="grid2">
+    <div class="card"><span class="tag">3 · Obstrução linfática</span><h4>Linfa entupida</h4><p>A linfa ainda dá conta de até 100 a 150 mL a mais por dia. Um tumor da parede do tórax, da mama ou da axila que obstrua os linfáticos tira essa margem.</p></div>
+    <div class="card"><span class="tag">4 · Permeabilidade aumentada</span><h4>Pleura inflamada</h4><p>"Esse aqui é muito importante." O pulmão inflamado inflama a pleura visceral, que deixa passar proteínas e células (neutrófilos, linfócitos): o derrame fica mais inflamatório, exsudativo.</p></div>
+  </div>
+
+  <h3 data-bm="Terceiro espaço">Terceiro espaço</h3>
+  <p>Terceiro espaço são todas as cavidades fora do leito vascular: pleura, peritônio (a ascite), pericárdio e tecido subcutâneo (o edema). Num problema sistêmico, como o paciente com anasarca, a pressão hidrostática alta e a pressão oncótica baixa fazem o líquido ir para todos esses lugares ao mesmo tempo: edema nas pernas, ascite, derrame pericárdico e derrame pleural juntos.</p>
+  <p>Os mecanismos de pressão dão um derrame sem inflamação; a pleura inflamada dá um derrame inflamatório. É essa diferença que a punção vai medir (capítulo 05).</p>
+</section>
+
+<section id="s03">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">03</span></div>
+    <div class="corpo"><div class="de">Você está aqui · etapa 3 de 8</div><h2>Sintomas e exame físico</h2>
+    <div class="aqui"><span class="feito">1 · Pleura</span><span class="feito">2 · Líquido a mais</span><span class="on">3 · Exame físico</span><span>4 · Imagem</span><span>5 · Punção e Light</span><span>6 · Empiema</span><span>7 · Tuberculose e câncer</span><span class="ramo">8 · Pneumotórax</span></div></div></div>
+
+  <div class="simples"><div class="kick"><span class="dot"></span>Em palavras simples</div><p>Quanto mais rápido o líquido junta, mais falta de ar e dor o paciente sente; se junta devagar, pode não sentir nada. No exame, derrame e pneumotórax são quase iguais: o que separa é o som ao bater no tórax, maciço no líquido e oco no ar. E o exame sozinho não basta para furar o tórax de quem está estável.</p></div>
+
+  <h3 data-bm="Os sintomas dependem da velocidade">Os sintomas dependem da velocidade</h3>
+  <p>Um derrame que se forma devagar, ao longo de semanas, dá tempo ao paciente de se adaptar: ele pode não ter dor nem falta de ar. Quando o espaço pleural se enche rápido, aparecem <b>dispneia e dor torácica</b>. O líquido empurra o pulmão, que perde capacidade de expandir: é um distúrbio restritivo.</p>
+  <ul>
+    <li><span class="medium">Dispneia:</span> variável, conforme a rapidez e o volume.</li>
+    <li><span class="medium">Tosse:</span> geralmente seca.</li>
+    <li><span class="medium">Sintomas da doença de base:</span> no derrame da insuficiência cardíaca, turgência jugular, ortopneia, dispneia paroxística noturna e estertores na ausculta.</li>
+    <li><span class="medium">Dor pleurítica:</span> em facada, rasgada ou em pontada, localizada, que piora quando a parede do tórax se mexe, porque mexe a pleura inflamada.</li>
+  </ul>
+
+  
+
+  <h3 data-bm="Exame físico: só a percussão separa">Exame físico: só a percussão separa</h3>
+  <p>Inspeção comparativa, palpação, percussão e ausculta. Derrame e pneumotórax afastam o pulmão da parede, por isso quase tudo é igual. A diferença está na percussão: <b>som maciço no líquido, timpânico no ar</b>.</p>
+  <div class="cmp"><div class="r h"><div class="k"></div><div class="c">Derrame</div><div class="c">Pneumotórax</div><div class="c">Espessamento pleural</div></div>
+    <div class="r"><div class="k">Inspeção</div><div class="c">Normal ou abaulado</div><div class="c">Normal ou abaulado</div><div class="c">Normal ou retraído</div></div>
+    <div class="r"><div class="k">Expansão</div><div class="c">Diminuída</div><div class="c">Diminuída</div><div class="c">Diminuída</div></div>
+    <div class="r"><div class="k">Frêmito</div><div class="c">Diminuído ou ausente</div><div class="c">Diminuído ou ausente</div><div class="c">Diminuído ou ausente</div></div>
+    <div class="r"><div class="k">Percussão</div><div class="c destaque">Maciça</div><div class="c destaque">Timpânica</div><div class="c destaque">Tende a maciça</div></div>
+    <div class="r"><div class="k">Ausculta</div><div class="c">Murmúrio diminuído ou ausente</div><div class="c">Murmúrio diminuído ou ausente</div><div class="c">Murmúrio diminuído ou ausente</div></div>
+  </div>
+  <p>O espessamento pleural (paquipleuris) é a pleura inflamada há muito tempo, quase sempre depois de um derrame exsudativo que evoluiu para fibrose. Ela não abaula: retrai, e pode até deformar a parede do tórax. O pneumotórax só chega a isso se houver também líquido inflamatório (hidropneumotórax).</p>
+
+  <div class="figure"><img src="fig/il-derrame-ptx.svg" alt="O mesmo tórax com líquido na base (derrame) e com ar no alto e pulmão encolhido (pneumotórax)"><p class="leg">Ilustração feita para esta apostila. Líquido pesa e vai para baixo: som maciço. Ar sobe e afasta o pulmão da parede: som timpânico.</p></div>
+
+  <div class="box red"><div class="kick"><span class="dot"></span>Pegadinha do professor</div><p><span class="medium">Furar o tórax só pelo exame físico.</span> Em urgência e emergência se fala muito em puncionar logo o pneumotórax hipertensivo. Vale para o paciente instável, sem acesso a imagem (atendimento pré-hospitalar, parada iminente). Se o paciente está estável, faça primeiro o exame de imagem: "sempre optem por primeiro tentar fazer o exame de imagem para evitar iatrogenia desnecessária".</p></div>
+  
+
+  <h3 data-bm="Pistas da história">Pistas da história (slides 7 e 9)</h3>
+  <div class="card wide"><span class="tag">Sintoma · causa possível (slide 7)</span><ul class="cols2">
+    <li><span class="medium">Dor insidiosa, febre:</span> infecção.</li>
+    <li><span class="medium">Dor súbita e falta de ar:</span> embolia.</li>
+    <li><span class="medium">Dor e falta de ar súbitas, timpanismo:</span> depois de um pneumotórax.</li>
+    <li><span class="medium">Dor abdominal junto:</span> depois de pancreatite.</li>
+    <li><span class="medium">Febre e emagrecimento:</span> empiema.</li>
+    <li><span class="medium">Dor nas articulações, febre:</span> doença do colágeno.</li>
+  </ul>
+  <span class="tag" style="margin-top:6pt">Dado da história · pense em (slide 9)</span><ul class="cols2">
+    <li><span class="medium">Asbesto (amianto):</span> derrame benigno do asbesto, mesotelioma.</li>
+    <li><span class="medium">Contato com tuberculose:</span> tuberculose.</li>
+    <li><span class="medium">Contato com infecção das vias aéreas:</span> derrame viral.</li>
+    <li><span class="medium">Pequenas epidemias no trabalho:</span> Legionella.</li>
+    <li><span class="medium">Álcool, dor abdominal, gordura nas fezes:</span> pancreatite, pseudocisto do pâncreas.</li>
+    <li><span class="medium">Dor abdominal, fraqueza, febre, cirurgia abdominal:</span> abscesso embaixo do diafragma; pancreatite.</li>
+    <li><span class="medium">Câncer anterior:</span> metástase.</li>
+    <li><span class="medium">Insuficiência cardíaca, renal ou hepática:</span> transudato.</li>
+    <li><span class="medium">Infarto do miocárdio:</span> síndrome de Dressler.</li>
+    <li><span class="medium">Ponte de safena ou troca de válvula:</span> síndrome pós-pericardiotomia.</li>
+    <li><span class="medium">Uso de medicamentos:</span> exsudatos, derrame eosinofílico.</li>
+    <li><span class="medium">Risco de trombose venosa profunda:</span> embolia pulmonar.</li>
+  </ul></div>
+</section>
+
+<section id="s04">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">04</span></div>
+    <div class="corpo"><div class="de">Você está aqui · etapa 4 de 8</div><h2>As imagens do derrame</h2>
+    <div class="aqui"><span class="feito">1 · Pleura</span><span class="feito">2 · Líquido a mais</span><span class="feito">3 · Exame físico</span><span class="on">4 · Imagem</span><span>5 · Punção e Light</span><span>6 · Empiema</span><span>7 · Tuberculose e câncer</span><span class="ramo">8 · Pneumotórax</span></div></div></div>
+
+  <div class="simples"><div class="kick"><span class="dot"></span>Em palavras simples</div><p>A radiografia em pé é o primeiro exame: o líquido desce para o fundo e apaga o cantinho entre o diafragma e as costelas. Deitar o paciente de lado mostra se o líquido corre (livre, melhor) ou fica preso (loculado, pior). Ultrassom e tomografia tiram as dúvidas e mostram as lojas de pus.</p></div>
+
+  <h3 data-bm="A ordem dos exames">A ordem dos exames</h3>
+  <p>Os sintomas levantam a suspeita, o exame físico reforça, e a imagem dá o <b>diagnóstico definitivo</b>. As células mesoteliais são muito reativas: a imagem depende da intensidade e do tempo da agressão, e quanto mais crônico e inflamado o derrame, mais fibrose ele forma.</p>
+  <ol class="flow">
+    <li><b class="t">Radiografia de tórax.</b> É o exame mais feito e mais fácil de conseguir, até em cidade pequena. Em pé, em posteroanterior e perfil; ou deitado de lado, com raios horizontais.</li>
+    <li><b class="t">Ultrassom de tórax.</b> Se a radiografia deixou dúvida. Tem acurácia excelente e vê derrames pequenos; é barato, portátil e cada vez mais presente em emergências e terapias intensivas.</li>
+    <li><b class="t">Tomografia de tórax.</b> Também muito boa, mas de acesso mais difícil que a radiografia.</li>
+  </ol>
+  
+
+  <h3 data-bm="Radiografia em pé">Radiografia em pé: o cantinho apagado</h3>
+  <p>A primeira alteração é a perda do <b>seio costofrênico</b>: some a ponta aguda que a base do pulmão faz no canto entre o diafragma e as costelas. O líquido forma uma curva, a <b>parábola de Damoiseau</b>; nos derrames maiores, essa borda curva é o sinal do menisco. No perfil a alteração aparece ainda melhor.</p>
+  <div class="figure"><img src="fig/ex-parabola.svg" alt="Radiografias com derrame volumoso e derrame pequeno"><div class="olhar"><div class="kick">O que olhar</div><ul>
+    <li><b>1 e 2.</b> A borda do líquido é curva e mais alta junto à parede (parábola de Damoiseau); embaixo dela tudo é branco.</li>
+    <li><b>3 e 4.</b> No derrame pequeno, o único sinal pode ser um seio costofrênico arredondado (3), contra o seio pontudo do outro lado (4).</li></ul>
+    <p class="leg">Imagens dos slides da aula: (A) derrame volumoso, slide 11; (B) pequeno derrame, slide 12.</p></div></div>
+  <div class="box red"><div class="kick"><span class="dot"></span>Pegadinha do professor</div><p><span class="medium">Derrame pequeno escondido no posteroanterior.</span> Ficou na dúvida se há derrame? Olhe o perfil: o acúmulo de líquido e a perda do seio costofrênico aparecem bem melhor.</p></div>
+  <div class="quote"><p>“É até mais fácil ver no perfil do que no [posteroanterior], tá? Isso é importante também que vocês saibam.”</p><div class="who">Dr. Guerra, sobre a radiografia em perfil</div></div>
+
+  <h3 data-bm="Deitar de lado: livre ou preso">Deitar de lado: livre ou preso</h3>
+  <p>Para saber se o derrame é livre ou se já tem traves de fibrina, deite o paciente sobre o lado do derrame e repita a radiografia com raios horizontais. Se o líquido escorre e forma uma coluna ao longo de todo o tórax, ele é livre. A confirmação de quão inflamado ele é vem da punção (capítulo 05), mas o líquido que corre <b>é bom sinal</b>.</p>
+  <div class="cmp"><div class="r h"><div class="k"></div><div class="c">Líquido livre</div><div class="c">Líquido loculado</div></div>
+    <div class="r"><div class="k">Deitado de lado</div><div class="c">Escorre e forma uma coluna por todo o tórax</div><div class="c">Fica no mesmo formato</div></div>
+    <div class="r"><div class="k">Por quê</div><div class="c">Pouco viscoso, provavelmente menos inflamado</div><div class="c">Traves de fibrina dividem o líquido em compartimentos</div></div>
+    <div class="r"><div class="k">Em pé</div><div class="c">Parábola que obedece à gravidade</div><div class="c">Convexidade, a imagem em D: não obedece à gravidade</div></div>
+    <div class="r"><div class="k">Evolução</div><div class="c">Mais chance de tratar sem complicação</div><div class="c">Evolução menos satisfatória</div></div>
+  </div>
+  <div class="figure"><img src="fig/ex-decubito.svg" alt="Radiografia em decúbito lateral e radiografias com imagem em D"><div class="olhar"><div class="kick">O que olhar</div><ul>
+    <li><b>1 e 2.</b> Deitado sobre o lado direito, o líquido correu para a parede, que agora é o lado de baixo (borda esquerda da imagem): uma faixa branca entre a parede e a borda do pulmão. As setas duplas do slide medem essa faixa.</li>
+    <li><b>3 e 4.</b> Com o paciente em pé, o líquido não desceu: a borda é convexa, em D, voltada para dentro. É um derrame loculado, que já não obedece à gravidade.</li></ul>
+    <p class="leg">Imagens dos slides da aula: (A) decúbito lateral direito, slide 13; (B) imagem em D de um empiema crônico e (C) exsudato crônico em organização, slide 14.</p></div></div>
+
+  <h3 data-bm="Derrame infrapulmonar">Derrame infrapulmonar</h3>
+  <p>O líquido se acumula embaixo do pulmão, entre ele e o diafragma, e empurra o pulmão para cima; o diafragma fica no lugar. É difícil de ver no posteroanterior, porque o seio costofrênico continua aparecendo e o contorno parece normal. A pista é a <b>altura dos diafragmas</b>: uma diferença maior que a habitual. No perfil, a coluna de líquido aparece bem.</p>
+  <div class="figure lado"><img style="width:330pt" src="fig/ex-infra.svg" alt="Derrame infrapulmonar em posteroanterior e perfil"><div class="olhar"><div class="kick">O que olhar</div><ul>
+    <li><b>1 e 2.</b> O que parece o diafragma direito, alto, é o topo do líquido; o pontilhado do slide mostra onde o diafragma realmente está.</li>
+    <li><b>3.</b> Compare com a altura do diafragma esquerdo: a diferença é grande demais.</li>
+    <li><b>4.</b> No perfil, o seio costofrênico de trás está apagado.</li></ul>
+    <p class="leg">Imagens do slide 15 da aula: (A) derrame infrapulmonar direito; (B) perfil direito.</p></div></div>
+  <div class="box red"><div class="kick"><span class="dot"></span>Pegadinha do professor</div><p><span class="medium">"Ah, então ele não tem derrame pleural."</span> No infrapulmonar o seio costofrênico aparece e engana. Olhe a altura dos diafragmas e peça o perfil.</p></div>
+
+  <h3 data-bm="Derrame intercisural">Derrame intercisural: o tumor fantasma</h3>
+  <p>Uma opacidade no meio do pulmão direito que assusta paciente e médico: "Meu Deus, isso aqui é um tumor". É líquido preso na <b>fissura horizontal</b>, a que separa o lobo superior do lobo médio e vai da axila até o meio do peito. Por isso ele só acontece no pulmão direito. Também é chamado de pseudotumor. Na dúvida entre pulmão e líquido, a <b>tomografia</b> confirma; o ultrassom aqui é mais difícil.</p>
+  <div class="figure lado"><img style="width:290pt" src="fig/ex-intercisural.svg" alt="Líquido na cissura horizontal simulando tumor"><div class="olhar"><div class="kick">O que olhar</div><ul>
+    <li><b>1.</b> A opacidade tem forma alongada, de lente, no trajeto da cissura.</li>
+    <li><b>2.</b> No posteroanterior parece uma massa redonda, mas está na linha que vai da axila ao esterno: pense em derrame intercisural.</li></ul>
+    <p class="leg">Imagens do slide 16 da aula: (A) e (B) líquido na cissura horizontal simulando tumor.</p></div></div>
+
+  <h3 data-bm="Tomografia e ultrassom">Tomografia e ultrassom</h3>
+  <p>Os dois mostram o tórax em três dimensões e encontram as <b>traves inflamatórias</b> dentro do líquido, o que ajuda muito quando se pensa em empiema.</p>
+  <ul>
+    <li><span class="medium">Tomografia:</span> o paciente está deitado de costas, então o líquido livre escorre para trás (às vezes forma um C). Líquido que fica na frente e não escorre está preso. A pleura espessada, que realça com o contraste, mostra que ela está muito inflamada; os bolsões são as lojas do empiema.</li>
+    <li><span class="medium">Ultrassom:</span> o líquido pleural deveria ser todo preto. Traves brancas e cinzas dentro dele mostram conteúdo inflamatório, mais denso que o líquido.</li>
+  </ul>
+  <div class="figure"><img src="fig/ex-tc-us.svg" alt="Tomografia com lojas de empiema e ultrassom com septos"><div class="olhar"><div class="kick">O que olhar</div><ul>
+    <li><b>1.</b> Com o paciente deitado, há líquido na frente: não escorreu para trás, está preso.</li>
+    <li><b>2.</b> A pleura em volta do bolsão está grossa e realçada pelo contraste.</li>
+    <li><b>3 e 4.</b> No ultrassom, o líquido é preto e as traves brancas o dividem em várias lojas.</li></ul>
+    <p class="leg">Imagens do slide 17 da aula: (A) tomografia com lojas de empiema; (B) várias lojas no ultrassom.</p></div></div>
+  <div class="box orange"><div class="kick"><span class="dot"></span>Parêntese do professor</div><p>"Vocês vão perceber ao longo da formação que vai ser falado sempre muito em ultrassom." Para quem for trabalhar em emergência ou terapia intensiva, ele sugere fazer, depois de formado, cursos de ultrassom à beira do leito.</p></div>
+</section>
+
+<section id="s05">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">05</span></div>
+    <div class="corpo"><div class="de">Você está aqui · etapa 5 de 8</div><h2>Punção e critérios de Light</h2>
+    <div class="aqui"><span class="feito">1 · Pleura</span><span class="feito">2 · Líquido a mais</span><span class="feito">3 · Exame físico</span><span class="feito">4 · Imagem</span><span class="on">5 · Punção e Light</span><span>6 · Empiema</span><span>7 · Tuberculose e câncer</span><span class="ramo">8 · Pneumotórax</span></div></div></div>
+
+  <div class="simples"><div class="kick"><span class="dot"></span>Em palavras simples</div><p>Para saber se o líquido é "água parada" ou "líquido de inflamação", tira-se um pouco com uma agulha e compara-se com o sangue. Se tem muita proteína ou muita enzima de inflamação, é exsudato, e a pleura precisa de atenção. Se não tem, é transudato: trata-se o coração, o fígado ou o rim, e a pleura se resolve sozinha.</p></div>
+
+  <h3 data-bm="Toracocentese diagnóstica">Toracocentese diagnóstica</h3>
+  <p>A imagem mostra que há líquido; para saber se ele é mais ou menos inflamado é preciso analisá-lo no laboratório. Para isso se faz a <b>toracocentese</b>: a punção do espaço pleural. "A técnica não tem muito segredo."</p>
+  <ol class="flow">
+    <li><b class="t">Anestesiar bem.</b> A parede do tórax e a pleura parietal, "porque dói bastante; na hora que você entra com a agulha, o paciente geralmente tem dor".</li>
+    <li><b class="t">Aspirar de 20 a 60 mL</b> de líquido pleural.</li>
+    <li><b class="t">Olhar o aspecto.</b> Pus é empiema, sem precisar de laboratório. Amarelo-citrino claro, com aspecto de plasma, é o habitual; quanto mais turvo, pior.</li>
+    <li><b class="t">Mandar para os exames.</b> Sempre o bioquímico (transudato ou exsudato) e, conforme o caso, citológico, microbiológico, imunológico e imuno-histoquímico. Bactéria no líquido fecha o derrame parapneumônico infectado; células neoplásicas fecham o derrame neoplásico.</li>
+    <li><b class="t">Colher sangue junto.</b> Proteína e desidrogenase lática do sangue, para comparar. Se já houver exame do mesmo dia, ele serve.</li>
+  </ol>
+  <div class="figure"><img src="fig/il-toracocentese.svg" alt="Toracocentese com o paciente sentado e detalhe da agulha passando entre as costelas"><p class="leg">Ilustração feita para esta apostila. Em roxo, detalhes de técnica que não foram ditos em aula: a posição da punção e o caminho da agulha entre as costelas.</p></div>
+
+  <div class="box orange"><div class="kick"><span class="dot"></span>Parêntese do professor: quem foi o Light</div><p>Richard Light definiu os critérios em 1972, quando ainda era residente de primeiro ou segundo ano de cirurgia torácica. Na época "drenavam todo mundo", e ele via complicações de dreno em pacientes que não precisavam: começou por conta própria a dosar substâncias no líquido. "Se era um líquido não inflamatório, por que não esperar? Por que não tentar tratar a causa base?" Esteve em Cascavel umas duas vezes nas décadas de 80 e 90, era muito querido e morreu há uns três, quatro anos; o New England Journal of Medicine publicou editoriais sobre ele.</p></div>
+  <p class="reg"><b>No slide 20</b> (revista Chest): o artigo é de quando ele era "medical resident", residente de clínica médica.</p>
+  <h3 data-bm="Transudato ou exsudato">Transudato ou exsudato</h3>
+  <div class="cmp"><div class="r h"><div class="k"></div><div class="c">Transudato</div><div class="c">Exsudato</div></div>
+    <div class="r"><div class="k">O que é</div><div class="c">Líquido "não inflamatório"</div><div class="c">Líquido "inflamatório"</div></div>
+    <div class="r"><div class="k">Conteúdo</div><div class="c">Pouca proteína e poucas células</div><div class="c">Mais células (neutrófilos, linfócitos) e mais proteína</div></div>
+    <div class="r"><div class="k">Evolução</div><div class="c">Potencial de complicação muito baixo</div><div class="c">Pode evoluir para fibrose, empiema ou espessamento da pleura</div></div>
+  </div>
+
+  
+
+  <h3 data-bm="Os critérios de Light">Os critérios de Light</h3>
+  <p>Cada critério compara o líquido pleural com o sangue: quanto mais proteína e desidrogenase lática passaram para a pleura, mais a membrana está permeável, ou seja, inflamada (pneumonia, tuberculose, câncer).</p>
+  <div class="cmp"><div class="r h"><div class="k"></div><div class="c">Exsudato</div><div class="c">Transudato</div></div>
+    <div class="r"><div class="k">Proteína</div><div class="c">Pleural ÷ sérica <span class="g">maior que 0,5</span></div><div class="c">Menor que 0,5</div></div>
+    <div class="r"><div class="k">Desidrogenase lática</div><div class="c">Pleural ÷ sérica <span class="g">maior que 0,6</span></div><div class="c">Menor que 0,6</div></div>
+    <div class="r"><div class="k">Desidrogenase lática pleural</div><div class="c"><span class="g">Maior que 2/3</span> do limite superior do laboratório</div><div class="c">Não</div></div>
+  </div>
+  <div class="es"><div class="kick">Basta um</div><p class="lead">Exsudato: pelo menos um critério positivo. Transudato: todos negativos.</p>
+    <div class="cells"><div class="cell"><div class="lab">Exemplo da proteína</div><p>Sangue com 6 g/dL e pleura com 4 g/dL: relação de 0,67, maior que 0,5. Exsudato.</p></div>
+    <div class="cell"><div class="lab">Exemplo do limite</div><p>Laboratório com limite de 300 e pleura com 250: 2/3 de 300 é 200. Exsudato.</p></div></div></div>
+  <p class="reg"><b>No slide 19</b> (resumo do artigo de 1972): o terceiro critério aparece como desidrogenase lática pleural acima de 200 unidades internacionais.</p>
+
+  <h3 data-bm="Gradiente de albumina">Gradiente de albumina</h3>
+  <p>Um quarto critério, que não é de Light: veio depois, porque no paciente com <b>insuficiência cardíaca usando diurético</b> os critérios de Light acertam menos. Aqui não é uma divisão, é uma <b>subtração</b>: albumina do sangue menos albumina da pleura.</p>
+  <div class="ref"><div class="txt"><div class="kick"><span class="dot"></span>Gradiente de albumina</div><p>Albumina do sangue menos a da pleura. Diferença grande: a albumina não está passando, é transudato. Menor: exsudato.</p></div><div class="val">Maior que 1,2<small>transudato</small></div></div>
+  <p class="reg"><b>No slide 22:</b> "albumina sérica – albumina pleural &gt; 1,2 mg/dL (transudato)".</p>
+  <p class="livros"><b>Nos livros:</b> a albumina é medida em g/dL, e o gradiente aparece como 1,2 g/dL.</p>
+  <div class="box red"><div class="kick"><span class="dot"></span>Pegadinha do professor</div><ul>
+    <li><span class="medium">Achar que precisa dos três critérios.</span> Basta um para ser exsudato; transudato exige todos negativos.</li>
+    <li><span class="medium">Trocar os números.</span> Proteína é 0,5; desidrogenase lática é 0,6.</li>
+    <li><span class="medium">Ler o gradiente como os outros.</span> No gradiente, o número alto (maior que 1,2) aponta transudato.</li></ul></div>
+
+  <h3 data-bm="As três causas de cada">As três causas de cada</h3>
+  <p>A tabela da revisão de 2018 (slide 24) lista dezenas de causas. "Tem que saber tudo? Claro que não." O generalista precisa saber as três principais de cada tipo; se não for nenhuma delas, encaminha ao especialista.</p>
+  <div class="cmp"><div class="r h"><div class="k"></div><div class="c">Transudato</div><div class="c">Exsudato</div></div>
+    <div class="r"><div class="k">Mecanismo</div><div class="c">Pressão hidrostática alta; a membrana da pleura está íntegra</div><div class="c">Permeabilidade aumentada: a pleura está inflamada</div></div>
+    <div class="r"><div class="k">Causas</div><div class="c">Insuficiência cardíaca; cirrose com hipertensão portal; síndrome nefrótica ou insuficiência renal</div><div class="c">Pneumonia (derrame parapneumônico); tuberculose; câncer</div></div>
+    <div class="r"><div class="k">Em resumo</div><div class="c destaque">Coração, rim ou fígado</div><div class="c destaque">Infecção ou câncer</div></div>
+  </div>
+  <p>Ele lembrou ainda que a hipertensão mal controlada, por exemplo numa síndrome nefrítica, também pode dar transudato.</p>
+
+  <h3 data-bm="O que fazer com cada um">O que fazer com cada um</h3>
+  <div class="cmp"><div class="r h"><div class="k"></div><div class="c">Transudato</div><div class="c">Exsudato</div></div>
+    <div class="r"><div class="k">Causa</div><div class="c">Tratar a doença de base: diurético, anti-hipertensivo</div><div class="c">Tratar a doença de base: pneumonia, tuberculose, câncer</div></div>
+    <div class="r"><div class="k">Pleura</div><div class="c">Nada: sem punção, sem dreno. O derrame some sozinho</div><div class="c">Abordagem específica da pleura (capítulos 06 e 07)</div></div>
+    <div class="r"><div class="k">Por quê</div><div class="c">Menos líquido se forma, mais é reabsorvido; evita um procedimento que pode complicar</div><div class="c">O líquido inflamado tende a evoluir e precisa de atenção</div></div>
+  </div>
+  <div class="quote"><p>“Caramba, eu não vou ficar drenando o tórax dos pacientes que têm uma insuficiência cardíaca descompensada. É muito melhor tratar a insuficiência cardíaca.”</p><div class="who">Dr. Guerra, imaginando o raciocínio do Light</div></div>
+</section>
+
+<section id="s06">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">06</span></div>
+    <div class="corpo"><div class="de">Você está aqui · etapa 6 de 8</div><h2>Derrame da pneumonia e empiema</h2>
+    <div class="aqui"><span class="feito">1 · Pleura</span><span class="feito">2 · Líquido a mais</span><span class="feito">3 · Exame físico</span><span class="feito">4 · Imagem</span><span class="feito">5 · Punção e Light</span><span class="on">6 · Empiema</span><span>7 · Tuberculose e câncer</span><span class="ramo">8 · Pneumotórax</span></div></div></div>
+
+  <div class="simples"><div class="kick"><span class="dot"></span>Em palavras simples</div><p>A pneumonia pode deixar líquido inflamado na pleura. Se ele engrossa e vira pus (empiema), antibiótico não resolve: é preciso dreno no tórax e, se o dreno não der conta, cirurgia para limpar. O exame do líquido (aspecto, bactéria e pH) diz quem precisa de dreno.</p></div>
+
+  <h3 data-bm="O derrame parapneumônico evolui">O derrame parapneumônico evolui</h3>
+  <p>O derrame da pneumonia (parapneumônico) é inflamatório, e "se esse líquido é inflamatório, ele vai evoluir". O paciente costuma chegar na primeira fase, com os sintomas da pneumonia: tosse, dor torácica, expectoração, febre.</p>
+  <p>Se o derrame não é tratado, as traves de fibrina formam lojas e junta pus: é um abscesso dentro do tórax. E <b>abscesso se trata com cirurgia</b>; no pulmão não dá para tratar empiema só com antibiótico. A fase final é a pleura espessada residual, a paquipleuris. "Eu não quero deixar chegar nessa fase final."</p>
+  <div class="figure"><img src="fig/fases.svg" alt="As três fases do derrame parapneumônico"></div>
+
+  <h3 data-bm="Quando já é empiema">Quando já é empiema <span class="prova">PROVA</span></h3>
+  <p>Na punção, <b>pus é sempre empiema</b>, e pH abaixo de 7 também é sempre empiema: nem é preciso esperar o resto da análise. Para a prova, ele usa o fluxograma da aula: <b>pH abaixo de 7,2</b> já é empiema e o tórax precisa ser drenado. O pH normal do líquido fica entre 7,2 e 7,4.</p>
+  <div class="regua">
+    <div class="ticks"><span class="first" style="left:0">6,8</span><span style="left:25%">7,0</span><span style="left:50%">7,2</span><span style="left:75%">7,4</span></div>
+    <div class="bar"><span class="seg r" style="width:25%"></span><span class="seg r" style="width:25%"></span><span class="seg g" style="width:25%"></span><span class="seg n" style="width:25%"></span></div>
+    <div class="labs"><div class="lab r" style="width:25%"><div class="nm">Sempre empiema <span class="v">&lt; 7</span></div>Junto com o pus.</div><div class="lab r" style="width:25%"><div class="nm">Drenar <span class="v">&lt; 7,2</span></div>A regra da prova.</div><div class="lab g" style="width:25%"><div class="nm">Normal <span class="v">7,2 a 7,4</span></div>pH do líquido.</div><div class="lab n" style="width:25%"></div></div>
+  </div>
+  <p class="regua-note">Com pH de 7,1 ou 7,2, na prática ainda se poderia tentar esvaziar com a punção e ver se o líquido volta.</p>
+  <p class="reg"><b>Nos slides:</b> slide 26, "se pH &lt; 7,0: empiema!"; fluxograma do slide 27, "pH ≤ 7,2" para drenar; tabela do slide 28, "pH &lt; 7,2".</p>
+
+  <h3 data-bm="O fluxograma da prova">O fluxograma da prova <span class="prova">PROVA</span></h3>
+  <ol class="flow">
+    <li><b class="t">Derrame pequeno, menor que 10 mm.</b> Deitado de lado na radiografia, a coluna de líquido tem menos de 1 cm. Não vale o risco da punção (de causar um pneumotórax): trate a pneumonia e repita a radiografia em um, dois, três dias.</li>
+    <li><b class="t">Derrame maior que 10 mm, ou que cresceu.</b> Faça a toracocentese.</li>
+    <li><b class="t">Qualquer um destes: dreno.</b> Líquido turvo ou pus; Gram ou cultura com bactéria; pH abaixo de 7,2. É empiema, ou derrame com alta chance de virar empiema: drenagem torácica fechada, com um dreno calibroso em selo d'água.</li>
+    <li><b class="t">Nenhum deles: esvaziar e reavaliar.</b> Volume não tão grande, líquido claro, sem bactéria, pH normal. É exsudato, mas sem tanto potencial de gravidade: esvazie com a toracocentese, mantenha o antibiótico e reavalie em alguns dias. Voltou? Nova toracocentese, quantas forem precisas, até melhorar, ou até o líquido piorar (fase fibrinopurulenta) e pedir dreno.</li>
+    <li><b class="t">O dreno não resolveu: cirurgia.</b> Videotoracoscopia ou cirurgia aberta, para raspar a pleura e tirar o pus e as traves (decorticação pulmonar), até o pulmão voltar a expandir. Fibrinolítico existe, mas é pouco usado aqui.</li>
+  </ol>
+  <div class="figure"><img src="fig/fluxo-parapneumonico.svg" alt="Fluxograma do derrame parapneumônico"><p class="leg">Fluxograma do slide 27, redesenhado. A pneumonia é tratada em todos os ramos.</p></div>
+  <div class="quote"><p>“Aqui nesse fluxograma, e vai ser a partir daqui que a gente vai na prova: se o líquido tiver um pH abaixo de 7,2, a gente já vai dizer que é um empiema; se ele for líquido turvo ou pus claramente, eu vou dizer que é um empiema pleural, tem que drenar o tórax desse paciente.”</p><div class="who">Dr. Guerra, sobre o fluxograma do derrame parapneumônico</div></div>
+  <div class="box red"><div class="kick"><span class="dot"></span>Pegadinha do professor</div><p><span class="medium">"Gram positivo" no fluxograma não é bactéria Gram-positiva.</span> Quer dizer que o exame de Gram foi positivo: a bactéria apareceu no microscópio, seja ela Gram-negativa (Pseudomonas, Klebsiella) ou Gram-positiva (pneumococo). A cultura conta do mesmo jeito, mas demora dois a três dias: se vier positiva depois e ainda houver líquido, drene.</p></div>
+
+  
+
+  
+
+  <h3 data-bm="Caso do professor">Não é comum, mas não é raro</h3>
+  <div class="box orange"><div class="kick"><span class="dot"></span>Caso do professor</div><p>No meio da pandemia, uma moça de 22 anos, sem doença nenhuma, teve uma pneumonia comunitária extensa. Pelo escore de gravidade da pneumonia ela poderia ir para casa com amoxicilina, mas ele internou: "é uma pneumonia muito extensa". No segundo ou terceiro dia apareceu o derrame; a punção tinha todos os critérios, e o cirurgião torácico drenou. Um dia depois ela ficou séptica e foi direto para a toracoscopia. "Eu tenho certeza absoluta que, se ela não tivesse ido para a cirurgia, ela tinha morrido."</p></div>
+  <p>Os critérios às vezes só aparecem depois de várias punções. Quando aparecerem, <b>acione o cirurgião</b> mesmo que você mesmo passe o dreno: se o paciente piorar, você vai precisar dele. Numa cidade sem cirurgião torácico, ou sem cirurgião geral que faça a toracoscopia, peça a transferência e insista com a regulação.</p>
+  <div class="quote"><p>“Quero, porque tem critérios de evolução para um quadro mais grave que tem acometimento cirúrgico. Não adianta, antibiótico não vai resolver abscesso. Sejam enfáticos, porque senão os pacientes vão mal mesmo.”</p><div class="who">Dr. Guerra, sobre pedir a transferência</div></div>
+  <p>O dreno resolve quando o caso ainda é precoce. Se já há muitas traves, os detritos inflamatórios <b>entopem o dreno</b>: é preciso trocar o dreno ou ir para a cirurgia.</p>
+  <div class="figure"><img src="fig/il-dreno.svg" alt="Dreno de tórax ligado a um frasco com selo d'água"><p class="leg">Ilustração feita para esta apostila. Na aula: um selo d'água, um frasco. Em roxo, detalhes de montagem que não foram ditos.</p></div>
+
+  <h3 data-bm="Risco em quatro categorias">Risco em quatro categorias (slide 28)</h3>
+  <div class="cmp c4"><div class="r h"><div class="k"></div><div class="c">Categoria 1</div><div class="c">Categoria 2</div><div class="c">Categoria 3</div><div class="c">Categoria 4</div></div>
+    <div class="r"><div class="k">Tamanho</div><div class="c">Pequeno, menor que 10 mm</div><div class="c">Moderado: maior que 10 mm e menor que meio hemitórax</div><div class="c">Mais de meio hemitórax, loculado ou pleura espessada</div><div class="c">Qualquer</div></div>
+    <div class="r"><div class="k">Bactéria</div><div class="c">Cultura e Gram desnecessários</div><div class="c">Cultura e Gram negativos</div><div class="c">Cultura ou Gram positivos</div><div class="c">Pus</div></div>
+    <div class="r"><div class="k">pH</div><div class="c">Desnecessário</div><div class="c">7,2 ou mais</div><div class="c">Menor que 7,2</div><div class="c">Tanto faz</div></div>
+    <div class="r"><div class="k">Risco</div><div class="c">Muito baixo</div><div class="c">Baixo</div><div class="c">Moderado</div><div class="c">Alto</div></div>
+    <div class="r"><div class="k">Dreno</div><div class="c">Não</div><div class="c">Não</div><div class="c destaque">Sim</div><div class="c destaque">Sim</div></div>
+  </div>
+  <p class="small">Na categoria 3 basta um dos itens. Tabela do Colégio Americano de Médicos do Tórax (2000), no slide 28.</p>
+</section>
+
+<section id="s07">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">07</span></div>
+    <div class="corpo"><div class="de">Você está aqui · etapa 7 de 8</div><h2>Tuberculose e câncer na pleura</h2>
+    <div class="aqui"><span class="feito">1 · Pleura</span><span class="feito">2 · Líquido a mais</span><span class="feito">3 · Exame físico</span><span class="feito">4 · Imagem</span><span class="feito">5 · Punção e Light</span><span class="feito">6 · Empiema</span><span class="on">7 · Tuberculose e câncer</span><span class="ramo">8 · Pneumotórax</span></div></div></div>
+
+  <div class="simples"><div class="kick"><span class="dot"></span>Em palavras simples</div><p>Na tuberculose, achar o bacilo no líquido fecha o diagnóstico; se não achar, um líquido inflamado cheio de linfócitos com adenosina deaminase acima de 40 também fecha. No câncer, o objetivo é aliviar a falta de ar: tira-se o líquido e, se o paciente ainda tem um bom tempo de vida, "cola-se" a pleura com talco para o líquido não voltar.</p></div>
+
+  <h3 data-bm="Derrame tuberculoso">Derrame tuberculoso</h3>
+  <p>É relativamente simples. O paciente com tuberculose pulmonar que mostra derrame na radiografia de controle tem grande chance de derrame tuberculoso; às vezes, porém, a doença começa pelo derrame. Punciona-se o líquido e pede-se a <b>pesquisa do bacilo</b> (baciloscopia) e a cultura: se uma delas vier positiva, o diagnóstico está fechado. E se a baciloscopia vier negativa? Ainda dá para fechar pela bioquímica do líquido. "Percebam que esse é bem mais rápido": comparada ao derrame da pneumonia, a tuberculose "não tem muito segredo". O que pesa na prova é a combinação abaixo.</p>
+  <div class="quote"><p>“Não venham me chorar na prova se eu colocar lá: o paciente tem um derrame pleural exsudativo com [adenosina deaminase] de 40, qual o diagnóstico? Tuberculose pleural. Não necessariamente! Eu não falei que era linfocítico; pode ser neutrofílico.”</p><div class="who">Dr. Guerra, que repetiu a regra três vezes na aula</div></div>
+  <div class="es big"><div class="kick">Bacilo negativo: o diagnóstico bioquímico <span class="prova">PROVA</span></div><p class="lead">Exsudato linfocítico com adenosina deaminase acima de 40 U/L é tuberculose pleural.</p>
+    <div class="cells"><div class="cell"><div class="lab">Exsudato</div><p>Pelo menos um critério de Light positivo.</p></div>
+    <div class="cell"><div class="lab">Linfocítico</div><p>Predomínio de linfócitos na contagem de células.</p></div>
+    <div class="cell"><div class="lab">Adenosina deaminase</div><p>Acima de 40 U/L no líquido pleural.</p></div></div></div>
+  
+  <div class="box red"><div class="kick"><span class="dot"></span>Pegadinha do professor</div><p><span class="medium">Adenosina deaminase alta sozinha não fecha tuberculose.</span> Se o exsudato for neutrofílico, pode ser outra causa. O slide traz só a dosagem da adenosina deaminase pleural acima de 40 U/L; o "linfocítico" ele acrescentou falando.</p></div>
+  <ul>
+    <li><span class="medium">Tratamento:</span> o mesmo esquema da tuberculose pulmonar (rifampicina, isoniazida, pirazinamida e etambutol), com o mesmo tempo de tratamento.</li>
+    <li><span class="medium">Biópsia da pleura:</span> pode separar tuberculose de câncer, mas geralmente não se chega a precisar dela.</li>
+  </ul>
+
+  <h3 data-bm="Derrame neoplásico">Derrame neoplásico</h3>
+  <p>Quase sempre o câncer de base já é conhecido. Pode o derrame ser a primeira manifestação? Pode, mas é raro: a essa altura haverá outros sinais, como a massa no pulmão, nódulos na mama ou sintomas intestinais. Os que mais dão metástase na pleura, "disparado", são <b>pulmão e mama</b>; o cólon também pode. Câncer na pleura já é doença metastática: o tratamento é paliativo, para aliviar a falta de ar.</p>
+  
+  <p>O exemplo da aula: uma senhora de 70 anos com câncer de mama em tratamento chega com muita falta de ar. Puncione e pergunte se melhorou. Não melhorou? Procure outra causa. Melhorou? Confirme na imagem que o <b>pulmão reexpandiu</b>. Sem fazer mais nada, em uma a três semanas o líquido volta e a falta de ar também.</p>
+
+  <h3 data-bm="Pleurodese">Pleurodese</h3>
+  <p>A pleurodese é jogar uma substância inflamatória dentro da pleura para que as duas pleuras <b>grudem uma na outra</b>. Grudadas, não sobra espaço e não se forma mais líquido. É a abordagem mais usada quando o pulmão reexpande.</p>
+  <ul>
+    <li><span class="medium">Iodopovidona:</span> uma solução de iodo.</li>
+    <li><span class="medium">Talcagem pleural:</span> talco mesmo, "talco de pé, talco de bebê". Forma a reação inflamatória e a pleura gruda.</li>
+  </ul>
+  <div class="cmp"><div class="r h"><div class="k"></div><div class="c">Pleurodese (talcagem)</div><div class="c">Toracocenteses de repetição</div></div>
+    <div class="r"><div class="k">Para quem</div><div class="c">Bom prognóstico: respondendo à quimioterapia ou à terapia-alvo, com um a dois anos de vida</div><div class="c">Fase final: provavelmente não vive mais que um ou dois meses</div></div>
+    <div class="r"><div class="k">Como</div><div class="c">Cirurgia por vídeo com talco ou iodopovidona, uma vez</div><div class="c">Uma punção agora, outra em 15 a 20 dias, e assim por diante</div></div>
+    <div class="r"><div class="k">O preço</div><div class="c">Pós-operatório pesado; a inflamação pode matar quem está muito frágil</div><div class="c">Punções repetidas, sem cirurgia</div></div>
+  </div>
+  <p>"Então por que não faz isso em todo mundo?" Porque geralmente é feita por videotoracoscopia e causa uma inflamação muito intensa: o pós-operatório tem dor, febre e internação, num paciente que já tem câncer avançado. A escolha depende do <b>tempo de vida esperado</b>.</p>
+  
+  <p class="reg"><b>No slide 30:</b> a pergunta do fluxograma é "sobrevida maior que 1 semana?". Na aula: "Eu não diria assim uma semana".</p>
+  <div class="figure"><img src="fig/fluxo-neoplasico.svg" alt="Fluxograma do derrame neoplásico"><p class="leg">O caminho todo: fluxograma do slide 30 (revisão do New England Journal of Medicine, 2018), traduzido, com os tempos de vida que o professor usou.</p></div>
+</section>
+
+<section id="s08">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">08</span></div>
+    <div class="corpo"><div class="de">Você está aqui · etapa 8 de 8, o ramo ao lado</div><h2>Pneumotórax</h2>
+    <div class="aqui"><span class="feito">1 · Pleura</span><span class="feito">2 · Líquido a mais</span><span class="feito">3 · Exame físico</span><span class="feito">4 · Imagem</span><span class="feito">5 · Punção e Light</span><span class="feito">6 · Empiema</span><span class="feito">7 · Tuberculose e câncer</span><span class="on ramo">8 · Pneumotórax</span></div></div></div>
+
+  <div class="simples"><div class="kick"><span class="dot"></span>Em palavras simples</div><p>Pneumotórax é ar dentro da pleura: o pulmão murcha porque perde a pressão negativa que o mantinha cheio. Pode surgir do nada (bolhas que estouram em rapazes magros), por trauma ou por um procedimento. Pequeno e estável pode só ser observado; grande, ou com o paciente mal, leva dreno.</p></div>
+
+  <h3 data-bm="Por que o pulmão murcha">Por que o pulmão murcha</h3>
+  <p>O ar entra na pleura por fora, quando algo perfura o tórax, ou por dentro: um pulmão doente, com bolhas embaixo da pleura que estouram, ou uma fístula broncopleural.</p>
+  <p>Dentro do tórax a pressão é <b>negativa</b>. Na inspiração o diafragma desce, a pressão fica ainda mais negativa e o ar de fora, com pressão maior, entra sozinho. Na expiração o ar sai pela retração elástica do pulmão (ou pela força dos músculos, no esforço). Com ar na pleura, a pressão dentro fica igual à de fora: "pode fazer a força que quiser, o ar não vai entrar". O pulmão colapsa, vem a insuficiência respiratória e, no extremo, a parada cardiorrespiratória.</p>
+
+  <h3 data-bm="Quatro tipos">Quatro tipos</h3>
+  <div class="grid2">
+    <div class="card"><span class="tag">Espontâneo</span><h4>Surge do nada</h4><p>Não estava acontecendo nada de errado e, de repente, o pneumotórax. Divide-se em primário e secundário (abaixo).</p></div>
+    <div class="card"><span class="tag">Traumático</span><h4>Depois de um trauma</h4><p>Tiro, facada, acidente de trânsito; trauma contuso ou penetrante. Quase sempre vem com sangue (hemopneumotórax), que vai precisar de dreno.</p></div>
+  </div>
+  <div class="grid2">
+    <div class="card"><span class="tag">Iatrogênico</span><h4>Causado por um procedimento</h4><p>Acesso venoso central, toracocentese, acupuntura, ventilação mecânica com pressões altas (barotrauma), rolha no circuito do ventilador. Mais comum em quem já tem doença pulmonar, sobretudo enfisema. "O iatrogênico é do estudante de medicina, né?"</p></div>
+    <div class="card"><span class="tag">Especiais</span><h4>Ligados a outras doenças</h4><p>Neonatal, depois da tuberculose, fibrose cística, catamenial, pneumocistose. Ele não entrou em detalhes.</p></div>
+  </div>
+
+  <h3 data-bm="Primário ou secundário">Primário ou secundário</h3>
+  <div class="cmp"><div class="r h"><div class="k"></div><div class="c">Primário</div><div class="c">Secundário</div></div>
+    <div class="r"><div class="k">Quem</div><div class="c">Não sabia ter doença no pulmão. Quase sempre homens jovens (menos de 40 anos), magros e longilíneos</div><div class="c">Já sabe ter doença no pulmão, inclusive quem já viu as bolhas numa tomografia</div></div>
+    <div class="r"><div class="k">Por quê</div><div class="c">Bolhas embaixo da pleura no ápice, por malformação; o cigarro aumenta e rompe as bolhas</div><div class="c">A doença conhecida, como o enfisema</div></div>
+    <div class="r"><div class="k">Complicação</div><div class="c">Menos, porque são jovens</div><div class="c">Mais empiema e hemotórax</div></div>
+    <div class="r"><div class="k">Diagnóstico</div><div class="c">Mais difícil: pela história e pelo exame</div><div class="c">Mais fácil: o paciente avisa ("será que não estourou uma bolha?")</div></div>
+  </div>
+  <p class="reg"><b>No slide 33:</b> secundário "geralmente em pacientes com existência de patologias pulmonares ou mediastínicas".</p>
+  <div class="box orange"><div class="kick"><span class="dot"></span>Pergunta de aluna</div><p><span class="medium">"Então o secundário não tem relação com o tabagismo?"</span> Tem, quando a doença de base vem do cigarro, como o enfisema da doença pulmonar obstrutiva crônica, cujas bolhas podem romper. Mas o cigarro é fator de risco para a doença pulmonar, não necessariamente para o pneumotórax.</p></div>
+  <div class="figure"><img src="fig/il-bolhas.svg" alt="Bolhas no ápice do pulmão, uma rompida, e a retirada por videotoracoscopia com grampeador"><p class="leg">Ilustração feita para esta apostila. À direita, o tratamento das bolhas: o cirurgião "bota um grampeador ali e tira aquela parte do pulmão".</p></div>
+
+  
+  <h3 data-bm="Sintomas e exame">Sintomas e exame</h3>
+  <p>Como no derrame, tudo depende do tempo de instalação e da reserva do paciente. Um atleta de 20 anos e 1,98 m pode passar uma ou duas semanas com falta de ar progressiva, achando que foi "um mau jeito na musculação". Não é o comum: em geral os sintomas começam logo.</p>
+  <ul>
+    <li><span class="medium">Dor:</span> súbita, localizada no lado acometido e que piora com a respiração.</li>
+    <li><span class="medium">Falta de ar:</span> variável. Um paciente de 60 anos com insuficiência cardíaca e doença pulmonar obstrutiva crônica descompensa muito rápido.</li>
+    <li><span class="medium">Exame:</span> ausculta diminuída, frêmito diminuído, timpanismo, enfisema subcutâneo.</li>
+    <li><span class="medium">Hipertensivo (slide 35):</span> turgência jugular, desvio da traqueia, abafamento das bulhas, hipotensão, agitação. Ele não detalhou: vem em urgência e emergência.</li>
+  </ul>
+
+  <h3 data-bm="Imagem">Imagem</h3>
+  <p>Se o paciente está estável, ele vai para o exame de imagem, "em 99% das vezes". Como no derrame, começa-se pela radiografia simples.</p>
+  <ul>
+    <li><span class="medium">Radiografia:</span> identifica-se a pleura, a <b>linha pleural</b>, e daquela linha para fora não há trama broncovascular (as linhas finas dos vasos e do interstício). Linha pleural e nada de trama além dela: "está feito o diagnóstico". Radiografia inspirada e expirada aumenta a sensibilidade, porque na expiração a câmara de ar aparece melhor.</li>
+    <li><span class="medium">Ultrassom:</span> pelo emergencista ou na terapia intensiva (veja abaixo).</li>
+    <li><span class="medium">Tomografia:</span> separa as bolhas embaixo da pleura do pneumotórax e ajuda a decidir uma abordagem depois.</li>
+  </ul>
+  <p class="livros"><b>Nos livros:</b> a linha que aparece na radiografia é a pleura visceral, na borda do pulmão; o slide 35 e a aula falam em "identificação da pleura parietal".</p>
+  <div class="figure"><img src="fig/ex-ptx-rx.svg" alt="Radiografias de pneumotórax"><div class="olhar"><div class="kick">O que olhar</div><ul>
+    <li><b>1 a 3.</b> A linha pleural fina na borda do pulmão: por dentro dela há trama; por fora, inclusive no ápice, só ar.</li>
+    <li><b>4 e 5.</b> Pneumotórax extenso: uma câmara grande de ar e a linha pleural do pulmão encolhido em direção ao meio.</li>
+    <li><b>6.</b> O mediastino está um pouco empurrado para o outro lado: "talvez até seja já um pneumotórax que está começando a se tornar hipertensivo".</li></ul>
+    <p class="leg">Imagens dos slides 36 e 37 da aula. No slide 37, os rótulos em inglês foram cobertos pelos nossos.</p></div></div>
+  <div class="figure"><img src="fig/ex-ptx-tc.svg" alt="Tomografias de pneumotórax"><div class="olhar"><div class="kick">O que olhar</div><ul>
+    <li><b>1 e 2.</b> Na tomografia também é fácil: a linha pleural e, além dela, nada de pulmão. Com o paciente deitado, o ar fica na frente.</li>
+    <li><b>3.</b> "Possivelmente tem algum componente de algum dreno."</li>
+    <li><b>4 a 6.</b> Um caso bem mais grave: pneumotórax grande, ar sob a pele (enfisema subcutâneo) e ar no mediastino (pneumomediastino).</li></ul>
+    <p class="leg">Imagens dos slides 38 e 39 da aula.</p></div></div>
+
+  <h3 data-bm="Ultrassom: deslizamento e ponto P">Ultrassom: deslizamento e ponto P <span class="prova">PROVA</span></h3>
+  <div class="quote"><p>“Eu vou falar depois para vocês, não está no slide, quais são os sinais ultrassonográficos do pneumotórax. Anotem, vai ser tipo exsudato linfocítico com [adenosina deaminase] alto: não vai estar no slide, mas vocês anotem.”</p><div class="who">Dr. Guerra, sobre o ultrassom do pneumotórax</div></div>
+  <p>Serve quando a radiografia não deixou claro, ou quando você já está com o ultrassom na mão (por exemplo, depois de puncionar um acesso venoso central guiado por ele). Lembre que as duas pleuras ficam encostadas, deslizando uma sobre a outra: o ultrassom enxerga esse <b>deslizamento pleural</b>.</p>
+  <ol class="flow">
+    <li><b class="t">Passe o transdutor por toda a parede do tórax</b> procurando o deslizamento.</li>
+    <li><b class="t">Sem deslizamento:</b> as pleuras não estão deslizando entre si. É um forte sinal de pneumotórax.</li>
+    <li><b class="t">Continue até achar o ponto P,</b> o ponto em que o deslizamento volta a aparecer.</li>
+    <li><b class="t">Ausência de deslizamento mais ponto P é diagnóstico de pneumotórax.</b> Ver também a câmara de ar no ultrassom fecha o caso.</li>
+  </ol>
+  <div class="figure"><img src="fig/ponto-p.svg" alt="Esquema do transdutor passando sobre o ar e encontrando o ponto P"></div>
+  <p class="small">Existe ainda o sinal da areia da praia, no modo M, que ele só citou. Para ver: "YouTube pneumotórax ausência de deslizamento pleural".</p>
+  
+
+  <h3 data-bm="Tratamento">Tratamento</h3>
+    <ul>
+    <li><span class="medium">Pequeno e estável:</span> menos de 20% do volume do hemitórax (divida o hemitórax e estime a área da câmara de ar). Pode-se tentar não drenar: observar com radiografias seriadas, dar oxigênio em fração inspirada alta ("parece que reabsorve mais rápido"; o slide diz que aumenta a absorção do ar) e, pouco usada, a aspiração simples por cateter. Se piorar, drena.</li>
+    <li><span class="medium">Instável:</span> com insuficiência respiratória, "dane-se o tamanho": drena sempre.</li>
+    <li><span class="medium">Moderado ou grande, mais de 20%:</span> drenagem pleural fechada, por tubo, em selo d'água. "Vários selos d'água? Não, você deixa em um selo d'água, em um frasco."</li>
+    <li><span class="medium">Bolhas no ápice de um jovem:</span> muitas vezes já se indica a cirurgia, porque outra bolha pode estourar. O paciente quase sempre aceita: "não quero ter isso nunca mais".</li>
+  </ul>
+  <div class="figure"><img src="fig/fluxo-pneumotorax.svg" alt="Fluxograma do tratamento do pneumotórax"></div>
+  <p class="reg"><b>No slide 41:</b> a ilustração mostra três frascos ligados à aspiração da parede; na aula, um frasco. O slide também traz o pneumotórax hipertensivo, com punção "salvadora" no 2º espaço intercostal anterior, e a recidiva do pneumotórax espontâneo, em que se considera a pleurodese.</p>
+  <div class="box red"><div class="kick"><span class="dot"></span>Pegadinha do professor</div><p><span class="medium">Insistir no dreno que não funcionou.</span> Segundo dreno, aspiração contínua no vácuo da parede, dreno mais calibroso, outra posição: tudo isso existe, mas é do cirurgião. O clínico, o emergencista ou o intensivista passa o primeiro dreno; se não resolveu, chama o cirurgião.</p></div>
+  <div class="quote"><p>“Tentou uma vez, já fez o que tinha que ser feito, não deu certo, chama o cirurgião, porque pode dar zebra.”</p><div class="who">Dr. Guerra, sobre o dreno que não resolve</div></div>
+  <div class="box orange"><div class="kick"><span class="dot"></span>Parêntese do professor: por que tanto ultrassom</div><p>No estágio da terapia intensiva, o Dr. André e os residentes fazem ultrassom em vários pacientes todos os dias: ventrículo direito na embolia pulmonar, deslizamento pleural, pneumotórax, atelectasia, consolidação. Vale chegar sabendo pelo menos o que se está procurando. "Cada vez mais vocês vão ter acesso ao ultrassom": é por isso que ele fez questão de ensinar o deslizamento pleural e o ponto P, mesmo sem slide.</p></div>
+</section>
+
+<section id="s09" class="vesp">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">09</span></div>
+    <div class="corpo"><div class="de">Na véspera da prova</div><h2>A aula numa página</h2></div></div>
+
+  <div class="kick" style="color:#6C6C70">Os três pontos que ele disse que caem</div>
+  <div class="item"><span class="prova">PROVA</span><p><b>Derrame da pneumonia:</b> líquido turvo ou pus, Gram ou cultura com bactéria, ou pH abaixo de 7,2 = empiema: drenagem fechada em selo d'água. Pus ou pH abaixo de 7 é sempre empiema.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p><b>Tuberculose pleural:</b> exsudato linfocítico com adenosina deaminase acima de 40 U/L. Neutrofílico não fecha.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p><b>Ultrassom do pneumotórax:</b> ausência de deslizamento pleural mais ponto P.</p></div>
+
+  <div class="kick" style="color:#6C6C70;margin-top:9pt">Os números, na ordem da trilha</div>
+  <div class="tiles t4">
+    <div class="tile g"><div class="lab">Líquido normal</div><div class="n">50 a 100 mL</div><div class="s">entre as pleuras</div></div>
+    <div class="tile"><div class="lab">Pressões</div><div class="n">35 × 29</div><div class="s">cm de água; sobram cerca de 6, pela linfa</div></div>
+    <div class="tile"><div class="lab">Linfa</div><div class="n">100 a 150 mL</div><div class="s">a mais por dia, no máximo</div></div>
+  </div>
+  <div class="tiles t4">
+    <div class="tile g"><div class="lab">Punção diagnóstica</div><div class="n">20 a 60 mL</div><div class="s">de líquido pleural</div></div>
+    <div class="tile r"><div class="lab">Light: proteína</div><div class="n">&gt; 0,5</div><div class="s">pleural ÷ sérica: exsudato</div></div>
+    <div class="tile r"><div class="lab">Light: desidrogenase lática</div><div class="n">&gt; 0,6 · &gt; 2/3</div><div class="s">relação; ou do limite do laboratório</div></div>
+  </div>
+  <div class="tiles t4">
+    <div class="tile"><div class="lab">Gradiente de albumina</div><div class="n">&gt; 1,2</div><div class="s">sangue menos pleura: transudato</div></div>
+    <div class="tile"><div class="lab">Não punciona</div><div class="n">&lt; 10 mm</div><div class="s">coluna menor que 1 cm, deitado de lado</div></div>
+    <div class="tile g"><div class="lab">pH normal do líquido</div><div class="n">7,2 a 7,4</div><div class="s">abaixo de 7,2: drenar</div></div>
+  </div>
+  <div class="tiles t4">
+    <div class="tile r"><div class="lab">Tuberculose pleural</div><div class="n">&gt; 40 U/L</div><div class="s">adenosina deaminase, exsudato linfocítico</div></div>
+    <div class="tile"><div class="lab">Câncer, pouco tempo</div><div class="n">15 a 20 dias</div><div class="s">entre uma toracocentese e outra</div></div>
+    <div class="tile"><div class="lab">Pneumotórax pequeno</div><div class="n">&lt; 20%</div><div class="s">do hemitórax, estável: pode observar</div></div>
+  </div>
+
+  <div class="box red"><div class="kick"><span class="dot"></span>Erros comuns</div><ul>
+    <li><span class="medium">Puncionar pelo exame físico um paciente estável.</span> Imagem primeiro.</li>
+    <li><span class="medium">Tratar empiema só com antibiótico.</span> Abscesso se drena; sem resposta, cirurgia.</li>
+    <li><span class="medium">Passar o segundo dreno sozinho.</span> Primeiro dreno falhou: chame o cirurgião.</li></ul></div>
+
+  <h3 data-bm="Glossário">Palavras da aula em linguagem simples</h3>
+  <div class="rows terms">
+    <div class="row"><div class="k">Anasarca</div><div class="v">Inchaço do corpo todo, com líquido em vários espaços ao mesmo tempo.</div></div>
+    <div class="row"><div class="k">Baciloscopia</div><div class="v">Pesquisa do bacilo da tuberculose no microscópio.</div></div>
+    <div class="row"><div class="k">Células mesoteliais</div><div class="v">As células que formam as duas pleuras.</div></div>
+  </div>
+  <div class="rows terms">
+    <div class="row"><div class="k">Decorticação</div><div class="v">Cirurgia que raspa da pleura o pus e as traves, para o pulmão voltar a expandir.</div></div>
+    <div class="row"><div class="k">Desidrogenase lática</div><div class="v">Enzima que sobe com a inflamação; um dos marcadores dos critérios de Light.</div></div>
+    <div class="row"><div class="k">Enfisema subcutâneo</div><div class="v">Ar embaixo da pele, que estala ao apertar.</div></div>
+  </div>
+  <div class="rows terms">
+    <div class="row"><div class="k">Fístula broncopleural</div><div class="v">Comunicação anormal entre um brônquio e a pleura, que deixa o ar passar.</div></div>
+    <div class="row"><div class="k">Hemotórax</div><div class="v">Sangue no espaço pleural.</div></div>
+    <div class="row"><div class="k">Iatrogênico</div><div class="v">Causado por um procedimento de saúde.</div></div>
+  </div>
+  <div class="rows terms">
+    <div class="row"><div class="k">Paquipleuris</div><div class="v">Pleura espessada, fibrosa, que sobra no fim de um derrame inflamatório.</div></div>
+    <div class="row"><div class="k">Parábola de Damoiseau</div><div class="v">A borda curva do derrame na radiografia, mais alta junto à parede.</div></div>
+    <div class="row"><div class="k">Pleurodese</div><div class="v">Grudar as duas pleuras com talco ou iodo, para o líquido não voltar.</div></div>
+  </div>
+  <div class="rows terms">
+    <div class="row"><div class="k">Ponto P</div><div class="v">No ultrassom, o lugar onde o deslizamento pleural volta a aparecer.</div></div>
+    <div class="row"><div class="k">Seio costofrênico</div><div class="v">O canto entre o diafragma e as costelas, onde o derrame aparece primeiro.</div></div>
+    <div class="row"><div class="k">Selo d'água</div><div class="v">Frasco em que a ponta do tubo do dreno fica embaixo da água: o ar sai e não volta.</div></div>
+  </div>
+  <div class="rows terms">
+    <div class="row"><div class="k">Terceiro espaço</div><div class="v">Cavidades fora dos vasos: pleura, peritônio, pericárdio, tecido embaixo da pele.</div></div>
+    <div class="row"><div class="k">Toracocentese</div><div class="v">Punção do tórax com agulha para tirar líquido, para exame ou para alívio.</div></div>
+    <div class="row"><div class="k">Videotoracoscopia</div><div class="v">Cirurgia do tórax por pequenos orifícios, com câmera.</div></div>
+  </div>
+  {{NOTAS}}
+</section>
+</body></html>

@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="478" height="136" viewBox="0 0 478 136">
+<rect x="36.0" y="19.5" width="405.6" height="5" rx="2.5" fill="#C3D8F8"/>
+<path d="M205.0,22 L205.0,102 L231.0,102" fill="none" stroke="#8AA9DF" stroke-width="1.6" stroke-dasharray="4 3" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="36.0" cy="22.0" r="11.0" fill="#0B5BD3"/>
+<text x="36.0" y="25.6" font-family="Inter" font-size="9" font-weight="700" fill="#FFFFFF" text-anchor="middle">1</text>
+<text x="36.0" y="46.0" font-family="Inter" font-size="7.6" font-weight="600" fill="#16315C" text-anchor="middle">Pleura normal</text>
+<circle cx="103.6" cy="22.0" r="11.0" fill="#0B5BD3"/>
+<text x="103.6" y="25.6" font-family="Inter" font-size="9" font-weight="700" fill="#FFFFFF" text-anchor="middle">2</text>
+<text x="103.6" y="46.0" font-family="Inter" font-size="7.6" font-weight="600" fill="#16315C" text-anchor="middle">Por que junta</text>
+<text x="103.6" y="55.5" font-family="Inter" font-size="7.6" font-weight="600" fill="#16315C" text-anchor="middle">líquido</text>
+<circle cx="171.2" cy="22.0" r="11.0" fill="#0B5BD3"/>
+<text x="171.2" y="25.6" font-family="Inter" font-size="9" font-weight="700" fill="#FFFFFF" text-anchor="middle">3</text>
+<text x="171.2" y="46.0" font-family="Inter" font-size="7.6" font-weight="600" fill="#16315C" text-anchor="middle">Sintomas e</text>
+<text x="171.2" y="55.5" font-family="Inter" font-size="7.6" font-weight="600" fill="#16315C" text-anchor="middle">exame físico</text>
+<circle cx="238.8" cy="22.0" r="11.0" fill="#0B5BD3"/>
+<text x="238.8" y="25.6" font-family="Inter" font-size="9" font-weight="700" fill="#FFFFFF" text-anchor="middle">4</text>
+<text x="238.8" y="46.0" font-family="Inter" font-size="7.6" font-weight="600" fill="#16315C" text-anchor="middle">Imagem</text>
+<circle cx="306.4" cy="22.0" r="11.0" fill="#0B5BD3"/>
+<text x="306.4" y="25.6" font-family="Inter" font-size="9" font-weight="700" fill="#FFFFFF" text-anchor="middle">5</text>
+<text x="306.4" y="46.0" font-family="Inter" font-size="7.6" font-weight="600" fill="#16315C" text-anchor="middle">Punção e Light</text>
+<circle cx="374.0" cy="22.0" r="11.0" fill="#0B5BD3"/>
+<text x="374.0" y="25.6" font-family="Inter" font-size="9" font-weight="700" fill="#FFFFFF" text-anchor="middle">6</text>
+<text x="374.0" y="46.0" font-family="Inter" font-size="7.6" font-weight="600" fill="#16315C" text-anchor="middle">Empiema e</text>
+<text x="374.0" y="55.5" font-family="Inter" font-size="7.6" font-weight="600" fill="#16315C" text-anchor="middle">dreno</text>
+<circle cx="441.6" cy="22.0" r="11.0" fill="#0B5BD3"/>
+<text x="441.6" y="25.6" font-family="Inter" font-size="9" font-weight="700" fill="#FFFFFF" text-anchor="middle">7</text>
+<text x="441.6" y="46.0" font-family="Inter" font-size="7.6" font-weight="600" fill="#16315C" text-anchor="middle">Tuberculose e</text>
+<text x="441.6" y="55.5" font-family="Inter" font-size="7.6" font-weight="600" fill="#16315C" text-anchor="middle">câncer</text>
+<circle cx="243.0" cy="102.0" r="11.0" fill="#FFFFFF" stroke="#0B5BD3" stroke-width="1.6"/>
+<text x="243.0" y="105.6" font-family="Inter" font-size="9" font-weight="700" fill="#0B5BD3" text-anchor="middle">8</text>
+<text x="261.0" y="99.0" font-family="Inter" font-size="8.4" font-weight="700" fill="#16315C" text-anchor="start">Pneumotórax (ramo ao lado)</text>
+<text x="261.0" y="111.0" font-family="Inter" font-size="7.4" font-weight="400" fill="#4A4A4F" text-anchor="start">Ar em vez de líquido: mesmo exame físico, outra imagem,</text>
+<text x="261.0" y="120.6" font-family="Inter" font-size="7.4" font-weight="400" fill="#4A4A4F" text-anchor="start">outro tratamento.</text>
+</svg>

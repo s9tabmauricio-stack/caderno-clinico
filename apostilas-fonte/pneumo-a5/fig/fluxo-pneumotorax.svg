@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="478" height="300" viewBox="0 0 478 300">
+<rect x="129.0" y="1.0" width="220.0" height="26.0" rx="6" fill="#E8F0FE" stroke="#C3D8F8" stroke-width="1"/>
+<text x="239.0" y="16.9" font-family="Inter" font-size="8.2" font-weight="600" fill="#16315C" text-anchor="middle">Pneumotórax confirmado na imagem</text>
+<rect x="114.0" y="45.0" width="250.0" height="30.0" rx="6" fill="#F5F8FF" stroke="#8AA9DF" stroke-width="1" stroke-dasharray="3 2"/>
+<text x="239.0" y="62.7" font-family="Inter" font-size="7.8" font-weight="600" fill="#16315C" text-anchor="middle">O paciente está instável (insuficiência respiratória)?</text>
+<polygon points="238.2,27.0 238.2,38.5 233.8,38.5 239.0,45.0 244.2,38.5 239.8,38.5 239.8,27.0" fill="#8AA9DF"/>
+<rect x="1.0" y="96.0" width="150.0" height="40.0" rx="6" fill="#16315C" stroke="#16315C" stroke-width="1"/>
+<text x="76.0" y="113.8" font-family="Inter" font-size="7.6" font-weight="600" fill="#FFFFFF" text-anchor="middle">Sim: dreno sempre, qualquer</text>
+<text x="76.0" y="123.5" font-family="Inter" font-size="7.6" font-weight="600" fill="#FFFFFF" text-anchor="middle">tamanho</text>
+<rect x="322.0" y="96.0" width="156.0" height="40.0" rx="6" fill="#F5F8FF" stroke="#8AA9DF" stroke-width="1" stroke-dasharray="3 2"/>
+<text x="400.0" y="118.7" font-family="Inter" font-size="7.8" font-weight="600" fill="#16315C" text-anchor="middle">Não: depende do tamanho</text>
+<polygon points="113.5,59.5 80.2,91.0 77.1,87.8 76.0,96.0 84.3,95.3 81.2,92.1 114.5,60.5" fill="#8AA9DF"/>
+<rect x="85.2" y="72.0" width="19.6" height="11.0" rx="4" fill="#FFFFFF"/>
+<text x="95.0" y="80.3" font-family="Inter" font-size="6.8" font-weight="600" fill="#0B5BD3" text-anchor="middle">sim</text>
+<polygon points="363.5,60.5 394.9,91.9 391.7,95.1 400.0,96.0 399.1,87.7 395.9,90.9 364.5,59.5" fill="#8AA9DF"/>
+<rect x="371.9" y="72.0" width="20.2" height="11.0" rx="4" fill="#FFFFFF"/>
+<text x="382.0" y="80.3" font-family="Inter" font-size="6.8" font-weight="600" fill="#0B5BD3" text-anchor="middle">não</text>
+<rect x="161.0" y="151.0" width="156.0" height="66.0" rx="6" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="1"/>
+<text x="239.0" y="177.4" font-family="Inter" font-size="7.1" font-weight="400" fill="#1F2933" text-anchor="middle">Menos de 20% do hemitórax: observar</text>
+<text x="239.0" y="186.5" font-family="Inter" font-size="7.1" font-weight="400" fill="#1F2933" text-anchor="middle">com radiografias, oxigênio alto; aspiração</text>
+<text x="239.0" y="195.6" font-family="Inter" font-size="7.1" font-weight="400" fill="#1F2933" text-anchor="middle">por cateter (pouco usada)</text>
+<rect x="322.0" y="157.0" width="156.0" height="54.0" rx="6" fill="#16315C" stroke="#16315C" stroke-width="1"/>
+<text x="400.0" y="181.9" font-family="Inter" font-size="7.4" font-weight="600" fill="#FFFFFF" text-anchor="middle">Mais de 20%: drenagem fechada em</text>
+<text x="400.0" y="191.3" font-family="Inter" font-size="7.4" font-weight="600" fill="#FFFFFF" text-anchor="middle">um selo d&#x27;água (um frasco)</text>
+<polygon points="399.9,135.3 245.4,149.7 245.0,145.2 239.0,151.0 246.0,155.6 245.5,151.1 400.1,136.7" fill="#8AA9DF"/>
+<rect x="301.0" y="137.5" width="37.0" height="11.0" rx="4" fill="#FFFFFF"/>
+<text x="319.5" y="145.8" font-family="Inter" font-size="6.8" font-weight="600" fill="#0B5BD3" text-anchor="middle">pequeno</text>
+<polygon points="399.2,136.0 399.2,150.5 394.8,150.5 400.0,157.0 405.2,150.5 400.8,150.5 400.8,136.0" fill="#8AA9DF"/>
+<rect x="384.4" y="140.5" width="31.2" height="11.0" rx="4" fill="#FFFFFF"/>
+<text x="400.0" y="148.8" font-family="Inter" font-size="6.8" font-weight="600" fill="#0B5BD3" text-anchor="middle">grande</text>
+<rect x="160.0" y="242.0" width="316.0" height="40.0" rx="6" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="1"/>
+<text x="318.0" y="259.9" font-family="Inter" font-size="7.2" font-weight="400" fill="#1F2933" text-anchor="middle">Qualquer dreno que não resolveu: chame o cirurgião (segundo dreno, aspiração</text>
+<text x="318.0" y="269.1" font-family="Inter" font-size="7.2" font-weight="400" fill="#1F2933" text-anchor="middle">contínua, dreno mais calibroso)</text>
+<polygon points="399.7,210.3 323.8,239.0 322.2,234.8 318.0,242.0 325.9,244.6 324.3,240.4 400.3,211.7" fill="#8AA9DF"/>
+<rect x="1.0" y="187.0" width="150.0" height="46.0" rx="6" fill="#FFFFFF" stroke="#E3E3E8" stroke-width="1" stroke-dasharray="3 2"/>
+<text x="76.0" y="207.9" font-family="Inter" font-size="7.1" font-weight="400" fill="#4A4A4F" text-anchor="middle">Bolhas no ápice de um jovem: cirurgia</text>
+<text x="76.0" y="217.0" font-family="Inter" font-size="7.1" font-weight="400" fill="#4A4A4F" text-anchor="middle">direto (vídeo com grampeador)</text>
+</svg>

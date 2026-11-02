@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="478" height="157" viewBox="0 0 478 157">
+<image href="ex-decubito-0.jpg" x="0.0" y="0.0" width="129.6" height="157.2" preserveAspectRatio="none"/>
+<rect x="4.0" y="4.0" width="14.0" height="14.0" rx="4" fill="#16315C"/>
+<text x="11.0" y="14.2" font-family="Inter" font-size="8" font-weight="600" fill="#FFFFFF" text-anchor="middle">A</text>
+<image href="ex-decubito-1.jpg" x="139.6" y="0.0" width="148.8" height="157.2" preserveAspectRatio="none"/>
+<rect x="143.6" y="4.0" width="14.0" height="14.0" rx="4" fill="#16315C"/>
+<text x="150.6" y="14.2" font-family="Inter" font-size="8" font-weight="600" fill="#FFFFFF" text-anchor="middle">B</text>
+<image href="ex-decubito-2.jpg" x="298.4" y="0.0" width="179.6" height="157.2" preserveAspectRatio="none"/>
+<rect x="302.4" y="4.0" width="14.0" height="14.0" rx="4" fill="#16315C"/>
+<text x="309.4" y="14.2" font-family="Inter" font-size="8" font-weight="600" fill="#FFFFFF" text-anchor="middle">C</text>
+<polygon points="37.3,43.3 17.3,61.1 14.5,58.0 13.0,66.0 21.1,65.4 18.3,62.3 38.3,44.5" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="37.3,43.3 17.3,61.1 14.5,58.0 13.0,66.0 21.1,65.4 18.3,62.3 38.3,44.5" fill="#0A84FF"/>
+<polygon points="55.0,114.0 38.0,100.8 40.6,97.5 32.4,97.5 34.5,105.4 37.0,102.1 54.0,115.3" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="55.0,114.0 38.0,100.8 40.6,97.5 32.4,97.5 34.5,105.4 37.0,102.1 54.0,115.3" fill="#0A84FF"/>
+<polygon points="235.1,57.7 212.1,74.2 209.7,70.8 207.3,78.6 215.5,78.9 213.0,75.5 236.0,59.0" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="235.1,57.7 212.1,74.2 209.7,70.8 207.3,78.6 215.5,78.9 213.0,75.5 236.0,59.0" fill="#0A84FF"/>
+<polygon points="386.3,112.6 362.0,99.8 364.0,96.1 355.9,97.5 359.3,104.9 361.3,101.2 385.6,114.0" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/>
+<polygon points="386.3,112.6 362.0,99.8 364.0,96.1 355.9,97.5 359.3,104.9 361.3,101.2 385.6,114.0" fill="#0A84FF"/>
+<rect x="4.9" y="19.9" width="93.9" height="23.0" rx="3.5" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="0.8"/>
+<text x="51.8" y="29.5" font-family="Inter" font-size="7.2" font-weight="600" fill="#16315C" text-anchor="middle">1 · Lado de baixo: líquido</text>
+<text x="51.8" y="38.5" font-family="Inter" font-size="7.2" font-weight="600" fill="#16315C" text-anchor="middle">junto à parede</text>
+<rect x="25.7" y="115.6" width="78.2" height="14.0" rx="3.5" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="0.8"/>
+<text x="64.8" y="125.2" font-family="Inter" font-size="7.2" font-weight="600" fill="#16315C" text-anchor="middle">2 · Borda do pulmão</text>
+<rect x="213.3" y="43.3" width="66.9" height="14.0" rx="3.5" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="0.8"/>
+<text x="246.7" y="52.9" font-family="Inter" font-size="7.2" font-weight="600" fill="#16315C" text-anchor="middle">3 · Imagem em D</text>
+<rect x="360.3" y="114.3" width="98.8" height="23.0" rx="3.5" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="0.8"/>
+<text x="409.8" y="123.9" font-family="Inter" font-size="7.2" font-weight="600" fill="#16315C" text-anchor="middle">4 · Borda convexa: líquido</text>
+<text x="409.8" y="132.9" font-family="Inter" font-size="7.2" font-weight="600" fill="#16315C" text-anchor="middle">preso</text>
+</svg>
