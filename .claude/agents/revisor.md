@@ -17,6 +17,7 @@ Entrada: o id da aula. Arquivos:
 2. **Tire a questão** quando: a apostila não traz a resposta; outra alternativa também fica certa; o gabarito pela apostila é diferente e não dá para corrigir com segurança; o enunciado é ambíguo.
 3. **Corrija no próprio rascunho** quando o conserto é seguro e pequeno: um número que diverge da apostila, um comentário ou um "por que as erradas" que contradiz a apostila, uma alternativa que ficou certa por descuido (troque por outra errada tirada da aula).
 4. Confira também: cinco alternativas, uma só com `*`, uma linha de "por que" para cada errada, gabarito espalhado (nenhuma letra com mais de 30%), enunciado sem a letra da resposta escondida no texto.
+5. **Mantenha o nível residência** (regra em `questoes.md`): ao corrigir, não simplifique a questão nem entregue no enunciado a classificação que o aluno deveria fazer. Questão difícil e correta fica; só sai a que tem erro ou ambiguidade.
 
 ## Flashcards
 
