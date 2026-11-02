@@ -1,12 +1,14 @@
 ---
 name: melhorar
-description: Melhora um pedido do Mauricio antes de executar. Reescreve o comando seguindo os manuais da Anthropic e recomenda modelo, esforço e se vale usar o ultracode. Use com /melhorar <pedido>, ou quando ele pedir "melhore meu pedido/comando/prompt" ou perguntar que modelo, esforço ou ultracode usar.
+description: Melhora um pedido do Mauricio, recomenda modelo, esforço e ultracode, e executa sozinho o que é pequeno (o que é grande espera um toque no botão). Use com /melhorar <pedido>; quando ele pedir "melhore meu pedido/comando/prompt" ou perguntar que modelo, esforço ou ultracode usar; e também por conta própria quando um pedido de trabalho dele vier curto ou vago a ponto de você não saber onde mexer ou como deve ficar (ex.: "arruma a revisão", "melhora o banco"). Não use quando o pedido já estiver claro, nem em respostas curtas como "ok", "pode", "obrigado", nem na aula nova.
 argument-hint: <o seu pedido, do jeito que vier>
 ---
 
 # Melhorar o pedido e dizer como rodar
 
-O Mauricio escreve rápido, às vezes pelo celular. Aqui você só devolve o pedido melhorado e a recomendação de como rodar. **Não execute o pedido neste turno.** Não explore o projeto e não use agentes nem workflows, mesmo com o ultracode ligado. A resposta deve ser curta e barata.
+O Mauricio escreve rápido, às vezes pelo celular. Aqui você melhora o pedido, diz como rodar e, conforme o tamanho (passo 4), executa na hora ou espera um toque dele. Até decidir o caminho, não explore o projeto e não use agentes nem workflows, mesmo com o ultracode ligado: essa parte deve ser curta e barata.
+
+A skill pode ter entrado sozinha (ele não digitou `/melhorar`) porque o pedido veio vago. Nesse caso, comece com uma linha: "Seu pedido ficou um pouco aberto; melhorei antes de fazer." 
 
 Pedido: $ARGUMENTS
 
@@ -80,7 +82,24 @@ Regra de bolso do manual da Anthropic: se o Claude errou por **falta de conhecim
 
 **Conversa nova.** Recomende uma conversa nova (ou `/clear`) quando o pedido for de outro assunto ou quando o modelo recomendado for diferente do atual. Trocar de modelo no meio da conversa obriga o Claude a reler a conversa inteira sem o desconto do cache, e numa conversa focada ele erra menos.
 
-## 4. Responder neste formato
+## 4. Decidir: fazer já ou pedir um toque
+
+**Fazer já** só quando tudo isto vale:
+- o pedido é pequeno e claro: um texto, uma cor, uma ordem, um ajuste numa tela só, um bug pequeno e bem localizado, uma pergunta;
+- não grava nem apaga nada no banco (questões, flashcards, aulas, provas, alunos), não publica conteúdo médico novo e não mexe em login, senha ou chave;
+- você não precisou perguntar nada no passo 1 e o pedido não tem `[colchetes]` para ele preencher;
+- o modelo recomendado é o mesmo da conversa (ou um mais barato: aí faça mesmo assim e avise que da próxima vez dá para usar o mais barato) e o ultracode é "não".
+
+Nesse caso, mostre o pedido melhorado em 1 ou 2 linhas ("Vou fazer: …") e execute em seguida, no mesmo turno, como um pedido comum. No fim, diga em uma ou duas frases o que mudou e o que não foi testado.
+
+**Pedir um toque** em todo o resto: pedido grande, banco, conteúdo, várias telas, modelo mais caro que o atual, ultracode, ou qualquer dúvida. Responda no formato do passo 5 e, logo depois, chame a ferramenta de perguntas (AskUserQuestion) com uma pergunta, cabeçalho "Pedido", e estas opções:
+- **Fazer agora**: executa o pedido melhorado neste turno, no modelo atual;
+- **Ajustar**: ele diz o que mudar, você reescreve e pergunta de novo;
+- **Só copiar**: ele vai trocar de modelo ou abrir conversa nova e mandar o pedido lá; não faça nada.
+
+Se a recomendação for outro modelo, diga isso na descrição de "Fazer agora" ("no modelo atual, Opus; o recomendado é Sonnet"). Se a ferramenta não estiver disponível, termine com: "Diga **pode fazer** que eu faço agora." Quando ele escolher "Fazer agora" ou disser "pode fazer", execute o pedido melhorado como um pedido comum.
+
+## 5. Responder neste formato (quando pedir um toque)
 
 ```
 **Pedido melhorado** (copie e mande):
@@ -95,7 +114,7 @@ Regra de bolso do manual da Anthropic: se o Claude errou por **falta de conhecim
 - Conversa nova: sim · porque …   ← só quando valer
 ```
 
-Termine com uma linha: "Se já estiver nesse modelo e esforço, diga **pode fazer** que eu faço agora." Quando ele disser "pode fazer", execute o pedido melhorado como um pedido comum.
+Depois, os botões do passo 4.
 
 ## Exemplos
 
@@ -112,6 +131,17 @@ Pedido: "o botao copiar ta copiando o gabarito junto"
 - Modelo: Opus · `/model opus` · é um bug numa tela que a turma toda usa.
 - Esforço: alto · `/effort high` · precisa achar a causa e testar os dois casos.
 - Ultracode: não · é uma correção só.
+
+(Pede um toque, porque tem um `[colchete]` para ele preencher: botões Fazer agora / Ajustar / Só copiar.)
+</example>
+
+<example>
+Pedido (sem /melhorar, numa conversa em Opus): "tira o ponto final do titulo das proximas provas"
+
+Seu pedido ficou um pouco aberto; melhorei antes de fazer.
+Vou fazer: no Início, no quadro "Próximas provas", tirar o ponto final do título, sem mexer no resto, e conferir com `npx next build`.
+
+(Executa no mesmo turno: é pequeno, claro, não mexe no banco. No fim avisa que daria para usar o Sonnet numa troca assim.)
 </example>
 
 <example>
@@ -127,6 +157,8 @@ Antes de reescrever, avise numa frase: pelo manual, verde é só para "certo", e
 - Esforço: baixo · `/effort low` · você vai conferir pelo print.
 - Ultracode: não.
 - Conversa nova: sim · troca de modelo.
+
+(Pede um toque, porque o modelo recomendado é outro: na descrição de "Fazer agora", avisa que vai rodar no modelo atual.)
 </example>
 
 <example>

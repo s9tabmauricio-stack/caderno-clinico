@@ -158,7 +158,7 @@ Todos os agentes de conteúdo (`apostila`, `conteudo`, `flashcards`, `questoes`,
 - Mostre o conteúdo (a questão, a tela) antes de pedir uma decisão; um assunto por vez.
 - Publique e diga em uma ou duas frases o que mudou; diga claramente o que não foi testado.
 - Não deixe lixo: o que for substituído deve poder ser limpo (Conteúdo → Limpeza).
-- `/melhorar <pedido>` (skill `.claude/skills/melhorar/SKILL.md`, desde 01/11/2026): o Claude reescreve o pedido no padrão dos manuais da Anthropic e recomenda modelo, esforço e se vale o ultracode, sem executar nada; quando o Mauricio responde "pode fazer", aí executa.
+- `/melhorar <pedido>` (skill `.claude/skills/melhorar/SKILL.md`, desde 01/11/2026): o Claude reescreve o pedido no padrão dos manuais da Anthropic e recomenda modelo, esforço e se vale o ultracode. Desde 02/11/2026 ela é mais automática: entra sozinha quando o pedido vem vago (sem digitar `/melhorar`); executa na hora o que é pequeno e claro (sem banco, sem conteúdo, no modelo atual); no resto mostra o pedido melhorado com os botões **Fazer agora / Ajustar / Só copiar** (ou "pode fazer").
 
 ## Pendências e ideias
 
