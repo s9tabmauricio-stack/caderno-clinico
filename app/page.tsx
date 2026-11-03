@@ -75,7 +75,7 @@ export default async function Inicio() {
 
   // Cards: para revisar hoje (vencidos), novos e em dia
   const pend = pendentes(progresso)
-  const t = totais(progresso)
+  const cardsAtivos = pend.novos + pend.vencidos + pend.emDia
 
   // Questões: certas, erradas e a fazer (pelo banco de cada matéria)
   const tq = totaisQuestoes(banco)
@@ -113,7 +113,7 @@ export default async function Inicio() {
                 <span className="n">{pend.vencidos}</span>
                 <span className="u">
                   para revisar hoje
-                  {pend.vencidos === 0 && t.estudados > 0 && <b className="ok"> · em dia ✓</b>}
+                  {pend.vencidos === 0 && pend.emDia > 0 && <b className="ok"> · em dia ✓</b>}
                 </span>
               </div>
               <div className="in-nums">
@@ -129,8 +129,8 @@ export default async function Inicio() {
                 </span>
               </div>
               <div className="bar" role="img" aria-label={`${pend.emDia} em dia, ${pend.vencidos} a revisar, ${pend.novos} novos`}>
-                <span className="b-ac" style={{ width: `${t.cards ? (100 * pend.emDia) / t.cards : 0}%` }} />
-                <span className="b-al" style={{ width: `${t.cards ? (100 * pend.vencidos) / t.cards : 0}%` }} />
+                <span className="b-ac" style={{ width: `${cardsAtivos ? (100 * pend.emDia) / cardsAtivos : 0}%` }} />
+                <span className="b-al" style={{ width: `${cardsAtivos ? (100 * pend.vencidos) / cardsAtivos : 0}%` }} />
               </div>
               {pend.vencidos > 0 ? (
                 <Link className="btn-white" href="/revisao">
