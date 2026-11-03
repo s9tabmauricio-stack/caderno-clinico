@@ -1328,6 +1328,9 @@ h1.big{background:var(--metal-titulo);-webkit-background-clip:text;background-cl
   background:repeating-linear-gradient(-45deg,var(--fita-p) 0 11px,var(--fita-a) 11px 22px);
   box-shadow:inset 0 0 0 1px rgba(0,0,0,.35),0 12px 30px rgba(0,0,0,.30)}
 .fita-prova>.qcard{background:var(--vidro),var(--bg);border-radius:var(--r-lg)}
+/* flashcard de prova (por enquanto só em Pneumo): a margem do card passa para a fita */
+.fita-prova:has(>.flash){margin:14px 0}
+.fita-prova>.flash{margin:0;background:var(--vidro),var(--bg);border-radius:var(--r-lg)}
 .fita-prova .fita{height:30px;display:flex;align-items:center;overflow:hidden;margin:0 calc(var(--r-lg) * .6)}
 .fita-prova .fita span{flex:1;min-width:0;display:flex;justify-content:center;height:18px;line-height:18px;background:var(--fita-a);color:var(--fita-p);
   font:800 11.5px/18px var(--font-texto);letter-spacing:.28em;white-space:nowrap;text-align:center;overflow:hidden;

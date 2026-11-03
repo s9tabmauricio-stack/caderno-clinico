@@ -9,6 +9,7 @@ import { plural } from '@/lib/formato'
 import { temFaixaProva } from '@/lib/faixa-prova'
 import { Icone } from './Icones'
 import { ConversaTurma } from './ConversaTurma'
+import { FaixaProva } from './FaixaProva'
 import { EditorQuestao } from './admin/Editores'
 
 export type Resposta = NonNullable<QuestaoAluno['resposta']>
@@ -489,23 +490,6 @@ export function Questoes({ questoes, userId, ativo, mostrarTema = true, vazio, a
         </div>
       </FaixaProva>
       {revelada && <ConversaTurma key={q.id} questaoId={q.id} userId={userId} />}
-    </div>
-  )
-}
-
-// Fita de aviso âmbar e preta em volta da questão que cai na prova, com "PROVA" escrito em cima e embaixo
-function FaixaProva({ ligada, children }: { ligada: boolean; children: React.ReactNode }) {
-  if (!ligada) return <>{children}</>
-  const fita = (
-    <div className="fita" aria-hidden="true">
-      <span>{Array.from({ length: 12 }, () => 'PROVA').join(' • ')}</span>
-    </div>
-  )
-  return (
-    <div className="fita-prova" role="group" aria-label="Cai na prova">
-      {fita}
-      {children}
-      {fita}
     </div>
   )
 }
