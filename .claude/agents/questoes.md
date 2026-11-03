@@ -12,7 +12,7 @@ São dois trabalhos separados. Faça só o que pediram:
 - **Preparar** ("faça as questões da gastro-a4"): monta o rascunho e para. Não grava nada no banco.
 - **Incluir** ("inclua o rascunho revisado da gastro-a4"): grava no banco o rascunho que o revisor (ou o Mauricio) já conferiu.
 
-Banco: Supabase, projeto `xtlpmtylifbalzxnfkib`, ferramenta `execute_sql` do conector. Tabela `public.questoes (id, materia_id, aula_id, ordem, enunciado, alternativas jsonb, correta smallint, comentario, por_que_erradas, tema, prova, fonte, origem)`.
+Banco: Supabase, projeto `xtlpmtylifbalzxnfkib`, ferramenta `execute_sql` do conector. Tabela `public.questoes (id, materia_id, aula_id, ordem, enunciado, alternativas jsonb, correta smallint, comentario, por_que_erradas, tema, prova, fonte, origem, cai_na_prova boolean)`. `prova` = de qual prova a questão veio (fica `null` nas montadas); `cai_na_prova` = o professor disse ou deu a entender que o ponto cai.
 
 Arquivos temporários: ponha o id da aula no nome e apague-os no fim (outros agentes podem estar trabalhando na mesma pasta).
 
@@ -67,16 +67,16 @@ C, D e E: …
 Nenhuma.
 ```
 
-O `PROVA ·` no título da questão vira `prova = 'PROVA'` no banco (aparece como a etiqueta `PROVA` no topo do cartão da questão); nas outras questões montadas, `prova` fica `null`. `tema` = assunto curto da questão (aparece no filtro do Banco de questões); use poucos temas por aula (os títulos das seções, resumidos).
+O `PROVA ·` no título da questão vira `cai_na_prova = true` no banco (põe a faixa PROVA, fita âmbar e preta, em volta da questão na tela); nas outras, `false`. Nunca escreva `'PROVA'` no campo `prova`: ele é só para o nome da prova de onde a questão veio. `tema` = assunto curto da questão (aparece no filtro do Banco de questões); use poucos temas por aula (os títulos das seções, resumidos).
 
 ## Incluir
 
 1. Leia `rascunhos/questoes/<aula-id>.md` como está agora. Se não existir, pare e diga.
 2. Repita a consulta do passo 1 do Preparar para pegar `ultima_ordem` e confirmar que as questões ainda não estão lá.
 3. Grave em lotes de até 20 questões por chamada:
-   `insert into public.questoes (id, materia_id, aula_id, ordem, enunciado, alternativas, correta, comentario, por_que_erradas, tema, prova, fonte, origem) values ('<aula-id>-q01', '<materia>', '<aula-id>', <ultima_ordem + 1>, '…', '["…","…","…","…","…"]'::jsonb, 1, '…', 'A: …' || chr(10) || 'C, D e E: …', '<tema>', 'PROVA', 'Montada (aula <ano>)', 'montada') on conflict (id) do nothing;`
+   `insert into public.questoes (id, materia_id, aula_id, ordem, enunciado, alternativas, correta, comentario, por_que_erradas, tema, prova, fonte, origem, cai_na_prova) values ('<aula-id>-q01', '<materia>', '<aula-id>', <ultima_ordem + 1>, '…', '["…","…","…","…","…"]'::jsonb, 1, '…', 'A: …' || chr(10) || 'C, D e E: …', '<tema>', null, 'Montada (aula <ano>)', 'montada', true) on conflict (id) do nothing;`
    - id `<aula-id>-q01`… `-q99`, depois `-q100`. `ordem` continua depois da última ordem da matéria, na ordem do rascunho.
-   - `prova` = `'PROVA'` quando o título da questão no rascunho tem `PROVA ·`; `null` nas outras.
+   - `cai_na_prova` = `true` quando o título da questão no rascunho tem `PROVA ·`; `false` nas outras. `prova` fica `null`.
    - `alternativas` sem a letra; `correta` = índice da letra com `*` (A = 0, B = 1…).
    - Aspas simples dentro do texto viram duas (''). Quebras de linha do "por que as erradas" com `chr(10)`.
 4. Confira: `select count(*) from public.questoes where aula_id = '<aula-id>' and substituida_por is null;` tem de bater.

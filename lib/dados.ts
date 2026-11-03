@@ -37,9 +37,12 @@ export type QuestaoAluno = {
   comentario: string | null
   por_que_erradas: string | null
   tema: string | null
+  // de qual prova a questão veio (p2, exame, Revalida 2022.1…)
   prova: string | null
   fonte: string | null
   origem: string | null
+  // o professor disse ou deu a entender que o ponto cai na prova
+  cai_na_prova: boolean
   resposta: { escolhida: number; acertou: boolean; tentativas: number } | null
 }
 
@@ -187,6 +190,7 @@ type LinhaQuestao = {
   prova: string | null
   fonte: string | null
   origem: string | null
+  cai_na_prova: boolean | null
   escolhida: number | null
   acertou: boolean | null
   tentativas: number | null
@@ -206,6 +210,7 @@ export function paraQuestao(q: LinhaQuestao): QuestaoAluno {
     prova: q.prova,
     fonte: q.fonte,
     origem: q.origem,
+    cai_na_prova: q.cai_na_prova ?? false,
     resposta:
       q.escolhida !== null && q.acertou !== null
         ? { escolhida: q.escolhida, acertou: q.acertou, tentativas: q.tentativas ?? 1 }

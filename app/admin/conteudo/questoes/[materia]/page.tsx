@@ -15,7 +15,7 @@ export default async function EditarQuestoesPage(props: PageProps<'/admin/conteu
   const admin = await clienteAdmin()
   let consulta = admin
     .from('questoes')
-    .select('id, aula_id, ordem, enunciado, alternativas, correta, comentario, por_que_erradas, tema, prova, fonte')
+    .select('id, aula_id, ordem, enunciado, alternativas, correta, comentario, por_que_erradas, tema, prova, fonte, cai_na_prova')
     .eq('materia_id', materia)
     .is('substituida_por', null)
     .order('ordem')

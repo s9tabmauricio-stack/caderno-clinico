@@ -256,7 +256,6 @@ body{margin:0;min-height:100vh}
 /* ===== questões: origem, tema e filtros do banco ===== */
 .qmeta{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 12px}
 .qmeta span{font-size:12px;font-weight:600;padding:3px 9px;border-radius:999px;background:var(--seg);color:var(--muted)}
-.qmeta .prova{background:var(--prova-bg);color:var(--prova-fg);font-weight:700;letter-spacing:.08em}
 .qmeta .fonte{background:var(--accent-soft);color:var(--accent)}
 .qmeta .sala{background:var(--ok-soft);color:var(--ok)}
 .qmeta .rec{background:var(--orange-soft);color:var(--orange)}
@@ -1320,3 +1319,18 @@ h1.big{background:var(--metal-titulo);-webkit-background-clip:text;background-cl
 .ap-visor-fechar{margin-left:8px;min-height:44px}
 .ap-visor-area{flex:1;overflow:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
 .ap-visor-area img{display:block;max-width:none;height:auto;margin:0 auto;background:#fff}
+
+/* ===== faixa PROVA: fita de aviso âmbar e preta em volta da questão que cai na prova =====
+   Mesmas cores de dia e de noite (é uma fita de verdade). A caixa de dentro fica com fundo
+   sólido embaixo do vidro, para as listras não aparecerem através dele. */
+.fita-prova{--fita-a:#F5B301;--fita-p:#141519;--fita-lado:10px;
+  position:relative;padding:0 var(--fita-lado);border-radius:calc(var(--r-lg) + var(--fita-lado));
+  background:repeating-linear-gradient(-45deg,var(--fita-p) 0 11px,var(--fita-a) 11px 22px);
+  box-shadow:inset 0 0 0 1px rgba(0,0,0,.35),0 12px 30px rgba(0,0,0,.30)}
+.fita-prova>.qcard{background:var(--vidro),var(--bg);border-radius:var(--r-lg)}
+.fita-prova .fita{height:30px;display:flex;align-items:center;overflow:hidden;margin:0 calc(var(--r-lg) * .6)}
+.fita-prova .fita span{flex:1;min-width:0;display:flex;justify-content:center;height:18px;line-height:18px;background:var(--fita-a);color:var(--fita-p);
+  font:800 11.5px/18px var(--font-texto);letter-spacing:.28em;white-space:nowrap;text-align:center;overflow:hidden;
+  box-shadow:0 0 0 1px rgba(0,0,0,.25)}
+@media (max-width:599px){.fita-prova{--fita-lado:7px}.fita-prova .fita{height:26px}}
+:root[data-tema="dia"] .fita-prova{box-shadow:inset 0 0 0 1px rgba(0,0,0,.25),0 12px 26px rgba(30,35,50,.18)}
