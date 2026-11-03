@@ -25,3 +25,4 @@ O manual (`AGENTS.md`) tem só os nomes das telas. Aqui fica como cada tela func
 
 - A tela Matérias não tem busca (retirada a pedido do Mauricio em 31/10/2026).
 - Flashcards de aula/matéria permitem estudar livremente; Revisão reúne cards novos e pendentes para hoje. As telas explicam a diferença e oferecem atalhos entre elas.
+- Depois de revelar a resposta, **Suspender** aparece acima das quatro avaliações, com espaço entre as ações. Suspender retira o card da fila e das pendências só daquele aluno, sem avaliação ou mudança no histórico; **Desfazer** restaura o card e a sessão. Para reativar: Matérias → matéria → Flashcards → **Suspensos** → **Reativar** (também nos Flashcards da aula). Cards suspensos ficam fora até do treino livre; reativar preserva o agendamento original.

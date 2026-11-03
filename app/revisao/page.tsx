@@ -18,7 +18,7 @@ export default async function RevisaoPage(props: PageProps<'/revisao'>) {
   // Fila do dia: todos os vencidos (do mais atrasado ao mais recente) e todos os novos, sem limite
   // (lidos de 1000 em 1000, o máximo de cada leitura do Supabase)
   const cardsDaFila = () => {
-    const consulta = supabase.from('flashcards_do_aluno').select('*')
+    const consulta = supabase.from('flashcards_do_aluno').select('*').eq('suspenso', false)
     return alvo ? consulta.eq('materia_id', alvo.id) : consulta
   }
   const [vencidos, novos] = await Promise.all([

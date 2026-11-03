@@ -15,6 +15,20 @@ export type Database = {
   }
   public: {
     Tables: {
+      flashcards_suspensos: {
+        Row: { user_id: string; flashcard_id: string; suspenso_em: string }
+        Insert: { user_id?: string; flashcard_id: string; suspenso_em?: string }
+        Update: { user_id?: string; flashcard_id?: string; suspenso_em?: string }
+        Relationships: [
+          {
+            foreignKeyName: 'flashcards_suspensos_flashcard_id_fkey'
+            columns: ['flashcard_id']
+            isOneToOne: false
+            referencedRelation: 'flashcards'
+            referencedColumns: ['id']
+          },
+        ]
+      }
       aulas: {
         Row: {
           apostila_html: string | null
@@ -377,6 +391,7 @@ export type Database = {
     Views: {
       flashcards_do_aluno: {
         Row: {
+          suspenso: boolean | null
           aula_id: string | null
           aula_ordem: number | null
           aula_titulo: string | null
@@ -398,6 +413,9 @@ export type Database = {
       }
       progresso_aulas: {
         Row: {
+          cards_suspensos: number | null
+          cards_suspensos_estudados: number | null
+          cards_suspensos_vencidos: number | null
           acertos: number | null
           aula_id: string | null
           cards_estudados: number | null

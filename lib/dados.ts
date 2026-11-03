@@ -2,6 +2,7 @@ import { redirect } from 'next/navigation'
 import { createClient, type SupabaseServidor } from '@/lib/supabase/server'
 import type { EstadoCard } from '@/lib/srs'
 import type { Json } from '@/lib/database.types'
+import { contarPendentes } from '@/lib/pendencias'
 
 // ---------- Tipos usados nas telas ----------
 export type Materia = {
@@ -24,6 +25,9 @@ export type ProgressoAula = {
   total_cards: number
   cards_estudados: number
   cards_vencidos: number
+  cards_suspensos: number
+  cards_suspensos_estudados: number
+  cards_suspensos_vencidos: number
   ultima_atividade: string | null
 }
 
@@ -60,6 +64,7 @@ export type CardAluno = {
   aula_ordem: number
   materia_id: string
   materia_nome: string
+  suspenso: boolean
   estado: EstadoCard | null
 }
 
@@ -100,6 +105,9 @@ export async function carregarProgresso(supabase: SupabaseServidor): Promise<Pro
     total_cards: p.total_cards ?? 0,
     cards_estudados: p.cards_estudados ?? 0,
     cards_vencidos: p.cards_vencidos ?? 0,
+    cards_suspensos: p.cards_suspensos ?? 0,
+    cards_suspensos_estudados: p.cards_suspensos_estudados ?? 0,
+    cards_suspensos_vencidos: p.cards_suspensos_vencidos ?? 0,
     ultima_atividade: p.ultima_atividade,
   }))
 }
@@ -233,6 +241,7 @@ type LinhaCard = {
   lapsos: number | null
   proxima_revisao: string | null
   ultima_revisao: string | null
+  suspenso?: boolean | null
 }
 
 export function paraCard(c: LinhaCard): CardAluno {
@@ -245,6 +254,7 @@ export function paraCard(c: LinhaCard): CardAluno {
     aula_ordem: c.aula_ordem ?? 0,
     materia_id: c.materia_id ?? '',
     materia_nome: c.materia_nome ?? '',
+    suspenso: c.suspenso ?? false,
     estado: c.proxima_revisao
       ? {
           repeticoes: c.repeticoes ?? 0,
@@ -275,9 +285,7 @@ export function totais(prog: ProgressoAula[]) {
 
 // Cards para hoje: todos os vencidos e todos os novos (sem limite diário)
 export function pendentes(prog: ProgressoAula[]) {
-  const t = totais(prog)
-  const novos = t.cards - t.estudados
-  return { vencidos: t.vencidos, novos, hoje: t.vencidos + novos, emDia: t.estudados - t.vencidos }
+  return contarPendentes(prog)
 }
 
 // Questões contam pelo banco da matéria (inclui as que não pertencem a nenhuma aula)
