@@ -8,7 +8,9 @@ import type { CardAluno } from '@/lib/dados'
 import { avaliar, intervalos, vencido, type EstadoCard, type Nota } from '@/lib/srs'
 import { fmtIntervalo, fmtQuando, plural } from '@/lib/formato'
 import { explicarFalha } from '@/lib/falhas'
+import { cardDeProva } from '@/lib/faixa-prova'
 import { Icone } from './Icones'
+import { FaixaProva } from './FaixaProva'
 
 type Props = {
   cards: CardAluno[]
@@ -240,6 +242,7 @@ export function Flashcards({ cards, userId, modo, ativo, emDia, proximoPasso }: 
     const restam = sessao.fila.length + 1
     const progresso = Math.round((100 * sessao.feitos) / (sessao.feitos + restam))
     const iv = intervalos(estadoDe(card))
+    const prova = cardDeProva(card)
     const botao = (nota: Nota, rotulo: string, tempo: string) => (
       <button className={`grade g${nota}`} onClick={() => avaliarCard(nota)}>
         <b>{rotulo}</b>
@@ -281,21 +284,23 @@ export function Flashcards({ cards, userId, modo, ativo, emDia, proximoPasso }: 
         >
           <span style={{ width: `${progresso}%` }} />
         </div>
-        <div
-          className="flash"
-          onClick={sessao.virado ? undefined : () => setSessao({ ...sessao, virado: true })}
-          data-act={sessao.virado ? undefined : 'virar'}
-        >
-          <div className="side">
-            {card.materia_nome} · {card.aula_titulo}
+        <FaixaProva ligada={prova.faixa}>
+          <div
+            className="flash"
+            onClick={sessao.virado ? undefined : () => setSessao({ ...sessao, virado: true })}
+            data-act={sessao.virado ? undefined : 'virar'}
+          >
+            <div className="side">
+              {card.materia_nome} · {card.aula_titulo}
+            </div>
+            <div className="front">{prova.frente}</div>
+            {sessao.virado ? (
+              <div className="verso">{card.verso}</div>
+            ) : (
+              <div className="tap">Toque no card para ver a resposta</div>
+            )}
           </div>
-          <div className="front">{card.frente}</div>
-          {sessao.virado ? (
-            <div className="verso">{card.verso}</div>
-          ) : (
-            <div className="tap">Toque no card para ver a resposta</div>
-          )}
-        </div>
+        </FaixaProva>
         {sessao.virado ? (
           <div className="grades" role="group" aria-label="Como foi lembrar?">
             {botao(0, 'Errei', '10 min')}
