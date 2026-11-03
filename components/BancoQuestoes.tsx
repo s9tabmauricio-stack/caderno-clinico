@@ -152,7 +152,7 @@ export function BancoQuestoes({
             {temas.map(([t, n]) => pill(filtros.tema === t, t, () => aplicar({ tema: filtros.tema === t ? null : t }), n))}
           </div>
         )}
-        {provas.length > 1 && (
+        {(provas.length > 1 || (provas.length === 1 && provas[0][1] < questoes.length)) && (
           <div className="filtro">
             <span className="rot">Prova</span>
             {pill(!filtros.prova, 'Todas', () => aplicar({ prova: null }))}

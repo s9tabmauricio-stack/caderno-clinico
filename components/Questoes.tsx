@@ -75,7 +75,8 @@ export function Questoes({ questoes, userId, ativo, mostrarTema = true, vazio, a
 
   // Copia só o enunciado e as alternativas (sem gabarito nem comentário), para o aluno conferir em outra IA
   async function copiarQuestao() {
-    const texto = [q.enunciado.trim(), '', ...q.alternativas.map((t, i) => `${LETRAS[i]}) ${t}`)].join('\n')
+    const limpo = q.enunciado.replace(/^PROVA\s*·\s*/i, '').trim()
+    const texto = [limpo, '', ...q.alternativas.map((t, i) => `${LETRAS[i]}) ${t}`)].join('\n')
     let ok = false
     try {
       await navigator.clipboard.writeText(texto)
@@ -343,6 +344,7 @@ export function Questoes({ questoes, userId, ativo, mostrarTema = true, vazio, a
       {!avisoAqui && aviso}
       <div className="qcard">
         <div className="qmeta">
+          {(q.prova === 'PROVA' || /^PROVA\s*·\s*/i.test(q.enunciado)) && <span className="prova">PROVA</span>}
           {q.fonte && <span className="fonte">{q.fonte}</span>}
           {mostrarTema && q.tema && <span>{q.tema}</span>}
           {q.origem && ORIGEM[q.origem] && <span className={ORIGEM[q.origem].cls}>{ORIGEM[q.origem].rotulo}</span>}
@@ -382,7 +384,7 @@ export function Questoes({ questoes, userId, ativo, mostrarTema = true, vazio, a
           </div>
         ) : (
           <>
-            <p className="qtext">{q.enunciado}</p>
+            <p className="qtext">{q.enunciado.replace(/^PROVA\s*·\s*/i, '')}</p>
             <div className="opts">
               {q.alternativas.map((texto, i) => {
                 const cortada = cortadas.includes(i)
