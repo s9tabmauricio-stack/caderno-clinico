@@ -176,6 +176,29 @@ button.row:hover{background:var(--card-2)}
 .done-acoes .btn{display:inline-flex;align-items:center;gap:6px}
 .done-acoes .btn svg{width:18px;height:18px}
 .sess-acoes{display:flex;align-items:center;gap:10px}
+.fc-suspender-acoes{display:flex;justify-content:center;margin:16px 0 36px}
+.fc-suspender{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:10px 22px;border:1px solid var(--line-strong);border-radius:999px;background:var(--field);box-shadow:var(--campo-sombra);color:var(--text);font:600 14px var(--font-texto);cursor:pointer}
+.fc-suspender svg,.fc-filtros svg,.fc-suspenso svg,.fc-notificacao svg{width:18px;height:18px;flex:none;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.fc-suspender:hover{background:var(--seg)}
+.fc-suspender:focus-visible,.fc-filtros button:focus-visible,.fc-notificacao button:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+.fc-filtros{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0}
+.fc-filtros .pill{display:inline-flex;align-items:center;gap:6px;min-height:44px}
+.fc-filtros .pill[aria-pressed="true"]{border-color:var(--accent-line);box-shadow:0 0 0 1px var(--accent-line);color:var(--accent)}
+.fc-filtros .pill span{font-variant-numeric:tabular-nums}
+.fc-suspensos-nota{margin:0 4px 16px}
+.fc-suspenso{align-items:flex-start;gap:12px}
+.fc-suspenso .t2{-webkit-line-clamp:unset;overflow-wrap:anywhere}
+.fc-suspenso-acoes{display:flex;flex:none;flex-direction:column;align-items:flex-end;gap:8px}
+.fc-suspenso-acoes .chip,.fc-suspenso-acoes .btn{display:inline-flex;align-items:center;gap:5px}
+.fc-suspenso-acoes .chip svg{width:13px;height:13px}
+.fc-suspenso-acoes .btn{min-height:44px}
+.fc-notificacao{display:flex;align-items:center;gap:10px;background:var(--vidro);box-shadow:var(--vidro-sombra);border-radius:var(--r-md);padding:14px;margin:16px 0;overflow-wrap:anywhere}
+.fc-notificacao .main{min-width:0;flex:1;display:flex;flex-direction:column;gap:3px;font-size:14px}
+.fc-notificacao .main>span{font-size:12.5px;color:var(--muted)}
+.fc-notificacao .link{min-height:44px;flex:none}
+.fc-notificacao-ic{display:flex;color:var(--muted)}
+.fc-fechar{display:grid;place-items:center;min-width:32px;min-height:44px;border:0;background:none;color:var(--muted);cursor:pointer}
+.fc-suspender:disabled,.fc-suspenso button:disabled,.fc-notificacao button:disabled,.grades button:disabled{opacity:.55;cursor:wait}
 .link-desfazer{display:inline-flex;align-items:center;gap:4px;color:var(--muted);transition:color .15s}
 .link-desfazer:hover{color:var(--ink)}
 .link-desfazer svg{width:15px;height:15px;stroke-width:2}

@@ -7,6 +7,11 @@ const svg = (d: React.ReactNode) => (
 )
 
 export const Icone = {
+  suspender: svg(
+    <>
+      <path d="M8 5v14M16 5v14" />
+    </>,
+  ),
   inicio: svg(<path d="M4 10.5 12 4l8 6.5V19a1.5 1.5 0 0 1-1.5 1.5H15v-6H9v6H5.5A1.5 1.5 0 0 1 4 19z" />),
   cards: svg(
     <>

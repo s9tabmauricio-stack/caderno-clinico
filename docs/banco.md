@@ -12,6 +12,7 @@ O manual (`AGENTS.md`) tem o resumo e o limite do conector. Aqui ficam as tabela
 - Visões usadas pelas telas: `questoes_do_aluno`, `progresso_aulas`, `progresso_materias`, `progresso_temas`, `progresso_tentativas` (tentativas e acerto "na 1ª vez", mostrados no Desempenho), `flashcards_do_aluno`.
   Todas escondem aulas não publicadas e questões com `substituida_por` preenchido.
 - RLS: alunos leem conteúdo e só gravam o próprio progresso. Escrita de conteúdo: só pelo conector (Claude ou Antigravity) ou pelas telas de admin (chave secreta).
+- Suspensão individual: `flashcards_suspensos` (`user_id`, `flashcard_id`, `suspenso_em`), separada de `revisoes` para preservar histórico e agendamento. RLS restringe leitura e escrita ao próprio aluno. `flashcards_do_aluno.suspenso` permite excluir da fila; `progresso_aulas` mantém os totais históricos e acrescenta `cards_suspensos`, `cards_suspensos_estudados` e `cards_suspensos_vencidos`, descontados apenas nas pendências.
 - **Cópia da estrutura:** `supabase/estrutura-atual.sql` (copiada do banco em 02/11/2026). Depois de qualquer migração, acrescente a mudança nela ou gere tudo de novo com as consultas de `supabase/gerar-estrutura.sql` (só leem o banco).
 - A pasta `supabase/migrations/` guarda só a estrutura (as migrações que só incluíam conteúdo saíram em 02/11/2026) e não reflete tudo o que foi aplicado; a verdade é o banco (`list_migrations`).
 
