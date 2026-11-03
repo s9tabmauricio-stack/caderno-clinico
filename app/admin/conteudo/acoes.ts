@@ -68,6 +68,7 @@ export async function salvarQuestao(_: Msg, form: FormData): Promise<Msg> {
         por_que_erradas: texto(form, 'por_que_erradas'),
         tema: texto(form, 'tema'),
         prova: texto(form, 'prova'),
+        cai_na_prova: form.get('cai_na_prova') === 'on',
         fonte: texto(form, 'fonte'),
         aula_id: texto(form, 'aula_id'),
       })

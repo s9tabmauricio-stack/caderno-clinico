@@ -225,6 +225,7 @@ export type Database = {
         Row: {
           alternativas: Json
           aula_id: string | null
+          cai_na_prova: boolean
           comentario: string | null
           correta: number
           enunciado: string
@@ -241,6 +242,7 @@ export type Database = {
         Insert: {
           alternativas: Json
           aula_id?: string | null
+          cai_na_prova?: boolean
           comentario?: string | null
           correta: number
           enunciado: string
@@ -257,6 +259,7 @@ export type Database = {
         Update: {
           alternativas?: Json
           aula_id?: string | null
+          cai_na_prova?: boolean
           comentario?: string | null
           correta?: number
           enunciado?: string
@@ -414,6 +417,7 @@ export type Database = {
           acertou: boolean | null
           alternativas: Json | null
           aula_id: string | null
+          cai_na_prova: boolean | null
           comentario: string | null
           correta: number | null
           enunciado: string | null

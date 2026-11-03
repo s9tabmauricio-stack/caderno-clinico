@@ -1,5 +1,5 @@
 -- Estrutura atual do banco do Med Genius (Supabase, projeto xtlpmtylifbalzxnfkib)
--- Copiada do próprio banco em 02/11/2026 (PostgreSQL 17.11). Só a estrutura, sem dados.
+-- Copiada do próprio banco em 02/11/2026 (PostgreSQL 17.11); campo questoes.cai_na_prova incluído em 03/11/2026. Só a estrutura, sem dados.
 --
 -- Para que serve: é a referência confiável de como o banco está montado
 -- (tabelas, regras, visões, funções, gatilhos e permissões do esquema public).
@@ -130,6 +130,7 @@ create table public.questoes (
   origem text,
   por_que_erradas text,
   substituida_por text,
+  cai_na_prova boolean default false not null,
   constraint questoes_pkey PRIMARY KEY (id),
   constraint questoes_alternativas_check CHECK ((jsonb_typeof(alternativas) = 'array'::text)),
   constraint questoes_correta_check CHECK ((correta >= 0)),
@@ -339,7 +340,8 @@ create or replace view public.questoes_do_aluno with (security_invoker=true) as
     q.tema,
     q.prova,
     q.fonte,
-    q.origem
+    q.origem,
+    q.cai_na_prova
    FROM ((questoes q
      LEFT JOIN aulas a ON ((a.id = q.aula_id)))
      LEFT JOIN respostas r ON (((r.questao_id = q.id) AND (r.user_id = ( SELECT auth.uid() AS uid)))))

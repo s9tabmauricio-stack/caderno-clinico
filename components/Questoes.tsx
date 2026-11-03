@@ -6,6 +6,7 @@ import { explicarFalha } from '@/lib/falhas'
 import { createClient } from '@/lib/supabase/client'
 import type { QuestaoAluno } from '@/lib/dados'
 import { plural } from '@/lib/formato'
+import { temFaixaProva } from '@/lib/faixa-prova'
 import { Icone } from './Icones'
 import { ConversaTurma } from './ConversaTurma'
 import { EditorQuestao } from './admin/Editores'
@@ -75,8 +76,7 @@ export function Questoes({ questoes, userId, ativo, mostrarTema = true, vazio, a
 
   // Copia só o enunciado e as alternativas (sem gabarito nem comentário), para o aluno conferir em outra IA
   async function copiarQuestao() {
-    const limpo = q.enunciado.replace(/^PROVA\s*·\s*/i, '').trim()
-    const texto = [limpo, '', ...q.alternativas.map((t, i) => `${LETRAS[i]}) ${t}`)].join('\n')
+    const texto = [q.enunciado.trim(), '', ...q.alternativas.map((t, i) => `${LETRAS[i]}) ${t}`)].join('\n')
     let ok = false
     try {
       await navigator.clipboard.writeText(texto)
@@ -342,152 +342,170 @@ export function Questoes({ questoes, userId, ativo, mostrarTema = true, vazio, a
     <div>
       {cabecalho}
       {!avisoAqui && aviso}
-      <div className="qcard">
-        <div className="qmeta">
-          {(q.prova === 'PROVA' || /^PROVA\s*·\s*/i.test(q.enunciado)) && <span className="prova">PROVA</span>}
-          {q.fonte && <span className="fonte">{q.fonte}</span>}
-          {mostrarTema && q.tema && <span>{q.tema}</span>}
-          {q.origem && ORIGEM[q.origem] && <span className={ORIGEM[q.origem].cls}>{ORIGEM[q.origem].rotulo}</span>}
-          {!editando && (
-            <button
-              type="button"
-              className={`editar-q copiar-q${copiado === 'ok' ? ' on' : ''}`}
-              onClick={copiarQuestao}
-              title="Copia o enunciado e as alternativas, sem a resposta"
-              aria-live="polite"
-            >
-              {copiado === 'ok' ? Icone.certo : Icone.copiar}
-              {copiado === 'ok' ? 'Copiada' : copiado === 'erro' ? 'Não deu para copiar' : 'Copiar'}
-            </button>
-          )}
-          {edicao && (
-            <button
-              type="button"
-              className={`editar-q${editando ? ' on' : ''}`}
-              aria-pressed={editando}
-              onClick={() => setEditando(!editando)}
-            >
-              {editando ? Icone.errado : Icone.lapis}
-              {editando ? 'Fechar edição' : 'Editar'}
-            </button>
-          )}
-        </div>
-        {editando && edicao ? (
-          <div className="editar-painel">
-            <p className="editar-aviso">Só você vê isto. O que salvar aqui muda a questão para toda a turma.</p>
-            <EditorQuestao key={q.id} q={q} aulas={edicao.aulas} />
-            <div className="actions">
-              <button className="btn ghost" onClick={() => setEditando(false)}>
-                Voltar para a questão
+      <FaixaProva ligada={temFaixaProva(q)}>
+        <div className="qcard">
+          <div className="qmeta">
+            {q.fonte && <span className="fonte">{q.fonte}</span>}
+            {mostrarTema && q.tema && <span>{q.tema}</span>}
+            {q.origem && ORIGEM[q.origem] && <span className={ORIGEM[q.origem].cls}>{ORIGEM[q.origem].rotulo}</span>}
+            {!editando && (
+              <button
+                type="button"
+                className={`editar-q copiar-q${copiado === 'ok' ? ' on' : ''}`}
+                onClick={copiarQuestao}
+                title="Copia o enunciado e as alternativas, sem a resposta"
+                aria-live="polite"
+              >
+                {copiado === 'ok' ? Icone.certo : Icone.copiar}
+                {copiado === 'ok' ? 'Copiada' : copiado === 'erro' ? 'Não deu para copiar' : 'Copiar'}
               </button>
-            </div>
+            )}
+            {edicao && (
+              <button
+                type="button"
+                className={`editar-q${editando ? ' on' : ''}`}
+                aria-pressed={editando}
+                onClick={() => setEditando(!editando)}
+              >
+                {editando ? Icone.errado : Icone.lapis}
+                {editando ? 'Fechar edição' : 'Editar'}
+              </button>
+            )}
           </div>
-        ) : (
-          <>
-            <p className="qtext">{q.enunciado.replace(/^PROVA\s*·\s*/i, '')}</p>
-            <div className="opts">
-              {q.alternativas.map((texto, i) => {
-                const cortada = cortadas.includes(i)
-                if (revelada && resp) {
-                  // Certa em verde, todas as outras em vermelho; a marcada pelo aluno ganha destaque
-                  let cls = i === q.correta ? 'right' : 'wrong'
-                  if (i === resp.escolhida) cls += ' minha'
+          {editando && edicao ? (
+            <div className="editar-painel">
+              <p className="editar-aviso">Só você vê isto. O que salvar aqui muda a questão para toda a turma.</p>
+              <EditorQuestao key={q.id} q={q} aulas={edicao.aulas} />
+              <div className="actions">
+                <button className="btn ghost" onClick={() => setEditando(false)}>
+                  Voltar para a questão
+                </button>
+              </div>
+            </div>
+          ) : (
+            <>
+              <p className="qtext">{q.enunciado}</p>
+              <div className="opts">
+                {q.alternativas.map((texto, i) => {
+                  const cortada = cortadas.includes(i)
+                  if (revelada && resp) {
+                    // Certa em verde, todas as outras em vermelho; a marcada pelo aluno ganha destaque
+                    let cls = i === q.correta ? 'right' : 'wrong'
+                    if (i === resp.escolhida) cls += ' minha'
+                    return (
+                      <button key={i} className={`opt ${cls}`} disabled>
+                        <span className="l">{LETRAS[i]}</span>
+                        <span className="ot">
+                          {i === resp.escolhida && <span className="sua">Sua resposta</span>}
+                          {cortada && <span className="cort-tag">Você cortou</span>}
+                          {texto}
+                          {i === q.correta && q.comentario && <span className="oexp certa">{q.comentario}</span>}
+                          {i !== q.correta && expl.porAlt[i] && <span className="oexp">{expl.porAlt[i]}</span>}
+                        </span>
+                      </button>
+                    )
+                  }
+                  const sel = escolha === i
                   return (
-                    <button key={i} className={`opt ${cls}`} disabled>
-                      <span className="l">{LETRAS[i]}</span>
-                      <span className="ot">
-                        {i === resp.escolhida && <span className="sua">Sua resposta</span>}
-                        {cortada && <span className="cort-tag">Você cortou</span>}
-                        {texto}
-                        {i === q.correta && q.comentario && <span className="oexp certa">{q.comentario}</span>}
-                        {i !== q.correta && expl.porAlt[i] && <span className="oexp">{expl.porAlt[i]}</span>}
-                      </span>
-                    </button>
+                    <div key={i} className={`optw${sel ? ' sel' : ''}${cortada ? ' cortada' : ''}`}>
+                      <button
+                        className={`opt${sel ? ' sel' : ''}`}
+                        disabled={cortada}
+                        aria-pressed={sel}
+                        onClick={() => {
+                          setEscolha(i)
+                          setErro('')
+                        }}
+                      >
+                        <span className="l">{LETRAS[i]}</span>
+                        <span className="ot">{texto}</span>
+                      </button>
+                      <button
+                        className="elim"
+                        onClick={() => cortar(i)}
+                        aria-pressed={cortada}
+                        aria-label={cortada ? `Trazer de volta a alternativa ${LETRAS[i]}` : `Cortar a alternativa ${LETRAS[i]}`}
+                      >
+                        {cortada ? Icone.desfazer : Icone.tesoura}
+                        <span>{cortada ? 'Voltar' : 'Cortar'}</span>
+                      </button>
+                    </div>
                   )
-                }
-                const sel = escolha === i
-                return (
-                  <div key={i} className={`optw${sel ? ' sel' : ''}${cortada ? ' cortada' : ''}`}>
+                })}
+              </div>
+
+              {revelada && resp ? (
+                <>
+                  <div className={`verdict ${resp.acertou ? 'ok' : 'bad'}`}>
+                    {resp.acertou ? Icone.certo : Icone.errado}
+                    <span>
+                      {resp.acertou
+                        ? 'Você acertou.'
+                        : `Você marcou ${LETRAS[resp.escolhida]}. A resposta é ${LETRAS[q.correta]}.`}
+                    </span>
+                  </div>
+                  {avisoAqui && aviso}
+                  {expl.resto && (
+                    <div className="erradas">
+                      <div className="kick">
+                        <span className="dot" />
+                        Sobre as alternativas
+                      </div>
+                      <p>{expl.resto}</p>
+                    </div>
+                  )}
+                  <div className="actions qacoes">
                     <button
-                      className={`opt${sel ? ' sel' : ''}`}
-                      disabled={cortada}
-                      aria-pressed={sel}
+                      className="btn ghost"
                       onClick={() => {
-                        setEscolha(i)
-                        setErro('')
+                        setRefazendo(true)
+                        setEscolha(null)
+                        setCortadas([])
                       }}
                     >
-                      <span className="l">{LETRAS[i]}</span>
-                      <span className="ot">{texto}</span>
+                      Refazer esta
                     </button>
-                    <button
-                      className="elim"
-                      onClick={() => cortar(i)}
-                      aria-pressed={cortada}
-                      aria-label={cortada ? `Trazer de volta a alternativa ${LETRAS[i]}` : `Cortar a alternativa ${LETRAS[i]}`}
-                    >
-                      {cortada ? Icone.desfazer : Icone.tesoura}
-                      <span>{cortada ? 'Voltar' : 'Cortar'}</span>
+                    <button className="btn" onClick={() => irPara(idx + 1)}>
+                      {idx === questoes.length - 1 ? 'Ver resultado' : 'Próxima questão'}
                     </button>
                   </div>
-                )
-              })}
-            </div>
-
-            {revelada && resp ? (
-              <>
-                <div className={`verdict ${resp.acertou ? 'ok' : 'bad'}`}>
-                  {resp.acertou ? Icone.certo : Icone.errado}
-                  <span>
-                    {resp.acertou
-                      ? 'Você acertou.'
-                      : `Você marcou ${LETRAS[resp.escolhida]}. A resposta é ${LETRAS[q.correta]}.`}
-                  </span>
-                </div>
-                {avisoAqui && aviso}
-                {expl.resto && (
-                  <div className="erradas">
-                    <div className="kick">
-                      <span className="dot" />
-                      Sobre as alternativas
-                    </div>
-                    <p>{expl.resto}</p>
+                </>
+              ) : (
+                <>
+                  {erro && (
+                    <p className="err" role="alert">
+                      {erro}
+                    </p>
+                  )}
+                  <div className="actions qacoes">
+                    <button className="btn" onClick={responder}>
+                      Responder
+                    </button>
                   </div>
-                )}
-                <div className="actions qacoes">
-                  <button
-                    className="btn ghost"
-                    onClick={() => {
-                      setRefazendo(true)
-                      setEscolha(null)
-                      setCortadas([])
-                    }}
-                  >
-                    Refazer esta
-                  </button>
-                  <button className="btn" onClick={() => irPara(idx + 1)}>
-                    {idx === questoes.length - 1 ? 'Ver resultado' : 'Próxima questão'}
-                  </button>
-                </div>
-              </>
-            ) : (
-              <>
-                {erro && (
-                  <p className="err" role="alert">
-                    {erro}
-                  </p>
-                )}
-                <div className="actions qacoes">
-                  <button className="btn" onClick={responder}>
-                    Responder
-                  </button>
-                </div>
-              </>
-            )}
-          </>
-        )}
-      </div>
+                </>
+              )}
+            </>
+          )}
+        </div>
+      </FaixaProva>
       {revelada && <ConversaTurma key={q.id} questaoId={q.id} userId={userId} />}
+    </div>
+  )
+}
+
+// Fita de aviso âmbar e preta em volta da questão que cai na prova, com "PROVA" escrito em cima e embaixo
+function FaixaProva({ ligada, children }: { ligada: boolean; children: React.ReactNode }) {
+  if (!ligada) return <>{children}</>
+  const fita = (
+    <div className="fita" aria-hidden="true">
+      <span>{Array.from({ length: 12 }, () => 'PROVA').join(' • ')}</span>
+    </div>
+  )
+  return (
+    <div className="fita-prova" role="group" aria-label="Cai na prova">
+      {fita}
+      {children}
+      {fita}
     </div>
   )
 }

@@ -80,6 +80,7 @@ export type QuestaoAdmin = {
   tema: string | null
   prova: string | null
   fonte: string | null
+  cai_na_prova: boolean
 }
 
 export function EditorQuestao({ q, aulas }: { q: QuestaoAdmin; aulas: { id: string; titulo: string }[] }) {
@@ -140,6 +141,10 @@ export function EditorQuestao({ q, aulas }: { q: QuestaoAdmin; aulas: { id: stri
             <input name="fonte" className="campo" defaultValue={q.fonte ?? ''} />
           </label>
         </div>
+        <label className="ed-check">
+          <input type="checkbox" name="cai_na_prova" defaultChecked={q.cai_na_prova} /> Cai na prova (o professor disse
+          ou deu a entender que cai; põe a faixa PROVA em volta da questão)
+        </label>
         <div className="ed-acoes">
           <BotaoEnviar rotulo="Salvar questão" enviando="Salvando…" />
           <Mensagem m={m} />
