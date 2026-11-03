@@ -67,15 +67,16 @@ C, D e E: …
 Nenhuma.
 ```
 
-O `PROVA ·` no título da questão é só para a contagem e para o revisor: não vai para o enunciado. `tema` = assunto curto da questão (aparece no filtro do Banco de questões); use poucos temas por aula (os títulos das seções, resumidos).
+O `PROVA ·` no título da questão vira `prova = 'PROVA'` no banco (aparece como a etiqueta `PROVA` no topo do cartão da questão); nas outras questões montadas, `prova` fica `null`. `tema` = assunto curto da questão (aparece no filtro do Banco de questões); use poucos temas por aula (os títulos das seções, resumidos).
 
 ## Incluir
 
 1. Leia `rascunhos/questoes/<aula-id>.md` como está agora. Se não existir, pare e diga.
 2. Repita a consulta do passo 1 do Preparar para pegar `ultima_ordem` e confirmar que as questões ainda não estão lá.
 3. Grave em lotes de até 20 questões por chamada:
-   `insert into public.questoes (id, materia_id, aula_id, ordem, enunciado, alternativas, correta, comentario, por_que_erradas, tema, prova, fonte, origem) values ('<aula-id>-q01', '<materia>', '<aula-id>', <ultima_ordem + 1>, '…', '["…","…","…","…","…"]'::jsonb, 1, '…', 'A: …' || chr(10) || 'C, D e E: …', '<tema>', null, 'Montada (aula <ano>)', 'montada') on conflict (id) do nothing;`
+   `insert into public.questoes (id, materia_id, aula_id, ordem, enunciado, alternativas, correta, comentario, por_que_erradas, tema, prova, fonte, origem) values ('<aula-id>-q01', '<materia>', '<aula-id>', <ultima_ordem + 1>, '…', '["…","…","…","…","…"]'::jsonb, 1, '…', 'A: …' || chr(10) || 'C, D e E: …', '<tema>', 'PROVA', 'Montada (aula <ano>)', 'montada') on conflict (id) do nothing;`
    - id `<aula-id>-q01`… `-q99`, depois `-q100`. `ordem` continua depois da última ordem da matéria, na ordem do rascunho.
+   - `prova` = `'PROVA'` quando o título da questão no rascunho tem `PROVA ·`; `null` nas outras.
    - `alternativas` sem a letra; `correta` = índice da letra com `*` (A = 0, B = 1…).
    - Aspas simples dentro do texto viram duas (''). Quebras de linha do "por que as erradas" com `chr(10)`.
 4. Confira: `select count(*) from public.questoes where aula_id = '<aula-id>' and substituida_por is null;` tem de bater.
