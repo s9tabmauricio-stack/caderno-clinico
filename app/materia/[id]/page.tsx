@@ -47,6 +47,7 @@ export default async function MateriaPage(props: PageProps<'/materia/[id]'>) {
         <div className="group">
           {aulas.data.map((a) => {
             const p = progresso.find((x) => x.aula_id === a.id)
+            const vencidos = p ? pendentes([p]).vencidos : 0
             return (
               <Link key={a.id} className="row" href={`/aula/${a.id}?${new URLSearchParams({ retorno: `/materia/${id}${origem ? `?${new URLSearchParams({ retorno: origem })}` : ""}` })}`}>
                 <span className="num">{a.ordem}</span>
@@ -55,7 +56,7 @@ export default async function MateriaPage(props: PageProps<'/materia/[id]'>) {
                   {a.resumo && <span className="s">{a.resumo}</span>}
                   <span className="meta">
                     {a.data_aula && `Aula de ${a.data_aula.split('-').reverse().join('/')}${a.professor ? ` com ${a.professor}` : ''} · `}Apostila · {p?.total_questoes ?? 0} questões · {p?.total_cards ?? 0} flashcards
-                    {p && p.cards_vencidos > 0 && <span className="chip revisar">{p.cards_vencidos} para revisar</span>}
+                    {vencidos > 0 && <span className="chip revisar">{vencidos} para revisar</span>}
                   </span>
                 </span>
                 <span className="pct">{p ? concluido([p]) : 0}%</span>
