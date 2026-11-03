@@ -1,0 +1,48 @@
+# Junta ao main, sozinho, os PRs dos três assistentes (ramos claude/...,
+# codex/... e antigravity/...), depois de conferir que os testes passam e
+# que o site compila. Se algo falhar, o PR fica aberto e nada vai para o ar.
+# PR em rascunho não é juntado: é assim que se espera o "pode publicar" do Mauricio.
+name: Juntar ao main
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+    branches: [main]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: juntar-ao-main-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  juntar:
+    # Só ramos destes três prefixos, deste repositório (nunca de cópias de fora), e PRs que não são rascunho.
+    if: >-
+      (startsWith(github.head_ref, 'claude/') || startsWith(github.head_ref, 'codex/') || startsWith(github.head_ref, 'antigravity/')) &&
+      github.event.pull_request.head.repo.full_name == github.repository &&
+      !github.event.pull_request.draft
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm test
+      - run: npm run build
+      - name: Juntar ao main
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RAMO: ${{ github.head_ref }}
+          PR: ${{ github.event.pull_request.number }}
+        # O ramo claude/ da sessão continua sendo usado depois; os outros podem ser apagados.
+        run: |
+          if [[ "$RAMO" == claude/* ]]; then
+            gh pr merge "$PR" --repo "$GITHUB_REPOSITORY" --squash
+          else
+            gh pr merge "$PR" --repo "$GITHUB_REPOSITORY" --squash --delete-branch
+          fi

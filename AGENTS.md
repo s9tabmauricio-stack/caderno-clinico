@@ -26,6 +26,7 @@ Este manual tem só as regras de sempre. Os detalhes ficam onde são usados; lei
 | Lançar provas na Agenda | skill `provas-agenda` |
 | Aula nova a partir do áudio | skill `aula-nova` |
 | Computador Windows do Mauricio | [`docs/windows.md`](docs/windows.md) |
+| Quem está mexendo em quê agora (Claude, Codex, Antigravity) | [`docs/fila.md`](docs/fila.md) |
 
 ## Onde fica cada coisa
 
@@ -91,18 +92,26 @@ Pelo conector, **incluir dados e alterações curtas funcionam**; **apagar e ree
 ## Claude, Codex e Antigravity (três assistentes no mesmo projeto)
 
 - Este manual vale para os três. O `CLAUDE.md` só aponta para cá, e o Antigravity (versão 2.28 em diante) lê a regra `.agents/rules/medgenius.md` (com "s"; a pasta antiga `.agent/` não é mais lida), que também aponta para cá: mudanças no manual vão neste arquivo.
-- Cada um trabalha sozinho, no seu ramo (`claude/...`, `codex/...` ou `antigravity/...`); nenhum desses ramos gera prévia na Vercel (`vercel.json`). O Codex e o Antigravity entregam por PR do seu ramo, e o GitHub junta sozinho ao `main` se o site compilar (`.github/workflows/codex-automerge.yml`); se não compilar, o PR fica aberto e nada vai para o ar. Nunca empurre direto para o `main` nem use ramos com outro nome.
-- **Antigravity** (Google, no PC Windows do Mauricio, na pasta do projeto): comece cada trabalho de um `main` atualizado (`git fetch origin main && git checkout -B antigravity/<assunto> origin/main`), rode `npm test` e `npx next build`, faça o commit, `git push -u origin antigravity/<assunto>` e abra o PR com `gh pr create --fill --base main`.
-- Como o Claude publica (pôr no `main`):
-  - **Conversa pela nuvem** (claude.ai/code, app do celular): trabalha no ramo `claude/...` da sessão, abre um PR e, com o trabalho pronto e conferido, junta ao `main` (squash) pelo GitHub. Se o Mauricio pediu para ver antes, espera o "pode publicar". Depois de juntado, o PR não recebe mais nada: o trabalho seguinte começa de novo do `main`, num PR novo.
-  - **Computador do Mauricio e aula nova** (que não espera aprovação): publica direto com `git fetch origin main && git rebase origin/main && git push origin HEAD:main` e empurra também o ramo da sessão.
-- O Claude e o Antigravity têm o conector do Supabase (o do Antigravity, desde 01/11/2026, fica em `~/.gemini/config/mcp_config.json`, preso ao projeto `xtlpmtylifbalzxnfkib`); os dois seguem as mesmas regras do conector (seção "Limite do conector do Supabase"), e mudança na estrutura do banco só com o "pode" do Mauricio. O Codex não tem: não tente gravar no banco, mexa só no código e deixe questões, flashcards, aulas, apostilas e provas para os outros dois.
-- Um assunto por vez para cada um, para as mudanças não baterem na mesma tela.
+- **Qualquer um faz qualquer trabalho, mas passa pela fila** ([`docs/fila.md`](docs/fila.md)): antes de começar, leia a fila no `main` e anote o assunto e onde vai mexer; se outro já está na mesma tela, aula ou arquivo, não comece e avise o Mauricio. Ao publicar, o PR apaga a linha. As regras estão no topo do arquivo.
+
+| | Código e telas | Conteúdo (aulas, apostilas, questões, flashcards, provas) e banco |
+|---|---|---|
+| **Claude** (nuvem e PC do Mauricio) | sim | sim, pelo conector do Supabase |
+| **Antigravity** (PC do Mauricio) | sim | sim, pelo conector do Supabase |
+| **Codex** | sim | não: não tem o conector; não tente gravar no banco |
+
+- **Conteúdo segue as mesmas regras, venha de quem vier.** As skills e os agentes em `.claude/` (aula nova, subir apostila, questões e flashcards, provas na agenda, revisor) são o manual de cada assunto e valem para os três: quem não é o Claude lê o arquivo e segue os passos. Os agentes de conteúdo do Claude rodam sempre no Opus com esforço extra-alto.
+- O conector (Claude e Antigravity; o do Antigravity fica em `~/.gemini/config/mcp_config.json`, preso ao projeto `xtlpmtylifbalzxnfkib`) segue a seção "Limite do conector do Supabase". Mudança na estrutura do banco só com o "pode" do Mauricio.
+- **Um caminho só para publicar.** Comece de um `main` atualizado, num ramo `claude/<…>`, `codex/<…>` ou `antigravity/<…>` (nenhum gera prévia na Vercel, `vercel.json`). Rode `npm test` e `npx next build`, empurre o ramo e abra um PR para o `main`. O GitHub roda os testes e a compilação e junta sozinho (`.github/workflows/juntar-ao-main.yml`); se algo falhar, o PR fica aberto e nada vai para o ar. **PR em rascunho não é juntado**: use rascunho quando o Mauricio pediu para ver antes, e tire do rascunho no "pode publicar". Nunca empurre direto para o `main` (a única exceção é a anotação da fila) nem use ramos com outro nome.
+  - **Antigravity:** `git fetch origin main && git checkout -B antigravity/<assunto> origin/main`; no fim, `git push -u origin antigravity/<assunto>` e `gh pr create --fill --base main`.
+  - **Claude na nuvem** (claude.ai/code, app do celular): usa o ramo `claude/...` da sessão. Depois de juntado, o PR não recebe mais nada: o trabalho seguinte começa de novo do `main`, num PR novo.
+  - **Exceções, que publicam direto** (não esperam aprovação): a aula nova e o Claude no computador do Mauricio, com `git fetch origin main && git rebase origin/main && git push origin HEAD:main` (e empurram também o ramo da sessão). Passam pela fila do mesmo jeito.
+- Commit que só mexe em documentos (`docs/`, arquivos `.md`, `.claude/`, `.agents/`) não gera publicação na Vercel (`ignoreCommand` no `vercel.json`), para não gastar o "Deployment Storage".
 
 ## Como trabalhar com o Mauricio
 
 - Ele é sensível a custo: prefira o caminho barato (converter arquivos em vez de reescrever conteúdo; não reenviar textos grandes à toa).
-- Mostre o conteúdo (a questão, a tela) antes de pedir uma decisão; um assunto por vez.
+- Mostre o conteúdo (a questão, a tela) antes de pedir uma decisão; um assunto por vez, anotado na fila.
 - Publique e diga em uma ou duas frases o que mudou; diga claramente o que não foi testado.
 - Não deixe lixo: o que for substituído deve poder ser limpo (Conteúdo → Limpeza).
 - Pedido vago ou `/melhorar <pedido>`: skill `melhorar` (melhora o pedido, recomenda modelo e esforço, faz na hora o que é pequeno).
