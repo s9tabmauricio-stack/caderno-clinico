@@ -7,6 +7,8 @@ Combinado com o Mauricio em 02/11/2026 e aprovado na pneumo-a5 (primeira apostil
 1. **Mapa** (abaixo) e, se a aula pedir ilustrações, `imagens-gpt.md` com os prompts. O Mauricio gera as imagens no ChatGPT e manda na conversa; a conversa principal confere cada uma (anatomia, nenhuma letra) antes de usar.
 2. **Apostila**, seguindo o mapa.
 
+**Guarde a fonte, não só a imagem.** O site mostra as páginas em imagem, mas o que se corrige é o HTML. Toda apostila nova ou refeita vai para o Git em `apostilas-fonte/<aula-id>/`: `apostila.html`, as figuras (`*.svg`) e os programas que as desenham (como em [`apostilas-fonte/README.md`](../apostilas-fonte/README.md)). Para corrigir, mude o HTML, gere o PDF de novo e publique com a skill `subir-apostila`.
+
 **Na aula nova automática** (skill `aula-nova`), ninguém espera imagens: a apostila sai com as imagens dos slides e os SVGs, sem ilustrações do GPT. O agente deixa `imagens-gpt.md` pronto e põe na lista do que conferir as ilustrações que valeriam a pena; o Mauricio decide depois se gera e troca a apostila.
 Sem slides, o mapa liga capítulos a minutos da transcrição.
 

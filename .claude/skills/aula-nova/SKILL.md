@@ -9,6 +9,8 @@ Regra do Mauricio (31/10/2026): ele manda o áudio e não aprova nada no meio. N
 
 **Economia (regra do Mauricio, 31/10/2026):** uma chamada de agente por etapa, só as desta receita. Não acrescente agentes, workflows, conferências nem correções extras, nem com o modo ultracode ligado. A conversa principal não relê a transcrição, a apostila nem os rascunhos: trabalha com o resumo que cada agente devolve. Enquanto um agente trabalha, espere o aviso de que terminou, sem ficar checando.
 
+**Fila** (`docs/fila.md`): assim que souber o id da aula, anote a linha ("Aula nova", a aula, a matéria) como diz o topo do arquivo; no último commit da publicação, apague a linha.
+
 Pasta de trabalho: `rascunhos/aulas/<aula-id>/` (fora do Git). Enquanto não souber o id, use `rascunhos/aulas/<AAAA-MM-DD>/` e renomeie depois.
 
 ## 1. Achar o áudio e o dia da aula
@@ -56,8 +58,9 @@ Chame o agente `apostila` no modelo Opus com esforço extra-alto (regra do Mauri
 1. `scripts/publicar-apostila.sh rascunhos/aulas/<aula-id>/apostila.pdf <aula-id>` (devolve o número de páginas).
 2. Inclua a aula pelo conector com o SQL da skill `subir-apostila` (`.claude/skills/subir-apostila/SKILL.md`), mas com `publicada = false` (a turma ainda não vê). Use a altura real das páginas no `height` (`python3 -I -c "from PIL import Image; print(Image.open('public/apostilas/<aula-id>/01.webp').size)"`).
 3. Se a `descricao` da matéria não citar o professor, acrescente o nome dele.
-4. Commit `Apostila <Matéria> <N>: <tema> (<P> páginas)` e publique no `main` (regra do manual: `git fetch origin main && git rebase origin/main && git push origin HEAD:main`; depois empurre também o ramo da sessão).
-5. Espere a Vercel: repita `curl -s -o /dev/null -w '%{http_code}' https://medgenius.vercel.app/apostilas/<aula-id>/01.webp` (com a ferramenta Monitor) até dar 200.
+4. Guarde a fonte: copie `apostila.html`, os `*.svg` e os programas das figuras da pasta de trabalho para `apostilas-fonte/<aula-id>/` (sem o `apostila.css`, que fica na raiz de `apostilas-fonte/`). É o que permite corrigir a apostila depois sem remontá-la do PDF.
+5. Commit (com `public/apostilas/<aula-id>/` e `apostilas-fonte/<aula-id>/`) `Apostila <Matéria> <N>: <tema> (<P> páginas)` e publique no `main` (regra do manual: `git fetch origin main && git rebase origin/main && git push origin HEAD:main`; depois empurre também o ramo da sessão).
+6. Espere a Vercel: repita `curl -s -o /dev/null -w '%{http_code}' https://medgenius.vercel.app/apostilas/<aula-id>/01.webp` (com a ferramenta Monitor) até dar 200.
 
 ## 6. Flashcards e questões (um agente só)
 
