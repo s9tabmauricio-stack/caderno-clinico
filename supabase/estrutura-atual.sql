@@ -1,6 +1,6 @@
 -- Estrutura atual do banco do Med Genius (Supabase, projeto xtlpmtylifbalzxnfkib)
 -- Copiada do próprio banco em 02/11/2026 (PostgreSQL 17.11); campo questoes.cai_na_prova incluído em 03/11/2026. Só a estrutura, sem dados.
--- Suspensão individual: alterações descritas na migração 20261103161944_suspensao_individual_flashcards.sql.
+-- Suspensão individual aplicada em 03/11/2026: migração 20261103162543_suspensao_individual_flashcards.sql.
 --
 -- Para que serve: é a referência confiável de como o banco está montado
 -- (tabelas, regras, visões, funções, gatilhos e permissões do esquema public).
