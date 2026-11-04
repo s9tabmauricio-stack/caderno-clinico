@@ -20,3 +20,4 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
+| Revisar flashcards da Pneumo A6 (já no banco) contra a apostila | Claude | claude/gifted-tesla-vitlig | pneumo-a6 (flashcards) | 04/11/2026 |
