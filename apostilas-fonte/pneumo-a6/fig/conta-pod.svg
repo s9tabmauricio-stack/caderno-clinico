@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="478pt" height="158pt" viewBox="0 0 478 158" role="img">
+<title>Como ler a concentração do pod</title><desc>Exemplo da aula: cinco por cento, dez mililitros, dez dias. O resultado estima nicotina contida no líquido consumido, não dose absorvida.</desc>
+<rect x="2" y="3" width="154" height="93" rx="10" fill="white" stroke="#C3D8F8" stroke-width="1"/>
+<text x="14" y="23" font-family="Inter SemiBold" font-size="9" fill="#16315C" text-anchor="start">Concentração</text>
+<text x="79" y="48" font-family="Inter SemiBold" font-size="9.1" fill="#0B5BD3" text-anchor="middle">5% × 10</text>
+<line x1="14" y1="58" x2="144" y2="58" stroke="#C3D8F8" stroke-width="1" stroke-linecap="round"/>
+<text x="79" y="76.0" font-family="Inter SemiBold" font-size="9" fill="#1F2933" text-anchor="middle">50 mg/mL</text>
+<line x1="157" y1="47" x2="161" y2="47" stroke="#8AA9DF" stroke-width="1.5" stroke-linecap="round"/>
+<polygon points="161.00,47.00 158.00,45.26 158.00,48.74" fill="#8AA9DF"/>
+<rect x="162" y="3" width="154" height="93" rx="10" fill="white" stroke="#C3D8F8" stroke-width="1"/>
+<text x="174" y="23" font-family="Inter SemiBold" font-size="9" fill="#16315C" text-anchor="start">Volume do refil</text>
+<text x="239" y="48" font-family="Inter SemiBold" font-size="9.1" fill="#0B5BD3" text-anchor="middle">50 mg/mL × 10 mL</text>
+<line x1="174" y1="58" x2="304" y2="58" stroke="#C3D8F8" stroke-width="1" stroke-linecap="round"/>
+<text x="239" y="76.0" font-family="Inter SemiBold" font-size="9" fill="#1F2933" text-anchor="middle">500 mg no líquido</text>
+<line x1="317" y1="47" x2="321" y2="47" stroke="#8AA9DF" stroke-width="1.5" stroke-linecap="round"/>
+<polygon points="321.00,47.00 318.00,45.26 318.00,48.74" fill="#8AA9DF"/>
+<rect x="322" y="3" width="154" height="93" rx="10" fill="white" stroke="#C3D8F8" stroke-width="1"/>
+<text x="334" y="23" font-family="Inter SemiBold" font-size="9" fill="#16315C" text-anchor="start">Duração do refil</text>
+<text x="399" y="48" font-family="Inter SemiBold" font-size="9.1" fill="#0B5BD3" text-anchor="middle">500 mg ÷ 10 dias</text>
+<line x1="334" y1="58" x2="464" y2="58" stroke="#C3D8F8" stroke-width="1" stroke-linecap="round"/>
+<text x="399" y="76.0" font-family="Inter SemiBold" font-size="9" fill="#1F2933" text-anchor="middle">50 mg/dia no líquido</text>
+<rect x="2" y="108" width="474" height="47" rx="10" fill="#F5F8FF" stroke="#C3D8F8" stroke-width="1"/>
+<text x="239" y="126" font-family="Inter SemiBold" font-size="9.3" fill="#16315C" text-anchor="middle">Conteúdo médio de nicotina no líquido consumido por dia.</text>
+<text x="239" y="144" font-family="Inter" font-size="8.8" fill="#1F2933" text-anchor="middle">A conta não determina quanto foi absorvido pelo organismo.</text>
+</svg>

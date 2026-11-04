@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="478pt" height="130pt" viewBox="0 0 478 130" role="img">
+<title>Exemplo de redução dos adesivos</title><desc>Esquema de três meses apresentado pelo professor para o exemplo de vinte cigarros por dia.</desc>
+<rect x="7" y="3" width="140" height="78" rx="10" fill="white" stroke="#C3D8F8" stroke-width="1"/>
+<text x="77" y="23" font-family="Inter SemiBold" font-size="9" fill="#16315C" text-anchor="middle">1º mês</text>
+<text x="77" y="53" font-family="Inter SemiBold" font-size="22" fill="#0B5BD3" text-anchor="middle">21 mg</text>
+<text x="77" y="69" font-family="Inter" font-size="8.2" fill="#5C6878" text-anchor="middle">um mês nesta etapa</text>
+<line x1="151" y1="42" x2="164" y2="42" stroke="#8AA9DF" stroke-width="1.5" stroke-linecap="round"/>
+<polygon points="164.00,42.00 160.00,39.68 160.00,44.32" fill="#8AA9DF"/>
+<rect x="169" y="3" width="140" height="78" rx="10" fill="white" stroke="#C3D8F8" stroke-width="1"/>
+<text x="239" y="23" font-family="Inter SemiBold" font-size="9" fill="#16315C" text-anchor="middle">2º mês</text>
+<text x="239" y="53" font-family="Inter SemiBold" font-size="22" fill="#0B5BD3" text-anchor="middle">14 mg</text>
+<text x="239" y="69" font-family="Inter" font-size="8.2" fill="#5C6878" text-anchor="middle">um mês nesta etapa</text>
+<line x1="313" y1="42" x2="326" y2="42" stroke="#8AA9DF" stroke-width="1.5" stroke-linecap="round"/>
+<polygon points="326.00,42.00 322.00,39.68 322.00,44.32" fill="#8AA9DF"/>
+<rect x="331" y="3" width="140" height="78" rx="10" fill="white" stroke="#C3D8F8" stroke-width="1"/>
+<text x="401" y="23" font-family="Inter SemiBold" font-size="9" fill="#16315C" text-anchor="middle">3º mês</text>
+<text x="401" y="53" font-family="Inter SemiBold" font-size="22" fill="#0B5BD3" text-anchor="middle">7 mg</text>
+<text x="401" y="69" font-family="Inter" font-size="8.2" fill="#5C6878" text-anchor="middle">um mês nesta etapa</text>
+<rect x="7" y="92" width="464" height="34" rx="10" fill="#F5F8FF" stroke="#C3D8F8" stroke-width="1"/>
+<text x="239" y="106" font-family="Inter SemiBold" font-size="8.5" fill="#16315C" text-anchor="middle">EXEMPLO · 20 cigarros/dia</text>
+<text x="239" y="119" font-family="Inter" font-size="8.7" fill="#1F2933" text-anchor="middle">Troca diária e alternância do local de aplicação.</text>
+</svg>
