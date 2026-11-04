@@ -45,4 +45,4 @@ python render.py apostila.html "Pneumologia - Aula 6 - Dr. Cássio - Tabagismo.p
 python checar.py "Pneumologia - Aula 6 - Dr. Cássio - Tabagismo.pdf" apostila.html
 ```
 
-O PDF foi preparado para entrega e revisão nesta conversa; não foi publicado no site.
+Os arquivos de publicação ficam em `public/apostilas/pneumo-a6/`: PDF e 16 páginas em WebP. A aula do site tem o identificador `pneumo-a6`.
