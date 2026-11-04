@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="478pt" height="152pt" viewBox="0 0 478 152" role="img">
+<title>Três dimensões da dependência</title><desc>As dependências física, psicológica e comportamental devem ser consideradas juntas.</desc>
+<rect x="2" y="3" width="154" height="96" rx="10" fill="white" stroke="#C3D8F8" stroke-width="1"/>
+<text x="14" y="25" font-family="Inter SemiBold" font-size="10.4" fill="#16315C" text-anchor="start">Física</text>
+<text x="14" y="44.0" font-family="Inter SemiBold" font-size="8.7" fill="#0B5BD3" text-anchor="start">Nicotina e abstinência</text>
+<text x="14" y="65.0" font-family="Inter" font-size="9" fill="#1F2933" text-anchor="start">O corpo pede reposição.</text>
+<line x1="79" y1="99" x2="79" y2="111" stroke="#8AA9DF" stroke-width="1.5" stroke-linecap="round"/>
+<rect x="162" y="3" width="154" height="96" rx="10" fill="white" stroke="#C3D8F8" stroke-width="1"/>
+<text x="174" y="25" font-family="Inter SemiBold" font-size="10.4" fill="#16315C" text-anchor="start">Psicológica</text>
+<text x="174" y="44.0" font-family="Inter SemiBold" font-size="8.7" fill="#0B5BD3" text-anchor="start">Emoções e contexto</text>
+<text x="174" y="65.0" font-family="Inter" font-size="9" fill="#1F2933" text-anchor="start">Ansiedade, estresse e</text>
+<text x="174" y="78.5" font-family="Inter" font-size="9" fill="#1F2933" text-anchor="start">busca de concentração.</text>
+<line x1="239" y1="99" x2="239" y2="111" stroke="#8AA9DF" stroke-width="1.5" stroke-linecap="round"/>
+<rect x="322" y="3" width="154" height="96" rx="10" fill="white" stroke="#C3D8F8" stroke-width="1"/>
+<text x="334" y="25" font-family="Inter SemiBold" font-size="10.4" fill="#16315C" text-anchor="start">Comportamental</text>
+<text x="334" y="44.0" font-family="Inter SemiBold" font-size="8.7" fill="#0B5BD3" text-anchor="start">Rotina e gatilhos</text>
+<text x="334" y="65.0" font-family="Inter" font-size="9" fill="#1F2933" text-anchor="start">Café, carro e</text>
+<text x="334" y="78.5" font-family="Inter" font-size="9" fill="#1F2933" text-anchor="start">pós-refeição.</text>
+<line x1="399" y1="99" x2="399" y2="111" stroke="#8AA9DF" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="79" y1="111" x2="399" y2="111" stroke="#8AA9DF" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="239" y1="111" x2="239" y2="121" stroke="#8AA9DF" stroke-width="1.5" stroke-linecap="round"/>
+<polygon points="239.00,121.00 241.32,117.00 236.68,117.00" fill="#8AA9DF"/>
+<rect x="53" y="123" width="372" height="26" rx="10" fill="#F5F8FF" stroke="#C3D8F8" stroke-width="1"/>
+<text x="239" y="140" font-family="Inter SemiBold" font-size="9.5" fill="#16315C" text-anchor="middle">O cuidado precisa alcançar as três dimensões.</text>
+</svg>

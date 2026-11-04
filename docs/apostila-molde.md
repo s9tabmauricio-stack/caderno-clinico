@@ -20,6 +20,14 @@ Sem slides, o mapa liga capítulos a minutos da transcrição.
 - **O que ele disse que tirou da aula** (ex.: "não falo mais de neoplasias de pleura") não entra como conteúdo, nem se estiver no slide. O que ele deu, mesmo sendo sobre câncer (derrame neoplásico, pleurodese), entra.
 - **O que o professor fala manda sempre** (regra do Mauricio, 02/11/2026). Slide e fala divergem (um número, um corte, uma definição): a apostila ensina e marca PROVA pela fala; o valor do slide aparece numa linha, só como registro, e entra na lista do que conferir. Se um livro disser outra coisa, no máximo uma linha roxa "Nos livros", sem mudar nem enfraquecer o que ele ensinou.
 
+## Redação da apostila
+
+- **A apostila é um material de estudo com leitura autônoma.** Ensine o conteúdo diretamente, sem narrar repetidamente que "o professor disse", "comentou" ou "explicou".
+- **O PDF não mostra o processo de produção:** não mencionar gravação, áudio, transcrição, minutagem, ruídos, trechos ininteligíveis, lacunas da fonte nem ausência de slides. A rastreabilidade, as dúvidas e o que falta conferir ficam no mapa e nos arquivos internos de revisão.
+- **As citações do professor devem permanecer**, com autoria e sem minutagem, quando destacarem lições de vida e profissão, experiência clínica, humanidade, ética, relação com o paciente ou sinais do que pode ser cobrado na prova. Selecione as que ensinam algo; não transforme cada explicação técnica em citação.
+- **PROVA exige fundamento no que ele sinalizou:** vale uma indicação direta ou uma insinuação inequívoca de cobrança. Registre a evidência no mapa; não invente uma promessa de prova a partir da importância do assunto.
+- Notas clínicas, limites dos dados e referências científicas continuam quando necessários, com redação natural e a identificação roxa de complemento quando couber, sem expor problemas de gravação ou de elaboração da apostila.
+
 ## Antes de escrever: o mapa
 
 `mapa.md` na pasta da aula, curto, em tópicos:

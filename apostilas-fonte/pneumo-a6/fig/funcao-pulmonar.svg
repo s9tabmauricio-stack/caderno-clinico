@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="478pt" height="220pt" viewBox="0 0 478 220" role="img">
+<title>Cessar muda o ritmo de perda</title><desc>Esquema qualitativo: a função pulmonar já perdida não se recupera automaticamente, mas a cessação reduz o ritmo de perda futura.</desc>
+<text x="9" y="12" font-family="Inter SemiBold" font-size="9" fill="#16315C" text-anchor="start">Função pulmonar</text>
+<line x1="37" y1="25" x2="37" y2="153" stroke="#5C6878" stroke-width="1" stroke-linecap="round"/>
+<line x1="37" y1="153" x2="451" y2="153" stroke="#5C6878" stroke-width="1" stroke-linecap="round"/>
+<polygon points="451.00,153.00 447.00,150.68 447.00,155.32" fill="#5C6878"/>
+<text x="451" y="168" font-family="Inter" font-size="8.7" fill="#5C6878" text-anchor="end">Idade / passagem do tempo</text>
+<path d="M 45 35 C 143 40 220 51 440 78" fill="none" stroke="#8AA9DF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 45 35 C 100 44 158 61 215 80 C 294 106 360 126 440 146" fill="none" stroke="#16315C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 215 80 C 283 88 363 98 440 110" fill="none" stroke="#0B5BD3" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="6 4"/>
+<circle cx="215" cy="80" r="3.5" fill="#0B5BD3"/>
+<line x1="215" y1="76" x2="215" y2="68" stroke="#0B5BD3" stroke-width="1" stroke-linecap="round"/>
+<text x="215" y="61" font-family="Inter SemiBold" font-size="8.8" fill="#0B5BD3" text-anchor="middle">Cessação</text>
+<line x1="10" y1="180" x2="32" y2="180" stroke="#8AA9DF" stroke-width="2.2" stroke-linecap="round"/>
+<text x="39" y="183" font-family="Inter" font-size="8.5" fill="#1F2933" text-anchor="start">Sem tabagismo</text>
+<line x1="169" y1="180" x2="191" y2="180" stroke="#16315C" stroke-width="2.2" stroke-linecap="round"/>
+<text x="198" y="183" font-family="Inter" font-size="8.5" fill="#1F2933" text-anchor="start">Continua fumando</text>
+<line x1="333" y1="180" x2="355" y2="180" stroke="#0B5BD3" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="6 4"/>
+<text x="362" y="183" font-family="Inter" font-size="8.5" fill="#1F2933" text-anchor="start">Após cessar</text>
+<rect x="7" y="195" width="464" height="22" rx="10" fill="#F5F8FF" stroke="#C3D8F8" stroke-width="1"/>
+<text x="239" y="210" font-family="Inter" font-size="8.5" fill="#1F2933" text-anchor="middle">Esquema qualitativo, sem escala: cessar reduz a perda futura.</text>
+</svg>
