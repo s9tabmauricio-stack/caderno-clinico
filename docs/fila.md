@@ -20,3 +20,4 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
+| copiar skill apostila-padrao para o projeto | Claude | `claude/apostila-padrao-no-projeto` | `.claude/skills/apostila-padrao/`, `.claude/agents/apostila.md` | 2026-11-03 |
