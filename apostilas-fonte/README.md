@@ -21,8 +21,8 @@ como PDF e imagens em `public/apostilas/`.
   figuras, para quando for preciso mudar uma.
 
 `apostila.css` fica na raiz desta pasta, numa cópia só, porque é o mesmo para
-todas. Ele vem do padrão das apostilas (a habilidade `apostila-padrao`, no
-claude.ai), que é onde ele deve ser alterado.
+todas. Ele vem do padrão das apostilas (a skill `apostila-padrao`, em
+`.claude/skills/apostila-padrao/`), que é onde ele deve ser alterado.
 
 ## Como gerar o PDF de novo
 
