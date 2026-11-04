@@ -20,4 +20,3 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
-| Questões da Pneumo A6 | Claude | claude/determined-franklin-g7ohur | pneumo-a6 (questões) | 04/11/2026 |
