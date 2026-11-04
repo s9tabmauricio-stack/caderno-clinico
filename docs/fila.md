@@ -20,4 +20,4 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
-| Revisar flashcards da Pneumo A6 (já no banco) contra a apostila | Claude | claude/gifted-tesla-vitlig | pneumo-a6 (flashcards) | 04/11/2026 |
+| Conferir flashcards da Pneumo A6 (já no banco) com a nova skill conferir-flashcards (assumido da sessão parada, com o "pode" do Mauricio) | Claude | claude/kind-sagan-yq30qx | pneumo-a6 (flashcards); .claude/skills/conferir-flashcards; AGENTS.md | 04/11/2026 |
