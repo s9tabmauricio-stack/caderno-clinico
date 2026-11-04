@@ -20,4 +20,3 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
-| Incluir flashcards aprovados Pneumo A6 | Codex | codex/flashcards-pneumo-a6 | public.flashcards: pneumo-a6; rascunhos/flashcards/pneumo-a6.md | 04/11/2026 |
