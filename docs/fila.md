@@ -20,3 +20,4 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
+| Publicar apostila de Tabagismo | Codex | codex/apostila-tabagismo-a6 | pneumo-a6; public/apostilas/pneumo-a6; apostilas-fonte/pneumo-a6; docs/apostila-molde.md | 03/11/2026 |
