@@ -25,6 +25,7 @@ Este manual tem só as regras de sempre. Os detalhes ficam onde são usados; lei
 | Subir ou trocar uma apostila | skill `subir-apostila` (`.claude/skills/subir-apostila/SKILL.md`) |
 | Regras das questões e dos flashcards (formato, origem, PROVA, Revalida) | skill `questoes-e-flashcards` e os agentes em `.claude/agents/` |
 | Conferir as questões de uma aula contra a apostila | skill `conferir-questoes` (`.claude/skills/conferir-questoes/SKILL.md`) |
+| Conferir os flashcards de uma aula (já no banco) contra a apostila, em blocos ao mesmo tempo | skill `conferir-flashcards` (`.claude/skills/conferir-flashcards/SKILL.md`) |
 | Bula de medicamento no chat | skill `bula-padrao` (`.claude/skills/bula-padrao/SKILL.md`) |
 | Lançar provas na Agenda | skill `provas-agenda` |
 | Aula nova a partir do áudio | skill `aula-nova` |
