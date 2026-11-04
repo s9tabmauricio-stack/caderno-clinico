@@ -20,4 +20,3 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
-| Preparar e revisar questões da Pneumo A6 | Codex | codex/questoes-pneumo-a6 | pneumo-a6; rascunhos/questoes/pneumo-a6.md | 04/11/2026 |
