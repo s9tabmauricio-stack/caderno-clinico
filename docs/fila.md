@@ -20,3 +20,4 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
+| Rascunho de flashcards de Pneumologia 6 | Codex | rascunho local | pneumo-a6 | 2026-11-04 |
