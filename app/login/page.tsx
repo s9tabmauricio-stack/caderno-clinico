@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from 'next'
+import { destinoAposLogin } from '@/lib/auth'
 import { LoginForm } from '@/components/LoginForm'
 import { TemaEscolha } from '@/components/TemaEscolha'
 
@@ -107,7 +108,8 @@ function Dendritos() {
   )
 }
 
-export default function LoginPage() {
+export default async function LoginPage({ searchParams }: PageProps<'/login'>) {
+  const destino = destinoAposLogin((await searchParams).next)
   return (
     <main className="tela-entrar">
       <div className="lg-palco">
@@ -121,7 +123,7 @@ export default function LoginPage() {
         </div>
         <div className="lg-acesso">
           <section className="lg-vidro" aria-label="Entrar">
-            <LoginForm />
+            <LoginForm destino={destino} />
           </section>
           <TemaEscolha />
         </div>

@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation'
 import { createClient } from '@/lib/supabase/client'
 import { cpfParaEmail, formatarCpf, soDigitos } from '@/lib/cpf'
 
-export function LoginForm() {
+export function LoginForm({ destino = '/' }: { destino?: string }) {
   const router = useRouter()
   const [cpf, setCpf] = useState('')
   const [senha, setSenha] = useState('')
@@ -52,7 +52,7 @@ export function LoginForm() {
       return
     }
     setEntrou(true)
-    router.replace('/')
+    router.replace(destino)
     router.refresh()
   }
 
