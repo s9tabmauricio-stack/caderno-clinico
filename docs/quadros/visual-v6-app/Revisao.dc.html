@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Revisão</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="./tema.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+</style>
+</helmet>
+<div style="width: 908px; height: 960px; box-sizing: border-box; padding: 40px; display: flex; gap: 48px; background: #24272D; font-family: Inter, system-ui, sans-serif">
+<sc-for list="{{modos}}" as="m" hint-placeholder-count="2">
+<div style="display: flex; flex-direction: column; gap: 16px">
+<div class="modo-rotulo">{{m.nome}}</div>
+<div class="tela {{m.classe}}">
+<svg class="decor" viewBox="0 0 390 844" aria-hidden="true">
+<path class="tr" d="M390 210H360L344 226V280"></path>
+<path class="tr" d="M0 610H24L40 594V556"></path>
+<path class="tr" d="M0 700H16L32 716V760"></path>
+<circle class="tr-fim" cx="344" cy="284" r="3"></circle>
+<circle class="tr-fim" cx="40" cy="552" r="3"></circle>
+<path class="ra" d="M284 18C300 52 326 80 372 100"></path>
+<path class="ga" d="M322 70C340 62 352 46 358 26"></path>
+<circle class="halo" cx="372" cy="100" r="8"></circle><circle class="pt" cx="372" cy="100" r="2.6"></circle>
+<circle class="halo" cx="358" cy="26" r="7"></circle><circle class="pt" cx="358" cy="26" r="2.2"></circle>
+</svg>
+<div class="conteudo">
+<header class="topo">
+<div>
+<div class="eyebrow">Fila de hoje</div>
+<h1 class="titulo">Revisão</h1>
+</div>
+<a class="engrenagem" href="#" aria-label="Configurações"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg></a>
+</header>
+
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px">
+<div class="vidro" style="padding: 10px; border-radius: 20px; display: flex; flex-direction: column; align-items: center; gap: 3px"><span class="n-ouro" style="font-size: 24px">24</span><span class="s">para revisar</span></div>
+<div class="vidro" style="padding: 10px; border-radius: 20px; display: flex; flex-direction: column; align-items: center; gap: 3px"><span class="n-ouro" style="font-size: 24px">8</span><span class="s">novos</span></div>
+<div class="vidro" style="padding: 10px; border-radius: 20px; display: flex; flex-direction: column; align-items: center; gap: 3px"><span class="n-ouro" style="font-size: 24px">6</span><span class="s">feitos hoje</span></div>
+</div>
+
+<div class="capsulas" role="group" aria-label="Filtrar por matéria">
+<button class="capsula ativa" type="button" aria-pressed="true">Todas · 32</button>
+<button class="capsula" type="button"><span class="ponto-m" style="background: #2563EB; width: 8px; height: 8px"></span>Nefrologia · 14</button>
+<button class="capsula" type="button"><span class="ponto-m" style="background: #6D28D9; width: 8px; height: 8px"></span>Urologia · 10</button>
+<button class="capsula" type="button"><span class="ponto-m" style="background: #0E7490; width: 8px; height: 8px"></span>Pneumo · 8</button>
+</div>
+
+<section class="vidro" aria-label="Flashcard" style="flex: 1; padding: 18px; border-radius: 28px; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; align-items: center; justify-content: space-between">
+<span style="display: flex; align-items: center; gap: 10px"><span class="gema p" style="background: linear-gradient(145deg, #2563EB, #1E3A8A)">NE</span><span class="s">Nefrologia · Aula 2</span></span>
+<span class="s num">7 de 32</span>
+</div>
+<div>
+<div class="eyebrow" style="margin-bottom: 6px">Frente</div>
+<div style="font-size: 19px; font-weight: 600; line-height: 1.35">Quais são os três sinais clássicos da síndrome nefrítica?</div>
+</div>
+<div style="height: 1px; background: var(--divisor)"></div>
+<div>
+<div class="eyebrow" style="margin-bottom: 6px">Verso</div>
+<div style="font-size: 16px; line-height: 1.45; color: var(--texto2)">Hematúria, hipertensão e edema, muitas vezes com oligúria.</div>
+</div>
+</section>
+
+<div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px">
+<button class="btn-vidro" type="button" style="flex-direction: column; gap: 3px; min-height: 56px; padding: 0 4px; color: var(--errado)">Errei<span class="s" style="font-size: 11.5px; font-weight: 500">10 min</span></button>
+<button class="btn-vidro" type="button" style="flex-direction: column; gap: 3px; min-height: 56px; padding: 0 4px; color: var(--ambar)">Difícil<span class="s" style="font-size: 11.5px; font-weight: 500">1 dia</span></button>
+<button class="btn-ouro" type="button" style="min-height: 56px; border-radius: 22px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; font-size: 13px; letter-spacing: .08em">Bom<span style="font-family: Inter, sans-serif; font-size: 11.5px; font-weight: 600; letter-spacing: 0; text-transform: none">3 dias</span></button>
+<button class="btn-vidro azul" type="button" style="flex-direction: column; gap: 3px; min-height: 56px; padding: 0 4px">Fácil<span class="s" style="font-size: 11.5px; font-weight: 500">6 dias</span></button>
+</div>
+</div>
+
+<nav class="abas" aria-label="Navegação principal">
+<a class="aba" href="Main.dc.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-7 9 7"></path><path d="M5 10v10h14V10"></path></svg>Início</a>
+<a class="aba" href="Agenda.dc.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"></rect><path d="M3 10h18M8 3v4M16 3v4"></path></svg>Agenda</a>
+<a class="aba" href="Materias.dc.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V5a2 2 0 0 1 2-2h14v14H6a2 2 0 0 0-2 2zm0 0a2 2 0 0 0 2 2h14"></path></svg>Matérias</a>
+<a class="aba ativa" href="Revisao.dc.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="14" height="14" rx="2"></rect><path d="M7 3h12a2 2 0 0 1 2 2v12"></path></svg>Revisão<span class="badge">24</span></a>
+<a class="aba" href="Desempenho.dc.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20V11M11 20V5M17 20v-7M3 20h18"></path></svg>Desempenho</a>
+</nav>
+</div>
+</div>
+</sc-for>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":908,"height":960}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      modos: [
+        { classe: 'noite', nome: 'Noite (padrão)' },
+        { classe: 'dia', nome: 'Dia' },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

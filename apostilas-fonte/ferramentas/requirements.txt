@@ -1,0 +1,5 @@
+# Programas para gerar e conferir o PDF das apostilas (instalados pelo preparar.sh).
+weasyprint>=60
+pdfplumber>=0.11
+pillow>=10
+fonttools>=4.40

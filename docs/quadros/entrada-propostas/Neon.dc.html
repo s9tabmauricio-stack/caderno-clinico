@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Proposta 1: Neon com foco</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+input{outline:none}
+input::placeholder{color:#8A93AB}
+</style>
+</helmet>
+<main style="width: 390px; height: 844px; box-sizing: border-box; padding: 112px 24px 40px; display: flex; flex-direction: column; align-items: center; gap: 26px; background: radial-gradient(388px 320px at 0% 0%, rgba(0,184,240,.22), transparent 70%), radial-gradient(388px 338px at 100% 8%, rgba(106,92,255,.22), transparent 70%), #0A0D1C; font-family: Inter, system-ui, sans-serif; color: #DCE1EE">
+  <img src="/_blob/ef85e9d553e972ca2d763a04526a1ec9" alt="Logo Med Genius" style="flex: none; display: block; width: 118px; height: auto; filter: drop-shadow(0 14px 30px rgba(79,221,255,.32))">
+  <div style="display: flex; flex-direction: column; align-items: center; gap: 8px; text-align: center">
+    <h1 style="margin: 0; font-family: Cinzel, serif; font-size: 31px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: #F4F7FF">Med Genius</h1>
+    <p style="margin: 0; font-size: 11.5px; font-weight: 600; letter-spacing: .28em; text-transform: uppercase; color: #9AA3BA">Medicina · FAG</p>
+  </div>
+  <form style="width: 100%; box-sizing: border-box; margin-top: 6px; padding: 22px 18px 20px; border-radius: 24px; border: 1px solid rgba(255,255,255,.14); background: linear-gradient(160deg, rgba(255,255,255,.08), rgba(255,255,255,.035)); box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 18px 44px rgba(0,0,0,.45); backdrop-filter: blur(18px); display: flex; flex-direction: column; gap: 6px">
+    <label for="cpf" style="font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: #9AA3BA">CPF</label>
+    <div style="height: 52px; box-sizing: border-box; display: flex; align-items: center; gap: 10px; padding: 0 42px 0 14px; border-radius: 14px; border: 1px solid #4FDDFF; background: rgba(255,255,255,.06); box-shadow: 0 0 0 4px rgba(79,221,255,.18)">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4FDDFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></svg>
+      <input id="cpf" inputmode="numeric" placeholder="000.000.000-00" style="flex: 1; min-width: 0; height: 100%; padding: 0; border: 0; background: transparent; color: #F5F7FD; font: inherit; font-size: 16px; text-align: center">
+    </div>
+    <label for="senha" style="margin-top: 8px; font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: #9AA3BA">Senha</label>
+    <div style="height: 52px; box-sizing: border-box; display: flex; align-items: center; gap: 10px; padding: 0 2px 0 14px; border-radius: 14px; border: 1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.06)">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9AA3BA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none"><rect x="4" y="11" width="16" height="10" rx="2"></rect><path d="M8 11V7a4 4 0 0 1 8 0v4"></path></svg>
+      <input id="senha" type="password" placeholder="Sua senha" style="flex: 1; min-width: 0; height: 100%; padding: 0; border: 0; background: transparent; color: #F5F7FD; font: inherit; font-size: 16px; text-align: center">
+      <button type="button" aria-label="Mostrar a senha" style="flex: none; width: 44px; height: 44px; border: 0; border-radius: 50%; background: transparent; color: #9AA3BA; display: grid; place-items: center; cursor: pointer">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+      </button>
+    </div>
+    <button type="button" style="margin-top: 14px; width: 100%; min-height: 52px; border: 0; border-radius: 14px; background: #4FDDFF; color: #061321; font-family: Cinzel, serif; font-size: 16px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; box-shadow: 0 8px 24px rgba(79,221,255,.3); cursor: pointer">Entrar</button>
+  </form>
+</main>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Início</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="./tema.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+</style>
+</helmet>
+<div style="width: 908px; height: 960px; box-sizing: border-box; padding: 40px; display: flex; gap: 48px; background: #24272D; font-family: Inter, system-ui, sans-serif">
+<sc-for list="{{modos}}" as="m" hint-placeholder-count="2">
+<div style="display: flex; flex-direction: column; gap: 16px">
+<div class="modo-rotulo">{{m.nome}}</div>
+<div class="tela {{m.classe}}">
+<svg class="decor" viewBox="0 0 390 844" aria-hidden="true">
+<path class="tr" d="M390 210H360L344 226V280"></path>
+<path class="tr" d="M0 610H24L40 594V556"></path>
+<path class="tr" d="M0 700H16L32 716V760"></path>
+<circle class="tr-fim" cx="344" cy="284" r="3"></circle>
+<circle class="tr-fim" cx="40" cy="552" r="3"></circle>
+<path class="ra" d="M284 18C300 52 326 80 372 100"></path>
+<path class="ga" d="M322 70C340 62 352 46 358 26"></path>
+<circle class="halo" cx="372" cy="100" r="8"></circle><circle class="pt" cx="372" cy="100" r="2.6"></circle>
+<circle class="halo" cx="358" cy="26" r="7"></circle><circle class="pt" cx="358" cy="26" r="2.2"></circle>
+</svg>
+<div class="conteudo">
+<header class="topo">
+<div>
+<div class="eyebrow">Terça · 21 de outubro</div>
+<h1 class="titulo">{{m.saudacao}}, Mauricio</h1>
+</div>
+<a class="engrenagem" href="#" aria-label="Configurações"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg></a>
+</header>
+
+<section class="vidro destaque" aria-label="Revisão de hoje">
+<div class="eyebrow">Revisão de hoje</div>
+<div style="display: flex; align-items: center; gap: 14px">
+<span class="n-ouro" style="font-size: 54px">24</span>
+<span style="display: flex; flex-direction: column; gap: 2px">
+<span class="t" style="font-size: 17px">cards para revisar</span>
+<span class="s">e mais 8 novos para começar</span>
+</span>
+</div>
+<a class="btn-ouro" href="Revisao.dc.html">Começar revisão</a>
+</section>
+
+<div class="sec"><span>Suas aulas hoje</span><a href="Agenda.dc.html">Semana →</a></div>
+<div class="vidro lista">
+<a class="linha" href="Materias.dc.html" style="min-height: 58px">
+<span class="num" style="width: 46px; display: flex; flex-direction: column; font-size: 14px; font-weight: 700"><span>10:00</span><span class="s" style="font-weight: 500">11:40</span></span>
+<span class="ponto-m" style="background: #6D28D9"></span>
+<span class="main"><span class="materia">Urologia</span><span class="s">Teórica · Aula 3</span></span>
+<span class="chip azul">Agora</span>
+</a>
+<a class="linha" href="Materias.dc.html" style="min-height: 58px">
+<span class="num" style="width: 46px; display: flex; flex-direction: column; font-size: 14px; font-weight: 700"><span>14:00</span><span class="s" style="font-weight: 500">17:00</span></span>
+<span class="ponto-m" style="background: #0E7490"></span>
+<span class="main"><span class="materia">Pneumologia</span><span class="s">Prática · Grupo 12</span></span>
+<span class="s">em 4 h</span>
+</a>
+</div>
+
+<div class="sec"><span>Continuar</span><a href="Materias.dc.html">Matérias →</a></div>
+<div class="vidro lista">
+<a class="linha" href="Questao.dc.html">
+<span class="gema p" style="background: linear-gradient(145deg, #2563EB, #1E3A8A)">2</span>
+<span class="main"><span class="t">Síndrome nefrítica</span><span class="s">Nefrologia · 60% concluído</span></span>
+<svg class="ico p chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg>
+</a>
+</div>
+
+<div class="sec"><span>Seu progresso</span></div>
+<a href="Desempenho.dc.html" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px">
+<span class="vidro" style="padding: 12px 10px; border-radius: 20px; display: flex; flex-direction: column; align-items: center; gap: 4px">
+<span class="n-ouro" style="font-size: 24px">142</span><span class="s">questões</span>
+</span>
+<span class="vidro" style="padding: 12px 10px; border-radius: 20px; display: flex; flex-direction: column; align-items: center; gap: 4px">
+<span class="n-ouro" style="font-size: 24px">78%</span><span class="s">de acerto</span>
+</span>
+<span class="vidro" style="padding: 12px 10px; border-radius: 20px; display: flex; flex-direction: column; align-items: center; gap: 4px">
+<span class="n-ouro" style="font-size: 24px">310</span><span class="s">cards vistos</span>
+</span>
+</a>
+</div>
+
+<nav class="abas" aria-label="Navegação principal">
+<a class="aba ativa" href="Main.dc.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-7 9 7"></path><path d="M5 10v10h14V10"></path></svg>Início</a>
+<a class="aba" href="Agenda.dc.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"></rect><path d="M3 10h18M8 3v4M16 3v4"></path></svg>Agenda</a>
+<a class="aba" href="Materias.dc.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V5a2 2 0 0 1 2-2h14v14H6a2 2 0 0 0-2 2zm0 0a2 2 0 0 0 2 2h14"></path></svg>Matérias</a>
+<a class="aba" href="Revisao.dc.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="14" height="14" rx="2"></rect><path d="M7 3h12a2 2 0 0 1 2 2v12"></path></svg>Revisão<span class="badge">24</span></a>
+<a class="aba" href="Desempenho.dc.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20V11M11 20V5M17 20v-7M3 20h18"></path></svg>Desempenho</a>
+</nav>
+</div>
+</div>
+</sc-for>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":908,"height":960}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      modos: [
+        { classe: 'noite', nome: 'Noite (padrão)', saudacao: 'Boa noite' },
+        { classe: 'dia', nome: 'Dia', saudacao: 'Bom dia' },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

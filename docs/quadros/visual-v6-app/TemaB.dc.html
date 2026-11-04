@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>B · Um botão que alterna</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="./tema.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+</style>
+</helmet>
+<div style="width: 470px; height: 960px; box-sizing: border-box; padding: 40px; display: flex; flex-direction: column; gap: 16px; background: #24272D; font-family: Inter, system-ui, sans-serif">
+<div class="modo-rotulo" style="letter-spacing: .1em">B · Agora: {{estado}}</div>
+<div style="position: relative; width: 390px; height: 844px">
+<dc-import name="EntradaBase" classe="{{classe}}" hint-size="390px,844px"></dc-import>
+<div class="tema-camada {{classe}}">
+<button class="tema-vidro tema-unico" type="button" aria-label="Aparência: {{rotulo}}. Toque para trocar" onClick="{{trocar}}" style="top: 18px; right: 18px">
+<sc-if value="{{ehAuto}}" hint-placeholder-val="{{ true }}"><svg class="tema-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"></circle><path d="M12 4a8 8 0 0 1 0 16z" fill="currentColor"></path></svg></sc-if>
+<sc-if value="{{ehDia}}" hint-placeholder-val="{{ false }}"><svg class="tema-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg></sc-if>
+<sc-if value="{{ehNoite}}" hint-placeholder-val="{{ false }}"><svg class="tema-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path></svg></sc-if>
+<span>{{rotulo}}</span>
+</button>
+</div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":470,"height":960}}'>
+class Component extends DCLogic {
+  componentDidMount() {
+    try {
+      const claro = window.matchMedia('(prefers-color-scheme: light)').matches;
+      this.setState({ sistema: claro ? 'dia' : 'noite' });
+    } catch (e) {}
+  }
+  renderVals() {
+    const s = this.state || {};
+    const modo = s.modo || 'auto';
+    const sistema = s.sistema || 'noite';
+    const classe = modo === 'auto' ? sistema : modo;
+    const proximo = { auto: 'dia', dia: 'noite', noite: 'auto' };
+    const estado = modo === 'auto' ? 'Automático (' + (sistema === 'dia' ? 'dia' : 'noite') + ' no aparelho)' : modo === 'dia' ? 'Dia' : 'Noite';
+    return {
+      classe, estado,
+      rotulo: modo === 'auto' ? 'Automático' : modo === 'dia' ? 'Dia' : 'Noite',
+      ehAuto: modo === 'auto', ehDia: modo === 'dia', ehNoite: modo === 'noite',
+      trocar: () => this.setState({ modo: proximo[modo] }),
+    };
+  }
+}
+</script>
+</body>
+</html>

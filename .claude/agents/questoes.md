@@ -74,18 +74,14 @@ O `PROVA ·` no título da questão vira `cai_na_prova = true` no banco (põe a 
 
 ## Incluir
 
-1. Leia `rascunhos/questoes/<aula-id>.md` como está agora. Se não existir, pare e diga.
-2. Repita a consulta do passo 1 do Preparar para pegar `questoes` (o total atual da aula), `ultima_ordem` e `ultimo_numero`, e confira que os enunciados do rascunho ainda não estão no banco (se a aula já tiver questões, compare com os enunciados delas; se o rascunho já foi gravado, pare e diga).
-3. Grave em lotes de até 20 questões por chamada:
-   `insert into public.questoes (id, materia_id, aula_id, ordem, enunciado, alternativas, correta, comentario, por_que_erradas, tema, prova, fonte, origem, cai_na_prova) values ('<aula-id>-q01', '<materia>', '<aula-id>', <ultima_ordem + 1>, '…', '["…","…","…","…","…"]'::jsonb, 1, '…', 'A: …' || chr(10) || 'C, D e E: …', '<tema>', null, 'Montada (aula 2026)', 'montada', true) on conflict (id) do nothing returning id;`
-   - id: a questão N do rascunho vira `<aula-id>-q<ultimo_numero + N>`, com dois dígitos até 99 (`-q01`… `-q99`) e depois `-q100`. Numa aula sem questões, `ultimo_numero` é 0 e os ids começam em `-q01`; numa aula que já tem até a `-q12`, a primeira do rascunho vira `-q13`. Nunca reaproveite um número que já existe: o `on conflict` pularia a questão sem avisar.
-   - O `returning id` devolve os ids gravados: se um lote devolver menos do que mandou, pare e diga quais ficaram de fora.
-   - `ordem` continua depois da última ordem da matéria, na ordem do rascunho.
-   - `fonte` = `'Montada (aula <ano da aula>)'`, hoje sempre `'Montada (aula 2026)'`, igual às que já estão no banco.
-   - `cai_na_prova` = `true` quando o título da questão no rascunho tem `PROVA ·`; `false` nas outras. `prova` fica `null`.
-   - `alternativas` sem a letra; `correta` = índice da letra com `*` (A = 0, B = 1…).
-   - Aspas simples dentro do texto viram duas (''). Quebras de linha do "por que as erradas" com `chr(10)`.
-4. Confira: `select count(*) from public.questoes where aula_id = '<aula-id>' and substituida_por is null;` tem de dar o total do passo 2 mais as questões do rascunho.
-5. Responda com o número gravado. Não faça commit nem push.
+**Não reescreva as questões em SQL** (regra do Mauricio, 04/11/2026: é a parte mais cara e é mecânica): o programa lê o rascunho e grava.
+
+1. `node scripts/gravar-rascunho.mjs <aula-id> --so-questoes`. Ele lê `rascunhos/questoes/<aula-id>.md` como está agora e aplica as regras abaixo, confere antes que os enunciados ainda não estão no banco, grava em lotes de 20 e confere a contagem no fim. Precisa da chave `SUPABASE_SECRET_KEY` no ambiente ou em `.env.local`.
+   - id: a questão N vira `<aula-id>-q<ultimo_numero + N>` (dois dígitos até 99, depois `-q100`), contando as versões `-v2` e as substituídas; nunca reaproveita número.
+   - `ordem` continua depois da última ordem da matéria; `fonte = 'Montada (aula <ano>)'`; `origem = 'montada'`; `prova = null`; `cai_na_prova = true` quando o título tem `PROVA ·`.
+   - `alternativas` sem a letra; `correta` = índice da letra com `*` (A = 0); quebras de linha do "por que as erradas" mantidas.
+2. Se ele parar (`PAROU: …`, com o número da questão), corrija o formato no rascunho e rode de novo. Se disser que o rascunho já foi gravado, pare e diga.
+3. **Sem a chave**: rode no conector a consulta que o programa mostra, depois `node scripts/gravar-rascunho.mjs <aula-id> --so-questoes --sql --ultima-ordem <N> --ultimo-numero <N>`; ele escreve os lotes em `rascunhos/sql/`. Rode cada arquivo no conector, em ordem, e confira: `select count(*) from public.questoes where aula_id = '<aula-id>' and substituida_por is null;`.
+4. Responda com o número gravado. Não faça commit nem push.
 
 Pelo conector, apagar e reescrever textos longos é cancelado: não tente. Questão errada depois de gravada se corrige com uma versão nova (`<id>-v2`), como está no manual.

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Tela de entrada</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#6FC3FF}a:hover{color:#A9DCFF}
+.moldura{border:3px solid transparent;background:linear-gradient(160deg,#18213A,#0B0F1C) padding-box,linear-gradient(135deg,#FBEFC4,#CFA74E 25%,#6B4E18 50%,#EED487 75%,#8E6C25) border-box;box-shadow:0 22px 50px rgba(0,0,0,.65),0 0 40px rgba(63,169,255,.18),inset 0 2px 0 rgba(255,245,215,.35)}
+.vidro{border:1px solid transparent;background:linear-gradient(165deg,rgba(255,255,255,.075),rgba(255,255,255,.025)) padding-box,linear-gradient(160deg,rgba(255,255,255,.5),rgba(255,255,255,.07) 40%,rgba(255,255,255,.04) 60%,rgba(255,255,255,.28)) border-box}
+.campo{border:1px solid rgba(255,255,255,.12);background:rgba(0,0,0,.28);box-shadow:inset 0 1px 2px rgba(0,0,0,.5)}
+.btn-ouro{border:0;background:linear-gradient(180deg,#F6DE94,#D6B15C 48%,#A8812E);color:#1B1407;box-shadow:inset 0 1px 0 rgba(255,255,255,.6),inset 0 -1px 0 rgba(0,0,0,.25),0 10px 26px rgba(214,177,92,.3)}
+.titulo{background:linear-gradient(180deg,#FFFFFF,#C9CED6 60%,#9AA1AB);-webkit-background-clip:text;background-clip:text;color:transparent}
+input::placeholder{color:#8B92A0}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; position: relative; overflow: hidden; background: radial-gradient(90% 55% at 50% 22%, #2C3038 0%, #15171C 50%, #090A0D 100%); color: #EEF1F6; font-family: 'Cinzel', serif; padding: 96px 24px 40px; display: flex; flex-direction: column; align-items: center; gap: 28px">
+
+  <div class="moldura" style="width: 132px; height: 132px; border-radius: 34px; overflow: hidden; display: flex; align-items: center; justify-content: center">
+    <img src="/_blob/18fe7b48ef288c74e9567704b77cb368" alt="Logo Med Genius" style="width: 100%; height: 100%; object-fit: cover">
+  </div>
+
+  <div style="display: flex; flex-direction: column; align-items: center; gap: 8px">
+    <h1 class="titulo" style="margin: 0; font-size: 34px; font-weight: 600; letter-spacing: .12em">MED GENIUS</h1>
+    <span style="font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: .3em; color: #A3A9B4">MEDICINA · FAG</span>
+  </div>
+
+  <form class="vidro" style="width: 100%; box-sizing: border-box; border-radius: 28px; padding: 22px 18px; display: flex; flex-direction: column; gap: 14px; box-shadow: 0 24px 60px rgba(0,0,0,.55)">
+    <label style="display: flex; flex-direction: column; gap: 6px">
+      <span style="font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: .18em; color: #A3A9B4">CPF</span>
+      <span class="campo" style="height: 50px; border-radius: 14px; display: flex; align-items: center; gap: 10px; padding: 0 14px; color: #9AA1AB">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></svg>
+        <input type="text" inputmode="numeric" placeholder="000.000.000-00" style="flex: 1; min-width: 0; border: 0; outline: 0; background: transparent; color: #F4F6FA; font-family: 'Cinzel', serif; font-size: 16px; text-align: center">
+      </span>
+    </label>
+    <label style="display: flex; flex-direction: column; gap: 6px">
+      <span style="font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: .18em; color: #A3A9B4">SENHA</span>
+      <span class="campo" style="height: 50px; border-radius: 14px; display: flex; align-items: center; gap: 10px; padding: 0 6px 0 14px; color: #9AA1AB">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"></rect><path d="M8 11V7a4 4 0 0 1 8 0v4"></path></svg>
+        <input type="password" placeholder="Sua senha" style="flex: 1; min-width: 0; border: 0; outline: 0; background: transparent; color: #F4F6FA; font-family: 'Inter', sans-serif; font-size: 16px; text-align: center">
+        <button type="button" aria-label="Mostrar senha" style="width: 40px; height: 40px; border: 0; background: transparent; color: #9AA1AB; display: flex; align-items: center; justify-content: center; cursor: pointer">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+        </button>
+      </span>
+    </label>
+    <button type="button" class="btn-ouro" style="margin-top: 6px; height: 52px; border-radius: 16px; font-family: 'Cinzel', serif; font-weight: 700; font-size: 16px; letter-spacing: .1em; cursor: pointer">ENTRAR</button>
+  </form>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

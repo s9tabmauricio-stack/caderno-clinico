@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Início · Próximo passo</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:inherit;text-decoration:none}
+.mg{--ink:#F4F6FA;--text:#E0E3E8;--muted:#9EA4AE;--rot:#B7BCC6;--accent:#5AD8FF;--accent-soft:rgba(63,200,255,.14);--ok:#34D399;--bad:#FF6B5E;--amber:#FBBF24;--amber-soft:rgba(251,191,36,.13);--trilho:rgba(255,255,255,.10);--line:rgba(255,255,255,.10);--field:rgba(0,0,0,.30);
+--vidro:radial-gradient(120% 110px at 15% 0%,rgba(255,255,255,.13),transparent 60%),linear-gradient(155deg,rgba(255,255,255,.12),rgba(255,255,255,.04) 55%,rgba(255,255,255,.07));
+--vidro-sombra:inset 0 1.5px 0 rgba(255,255,255,.36),inset 0 0 0 1px rgba(255,255,255,.12),inset 0 -1px 0 rgba(255,255,255,.09),0 14px 32px rgba(0,0,0,.38);
+--metal-titulo:linear-gradient(180deg,#FFFFFF 0%,#DADDE3 45%,#9EA4AE 100%);--metal-num:linear-gradient(180deg,#FFFFFF 0%,#C9CED4 45%,#8C939B 100%);
+--titanio:linear-gradient(180deg,#F4F6F8 0%,#CDD2D8 42%,#9EA5AD 70%,#7E858E 100%);--botao-sombra:0 10px 24px rgba(170,180,192,.22),0 2px 6px rgba(0,0,0,.4);--destaque:rgba(200,208,216,.42);
+--fundo:radial-gradient(800px 380px at 50% 0%,rgba(190,200,212,.13),transparent 70%),radial-gradient(700px 480px at 0% 85%,rgba(40,180,255,.15),transparent 70%),radial-gradient(600px 360px at 100% 100%,rgba(190,200,212,.07),transparent 70%),linear-gradient(180deg,#0C0D11,#050608);
+font-family:Inter,system-ui,sans-serif;color:var(--text);background:var(--fundo)}
+.mg.dia{--ink:#15171C;--text:#2B3038;--muted:#535A68;--rot:#3F4550;--accent:#0A6491;--accent-soft:rgba(26,163,224,.14);--ok:#0B6B47;--bad:#B8322A;--amber:#7A4F00;--amber-soft:rgba(214,150,20,.16);--trilho:rgba(20,25,35,.10);--line:rgba(20,25,35,.10);--field:rgba(255,255,255,.58);
+--vidro:radial-gradient(120% 110px at 15% 0%,rgba(255,255,255,.55),transparent 60%),linear-gradient(155deg,rgba(255,255,255,.66),rgba(255,255,255,.32) 55%,rgba(255,255,255,.46));
+--vidro-sombra:inset 0 1.5px 0 #FFFFFF,inset 0 0 0 1px rgba(255,255,255,.6),inset 0 -1px 0 rgba(255,255,255,.5),0 14px 30px rgba(30,35,50,.13),0 2px 8px rgba(30,35,50,.06);
+--metal-titulo:linear-gradient(180deg,#4A505A 0%,#15171C 100%);--metal-num:linear-gradient(180deg,#6B727B 0%,#3E444C 55%,#22272D 100%);--botao-sombra:0 10px 22px rgba(80,88,100,.28),0 2px 6px rgba(30,35,50,.14);--destaque:rgba(110,118,128,.42);
+--fundo:radial-gradient(800px 380px at 50% 0%,rgba(140,150,165,.20),transparent 70%),radial-gradient(700px 480px at 0% 85%,rgba(40,170,240,.14),transparent 70%),radial-gradient(120% 80% at 50% 20%,#F5F6F8 0%,#E1E4E9 55%,#CDD1D8 100%)}
+.vidro{background:var(--vidro);box-shadow:var(--vidro-sombra);border-radius:24px;-webkit-backdrop-filter:blur(22px) saturate(180%);backdrop-filter:blur(22px) saturate(180%)}
+.filete{box-shadow:var(--vidro-sombra),inset 0 0 0 1px var(--destaque)}
+.rot{font-family:Cinzel,serif;font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--rot)}
+.titulo{font-family:Cinzel,serif;font-weight:700;background:var(--metal-titulo);-webkit-background-clip:text;background-clip:text;color:transparent}
+.metal{background:var(--metal-num);-webkit-background-clip:text;background-clip:text;color:transparent}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 26px;border-radius:999px;background:var(--titanio);color:#14171B;font-weight:600;font-size:15px;box-shadow:inset 0 1px 0 rgba(255,255,255,.9),inset 0 -2px 4px rgba(40,46,54,.35),var(--botao-sombra)}
+.btn2{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 20px;border-radius:999px;background:var(--field);color:var(--accent);font-weight:600;font-size:14px;border:1px solid var(--line)}
+.link{color:var(--accent);font-weight:600;font-size:14px}
+.trilho{height:6px;border-radius:9px;background:var(--trilho);overflow:hidden}
+.trilho i{display:block;height:100%;border-radius:9px;background:var(--accent)}
+.gema{display:grid;place-items:center;flex:none;color:#fff;font-weight:700;background:linear-gradient(135deg,var(--c1),var(--c2));box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 6px 16px rgba(0,0,0,.3)}
+.ico{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.rail{width:76px;display:flex;flex-direction:column;gap:6px;padding:12px 8px;border-radius:30px;align-self:center}
+.tab{display:flex;flex-direction:column;align-items:center;gap:4px;padding:10px 0;border-radius:18px;font-size:11px;font-weight:500;color:var(--muted)}
+.tab.on{color:var(--accent);background:var(--accent-soft)}
+.engr{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;color:var(--text)}
+</style>
+</helmet>
+<div class="{{tema}}" style="width: 1180px; height: 820px; box-sizing: border-box; padding: 24px 32px 24px 20px; display: flex; gap: 28px; overflow: hidden">
+<nav class="rail vidro" aria-label="Abas do app">
+<a class="tab on" href="#"><svg class="ico" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"></path></svg><span>Início</span></a>
+<a class="tab" href="#"><svg class="ico" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"></rect><path d="M8 3v4M16 3v4M3 10h18"></path></svg><span>Agenda</span></a>
+<a class="tab" href="#"><svg class="ico" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h6a2 2 0 0 1 2 2v14a2 2 0 0 0-2-2H4zM20 4h-6a2 2 0 0 0-2 2v14a2 2 0 0 1 2-2h6z"></path></svg><span>Estudar</span></a>
+<a class="tab" href="#"><svg class="ico" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="7" width="13" height="13" rx="2"></rect><path d="M8 4h10a2 2 0 0 1 2 2v10"></path></svg><span>Revisão</span></a>
+<a class="tab" href="#"><svg class="ico" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20V11M12 20V5M19 20v-6"></path></svg><span>Desempenho</span></a>
+</nav>
+
+<main style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 22px">
+<header style="display: flex; align-items: flex-start; justify-content: space-between">
+<div style="display: flex; flex-direction: column; gap: 6px">
+<div class="rot" style="letter-spacing: .22em">Terça-feira, 20 de outubro</div>
+<h1 class="titulo" style="margin: 0; font-size: 40px; line-height: 1.1">Boa noite, Mauricio</h1>
+</div>
+<a class="engr vidro" href="#" aria-label="Configurações"><svg class="ico" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"></path></svg></a>
+</header>
+
+<section class="vidro filete" aria-label="Seu próximo passo" style="padding: 28px 32px; display: flex; align-items: center; gap: 28px">
+<span class="gema" style="--c1: #0E7490; --c2: #155E75; width: 76px; height: 76px; border-radius: 22px; font-size: 30px">1</span>
+<div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 8px">
+<div class="rot">Seu próximo passo</div>
+<div style="font-size: 28px; font-weight: 700; color: var(--ink); letter-spacing: -.02em">Tromboembolia pulmonar</div>
+<div style="font-size: 15px; color: var(--muted)">Pneumologia · Aula 1 · você parou nas questões</div>
+<div style="display: flex; align-items: center; gap: 12px; margin-top: 6px; max-width: 460px">
+<div class="trilho" style="flex: 1"><i style="width: 7%"></i></div>
+<span style="font-size: 13px; color: var(--muted); font-weight: 600">7%</span>
+</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px; align-items: stretch; width: 240px">
+<a class="btn" href="#">Continuar a aula</a>
+<a class="btn2" href="#">Outra matéria</a>
+</div>
+</section>
+
+<div style="flex: 1; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; min-height: 0">
+<section class="vidro" aria-label="Hoje" style="padding: 22px; display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; justify-content: space-between; align-items: center"><span class="rot">Hoje</span><a class="link" href="#">Semana →</a></div>
+<div style="display: flex; gap: 12px; padding: 14px; border-radius: 16px; background: var(--amber-soft)">
+<span style="width: 8px; height: 8px; border-radius: 50%; background: var(--amber); margin-top: 7px; flex: none"></span>
+<div style="display: flex; flex-direction: column; gap: 4px">
+<span style="font-size: 12px; font-weight: 700; letter-spacing: .08em; color: var(--amber)">DIA TODO · 8h às 22h30</span>
+<span style="font-size: 15px; font-weight: 600; color: var(--ink); line-height: 1.35">Vista das provas de Gastroenterologia na coordenação</span>
+</div>
+</div>
+<div style="display: flex; align-items: center; gap: 10px; color: var(--muted); font-size: 14px">
+<svg class="ico" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" style="color: var(--ok)"><path d="m5 12 5 5 9-10"></path></svg>
+Aulas de hoje concluídas
+</div>
+<div style="margin-top: auto; font-size: 14px; color: var(--muted)">Amanhã: <span style="color: var(--text); font-weight: 600">[primeira aula de amanhã]</span></div>
+</section>
+
+<section class="vidro" aria-label="Revisão" style="padding: 22px; display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; justify-content: space-between; align-items: center"><span class="rot">Revisão</span><span style="font-size: 13px; font-weight: 600; color: var(--ok)">Em dia ✓</span></div>
+<div style="display: flex; align-items: baseline; gap: 10px"><span class="metal" style="font-family: Cinzel, serif; font-size: 56px; font-weight: 700; line-height: 1">347</span><span style="font-size: 15px; color: var(--muted)">cards novos</span></div>
+<p style="margin: 0; font-size: 14px; color: var(--muted); line-height: 1.45">Nada vencido hoje. Comece pelos novos, 20 por dia, sem pressa.</p>
+<a class="btn2" href="#" style="margin-top: auto">Estudar 20 cards novos</a>
+</section>
+
+<section class="vidro" aria-label="Seu progresso" style="padding: 22px; display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; justify-content: space-between; align-items: center"><span class="rot">Progresso</span><a class="link" href="#">Desempenho →</a></div>
+<div style="display: flex; flex-direction: column; gap: 7px">
+<div style="display: flex; justify-content: space-between; font-size: 14px"><span style="color: var(--muted)">Questões</span><span style="font-weight: 600; color: var(--ink)">13 de 97</span></div>
+<div class="trilho"><i style="width: 13%"></i></div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 7px">
+<div style="display: flex; justify-content: space-between; font-size: 14px"><span style="color: var(--muted)">Acerto</span><span style="font-weight: 600; color: var(--amber)">62%</span></div>
+<div class="trilho"><i style="width: 62%; background: var(--amber)"></i></div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 7px">
+<div style="display: flex; justify-content: space-between; font-size: 14px"><span style="color: var(--muted)">Cards estudados</span><span style="font-weight: 600; color: var(--ink)">0 de 347</span></div>
+<div class="trilho"><i style="width: 0%"></i></div>
+</div>
+<a class="link" href="#" style="margin-top: auto">Refazer as 5 erradas →</a>
+</section>
+</div>
+</main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"dia":{"editor":"boolean","default":false},"$preview":{"width":1180,"height":820}}'>
+class Component extends DCLogic {
+renderVals() {
+return { tema: this.props.dia ? 'mg dia' : 'mg' };
+}
+}
+</script>
+</body>
+</html>

@@ -45,7 +45,7 @@ Deixe o pedido curto, em geral de 3 a 8 linhas, em português simples, do jeito 
 
 ## 3. Recomendar modelo, esforço e ultracode
 
-Escolha o mais barato que dá conta do pedido (regra dele: custo). Os agentes de conteúdo (`apostila`, `conteudo`, `flashcards`, `questoes`, `revisor`) já rodam em Opus com esforço extra-alto por conta própria, porque está no arquivo de cada um. A conversa principal não precisa subir de modelo nem de esforço por causa deles.
+Escolha o mais barato que dá conta do pedido (regra dele: custo). Etapa mecânica (gravar rascunhos no banco, converter, contar, anotar a fila) não pede agente nem modelo caro: vai por programa em `scripts/` (ex.: `node scripts/gravar-rascunho.mjs <aula-id>`). Os agentes de conteúdo (`apostila`, `conteudo`, `flashcards`, `questoes`, `revisor`) já rodam em Opus com esforço extra-alto por conta própria, porque está no arquivo de cada um. A conversa principal não precisa subir de modelo nem de esforço por causa deles.
 
 **Modelo** (`/model <nome>`, ou o seletor de modelo do app). Os custos são por palavra e vêm da tabela de preços da Anthropic.
 
@@ -136,32 +136,6 @@ Pedido: "o botao copiar ta copiando o gabarito junto"
 </example>
 
 <example>
-Pedido (sem /melhorar, numa conversa em Opus): "tira o ponto final do titulo das proximas provas"
-
-Seu pedido ficou um pouco aberto; melhorei antes de fazer.
-Vou fazer: no Início, no quadro "Próximas provas", tirar o ponto final do título, sem mexer no resto, e conferir com `npx next build`.
-
-(Executa no mesmo turno: é pequeno, claro, não mexe no banco. No fim avisa que daria para usar o Sonnet numa troca assim.)
-</example>
-
-<example>
-Pedido: "muda a cor do botao da revisao pra verde"
-
-Antes de reescrever, avise numa frase: pelo manual, verde é só para "certo", e a ação principal usa titânio. Pergunte se ele quer mesmo o verde ou só um botão mais destacado. Se ele confirmar o verde:
-
-**Pedido melhorado** (copie e mande):
-> Na tela Revisão, deixe o botão principal verde, como o verde de "certo" do tema, nos modos dia e noite. Não mexa nos outros botões. Me mande um print no celular nos dois modos.
-
-**Como rodar**
-- Modelo: Sonnet · `/model sonnet` · troca simples e bem descrita.
-- Esforço: baixo · `/effort low` · você vai conferir pelo print.
-- Ultracode: não.
-- Conversa nova: sim · troca de modelo.
-
-(Pede um toque, porque o modelo recomendado é outro: na descrição de "Fazer agora", avisa que vai rodar no modelo atual.)
-</example>
-
-<example>
 Pedido: "confere se as questoes de nefro tao certas"
 
 **Pedido melhorado** (copie e mande):
@@ -178,10 +152,4 @@ Pedido: "confere se as questoes de nefro tao certas"
 
 ## Fontes
 
-Conferidas em 01/11/2026. Se algo mudar no Claude Code, atualize aqui.
-
-- Boas práticas do Claude Code: https://code.claude.com/docs/en/best-practices
-- Modelos e esforço: https://code.claude.com/docs/en/model-config
-- Workflows e ultracode: https://code.claude.com/docs/en/workflows
-- Como escrever pedidos (Anthropic): https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices
-- Escolher modelo e esforço: https://claude.com/resources/articles/claude-model-and-effort-level-in-claude-code
+Conferidas em 01/11/2026 (boas práticas, modelos e esforço, workflows e ultracode em https://code.claude.com/docs). Se algo mudar no Claude Code, atualize aqui.
