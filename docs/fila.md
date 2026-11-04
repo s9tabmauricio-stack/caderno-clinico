@@ -20,3 +20,4 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
+| Combate ao desperdício de limite + tudo dentro do projeto | Claude (nuvem) | `claude/upbeat-dijkstra-0q2t9l` | `.claude/`, `scripts/`, `apostilas-fonte/`, `docs/`, `AGENTS.md`, `.agents/` | 04/11/2026 |
