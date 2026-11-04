@@ -1,0 +1,219 @@
+/* Med Genius — proposta: o app todo no vidro líquido da tela de entrada.
+   Noite = padrão (fundo preto); Dia = prefers-color-scheme: light (fundo prateado, vidro branco).
+   Só as cores mudam. Titânio = ação principal; azul = o que está em uso/selecionado e o progresso;
+   verde = certo; coral = errado; âmbar = aviso. */
+
+.modo-rotulo{display:flex;align-items:center;gap:8px;color:#E8EAEE;font:600 13px/1 'Inter',system-ui,sans-serif;letter-spacing:.18em;text-transform:uppercase}
+.modo-rotulo svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+.noite{
+  --fundo:radial-gradient(70% 32% at 50% 0%,rgba(190,200,212,.14),transparent 70%),radial-gradient(75% 38% at 0% 78%,rgba(40,180,255,.17),transparent 70%),radial-gradient(60% 30% at 100% 100%,rgba(190,200,212,.08),transparent 70%),linear-gradient(180deg,#0C0D11,#050608);
+  --texto:#E8EAEE; --texto2:#B7BCC6; --texto3:#8E95A1; --ouro:#B9C0C8;
+  --titulo:linear-gradient(180deg,#FFFFFF 0%,#DADDE3 45%,#9EA4AE 100%);
+  --ouro-metal:linear-gradient(180deg,#FFFFFF 0%,#C9CED4 45%,#8C939B 100%);
+  --azul:#5AD8FF; --azul-luz:#3FC8FF; --azul-fundo:rgba(63,200,255,.14); --halo:rgba(63,200,255,.35);
+  --vidro-fundo:linear-gradient(155deg,rgba(255,255,255,.13),rgba(255,255,255,.04) 55%,rgba(255,255,255,.07));
+  --vidro-sombra:inset 0 1.5px 0 rgba(255,255,255,.40),inset 0 0 0 1px rgba(255,255,255,.12),inset 0 -1px 0 rgba(255,255,255,.10),0 20px 40px rgba(0,0,0,.45);
+  --vidro-reflexo:rgba(255,255,255,.14);
+  --campo-fundo:rgba(0,0,0,.30); --campo-borda:rgba(255,255,255,.10);
+  --campo-sombra:inset 0 1px 3px rgba(0,0,0,.5),inset 0 -1px 0 rgba(255,255,255,.07);
+  --trilho:rgba(255,255,255,.10); --divisor:rgba(255,255,255,.08);
+  --certo:#34D399; --certo-fundo:rgba(52,211,153,.13); --errado:#FF6B5E; --errado-fundo:rgba(255,107,94,.13); --ambar:#FBBF24; --ambar-fundo:rgba(251,191,36,.13);
+  --trilha:rgba(255,255,255,.07); --ramo:#A9B0B8; --ponto:#BDF1FF;
+  --abas-fundo:linear-gradient(155deg,rgba(40,42,50,.72),rgba(14,15,19,.78));
+  --botao-sombra:0 10px 24px rgba(170,180,192,.22),0 2px 6px rgba(0,0,0,.4);
+  --destaque-borda:rgba(200,208,216,.42); --destaque-luz:rgba(200,208,216,.16);
+  --moldura:0 30px 60px rgba(0,0,0,.5),0 0 0 1px rgba(255,255,255,.10);
+  color-scheme:dark}
+.dia{
+  --fundo:radial-gradient(70% 32% at 50% 0%,rgba(140,150,165,.20),transparent 70%),radial-gradient(75% 38% at 0% 78%,rgba(40,170,240,.15),transparent 70%),radial-gradient(60% 30% at 100% 100%,rgba(140,150,165,.12),transparent 70%),radial-gradient(120% 80% at 50% 20%,#F5F6F8 0%,#E1E4E9 55%,#CDD1D8 100%);
+  --texto:#15171C; --texto2:#3F4550; --texto3:#535A68; --ouro:#4E555E;
+  --titulo:linear-gradient(180deg,#4A505A 0%,#15171C 100%);
+  --ouro-metal:linear-gradient(180deg,#6B727B 0%,#3E444C 55%,#22272D 100%);
+  --azul:#0A6491; --azul-luz:#1495D0; --azul-fundo:rgba(26,163,224,.16); --halo:rgba(43,184,240,.30);
+  --vidro-fundo:linear-gradient(155deg,rgba(255,255,255,.66),rgba(255,255,255,.32) 55%,rgba(255,255,255,.46));
+  --vidro-sombra:inset 0 1.5px 0 #FFFFFF,inset 0 0 0 1px rgba(255,255,255,.6),inset 0 -1px 0 rgba(255,255,255,.5),0 18px 36px rgba(30,35,50,.14),0 2px 8px rgba(30,35,50,.07);
+  --vidro-reflexo:rgba(255,255,255,.55);
+  --campo-fundo:rgba(255,255,255,.55); --campo-borda:rgba(20,25,35,.10);
+  --campo-sombra:inset 0 1px 3px rgba(20,25,35,.10),inset 0 -1px 0 rgba(255,255,255,.9);
+  --trilho:rgba(20,25,35,.10); --divisor:rgba(20,25,35,.08);
+  --certo:#0B6B47; --certo-fundo:rgba(16,150,100,.13); --errado:#B8322A; --errado-fundo:rgba(194,54,42,.10); --ambar:#7A4F00; --ambar-fundo:rgba(214,150,20,.16);
+  --trilha:rgba(20,25,35,.08); --ramo:#7D848C; --ponto:#14A8EA;
+  --abas-fundo:linear-gradient(155deg,rgba(255,255,255,.78),rgba(255,255,255,.55));
+  --botao-sombra:0 10px 22px rgba(80,88,100,.28),0 2px 6px rgba(30,35,50,.14);
+  --destaque-borda:rgba(110,118,128,.42); --destaque-luz:rgba(140,150,165,.18);
+  --moldura:0 30px 60px rgba(0,0,0,.35),0 0 0 1px rgba(255,255,255,.5);
+  color-scheme:light}
+
+/* o aparelho */
+.tela{position:relative;width:390px;height:844px;border-radius:46px;overflow:hidden;isolation:isolate;background:var(--fundo);color:var(--texto);
+  font-family:'Inter',system-ui,sans-serif;font-size:15px;line-height:1.4;box-shadow:var(--moldura);-webkit-font-smoothing:antialiased}
+.tela *{box-sizing:border-box}
+.tela a{color:inherit;text-decoration:none}
+.conteudo{position:absolute;inset:0;padding:56px 18px 104px;display:flex;flex-direction:column;gap:12px}
+
+/* fundo: trilhas de circuito apagadas e um dendrito de ouro com pontas azuis no canto */
+.decor{position:absolute;z-index:-1;left:0;top:0;width:390px;height:844px;pointer-events:none}
+.decor .tr{fill:none;stroke:var(--trilha);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.decor .tr-fim{fill:var(--trilha)}
+.decor .ra{fill:none;stroke:var(--ramo);stroke-width:2;stroke-linecap:round;opacity:.55}
+.decor .ga{fill:none;stroke:var(--ramo);stroke-width:1.2;stroke-linecap:round;opacity:.45}
+.decor .halo{fill:var(--halo)}
+.decor .pt{fill:var(--ponto)}
+
+/* vidro líquido */
+.vidro{position:relative;overflow:hidden;border-radius:26px;background:var(--vidro-fundo);
+  -webkit-backdrop-filter:blur(24px) saturate(180%);backdrop-filter:blur(24px) saturate(180%);box-shadow:var(--vidro-sombra)}
+.vidro::before{content:"";position:absolute;inset:0 0 auto;height:110px;background:radial-gradient(120% 100% at 15% 0%,var(--vidro-reflexo),transparent 60%);pointer-events:none}
+.vidro > *{position:relative}
+
+/* topo da tela */
+.topo{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;min-height:48px}
+.eyebrow{font-family:'Cinzel',serif;font-size:11px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--ouro)}
+.titulo{margin:4px 0 0;font-family:'Cinzel',serif;font-size:26px;font-weight:600;line-height:1.2;letter-spacing:.02em;background:var(--titulo);-webkit-background-clip:text;background-clip:text;color:transparent}
+.engrenagem{flex:none;position:relative;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;color:var(--texto2);background:var(--vidro-fundo);box-shadow:var(--vidro-sombra);
+  -webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px)}
+.voltar{flex:none;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;color:var(--azul);background:var(--vidro-fundo);box-shadow:var(--vidro-sombra)}
+.ico{width:20px;height:20px;flex:none;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.ico.p{width:16px;height:16px}
+
+/* rótulo de seção */
+.sec{display:flex;justify-content:space-between;align-items:baseline;margin-top:4px;padding:0 6px;font-family:'Cinzel',serif;font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--texto2)}
+.sec a{font-family:'Inter',sans-serif;letter-spacing:0;text-transform:none;font-size:13.5px;font-weight:600;color:var(--azul)}
+
+/* botões */
+.btn-ouro{position:relative;isolation:isolate;overflow:hidden;width:100%;min-height:50px;border:0;border-radius:25px;display:grid;place-items:center;cursor:pointer;
+  background:linear-gradient(180deg,#F4F6F8 0%,#CDD2D8 42%,#9EA5AD 70%,#7E858E 100%);color:#14171B !important;font-family:'Cinzel',serif;font-size:14px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.9),inset 0 -2px 4px rgba(40,46,54,.35),var(--botao-sombra)}
+.btn-ouro::before{content:"";position:absolute;z-index:-1;left:12px;right:12px;top:3px;height:46%;border-radius:22px 22px 12px 12px;background:linear-gradient(180deg,rgba(255,255,255,.55),rgba(255,255,255,0));pointer-events:none}
+.btn-vidro{min-height:44px;padding:0 16px;border-radius:22px;border:1px solid var(--campo-borda);background:var(--campo-fundo);box-shadow:var(--campo-sombra);color:var(--texto);
+  font:600 14px/1 'Inter',sans-serif;display:inline-flex;align-items:center;justify-content:center;gap:8px;cursor:pointer}
+.btn-vidro.azul{color:var(--azul)}
+
+/* cápsulas (filtros, seletor) */
+.capsulas{display:flex;gap:8px;flex-wrap:wrap}
+.capsula{min-height:36px;padding:0 14px;border-radius:18px;border:1px solid var(--campo-borda);background:var(--campo-fundo);box-shadow:var(--campo-sombra);color:var(--texto2);
+  font:600 13px/1 'Inter',sans-serif;display:inline-flex;align-items:center;gap:6px;cursor:pointer}
+.capsula.ativa{color:var(--azul);border-color:var(--azul-luz);box-shadow:var(--campo-sombra),0 0 0 3px var(--azul-fundo)}
+
+/* listas dentro do vidro */
+.lista{padding:4px 0}
+.linha{display:flex;align-items:center;gap:12px;min-height:60px;padding:10px 16px}
+.linha + .linha{border-top:1px solid var(--divisor)}
+.main{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
+.t{font-size:15px;font-weight:600;color:var(--texto);line-height:1.3}
+.s{font-size:13px;color:var(--texto3);line-height:1.35}
+.chev{color:var(--texto3)}
+
+/* gema da matéria */
+.gema{flex:none;width:42px;height:42px;border-radius:14px;display:grid;place-items:center;color:#fff;font:700 12.5px/1 'Cinzel',serif;letter-spacing:.06em;
+  box-shadow:inset 0 1.5px 0 rgba(255,255,255,.5),inset 0 -2px 5px rgba(0,0,0,.28),0 4px 12px rgba(0,0,0,.22)}
+.gema.p{width:34px;height:34px;border-radius:11px;font-size:11px}
+.materia{font-family:'Cinzel',serif;font-size:14.5px;font-weight:700;letter-spacing:.04em;color:var(--texto)}
+.ponto-m{flex:none;width:10px;height:10px;border-radius:50%;box-shadow:0 0 0 3px var(--divisor)}
+
+/* progresso */
+.barra{height:6px;border-radius:3px;background:var(--trilho);overflow:hidden}
+.barra i{display:block;height:100%;border-radius:3px;background:linear-gradient(90deg,var(--azul-luz),var(--azul));box-shadow:0 0 8px var(--halo)}
+.chip{display:inline-flex;align-items:center;gap:4px;height:22px;padding:0 9px;border-radius:11px;font-size:11.5px;font-weight:700;letter-spacing:.02em}
+.chip.azul{color:var(--azul);background:var(--azul-fundo)}
+.chip.ambar{color:var(--ambar);background:var(--ambar-fundo)}
+.chip.certo{color:var(--certo);background:var(--certo-fundo)}
+
+/* números */
+.n-ouro{font-family:'Cinzel',serif;font-weight:700;line-height:1;background:var(--ouro-metal);-webkit-background-clip:text;background-clip:text;color:transparent}
+.num{font-variant-numeric:tabular-nums}
+
+/* cartão de destaque (Revisão de hoje): vidro com filete de titânio */
+.destaque{padding:18px 18px 18px;display:flex;flex-direction:column;gap:12px;box-shadow:var(--vidro-sombra),inset 0 0 0 1px var(--destaque-borda)}
+.destaque::after{content:"";position:absolute;right:-60px;top:-60px;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,var(--destaque-luz),transparent 65%);pointer-events:none}
+
+/* barra de abas: cápsula de vidro flutuante */
+.abas{position:absolute;left:14px;right:14px;bottom:20px;height:68px;border-radius:34px;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));align-items:center;padding:0 6px;
+  background:var(--abas-fundo);-webkit-backdrop-filter:blur(24px) saturate(180%);backdrop-filter:blur(24px) saturate(180%);box-shadow:var(--vidro-sombra)}
+.aba{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;height:56px;border-radius:28px;color:var(--texto3) !important;font-size:10.5px;font-weight:600}
+.aba.ativa{color:var(--azul) !important;background:var(--azul-fundo)}
+.badge{position:absolute;top:3px;left:calc(50% + 5px);min-width:20px;height:18px;padding:0 5px;border-radius:9px;background:var(--azul-luz);color:#04121A;font-size:10.5px;font-weight:700;display:grid;place-items:center;box-shadow:0 0 10px var(--halo)}
+
+/* abas de cima (segmentos) */
+.segmentos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px;padding:4px;border-radius:22px;border:1px solid var(--campo-borda);background:var(--campo-fundo);box-shadow:var(--campo-sombra)}
+.segmento{height:36px;border-radius:18px;display:grid;place-items:center;font-size:13.5px;font-weight:600;color:var(--texto3) !important}
+.segmento.ativo{color:var(--texto) !important;background:var(--vidro-fundo);box-shadow:var(--vidro-sombra)}
+
+/* questão */
+.alt{display:flex;align-items:flex-start;gap:12px;padding:11px 14px;border-radius:18px;border:1px solid var(--campo-borda);background:var(--campo-fundo);box-shadow:var(--campo-sombra);font-size:14.5px;line-height:1.35;color:var(--texto2)}
+.letra{flex:none;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font-size:12.5px;font-weight:700;border:1px solid var(--campo-borda);color:var(--texto2)}
+.alt.certa{border-color:var(--certo);background:var(--certo-fundo);color:var(--texto)}
+.alt.certa .letra{background:var(--certo);border-color:var(--certo);color:#fff}
+.noite .alt.certa .letra{color:#04140D}
+.alt.marcada{border-color:var(--errado);background:var(--errado-fundo);color:var(--texto)}
+.alt.marcada .letra{background:var(--errado);border-color:var(--errado);color:#fff}
+.noite .alt.marcada .letra{color:#1C0605}
+.exp{display:block;margin-top:5px;font-size:12.5px;line-height:1.4;color:var(--texto2)}
+.exp b{font-weight:700}
+.alt.certa .exp b{color:var(--certo)}
+.alt.marcada .exp b{color:var(--errado)}
+
+/* tela de entrada em titânio (mesmo desenho da atual; o ouro vira titânio) */
+.entrar{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:32px 24px 80px}
+.noite .entrar{--m1:#F2F4F6;--m2:#B7BEC6;--m3:#7C838C;--sub:#B9C0C8;--rotulo:#B7BCC6;--ico:#9EA4AE;--placeholder:#8E95A1;
+  --logo-sombra:drop-shadow(0 26px 30px rgba(0,0,0,.7)) drop-shadow(0 0 26px rgba(63,200,255,.16));
+  background:radial-gradient(240px 220px at 195px 200px,rgba(200,208,216,.16),transparent 70%),radial-gradient(260px 240px at 31px 570px,rgba(40,180,255,.24),transparent 70%),radial-gradient(240px 220px at 374px 650px,rgba(200,208,216,.14),transparent 70%),linear-gradient(180deg,#0C0D11,#050608)}
+.dia .entrar{--m1:#A3AAB2;--m2:#6E757E;--m3:#454B53;--sub:#4E555E;--rotulo:#4B515C;--ico:#646A75;--placeholder:#646A75;
+  --logo-sombra:drop-shadow(0 22px 24px rgba(25,30,45,.35));
+  background:radial-gradient(240px 220px at 195px 200px,rgba(140,150,165,.26),transparent 70%),radial-gradient(260px 240px at 31px 570px,rgba(40,170,240,.26),transparent 70%),radial-gradient(240px 220px at 374px 650px,rgba(140,150,165,.22),transparent 70%),radial-gradient(120% 80% at 50% 20%,#F5F6F8 0%,#E1E4E9 55%,#CDD1D8 100%)}
+.lg-palco{position:relative;isolation:isolate;width:100%;display:flex;flex-direction:column;align-items:center;gap:22px}
+.lg-fundo{position:absolute;z-index:-1;top:-116px;left:50%;width:390px;height:844px;margin-left:-195px;overflow:visible;pointer-events:none}
+.lg-fundo .m1{stop-color:var(--m1)} .lg-fundo .m2{stop-color:var(--m2)} .lg-fundo .m3{stop-color:var(--m3)}
+.lg-fundo .trilhas{fill:none;stroke:var(--trilha);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.lg-fundo .trilhas circle{fill:var(--trilha);stroke:none}
+.lg-fundo .ramos,.lg-fundo .galhos{fill:none;stroke-linecap:round;opacity:.9}
+.lg-fundo .ramos{stroke-width:2.6}
+.lg-fundo .galhos{stroke-width:1.4}
+.lg-fundo .halo{fill:var(--halo)}
+.lg-fundo .ponto{fill:var(--ponto)}
+.lg-logo{flex:none;display:block;width:150px;height:150px;border-radius:34px;filter:var(--logo-sombra)}
+.lg-marca{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center}
+.lg-marca h1{margin:0;padding-left:.12em;font-family:'Cinzel',serif;font-size:33px;font-weight:600;letter-spacing:.12em;line-height:1.3;text-transform:uppercase;background:var(--titulo);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lg-sub{margin:0;padding-left:.3em;font-size:11px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--sub)}
+.lg-vidro{width:100%;margin-top:8px;padding:24px 20px 22px;border-radius:34px}
+.lg-form{display:flex;flex-direction:column;gap:6px}
+.lg-rotulo{padding-left:18px;font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--rotulo)}
+.lg-rotulo.dois{margin-top:10px}
+.lg-campo{height:52px;display:flex;align-items:center;gap:10px;padding:0 46px 0 18px;border-radius:26px;border:1px solid var(--campo-borda);background:var(--campo-fundo);box-shadow:var(--campo-sombra)}
+.lg-campo.olho{padding-right:4px}
+.lg-campo.foco{border-color:var(--azul-luz);box-shadow:var(--campo-sombra),0 0 0 4px var(--azul-fundo),0 0 18px var(--halo)}
+.dia .lg-campo.foco{box-shadow:var(--campo-sombra),0 0 0 4px var(--azul-fundo)}
+.lg-campo input{flex:1;min-width:0;height:100%;padding:0;border:0;background:transparent;color:var(--texto);font:inherit;font-size:16px;text-align:center;outline:none}
+.lg-campo input::placeholder{color:var(--placeholder);opacity:1}
+.lg-ico{width:18px;height:18px;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;color:var(--ico)}
+.lg-campo.foco .lg-ico{color:var(--azul)}
+.lg-olho{flex:none;width:44px;height:44px;border:0;border-radius:50%;background:transparent;color:var(--ico);display:grid;place-items:center;cursor:pointer}
+.lg-entrar{margin-top:18px;min-height:54px;border-radius:27px;font-size:16px}
+
+/* propostas do botão Automático / Dia / Noite */
+.tema-camada{position:absolute;inset:0;pointer-events:none;font-family:'Inter',system-ui,sans-serif}
+.tema-camada > *{pointer-events:auto}
+.tema-ico{width:20px;height:20px;flex:none;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.tema-vidro{position:absolute;background:var(--vidro-fundo);box-shadow:var(--vidro-sombra);-webkit-backdrop-filter:blur(20px) saturate(180%);backdrop-filter:blur(20px) saturate(180%)}
+/* A: cápsula com três ícones */
+.tema-capsula{display:flex;gap:2px;padding:3px;border-radius:25px}
+.tema-op{width:44px;height:44px;border:0;border-radius:22px;background:transparent;color:var(--texto3);display:grid;place-items:center;cursor:pointer}
+.tema-op.on{color:var(--azul);background:var(--azul-fundo);box-shadow:inset 0 0 0 1px var(--azul-luz)}
+/* B: um botão que alterna */
+.tema-unico{display:flex;align-items:center;gap:8px;height:44px;padding:0 16px 0 12px;border:0;border-radius:22px;color:var(--texto);font:600 13.5px/1 'Inter',sans-serif;cursor:pointer}
+.tema-unico .tema-ico{color:var(--azul)}
+/* C: três palavras embaixo do cartão */
+.tema-seg{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:3px;padding:3px;border-radius:25px;border:1px solid var(--campo-borda);background:var(--campo-fundo);box-shadow:var(--campo-sombra)}
+.tema-seg button{height:44px;border:0;border-radius:22px;background:transparent;color:var(--texto3);font:600 13px/1 'Inter',sans-serif;display:flex;align-items:center;justify-content:center;gap:6px;cursor:pointer}
+.tema-seg button .tema-ico{width:16px;height:16px}
+.tema-seg button.on{color:var(--texto);background:var(--vidro-fundo);box-shadow:var(--vidro-sombra)}
+/* D: interruptor sol/lua com "Auto" ao lado */
+.tema-linha{display:flex;align-items:center;gap:8px}
+.tema-chave{position:relative;width:88px;height:44px;border:1px solid var(--campo-borda);border-radius:22px;background:var(--campo-fundo);box-shadow:var(--campo-sombra);cursor:pointer;padding:0;color:var(--texto3)}
+.tema-chave .lado{position:absolute;top:12px;width:18px;height:18px}
+.tema-bola{position:absolute;top:4px;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;color:#14171B;transition:left .25s ease;
+  background:linear-gradient(180deg,#F4F6F8 0%,#CDD2D8 42%,#9EA5AD 70%,#7E858E 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,.9),inset 0 -2px 4px rgba(40,46,54,.35),var(--botao-sombra)}
+.tema-bola .tema-ico{width:18px;height:18px}
+.tema-auto{height:44px;padding:0 14px;border-radius:22px;border:1px solid var(--campo-borda);background:var(--campo-fundo);box-shadow:var(--campo-sombra);color:var(--texto3);font:700 11.5px/1 'Inter',sans-serif;letter-spacing:.14em;text-transform:uppercase;cursor:pointer}
+.tema-auto.on{color:var(--azul);border-color:var(--azul-luz);box-shadow:var(--campo-sombra),0 0 0 3px var(--azul-fundo)}

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>A · Cápsula com ícones</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="./tema.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+</style>
+</helmet>
+<div style="width: 470px; height: 960px; box-sizing: border-box; padding: 40px; display: flex; flex-direction: column; gap: 16px; background: #24272D; font-family: Inter, system-ui, sans-serif">
+<div class="modo-rotulo" style="letter-spacing: .1em">A · Agora: {{estado}}</div>
+<div style="position: relative; width: 390px; height: 844px">
+<dc-import name="EntradaBase" classe="{{classe}}" hint-size="390px,844px"></dc-import>
+<div class="tema-camada {{classe}}">
+<div class="tema-vidro tema-capsula" role="group" aria-label="Aparência" style="top: 18px; right: 18px">
+<button class="{{cAuto}}" type="button" aria-pressed="{{pAuto}}" aria-label="Automático (segue o celular)" onClick="{{auto}}"><svg class="tema-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"></circle><path d="M12 4a8 8 0 0 1 0 16z" fill="currentColor"></path></svg></button>
+<button class="{{cDia}}" type="button" aria-pressed="{{pDia}}" aria-label="Dia" onClick="{{dia}}"><svg class="tema-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg></button>
+<button class="{{cNoite}}" type="button" aria-pressed="{{pNoite}}" aria-label="Noite" onClick="{{noite}}"><svg class="tema-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path></svg></button>
+</div>
+</div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":470,"height":960}}'>
+class Component extends DCLogic {
+  componentDidMount() {
+    try {
+      const claro = window.matchMedia('(prefers-color-scheme: light)').matches;
+      this.setState({ sistema: claro ? 'dia' : 'noite' });
+    } catch (e) {}
+  }
+  renderVals() {
+    const s = this.state || {};
+    const modo = s.modo || 'auto';
+    const sistema = s.sistema || 'noite';
+    const classe = modo === 'auto' ? sistema : modo;
+    const op = (m) => 'tema-op' + (modo === m ? ' on' : '');
+    const estado = modo === 'auto' ? 'Automático (' + (sistema === 'dia' ? 'dia' : 'noite') + ' no aparelho)' : modo === 'dia' ? 'Dia' : 'Noite';
+    return {
+      classe, estado,
+      cAuto: op('auto'), cDia: op('dia'), cNoite: op('noite'),
+      pAuto: String(modo === 'auto'), pDia: String(modo === 'dia'), pNoite: String(modo === 'noite'),
+      auto: () => this.setState({ modo: 'auto' }),
+      dia: () => this.setState({ modo: 'dia' }),
+      noite: () => this.setState({ modo: 'noite' }),
+    };
+  }
+}
+</script>
+</body>
+</html>

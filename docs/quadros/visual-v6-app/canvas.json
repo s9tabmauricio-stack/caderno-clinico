@@ -1,0 +1,27 @@
+{
+  "v": 3,
+  "createdOnFiles": {"v": 1, "at": "2026-10-21T12:00:00Z"},
+  "title": "Med Genius — Vidro líquido no app todo",
+  "launch": {"view": "canvas"},
+  "pages": [],
+  "boards": {
+    "Main.dc.html": {"x": 0, "y": 0, "w": 908, "h": 960, "title": "Início", "is_interactive": true},
+    "Materias.dc.html": {"x": 988, "y": 0, "w": 908, "h": 960, "title": "Matérias (Estudar)", "is_interactive": true},
+    "Questao.dc.html": {"x": 1976, "y": 0, "w": 908, "h": 960, "title": "Questão respondida", "is_interactive": true},
+    "Revisao.dc.html": {"x": 0, "y": 1080, "w": 908, "h": 960, "title": "Revisão", "is_interactive": true},
+    "Desempenho.dc.html": {"x": 988, "y": 1080, "w": 908, "h": 960, "title": "Desempenho", "is_interactive": true},
+    "Agenda.dc.html": {"x": 1976, "y": 1080, "w": 908, "h": 960, "title": "Agenda", "is_interactive": true},
+    "Entrada.dc.html": {"x": -988, "y": 0, "w": 908, "h": 960, "title": "Entrada em titânio", "is_interactive": true},
+    "TemaA.dc.html": {"x": -988, "y": 2600, "w": 470, "h": 960, "title": "A · Cápsula com ícones", "is_interactive": true},
+    "TemaB.dc.html": {"x": -438, "y": 2600, "w": 470, "h": 960, "title": "B · Um botão que alterna", "is_interactive": true},
+    "TemaC.dc.html": {"x": 112, "y": 2600, "w": 470, "h": 960, "title": "C · Palavras embaixo", "is_interactive": true},
+    "TemaD.dc.html": {"x": 662, "y": 2600, "w": 470, "h": 960, "title": "D · Interruptor sol e lua", "is_interactive": true},
+    "EntradaBase.dc.html": {"x": 1212, "y": 2600, "w": 390, "h": 844, "title": "Base da entrada (usada nas propostas)"}
+  },
+  "order": ["Main.dc.html", "Materias.dc.html", "Questao.dc.html", "Revisao.dc.html", "Desempenho.dc.html", "Agenda.dc.html", "Entrada.dc.html", "TemaA.dc.html", "TemaB.dc.html", "TemaC.dc.html", "TemaD.dc.html", "EntradaBase.dc.html"],
+  "notes": {
+    "tema": {"x": -988, "y": 2300, "text": "Botão Automático · Dia · Noite na entrada: 4 propostas (aperte Play e toque)", "kind": "title1", "maxW": 2590},
+    "titulo": {"x": -988, "y": -300, "text": "Med Genius · o app todo no vidro líquido da entrada, em titânio (noite e dia)", "kind": "title1", "maxW": 3872}
+  },
+  "designSystems": []
+}

@@ -1,0 +1,63 @@
+{
+  "v": 3,
+  "attachments": {},
+  "boards": {
+    "Entrar.dc.html": {
+      "h": 844,
+      "radius": 44,
+      "title": "Tela de entrada",
+      "w": 390,
+      "x": 470,
+      "y": 0
+    },
+    "Main.dc.html": {
+      "h": 844,
+      "radius": 44,
+      "title": "Início",
+      "w": 390,
+      "x": 0,
+      "y": 0
+    },
+    "Paleta.dc.html": {
+      "h": 844,
+      "title": "Cores, materiais e letras",
+      "w": 760,
+      "x": 1410,
+      "y": 0
+    },
+    "Questao.dc.html": {
+      "h": 844,
+      "radius": 44,
+      "title": "Questão respondida",
+      "w": 390,
+      "x": 940,
+      "y": 0
+    }
+  },
+  "createdOnFiles": {
+    "at": "2026-10-20T12:00:00Z",
+    "v": 1
+  },
+  "designSystems": [],
+  "launch": {
+    "view": "canvas"
+  },
+  "notes": {
+    "titulo": {
+      "kind": "title1",
+      "maxW": 2170,
+      "text": "Ouro, Cromo & Sinapse — proposta visual-v4",
+      "w": 240,
+      "x": 0,
+      "y": -269
+    }
+  },
+  "order": [
+    "Main.dc.html",
+    "Entrar.dc.html",
+    "Questao.dc.html",
+    "Paleta.dc.html"
+  ],
+  "pages": [],
+  "title": "Med Genius · Ouro, Cromo & Sinapse"
+}

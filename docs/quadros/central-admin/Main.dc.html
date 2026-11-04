@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Central no celular</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#07080B}
+a{color:#5AD8FF;text-decoration:none}a:hover{color:#BDF1FF}
+.vidro{border-radius:24px;background:radial-gradient(120% 110px at 15% 0%,rgba(255,255,255,.13),transparent 60%),linear-gradient(155deg,rgba(255,255,255,.12),rgba(255,255,255,.04) 55%,rgba(255,255,255,.07));box-shadow:inset 0 1.5px 0 rgba(255,255,255,.36),inset 0 0 0 1px rgba(255,255,255,.12),inset 0 -1px 0 rgba(255,255,255,.09),0 14px 32px rgba(0,0,0,.38)}
+.sec{margin:0;font-family:Cinzel,serif;font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#B7BCC6}
+.metal{background:linear-gradient(180deg,#FFFFFF 0%,#C9CED4 45%,#8C939B 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.linha{display:flex;align-items:center;gap:12px;padding:14px 16px;border-top:1px solid rgba(255,255,255,.07)}
+.linha:first-child{border-top:0}
+.gema{display:inline-flex;align-items:center;justify-content:center;height:26px;padding:0 12px;border-radius:999px;font-family:Cinzel,serif;font-size:11px;font-weight:700;letter-spacing:.08em;color:#FFFFFF;box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 4px 12px rgba(0,0,0,.35)}
+.btn-tit{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 20px;border-radius:999px;border:0;font:600 15px Inter,sans-serif;color:#14171B;background:linear-gradient(180deg,#F4F6F8 0%,#CDD2D8 42%,#9EA5AD 70%,#7E858E 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,.9),inset 0 -2px 4px rgba(40,46,54,.35),0 10px 24px rgba(170,180,192,.22)}
+.btn-vidro{display:inline-flex;align-items:center;justify-content:center;min-height:36px;padding:0 14px;border-radius:999px;border:1px solid rgba(255,255,255,.10);font:600 13px Inter,sans-serif;color:#5AD8FF;background:rgba(0,0,0,.30);box-shadow:inset 0 1px 3px rgba(0,0,0,.5),inset 0 -1px 0 rgba(255,255,255,.07)}
+</style>
+</helmet>
+<div style="width: 390px; height: 3060px; box-sizing: border-box; padding: 18px 16px 48px; display: flex; flex-direction: column; gap: 28px; font-family: Inter, system-ui, sans-serif; color: #E0E3E8; background: radial-gradient(420px 220px at 50% 0%, rgba(190,200,212,.13), transparent 70%), radial-gradient(360px 420px at 0% 70%, rgba(40,180,255,.12), transparent 70%), linear-gradient(180deg, #0C0D11, #050608); overflow: hidden">
+
+  <div style="display: flex; align-items: center; justify-content: space-between">
+    <a href="#" style="display: inline-flex; align-items: center; gap: 4px; min-height: 44px; font-size: 15px; font-weight: 600"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>Configurações</a>
+    <button aria-label="Configurações" class="vidro" style="width: 44px; height: 44px; border: 0; border-radius: 999px; display: flex; align-items: center; justify-content: center; color: #C9CED4"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></button>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 6px; margin-top: -8px">
+    <p class="sec" style="color: #B9C0C8">Administração</p>
+    <h1 class="metal" style="margin: 0; font-family: Cinzel, serif; font-size: 40px; font-weight: 700; letter-spacing: .04em">Central</h1>
+    <p style="margin: 0; font-size: 14px; color: #9EA4AE">Tudo sobre o Med Genius num lugar só · números de agora, terça, 27/10</p>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 12px">
+    <p class="sec">Precisa de você</p>
+    <div class="vidro" style="display: flex; flex-direction: column">
+      <a href="#conteudo" class="linha" style="color: inherit">
+        <span style="flex: none; width: 36px; height: 36px; border-radius: 999px; display: flex; align-items: center; justify-content: center; background: rgba(251,191,36,.13); color: #FBBF24"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9L1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg></span>
+        <span style="flex: 1; display: flex; flex-direction: column; gap: 2px"><span style="font-size: 15px; font-weight: 600; color: #F4F6FA">11 aulas sem questões</span><span style="font-size: 13px; color: #9EA4AE">Gastro, Orto, Uro e PASS ainda não têm nenhuma</span></span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9EA4AE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+      </a>
+      <a href="#alunos" class="linha" style="color: inherit">
+        <span style="flex: none; width: 36px; height: 36px; border-radius: 999px; display: flex; align-items: center; justify-content: center; background: rgba(251,191,36,.13); color: #FBBF24"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="4"/><path d="M2 21a7 7 0 0 1 14 0"/><path d="M19 8v5M19 16h.01"/></svg></span>
+        <span style="flex: 1; display: flex; flex-direction: column; gap: 2px"><span style="font-size: 15px; font-weight: 600; color: #F4F6FA">3 alunos sumidos</span><span style="font-size: 13px; color: #9EA4AE">Sem entrar há mais de 7 dias</span></span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9EA4AE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+      </a>
+      <a href="#datas" class="linha" style="color: inherit">
+        <span style="flex: none; width: 36px; height: 36px; border-radius: 999px; display: flex; align-items: center; justify-content: center; background: rgba(251,191,36,.13); color: #FBBF24"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="3"/><path d="M3 9h18M8 2v4M16 2v4"/></svg></span>
+        <span style="flex: 1; display: flex; flex-direction: column; gap: 2px"><span style="font-size: 15px; font-weight: 600; color: #F4F6FA">Agenda de 02/11 não publicada</span><span style="font-size: 13px; color: #9EA4AE">Cole o cronograma quando sair no WhatsApp</span></span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9EA4AE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+      </a>
+      <a href="#recados" class="linha" style="color: inherit">
+        <span style="flex: none; width: 36px; height: 36px; border-radius: 999px; display: flex; align-items: center; justify-content: center; background: rgba(52,211,153,.13); color: #34D399"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span>
+        <span style="flex: 1; display: flex; flex-direction: column; gap: 2px"><span style="font-size: 15px; font-weight: 600; color: #F4F6FA">Nenhum recado novo</span><span style="font-size: 13px; color: #9EA4AE">Nenhum erro apontado esperando correção</span></span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9EA4AE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 12px">
+    <p class="sec">Uso da turma</p>
+    <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px">
+      <div class="vidro" style="padding: 16px; display: flex; flex-direction: column; gap: 4px"><span class="metal" style="font-family: Cinzel, serif; font-size: 34px; font-weight: 700; line-height: 1">5</span><span style="font-size: 13px; color: #9EA4AE">alunos com conta</span></div>
+      <div class="vidro" style="padding: 16px; display: flex; flex-direction: column; gap: 4px"><span class="metal" style="font-family: Cinzel, serif; font-size: 34px; font-weight: 700; line-height: 1">1</span><span style="font-size: 13px; color: #9EA4AE">entrou hoje</span></div>
+      <div class="vidro" style="padding: 16px; display: flex; flex-direction: column; gap: 4px"><span class="metal" style="font-family: Cinzel, serif; font-size: 34px; font-weight: 700; line-height: 1">2</span><span style="font-size: 13px; color: #9EA4AE">entraram nos últimos 7 dias</span></div>
+      <div class="vidro" style="padding: 16px; display: flex; flex-direction: column; gap: 4px"><span class="metal" style="font-family: Cinzel, serif; font-size: 34px; font-weight: 700; line-height: 1">23</span><span style="font-size: 13px; color: #9EA4AE">questões respondidas (desde o início)</span></div>
+    </div>
+    <div class="vidro" style="padding: 16px; display: flex; flex-direction: column; gap: 14px">
+      <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap">
+        <span style="font-size: 15px; font-weight: 600; color: #F4F6FA">Últimos 14 dias</span>
+        <div style="display: flex; gap: 4px; padding: 3px; border-radius: 999px; background: rgba(255,255,255,.06)">
+          <button onClick="{{verQuestoes}}" style="{{estiloQ}}">Questões</button>
+          <button onClick="{{verCards}}" style="{{estiloC}}">Cards</button>
+        </div>
+      </div>
+      <span style="font-size: 13px; color: #9EA4AE">{{tituloGrafico}}</span>
+      <div style="display: flex; align-items: flex-end; gap: 4px; height: 120px; border-bottom: 1px solid rgba(255,255,255,.14)">
+        <sc-for list="{{barras}}" as="b" hint-placeholder-count="14">
+          <div title="{{b.dica}}" style="flex: 1; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; gap: 4px">
+            <span style="font-size: 11px; font-weight: 600; color: #E0E3E8">{{b.rotulo}}</span>
+            <div style="{{b.estilo}}"></div>
+          </div>
+        </sc-for>
+      </div>
+      <div style="display: flex; justify-content: space-between; font-size: 11px; color: #9EA4AE"><span>14/10</span><span>20/10</span><span>hoje</span></div>
+    </div>
+  </div>
+
+  <div id="alunos" style="display: flex; flex-direction: column; gap: 12px">
+    <div style="display: flex; align-items: baseline; justify-content: space-between"><p class="sec">Alunos</p><a href="#" style="font-size: 13px; font-weight: 600">Gerenciar →</a></div>
+    <div class="vidro" style="display: flex; flex-direction: column">
+      <sc-for list="{{alunos}}" as="a" hint-placeholder-count="5">
+        <div class="linha">
+          <span style="flex: none; width: 36px; height: 36px; border-radius: 999px; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,.10); font-size: 14px; font-weight: 700; color: #F4F6FA">{{a.inicial}}</span>
+          <span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px">
+            <span style="font-size: 15px; font-weight: 600; color: #F4F6FA">{{a.nome}}</span>
+            <span style="font-size: 13px; color: #9EA4AE">{{a.detalhe}}</span>
+          </span>
+          <span style="{{a.estiloAcesso}}">{{a.acesso}}</span>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <div id="conteudo" style="display: flex; flex-direction: column; gap: 12px">
+    <div style="display: flex; align-items: baseline; justify-content: space-between"><p class="sec">Conteúdo no ar</p><a href="#" style="font-size: 13px; font-weight: 600">Editar →</a></div>
+    <div class="vidro" style="padding: 16px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; text-align: center">
+      <div style="display: flex; flex-direction: column; gap: 2px"><span class="metal" style="font-family: Cinzel, serif; font-size: 28px; font-weight: 700">16</span><span style="font-size: 12px; color: #9EA4AE">aulas</span></div>
+      <div style="display: flex; flex-direction: column; gap: 2px"><span class="metal" style="font-family: Cinzel, serif; font-size: 28px; font-weight: 700">108</span><span style="font-size: 12px; color: #9EA4AE">questões</span></div>
+      <div style="display: flex; flex-direction: column; gap: 2px"><span class="metal" style="font-family: Cinzel, serif; font-size: 28px; font-weight: 700">2.337</span><span style="font-size: 12px; color: #9EA4AE">flashcards</span></div>
+    </div>
+    <div class="vidro" style="display: flex; flex-direction: column">
+      <sc-for list="{{materias}}" as="m" hint-placeholder-count="7">
+        <div class="linha" style="flex-direction: column; align-items: stretch; gap: 8px">
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px">
+            <span class="gema" style="{{m.gemaEstilo}}">{{m.nome}}</span>
+            <span style="font-size: 13px; color: #E0E3E8; font-variant-numeric: tabular-nums">{{m.numeros}}</span>
+          </div>
+          <sc-if value="{{m.temAviso}}" hint-placeholder-val="{{false}}">
+            <span style="font-size: 12px; font-weight: 600; color: #FBBF24">{{m.aviso}}</span>
+          </sc-if>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 12px">
+    <p class="sec">Questões que a turma mais erra</p>
+    <div class="vidro" style="display: flex; flex-direction: column">
+      <sc-for list="{{erradas}}" as="q" hint-placeholder-count="3">
+        <div class="linha" style="align-items: flex-start">
+          <span style="flex: none; min-width: 52px; padding: 4px 0; border-radius: 10px; text-align: center; background: rgba(255,107,94,.13); color: #FF8F85; font-size: 13px; font-weight: 700">{{q.taxa}}</span>
+          <span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px">
+            <span style="font-size: 14px; color: #E0E3E8; line-height: 1.4">{{q.texto}}</span>
+            <span style="font-size: 12px; color: #9EA4AE">{{q.info}}</span>
+          </span>
+          <a href="#" class="btn-vidro">Abrir</a>
+        </div>
+      </sc-for>
+    </div>
+    <span style="font-size: 12px; color: #9EA4AE">Muita gente errando a mesma questão pode ser gabarito trocado.</span>
+  </div>
+
+  <div id="recados" style="display: flex; flex-direction: column; gap: 12px">
+    <p class="sec">Recados da turma</p>
+    <div class="vidro" style="padding: 16px; display: flex; align-items: center; gap: 12px">
+      <div style="flex: 1; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px">
+        <div style="display: flex; flex-direction: column"><span class="metal" style="font-family: Cinzel, serif; font-size: 28px; font-weight: 700">0</span><span style="font-size: 12px; color: #9EA4AE">novos</span></div>
+        <div style="display: flex; flex-direction: column"><span class="metal" style="font-family: Cinzel, serif; font-size: 28px; font-weight: 700">0</span><span style="font-size: 12px; color: #9EA4AE">erros sem correção</span></div>
+      </div>
+      <a href="#" class="btn-vidro">Abrir Recados</a>
+    </div>
+  </div>
+
+  <div id="datas" style="display: flex; flex-direction: column; gap: 12px">
+    <p class="sec">Próximas datas</p>
+    <div class="vidro" style="padding: 16px; display: flex; flex-direction: column; gap: 6px; box-shadow: inset 0 1.5px 0 rgba(255,255,255,.36), inset 0 0 0 1px rgba(200,208,216,.42), 0 14px 32px rgba(0,0,0,.38)">
+      <span style="font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #9EA4AE">Próxima prova</span>
+      <span style="font-size: 18px; font-weight: 700; color: #F4F6FA">P2 de Pneumologia</span>
+      <span style="font-size: 14px; color: #E0E3E8">terça, 10/11 às 18:00 · <span style="color: #5AD8FF; font-weight: 600">faltam 14 dias</span></span>
+    </div>
+    <div class="vidro" style="display: flex; flex-direction: column">
+      <div class="linha"><span style="flex: 1; font-size: 14px">Agenda de 26/10</span><span style="font-size: 13px; font-weight: 600; color: #34D399">Publicada</span></div>
+      <div class="linha"><span style="flex: 1; font-size: 14px">Agenda de 02/11</span><span style="font-size: 13px; font-weight: 600; color: #FBBF24">Falta publicar</span></div>
+      <div class="linha"><span style="flex: 1; font-size: 14px">Provas da P2 cadastradas</span><span style="font-size: 13px; font-weight: 600; color: #E0E3E8">8 · de 10 a 25/11</span></div>
+    </div>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 12px">
+    <p class="sec">Saúde do app</p>
+    <div class="vidro" style="padding: 16px; display: flex; flex-direction: column; gap: 10px">
+      <div style="display: flex; justify-content: space-between; align-items: baseline"><span style="font-size: 15px; font-weight: 600; color: #F4F6FA">Espaço do banco</span><span style="font-size: 13px; color: #E0E3E8">14 MB de 500 MB</span></div>
+      <div style="height: 8px; border-radius: 999px; background: rgba(255,255,255,.10); overflow: hidden"><div style="width: 3%; height: 100%; border-radius: 999px; background: #5AD8FF"></div></div>
+      <span style="font-size: 12px; color: #9EA4AE">3% usado · limite do plano gratuito do Supabase</span>
+    </div>
+    <div class="vidro" style="padding: 16px; display: flex; align-items: center; gap: 12px">
+      <span style="flex: 1; display: flex; flex-direction: column; gap: 2px"><span style="font-size: 15px; font-weight: 600; color: #F4F6FA">Site e publicações</span><span style="font-size: 13px; color: #9EA4AE">Última publicação e erros do site (Vercel) ficam para a fase 2</span></span>
+      <span style="font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 999px; background: rgba(255,255,255,.08); color: #B7BCC6">Em breve</span>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":3060}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { serie: 'q' };
+  }
+  renderVals() {
+    var dias = ['14/10','15/10','16/10','17/10','18/10','19/10','20/10','21/10','22/10','23/10','24/10','25/10','26/10','27/10'];
+    var q = [0,0,0,0,0,9,0,0,0,0,0,0,0,0];
+    var c = [0,0,0,0,0,0,0,0,2,9,0,0,0,0];
+    var serie = this.state.serie;
+    var vals = serie === 'q' ? q : c;
+    var max = 9;
+    var barras = dias.map(function (d, i) {
+      var v = vals[i];
+      var h = v > 0 ? Math.max(6, Math.round(v / max * 92)) : 2;
+      var cor = v > 0 ? '#5AD8FF' : 'rgba(255,255,255,.16)';
+      return {
+        rotulo: v > 0 ? String(v) : '',
+        dica: d + ': ' + v + (serie === 'q' ? ' questões respondidas' : ' cards revisados'),
+        estilo: 'width: 100%; max-width: 16px; height: ' + h + 'px; border-radius: 4px 4px 0 0; background: ' + cor
+      };
+    });
+    var on = 'min-height: 32px; padding: 0 14px; border: 0; border-radius: 999px; font: 600 13px Inter, sans-serif; background: rgba(63,200,255,.14); color: #5AD8FF; box-shadow: inset 0 0 0 1px rgba(90,216,255,.42)';
+    var off = 'min-height: 32px; padding: 0 14px; border: 0; border-radius: 999px; font: 600 13px Inter, sans-serif; background: transparent; color: #9EA4AE';
+    var ok = 'flex: none; font-size: 12px; color: #9EA4AE; text-align: right';
+    var sumido = 'flex: none; font-size: 12px; font-weight: 600; color: #FBBF24; text-align: right';
+    var self = this;
+    return {
+      verQuestoes: function () { self.setState({ serie: 'q' }); },
+      verCards: function () { self.setState({ serie: 'c' }); },
+      estiloQ: serie === 'q' ? on : off,
+      estiloC: serie === 'c' ? on : off,
+      tituloGrafico: serie === 'q' ? 'Questões respondidas por dia (a turma toda)' : 'Cards revisados por dia (a turma toda)',
+      barras: barras,
+      alunos: [
+        { inicial: 'A', nome: 'Aluno A', detalhe: 'Grupo 25 · 9 questões · 11 cards', acesso: 'ontem, 21:19', estiloAcesso: ok },
+        { inicial: 'B', nome: 'Aluno B', detalhe: 'Grupo 25 · 12 questões · 0 cards', acesso: '21/10', estiloAcesso: ok },
+        { inicial: 'C', nome: 'Aluno C', detalhe: 'Grupo 25 · 2 questões · 0 cards', acesso: 'há 19 dias', estiloAcesso: sumido },
+        { inicial: 'D', nome: 'Aluno D', detalhe: 'Sem grupo · nada feito ainda', acesso: 'há 21 dias', estiloAcesso: sumido },
+        { inicial: 'E', nome: 'Aluno E', detalhe: 'Sem grupo · nada feito ainda', acesso: 'há 22 dias', estiloAcesso: sumido }
+      ],
+      materias: [
+        { nome: 'Nefrologia', gemaEstilo: 'background: linear-gradient(135deg, #2563EB, #1E3A8A)', numeros: '4 aulas · 32 q · 556 cards', temAviso: true, aviso: '2 aulas sem questões' },
+        { nome: 'Pneumologia', gemaEstilo: 'background: linear-gradient(135deg, #0E7490, #155E75)', numeros: '3 aulas · 76 q · 385 cards', temAviso: false, aviso: '' },
+        { nome: 'Gastroenterologia', gemaEstilo: 'background: linear-gradient(135deg, #047857, #065F46)', numeros: '3 aulas · 0 q · 483 cards', temAviso: true, aviso: 'Nenhuma questão ainda' },
+        { nome: 'Ortopedia', gemaEstilo: 'background: linear-gradient(135deg, #B45309, #7C2D12)', numeros: '1 aula · 0 q · 166 cards', temAviso: true, aviso: 'Nenhuma questão ainda' },
+        { nome: 'Urologia', gemaEstilo: 'background: linear-gradient(135deg, #6D28D9, #4C1D95)', numeros: '2 aulas · 0 q · 335 cards', temAviso: true, aviso: 'Nenhuma questão ainda' },
+        { nome: 'PASS', gemaEstilo: 'background: linear-gradient(135deg, #BE185D, #831843)', numeros: '3 aulas · 0 q · 412 cards', temAviso: true, aviso: 'Nenhuma questão ainda' },
+        { nome: 'Angiologia', gemaEstilo: 'background: linear-gradient(135deg, #B91C1C, #7F1D1D)', numeros: '0 aulas', temAviso: true, aviso: 'Sem aulas · P2 em 25/11' }
+      ],
+      erradas: [
+        { taxa: '2 de 3', texto: 'O manejo do TEP varia conforme o perfil do paciente e a apresentação clínica…', info: 'Pneumologia · 3 alunos responderam' },
+        { taxa: '1 de 3', texto: 'Em relação à embolia pulmonar: I. A maioria dos casos de TEP é…', info: 'Pneumologia · 3 alunos responderam' },
+        { taxa: '1 de 2', texto: 'Mulher de 35 anos, hipertensa, com doença renal crônica em tratamento conservador…', info: 'Nefrologia · 2 alunos responderam' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

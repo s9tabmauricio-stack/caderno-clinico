@@ -1,6 +1,6 @@
 # Tabagismo e cigarros eletrônicos — mapa da apostila
 
-Estado: apostila concluída; PDF de 16 páginas, revisão de cobertura e conferências automática e visual finalizadas. Base: transcrição enviada pelo Mauricio, com duração de 49:24. Molde: `docs/apostila-molde.md`, aprovado em 02/11/2026. O padrão completo foi enviado pelo Mauricio nesta conversa e está preservado em `apostila-padrao-SKILL.md`. Os scripts foram extraídos dele sem alterações.
+Estado: apostila concluída; PDF de 16 páginas, revisão de cobertura e conferências automática e visual finalizadas. Base: transcrição enviada pelo Mauricio, com duração de 49:24. Molde: `docs/apostila-molde.md`, aprovado em 02/11/2026. Padrão: skill `apostila-padrao`; ferramentas em `apostilas-fonte/ferramentas/`.
 
 ## Identificação e limites da fonte
 

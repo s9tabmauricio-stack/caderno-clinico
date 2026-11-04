@@ -1,6 +1,6 @@
 ---
 name: conteudo
-description: Faz os flashcards e as questões de uma aula do Med Genius de uma vez só, lendo a apostila uma vez (ex.: "prepare os flashcards e as questões da gastro-a4"). Usado pela receita da aula nova; também grava os dois rascunhos revisados quando pedirem para incluir.
+description: Faz os flashcards e as questões de uma aula do Med Genius de uma vez só, lendo a apostila uma vez (ex.: "prepare os flashcards e as questões da gastro-a4"). Usado pela receita da aula nova. Gravar no banco não é com ele: é o programa scripts/gravar-rascunho.mjs.
 model: opus
 effort: xhigh
 ---
@@ -20,4 +20,4 @@ São dois trabalhos separados. Faça só o que pediram:
 
 ## Incluir ("inclua os rascunhos revisados da `<aula-id>`")
 
-Grave os dois rascunhos como mandam os passos "Incluir" de `flashcards.md` e de `questoes.md` (lotes de 60 cards e de 20 questões, conferência das contagens no fim). Responda com o número de cards e de questões gravados. Não faça commit nem push.
+Não precisa deste agente: é mecânico. Quem coordena roda direto `node scripts/gravar-rascunho.mjs <aula-id>` (grava os dois rascunhos e confere as contagens; detalhes e o caminho sem a chave nos passos "Incluir" de `flashcards.md` e `questoes.md`). Se mesmo assim chamarem você para isso, rode o programa e responda com o que ele imprimiu. Não faça commit nem push.

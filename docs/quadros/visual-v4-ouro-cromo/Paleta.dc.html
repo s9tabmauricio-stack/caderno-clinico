@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Cores, materiais e letras</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+.ouro-m{background:linear-gradient(135deg,#F8E9B5,#C9A24A 28%,#6B4E18 52%,#EBCF7E 78%,#9A782C)}
+.cromo-m{background:linear-gradient(135deg,#F2F4F7,#8D949E 35%,#3E434B 60%,#D5D9DF)}
+.tile{border:2px solid transparent;background:var(--f) padding-box,linear-gradient(140deg,#F2F4F7,#8D949E 35%,#3E434B 60%,#D5D9DF) border-box;box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 6px 14px rgba(0,0,0,.5)}
+</style>
+</helmet>
+<div style="width: 760px; height: 844px; box-sizing: border-box; background: radial-gradient(90% 60% at 50% 0%, #262A31 0%, #131519 55%, #0B0C0F 100%); color: #EEF1F6; font-family: 'Inter', sans-serif; padding: 44px 44px; display: flex; flex-direction: column; gap: 28px">
+
+  <div style="display: flex; flex-direction: column; gap: 6px">
+    <span style="font-size: 11px; font-weight: 600; letter-spacing: .26em; color: #A3A9B4">PROPOSTA VISUAL-V4</span>
+    <h1 style="margin: 0; font-family: 'Cinzel', serif; font-size: 34px; font-weight: 600; letter-spacing: .06em; color: #F4F6FA">Ouro, Cromo &amp; Sinapse</h1>
+  </div>
+
+  <section style="display: flex; flex-direction: column; gap: 12px">
+    <h2 style="margin: 0; font-size: 11px; font-weight: 600; letter-spacing: .22em; color: #A3A9B4">MATERIAIS · CADA UM COM UM SÓ TRABALHO</h2>
+    <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px">
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <div class="ouro-m" style="height: 84px; border-radius: 20px; box-shadow: inset 0 1px 0 rgba(255,255,255,.6), 0 10px 24px rgba(0,0,0,.5)"></div>
+        <strong style="font-family: 'Cinzel', serif; font-size: 15px">Ouro</strong>
+        <span style="font-size: 12.5px; line-height: 1.45; color: #B9C0CC">Ação principal e destaque: botões, cartão Revisão de hoje, aba ativa. #D6B15C</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <div style="height: 84px; border-radius: 20px; background: radial-gradient(circle at 40% 40%, #6FC3FF 0%, #2F7BFF 45%, #0E1A3A 100%); box-shadow: 0 0 26px rgba(63,169,255,.45)"></div>
+        <strong style="font-family: 'Cinzel', serif; font-size: 15px">Azul sinapse</strong>
+        <span style="font-size: 12.5px; line-height: 1.45; color: #B9C0CC">Progresso e seleção: barras, porcentagens, links, alternativa marcada. #4FB2FF</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <div class="cromo-m" style="height: 84px; border-radius: 20px; box-shadow: inset 0 1px 0 rgba(255,255,255,.7), 0 10px 24px rgba(0,0,0,.5)"></div>
+        <strong style="font-family: 'Cinzel', serif; font-size: 15px">Cromo</strong>
+        <span style="font-size: 12.5px; line-height: 1.45; color: #B9C0CC">Molduras finas, letras das alternativas, ícones parados, engrenagem.</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <div style="height: 84px; border-radius: 20px; background: linear-gradient(160deg,#18213A,#0E1322); border: 1px solid rgba(255,255,255,.14)"></div>
+        <strong style="font-family: 'Cinzel', serif; font-size: 15px">Vidro azul-noite</strong>
+        <span style="font-size: 12.5px; line-height: 1.45; color: #B9C0CC">Miolo dos cartões de destaque, sobre o fundo grafite #0B0C0F.</span>
+      </div>
+    </div>
+  </section>
+
+  <section style="display: flex; flex-direction: column; gap: 12px">
+    <h2 style="margin: 0; font-size: 11px; font-weight: 600; letter-spacing: .22em; color: #A3A9B4">RESPOSTAS (IGUAIS A HOJE)</h2>
+    <div style="display: flex; gap: 14px">
+      <div style="flex: 1; height: 48px; border-radius: 14px; display: flex; align-items: center; gap: 10px; padding: 0 14px; background: rgba(52,211,153,.10); border: 1px solid rgba(52,211,153,.6); font-size: 13.5px; color: #D3F8E9"><span style="width: 12px; height: 12px; border-radius: 50%; background: #34D399"></span>Certo · verde-menta #34D399</div>
+      <div style="flex: 1; height: 48px; border-radius: 14px; display: flex; align-items: center; gap: 10px; padding: 0 14px; background: rgba(255,107,94,.10); border: 1px solid rgba(255,107,94,.55); font-size: 13.5px; color: #FFD9D4"><span style="width: 12px; height: 12px; border-radius: 50%; background: #FF6B5E"></span>Errado · coral #FF6B5E</div>
+    </div>
+  </section>
+
+  <section style="display: flex; flex-direction: column; gap: 12px">
+    <h2 style="margin: 0; font-size: 11px; font-weight: 600; letter-spacing: .22em; color: #A3A9B4">MATÉRIAS COMO ÍCONES DE APP (CORES DE HOJE + MOLDURA DE CROMO)</h2>
+    <div style="display: flex; gap: 18px">
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 6px"><span class="tile" style="--f: linear-gradient(150deg,#2563EB,#1E3A8A); width: 64px; height: 64px; border-radius: 17px; display: flex; align-items: center; justify-content: center; font-family: 'Cinzel', serif; font-weight: 700; font-size: 22px; color: #fff">N</span><span style="font-size: 12px; color: #B9C0CC">Nefro</span></div>
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 6px"><span class="tile" style="--f: linear-gradient(150deg,#0E7490,#155E75); width: 64px; height: 64px; border-radius: 17px; display: flex; align-items: center; justify-content: center; font-family: 'Cinzel', serif; font-weight: 700; font-size: 22px; color: #fff">P</span><span style="font-size: 12px; color: #B9C0CC">Pneumo</span></div>
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 6px"><span class="tile" style="--f: linear-gradient(150deg,#047857,#065F46); width: 64px; height: 64px; border-radius: 17px; display: flex; align-items: center; justify-content: center; font-family: 'Cinzel', serif; font-weight: 700; font-size: 22px; color: #fff">G</span><span style="font-size: 12px; color: #B9C0CC">Gastro</span></div>
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 6px"><span class="tile" style="--f: linear-gradient(150deg,#B45309,#7C2D12); width: 64px; height: 64px; border-radius: 17px; display: flex; align-items: center; justify-content: center; font-family: 'Cinzel', serif; font-weight: 700; font-size: 22px; color: #fff">O</span><span style="font-size: 12px; color: #B9C0CC">Orto</span></div>
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 6px"><span class="tile" style="--f: linear-gradient(150deg,#6D28D9,#4C1D95); width: 64px; height: 64px; border-radius: 17px; display: flex; align-items: center; justify-content: center; font-family: 'Cinzel', serif; font-weight: 700; font-size: 22px; color: #fff">U</span><span style="font-size: 12px; color: #B9C0CC">Uro</span></div>
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 6px"><span class="tile" style="--f: linear-gradient(150deg,#BE185D,#831843); width: 64px; height: 64px; border-radius: 17px; display: flex; align-items: center; justify-content: center; font-family: 'Cinzel', serif; font-weight: 700; font-size: 22px; color: #fff">P</span><span style="font-size: 12px; color: #B9C0CC">PASS</span></div>
+    </div>
+  </section>
+
+  <section style="display: flex; flex-direction: column; gap: 12px">
+    <h2 style="margin: 0; font-size: 11px; font-weight: 600; letter-spacing: .22em; color: #A3A9B4">LETRAS</h2>
+    <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px">
+      <div style="border-radius: 18px; padding: 16px; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.1); display: flex; flex-direction: column; gap: 6px">
+        <span style="font-family: 'Cinzel', serif; font-size: 26px; font-weight: 600; color: #F4F6FA">Cinzel</span>
+        <span style="font-size: 12.5px; line-height: 1.45; color: #B9C0CC">Títulos, nomes, números grandes e botões (como hoje).</span>
+      </div>
+      <div style="border-radius: 18px; padding: 16px; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.1); display: flex; flex-direction: column; gap: 6px">
+        <span style="font-size: 11px; font-weight: 600; letter-spacing: .26em; color: #F4F6FA; padding-top: 10px">INTER ESPAÇADA</span>
+        <span style="font-size: 12.5px; line-height: 1.45; color: #B9C0CC">Rótulos pequenos em maiúsculas, horários e explicações curtas.</span>
+      </div>
+    </div>
+  </section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":760,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

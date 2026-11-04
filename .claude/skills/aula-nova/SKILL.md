@@ -7,7 +7,9 @@ description: Produção automática de uma aula do Med Genius a partir do áudio
 
 Regra do Mauricio (31/10/2026): ele manda o áudio e não aprova nada no meio. Não pergunte; decida pelo manual (`AGENTS.md`) e pelas regras abaixo, e deixe as dúvidas para o relatório final. Só pare se faltar algo impossível de contornar (sem áudio, áudio sem fala) e diga o porquê.
 
-**Economia (regra do Mauricio, 31/10/2026):** uma chamada de agente por etapa, só as desta receita. Não acrescente agentes, workflows, conferências nem correções extras, nem com o modo ultracode ligado. A conversa principal não relê a transcrição, a apostila nem os rascunhos: trabalha com o resumo que cada agente devolve. Enquanto um agente trabalha, espere o aviso de que terminou, sem ficar checando.
+**Economia (regra do Mauricio, 31/10/2026):** uma chamada de agente por etapa, só as desta receita. Não acrescente agentes, workflows, conferências nem correções extras, nem com o modo ultracode ligado. A conversa principal não relê a transcrição, a apostila nem os rascunhos: trabalha com o resumo que cada agente devolve. Enquanto um agente trabalha, espere o aviso de que terminou, sem ficar checando. Etapas mecânicas (fila, publicar imagens, gravar no banco, relatório) ficam na conversa principal, sem agente: não precisam do Opus (regra do Mauricio, 04/11/2026). Os agentes de escrever e revisar continuam no Opus com esforço extra-alto.
+
+**Antigravity e Codex** seguem a mesma receita: onde ela diz "chame o agente X", leia `.claude/agents/X.md` e faça o que ele manda, na mesma ordem; onde diz Monitor, espere conferindo o `.log` de tempos em tempos (`tail -n 3 <arquivo>.log`); onde diz SendUserFile, diga o caminho do PDF. O Codex não tem o conector do Supabase: ele pede ao Mauricio os dados da aula (passo 3), faz a transcrição, a apostila, o passo 5.1 e os rascunhos revisados, e deixa a inclusão no banco (passos 5.2 e 8) para o Claude ou o Antigravity, dizendo onde parou.
 
 **Fila** (`docs/fila.md`): assim que souber o id da aula, anote a linha ("Aula nova", a aula, a matéria) como diz o topo do arquivo; no último commit da publicação, apague a linha.
 
@@ -72,8 +74,8 @@ Chame o agente `revisor` para a `<aula-id>`. Ele corrige ou tira o que não bate
 
 ## 8. Gravar e pôr no ar
 
-1. Agente `conteudo` ("inclua os rascunhos revisados da `<aula-id>`"): grava os flashcards e as questões.
-2. Confira as contagens e então: `update public.aulas set publicada = true where id = '<aula-id>';`
+1. Grave sem agente: `node scripts/gravar-rascunho.mjs <aula-id>` (lê os dois rascunhos, grava e confere as contagens). Se parar com `PAROU:` por formato, corrija o rascunho e rode de novo. Sem a chave `SUPABASE_SECRET_KEY`, use o caminho `--sql` descrito no passo "Incluir" de `.claude/agents/flashcards.md` e `questoes.md`.
+2. Se as contagens bateram: `update public.aulas set publicada = true where id = '<aula-id>';`
 3. Não anote contagens no `AGENTS.md` (regra do manual: conte no banco). Só atualize o manual se a aula trouxer algo que ele precisa saber (matéria nova, id fora do padrão); nesse caso, commit e publique no `main` como no passo 5.
 4. Apague o áudio, o `.log` e os arquivos temporários; deixe a transcrição e os rascunhos na pasta de trabalho (servem para refazer sem transcrever de novo, enquanto a sessão durar).
 

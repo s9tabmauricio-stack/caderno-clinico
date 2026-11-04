@@ -23,7 +23,9 @@ Este manual tem só as regras de sempre. Os detalhes ficam onde são usados; lei
 | Como fazer uma apostila (mapa, slides, as cinco mudanças, imagens do GPT; o que o professor fala manda sempre) | [`docs/apostila-molde.md`](docs/apostila-molde.md) |
 | Visual e regras de escrita da apostila (padrão aprovado) | skill `apostila-padrao` (`.claude/skills/apostila-padrao/SKILL.md`, desde 03/11/2026 no projeto) |
 | Subir ou trocar uma apostila | skill `subir-apostila` (`.claude/skills/subir-apostila/SKILL.md`) |
+| Gerar o PDF de uma apostila (CSS, `render.py`, `checar.py`, fonte Inter) | [`apostilas-fonte/ferramentas/`](apostilas-fonte/README.md): `preparar.sh <pasta>` copia tudo; nunca redigitar |
 | Regras das questões e dos flashcards (formato, origem, PROVA, Revalida) | skill `questoes-e-flashcards` e os agentes em `.claude/agents/` |
+| Gravar no banco os rascunhos revisados de flashcards e questões | `node scripts/gravar-rascunho.mjs <aula-id>` (precisa de `SUPABASE_SECRET_KEY` no ambiente ou em `.env.local`; sem ela, `--sql`) |
 | Conferir as questões de uma aula contra a apostila | skill `conferir-questoes` (`.claude/skills/conferir-questoes/SKILL.md`) |
 | Conferir os flashcards de uma aula (já no banco) contra a apostila, em blocos ao mesmo tempo | skill `conferir-flashcards` (`.claude/skills/conferir-flashcards/SKILL.md`) |
 | Bula de medicamento no chat | skill `bula-padrao` (`.claude/skills/bula-padrao/SKILL.md`) |
@@ -31,6 +33,8 @@ Este manual tem só as regras de sempre. Os detalhes ficam onde são usados; lei
 | Aula nova a partir do áudio | skill `aula-nova` |
 | Computador Windows do Mauricio | [`docs/windows.md`](docs/windows.md) |
 | Quem está mexendo em quê agora (Claude, Codex, Antigravity) | [`docs/fila.md`](docs/fila.md) |
+| Como publicar (ramos, PR, exceções) | [`docs/publicar.md`](docs/publicar.md) |
+| Quadros de desenho das telas (cópias do claude.ai) | [`docs/quadros/`](docs/quadros/README.md) |
 
 ## Onde fica cada coisa
 
@@ -38,11 +42,11 @@ Este manual tem só as regras de sempre. Os detalhes ficam onde são usados; lei
 |---|---|
 | Site | https://medgenius.vercel.app (o endereço antigo caderno-clinico.vercel.app não existe mais) |
 | Código | GitHub `s9tabmauricio-stack/caderno-clinico`, ramo `main` |
-| Publicação | A Vercel publica sozinha a cada `git push origin main` (1–2 min). Ramos `claude/**` não geram publicação de prévia (`vercel.json`), para não encher o "Deployment Storage" (limite de 10 GB no plano gratuito) |
+| Publicação | A Vercel publica sozinha a cada mudança no `main` (1–2 min); ramos de assistente não geram prévia (limite de 10 GB do "Deployment Storage"). Como publicar: [`docs/publicar.md`](docs/publicar.md) |
 | Banco | Supabase, projeto `xtlpmtylifbalzxnfkib` (São Paulo), plano gratuito |
 | Administrador | CPF 086.994.266-23 (variável `ADMIN_CPFS` na Vercel; padrão no código) |
 | Arquivos do projeto | Pasta **MEDGENIUS** no Google Drive do Mauricio (s9tabmauricio@gmail.com), https://drive.google.com/drive/folders/1i6ftIjwzgyfExlT8PYXXOhe5bFI8vMqR. Desde 31/10/2026, tudo o que for guardado fora do Git (PDFs, rascunhos, apostilas, materiais) vai para lá. Subpastas e ids em `docs/banco.md` |
-| Chave secreta | `SUPABASE_SECRET_KEY` na Vercel (usada só no servidor: alunos, agenda, conteúdo) |
+| Chave secreta | `SUPABASE_SECRET_KEY` na Vercel (servidor: alunos, agenda, conteúdo) e no ambiente de quem grava conteúdo com `scripts/gravar-rascunho.mjs` (ambiente do Claude na nuvem; `.env.local` no PC, fora do Git) |
 
 ## Tecnologia
 
@@ -71,7 +75,7 @@ Este manual tem só as regras de sempre. Os detalhes ficam onde são usados; lei
 
 - Conteúdo: `materias` (`nefro`, `pneumo`, `gastro`, `orto`, `uro`, `pass`…), `aulas` (id `<materia>-a<N>`, `publicada`), `questoes`, `flashcards`. Progresso do aluno: `respostas`, `revisoes` e os históricos. Também `perfis`, `recados` e a agenda. Detalhes em `docs/banco.md`.
 - As visões das telas escondem aulas não publicadas e questões com `substituida_por` preenchido.
-- RLS: alunos leem conteúdo e só gravam o próprio progresso. Escrita de conteúdo: só pelo conector (Claude ou Antigravity) ou pelas telas de admin (chave secreta).
+- RLS: alunos leem conteúdo e só gravam o próprio progresso. Escrita de conteúdo: só pelo conector (Claude ou Antigravity), pelo `scripts/gravar-rascunho.mjs` ou pelas telas de admin (os dois com a chave secreta).
 - A estrutura completa do banco (tabelas, visões, funções, gatilhos, regras de acesso) está copiada em `supabase/estrutura-atual.sql`: leia ali antes de consultar o banco. A pasta `supabase/migrations/` não reflete tudo o que foi aplicado. Mudou a estrutura? Atualize a cópia no mesmo trabalho (como em `docs/banco.md`).
 
 ### Limite do conector do Supabase (importante)
@@ -83,13 +87,13 @@ Pelo conector, **incluir dados e alterações curtas funcionam**; **apagar e ree
 ## Conteúdo (apostilas, questões, flashcards)
 
 - Toda apostila nova ou refeita guarda o HTML de origem em [`apostilas-fonte/<aula-id>/`](apostilas-fonte/README.md). Como publicar: skill `subir-apostila`.
-- Questões e flashcards da aula saem dos agentes `questoes`, `flashcards` ou `conteudo` e passam pelo `revisor`. Regras: skill `questoes-e-flashcards`.
-- Todos os agentes de conteúdo (`apostila`, `conteudo`, `flashcards`, `questoes`, `revisor`) rodam sempre no modelo Opus com esforço extra-alto (regra do Mauricio: não abrir mão de qualidade). Está no topo de cada arquivo em `.claude/agents/`.
+- Questões e flashcards da aula saem dos agentes `questoes`, `flashcards` ou `conteudo`, passam pelo `revisor` e vão para o banco pelo `scripts/gravar-rascunho.mjs` (sem agente). Regras: skill `questoes-e-flashcards`.
+- Os agentes de conteúdo (`apostila`, `conteudo`, `flashcards`, `questoes`, `revisor`) rodam sempre no Opus com esforço extra-alto (regra do Mauricio: não abrir mão de qualidade; está no topo de cada arquivo em `.claude/agents/`). Etapas mecânicas não usam agente.
 - **Aula nova** (regra do Mauricio, 31/10/2026): ele manda o áudio da aula na conversa ("aula nova") e não encosta em mais nada até publicar. Siga a skill `aula-nova`: transcrição, apostila, flashcards e questões, revisão e publicação, sem perguntar nada.
 
 ## Visual
 
-**"Vidro líquido em titânio, dia e noite"** (`visual-v6`, no ar desde 21/10/2026). Noite (padrão) e dia: o aluno escolhe Auto | Dia | Noite (`components/TemaEscolha.tsx`, salvo em `localStorage` `mg-tema`); `lib/tema.ts` põe `data-tema` no `<html>` antes de pintar e o CSS do dia usa `:root[data-tema="dia"]`, nunca `@media (prefers-color-scheme)`. Cada cor tem um só trabalho: titânio (prata fria, nunca dourado) = ação principal, títulos e números grandes; azul = toque, seleção, aba ativa e progresso; verde = certo; coral = errado; âmbar = aviso e aula cancelada. Tokens e regras no fim de `app/globals.css`; cor clara de cada matéria em `COR_MATERIA` (`lib/agenda.ts`).
+**"Vidro líquido em titânio, dia e noite"** (`visual-v6`, no ar desde 21/10/2026): o aluno escolhe Auto | Dia | Noite; o dia usa `:root[data-tema="dia"]`, nunca `@media (prefers-color-scheme)`. Cada cor tem um só trabalho: titânio (prata fria, nunca dourado) = ação principal, títulos e números grandes; azul = toque, seleção e progresso; verde = certo; coral = errado; âmbar = aviso. Tokens no fim de `app/globals.css`.
 
 **Antes de mexer no visual, leia [`docs/visual.md`](docs/visual.md)**: cores das matérias, letras, flashcards, ícones e logo, tela de entrada e as versões antigas guardadas nos ramos `visual-v1` a `visual-v6` (não apague esses ramos).
 
@@ -104,17 +108,14 @@ Pelo conector, **incluir dados e alterações curtas funcionam**; **apagar e ree
 | **Antigravity** (PC do Mauricio) | sim | sim, pelo conector do Supabase |
 | **Codex** | sim | não: não tem o conector; não tente gravar no banco |
 
-- **Conteúdo segue as mesmas regras, venha de quem vier.** As skills e os agentes em `.claude/` (aula nova, subir apostila, questões e flashcards, provas na agenda, revisor) são o manual de cada assunto e valem para os três: quem não é o Claude lê o arquivo e segue os passos. Os agentes de conteúdo do Claude rodam sempre no Opus com esforço extra-alto.
+- **Conteúdo segue as mesmas regras, venha de quem vier.** As skills e os agentes em `.claude/` são o manual de cada assunto e valem para os três: quem não é o Claude lê o arquivo e segue os passos (onde a receita cita uma ferramenta só do Claude, ela diz o que fazer no lugar).
 - O conector (Claude e Antigravity; o do Antigravity fica em `~/.gemini/config/mcp_config.json`, preso ao projeto `xtlpmtylifbalzxnfkib`) segue a seção "Limite do conector do Supabase". Mudança na estrutura do banco só com o "pode" do Mauricio.
-- **Um caminho só para publicar.** Comece de um `main` atualizado, num ramo `claude/<…>`, `codex/<…>` ou `antigravity/<…>` (nenhum gera prévia na Vercel, `vercel.json`). Rode `npm test` e `npx next build`, empurre o ramo e abra um PR para o `main`. O GitHub roda os testes e a compilação e junta sozinho (`.github/workflows/juntar-ao-main.yml`); se algo falhar, o PR fica aberto e nada vai para o ar. **PR em rascunho não é juntado**: use rascunho quando o Mauricio pediu para ver antes, e tire do rascunho no "pode publicar". Nunca empurre direto para o `main` (a única exceção é a anotação da fila) nem use ramos com outro nome.
-  - **Antigravity:** `git fetch origin main && git checkout -B antigravity/<assunto> origin/main`; no fim, `git push -u origin antigravity/<assunto>` e `gh pr create --fill --base main`.
-  - **Claude na nuvem** (claude.ai/code, app do celular): usa o ramo `claude/...` da sessão. Depois de juntado, o PR não recebe mais nada: o trabalho seguinte começa de novo do `main`, num PR novo.
-  - **Exceções, que publicam direto** (não esperam aprovação): a aula nova e o Claude no computador do Mauricio, com `git fetch origin main && git rebase origin/main && git push origin HEAD:main` (e empurram também o ramo da sessão). Passam pela fila do mesmo jeito.
-- Commit que só mexe em documentos (`docs/`, arquivos `.md`, `.claude/`, `.agents/`) não gera publicação na Vercel (`ignoreCommand` no `vercel.json`), para não gastar o "Deployment Storage".
+- **Publicar:** ramo `claude/…`, `codex/…` ou `antigravity/…` saído do `main` atualizado, `npm test` e `npx next build`, PR para o `main` (o GitHub junta sozinho se passar; rascunho não é juntado). Nunca empurre direto para o `main`, salvo a fila e as exceções. Passo a passo de cada assistente e exceções: [`docs/publicar.md`](docs/publicar.md).
+- **Tudo fica no projeto** (regra do Mauricio, 04/11/2026): o que o app precisa mora neste repositório ou na pasta MEDGENIUS do Drive, nunca só na conta de um assistente (skills da conta do Claude, quadros no claude.ai, memória, instruções de projeto). Se a conta do Claude sumir, Antigravity e Codex seguem como se nada tivesse acontecido. Fez algo fora? Copie para cá no mesmo trabalho (quadros de desenho vão em [`docs/quadros/`](docs/quadros/README.md)).
 
 ## Como trabalhar com o Mauricio
 
-- Ele é sensível a custo: prefira o caminho barato (converter arquivos em vez de reescrever conteúdo; não reenviar textos grandes à toa).
+- Ele é sensível a custo: prefira o caminho barato (converter arquivos em vez de reescrever conteúdo; não reenviar textos grandes à toa). Trabalho mecânico (gravar rascunhos no banco, converter, cortar texto, contar) vai por programa em `scripts/`, sem agente e sem o modelo reescrever o texto; agente Opus só para escrever, conferir e revisar conteúdo.
 - Mostre o conteúdo (a questão, a tela) antes de pedir uma decisão; um assunto por vez, anotado na fila.
 - Publique e diga em uma ou duas frases o que mudou; diga claramente o que não foi testado.
 - Não deixe lixo: o que for substituído deve poder ser limpo (Conteúdo → Limpeza).

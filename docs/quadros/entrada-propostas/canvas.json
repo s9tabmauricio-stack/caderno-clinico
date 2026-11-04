@@ -1,0 +1,29 @@
+{
+  "v": 3,
+  "createdOnFiles": {"v": 1, "at": "2026-10-20T20:00:00Z"},
+  "title": "Propostas da tela de entrada",
+  "launch": {"view": "canvas"},
+  "pages": [],
+  "boards": {
+    "Main.dc.html": {"x": 0, "y": 0, "w": 390, "h": 844, "title": "Atual (no ar)", "radius": 40},
+    "Neon.dc.html": {"x": 470, "y": 0, "w": 390, "h": 844, "title": "1 · Neon com foco", "radius": 40},
+    "Sinapse.dc.html": {"x": 940, "y": 0, "w": 390, "h": 844, "title": "2 · Sinapse", "radius": 40},
+    "Pulso.dc.html": {"x": 1410, "y": 0, "w": 390, "h": 844, "title": "3 · Pulso", "radius": 40},
+    "Ouro.dc.html": {"x": 1880, "y": 0, "w": 390, "h": 844, "title": "4 · Ouro lapidado", "radius": 40},
+    "Vidro.dc.html": {"x": 0, "y": 1500, "w": 390, "h": 844, "title": "5 · Vidro líquido (noite)", "radius": 40},
+    "VidroClaro.dc.html": {"x": 470, "y": 1500, "w": 390, "h": 844, "title": "6 · Vidro líquido (claro)", "radius": 40}
+  },
+  "order": ["Main.dc.html", "Neon.dc.html", "Sinapse.dc.html", "Pulso.dc.html", "Ouro.dc.html", "Vidro.dc.html", "VidroClaro.dc.html"],
+  "notes": {
+    "titulo": {"x": 0, "y": -300, "text": "Med Genius · tela de entrada", "kind": "title1", "maxW": 2270},
+    "n0": {"x": 0, "y": 904, "w": 390, "size": "m", "text": "A tela no ar hoje: ouro e cromo da v4 só na entrada. Depois de entrar, o app é neon (v3), então a troca de clima é brusca."},
+    "n1": {"x": 470, "y": 904, "w": 390, "size": "m", "text": "A mesma roupa do app por dentro: fundo azul-noite com 2 luzes, cartão de vidro, botão ciano. Quem entra não sente que mudou de app."},
+    "n2": {"x": 940, "y": 904, "w": 390, "size": "m", "text": "O logo no centro de um anel com o degradê da marca, com fios de neurônio saindo dele. Sem cartão: campos e botão em pílula, e o botão leva o degradê."},
+    "n3": {"x": 1410, "y": 904, "w": 390, "size": "m", "text": "Traçado de eletrocardiograma sob a marca. O formulário fica numa folha de vidro presa embaixo, ao alcance do polegar."},
+    "n4": {"x": 1880, "y": 904, "w": 390, "size": "m", "text": "Fica o ouro, com acabamento: logo sem a moldura dupla, luz dourada atrás, filete de ouro sob o nome e cartão mais leve com borda dourada no topo."},
+    "titulo2": {"x": 0, "y": 1200, "text": "Ícone de ouro + vidro da Apple", "kind": "title1", "maxW": 860},
+    "n5": {"x": 0, "y": 2404, "w": 390, "size": "m", "text": "Fundo preto com os dendritos de ouro do ícone saindo por trás dele, pontas acesas em azul. Cartão de vidro líquido (borrado, com brilho na borda), campos em cápsula e botão de ouro polido."},
+    "n6": {"x": 470, "y": 2404, "w": 390, "size": "m", "text": "A mesma ideia sobre fundo prateado, como na foto do ícone: vidro branco translúcido, texto grafite, ouro e azul só nos detalhes."}
+  },
+  "designSystems": []
+}

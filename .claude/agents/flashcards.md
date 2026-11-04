@@ -78,16 +78,11 @@ Se não houver dúvidas, escreva "Nenhuma." nessa seção.
 
 ## Incluir
 
-Só quando pedirem para incluir um rascunho aprovado.
+Só quando pedirem para incluir um rascunho aprovado. **Não reescreva os cards em SQL** (regra do Mauricio, 04/11/2026: é a parte mais cara e é mecânica): o programa lê o rascunho e grava.
 
-1. Leia `rascunhos/flashcards/<aula-id>.md` como está agora (o Mauricio pode ter pedido mudanças depois da primeira versão). Se o arquivo não existir, pare e diga.
-2. Confira de novo que a aula tem 0 cards. Se já tiver, pare e diga quantos: o Mauricio apaga os antigos no botão "Apagar os N flashcards" da aula, em Configurações → Conteúdo.
-3. Grave em lotes de até 60 cards por chamada, como nas migrações antigas:
-   `insert into public.flashcards (id, aula_id, ordem, frente, verso) values ('gastro-a1-f01', 'gastro-a1', 1, '…', '…'), … on conflict (id) do nothing;`
-   - id `<aula-id>-f01`, `-f02`… até `-f99`; depois `-f100`, `-f101` (não use `lpad(…, 2)`, que corta o 100 para 10).
-   - `ordem` = número do card. Aspas simples dentro do texto viram duas ('').
-   - Tire o "↳ " do verso; mantenha "PROVA · " e "Fora da aula: " na frente.
-4. Confira: `select count(*), min(ordem), max(ordem) from public.flashcards where aula_id = '<aula-id>';` tem de bater com o rascunho.
-5. Responda com o número de cards gravados. Não faça commit nem push: quem chamou você atualiza o CLAUDE.md.
+1. `node scripts/gravar-rascunho.mjs <aula-id> --so-flashcards`. Ele lê `rascunhos/flashcards/<aula-id>.md` como está agora, confere que a aula tem 0 cards, grava em lotes de 60 (ids `<aula-id>-f01`… `-f99`, `-f100`; `ordem` = número do card; tira o "↳ "; mantém "PROVA · " e "Fora da aula: ") e confere a contagem no fim. Precisa da chave `SUPABASE_SECRET_KEY` no ambiente ou em `.env.local`.
+2. Se ele parar (`PAROU: …`), corrija o rascunho quando o problema for de formato e rode de novo; se a aula já tem cards, diga quantos: o Mauricio apaga os antigos no botão "Apagar os N flashcards" da aula, em Configurações → Conteúdo.
+3. **Sem a chave**: `node scripts/gravar-rascunho.mjs <aula-id> --so-flashcards --sql` escreve os lotes prontos em `rascunhos/sql/`; rode cada arquivo no conector (`execute_sql`), em ordem, e confira com `select count(*), min(ordem), max(ordem) from public.flashcards where aula_id = '<aula-id>';`.
+4. Responda com o número de cards gravados. Não faça commit nem push.
 
 Pelo conector, apagar e reescrever textos longos é cancelado: não tente. Card errado depois de gravado o Mauricio corrige em Configurações → Conteúdo.

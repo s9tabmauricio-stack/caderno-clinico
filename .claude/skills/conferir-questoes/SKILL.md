@@ -9,8 +9,8 @@ Objetivo: em cada aula do MedGenius, deixar só questões do tema da aula que d�
 
 ## Onde está cada coisa
 
-- **Aula**: id `<matéria>-a<N>`. Matérias: `nefro` (Nefrologia), `pneumo` (Pneumologia), `gastro` (Gastroenterologia), `orto` (Ortopedia), `uro` (Urologia), `pass` (PASS). "Nefrologia aula 1" = `nefro-a1`. Se ele disser só "aula 1", perguntar a matéria (cada matéria tem a sua aula 1).
-- **Apostila**: PDF no repositório do site no GitHub, `s9tabmauricio-stack/caderno-clinico`, arquivo `public/apostilas/<aula-id>/apostila.pdf`. O site exige login, então não baixar pelo endereço do site: anexar o repositório (só leitura), clonar com `--depth 1` (ou usar o clone que já existir) e extrair o texto com `pdftotext -layout`. Para tabela, régua ou figura, olhar a imagem da página (`pdftoppm -r 80 -png -f N -l N`).
+- **Aula**: id `<matéria>-a<N>`. Matérias: `nefro` (Nefrologia), `pneumo` (Pneumologia), `gastro` (Gastroenterologia), `orto` (Ortopedia), `uro` (Urologia), `pass` (PASS), `angio` (Angiologia); na dúvida, `select id, nome from materias`. "Nefrologia aula 1" = `nefro-a1`. Se ele disser só "aula 1", perguntar a matéria (cada matéria tem a sua aula 1).
+- **Apostila**: `public/apostilas/<aula-id>/apostila.pdf`, no próprio projeto. Leia o texto uma vez com `python3 -I scripts/apostila-texto.py public/apostilas/<aula-id>/apostila.pdf` (guarda os selos PROVA, que o `pdftotext` perde). Para tabela, régua ou figura, olhe só a imagem daquela página (`public/apostilas/<aula-id>/NN.webp`).
 - **Questões**: Supabase, projeto `xtlpmtylifbalzxnfkib`, tabela `questoes`. Só leitura nesta etapa:
 
 ```sql
@@ -27,7 +27,7 @@ order by q.ordem;
 - `alternativas` é a lista sem letra; `correta` é o índice (0 = A, 1 = B...). Mostrar sempre com letra.
 - `erros_apontados` são colegas avisando erro na questão: levar em conta.
 - `origem = professor` quer dizer que o professor corrigiu em sala. Se a apostila discordar, não decidir sozinho: mostrar e perguntar.
-- Sem o conector do Supabase ou sem acesso ao GitHub: avisar e pedir o PDF da apostila e a lista das questões.
+- Sem o conector do Supabase (o Codex, por exemplo): avisar e pedir ao Mauricio a lista das questões (Configurações → Conteúdo).
 
 ## Fluxo
 
@@ -44,7 +44,7 @@ order by q.ordem;
 6. **Classificar:**
    - **Manter**: tudo bate.
    - **Corrigir**: gabarito errado, duas alternativas certas, dado divergente ou comentário que contradiz a apostila. Escrever a mudança exata.
-   - **Fora da apostila**: a apostila não traz o que a questão cobra. Procurar no texto das outras apostilas da matéria (`pdftotext` + `grep`) para ver se ela é de outra aula.
+   - **Fora da apostila**: a apostila não traz o que a questão cobra. Procurar no texto das outras apostilas da matéria (`scripts/apostila-texto.py` + `grep`, sem ler tudo) para ver se ela é de outra aula.
    - **Só pelo complemento**: a resposta está apenas numa caixa roxa. Ele decide.
 7. **Cobertura**: listar os pontos com marca PROVA que ficaram sem nenhuma questão.
 8. **Questões sem aula** (`aula_id is null` na mesma matéria): só dizer quantas existem e oferecer ver se alguma é desta aula.

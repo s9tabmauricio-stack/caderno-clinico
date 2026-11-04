@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Proposta 2: Sinapse</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+input{outline:none}
+input::placeholder{color:#8A93AB}
+</style>
+</helmet>
+<main style="position: relative; overflow: hidden; width: 390px; height: 844px; box-sizing: border-box; padding: 142px 24px 40px; display: flex; flex-direction: column; align-items: center; gap: 24px; background: radial-gradient(420px 380px at 50% 230px, rgba(90,75,240,.26), transparent 70%), radial-gradient(300px 260px at 50% 100%, rgba(0,148,200,.14), transparent 70%), #070A18; font-family: Inter, system-ui, sans-serif; color: #DCE1EE">
+  <svg width="390" height="440" viewBox="0 0 390 440" aria-hidden="true" style="position: absolute; left: 0; top: 0">
+    <defs>
+      <linearGradient id="fio" x1="0" y1="0" x2="390" y2="0" gradientUnits="userSpaceOnUse">
+        <stop offset="0" stop-color="#4FDDFF"></stop>
+        <stop offset=".55" stop-color="#9B7BFF"></stop>
+        <stop offset="1" stop-color="#FF5CD6"></stop>
+      </linearGradient>
+    </defs>
+    <g fill="none" stroke="url(#fio)" stroke-width="1.4" stroke-linecap="round" opacity=".55">
+      <path d="M165 147 C155 110 132 78 104 36"></path>
+      <path d="M136 86 C118 80 98 76 70 82"></path>
+      <path d="M225 147 C236 108 262 80 296 44"></path>
+      <path d="M258 88 C276 84 300 90 326 104"></path>
+      <path d="M112 200 C84 190 56 168 24 150"></path>
+      <path d="M112 260 C80 270 48 290 -4 298"></path>
+      <path d="M278 200 C306 188 334 168 368 146"></path>
+      <path d="M278 260 C312 272 344 292 394 300"></path>
+      <path d="M151 306 C130 328 96 340 46 350"></path>
+      <path d="M239 306 C260 328 294 340 344 350"></path>
+    </g>
+    <g>
+      <circle cx="104" cy="36" r="10" fill="#4FDDFF" opacity=".16"></circle>
+      <circle cx="104" cy="36" r="3" fill="#4FDDFF"></circle>
+      <circle cx="70" cy="82" r="8" fill="#4FDDFF" opacity=".14"></circle>
+      <circle cx="70" cy="82" r="2.5" fill="#4FDDFF"></circle>
+      <circle cx="296" cy="44" r="10" fill="#C9A2FF" opacity=".16"></circle>
+      <circle cx="296" cy="44" r="3" fill="#C9A2FF"></circle>
+      <circle cx="326" cy="104" r="8" fill="#FF5CD6" opacity=".14"></circle>
+      <circle cx="326" cy="104" r="2.5" fill="#FF5CD6"></circle>
+      <circle cx="24" cy="150" r="10" fill="#4FDDFF" opacity=".16"></circle>
+      <circle cx="24" cy="150" r="3" fill="#4FDDFF"></circle>
+      <circle cx="368" cy="146" r="10" fill="#FF5CD6" opacity=".16"></circle>
+      <circle cx="368" cy="146" r="3" fill="#FF5CD6"></circle>
+      <circle cx="46" cy="350" r="9" fill="#4FDDFF" opacity=".14"></circle>
+      <circle cx="46" cy="350" r="2.5" fill="#4FDDFF"></circle>
+      <circle cx="344" cy="350" r="9" fill="#FF5CD6" opacity=".14"></circle>
+      <circle cx="344" cy="350" r="2.5" fill="#FF5CD6"></circle>
+      <circle cx="196" cy="58" r="1.5" fill="#C9A2FF" opacity=".7"></circle>
+      <circle cx="40" cy="236" r="1.5" fill="#4FDDFF" opacity=".6"></circle>
+      <circle cx="352" cy="232" r="1.5" fill="#FF5CD6" opacity=".6"></circle>
+      <circle cx="152" cy="22" r="1.2" fill="#4FDDFF" opacity=".6"></circle>
+      <circle cx="250" cy="18" r="1.2" fill="#FF5CD6" opacity=".6"></circle>
+    </g>
+  </svg>
+  <div style="position: relative; flex: none; width: 176px; height: 176px; box-sizing: border-box; border-radius: 50%; border: 2px solid transparent; background: radial-gradient(circle at 50% 40%, #17204A, #0A0E22 70%) padding-box, conic-gradient(from 210deg, #4FDDFF, #9B7BFF, #FF5CD6, #9B7BFF, #4FDDFF) border-box; box-shadow: 0 0 0 8px rgba(155,123,255,.07), 0 0 54px rgba(120,100,255,.38); display: grid; place-items: center">
+    <img src="/_blob/ef85e9d553e972ca2d763a04526a1ec9" alt="Logo Med Genius" style="display: block; width: 116px; height: auto">
+  </div>
+  <div style="position: relative; display: flex; flex-direction: column; align-items: center; gap: 8px; text-align: center">
+    <h1 style="margin: 0; font-family: Cinzel, serif; font-size: 32px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #F4F7FF">Med Genius</h1>
+    <p style="margin: 0; font-size: 11.5px; font-weight: 600; letter-spacing: .28em; text-transform: uppercase; color: #9AA3BA">Medicina · FAG</p>
+  </div>
+  <form style="position: relative; width: 100%; margin-top: 10px; display: flex; flex-direction: column; gap: 6px">
+    <label for="cpf" style="padding-left: 20px; font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: #9AA3BA">CPF</label>
+    <div style="height: 52px; box-sizing: border-box; display: flex; align-items: center; gap: 10px; padding: 0 46px 0 18px; border-radius: 26px; border: 1px solid rgba(255,255,255,.15); background: rgba(255,255,255,.055); box-shadow: inset 0 1px 0 rgba(255,255,255,.06); backdrop-filter: blur(14px)">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9AA3BA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></svg>
+      <input id="cpf" inputmode="numeric" placeholder="000.000.000-00" style="flex: 1; min-width: 0; height: 100%; padding: 0; border: 0; background: transparent; color: #F5F7FD; font: inherit; font-size: 16px; text-align: center">
+    </div>
+    <label for="senha" style="margin-top: 10px; padding-left: 20px; font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: #9AA3BA">Senha</label>
+    <div style="height: 52px; box-sizing: border-box; display: flex; align-items: center; gap: 10px; padding: 0 4px 0 18px; border-radius: 26px; border: 1px solid rgba(255,255,255,.15); background: rgba(255,255,255,.055); box-shadow: inset 0 1px 0 rgba(255,255,255,.06); backdrop-filter: blur(14px)">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9AA3BA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none"><rect x="4" y="11" width="16" height="10" rx="2"></rect><path d="M8 11V7a4 4 0 0 1 8 0v4"></path></svg>
+      <input id="senha" type="password" placeholder="Sua senha" style="flex: 1; min-width: 0; height: 100%; padding: 0; border: 0; background: transparent; color: #F5F7FD; font: inherit; font-size: 16px; text-align: center">
+      <button type="button" aria-label="Mostrar a senha" style="flex: none; width: 44px; height: 44px; border: 0; border-radius: 50%; background: transparent; color: #9AA3BA; display: grid; place-items: center; cursor: pointer">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+      </button>
+    </div>
+    <button type="button" style="margin-top: 18px; width: 100%; min-height: 54px; border: 0; border-radius: 27px; background: linear-gradient(135deg, #0094C8 0%, #5A4BF0 55%, #C42AA6 100%); color: #FFFFFF; font-family: Cinzel, serif; font-size: 16px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; box-shadow: inset 0 1px 0 rgba(255,255,255,.3), 0 12px 32px rgba(90,80,255,.42); cursor: pointer">Entrar</button>
+  </form>
+</main>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

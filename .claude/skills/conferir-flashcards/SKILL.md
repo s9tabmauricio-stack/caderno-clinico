@@ -8,9 +8,12 @@ description: Use quando o Mauricio pedir para conferir, verificar ou revisar os 
 Feita em 04/11/2026 porque a conferência de 115 cards num agente só, card por card, demorava demais. O que deixa rápido:
 - **blocos ao mesmo tempo**: 3 ou 4 conferências em paralelo, uma por grupo de capítulos;
 - **resposta só com problemas**: card certo não é reescrito nem listado;
+- **cada conferente lê só as páginas do seu bloco** (mais o glossário e a "Página de véspera"), não a apostila inteira;
 - **nada é reescrito durante a conferência**: as correções vêm depois, uma lista para o Mauricio aprovar.
 
-Os conferentes seguem a regra dos agentes de conteúdo: Opus com esforço extra-alto.
+Os conferentes seguem a regra dos agentes de conteúdo: Opus com esforço extra-alto. Preparar e juntar (seções 1 e 3) são mecânicos: ficam com quem coordena, sem agente.
+
+**Antigravity e Codex** (sem agentes ao mesmo tempo): façam os blocos um depois do outro, seguindo a seção 2 para cada um, e juntem no fim. O Codex não tem o conector: peça ao Mauricio a lista dos cards ou pare.
 
 ## 1. Preparar (quem coordena, uma vez)
 
@@ -21,17 +24,19 @@ Os conferentes seguem a regra dos agentes de conteúdo: Opus com esforço extra-
 3. **Mapa dos cards**, sem trazer o texto deles (o texto quem lê é o conferente):
    `select ordem, left(frente, 60) from public.flashcards where aula_id = '<aula-id>' order by ordem;`
    Divida em **3 ou 4 blocos** de capítulos inteiros, de 25 a 40 cards cada (uma aula curta, com menos de 40 cards, vai num bloco só). Cada bloco = faixa de `ordem` + páginas dos capítulos.
+4. **Um arquivo de texto por bloco**, com as páginas dele mais as do fim (véspera e glossário):
+   `python3 -I scripts/apostila-texto.py public/apostilas/<aula-id>/apostila.pdf --paginas 5-8,15-16 > <scratchpad>/<aula-id>-bloco1.txt`
 
 ## 2. Conferir (os blocos ao mesmo tempo)
 
 Abra um conferente por bloco **na mesma mensagem** (ferramenta Agent, `model: opus`, `effort: xhigh`), com este pedido, trocando o que está entre `< >`:
 
-> Confira os flashcards `<aula-id>` de ordem `<X>` a `<Y>` contra a apostila. Siga a seção "2. Conferir" de `.claude/skills/conferir-flashcards/SKILL.md`. Apostila em texto: `<arquivo>`. Seus capítulos: `<capítulos>`, páginas `<páginas>`.
+> Confira os flashcards `<aula-id>` de ordem `<X>` a `<Y>` contra a apostila. Siga a seção "2. Conferir" de `.claude/skills/conferir-flashcards/SKILL.md`. Texto das suas páginas: `<arquivo do bloco>`. Seus capítulos: `<capítulos>`, páginas `<páginas>`.
 
 O conferente:
 1. Busca só os seus cards, numa consulta (conector do Supabase, projeto `xtlpmtylifbalzxnfkib`):
    `select ordem, id, frente, verso from public.flashcards where aula_id = '<aula-id>' and ordem between <X> and <Y> order by ordem;`
-2. Lê o arquivo da apostila uma vez, todo (é curto): as suas páginas com atenção; o resto só para achar um assunto que apareça em outro capítulo, na "Página de véspera" ou no glossário. Não abre a transcrição, outras apostilas, as imagens das páginas nem outros arquivos.
+2. Lê uma vez o arquivo do seu bloco (as suas páginas, a "Página de véspera" e o glossário). Só se um card falar de assunto de outro capítulo, procura no texto inteiro (`<aula-id>-apostila.txt`) com `grep`, sem ler tudo. Não abre a transcrição, outras apostilas, as imagens das páginas nem outros arquivos.
 3. Para cada card, confere contra a apostila:
    - **o verso bate** com o que a apostila diz (número, dose, critério, corte, nome, sentido da frase); a frente pergunta uma coisa só e o verso responde a ela;
    - **"PROVA · "**: tem quando a apostila marca o assunto com o selo PROVA (aparece no texto como "… PROVA" no fim do título) ou o professor frisou; na dúvida, fica com PROVA (regra do Mauricio);

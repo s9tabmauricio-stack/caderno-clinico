@@ -21,8 +21,14 @@ como PDF e imagens em `public/apostilas/`.
   figuras, para quando for preciso mudar uma.
 
 `apostila.css` fica na raiz desta pasta, numa cópia só, porque é o mesmo para
-todas. Ele vem do padrão das apostilas (a skill `apostila-padrao`, em
-`.claude/skills/apostila-padrao/`), que é onde ele deve ser alterado.
+todas. **É o CSS oficial** e não muda à toa, para as apostilas antigas saírem
+iguais se forem geradas de novo: estilos novos vão num `<style>` no próprio
+`apostila.html` (ver `docs/apostila-molde.md`).
+
+As ferramentas de gerar e conferir o PDF ficam em `ferramentas/` (desde 04/11/2026),
+iguais para Claude, Antigravity e Codex: `render.py`, `checar.py`, a fonte Inter
+(`fonts/`, com a licença) e o `preparar.sh`, que instala o que falta e copia tudo
+para a pasta de trabalho. Nunca redigite esses arquivos: copie com o `preparar.sh`.
 
 ## Como gerar o PDF de novo
 
@@ -30,11 +36,10 @@ Numa pasta de trabalho fora do repositório (os arquivos auxiliares não devem s
 commitados):
 
 ```bash
-mkdir -p /tmp/gerar && cp apostilas-fonte/<aula-id>/* apostilas-fonte/apostila.css /tmp/gerar/
+apostilas-fonte/ferramentas/preparar.sh /tmp/gerar && cp -r apostilas-fonte/<aula-id>/* /tmp/gerar/
 ```
 
-Depois, na pasta `/tmp/gerar`, prepare o ambiente e extraia `render.py` e
-`checar.py` com o bloco "Ambiente" do padrão das apostilas, e rode:
+Depois, na pasta `/tmp/gerar`:
 
 ```bash
 python3 render.py apostila.html "Disciplina - Aula N - Professor - Tema.pdf"
@@ -44,36 +49,18 @@ python3 render.py apostila.html "Disciplina - Aula N - Professor - Tema.pdf"
 python3 checar.py "Disciplina - Aula N - Professor - Tema.pdf" apostila.html
 ```
 
-Para mudar o visual de todas de uma vez, use o `apostila.css` novo do padrão no
-lugar desta cópia, gere cada apostila e refaça a paginação de cada uma (a escada
-do padrão), porque mudar o CSS desloca o conteúdo das páginas.
+Para mudar o visual de todas de uma vez, mude o `apostila.css` desta pasta,
+gere cada apostila e refaça a paginação de cada uma (a escada da skill
+`apostila-padrao`), porque mudar o CSS desloca o conteúdo das páginas.
 
 ## Como publicar depois de gerar
 
-1. Converter as páginas em imagem, com 1400 px de largura:
-
-```bash
-pdftoppm -scale-to-x 1400 -scale-to-y -1 -jpeg -jpegopt quality=80 "<pdf novo>" /tmp/conv/p
-```
-
-2. Converter cada `p-NN.jpg` para `NN.webp` com qualidade 78 e apagar os `.jpg`.
-
-3. Trocar os arquivos e publicar:
-
-```bash
-rm -f public/apostilas/<aula-id>/*.webp && cp /tmp/conv/*.webp public/apostilas/<aula-id>/
-```
-
-```bash
-cp "<pdf novo>" public/apostilas/<aula-id>/apostila.pdf
-```
-
-```bash
-git add -A public/apostilas apostilas-fonte && git commit && git push origin HEAD:main
-```
-
-4. **Se o número de páginas mudou**, atualizar o `apostila_html` da aula no banco,
-   senão a última página não aparece no app. O comando está no manual do projeto.
+`scripts/publicar-apostila.sh "<pdf novo>" <aula-id>` troca as imagens e o PDF em
+`public/apostilas/<aula-id>/` e mostra o número de páginas. Antes, apague as
+imagens antigas (`rm -f public/apostilas/<aula-id>/*.webp`). Depois, commit e
+publicação como manda a skill `subir-apostila`. **Se o número de páginas mudou**,
+refaça o `apostila_html` da aula no banco (comando na skill `subir-apostila`),
+senão a última página não aparece no app.
 
 ## O que tem aqui hoje
 
@@ -83,8 +70,10 @@ git add -A public/apostilas apostilas-fonte && git commit && git push origin HEA
 | `pneumo-a2` | Pneumologia · Aula 2 · Pneumonia adquirida na comunidade | 19 |
 | `pneumo-a3` | Pneumologia · Aula 3 · Doença pulmonar obstrutiva crônica | 21 |
 | `pneumo-a4` | Pneumologia · Aula 4 · Pneumonia hospitalar | 21 |
+| `pneumo-a5` | Pneumologia · Aula 5 · Doenças da pleura | 27 |
+| `pneumo-a6` | Pneumologia · Aula 6 · Tabagismo | 16 |
 | `angio-a1` | Angiologia · Aula 2 · Pé diabético | 26 |
 
-As quatro estão no padrão de capítulos de 31/10/2026 (cartão com a coluna do
+As de Pneumologia 1 a 4 e a de Angiologia estão no padrão de capítulos de 31/10/2026 (cartão com a coluna do
 número em degradê) e foram conferidas: gerar o PDF a partir destes arquivos dá
 exatamente o mesmo texto e o mesmo número de páginas do que está publicado.
