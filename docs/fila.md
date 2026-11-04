@@ -20,4 +20,3 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
-| Auth e rotas protegidas | Codex | codex/supabase-auth | lib/supabase/proxy.ts, lib/auth.ts, app/login, app/auth/callback, components/LoginForm.tsx, tests/auth.test.mjs | 04/11/2026 |
