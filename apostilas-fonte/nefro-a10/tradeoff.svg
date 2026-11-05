@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="478pt" height="179pt" viewBox="0 0 478 179">
+<rect x="0.0" y="0.0" width="207.0" height="73.5" rx="10" ry="10" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="1"/>
+<text x="9.0" y="17.3" font-family="Inter" font-size="9" font-weight="600" fill="#16315C" text-anchor="start">1 Fósforo retido</text>
+<text x="9.0" y="31.2" font-family="Inter" font-size="7.9" font-weight="400" fill="#1F2933" text-anchor="start">O rim deixa de eliminar o fósforo, entre as fases</text>
+<text x="9.0" y="41.5" font-family="Inter" font-size="7.9" font-weight="400" fill="#1F2933" text-anchor="start">3b e 4.</text>
+<rect x="9.0" y="50.3" width="91.0" height="14.2" rx="7.1" ry="7.1" fill="#E8F0FE" stroke="#C3D8F8" stroke-width="1"/>
+<text x="15.0" y="59.7" font-family="Inter" font-size="7.2" font-weight="500" fill="#0B5BD3" text-anchor="start">Dieta pobre em fósforo</text>
+<rect x="105.0" y="50.3" width="48.3" height="14.2" rx="7.1" ry="7.1" fill="#E8F0FE" stroke="#C3D8F8" stroke-width="1"/>
+<text x="111.0" y="59.7" font-family="Inter" font-size="7.2" font-weight="500" fill="#0B5BD3" text-anchor="start">Sevelâmer</text>
+<rect x="271.0" y="0.0" width="207.0" height="73.5" rx="10" ry="10" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="1"/>
+<text x="280.0" y="17.3" font-family="Inter" font-size="9" font-weight="600" fill="#16315C" text-anchor="start">2 Fósforo prende o cálcio</text>
+<text x="280.0" y="31.2" font-family="Inter" font-size="7.9" font-weight="400" fill="#1F2933" text-anchor="start">Os dois andam juntos no sangue; o cálcio livre cai:</text>
+<text x="280.0" y="41.5" font-family="Inter" font-size="7.9" font-weight="400" fill="#1F2933" text-anchor="start">hipocalcemia.</text>
+<rect x="280.0" y="50.3" width="81.2" height="14.2" rx="7.1" ry="7.1" fill="#E8F0FE" stroke="#C3D8F8" stroke-width="1"/>
+<text x="286.0" y="59.7" font-family="Inter" font-size="7.2" font-weight="500" fill="#0B5BD3" text-anchor="start">Carbonato de cálcio</text>
+<rect x="271.0" y="103.5" width="207.0" height="73.5" rx="10" ry="10" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="1"/>
+<text x="280.0" y="120.8" font-family="Inter" font-size="9" font-weight="600" fill="#16315C" text-anchor="start">3 Paratireoide em alerta</text>
+<text x="280.0" y="134.8" font-family="Inter" font-size="7.9" font-weight="400" fill="#1F2933" text-anchor="start">O cálcio baixo faz a paratireoide produzir mais</text>
+<text x="280.0" y="145.0" font-family="Inter" font-size="7.9" font-weight="400" fill="#1F2933" text-anchor="start">paratormônio.</text>
+<rect x="280.0" y="153.8" width="52.6" height="14.2" rx="7.1" ry="7.1" fill="#E8F0FE" stroke="#C3D8F8" stroke-width="1"/>
+<text x="286.0" y="163.2" font-family="Inter" font-size="7.2" font-weight="500" fill="#0B5BD3" text-anchor="start">Cinacalcete</text>
+<rect x="337.6" y="153.8" width="42.4" height="14.2" rx="7.1" ry="7.1" fill="#E8F0FE" stroke="#C3D8F8" stroke-width="1"/>
+<text x="343.6" y="163.2" font-family="Inter" font-size="7.2" font-weight="500" fill="#0B5BD3" text-anchor="start">Calcitriol</text>
+<rect x="0.0" y="103.5" width="207.0" height="73.5" rx="10" ry="10" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="1"/>
+<text x="9.0" y="120.8" font-family="Inter" font-size="9" font-weight="600" fill="#16315C" text-anchor="start">4 Cálcio sai do osso</text>
+<text x="9.0" y="134.8" font-family="Inter" font-size="7.9" font-weight="400" fill="#1F2933" text-anchor="start">O cálcio do sangue normaliza, mas o fósforo</text>
+<text x="9.0" y="145.0" font-family="Inter" font-size="7.9" font-weight="400" fill="#1F2933" text-anchor="start">continua alto e puxa mais cálcio.</text>
+<polyline points="211.0,36.8 262.0,36.8" fill="none" stroke="#8AA9DF" stroke-width="1.6" stroke-linejoin="round"/>
+<polygon points="267.0,36.8 261.0,33.2 261.0,40.4" fill="#8AA9DF"/>
+<polyline points="374.5,76.5 374.5,95.5" fill="none" stroke="#8AA9DF" stroke-width="1.6" stroke-linejoin="round"/>
+<polygon points="374.5,100.5 370.9,94.5 378.1,94.5" fill="#8AA9DF"/>
+<polyline points="267.0,140.3 216.0,140.3" fill="none" stroke="#8AA9DF" stroke-width="1.6" stroke-linejoin="round"/>
+<polygon points="211.0,140.3 217.0,136.7 217.0,143.9" fill="#8AA9DF"/>
+<polyline points="103.5,100.5 103.5,81.5" fill="none" stroke="#8AA9DF" stroke-width="1.6" stroke-linejoin="round"/>
+<polygon points="103.5,76.5 99.9,82.5 107.1,82.5" fill="#8AA9DF"/>
+<text x="239.0" y="86.9" font-family="Inter" font-size="8" font-weight="600" fill="#0B5BD3" text-anchor="middle">ciclo</text>
+<text x="239.0" y="96.5" font-family="Inter" font-size="8" font-weight="600" fill="#0B5BD3" text-anchor="middle">vicioso</text>
+</svg>

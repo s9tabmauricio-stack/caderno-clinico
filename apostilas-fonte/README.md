@@ -73,6 +73,7 @@ senão a última página não aparece no app.
 | `pneumo-a5` | Pneumologia · Aula 5 · Doenças da pleura | 27 |
 | `pneumo-a6` | Pneumologia · Aula 6 · Tabagismo | 16 |
 | `angio-a1` | Angiologia · Aula 2 · Pé diabético | 26 |
+| `nefro-a10` | Nefrologia · Aula 10 · Doença renal crônica | 22 |
 
 As de Pneumologia 1 a 4 e a de Angiologia estão no padrão de capítulos de 31/10/2026 (cartão com a coluna do
 número em degradê) e foram conferidas: gerar o PDF a partir destes arquivos dá

@@ -1,0 +1,582 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<title>Nefrologia · Aula 10 · Doença renal crônica</title>
+<meta name="rodape" content="Mauricio Faria · Nefrologia · Aula 10 — Doença renal crônica">
+<link rel="stylesheet" href="apostila.css">
+<style>
+/* ===== componentes do molde novo (em teste na pneumo-a5) ===== */
+.simples { background: #FFFFFF; border: 1px solid #C3D8F8; border-left: 4pt solid #0B5BD3; border-radius: 12pt; padding: 9pt 14pt 10pt; margin: 0 0 10pt; break-inside: avoid; }
+.simples p { font-size: 10.2pt; line-height: 1.5; color: #1F2933; margin: 0; }
+.aqui { display: flex; margin-top: 7pt; }
+.aqui span { flex: 1; border-top: 3pt solid #DCDCE2; padding-top: 2.5pt; margin-right: 2.5pt; font-family: "Inter Medium"; font-size: 6pt; line-height: 1.25; color: #8E8E93; }
+.aqui span:last-child { margin-right: 0; }
+.aqui span.feito { border-top-color: #A9C4EE; color: #6C6C70; }
+.aqui span.on { border-top-color: #0B5BD3; color: #0B5BD3; font-family: "Inter SemiBold"; }
+.aqui span.ramo { border-top-style: dashed; }
+.figure .olhar { margin-top: 8pt; }
+.figure .olhar .kick { margin-bottom: 3pt; }
+.figure .olhar ul { margin: 0; }
+.figure .olhar li { padding-left: 0; font-size: 8.7pt; line-height: 1.45; margin-bottom: 2pt; }
+.figure .olhar li::before { display: none; }
+.figure .olhar li b { color: #0B5BD3; }
+.figure .leg { font-size: 7.8pt; color: #8E8E93; margin: 5pt 0 0; }
+.reg { font-size: 8.3pt; line-height: 1.45; color: #6C6C70; background: #F7F7FA; border: 1px solid #E3E3E8; border-radius: 9pt; padding: 5pt 10pt; margin: 6pt 0 9pt; break-inside: avoid; }
+.reg b { font-family: "Inter SemiBold"; color: #4F5B70; }
+.livros { font-size: 8.3pt; line-height: 1.45; color: #6E3AA7; background: #F4EBFB; border: 1px solid #DEC7F1; border-radius: 9pt; padding: 5pt 10pt; margin: 6pt 0 9pt; break-inside: avoid; }
+.livros b { color: #6E3AA7; }
+.sw.simples-sw { background: #FFFFFF; border-color: #C3D8F8; border-left: 3pt solid #0B5BD3; }
+.sw.aqui-sw { background: linear-gradient(90deg, #A9C4EE 0, #A9C4EE 45%, #0B5BD3 45%, #0B5BD3 70%, #DCDCE2 70%); border: 0; height: 4pt; border-radius: 2pt; }
+.sw.exame-sw { background: #1F2933; border-color: #1F2933; }
+.cmp .destaque { font-family: "Inter SemiBold"; color: #0B5BD3; }
+.cmp.c4 .k { width: 62pt; }
+.cmp.c4 .c { font-size: 8.3pt; padding-right: 8pt; }
+.vesp { break-before: page; }
+.vesp .item { display: flex; align-items: baseline; background: #FFFFFF; border: 1px solid #E3E3E8; border-radius: 12pt; padding: 7pt 12pt; margin: 0 0 6pt; break-inside: avoid; }
+.vesp .item .prova { flex: none; margin: 0 9pt 0 0; }
+.vesp .item p { margin: 0; font-size: 9.2pt; }
+.tiles.t4 { margin: 6pt 0 8pt; }
+.figure.lado { display: flex; align-items: center; }
+.figure.lado > img { flex: none; }
+.figure.lado .olhar { flex: 1; margin: 0 0 0 12pt; }
+.cover .toc a { padding: 3.6pt 0; }
+/* ===== desta apostila ===== */
+.vesp .item .n { flex: none; width: 46pt; margin: 0 9pt 0 0; font-family: "Inter SemiBold"; font-size: 8pt; color: #0B5BD3; }
+.vesp .item .prova + p, .vesp .item .n + p { flex: 1; }
+</style>
+</head><body>
+
+<div class="cover">
+  <div class="kicker">Nefrologia · Aula 10 · Doença renal crônica</div>
+  <h1>Doença renal crônica</h1>
+  <p class="sub">Quando o rim perde função devagar, o corpo inteiro sente: como reconhecer, classificar e adiar ao máximo a diálise.</p>
+  <div class="author"><span class="av">V</span><div><b>Dra. Vanessa Uscocovich</b><span>Nefrologista · 4 de novembro de 2026</span></div></div>
+  <div class="keynums"><div class="kick">Três números para levar</div>
+    <div class="kn-grid">
+      <div class="kn"><div class="n">3 meses</div><div class="l">de lesão renal fecham o diagnóstico, com ou sem queda da filtração</div></div>
+      <div class="kn"><div class="n">menos de 15</div><div class="l">de filtração (mL/min/1,73 m²): estágio 5, hora da diálise</div></div>
+      <div class="kn"><div class="n">0,6 a 0,8 g/kg</div><div class="l">de proteína por dia no tratamento conservador</div></div>
+    </div></div>
+  <div class="toc"><div class="kick">Nesta apostila</div>
+    <a href="#s00"><span class="tn">00</span><span class="tt">Recados da disciplina</span><span class="pg">{{s00}}</span></a>
+    <a href="#s01"><span class="tn">01</span><span class="tt">O que é doença renal crônica</span><span class="pg">{{s01}}</span></a>
+    <a href="#s02"><span class="tn">02</span><span class="tt">Classificação: filtração e albumina</span><span class="pg">{{s02}}</span></a>
+    <a href="#s03"><span class="tn">03</span><span class="tt">Quantos são e por que chegam lá</span><span class="pg">{{s03}}</span></a>
+    <a href="#s04"><span class="tn">04</span><span class="tt">Os néfrons que sobram</span><span class="pg">{{s04}}</span></a>
+    <a href="#s05"><span class="tn">05</span><span class="tt">O que o rim deixa de eliminar</span><span class="pg">{{s05}}</span></a>
+    <a href="#s06"><span class="tn">06</span><span class="tt">Fósforo, cálcio e paratormônio</span><span class="pg">{{s06}}</span></a>
+    <a href="#s07"><span class="tn">07</span><span class="tt">Síndrome urêmica</span><span class="pg">{{s07}}</span></a>
+    <a href="#s08"><span class="tn">08</span><span class="tt">Diagnóstico: crônica ou aguda</span><span class="pg">{{s08}}</span></a>
+    <a href="#s09"><span class="tn">09</span><span class="tt">Tratamento conservador</span><span class="pg">{{s09}}</span></a>
+    <a href="#s10"><span class="tn">10</span><span class="tt">Diálise e transplante</span><span class="pg">{{s10}}</span></a>
+    <a href="#s11"><span class="tn">11</span><span class="tt">Véspera da prova</span><span class="pg">{{s11}}</span></a>
+    <p class="note">Organizada a partir da aula, com a linguagem ajustada para o estudo. A legenda de cores está na página 2.</p>
+  </div>
+</div>
+
+<div class="legend"><div class="kick">Como ler esta apostila</div><div class="lg-grid">
+  <div class="lg"><span class="sw blue"></span><div><b>Azul</b> conteúdo da aula e raciocínio</div></div>
+  <div class="lg"><span class="sw green"></span><div><b>Verde</b> dose ou valor de referência</div></div>
+  <div class="lg"><span class="sw red"></span><div><b>Vermelho</b> alerta, erro comum ou pegadinha da professora</div></div>
+  <div class="lg"><span class="sw orange"></span><div><b>Laranja</b> fala ou parêntese da professora</div></div>
+  <div class="lg"><span class="sw purple"></span><div><b>Roxo</b> complemento que não foi dito em aula</div></div>
+  <div class="lg"><span class="prova">PROVA</span><div><b>Marca de prova</b> o ponto que cai na prova</div></div>
+  <div class="lg"><span class="sw simples-sw"></span><div><b>Em palavras simples</b> a ideia do capítulo, sem termo técnico</div></div>
+  <div class="lg"><span class="sw aqui-sw"></span><div><b>Você está aqui</b> a etapa da trilha da aula</div></div>
+</div></div>
+
+<div class="prof"><div class="kick">Sobre a professora · Dra. Vanessa Uscocovich</div>
+<div class="rows">
+  <div class="row"><div class="k">Atuação</div><div class="v">Nefrologia. Acompanha pacientes com doença renal crônica em tratamento conservador e leva a turma às aulas práticas de hemodiálise.</div></div>
+</div></div>
+
+<!-- ================================================================ 00 -->
+<section id="s00">
+  <div class="sec-head"><div class="lado"><span class="k">Seção</span><span class="num">00</span></div><div class="corpo"><h2>Recados da disciplina</h2></div></div>
+  <div class="date"><div class="d"><span class="m">Novembro</span><span class="dd">12</span></div><div class="t"><b>Prova de Nefrologia</b><span>Quinta-feira, 12 de novembro de 2026. Horário: confira na Agenda do app.</span></div></div>
+  <div class="rows">
+    <div class="row"><div class="k">Semana que vem</div><div class="v">Sem aula teórica na quarta-feira, 11 de novembro: a turma preferiu terminar o conteúdo neste dia, e não haverá a aula de dúvidas. As aulas práticas continuam, na tarde de 4 e na tarde de 11 de novembro.</div></div>
+    <div class="row"><div class="k">Slides</div><div class="v">São a base do estudo, mas muita coisa dita em aula não está neles. A presença faz diferença.</div></div>
+    <div class="row"><div class="k">Na prova</div><div class="v">No dia da prova, a professora revisa e discute as questões uma por uma. Não vale argumentar que algo não estava no slide: pode ter sido dito em aula.</div></div>
+  </div>
+  <div class="figure"><div class="kick">O que é preciso saber: o mapa da professora</div><img src="mapa-mental.svg" alt="Mapa mental: classificar, causas, defesas do organismo e tratamento conservador">
+    <p class="leg">As quatro frentes que a professora pediu para guardar; a terceira é “o grande pulo do gato”.</p></div>
+  <div class="quote"><p>“Se fosse só para mandar slide, eu não precisava estar aqui; eu mandava os slides e ficava na minha casa. Então a presença na aula faz diferença.”</p><div class="who">Dra. Vanessa, sobre a presença em aula</div></div>
+
+  <div class="figure"><div class="kick">A trilha da aula</div><img src="trilha.svg" alt="Trilha da aula em oito etapas, da definição ao tratamento"></div>
+</section>
+
+<!-- ================================================================ 01 -->
+<section id="s01">
+  <div class="sec-head"><div class="lado"><span class="k">Seção</span><span class="num">01</span></div><div class="corpo"><h2>O que é doença renal crônica</h2><div class="aqui"><span class="on">Definição</span><span>Classificação</span><span>Causas</span><span>Néfrons que sobram</span><span>O que se acumula</span><span>Síndrome urêmica</span><span>Diagnóstico</span><span>Tratamento</span></div></div></div>
+  <div class="simples"><p>É quando o rim está lesado há pelo menos três meses, mesmo que o exame de sangue ainda pareça normal. Ela anda devagar e em silêncio: o corpo se adapta, e muitas vezes o paciente só descobre quando o rim já quase parou.</p></div>
+
+  <h3>O caso que abriu a aula</h3>
+  <p>Um caso real, de alguns anos atrás. Homem de 64 anos, com diabetes há 18 anos e hipertensão há 10, as duas tratadas de forma irregular na unidade básica de saúde. Parou o acompanhamento na pandemia, quando as unidades estavam lotadas de pacientes com covid-19, e estava havia mais de 3 anos sem exames de controle.</p>
+  <p>Chegou ao hospital pelo Serviço de Atendimento Móvel de Urgência, como vaga zero, depois de um rebaixamento do nível de consciência por crise hipertensiva, e foi direto para a unidade de terapia intensiva: já intubado, em ventilação mecânica e em <b>anasarca</b> (edema no corpo todo). A sonda vesical não drenou nada, e a anúria se manteve na reavaliação após 4 horas.</p>
+  <div class="tiles">
+    <div class="tile r"><div class="lab">Ureia</div><div class="n">293 mg/dL</div><div class="s">uremia</div></div>
+    <div class="tile r"><div class="lab">Creatinina</div><div class="n">11,2 mg/dL</div><div class="s">função renal muito baixa</div></div>
+    <div class="tile r"><div class="lab">Potássio</div><div class="n">6,8 mEq/L</div><div class="s">hiperpotassemia</div></div>
+  </div>
+  <div class="tiles">
+    <div class="tile r"><div class="lab">pH</div><div class="n">7,21</div><div class="s">acidose</div></div>
+    <div class="tile r"><div class="lab">Bicarbonato</div><div class="n">16 mEq/L</div><div class="s">acidose metabólica</div></div>
+    <div class="tile r"><div class="lab">Pressão</div><div class="n">180 por 120</div><div class="s">mmHg: hipertensão grau 3</div></div>
+  </div>
+  <p>Uremia, potássio alto e acidose metabólica num diabético e hipertenso sem acompanhamento: é o quadro clássico de doença renal crônica causada por diabetes e hipertensão. O caso volta nos capítulos 04 e 10.</p>
+
+  <h3>A definição</h3>
+  <p>A doença renal crônica é uma síndrome de perda <b>lenta e progressiva</b> da função dos rins, que leva a sinais e sintomas da incapacidade de manter a homeostase (o equilíbrio do corpo). Lenta e progressiva é o que a separa da doença renal aguda, em que a perda é abrupta. Nos casos avançados, os rins ficam esbranquiçados e pálidos.</p>
+  <div class="es big">
+    <div class="kick">O grande pulo do gato</div>
+    <p class="lead">Só é renal crônico quem tem lesão renal por 3 meses ou mais, com ou sem diminuição da taxa de filtração glomerular.</p>
+    <div class="cells">
+      <div class="cell"><div class="lab">Tempo</div><p>O diagnóstico só se fecha depois de 90 dias.</p></div>
+      <div class="cell"><div class="lab">Função</div><p>Pode estar normal: a creatinina não precisa estar alterada.</p></div>
+      <div class="cell"><div class="lab">Lesão</div><p>Alteração na biópsia, nos exames de sangue e urina ou no exame de imagem.</p></div>
+    </div>
+  </div>
+  <div class="quote"><p>“Aqui tá o grande pulo do gato da doença renal crônica. Se vocês guardarem isso na cabeça, vocês entendem a doença e todos os sintomas dela.”</p><div class="who">Dra. Vanessa, sobre a definição</div></div>
+
+  <h3>Função normal não afasta a doença</h3>
+  <p>O normal é ter dois rins, de tamanho normal e com a pelve renal normal. Se o exame mostra alguma alteração estrutural do rim, o paciente já é renal crônico, ainda que com função normal. Três exemplos da aula:</p>
+  <div class="grid3">
+    <div class="card"><span class="tag">Genética</span><h4>Doença renal policística</h4><p>A simples presença dos cistos já pode fazer do paciente um renal crônico.</p></div>
+    <div class="card"><span class="tag">Estrutura</span><h4>Rim único</h4><p>Não é o normal. Ter um rim só já é ser renal crônico.</p></div>
+    <div class="card"><span class="tag">Urina</span><h4>Nefropatia por imunoglobulina A</h4><p>Hematúria microscópica, mesmo com rim e creatinina normais.</p></div>
+  </div>
+  <p>A nefropatia por imunoglobulina A (doença de Berger, vista nas glomerulopatias com o Dr. Guilherme Ahn) evolui muito devagar, em 20 a 25 anos. O rim tem tamanho normal, quase sempre não há proteinúria, a urina não tem espuma e o paciente não tem sintomas. Ainda assim, a hematúria microscópica basta: <b>qualquer alteração renal por mais de 3 meses é doença renal crônica</b>.</p>
+  <div class="box red"><div class="kick"><span class="dot"></span>Pegadinha da professora</div><p><span class="medium">Esperar a creatinina subir para chamar de doença renal crônica.</span> Não é só a disfunção que dá o diagnóstico: alteração estrutural (cistos, rim único) ou na urina (hematúria) por mais de 3 meses já basta.</p></div>
+
+  <h3>Lesão aguda por cima da crônica</h3>
+  <p>A doença renal crônica pode receber uma lesão aguda por cima. É relativamente comum com remédios tóxicos para o rim (tema da aula da Dra. Nandressa Riso), contraste ou infecção. Exemplo da aula: paciente em estágio 2 tem uma infecção de garganta que vira pneumonia, interna, recebe medicação em dose alta e faz uma angiotomografia de tórax para afastar tromboembolismo pulmonar. A função piora.</p>
+  <p>Na fase aguda não dá para dizer se ele mudou de estágio. É preciso esperar a infecção ser tratada e o contraste ser eliminado, dando tempo para os túbulos se recuperarem, e só depois de no mínimo 3 meses ver o que sobrou. Exemplo: creatinina de base de 1,4 a 1,5 (taxa de filtração em torno de 65) sobe para 4 na internação e, com a recuperação, volta para 1,5 ou 1,6. Aí se reclassifica.</p>
+  <div class="box red"><div class="kick"><span class="dot"></span>Pegadinha da professora</div><p><span class="medium">Mudar o estágio do paciente durante a internação.</span> A classificação só muda depois de 90 dias, com a parte aguda já recuperada. É por isso que a definição exige 3 meses.</p></div>
+</section>
+
+<!-- ================================================================ 02 -->
+<section id="s02">
+  <div class="sec-head"><div class="lado"><span class="k">Seção</span><span class="num">02</span></div><div class="corpo"><h2>Classificação: filtração e albumina</h2><div class="aqui"><span class="feito">Definição</span><span class="on">Classificação</span><span>Causas</span><span>Néfrons que sobram</span><span>O que se acumula</span><span>Síndrome urêmica</span><span>Diagnóstico</span><span>Tratamento</span></div></div></div>
+  <div class="simples"><p>A doença renal crônica é graduada de dois jeitos: pelo quanto o rim ainda filtra (estágios G1 a G5) e pelo quanto de albumina escapa na urina (A1 a A3). Juntos, eles dizem o risco de o paciente chegar à diálise.</p></div>
+  <p>Serve para todo médico, não só para o nefrologista: ortopedista, cirurgião geral, clínico, ginecologista. Em qualquer laudo de paciente com alteração da função renal, o juiz vai perguntar qual é o grau da disfunção, e advogado e juiz conhecem essa classificação. O mínimo é saber que são 5 graus.</p>
+
+  <h3 data-bm="Cinco estágios pela taxa de filtração">Cinco estágios pela taxa de filtração <span class="prova">PROVA</span></h3>
+  <div class="cmp">
+    <div class="r h"><div class="k"></div><div class="c">Taxa de filtração glomerular (mL/min/1,73 m²)</div><div class="c">O que significa</div></div>
+    <div class="r"><div class="k">G1</div><div class="c">90 ou mais</div><div class="c">Lesão com filtração normal ou aumentada (exemplo clássico: nefropatia por imunoglobulina A)</div></div>
+    <div class="r"><div class="k">G2</div><div class="c">60 a 89</div><div class="c">Discreta diminuição</div></div>
+    <div class="r"><div class="k">G3a</div><div class="c">45 a 59</div><div class="c">Moderada diminuição</div></div>
+    <div class="r"><div class="k">G3b</div><div class="c">30 a 44</div><div class="c">Diminuição maior, ainda no estágio 3</div></div>
+    <div class="r"><div class="k">G4</div><div class="c">15 a 29</div><div class="c">Diminuição grave</div></div>
+    <div class="r"><div class="k">G5</div><div class="c"><span class="destaque">menos de 15</span></div><div class="c"><span class="destaque">Necessidade de diálise</span></div></div>
+  </div>
+  <p>Para guardar: começa no 90 e vai baixando aos poucos, 90, 60, 45, 30, 15. O estágio 3 foi dividido em dois, 3a e 3b.</p>
+  <div class="box red"><div class="kick"><span class="dot"></span>Pegadinha da professora</div><p><span class="medium">Dar laudo de aposentadoria em qualquer estágio.</span> A princípio, aposenta só o paciente em estágio 5. O paciente do posto com cálculo renal e muita cólica que quer se aposentar, com filtração de estágio 3b, não tem direito. E não é preciso mandar ao nefrologista: o próprio médico faz o laudo.</p></div>
+
+  <h3 data-bm="Três faixas de albumina na urina">Três faixas de albumina na urina <span class="prova">PROVA</span></h3>
+  <p>A outra classificação usa a albumina na urina (albuminúria). A presença de albumina na urina é sinal de gravidade, de lesão de órgão-alvo, e a cardiologia usa muito essa classificação para prescrever alguns remédios.</p>
+  <div class="tiles">
+    <div class="tile g"><div class="lab">A1</div><div class="n">até 30 mg/g</div><div class="s">normal ou levemente aumentada</div></div>
+    <div class="tile r"><div class="lab">A2</div><div class="n">30 a 300 mg/g</div><div class="s">moderadamente aumentada</div></div>
+    <div class="tile r"><div class="lab">A3</div><div class="n">acima de 300 mg/g</div><div class="s">gravemente aumentada</div></div>
+  </div>
+  <div class="box orange"><div class="kick"><span class="dot"></span>Parêntese da professora</div><p>Guardem o 30 em 2026: provavelmente até 2028 esse corte vai diminuir. Por enquanto, ainda é 30.</p></div>
+
+  <h3>A tabela que junta as duas</h3>
+  <p>Qualquer estágio de filtração, até o G1, pode ter albuminúria. Cruzando as duas classificações, quanto mais para baixo (menos filtração) e mais para a direita (mais albumina), maior o risco de chegar à doença renal crônica terminal. A proteína perdida na urina é basicamente albumina: quase 70% de toda a proteína eliminada.</p>
+  <div class="figure"><img src="matriz.svg" alt="Tabela de risco cruzando estágios de filtração e albuminúria">
+    <div class="olhar"><div class="kick">O que olhar</div><ul>
+      <li><b>Mesmo estágio, risco diferente.</b> O G3b com menos de 30 mg/g tem risco moderado de ir para diálise; o mesmo G3b com muita perda de albumina tem risco muito elevado.</li>
+      <li><b>Os sinalizadores de gravidade</b> são a filtração baixa e a albumina alta: as duas pioram o risco.</li>
+    </ul></div>
+    <p class="leg">Esquema da regra dada em aula: o tom fica mais escuro para baixo e para a direita.</p>
+  </div>
+  <div class="livros"><b>Nos livros:</b> na tabela da diretriz internacional KDIGO, as casas têm quatro faixas de risco (baixo, moderado, alto e muito alto), e o G3b com albuminúria A1 já aparece como risco alto.</div>
+
+  <h3>O quarteto fantástico da nefrologia</h3>
+  <p>É nas duas frentes, melhorar a filtração e reduzir a albuminúria, que agem as quatro classes que hoje formam o quarteto fantástico da nefrologia (como o da cardiologia), usadas para evitar a piora para G4, G5 e A3.</p>
+  <div class="rows">
+    <div class="row"><div class="k">Angiotensina</div><div class="v">Inibidor da enzima conversora de angiotensina ou bloqueador do receptor de angiotensina.</div></div>
+    <div class="row"><div class="k">Sódio-glicose</div><div class="v">Inibidor do cotransportador sódio-glicose tipo 2.</div></div>
+    <div class="row"><div class="k">Finerenona</div><div class="v">Desde junho de 2026, também para o renal crônico não diabético (capítulo 09).</div></div>
+    <div class="row"><div class="k">Canetas</div><div class="v">Análogos do peptídeo semelhante ao glucagon 1, as canetas emagrecedoras: para o paciente com obesidade e alguma dessas alterações.</div></div>
+  </div>
+</section>
+
+<!-- ================================================================ 03 -->
+<section id="s03">
+  <div class="sec-head"><div class="lado"><span class="k">Seção</span><span class="num">03</span></div><div class="corpo"><h2>Quantos são e por que chegam lá</h2><div class="aqui"><span class="feito">Definição</span><span class="feito">Classificação</span><span class="on">Causas</span><span>Néfrons que sobram</span><span>O que se acumula</span><span>Síndrome urêmica</span><span>Diagnóstico</span><span>Tratamento</span></div></div></div>
+  <div class="simples"><p>Cada vez mais brasileiros chegam à diálise, e quase dois terços deles por causa de pressão alta e diabetes. Tratar bem essas duas doenças é o melhor jeito de evitar a doença renal crônica.</p></div>
+  <p>A doença renal crônica tem tratamento caro. Por isso a meta é evitar que o doente cronifique e chegue ao estágio 5, com necessidade de diálise. Os números da Sociedade Brasileira de Nefrologia:</p>
+  <div class="tiles">
+    <div class="tile"><div class="lab">Em diálise, 2017</div><div class="n">122 mil</div><div class="s">pacientes no Brasil</div></div>
+    <div class="tile"><div class="lab">Em diálise, julho de 2022</div><div class="n">153 mil</div><div class="s">pacientes no Brasil</div></div>
+    <div class="tile"><div class="lab">Em ambulatório, hoje</div><div class="n">mais de 2 milhões</div><div class="s">acompanhados por nefrologistas</div></div>
+  </div>
+  <p>Em média, são 21 mil casos novos de pacientes em diálise por ano no Brasil, um aumento de 6% na última década.</p>
+  <h3>Por que só aumenta</h3>
+  <ol class="flow">
+    <li><b class="t">O cuidado não está sendo efetivo.</b> O tratamento das doenças que causam doença renal crônica talvez não esteja funcionando tão bem.</li>
+    <li><b class="t">Remédio não basta.</b> É preciso transformar o pensamento do paciente sobre a própria doença.</li>
+    <li><b class="t">A população envelhece.</b> Quem antes morria de doença cardiovascular aos 55 ou 60 anos hoje sobrevive e evolui para doença renal crônica por volta dos 70.</li>
+  </ol>
+
+  <h3 data-bm="As causas no Brasil">As causas no Brasil <span class="prova">PROVA</span></h3>
+  <p>Pelo Censo de 2020 da Sociedade Brasileira de Nefrologia, hipertensão e diabetes já praticamente se equivalem como causa:</p>
+  <div class="rows">
+    <div class="row"><div class="k">32%</div><div class="v"><b>Hipertensão</b></div></div>
+    <div class="row"><div class="k">31%</div><div class="v"><b>Diabetes</b></div></div>
+    <div class="row"><div class="k">9%</div><div class="v"><b>Glomerulonefrite crônica</b></div></div>
+  </div>
+  <div class="rows">
+    <div class="row"><div class="k">4%</div><div class="v"><b>Doença policística</b></div></div>
+    <div class="row"><div class="k">24%</div><div class="v"><b>Outras:</b> tumores, abuso de anti-inflamatórios, doenças reumatológicas e as indefinidas, em que o doente já chega com a doença crônica instalada.</div></div>
+  </div>
+</section>
+
+<!-- ================================================================ 04 -->
+<section id="s04">
+  <div class="sec-head"><div class="lado"><span class="k">Seção</span><span class="num">04</span></div><div class="corpo"><h2>Os néfrons que sobram</h2><div class="aqui"><span class="feito">Definição</span><span class="feito">Classificação</span><span class="feito">Causas</span><span class="on">Néfrons que sobram</span><span>O que se acumula</span><span>Síndrome urêmica</span><span>Diagnóstico</span><span>Tratamento</span></div></div></div>
+  <div class="simples"><p>Quando parte dos filtros do rim morre, os que sobram passam a trabalhar dobrado para manter o corpo em equilíbrio. Isso segura o paciente por anos, mas o excesso de trabalho também gasta esses filtros, até não sobrar nenhum.</p></div>
+
+  <h3 data-bm="Adaptação e hiperfiltração">Adaptação e hiperfiltração <span class="prova">PROVA</span></h3>
+  <p>Cada rim tem cerca de 1 milhão de néfrons. O diabetes os destrói por glomeruloesclerose (a lesão de Kimmelstiel-Wilson), e a hipertensão, por esclerose das arteríolas. Os néfrons que sobram se adaptam para manter a homeostase: passam a eliminar mais potássio, mais sódio e mais água. <b>É isso que mantém a vida do paciente</b> mesmo com a função reduzida.</p>
+  <p>O preço vem depois: os néfrons que trabalham a mais “reclamam”. A hipertrofia e a hiperfiltração lesam os próprios néfrons que sobram e perpetuam a lesão, até a esclerose de todos os glomérulos. Por isso os pacientes da hemodiálise vivem em anúria: a grande maioria não urina nada, porque não há mais néfron produzindo urina.</p>
+  <div class="figure"><img src="nefrons.svg" alt="Ciclo da hiperfiltração: perda de néfrons, os que sobram trabalham a mais, hiperfiltração, nova perda, até a esclerose de todos"></div>
+  <div class="box"><div class="kick"><span class="dot"></span>De volta ao caso</div><p>Nos três anos sem acompanhamento, os néfrons que sobravam trabalharam a mais para dar conta. Se a taxa de filtração tivesse sido acompanhada, ele provavelmente estaria num estágio 2 ou 3a e, com o tratamento irregular, foi passando por 3b, 4 e 5 até chegar à diálise de urgência.</p></div>
+
+  <h3>O que acelera a progressão</h3>
+  <div class="card wide"><ul class="cols2">
+    <li><b>Infecções:</b> a infecção do trato urinário é muito comum.</li>
+    <li><b>Hipertensão</b> não controlada.</li>
+    <li><b>Diabetes</b> não tratado.</li>
+    <li><b>Obstrução urinária:</b> o homem diabético descompensado com hiperplasia prostática evolui muito pior.</li>
+    <li><b>Hiperuricemia:</b> o ácido úrico lesa artérias, arteríolas e o glomérulo.</li>
+    <li><b>Dislipidemia.</b></li>
+    <li><b>Doenças autoimunes:</b> as vasculites lesam a parede dos glomérulos.</li>
+  </ul></div>
+
+  <h3>Inexoravelmente progressiva</h3>
+  <div class="quote"><p>“A doença renal é inexoravelmente progressiva.”</p><div class="who">Frase do pai da nefrologia, lembrada pela Dra. Vanessa</div></div>
+  <p>Em algum momento da vida, o doente renal vai chegar à fase 5. O trabalho do médico é adiar isso ao máximo com o tratamento conservador, antes que ele precise de diálise.</p>
+  <div class="quote"><p>“Eu tenho uma paciente que eu acompanho há 12 anos em fase 4 e ela está fora de diálise. Ela faz exercício, ela faz dieta, ela toma medicação, ela toma 3 litros de água por dia e, todo ano, a gente brinca: ‘Mais um ano que nós demos conta de você fora do serviço de diálise’. E é essa a nossa função como médicos.”</p><div class="who">Dra. Vanessa, sobre uma paciente com doença renal policística</div></div>
+</section>
+
+<!-- ================================================================ 05 -->
+<section id="s05">
+  <div class="sec-head"><div class="lado"><span class="k">Seção</span><span class="num">05</span></div><div class="corpo"><h2>O que o rim deixa de eliminar</h2><div class="aqui"><span class="feito">Definição</span><span class="feito">Classificação</span><span class="feito">Causas</span><span class="feito">Néfrons que sobram</span><span class="on">O que se acumula</span><span>Síndrome urêmica</span><span>Diagnóstico</span><span>Tratamento</span></div></div></div>
+  <div class="simples"><p>Com poucos néfrons, o rim não dá conta de jogar fora o sal, a água, o potássio, o ácido e a ureia. Tudo isso se acumula no sangue e explica o inchaço, a pressão alta, o potássio alto e o mal-estar do renal crônico.</p></div>
+
+  <h3>Ureia e outras toxinas urêmicas</h3>
+  <p>A ureia (vista na primeira aula, junto com a amônia) não é eliminada por completo e vai se depositando no sangue. É esse excesso que dá os sintomas da uremia. O ácido úrico, também eliminado pelo rim, se acumula (hiperuricemia). E outros solutos de eliminação renal pesam nos sintomas: guanidinas, mio-inositol, beta-2 microglobulina e fator de necrose tumoral, entre outros.</p>
+  <div class="ref"><div class="txt"><div class="kick"><span class="dot"></span>Ureia no sangue</div><p>Valor normal. O paciente do caso tinha 293.</p></div><div class="val">10 a 40<small>mg/dL</small></div></div>
+
+  <h3>Do início ao fim da doença</h3>
+  <p>Pense da fase 1 à fase 5: no começo, os néfrons que sobram compensam; no fim, são poucos e não conseguem mais.</p>
+  <div class="cmp">
+    <div class="r h"><div class="k"></div><div class="c">No início: os néfrons compensam</div><div class="c">No fim: poucos néfrons</div></div>
+    <div class="r"><div class="k">Sódio</div><div class="c">A filtração aumenta, a reabsorção cai e a fração excretada sobe: o rim faz natriurese.</div><div class="c">Não consegue mais a natriurese: edema. O sódio retido aumenta a pressão arterial.</div></div>
+    <div class="r"><div class="k">Água</div><div class="c">Perde a capacidade de concentrar a urina: noctúria (urina à noite).</div><div class="c">Não excreta a água: hipernatremia e edema. A pressão hidrostática sobe e o líquido transuda.</div></div>
+    <div class="r"><div class="k">Potássio</div><div class="c">Os néfrons aumentam a excreção de potássio.</div><div class="c">Entre as fases 4 e 5, o potássio fica retido: hiperpotassemia.</div></div>
+    <div class="r"><div class="k">Ácido</div><div class="c">A excreção de hidrogênio pelos rins começa a cair, e o bicarbonato do plasma também.</div><div class="c">O organismo fica acidótico: o renal crônico vive em acidose metabólica.</div></div>
+  </div>
+  <div class="livros"><b>Nos livros:</b> a água retida costuma diluir o sódio do sangue (hiponatremia); o que aumenta é o sódio total do corpo, que vira edema e pressão alta.</div>
+  <p>O banho de diálise mostrado na aula prática é rico em bicarbonato exatamente para compensar a acidose do renal crônico.</p>
+  <div class="box red"><div class="kick"><span class="dot"></span>Pegadinha da professora</div><p><span class="medium">Achar que antes do estágio 5 não existe hipercalemia.</span> Existe, só que menos, porque ainda há néfrons para eliminar. Sem remédio nenhum, em tese, o rim daria conta até a fase 4. Mas quase todos usam inibidor da enzima conversora, bloqueador do receptor de angiotensina, espironolactona ou finerenona, que fazem reter potássio. Prescreveu, acompanhe: não dá para mandar o paciente voltar daqui a 90 dias.</p></div>
+  <p>Ao prescrever para o renal crônico, pense ao mesmo tempo na proteção do rim (contra a hiperfiltração) e na hiperpotassemia.</p>
+
+  <h3>Medir a função: creatinina e cistatina C</h3>
+  <p>A creatinina é muito fiel à função renal: quase não é secretada, então praticamente tudo o que chega ao rim é eliminado. A cistatina C não é reabsorvida nem secretada, por isso é um parâmetro um pouco mais fiel.</p>
+  <div class="cmp">
+    <div class="r h"><div class="k"></div><div class="c">Creatinina</div><div class="c">Cistatina C</div></div>
+    <div class="r"><div class="k">Fidelidade</div><div class="c">Muito fiel; pouco secretada</div><div class="c">Mais fiel: nem reabsorvida nem secretada</div></div>
+    <div class="r"><div class="k">Falha em</div><div class="c">Sarcopênicos (pouca massa muscular) e amputados</div><div class="c">Serve justamente nesses pacientes</div></div>
+    <div class="r"><div class="k">Acesso</div><div class="c">Exame simples</div><div class="c">Mais difícil e cara: o Sistema Único de Saúde e os convênios não cobrem</div></div>
+    <div class="r"><div class="k">Quando usar</div><div class="c"><span class="destaque">Na grande maioria dos casos</span></div><div class="c"><span class="destaque">Nos casos duvidosos</span></div></div>
+  </div>
+
+  <h3>As fórmulas: Cockcroft-Gault e CKD-EPI</h3>
+  <p>A taxa de filtração glomerular, ou clearance de creatinina (para efeito prático, a mesma coisa), é, a grosso modo, a porcentagem de rim que funciona. A fórmula de Cockcroft-Gault é de uso corrente à beira do leito e não exige prática: só conta de menos, de vezes e de dividir. O residente é obrigado a saber.</p>
+  <div class="es">
+    <div class="kick">Fórmula de Cockcroft-Gault</div>
+    <p class="lead">Clearance de creatinina (mL/min) = (140 − idade) × peso em kg ÷ (72 × creatinina em mg/dL)</p>
+    <div class="cells">
+      <div class="cell"><div class="lab">Mulher</div><p>Multiplique o resultado por 0,85: a massa muscular é um pouco menor.</p></div>
+      <div class="cell"><div class="lab">Para treinar</div><p>Quem souber a própria creatinina pode fazer a conta de si mesmo.</p></div>
+    </div>
+  </div>
+  <div class="box purple"><div class="kick"><span class="dot"></span>Complemento: fora da aula</div><p>Exemplo de conta. Mulher de 25 anos, 60 kg, creatinina 0,8 mg/dL: (140 − 25) × 60 ÷ (72 × 0,8) = 6.900 ÷ 57,6 ≈ 120; vezes 0,85 ≈ 102 mL/min.</p></div>
+  <p>Outra fórmula muito usada é a CKD-EPI, sigla em inglês do grupo de estudo que a criou (Chronic Kidney Disease Epidemiology Collaboration). A versão atual, de 2021 (com um pequeno ajuste em 2023), usa três dados: creatinina, idade e sexo; a anterior também usava a raça, que foi excluída. Está em qualquer aplicativo de cálculo médico, como o MedCalc, e resolve rápido a dúvida sobre o estágio do paciente.</p>
+</section>
+
+<!-- ================================================================ 06 -->
+<section id="s06">
+  <div class="sec-head"><div class="lado"><span class="k">Seção</span><span class="num">06</span></div><div class="corpo"><h2>Fósforo, cálcio e paratormônio</h2><div class="aqui"><span class="feito">Definição</span><span class="feito">Classificação</span><span class="feito">Causas</span><span class="feito">Néfrons que sobram</span><span class="on">O que se acumula</span><span>Síndrome urêmica</span><span>Diagnóstico</span><span>Tratamento</span></div></div></div>
+  <div class="simples"><p>O rim doente não consegue jogar fora o fósforo. O fósforo que sobra prende o cálcio do sangue, e o corpo, para repor esse cálcio, passa a tirá-lo dos ossos. O resultado são ossos fracos e cálcio depositado nas artérias.</p></div>
+  <p>Só duas especialidades lembram que o fósforo existe: a nefrologia e a nutrologia. E é dele que começa um dos maiores problemas do renal crônico, a <b>osteodistrofia renal</b>, por um mecanismo chamado trade-off (troca: o corpo corrige uma coisa pagando com outra).</p>
+
+  <h3>O trade-off</h3>
+  <p>Entre a fase 3b e a fase 4, o rim deixa de eliminar o fósforo. O fósforo é o melhor amigo do cálcio: os dois andam juntos no sangue, como fosfato de cálcio, e juntos são eliminados pelo intestino, nas fezes. Com o fósforo sobrando, o cálcio circulante livre cai (hipocalcemia). O cálcio baixo estimula a paratireoide, vizinha da tireoide, a produzir mais paratormônio, que tira cálcio dos ossos. O cálcio do sangue normaliza, mas o rim continua sem eliminar o fósforo, que puxa mais cálcio. É um círculo vicioso.</p>
+  <div class="figure"><img src="tradeoff.svg" alt="Ciclo do trade-off do fósforo e os três problemas que ele cria, com o ponto onde cada tratamento age">
+    <div class="olhar"><div class="kick">O que olhar</div><ul>
+      <li><b>O chute inicial</b> é a falta de eliminação do fósforo (passo 1), não o cálcio.</li>
+      <li><b>Nas etiquetas azuis,</b> onde age cada tratamento.</li>
+    </ul></div>
+  </div>
+  <div class="box orange"><div class="kick"><span class="dot"></span>Na aula, um teatrinho</div><p>Uma aluna fez o fósforo, um aluno fez o cálcio (o maior, porque há mais cálcio que fósforo no sangue) e a professora fez a paratireoide. O fósforo, sobrando no sangue, puxa o cálcio para o seu lado. A paratireoide olha o sangue, não acha o cálcio e vai buscar no osso: “Me dá cálcio!”. O cálcio do sangue normaliza, mas o fósforo continua lá, querendo mais cálcio, e o ciclo continua.</p></div>
+  <div class="quote"><p>“Esse nó é causa de debates homéricos em congresso. Não é só sua dúvida, é dúvida de todo mundo.”</p><div class="who">Dra. Vanessa, respondendo se o renal crônico tem cálcio baixo ou alto</div></div>
+  <div class="box red"><div class="kick"><span class="dot"></span>Pegadinha da professora</div><p><span class="medium">Dizer que o renal crônico tem cálcio alto porque o paratormônio tira cálcio do osso.</span> O motor é o fósforo alto, que derruba o cálcio: o quadro típico é hiperfosfatemia com hipocalcemia. O paratormônio só traz o cálcio de volta ao normal, à custa do osso.</p></div>
+
+  <h3>Três problemas</h3>
+  <div class="rows">
+    <div class="row"><div class="k">1. Osso frágil</div><div class="v">A doença óssea do renal crônico é uma osteoporose própria dele: ossos quase sem cálcio, dentes que caem e ficam pequenos, fratura com qualquer batida ou ao virar rápido na cama. Quem for ortopedista vai ver muita fratura de colo de fêmur, de punho e de costela nesses pacientes.</div></div>
+    <div class="row"><div class="k">2. Cálcio nas artérias</div><div class="v">O cálcio tirado do osso que sobra no sangue não volta para o osso: calcifica as artérias (calcifilaxia arteriolar). Nas coronárias, mais angina e mais infarto; nas pernas, mais doença arterial periférica.</div></div>
+    <div class="row"><div class="k">3. Vitamina D pouco ativa</div><div class="v">É o rim que ativa a vitamina D (calcitriol). Sem ela, o corpo não regula bem o cálcio, e a paratireoide fica livre para tirar cálcio de todos os ossos, inclusive dos dentes.</div></div>
+  </div>
+  <p>E há outros fatores, como o fator de crescimento de fibroblastos 23, que também mudam a evolução da osteodistrofia renal; a aula ficou em cálcio, fósforo e paratormônio.</p>
+
+  <h3>Como quebrar o ciclo</h3>
+  <ol class="flow">
+    <li><b class="t">Repor cálcio pela boca.</b> Carbonato de cálcio, para não depender só do osso.</li>
+    <li><b class="t">Bloquear a absorção do fósforo.</b> Sevelâmer (nome comercial Renagel), um quelante de fósforo.</li>
+    <li><b class="t">Dieta pobre em fósforo.</b> Nada de produto industrializado: nos rótulos, quase tudo é conservado com algum fosfato.</li>
+    <li><b class="t">Amarrar as mãos da paratireoide.</b> Mesmo com cálcio e fósforo acertados, ela continua tirando cálcio do osso. O cinacalcete, descoberto há uns 8 a 10 anos, impede isso.</li>
+    <li><b class="t">Repor a vitamina D ativa.</b> Calcitriol.</li>
+  </ol>
+  <div class="quote"><p>“Eu tô gostando de tirar cálcio do osso! Eu sou paga pra tirar cálcio do osso, é pra isso que eu sirvo.”</p><div class="who">Dra. Vanessa, no papel de paratireoide, explicando por que entra o cinacalcete</div></div>
+
+  <h3>Vitamina D no renal crônico</h3>
+  <div class="ref"><div class="txt"><div class="kick"><span class="dot"></span>Vitamina D (ng/mL)</div><p>Abaixo de 20, repor: primeiro o calcitriol e, se a vitamina D não normalizar, a vitamina D também.</p></div>
+    <div class="vals"><div class="val"><small>Renal crônico</small>acima de 20</div><div class="val"><small>Cardiopata</small>40 a 50</div></div></div>
+  <p>No renal crônico entra o detalhe do fósforo, que o hepatopata e o cardiopata não têm. Por isso é preciso fazer as duas coisas ao mesmo tempo: compensar com calcitriol e, se preciso, repor a vitamina D.</p>
+</section>
+
+<!-- ================================================================ 07 -->
+<section id="s07">
+  <div class="sec-head"><div class="lado"><span class="k">Seção</span><span class="num">07</span></div><div class="corpo"><h2>Síndrome urêmica</h2><div class="aqui"><span class="feito">Definição</span><span class="feito">Classificação</span><span class="feito">Causas</span><span class="feito">Néfrons que sobram</span><span class="feito">O que se acumula</span><span class="on">Síndrome urêmica</span><span>Diagnóstico</span><span>Tratamento</span></div></div></div>
+  <div class="simples"><p>As toxinas que o rim não elimina se espalham e afetam o corpo todo: estômago, pulmão, cérebro, nervos, pele, ossos, sangue e defesas. A doença aparece no rim, mas é de todos os órgãos.</p></div>
+  <p>O conjunto desses sinais e sintomas pelo organismo inteiro é a síndrome urêmica.</p>
+  <div class="rows">
+    <div class="row"><div class="k">Digestivo</div><div class="v">Em geral na fase 5, antes da diálise, e é sinal de que precisa dialisar: náusea e vômito (a ureia irrita a mucosa), epigastralgia e soluço. O soluço é um dos sinais mais clássicos.</div></div>
+    <div class="row"><div class="k">Pulmão e pleura</div><div class="v">Pleurite, derrame pleural e pulmão urêmico, que é edema agudo de pulmão: a pressão hidrostática supera a oncótica e o excesso de água transuda para o pulmão.</div></div>
+    <div class="row"><div class="k">Neurológico</div><div class="v">Alteração do estado de alerta (confuso, lento para responder), alteração do sono (acorda de madrugada) e asterixis (tremor das mãos).</div></div>
+  </div>
+  <div class="rows">
+    <div class="row"><div class="k">Pernas inquietas</div><div class="v">Um dos maiores incômodos: o paciente deita e mexe as pernas a noite inteira. É depósito de substâncias urêmicas nos nervos periféricos. Difícil de tratar: mais tempo de diálise e, às vezes, antiparkinsonianos.</div></div>
+    <div class="row"><div class="k">Unhas</div><div class="v">Unhas meio a meio de Lindsay (quem as descreveu): metade branca, metade escura, pela despigmentação da região proximal. São características do renal crônico.</div></div>
+    <div class="row"><div class="k">Ossos e partes moles</div><div class="v">Osteodistrofia renal; síndrome do túnel do carpo, por depósito de beta-2 microglobulina; calcificação de partes moles e de vasos (calcifilaxia).</div></div>
+  </div>
+  <div class="rows">
+    <div class="row"><div class="k">Genital</div><div class="v">No homem, alteração da espermatogênese (oligoespermia). Na mulher, a partir da fase 4, menstruação irregular, mas ela pode engravidar e precisa ser orientada a se cuidar. Perda de libido nos dois, pela anemia e pela fraqueza muscular. Pode haver alterações da tireoide.</div></div>
+    <div class="row"><div class="k">Imunidade</div><div class="v">Imunidade celular comprometida e mais risco de câncer: rastrear neoplasia é obrigatório.</div></div>
+    <div class="row"><div class="k">Gorduras</div><div class="v">Triglicerídeos altos: a remoção é anormal e a produção aumenta pela hipoalbuminemia.</div></div>
+    <div class="row"><div class="k">Sangue</div><div class="v">Anemia normocrômica e normocítica, por falta de eritropoetina, com cansaço importante (astenia). Plaquetas em número normal, mas que não grudam umas nas outras: mais sangramento.</div></div>
+  </div>
+  <div class="box red"><div class="kick"><span class="dot"></span>Pegadinha da professora</div><p><span class="medium">Tratar com diurético o líquido no pulmão da fase 5.</span> Quase não há néfron para responder ao diurético. O doente com líquido no pulmão nessa fase precisa de diálise para tirar o líquido.</p></div>
+
+  <h3>Risco de morte cardiovascular</h3>
+  <div class="box"><div class="kick"><span class="dot"></span>Doente renal crônico em fase 5, em diálise</div><p>Tem <b>cerca de 40% de chance de morrer de doença cardiovascular</b>, muito acima da população geral: mais acidente vascular cerebral, mais infarto. A calcifilaxia é uma das causas.</p></div>
+  <p>O cálcio explica parte desse risco. O corpo precisa manter o cálcio do sangue normal, porque ele participa de várias vias, como a cardíaca e a neurológica; para isso, tira cálcio do osso, e esse cálcio nem sempre volta para o osso: deposita-se nos vasos e aumenta o risco de infarto e de angina. Não deixar o paciente chegar à fase 5 é a meta.</p>
+  <div class="quote"><p>“Já conseguiram entender, só nos sinais e sintomas, por que a gente tem que tratar bem diabético, tratar bem hipertenso para que eles não cheguem à doença renal crônica? Porque ela é uma doença multissistêmica. É uma doença que aparece no rim, mas afeta todos os órgãos que a gente tem. Então, se nós pudermos evitar que isto aconteça, excelente.”</p><div class="who">Dra. Vanessa, sobre a síndrome urêmica</div></div>
+</section>
+
+<!-- ================================================================ 08 -->
+<section id="s08">
+  <div class="sec-head"><div class="lado"><span class="k">Seção</span><span class="num">08</span></div><div class="corpo"><h2>Diagnóstico: crônica ou aguda</h2><div class="aqui"><span class="feito">Definição</span><span class="feito">Classificação</span><span class="feito">Causas</span><span class="feito">Néfrons que sobram</span><span class="feito">O que se acumula</span><span class="feito">Síndrome urêmica</span><span class="on">Diagnóstico</span><span>Tratamento</span></div></div></div>
+  <div class="simples"><p>Para pensar em doença renal crônica, lembre das causas, examine o paciente e peça um conjunto básico de exames. Diante de um rim que parou, alguns sinais contam se ele está parando agora ou se vem parando há anos.</p></div>
+  <h3>Lembrar das causas</h3>
+  <p>Hipertensão, infecção do trato urinário, cálculo renal (litíase), diabetes, doenças congênitas, drogas que sabidamente alteram a função renal, doenças reumatológicas e vasculopatias. O uso crônico de anti-inflamatório piora a função renal; em aula, o efeito foi descrito como uma estenose da artéria renal.</p>
+  <div class="livros"><b>Nos livros:</b> o anti-inflamatório reduz o fluxo de sangue do glomérulo porque contrai a arteríola que entra nele (aferente); não estreita a artéria renal propriamente dita.</div>
+  <h3>Os exames</h3>
+  <p>Além dos sinais e sintomas do exame físico, este mínimo já permite o diagnóstico de disfunção renal:</p>
+  <div class="card wide"><ul class="cols2">
+    <li>Hemograma</li>
+    <li>Ureia e creatinina</li>
+    <li>Cálcio e fósforo</li>
+    <li>Sódio e potássio</li>
+    <li>Ácido úrico</li>
+    <li>Gasometria arterial</li>
+    <li>Proteínas totais e frações</li>
+    <li>Exame de urina (parcial de urina) e dosagem de proteína na urina</li>
+  </ul></div>
+
+  <h3>Crônica ou aguda?</h3>
+  <p>Diante de um paciente como o do caso do início, alguns achados separam as duas:</p>
+  <div class="cmp">
+    <div class="r h"><div class="k"></div><div class="c">Doença renal crônica</div><div class="c">Lesão renal aguda</div></div>
+    <div class="r"><div class="k">Urina</div><div class="c">O volume cai aos poucos, a partir dos estágios 3b, 4 e 5</div><div class="c">Oligúria ou anúria súbitas</div></div>
+    <div class="r"><div class="k">Anemia</div><div class="c">Normocrômica e normocítica, pela falta de eritropoetina</div><div class="c">Ausente (pode haver anemia por perda de sangue, que não é crônica)</div></div>
+    <div class="r"><div class="k">Ureia e creatinina</div><div class="c">Sobem devagar: creatinina de 1,2, depois de 4 meses 1,4, depois de 6 meses 1,8</div><div class="c">Sobem rápido: creatinina de 0,8 de manhã e 2 às 14h</div></div>
+    <div class="r"><div class="k">Fundo de olho</div><div class="c">Alterado (hipertensão, diabetes)</div><div class="c">Normalmente normal</div></div>
+    <div class="r"><div class="k">Cálcio e fósforo</div><div class="c"><span class="destaque">Hipocalcemia com hiperfosfatemia (trade-off)</span></div><div class="c"><span class="destaque">Normais: não deu tempo de o trade-off começar</span></div></div>
+  </div>
+  <p>Também conta a <b>palidez palha</b>: a cor amarelada da pele do renal crônico, porque a ureia, que dá a cor amarela à urina, se deposita no tecido subcutâneo. Já o exemplo da lesão aguda é quem até ontem urinava, caiu do telhado, fraturou o fêmur, sangrou muito na fratura e na cirurgia, fez choque hipovolêmico e hoje amanheceu anúrico na terapia intensiva. Nessa lesão aguda, a classificação é a KDIGO 1, 2 e 3 (da diretriz internacional de doença renal).</p>
+  <div class="box"><div class="kick"><span class="dot"></span>Quando embaralha</div><p>Uma lesão aguda sobre a crônica (por exemplo, sepse num renal crônico) mistura os achados, e a tabela deixa de ser tão rígida. Pense primeiro no que é fácil, crônica de um lado e aguda do outro, e trate a sobreposição como exceção.</p></div>
+</section>
+
+<!-- ================================================================ 09 -->
+<section id="s09">
+  <div class="sec-head"><div class="lado"><span class="k">Seção</span><span class="num">09</span></div><div class="corpo"><h2>Tratamento conservador</h2><div class="aqui"><span class="feito">Definição</span><span class="feito">Classificação</span><span class="feito">Causas</span><span class="feito">Néfrons que sobram</span><span class="feito">O que se acumula</span><span class="feito">Síndrome urêmica</span><span class="feito">Diagnóstico</span><span class="on">Tratamento</span></div></div></div>
+  <div class="simples"><p>Antes da diálise, o tratamento é feito com comida, hábitos e remédios, para o rim durar o máximo possível. Vale para os estágios 1 a 4, e a base dele é a alimentação.</p></div>
+  <p>O tratamento conservador contempla todos os estágios antes da diálise: 1, 2, 3 e 4.</p>
+
+  <h3 data-bm="1. Controlar a pressão">1. Controlar a pressão <span class="prova">PROVA</span></h3>
+  <ol class="flow">
+    <li><b class="t">Menos sal.</b> O rim com poucos néfrons não elimina todo o sal da dieta; comendo sal normal ou a mais, ele retém, e o sal retido sobe a pressão.</li>
+    <li><b class="t">Exercício físico.</b> No mínimo 30 minutos, cinco vezes por semana, como recomenda a Organização Mundial da Saúde.</li>
+    <li><b class="t">Não fumar.</b></li>
+    <li><b class="t">Remédios anti-hipertensivos.</b></li>
+  </ol>
+
+  <h3 data-bm="2. Menos proteína na dieta">2. Menos proteína na dieta <span class="prova">PROVA</span></h3>
+  <div class="ref"><div class="txt"><div class="kick"><span class="dot"></span>Proteína na dieta do renal crônico</div><p>Diminui a hiperfiltração, melhora a nutrição e preserva os glomérulos que sobram. De preferência, proteína de alto valor biológico.</p></div><div class="val">0,6 a 0,8 g/kg<small>por dia</small></div></div>
+  <p>O paciente não fica desnutrido: se preciso, suplementa-se com cetoácidos (aminoácidos). E ele pode e deve fazer exercício de força. O que é proteína de alto valor biológico fica para a próxima aula.</p>
+
+  <h3>3. Edema</h3>
+  <p>Diurético de alça ou tiazídico.</p>
+
+  <h3>4. Potássio: ensinar a cozinhar</h3>
+  <p>Uma das formas mais fáceis de tratar a hiperpotassemia é ensinar o paciente a cozinhar.</p>
+  <div class="box orange"><div class="kick"><span class="dot"></span>Parêntese da professora: por que a mãe faz sopa?</div><p>Mãe e avó não sabem nada de nefro, mas sabem de cuidado. Ao ferver legumes e verduras, o potássio passa para a água. Com frango (proteína), arroz (carboidrato), cenoura (vitamina) e um pouco de sal, a canja vira o melhor suplemento: água, sódio, potássio, proteína e carboidrato num prato só, junto com carinho. Pelo mesmo motivo se dá refrigerante de cola na diarreia: repõe o potássio, cuja falta dá muita fraqueza.</p></div>
+  <div class="box red"><div class="kick"><span class="dot"></span>Pegadinha da professora</div><p><span class="medium">Dar sopa ao renal crônico.</span> Ele não pode tomar sopa: é justamente o caldo que guarda o potássio que saiu dos legumes. Para ele, faz-se o contrário da avó, jogando a água fora.</p></div>
+  <ol class="flow">
+    <li><b class="t">De molho.</b> Deixe o feijão de molho.</li>
+    <li><b class="t">Primeira água.</b> Cozinhe e jogue essa água fora.</li>
+    <li><b class="t">Segunda água.</b> Cozinhe de novo, em água nova.</li>
+  </ol>
+  <p>O cozimento em duas águas vale para toda leguminosa ou verdura cozida: feijão, cenoura, beterraba, brócolis, couve-flor. Alface não dá para cozinhar, então verdura crua entra o mínimo possível. Nas frutas, laranja só meia; maçã, pera e banana podem ser cozidas em duas águas. Só com isso o potássio do alimento cai muito.</p>
+  <div class="card wide"><span class="tag">Evitar</span><ul class="cols2">
+    <li>Frutas e verduras cruas</li>
+    <li>Refrigerante</li>
+    <li>Chocolate</li>
+    <li>Fruta seca</li>
+    <li>Extrato de tomate</li>
+    <li>Café solúvel: tem potássio e muito fósforo</li>
+  </ul></div>
+  <div class="quote"><p>“A base do tratamento conservador do renal crônico é nutricional.”</p><div class="who">Dra. Vanessa</div></div>
+
+  <h3>5. Anemia</h3>
+  <div class="ref"><div class="txt"><div class="kick"><span class="dot"></span>Quando tratar a anemia</div><p>Com eritropoetina subcutânea, que age por mais tempo; a endovenosa faz pico e cai. Dosar o ferro sérico e, se preciso, associar hidróxido de ferro, em geral na veia.</p></div><div class="val">abaixo de 10<small>de hemoglobina (g/dL)</small></div></div>
+
+  <h3>6. Osteodistrofia renal</h3>
+  <div class="rows">
+    <div class="row"><div class="k">Hipocalcemia</div><div class="v">Carbonato de cálcio pela boca.</div></div>
+    <div class="row"><div class="k">Hiperfosfatemia</div><div class="v">Quelantes de fósforo: sevelâmer (Renagel).</div></div>
+    <div class="row"><div class="k">Falta de vitamina D</div><div class="v">Análogos do tipo calcitriol.</div></div>
+    <div class="row"><div class="k">Paratormônio alto</div><div class="v">Todas as medidas anteriores e, se preciso, cinacalcete.</div></div>
+  </div>
+
+  <h3>7. Coração, vitaminas, vacinas e fila</h3>
+  <div class="rows">
+    <div class="row"><div class="k">Ácido acetilsalicílico</div><div class="v">Em 2026, só para o renal crônico com doença cardiovascular conhecida.</div></div>
+    <div class="row"><div class="k">Estatina</div><div class="v">Se houver hiperlipidemia ativa.</div></div>
+    <div class="row"><div class="k">Homocisteína</div><div class="v">Usar redutor de homocisteína: a dieta tem poucas verduras, entra pouco ácido fólico e pouca vitamina B12, e os dois são repostos em comprimido.</div></div>
+  </div>
+  <div class="rows">
+    <div class="row"><div class="k">Vacinas</div><div class="v">Hepatite B, obrigatória; também influenza, covid-19 e pneumococo.</div></div>
+    <div class="row"><div class="k">Transplante</div><div class="v">Incluir na fila na passagem da fase 4 para a fase 5 (capítulo 10).</div></div>
+  </div>
+  <div class="box red"><div class="kick"><span class="dot"></span>Pegadinha da professora</div><p><span class="medium">Dar ácido acetilsalicílico para proteger a fístula.</span> Essa prática caiu por terra: só aumentou o sangramento da fístula e não resolveu os trombos.</p></div>
+
+  <h3>8. Remédios novos para proteger o rim</h3>
+  <div class="rows">
+    <div class="row"><div class="k">Sódio-glicose no Sistema Único de Saúde</div><div class="v">O inibidor do cotransportador sódio-glicose tipo 2 foi liberado pelo Sistema Único de Saúde em outubro de 2024, a partir da fase 2 da doença renal crônica. Acima de 65 anos, o paciente retira direto na Farmácia Popular. Abaixo de 65, precisa ser diabético ou, se não for, ter albuminúria A3 (acima de 300 mg/g).</div></div>
+    <div class="row"><div class="k">Finerenona</div><div class="v">Até 4 de junho de 2026, era usada só em diabéticos. Desde então, no Congresso Europeu de Nefrologia, com artigo publicado no New England Journal of Medicine, foi liberada também para o renal crônico não diabético, para evitar a progressão. É informação nova: a turma passada não a teve.</div></div>
+  </div>
+</section>
+
+<!-- ================================================================ 10 -->
+<section id="s10">
+  <div class="sec-head"><div class="lado"><span class="k">Seção</span><span class="num">10</span></div><div class="corpo"><h2>Diálise e transplante</h2><div class="aqui"><span class="feito">Definição</span><span class="feito">Classificação</span><span class="feito">Causas</span><span class="feito">Néfrons que sobram</span><span class="feito">O que se acumula</span><span class="feito">Síndrome urêmica</span><span class="feito">Diagnóstico</span><span class="on">Tratamento</span></div></div></div>
+  <div class="simples"><p>Quando o rim chega ao fim, há duas saídas: a diálise, que limpa o sangue por fora do corpo ou pelo peritônio, e o transplante. O ideal é planejar a diálise com tempo; a urgência fica para quando o corpo já está em perigo.</p></div>
+
+  <h3>Quando começar a diálise</h3>
+  <p>A diálise começa quando o clearance de creatinina cai abaixo de 14 mL/min, qualquer valor abaixo de 14, sem precisar esperar chegar a 9. No diabético, começa mais cedo, com clearance entre 15 e 20: ele se beneficia do início precoce, até porque vive em hipoaldosteronismo e tende a ter o potássio mais alto.</p>
+  <div class="figure"><img src="dialise.svg" alt="Fluxo de decisão entre diálise de urgência e diálise eletiva"></div>
+
+  <h3>Hemodiálise ou diálise peritoneal</h3>
+  <div class="cmp">
+    <div class="r h"><div class="k"></div><div class="c">Hemodiálise</div><div class="c">Diálise peritoneal</div></div>
+    <div class="r"><div class="k">Como filtra</div><div class="c">Máquina com um filtro</div><div class="c">O peritônio é o filtro de troca, com o líquido de diálise na cavidade</div></div>
+    <div class="r"><div class="k">Precisa de</div><div class="c">Acesso venoso central ou fístula</div><div class="c">Higiene e condição social para entender o procedimento (o material, o Sistema Único de Saúde entrega)</div></div>
+  </div>
+  <p>A diálise peritoneal pode ser intermitente, ambulatorial contínua ou automatizada, esta feita só à noite, com uma máquina cicladora.</p>
+
+  <h3>Transplante</h3>
+  <p>O transplante começou nos anos 1960 e se expandiu com os imunossupressores, principalmente a prednisona e a azatioprina, e muito mais depois de 1965, com a descoberta do sistema de antígenos leucocitários humanos, que mede a compatibilidade entre doador e receptor.</p>
+  <ol class="flow">
+    <li><b class="t">Compatibilidade do grupo sanguíneo ABO.</b> É a primeira coisa pedida nos exames pré-transplante.</li>
+    <li><b class="t">Compatibilidade de antígenos leucocitários humanos.</b> Feita depois da separação pelo grupo ABO.</li>
+    <li><b class="t">Lista por compatibilidade.</b> Todos os transplantes no Brasil são acompanhados pelo Ministério Público, há mais de 30 anos.</li>
+  </ol>
+  <p>Existe ainda uma lista de prioridade. Têm prioridade quem já é transplantado de outro órgão e precisa de um novo e, no caso do rim, quem ficou sem acesso para diálise (sem lugar para fístula, sem veia para cateter, com fibrose do peritônio), porque sem o transplante esse paciente morre. Cada órgão tem seu roteiro de priorização; a grande maioria dos pacientes segue a tipagem ABO e de antígenos leucocitários.</p>
+  <p>O <b>transplante preemptivo</b> é feito na fase 5, antes de começar a diálise, com doador vivo ou falecido, e é permitido por lei. Por isso o paciente entra na fila já na passagem da fase 4 para a fase 5.</p>
+</section>
+
+<!-- ================================================================ 11 -->
+<section id="s11" class="vesp">
+  <div class="sec-head"><div class="lado"><span class="k">Seção</span><span class="num">11</span></div><div class="corpo"><h2>Véspera da prova</h2></div></div>
+  <div class="item"><span class="n">3 meses</span><p>Doença renal crônica é lesão renal por 3 meses ou mais, com ou sem queda da filtração. Creatinina normal não afasta (rim único, policístico, imunoglobulina A com hematúria). Lesão aguda por cima: reclassificar só depois de 90 dias.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p>Estágios pela filtração (mL/min/1,73 m²): G1 90 ou mais · G2 60 a 89 · G3a 45 a 59 · G3b 30 a 44 · G4 15 a 29 · G5 menos de 15, diálise. Aposentadoria, a princípio, só no G5.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p>Albuminúria: A1 até 30 mg/g · A2 30 a 300 · A3 acima de 300. Quanto mais para baixo e para a direita na tabela, maior o risco.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p>Causas (Censo 2020): hipertensão 32%, diabetes 31%, glomerulonefrite crônica 9%, doença policística 4%, outras 24%.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p>Os néfrons que sobram trabalham a mais (eliminam mais sódio, potássio e água): a hipertrofia e a hiperfiltração mantêm a vida, mas perpetuam a lesão até a esclerose de todos os glomérulos e a anúria.</p></div>
+  <div class="item"><span class="n">Fases</span><p>No início, natriurese e noctúria; no fim, edema e pressão alta. Potássio retido entre as fases 4 e 5. Acidose metabólica. Ureia normal: 10 a 40 mg/dL.</p></div>
+  <div class="item"><span class="n">3b a 4</span><p>Trade-off: o fósforo retido prende o cálcio, a hipocalcemia ativa a paratireoide e o paratormônio tira cálcio do osso. Problemas: osso frágil, cálcio nas artérias, vitamina D pouco ativa.</p></div>
+  <div class="item"><span class="n">Fórmulas</span><p>Cockcroft-Gault: (140 − idade) × peso ÷ (72 × creatinina); mulher, vezes 0,85. CKD-EPI: creatinina, idade e sexo.</p></div>
+  <div class="item"><span class="n">40%</span><p>Na fase 5, em diálise, cerca de 40% de chance de morte cardiovascular. Síndrome urêmica: soluço, pernas inquietas, unhas meio a meio, anemia por falta de eritropoetina, plaquetas que não grudam.</p></div>
+  <div class="item"><span class="n">Diagnóstico</span><p>Diante da anúria: anemia, fundo de olho alterado, cálcio baixo com fósforo alto e creatinina subindo devagar apontam para a doença crônica.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p>Tratamento conservador (estágios 1 a 4): menos sal, exercício de 30 minutos 5 vezes por semana, sem cigarro, anti-hipertensivo; proteína de 0,6 a 0,8 g/kg por dia; potássio: cozinhar em duas águas; eritropoetina subcutânea se hemoglobina abaixo de 10; carbonato de cálcio, sevelâmer, calcitriol e cinacalcete.</p></div>
+  <div class="item"><span class="n">menos de 14</span><p>Diálise com clearance abaixo de 14 (diabético, 15 a 20); eletiva entre 9 e 14. Urgência: volume que não responde ao diurético, potássio alto, pericardite ou encefalopatia urêmica.</p></div>
+
+  <div class="box red"><div class="kick"><span class="dot"></span>Erros comuns</div><ul>
+    <li><span class="medium">Esperar a creatinina subir para diagnosticar.</span> Três meses de qualquer lesão renal bastam.</li>
+    <li><span class="medium">Reclassificar durante a internação.</span> Só depois de 90 dias.</li>
+    <li><span class="medium">Dizer que o renal crônico tem cálcio alto.</span> O típico é cálcio baixo com fósforo alto.</li>
+    <li><span class="medium">Dar sopa ou diurético na fase 5.</span> A sopa concentra o potássio; o diurético não tem néfron para agir.</li>
+  </ul></div>
+
+  <h3>Palavras da aula em linguagem simples</h3>
+  <div class="rows terms">
+    <div class="row"><div class="k">Albuminúria</div><div class="v">Albumina (a principal proteína do sangue) perdida na urina.</div></div>
+    <div class="row"><div class="k">Anasarca</div><div class="v">Inchaço do corpo inteiro.</div></div>
+    <div class="row"><div class="k">Anúria</div><div class="v">Quando o paciente praticamente não produz urina.</div></div>
+  </div>
+  <div class="rows terms">
+    <div class="row"><div class="k">Asterixis</div><div class="v">Tremor das mãos, sinal de intoxicação do sistema nervoso.</div></div>
+    <div class="row"><div class="k">Calcifilaxia</div><div class="v">Depósito de cálcio nas artérias e nas partes moles.</div></div>
+    <div class="row"><div class="k">Calcitriol</div><div class="v">A forma ativa da vitamina D, que depende do rim para ser ativada.</div></div>
+  </div>
+  <div class="rows terms">
+    <div class="row"><div class="k">Cetoácidos</div><div class="v">Suplemento de aminoácidos que evita desnutrição na dieta pobre em proteína.</div></div>
+    <div class="row"><div class="k">Cinacalcete</div><div class="v">Remédio que impede a paratireoide de seguir tirando cálcio do osso.</div></div>
+    <div class="row"><div class="k">Cistatina C</div><div class="v">Exame de função renal mais fiel que a creatinina, porém mais caro.</div></div>
+  </div>
+  <div class="rows terms">
+    <div class="row"><div class="k">CKD-EPI</div><div class="v">Fórmula que estima a taxa de filtração pela creatinina, idade e sexo; sigla em inglês do grupo que a criou.</div></div>
+    <div class="row"><div class="k">Clearance de creatinina</div><div class="v">Quanto de sangue o rim limpa por minuto; na prática, o mesmo que taxa de filtração glomerular.</div></div>
+    <div class="row"><div class="k">Eritropoetina</div><div class="v">Hormônio do rim que manda a medula fazer glóbulos vermelhos.</div></div>
+  </div>
+  <div class="rows terms">
+    <div class="row"><div class="k">Hiperfiltração</div><div class="v">Trabalho a mais dos néfrons que sobram, que acaba por lesá-los.</div></div>
+    <div class="row"><div class="k">Homeostase</div><div class="v">O equilíbrio do corpo: água, sais, ácido e base no lugar.</div></div>
+    <div class="row"><div class="k">KDIGO</div><div class="v">Diretriz internacional de doença renal (sigla em inglês); dá nome aos estágios G e A da doença renal crônica.</div></div>
+  </div>
+  <div class="rows terms">
+    <div class="row"><div class="k">Natriurese</div><div class="v">Eliminação de sódio pela urina.</div></div>
+    <div class="row"><div class="k">Noctúria</div><div class="v">Acordar à noite para urinar.</div></div>
+    <div class="row"><div class="k">Osteodistrofia renal</div><div class="v">A doença dos ossos do renal crônico, que ficam fracos e quebram fácil.</div></div>
+  </div>
+  <div class="rows terms">
+    <div class="row"><div class="k">Paratormônio</div><div class="v">Hormônio da paratireoide que tira cálcio do osso para o sangue.</div></div>
+    <div class="row"><div class="k">Sevelâmer</div><div class="v">Remédio que prende o fósforo da comida no intestino (quelante de fósforo).</div></div>
+    <div class="row"><div class="k">Trade-off</div><div class="v">Troca: o corpo corrige o cálcio do sangue pagando com o cálcio do osso.</div></div>
+  </div>
+  <div class="rows terms">
+    <div class="row"><div class="k">Transplante preemptivo</div><div class="v">Transplante feito na fase 5, antes de começar a diálise.</div></div>
+    <div class="row"><div class="k">Uremia</div><div class="v">Acúmulo de ureia e de outras toxinas no sangue, com sintomas no corpo todo.</div></div>
+  </div>
+  {{NOTAS}}
+</section>
+
+</body></html>

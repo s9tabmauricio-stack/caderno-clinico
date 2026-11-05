@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="478pt" height="245pt" viewBox="0 0 478 245">
+<rect x="89.0" y="0.0" width="300.0" height="28.7" rx="10" ry="10" fill="#F5F8FF" stroke="#16315C" stroke-width="1.2"/>
+<text x="239.0" y="17.1" font-family="Inter" font-size="8.8" font-weight="600" fill="#16315C" text-anchor="middle">Doente renal crônico chegando ao fim do tratamento conservador</text>
+<polyline points="239.0,30.7 239.0,38.7 113.0,38.7 113.0,46.7" fill="none" stroke="#8AA9DF" stroke-width="1.6" stroke-linejoin="round"/>
+<polygon points="113.0,51.7 109.4,45.7 116.6,45.7" fill="#8AA9DF"/>
+<polyline points="239.0,30.7 239.0,38.7 365.0,38.7 365.0,46.7" fill="none" stroke="#8AA9DF" stroke-width="1.6" stroke-linejoin="round"/>
+<polygon points="365.0,51.7 361.4,45.7 368.6,45.7" fill="#8AA9DF"/>
+<text x="107.0" y="49.7" font-family="Inter" font-size="7.4" font-weight="500" fill="#4F5B70" text-anchor="end">há perigo agora?</text>
+<text x="371.0" y="49.7" font-family="Inter" font-size="7.4" font-weight="500" fill="#4F5B70" text-anchor="start">sem urgência</text>
+<rect x="0.0" y="54.7" width="226.0" height="79.8" rx="10" ry="10" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="1"/>
+<text x="9.0" y="71.8" font-family="Inter" font-size="8.8" font-weight="600" fill="#16315C" text-anchor="start">Diálise de urgência quando há</text>
+<circle cx="11.5" cy="83.1" r="1.8" fill="#0B5BD3"/>
+<text x="18.0" y="85.7" font-family="Inter" font-size="7.9" font-weight="400" fill="#1F2933" text-anchor="start">hipervolemia ou edema que não responde ao</text>
+<text x="18.0" y="96.0" font-family="Inter" font-size="7.9" font-weight="400" fill="#1F2933" text-anchor="start">diurético</text>
+<circle cx="11.5" cy="105.6" r="1.8" fill="#0B5BD3"/>
+<text x="18.0" y="108.3" font-family="Inter" font-size="7.9" font-weight="400" fill="#1F2933" text-anchor="start">hiperpotassemia</text>
+<circle cx="11.5" cy="117.9" r="1.8" fill="#0B5BD3"/>
+<text x="18.0" y="120.6" font-family="Inter" font-size="7.9" font-weight="400" fill="#1F2933" text-anchor="start">risco de vida: pericardite ou encefalopatia urêmica</text>
+<rect x="252.0" y="54.7" width="226.0" height="79.8" rx="10" ry="10" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="1"/>
+<text x="261.0" y="71.8" font-family="Inter" font-size="8.8" font-weight="600" fill="#16315C" text-anchor="start">Diálise eletiva</text>
+<circle cx="263.5" cy="83.1" r="1.8" fill="#0B5BD3"/>
+<text x="270.0" y="85.7" font-family="Inter" font-size="7.9" font-weight="400" fill="#1F2933" text-anchor="start">clearance de creatinina entre 9 e 14 mL/min</text>
+<circle cx="263.5" cy="95.3" r="1.8" fill="#0B5BD3"/>
+<text x="270.0" y="98.0" font-family="Inter" font-size="7.9" font-weight="400" fill="#1F2933" text-anchor="start">no diabético, mais cedo: entre 15 e 20 mL/min</text>
+<polyline points="113.0,137.6 113.0,146.6" fill="none" stroke="#8AA9DF" stroke-width="1.6" stroke-linejoin="round"/>
+<polygon points="113.0,151.6 109.4,145.6 116.6,145.6" fill="#8AA9DF"/>
+<polyline points="365.0,137.6 365.0,146.6" fill="none" stroke="#8AA9DF" stroke-width="1.6" stroke-linejoin="round"/>
+<polygon points="365.0,151.6 361.4,145.6 368.6,145.6" fill="#8AA9DF"/>
+<rect x="0.0" y="154.6" width="226.0" height="88.1" rx="10" ry="10" fill="#F5F8FF" stroke="#C3D8F8" stroke-width="1"/>
+<text x="9.0" y="171.6" font-family="Inter" font-size="8.8" font-weight="600" fill="#16315C" text-anchor="start">Dialisar já</text>
+<text x="9.0" y="185.6" font-family="Inter" font-size="7.9" font-weight="400" fill="#1F2933" text-anchor="start">Foi o caso do paciente do início: anasarca, potássio de</text>
+<text x="9.0" y="195.8" font-family="Inter" font-size="7.9" font-weight="400" fill="#1F2933" text-anchor="start">6,8 mEq/L e coma por uremia.</text>
+<rect x="252.0" y="154.6" width="226.0" height="88.1" rx="10" ry="10" fill="#F5F8FF" stroke="#C3D8F8" stroke-width="1"/>
+<text x="261.0" y="171.6" font-family="Inter" font-size="8.8" font-weight="600" fill="#16315C" text-anchor="start">Programar com tempo</text>
+<circle cx="263.5" cy="182.9" r="1.8" fill="#0B5BD3"/>
+<text x="270.0" y="185.6" font-family="Inter" font-size="7.9" font-weight="400" fill="#1F2933" text-anchor="start">“Vamos programar a sua hemodiálise”: fazer a fístula</text>
+<text x="270.0" y="195.8" font-family="Inter" font-size="7.9" font-weight="400" fill="#1F2933" text-anchor="start">e dar tempo de ela amadurecer.</text>
+<circle cx="263.5" cy="205.4" r="1.8" fill="#0B5BD3"/>
+<text x="270.0" y="208.1" font-family="Inter" font-size="7.9" font-weight="400" fill="#1F2933" text-anchor="start">Reunião com médico, enfermeira, assistente social,</text>
+<text x="270.0" y="218.4" font-family="Inter" font-size="7.9" font-weight="400" fill="#1F2933" text-anchor="start">nutricionista (papel primordial), família e paciente:</text>
+<text x="270.0" y="228.6" font-family="Inter" font-size="7.9" font-weight="400" fill="#1F2933" text-anchor="start">hemodiálise ou diálise peritoneal?</text>
+</svg>

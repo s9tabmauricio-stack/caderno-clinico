@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="478pt" height="148pt" viewBox="0 0 478 148">
+<polyline points="239.0,22.0 239.0,30.0" fill="none" stroke="#8AA9DF" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="56.8,30.0 421.2,30.0" fill="none" stroke="#8AA9DF" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="56.8,30.0 56.8,33.0" fill="none" stroke="#8AA9DF" stroke-width="1.6" stroke-linejoin="round"/>
+<polygon points="56.8,38.0 53.1,32.0 60.4,32.0" fill="#8AA9DF"/>
+<polyline points="178.2,30.0 178.2,33.0" fill="none" stroke="#8AA9DF" stroke-width="1.6" stroke-linejoin="round"/>
+<polygon points="178.2,38.0 174.7,32.0 181.8,32.0" fill="#8AA9DF"/>
+<polyline points="299.8,30.0 299.8,33.0" fill="none" stroke="#8AA9DF" stroke-width="1.6" stroke-linejoin="round"/>
+<polygon points="299.8,38.0 296.1,32.0 303.4,32.0" fill="#8AA9DF"/>
+<polyline points="421.2,30.0 421.2,33.0" fill="none" stroke="#8AA9DF" stroke-width="1.6" stroke-linejoin="round"/>
+<polygon points="421.2,38.0 417.6,32.0 424.9,32.0" fill="#8AA9DF"/>
+<rect x="177.9" y="0.0" width="122.1" height="22.0" rx="11.0" ry="11.0" fill="#16315C" stroke="#16315C" stroke-width="1"/>
+<text x="239.0" y="14.3" font-family="Inter" font-size="9.4" font-weight="600" fill="#FFFFFF" text-anchor="middle">Doença renal crônica</text>
+<rect x="0.0" y="40.0" width="113.5" height="107.2" rx="10" ry="10" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="1"/>
+<circle cx="14.5" cy="54.5" r="6.5" fill="#0B5BD3"/>
+<text x="14.5" y="57.2" font-family="Inter" font-size="7.4" font-weight="600" fill="#FFFFFF" text-anchor="middle">1</text>
+<text x="8.0" y="72.9" font-family="Inter" font-size="8.6" font-weight="600" fill="#16315C" text-anchor="start">Classificar</text>
+<circle cx="10.3" cy="83.9" r="1.7" fill="#0B5BD3"/>
+<text x="16.0" y="86.4" font-family="Inter" font-size="7.5" font-weight="400" fill="#1F2933" text-anchor="start">3 meses de lesão</text>
+<circle cx="10.3" cy="95.6" r="1.7" fill="#0B5BD3"/>
+<text x="16.0" y="98.1" font-family="Inter" font-size="7.5" font-weight="400" fill="#1F2933" text-anchor="start">estágios G1 a G5</text>
+<circle cx="10.3" cy="107.4" r="1.7" fill="#0B5BD3"/>
+<text x="16.0" y="109.9" font-family="Inter" font-size="7.5" font-weight="400" fill="#1F2933" text-anchor="start">albuminúria A1 a A3</text>
+<rect x="121.5" y="40.0" width="113.5" height="107.2" rx="10" ry="10" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="1"/>
+<circle cx="136.0" cy="54.5" r="6.5" fill="#0B5BD3"/>
+<text x="136.0" y="57.2" font-family="Inter" font-size="7.4" font-weight="600" fill="#FFFFFF" text-anchor="middle">2</text>
+<text x="129.5" y="72.9" font-family="Inter" font-size="8.6" font-weight="600" fill="#16315C" text-anchor="start">Saber as causas</text>
+<circle cx="131.8" cy="83.9" r="1.7" fill="#0B5BD3"/>
+<text x="137.5" y="86.4" font-family="Inter" font-size="7.5" font-weight="400" fill="#1F2933" text-anchor="start">hipertensão 32%</text>
+<circle cx="131.8" cy="95.6" r="1.7" fill="#0B5BD3"/>
+<text x="137.5" y="98.1" font-family="Inter" font-size="7.5" font-weight="400" fill="#1F2933" text-anchor="start">diabetes 31%</text>
+<circle cx="131.8" cy="107.4" r="1.7" fill="#0B5BD3"/>
+<text x="137.5" y="109.9" font-family="Inter" font-size="7.5" font-weight="400" fill="#1F2933" text-anchor="start">glomerulonefrite 9%</text>
+<circle cx="131.8" cy="119.1" r="1.7" fill="#0B5BD3"/>
+<text x="137.5" y="121.6" font-family="Inter" font-size="7.5" font-weight="400" fill="#1F2933" text-anchor="start">policística 4%</text>
+<circle cx="131.8" cy="130.9" r="1.7" fill="#0B5BD3"/>
+<text x="137.5" y="133.4" font-family="Inter" font-size="7.5" font-weight="400" fill="#1F2933" text-anchor="start">outras 24%</text>
+<rect x="243.0" y="40.0" width="113.5" height="107.2" rx="10" ry="10" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="1"/>
+<circle cx="257.5" cy="54.5" r="6.5" fill="#0B5BD3"/>
+<text x="257.5" y="57.2" font-family="Inter" font-size="7.4" font-weight="600" fill="#FFFFFF" text-anchor="middle">3</text>
+<text x="251.0" y="72.9" font-family="Inter" font-size="8.6" font-weight="600" fill="#16315C" text-anchor="start">Como o corpo se</text>
+<text x="251.0" y="83.4" font-family="Inter" font-size="8.6" font-weight="600" fill="#16315C" text-anchor="start">defende</text>
+<circle cx="253.3" cy="94.4" r="1.7" fill="#0B5BD3"/>
+<text x="259.0" y="96.9" font-family="Inter" font-size="7.5" font-weight="400" fill="#1F2933" text-anchor="start">néfrons que sobram</text>
+<text x="259.0" y="106.6" font-family="Inter" font-size="7.5" font-weight="400" fill="#1F2933" text-anchor="start">trabalham a mais</text>
+<circle cx="253.3" cy="115.9" r="1.7" fill="#0B5BD3"/>
+<text x="259.0" y="118.4" font-family="Inter" font-size="7.5" font-weight="400" fill="#1F2933" text-anchor="start">hiperfiltração</text>
+<circle cx="253.3" cy="127.6" r="1.7" fill="#0B5BD3"/>
+<text x="259.0" y="130.1" font-family="Inter" font-size="7.5" font-weight="400" fill="#1F2933" text-anchor="start">trade-off do fósforo</text>
+<rect x="364.5" y="40.0" width="113.5" height="107.2" rx="10" ry="10" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="1"/>
+<circle cx="379.0" cy="54.5" r="6.5" fill="#0B5BD3"/>
+<text x="379.0" y="57.2" font-family="Inter" font-size="7.4" font-weight="600" fill="#FFFFFF" text-anchor="middle">4</text>
+<text x="372.5" y="72.9" font-family="Inter" font-size="8.6" font-weight="600" fill="#16315C" text-anchor="start">Tratamento</text>
+<text x="372.5" y="83.4" font-family="Inter" font-size="8.6" font-weight="600" fill="#16315C" text-anchor="start">conservador</text>
+<circle cx="374.8" cy="94.4" r="1.7" fill="#0B5BD3"/>
+<text x="380.5" y="96.9" font-family="Inter" font-size="7.5" font-weight="400" fill="#1F2933" text-anchor="start">menos sal, exercício</text>
+<circle cx="374.8" cy="106.1" r="1.7" fill="#0B5BD3"/>
+<text x="380.5" y="108.6" font-family="Inter" font-size="7.5" font-weight="400" fill="#1F2933" text-anchor="start">proteína 0,6 a 0,8 g/kg</text>
+<circle cx="374.8" cy="117.9" r="1.7" fill="#0B5BD3"/>
+<text x="380.5" y="120.4" font-family="Inter" font-size="7.5" font-weight="400" fill="#1F2933" text-anchor="start">potássio: duas águas</text>
+<circle cx="374.8" cy="129.6" r="1.7" fill="#0B5BD3"/>
+<text x="380.5" y="132.1" font-family="Inter" font-size="7.5" font-weight="400" fill="#1F2933" text-anchor="start">anemia, fósforo, cálcio</text>
+</svg>
