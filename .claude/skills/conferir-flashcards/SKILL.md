@@ -13,7 +13,7 @@ Feita em 04/11/2026 porque a conferência de 115 cards num agente só, card por 
 
 Os conferentes seguem a regra dos agentes de conteúdo: Opus com esforço extra-alto. Preparar e juntar (seções 1 e 3) são mecânicos: ficam com quem coordena, sem agente.
 
-**Antigravity e Codex** (sem agentes ao mesmo tempo): façam os blocos um depois do outro, seguindo a seção 2 para cada um, e juntem no fim. O Codex não tem o conector: peça ao Mauricio a lista dos cards ou pare.
+**Antigravity e Codex** (sem agentes ao mesmo tempo): façam os blocos um depois do outro, seguindo a seção 2 para cada um, e juntem no fim. O Codex não tem o conector: lê e grava com `node scripts/sql.mjs "<SQL>"` (`docs/codex.md`).
 
 ## 1. Preparar (quem coordena, uma vez)
 

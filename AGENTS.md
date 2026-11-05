@@ -32,6 +32,7 @@ Este manual tem só as regras de sempre. Os detalhes ficam onde são usados; lei
 | Lançar provas na Agenda | skill `provas-agenda` |
 | Aula nova a partir do áudio | skill `aula-nova` |
 | Computador Windows do Mauricio | [`docs/windows.md`](docs/windows.md) |
+| Codex com acesso ao banco (`scripts/sql.mjs`, como configurar o ambiente) | [`docs/codex.md`](docs/codex.md) |
 | Quem está mexendo em quê agora (Claude, Codex, Antigravity) | [`docs/fila.md`](docs/fila.md) |
 | Como publicar (ramos, PR, exceções) | [`docs/publicar.md`](docs/publicar.md) |
 | Quadros de desenho das telas (cópias do claude.ai) | [`docs/quadros/`](docs/quadros/README.md) |
@@ -75,7 +76,7 @@ Este manual tem só as regras de sempre. Os detalhes ficam onde são usados; lei
 
 - Conteúdo: `materias` (`nefro`, `pneumo`, `gastro`, `orto`, `uro`, `pass`…), `aulas` (id `<materia>-a<N>`, `publicada`), `questoes`, `flashcards`. Progresso do aluno: `respostas`, `revisoes` e os históricos. Também `perfis`, `recados` e a agenda. Detalhes em `docs/banco.md`.
 - As visões das telas escondem aulas não publicadas e questões com `substituida_por` preenchido.
-- RLS: alunos leem conteúdo e só gravam o próprio progresso. Escrita de conteúdo: só pelo conector (Claude ou Antigravity), pelo `scripts/gravar-rascunho.mjs` ou pelas telas de admin (os dois com a chave secreta).
+- RLS: alunos leem conteúdo e só gravam o próprio progresso. Escrita de conteúdo: só pelo conector (Claude ou Antigravity), pelo `scripts/sql.mjs` (Codex), pelo `scripts/gravar-rascunho.mjs` ou pelas telas de admin (os dois com a chave secreta).
 - A estrutura completa do banco (tabelas, visões, funções, gatilhos, regras de acesso) está copiada em `supabase/estrutura-atual.sql`: leia ali antes de consultar o banco. A pasta `supabase/migrations/` não reflete tudo o que foi aplicado. Mudou a estrutura? Atualize a cópia no mesmo trabalho (como em `docs/banco.md`).
 
 ### Limite do conector do Supabase (importante)
@@ -107,9 +108,10 @@ Pelo conector, **incluir dados e alterações curtas funcionam**; **apagar e ree
 |---|---|---|
 | **Claude** (nuvem e PC do Mauricio) | sim | sim, pelo conector do Supabase |
 | **Antigravity** (PC do Mauricio) | sim | sim, pelo conector do Supabase |
-| **Codex** | sim | não: não tem o conector; não tente gravar no banco |
+| **Codex** (site do ChatGPT) | sim | sim, pelo `node scripts/sql.mjs "<SQL>"` no lugar do conector ([`docs/codex.md`](docs/codex.md)) |
 
 - **Conteúdo segue as mesmas regras, venha de quem vier.** As skills e os agentes em `.claude/` são o manual de cada assunto e valem para os três: quem não é o Claude lê o arquivo e segue os passos (onde a receita cita uma ferramenta só do Claude, ela diz o que fazer no lugar).
+- O Codex não tem o conector: onde as receitas mandam usar o `execute_sql`, ele roda o mesmo SQL com `node scripts/sql.mjs` (token `SUPABASE_ACCESS_TOKEN` no ambiente do Codex, configurado pelo Mauricio; ver [`docs/codex.md`](docs/codex.md)). Valem as mesmas regras do banco.
 - O conector (Claude e Antigravity; o do Antigravity fica em `~/.gemini/config/mcp_config.json`, preso ao projeto `xtlpmtylifbalzxnfkib`) segue a seção "Limite do conector do Supabase". Mudança na estrutura do banco não precisa mais do "pode" do Mauricio (regra dele, 05/11/2026): leia `supabase/estrutura-atual.sql` antes, atualize a cópia depois e conte a ele em uma frase o que mudou.
 - **Publicar:** ramo `claude/…`, `codex/…` ou `antigravity/…` saído do `main` atualizado, `npm test` e `npx next build`, PR para o `main` (o GitHub junta sozinho se passar; rascunho não é juntado). Nunca empurre direto para o `main`, salvo a fila e as exceções. Passo a passo de cada assistente e exceções: [`docs/publicar.md`](docs/publicar.md).
 - **Tudo fica no projeto** (regra do Mauricio, 04/11/2026): o que o app precisa mora neste repositório ou na pasta MEDGENIUS do Drive, nunca só na conta de um assistente (skills da conta do Claude, quadros no claude.ai, memória, instruções de projeto). Se a conta do Claude sumir, Antigravity e Codex seguem como se nada tivesse acontecido. Fez algo fora? Copie para cá no mesmo trabalho (quadros de desenho vão em [`docs/quadros/`](docs/quadros/README.md)).
