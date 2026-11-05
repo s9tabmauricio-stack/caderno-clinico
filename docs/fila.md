@@ -20,3 +20,4 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
+| Rodapé integrado das aulas, data curta e professor antes do tema | Codex | codex/rodape-aulas | `app/materia/[id]/page.tsx`, estilos próprios em `app/globals.css` | 05/11/2026 |
