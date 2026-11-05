@@ -30,3 +30,7 @@ python3 checar.py 'Nefrologia - Aula 6 - Dra. Andressa - Infecção urinária.pd
 ```
 
 O CSS, `render.py`, `checar.py` e as fontes são cópias oficiais, sem modificação. As alterações desta apostila ficam no HTML e nos programas de composição e figuras. Não há alteração do aplicativo, do banco ou da aula publicada.
+
+## Publicação no site
+
+As páginas de leitura e o PDF ficam em `public/apostilas/nefro-a6/`. A conversão é feita pelo `scripts/publicar-apostila.sh` oficial. Depois da publicação dos arquivos, `publicacao.sql` inclui a aula com as 20 páginas, data e professora confirmadas; ele não altera a estrutura do banco.
