@@ -20,4 +20,3 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
-| Questões da Nefro 1 | Claude | claude/confident-bohr-ojpby5 | nefro-a1 (questões) | 05/11/2026 |
