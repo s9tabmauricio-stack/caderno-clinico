@@ -15,6 +15,20 @@ export type Database = {
   }
   public: {
     Tables: {
+      classificacoes_questoes: {
+        Row: { user_id: string; questao_id: string; classificacao: string; atualizada_em: string }
+        Insert: { user_id?: string; questao_id: string; classificacao: string; atualizada_em?: string }
+        Update: { user_id?: string; questao_id?: string; classificacao?: string; atualizada_em?: string }
+        Relationships: [
+          {
+            foreignKeyName: 'classificacoes_questoes_questao_id_fkey'
+            columns: ['questao_id']
+            isOneToOne: false
+            referencedRelation: 'questoes'
+            referencedColumns: ['id']
+          },
+        ]
+      }
       flashcards_suspensos: {
         Row: { user_id: string; flashcard_id: string; suspenso_em: string }
         Insert: { user_id?: string; flashcard_id: string; suspenso_em?: string }
@@ -432,6 +446,7 @@ export type Database = {
       }
       questoes_do_aluno: {
         Row: {
+          classificacao: string | null
           acertou: boolean | null
           alternativas: Json | null
           aula_id: string | null

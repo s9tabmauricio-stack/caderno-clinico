@@ -3,10 +3,10 @@
 import { useState } from 'react'
 import type { QuestaoAluno } from '@/lib/dados'
 import { plural } from '@/lib/formato'
+import { CLASSIFICACOES_QUESTAO, filtrarQuestoes, rotuloClassificacao, type ClassificacaoQuestao, type FiltrosQuestoes } from '@/lib/classificacao-questoes'
 import { Questoes, type Resposta } from './Questoes'
 
-type Situacao = 'todas' | 'abertas' | 'erradas'
-type Filtros = { tema: string | null; prova: string | null; situacao: Situacao }
+type Filtros = FiltrosQuestoes
 
 const ROTULO_PROVA = (p: string) => p.replace(/^p(\d)-t(\d+)$/i, 'P$1 T$2')
 
@@ -14,15 +14,6 @@ const ROTULO_PROVA = (p: string) => p.replace(/^p(\d)-t(\d+)$/i, 'P$1 T$2')
 function lembrarFiltros(chave: string, f: Filtros) {
   const valor = encodeURIComponent(JSON.stringify(f))
   document.cookie = `mgf_${chave}=${valor}; path=/; max-age=15552000; samesite=lax`
-}
-
-function filtrar(lista: QuestaoAluno[], f: Filtros) {
-  return lista.filter(
-    (q) =>
-      (!f.tema || q.tema === f.tema) &&
-      (!f.prova || q.prova === f.prova) &&
-      (f.situacao === 'todas' || (f.situacao === 'abertas' ? !q.resposta : q.resposta && !q.resposta.acertou)),
-  )
 }
 
 export function BancoQuestoes({
@@ -42,10 +33,15 @@ export function BancoQuestoes({
 }) {
   // Respostas dadas nesta visita (o resto veio do servidor)
   const [extras, setExtras] = useState<Record<string, Resposta | null>>({})
-  const [filtros, setFiltros] = useState<Filtros>({ tema: null, prova: null, situacao: 'todas', ...inicial })
-  const atuais = questoes.map((q) => (q.id in extras ? { ...q, resposta: extras[q.id] } : q))
+  const [classificacoes, setClassificacoes] = useState<Record<string, ClassificacaoQuestao | null>>({})
+  const [filtros, setFiltros] = useState<Filtros>({ tema: null, prova: null, situacao: 'todas', classificacao: 'todas', ...inicial })
+  const atuais = questoes.map((q) => ({
+    ...q,
+    resposta: q.id in extras ? extras[q.id] : q.resposta,
+    classificacao: q.id in classificacoes ? classificacoes[q.id] : q.classificacao,
+  }))
   // A lista em estudo só muda quando o aluno troca o filtro, para não pular questões no meio
-  const [lista, setLista] = useState(() => filtrar(questoes, filtros))
+  const [lista, setLista] = useState(() => filtrarQuestoes(questoes, filtros))
   const [versao, setVersao] = useState(0)
   const [aberto, setAberto] = useState(false)
 
@@ -57,8 +53,9 @@ export function BancoQuestoes({
     url.searchParams.set('tema', f.tema ?? '')
     url.searchParams.set('prova', f.prova ?? '')
     url.searchParams.set('mostrar', f.situacao)
+    url.searchParams.set('classificacao', f.classificacao)
     window.history.replaceState(null, '', url)
-    setLista(filtrar(atuais, f))
+    setLista(filtrarQuestoes(atuais, f))
     setVersao((v) => v + 1)
   }
 
@@ -85,6 +82,10 @@ export function BancoQuestoes({
     },
     filtros.tema && { rotulo: filtros.tema, tirar: () => aplicar({ tema: null }) },
     filtros.prova && { rotulo: ROTULO_PROVA(filtros.prova), tirar: () => aplicar({ prova: null }) },
+    filtros.classificacao !== 'todas' && {
+      rotulo: filtros.classificacao === 'marcadas' ? 'Todas as marcadas' : rotuloClassificacao(filtros.classificacao),
+      tirar: () => aplicar({ classificacao: 'todas' }),
+    },
   ].filter((f): f is { rotulo: string; tirar: () => void } => Boolean(f))
 
   const pill = (ativo: boolean, rotulo: string, onClick: () => void, n?: number) => (
@@ -145,6 +146,14 @@ export function BancoQuestoes({
           {pill(filtros.situacao === 'abertas', 'Não respondidas', () => aplicar({ situacao: 'abertas' }))}
           {pill(filtros.situacao === 'erradas', 'Só as que errei', () => aplicar({ situacao: 'erradas' }), erradas)}
         </div>
+        <div className="filtro">
+          <span className="rot">Minha revisão</span>
+          {pill(filtros.classificacao === 'todas', 'Todas', () => aplicar({ classificacao: 'todas' }))}
+          {pill(filtros.classificacao === 'marcadas', 'Todas as marcadas', () => aplicar({ classificacao: 'marcadas' }), atuais.filter((q) => q.classificacao !== null).length)}
+          {CLASSIFICACOES_QUESTAO.map(({ valor, rotulo }) =>
+            pill(filtros.classificacao === valor, rotulo, () => aplicar({ classificacao: valor }), atuais.filter((q) => q.classificacao === valor).length),
+          )}
+        </div>
         {temas.length > 1 && (
           <div className="filtro">
             <span className="rot">Tema</span>
@@ -169,6 +178,7 @@ export function BancoQuestoes({
         questoes={lista}
         userId={userId}
         ativo
+        iniciarPelaPrimeira={filtros.classificacao !== 'todas'}
         mostrarTema={!filtros.tema}
         edicao={edicao}
         vazio={
@@ -177,6 +187,7 @@ export function BancoQuestoes({
             : 'Nenhuma questão neste filtro.'
         }
         aoResponder={(id, r) => setExtras((e) => ({ ...e, [id]: r }))}
+        aoClassificar={(id, valor) => setClassificacoes((anteriores) => ({ ...anteriores, [id]: valor }))}
       />
     </>
   )

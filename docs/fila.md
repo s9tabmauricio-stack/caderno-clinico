@@ -20,4 +20,3 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
-| Classificação pessoal de questões para revisão | Codex | codex/classificacao-questoes | Questões, Banco de questões, tipos e marcações no banco | 05/11/2026 |

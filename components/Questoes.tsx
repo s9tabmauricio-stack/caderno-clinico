@@ -7,6 +7,7 @@ import { createClient } from '@/lib/supabase/client'
 import type { QuestaoAluno } from '@/lib/dados'
 import { plural } from '@/lib/formato'
 import { temFaixaProva } from '@/lib/faixa-prova'
+import { CLASSIFICACOES_QUESTAO, rotuloClassificacao, type ClassificacaoQuestao } from '@/lib/classificacao-questoes'
 import { Icone } from './Icones'
 import { ConversaTurma } from './ConversaTurma'
 import { FaixaProva } from './FaixaProva'
@@ -30,13 +31,15 @@ type Props = {
   vazio?: string
   // avisa quem está em volta (o banco de questões) quando uma resposta muda
   aoResponder?: (id: string, resposta: Resposta | null) => void
+  aoClassificar?: (id: string, classificacao: ClassificacaoQuestao | null) => void
+  iniciarPelaPrimeira?: boolean
   // o que oferecer quando as questões acabam (ex.: estudar os flashcards da aula)
   proximoPasso?: React.ReactNode
   // só para o administrador: botão Editar na questão (aulas da matéria para o seletor)
   edicao?: { aulas: { id: string; titulo: string }[] }
 }
 
-export function Questoes({ questoes, userId, ativo, mostrarTema = true, vazio, aoResponder, proximoPasso, edicao }: Props) {
+export function Questoes({ questoes, userId, ativo, mostrarTema = true, vazio, aoResponder, aoClassificar, iniciarPelaPrimeira, proximoPasso, edicao }: Props) {
   const supabase = useMemo(() => createClient(), [])
   const [respostas, setRespostas] = useState<Record<string, Resposta>>(() =>
     Object.fromEntries(questoes.filter((q) => q.resposta).map((q) => [q.id, q.resposta as Resposta])),
@@ -45,7 +48,12 @@ export function Questoes({ questoes, userId, ativo, mostrarTema = true, vazio, a
     const i = questoes.findIndex((q) => !r[q.id])
     return i === -1 ? questoes.length : i
   }
-  const [idx, setIdx] = useState(() => primeiraAberta(respostas))
+  const [idx, setIdx] = useState(() => iniciarPelaPrimeira ? 0 : primeiraAberta(respostas))
+  const [classificacoes, setClassificacoes] = useState<Record<string, ClassificacaoQuestao | null>>(() =>
+    Object.fromEntries(questoes.map((q) => [q.id, q.classificacao])),
+  )
+  const [salvandoClassificacao, setSalvandoClassificacao] = useState(false)
+  const classificacaoPendente = useRef(false)
   const [escolha, setEscolha] = useState<number | null>(null)
   // alternativas que o aluno cortou (só enquanto está nesta questão)
   const [cortadas, setCortadas] = useState<number[]>([])
@@ -137,6 +145,28 @@ export function Questoes({ questoes, userId, ativo, mostrarTema = true, vazio, a
       { onConflict: 'user_id,questao_id' },
     )
     if (error) setFalha({ questaoId: id, ...(await explicarFalha(supabase, 'esta resposta')), tentar: () => salvar(id, r) })
+  }
+
+  async function classificar(id: string, valor: ClassificacaoQuestao | null) {
+    if (classificacaoPendente.current) return
+    classificacaoPendente.current = true
+    setSalvandoClassificacao(true)
+    setFalha(null)
+    try {
+      const { error } = valor === null
+        ? await supabase.from('classificacoes_questoes').delete().eq('user_id', userId).eq('questao_id', id)
+        : await supabase.from('classificacoes_questoes').upsert({
+            user_id: userId, questao_id: id, classificacao: valor, atualizada_em: new Date().toISOString(),
+          }, { onConflict: 'user_id,questao_id' }).select('classificacao').single()
+      if (error) throw error
+      setClassificacoes((anteriores) => ({ ...anteriores, [id]: valor }))
+      aoClassificar?.(id, valor)
+    } catch {
+      setFalha({ questaoId: id, ...(await explicarFalha(supabase, 'esta marcação')), tentar: () => classificar(id, valor) })
+    } finally {
+      classificacaoPendente.current = false
+      setSalvandoClassificacao(false)
+    }
   }
 
   async function tentarDeNovo() {
@@ -290,6 +320,7 @@ export function Questoes({ questoes, userId, ativo, mostrarTema = true, vazio, a
                   )}
                   <span className="main">
                     <span className="s2">{x.enunciado}</span>
+                    {classificacoes[x.id] && <span className="s3">{rotuloClassificacao(classificacoes[x.id]!)}</span>}
                   </span>
                   {Icone.seta}
                 </button>
@@ -455,6 +486,26 @@ export function Questoes({ questoes, userId, ativo, mostrarTema = true, vazio, a
                       <p>{expl.resto}</p>
                     </div>
                   )}
+                  <fieldset className="qclassificacao" disabled={salvandoClassificacao}>
+                    <legend>Marcar como</legend>
+                    <div className="qclassificacao-opcoes">
+                      {CLASSIFICACOES_QUESTAO.map(({ valor, rotulo }) => (
+                        <button
+                          key={valor}
+                          type="button"
+                          className="pill"
+                          aria-pressed={classificacoes[q.id] === valor}
+                          onClick={() => void classificar(q.id, classificacoes[q.id] === valor ? null : valor)}
+                        >
+                          {classificacoes[q.id] === valor && Icone.certo}
+                          {rotulo}
+                        </button>
+                      ))}
+                    </div>
+                    <p className="qclassificacao-ajuda" role="status">
+                      {salvandoClassificacao ? 'Salvando marcação…' : 'Só você vê. Toque na opção marcada para desmarcar.'}
+                    </p>
+                  </fieldset>
                   <div className="actions qacoes">
                     <button
                       className="btn ghost"

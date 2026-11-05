@@ -3,6 +3,7 @@ import { createClient, type SupabaseServidor } from '@/lib/supabase/server'
 import type { EstadoCard } from '@/lib/srs'
 import type { Json } from '@/lib/database.types'
 import { contarPendentes } from '@/lib/pendencias'
+import { classificacaoValida, type ClassificacaoQuestao } from '@/lib/classificacao-questoes'
 
 // ---------- Tipos usados nas telas ----------
 export type Materia = {
@@ -47,6 +48,7 @@ export type QuestaoAluno = {
   origem: string | null
   // o professor disse ou deu a entender que o ponto cai na prova
   cai_na_prova: boolean
+  classificacao: ClassificacaoQuestao | null
   resposta: { escolhida: number; acertou: boolean; tentativas: number } | null
 }
 
@@ -199,6 +201,7 @@ type LinhaQuestao = {
   fonte: string | null
   origem: string | null
   cai_na_prova: boolean | null
+  classificacao: string | null
   escolhida: number | null
   acertou: boolean | null
   tentativas: number | null
@@ -219,6 +222,7 @@ export function paraQuestao(q: LinhaQuestao): QuestaoAluno {
     fonte: q.fonte,
     origem: q.origem,
     cai_na_prova: q.cai_na_prova ?? false,
+    classificacao: classificacaoValida(q.classificacao),
     resposta:
       q.escolhida !== null && q.acertou !== null
         ? { escolhida: q.escolhida, acertou: q.acertou, tentativas: q.tentativas ?? 1 }
