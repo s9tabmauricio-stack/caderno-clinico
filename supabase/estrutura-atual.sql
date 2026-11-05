@@ -1,5 +1,6 @@
 -- Estrutura atual do banco do Med Genius (Supabase, projeto xtlpmtylifbalzxnfkib)
 -- Copiada do próprio banco em 02/11/2026 (PostgreSQL 17.11); campo questoes.cai_na_prova incluído em 03/11/2026. Só a estrutura, sem dados.
+-- Quarta classificação (complicado) incluída em 05/11/2026: migração 20261105224624_quarta_classificacao_questoes.sql.
 -- Classificação pessoal de questões incluída em 05/11/2026: migração 20261105214247_classificacao_individual_questoes.sql.
 -- Suspensão individual aplicada em 03/11/2026: migração 20261103162543_suspensao_individual_flashcards.sql.
 --
@@ -223,7 +224,7 @@ grant all on public.flashcards_suspensos to service_role;
 create table public.classificacoes_questoes (
   user_id uuid not null default auth.uid() references auth.users(id) on delete cascade,
   questao_id text not null references public.questoes(id) on delete cascade,
-  classificacao text not null check (classificacao in ('rever', 'se_der_tempo', 'basico')),
+  classificacao text not null check (classificacao in ('rever', 'complicado', 'se_der_tempo', 'basico')),
   atualizada_em timestamptz not null default now(),
   primary key (user_id, questao_id)
 );

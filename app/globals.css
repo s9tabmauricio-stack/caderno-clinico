@@ -1353,14 +1353,43 @@ h1.big{background:var(--metal-titulo);-webkit-background-clip:text;background-cl
 /* Prioridade pessoal de revisão, dentro do cartão da questão. */
 .qclassificacao{min-width:0;margin:22px 0 0;padding:14px 0 0;border:0;border-top:1px solid var(--line)}
 .qclassificacao legend{padding:0 8px 0 0;font-size:13px;font-weight:600;color:var(--muted)}
-.qclassificacao-opcoes{display:flex;flex-wrap:wrap;gap:8px}
-.qclassificacao-opcoes .pill{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:44px;max-width:100%;white-space:normal;text-align:center}
-.qclassificacao-opcoes svg{width:16px;height:16px;flex:none}
-.qclassificacao-opcoes .pill:disabled{opacity:.6;cursor:wait}
+.qclassificacao-opcoes{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;max-width:1040px;margin-inline:auto}
+.prioridade--rever{--prioridade:#f04452;--prioridade-texto:#ff9aa2}
+.prioridade--complicado{--prioridade:#ff8526;--prioridade-texto:#ffb078}
+.prioridade--se_der_tempo{--prioridade:#efc300;--prioridade-texto:#f8da5c}
+.prioridade--basico{--prioridade:#29b85c;--prioridade-texto:#7cdda0}
+:root[data-tema="dia"] .prioridade--rever{--prioridade-texto:#aa1b2b}
+:root[data-tema="dia"] .prioridade--complicado{--prioridade-texto:#943b00}
+:root[data-tema="dia"] .prioridade--se_der_tempo{--prioridade-texto:#705700}
+:root[data-tema="dia"] .prioridade--basico{--prioridade-texto:#126c33}
+.qclassificacao-btn{display:flex;align-items:center;justify-content:center;gap:10px;min-height:72px;min-width:0;padding:12px;border:2px solid var(--prioridade);border-radius:16px;background:color-mix(in srgb,var(--prioridade) 9%,var(--field));color:var(--prioridade-texto);font:inherit;font-size:13px;font-weight:600;line-height:1.4;text-align:center;cursor:pointer;box-shadow:var(--campo-sombra)}
+.qclassificacao-btn[aria-pressed="true"]{background:color-mix(in srgb,var(--prioridade) 23%,var(--field));box-shadow:var(--campo-sombra),0 0 0 3px color-mix(in srgb,var(--prioridade) 26%,transparent);border-color:var(--prioridade)}
+.qclassificacao-btn:hover{background:color-mix(in srgb,var(--prioridade) 18%,var(--field))}
+.qclassificacao-btn:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+.qclassificacao-btn:disabled{opacity:.6;cursor:wait}
+.placa-prioridade{position:relative;display:inline-flex;align-items:center;justify-content:center;flex:none;width:38px;height:28px;border-radius:8px;box-shadow:inset 0 1px 0 #ffffff70,0 1px 3px #0002;color:#fff}
+.placa-prioridade::after{content:"";position:absolute;top:100%;left:calc(50% - 2px);width:4px;height:5px;background:inherit;border-radius:0 0 2px 2px}
+.placa--rever{background:linear-gradient(#ff6570,#d32035)}
+.placa--complicado{background:linear-gradient(#ffa13b,#f56a00);color:#2d1600}
+.placa--se_der_tempo{background:linear-gradient(#ffe867,#eec000);color:#2d2500}
+.placa--basico{background:linear-gradient(#58d97c,#17963c)}
+.placa-prioridade svg{width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
 .qclassificacao-ajuda{margin:10px 0 0;font-size:12px;color:var(--muted)}
 /* Depois da correção, a navegação acompanha as marcas para não cobrir os botões. */
 .qclassificacao + .qacoes{position:static}
-@media (max-width:599px){.qclassificacao-opcoes .pill{width:100%}}
+@media (min-width:600px) and (max-width:899px){.qclassificacao-opcoes{grid-template-columns:repeat(2,minmax(0,1fr));max-width:600px}}
+@media (max-width:599px){.qclassificacao-opcoes{grid-template-columns:minmax(0,1fr);gap:10px}.qclassificacao-btn{min-height:58px;justify-content:flex-start;padding-inline:16px;text-align:left}}
+/* As placas pertencem ao número: PROVA em cima e prioridade embaixo, sem sobrepor o toque. */
+.qdots{gap:10px}
+.qd-item{display:flex;align-items:center;flex:none;padding-block:27px}
+.qd{position:relative;width:44px;height:44px}
+.qd-prioridade,.qd-prova{position:absolute;left:50%;transform:translateX(-50%);pointer-events:none}
+.qd-prioridade{top:calc(100% + 7px);line-height:0}
+.qd-prioridade .placa-prioridade{width:27px;height:19px;border-radius:5px}
+.qd-prioridade .placa-prioridade svg{width:16px;height:16px}
+.qd-prioridade .placa-prioridade::after{top:auto;bottom:100%;height:7px;border-radius:2px 2px 0 0}
+.qd-prova{bottom:calc(100% + 7px);width:44px;padding:3px 2px 2px;border-radius:5px;border:1px solid #c38c00;border-top:4px solid transparent;background:repeating-linear-gradient(135deg,#141519 0 3px,#f5b301 3px 6px) top/100% 4px no-repeat,linear-gradient(#ffdf59,#f5b301);background-origin:border-box;color:#141519;font-size:9px;line-height:1;font-weight:800;letter-spacing:.02em;box-shadow:0 1px 2px #0002}
+.qd-prova::after{content:"";position:absolute;top:100%;left:calc(50% - 2px);width:4px;height:7px;background:#c38c00;border-radius:0 0 2px 2px}
 /* Apostila em páginas: contador flutuante "Página X de Y" e tela cheia com zoom (components/Apostila.tsx) */
 .paginas img[role=button]{cursor:zoom-in}
 .ap-contador{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(92px + env(safe-area-inset-bottom,0px));z-index:6;display:flex;align-items:center;gap:2px;padding:4px;border-radius:999px;
