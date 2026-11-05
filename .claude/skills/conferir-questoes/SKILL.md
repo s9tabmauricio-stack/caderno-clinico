@@ -27,7 +27,7 @@ order by q.ordem;
 - `alternativas` é a lista sem letra; `correta` é o índice (0 = A, 1 = B...). Mostrar sempre com letra.
 - `erros_apontados` são colegas avisando erro na questão: levar em conta.
 - `origem = professor` quer dizer que o professor corrigiu em sala. Se a apostila discordar, não decidir sozinho: mostrar e perguntar.
-- Sem o conector do Supabase (o Codex, por exemplo): avisar e pedir ao Mauricio a lista das questões (Configurações → Conteúdo).
+- Sem o conector do Supabase (o Codex): rode o mesmo SQL com `node scripts/sql.mjs "<SQL>"` (`docs/codex.md`). Se o ambiente não estiver configurado, avise e peça ao Mauricio a lista das questões (Configurações → Conteúdo).
 
 ## Fluxo
 

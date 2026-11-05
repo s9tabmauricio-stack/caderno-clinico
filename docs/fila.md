@@ -20,4 +20,3 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
-| Acesso do Codex ao banco | Claude | claude/awesome-thompson-k5vgdv | `AGENTS.md`, `docs/codex.md`, `scripts/sql.mjs`, skills que citam o Codex | 05/11/2026 |
