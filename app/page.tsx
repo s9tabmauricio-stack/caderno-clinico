@@ -1,3 +1,4 @@
+import { ordenarMateriasPorProva } from '@/lib/ordem-materias'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Pagina } from '@/components/Pagina'
@@ -258,7 +259,7 @@ export default async function Inicio() {
             <Link href="/estudar">Estudar →</Link>
           </div>
           <div className="in-mats">
-            {materias.map((m) => {
+            {ordenarMateriasPorProva(materias, todasProvas, agora.ms).map((m) => {
               const prog = progresso.filter((p) => p.materia_id === m.id)
               const tm = totais(prog)
               const pm = banco.find((b) => b.materia_id === m.id)

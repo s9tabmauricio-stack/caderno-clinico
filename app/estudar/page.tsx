@@ -1,3 +1,6 @@
+import { ordenarMateriasPorProva } from '@/lib/ordem-materias'
+import { proximasProvas } from '@/lib/agenda-dados'
+import { agoraBrasilia } from '@/lib/agenda'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Pagina } from '@/components/Pagina'
@@ -20,10 +23,12 @@ export const metadata: Metadata = { title: 'Matérias' }
 // e, logo abaixo, direto ao banco de questões dela.
 export default async function EstudarPage() {
   const { supabase } = await sessao()
-  const [materias, progresso, banco] = await Promise.all([
+  const agora = agoraBrasilia()
+  const [materias, progresso, banco, provas] = await Promise.all([
     carregarMaterias(supabase),
     carregarProgresso(supabase),
     carregarProgressoMaterias(supabase),
+    proximasProvas(supabase),
   ])
 
   return (
@@ -37,7 +42,7 @@ export default async function EstudarPage() {
 
       {materias.length ? (
         <div className="tiles">
-          {materias.map((m) => {
+          {ordenarMateriasPorProva(materias, provas, agora.ms).map((m) => {
             const prog = progresso.filter((p) => p.materia_id === m.id)
             const tm = totais(prog)
             const pm = banco.find((b) => b.materia_id === m.id)

@@ -21,6 +21,8 @@ O manual (`AGENTS.md`) tem só os nomes das telas. Aqui fica como cada tela func
 - O Mauricio cola o cronograma do WhatsApp em `/admin/agenda`; `lib/agenda.ts` separa dias, horários, matéria (emoji ou palavra), professor, local, grupos, cancelamentos (❌) e avisos. Grupos por letra (A = práticas 1 a 7…) viram números.
 - Teóricas valem para todos; práticas, só para os grupos listados. O aluno informa o grupo na própria Agenda (seletor ao lado dos filtros) ou em Configurações. Tocar numa aula abre a matéria dela.
 
+As matérias no Início e em Estudar aparecem pela data da próxima prova futura não cancelada. Quando há mais de uma prova da matéria, vale a primeira; matérias sem prova futura ficam no final, na ordem original.
+
 ## Encontrar conteúdo e voltar
 
 - A tela Matérias não tem busca (retirada a pedido do Mauricio em 31/10/2026).
