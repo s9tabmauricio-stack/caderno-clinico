@@ -48,20 +48,41 @@ export default async function MateriaPage(props: PageProps<'/materia/[id]'>) {
           {aulas.data.map((a) => {
             const p = progresso.find((x) => x.aula_id === a.id)
             const vencidos = p ? pendentes([p]).vencidos : 0
+            const retornoMateria = `/materia/${id}${origem ? `?${new URLSearchParams({ retorno: origem })}` : ''}`
+            const hrefAula = (aba: 'apostila' | 'questoes' | 'flashcards') =>
+              `/aula/${a.id}?${new URLSearchParams({ aba, retorno: retornoMateria })}`
             return (
-              <Link key={a.id} className="row" href={`/aula/${a.id}?${new URLSearchParams({ retorno: `/materia/${id}${origem ? `?${new URLSearchParams({ retorno: origem })}` : ""}` })}`}>
-                <span className="num">{a.ordem}</span>
-                <span className="main">
-                  <span className="t">{a.titulo}</span>
-                  {a.resumo && <span className="s">{a.resumo}</span>}
-                  <span className="meta">
-                    {a.data_aula && `Aula de ${a.data_aula.split('-').reverse().join('/')}${a.professor ? ` com ${a.professor}` : ''} · `}Apostila · {p?.total_questoes ?? 0} questões · {p?.total_cards ?? 0} flashcards
-                    {vencidos > 0 && <span className="chip revisar">{vencidos} para revisar</span>}
+              <article key={a.id} className="materia-aula">
+                <Link className="row materia-aula-topo" href={hrefAula('apostila')}>
+                  <span className="materia-aula-numero">
+                    <span className="num">{a.ordem}</span>
+                    {a.data_aula && (
+                      <time className="materia-aula-data" dateTime={a.data_aula}>
+                        {a.data_aula.slice(5).split('-').reverse().join('/')}
+                      </time>
+                    )}
                   </span>
-                </span>
-                <span className="pct">{p ? concluido([p]) : 0}%</span>
-                {Icone.seta}
-              </Link>
+                  <span className="main">
+                    {a.professor && <span className="materia-aula-professor">{a.professor}</span>}
+                    <span className="t">{a.titulo}</span>
+                    {a.resumo && <span className="s">{a.resumo}</span>}
+                  </span>
+                  <span className="pct">{p ? concluido([p]) : 0}%</span>
+                  {Icone.seta}
+                </Link>
+                <nav className="materia-aula-acoes" aria-label={`Materiais da aula ${a.ordem}: ${a.titulo}`}>
+                  <Link className="materia-aula-acao" href={hrefAula('apostila')}>
+                    <span className="materia-aula-acao-rotulo">{Icone.estudar}<span>Apostila</span></span>
+                  </Link>
+                  <Link className="materia-aula-acao" href={hrefAula('questoes')}>
+                    <span className="materia-aula-acao-rotulo">{Icone.questoes}<span>Questões <span className="materia-aula-quantidade">· {p?.total_questoes ?? 0}</span></span></span>
+                  </Link>
+                  <Link className="materia-aula-acao" href={hrefAula('flashcards')}>
+                    <span className="materia-aula-acao-rotulo">{Icone.cards}<span>Flashcards <span className="materia-aula-quantidade">· {p?.total_cards ?? 0}</span></span></span>
+                    {vencidos > 0 && <span className="chip revisar">{vencidos} para revisar</span>}
+                  </Link>
+                </nav>
+              </article>
             )
           })}
         </div>
