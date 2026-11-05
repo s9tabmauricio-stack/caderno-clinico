@@ -1,5 +1,5 @@
 -- Aplicada em produção por scripts/sql.mjs em 05/11/2026; validada com supabase/tests/classificacao_questoes.sql.
--- O registro no histórico de migrações ficou pendente: revisão automática bloqueou a escrita manual; o conector expirou a confirmação. Não reaplicar sem conferir a estrutura.
+-- Registro no histórico confirmado em 05/11/2026, após verificar estrutura, RLS, permissões e teste transacional.
 -- Uma prioridade por aluno e questão, independente das respostas e do histórico.
 create table public.classificacoes_questoes (
   user_id uuid not null default auth.uid() references auth.users(id) on delete cascade,
