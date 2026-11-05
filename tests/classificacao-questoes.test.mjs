@@ -51,5 +51,5 @@ test('cookies antigos e filtros inválidos voltam para todas as questões', () =
   assert.equal(filtroClassificacaoValido('complicado'), 'complicado')
   // As marcas e os links antigos do amarelo continuam válidos, com o texto novo.
   assert.equal(classificacaoValida('se_der_tempo'), 'se_der_tempo')
-  assert.equal(rotuloClassificacao('se_der_tempo'), 'Não custa nada ver de novo cara')
+  assert.equal(rotuloClassificacao('se_der_tempo'), 'É bom rever cara')
 })
