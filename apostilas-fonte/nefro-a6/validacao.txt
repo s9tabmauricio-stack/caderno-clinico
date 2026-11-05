@@ -1,0 +1,29 @@
+VALIDAÇÃO FINAL — Nefrologia · Aula 6
+Data: 05/11/2026
+PDF: 20 páginas A4 retrato; fontes Inter; rodapé e datas conferidos.
+Figuras: 5 (1 ilustração anatômica com rótulos separados + 4 diagramas).
+Sumário: 10 destinos internos resolvidos e compatíveis com as páginas.
+Página de véspera: página 18; glossário: páginas 19–20; 16 linhas de anotação.
+Paginação: nenhuma página acima de 90 pt livres (última excluída pela ferramenta).
+Checagem oficial: nenhum aviso; nenhuma sigla fora das exceções; nenhum marcador pendente.
+Fontes oficiais: apostila.css, render.py e checar.py idênticos aos arquivos do projeto.
+Conferência visual: todas as 20 páginas inspecionadas (capa + nove pares + página final).
+Conferência clínica: doses, durações e números cotejados com a fonte; divergências e complementos registrados em roxo e em revisao-clinica.md.
+Não foram alterados app, banco ou conteúdo publicado. Os testes de aplicação não se aplicam à geração deste PDF.
+
+Nefrologia - Aula 6 - Dra. Andressa - Infecção urinária.pdf: 20 páginas | 16 linhas de anotação
+Espaço livre no pé (pt; ! = acima de 90): 2:62 3:55 4:9 5:43 6:33 7:63 8:52 9:24 10:6 11:86 12:9 13:4 14:77 15:39 16:72 17:53 18:57 19:83
+Nenhum buraco acima do limite.
+
+Fontes: Inter, Inter-Bold, Inter-Medium, Inter-Oblique, Inter-Semi-Bold
+Rodapé: Mauricio Faria · Nefrologia · Aula 6 — Infecção urinária 2
+Marcadores: A trilha da aula | Da bexiga ao rim |   Por que a via ascendente importa | Ler os exames de urina |   O que procurar no exame de urina |   O exemplo sem alterações |   Bacterioscopia e urocultura |   Antibiograma: sensibilidade não é uma escolha automática | Reconhecer a cistite |   Os sintomas se organizam em três grupos |   Quais agentes aparecem |   Exame de urina e cultura |   Quando ampliar a investigação | Tratar a cistite |   Esquemas apresentados para a mulher não grávida |   Fosfomicina: sequência de administração discutida |   Alívio dos sintomas | Pielonefrite e gravidade |   Dimensão do problema e fatores de risco |   O quadro clínico clássico |   História, exame físico e laboratório |   Indicações absolutas de internação apresentadas |   Indicações relativas: avaliar o conjunto | Tratar e reavaliar |   As opções dependem do cenário |   Duração e transição no esquema ensinado |   Quando é preciso intervir na via urinária |   O que foi dito sobre a tabela de antibióticos | Infecção complicada |   A pergunta útil em cada episódio |   Da classificação à conduta | Cuidar na gestação |   Por que a gestação facilita a ascensão |   O que está em risco |   Investigar, tratar e conferir a resposta |   Medicamentos por situação, conforme a aula |   O papel do clavulanato |   Não misturar os dois cenários |   Erros comuns para evitar |   Referências dos complementos | Página de véspera | Palavras da aula |   Anotações
+Siglas para revisar: nenhuma
+Datas:
+  21/10/2026 é quarta-feira
+  05/11/2026 é quinta-feira
+Imagens para olhar uma a uma: paginas/pag-01.png paginas/pag-02-03.png paginas/pag-04-05.png paginas/pag-06-07.png paginas/pag-08-09.png paginas/pag-10-11.png paginas/pag-12-13.png paginas/pag-14-15.png paginas/pag-16-17.png paginas/pag-18-19.png paginas/pag-20.png
+Texto do PDF salvo em texto.txt
+
+Nenhum aviso automático.
+Falta o olhar humano: imagens das páginas, cores contra a tabela e conteúdo contra a fonte.
