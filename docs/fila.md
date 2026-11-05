@@ -20,4 +20,3 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
-| Ordenar matérias pela próxima prova | Codex | codex/ordem-materias-provas | Início, Matérias, lib/ordem-materias.ts | 05/11/2026 |
