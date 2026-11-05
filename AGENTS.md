@@ -83,6 +83,7 @@ Este manual tem só as regras de sempre. Os detalhes ficam onde são usados; lei
 Pelo conector, **incluir dados e alterações curtas funcionam**; **apagar e reescrever textos longos são cancelados** (trava de confirmação que a sessão não consegue mostrar). Não tente contornar.
 - Corrigir uma questão: inclua uma versão nova (`<id>-v2`, mesma ordem) e marque a antiga com `update ... set substituida_por = '<id>-v2'`. Leve os recados junto: `update public.recados set questao_id = '<id>-v2' where questao_id = '<id>'`. Depois o Mauricio limpa em Conteúdo → Limpeza (a limpeza também move os recados que sobrarem para a versão nova).
 - Apagar ou ajustar texto: o Mauricio faz em Conteúdo.
+- Autorização (regra do Mauricio, 05/11/2026): o `.claude/settings.json` libera o `execute_sql` do conector sem perguntar, em toda conversa do Claude neste projeto. O `apply_migration` (estrutura do banco) continua pedindo.
 
 ## Conteúdo (apostilas, questões, flashcards)
 
