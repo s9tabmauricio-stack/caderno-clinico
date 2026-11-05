@@ -1,8 +1,8 @@
 export const CLASSIFICACOES_QUESTAO = [
-  { valor: 'rever', rotulo: 'Tenho que ver isso aí cara' },
-  { valor: 'complicado', rotulo: 'Complicado isso ai cara' },
-  { valor: 'se_der_tempo', rotulo: 'Não custa nada ver de novo cara' },
-  { valor: 'basico', rotulo: 'Essa é ensino básico' },
+  { valor: 'rever', rotulo: 'Estudar isso aí cara!' },
+  { valor: 'complicado', rotulo: 'Ver isso aí cara' },
+  { valor: 'se_der_tempo', rotulo: 'É bom rever cara' },
+  { valor: 'basico', rotulo: 'Tranquilo isso aí cara' },
 ] as const
 
 export type ClassificacaoQuestao = (typeof CLASSIFICACOES_QUESTAO)[number]['valor']
