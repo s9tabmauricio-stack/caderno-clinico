@@ -1,6 +1,6 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
-import { classificacaoValida, filtroClassificacaoValido, filtrarQuestoes } from '../lib/classificacao-questoes.ts'
+import { classificacaoValida, filtroClassificacaoValido, filtrarQuestoes, rotuloClassificacao } from '../lib/classificacao-questoes.ts'
 
 const base = { tema: 'TEP', prova: 'p2', resposta: { acertou: true } }
 const questoes = [
@@ -8,6 +8,7 @@ const questoes = [
   { ...base, id: 'urgente-errada', classificacao: 'rever', resposta: { acertou: false } },
   { ...base, id: 'tempo', classificacao: 'se_der_tempo' },
   { ...base, id: 'basica', classificacao: 'basico' },
+  { ...base, id: 'complicada', classificacao: 'complicado' },
   { ...base, id: 'sem-marca', classificacao: null, resposta: null },
   { ...base, id: 'outro-tema', classificacao: 'rever', tema: 'Asma' },
   { ...base, id: 'outra-prova', classificacao: 'rever', prova: 'p1' },
@@ -24,8 +25,9 @@ test('revisão inclui questões certas marcadas e combina tema, prova e situaç�
 test('cada prioridade e todas as marcadas podem ser reencontradas', () => {
   assert.deepEqual(ids({ classificacao: 'se_der_tempo' }), ['tempo'])
   assert.deepEqual(ids({ classificacao: 'basico' }), ['basica'])
-  assert.equal(ids({ classificacao: 'marcadas' }).length, 6)
-  assert.equal(ids({}).length, 7)
+  assert.deepEqual(ids({ classificacao: 'complicado' }), ['complicada'])
+  assert.equal(ids({ classificacao: 'marcadas' }).length, 7)
+  assert.equal(ids({}).length, 8)
 })
 
 test('trocar e remover a marcação atualiza os filtros sem alterar resposta ou tentativas', () => {
@@ -46,4 +48,8 @@ test('cookies antigos e filtros inválidos voltam para todas as questões', () =
   }
   assert.equal(filtroClassificacaoValido('marcadas'), 'marcadas')
   assert.equal(filtroClassificacaoValido('rever'), 'rever')
+  assert.equal(filtroClassificacaoValido('complicado'), 'complicado')
+  // As marcas e os links antigos do amarelo continuam válidos, com o texto novo.
+  assert.equal(classificacaoValida('se_der_tempo'), 'se_der_tempo')
+  assert.equal(rotuloClassificacao('se_der_tempo'), 'Não custa nada ver de novo cara')
 })

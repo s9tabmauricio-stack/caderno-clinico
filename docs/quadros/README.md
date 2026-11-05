@@ -12,6 +12,7 @@ atual está em `public/brand/`.
 
 | Pasta | O que é | Usado em | Link antigo |
 |---|---|---|---|
+| `plaquinhas-questoes/` | Proposta aprovada de quatro prioridades e placas PROVA nos números | `components/Questoes.tsx`, `components/PlacaPrioridade.tsx` | Criada neste projeto em 05/11/2026 |
 | `visual-v6-app/` | "Vidro líquido em titânio, dia e noite": o app todo (Início, Matérias, Questão, Revisão, Desempenho, Agenda, Entrada) e as 4 propostas do botão Auto · Dia · Noite. `tema.css` tem os tokens | `docs/visual.md` (visual atual) | https://claude.ai/artifact/PCHBA8oq7akRzq53ihLkSm |
 | `entrada-propostas/` | Propostas da tela de entrada (atual da época, Neon, Sinapse, Pulso, Ouro, Vidro noite e claro) | `docs/visual.md` (tela de entrada) | https://claude.ai/artifact/79Wh5QshdmEBprBVHxzrsD |
 | `visual-v4-ouro-cromo/` | "Ouro, Cromo & Sinapse" (visual-v4): Início, Entrada, Questão e paleta | `docs/visual.md` (versões antigas) | https://claude.ai/artifact/19dnhpGriy7UQL9NA4Fn4d |

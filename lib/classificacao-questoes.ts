@@ -1,6 +1,7 @@
 export const CLASSIFICACOES_QUESTAO = [
   { valor: 'rever', rotulo: 'Tenho que ver isso aí cara' },
-  { valor: 'se_der_tempo', rotulo: 'Se der tempo vejo' },
+  { valor: 'complicado', rotulo: 'Complicado isso ai cara' },
+  { valor: 'se_der_tempo', rotulo: 'Não custa nada ver de novo cara' },
   { valor: 'basico', rotulo: 'Essa é ensino básico' },
 ] as const
 

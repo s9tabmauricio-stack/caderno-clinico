@@ -26,6 +26,9 @@ begin
   insert into public.classificacoes_questoes (questao_id, classificacao) values (questao, 'se_der_tempo')
     on conflict (user_id, questao_id) do update set classificacao = excluded.classificacao;
   assert (select classificacao = 'se_der_tempo' from public.questoes_do_aluno where id = questao), 'A troca não persistiu';
+  insert into public.classificacoes_questoes (questao_id, classificacao) values (questao, 'complicado')
+    on conflict (user_id, questao_id) do update set classificacao = excluded.classificacao;
+  assert (select classificacao = 'complicado' from public.questoes_do_aluno where id = questao), 'O laranja não persistiu';
   update public.classificacoes_questoes set classificacao = 'basico' where questao_id = questao;
   assert (select classificacao = 'basico' from public.questoes_do_aluno where id = questao), 'A terceira opção falhou';
   begin
@@ -65,4 +68,4 @@ begin
   assert not has_table_privilege('anon', 'public.classificacoes_questoes', 'SELECT'), 'Anônimo pode ler a tabela';
 end $$;
 rollback;
-select 'OK: três opções, troca, remoção, histórico preservado e isolamento entre alunos' as resultado;
+select 'OK: quatro opções, troca, remoção, histórico preservado e isolamento entre alunos' as resultado;

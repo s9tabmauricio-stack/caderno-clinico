@@ -11,6 +11,7 @@ import { CLASSIFICACOES_QUESTAO, rotuloClassificacao, type ClassificacaoQuestao 
 import { Icone } from './Icones'
 import { ConversaTurma } from './ConversaTurma'
 import { FaixaProva } from './FaixaProva'
+import { PlacaPrioridade } from './PlacaPrioridade'
 import { EditorQuestao } from './admin/Editores'
 
 export type Resposta = NonNullable<QuestaoAluno['resposta']>
@@ -247,15 +248,23 @@ export function Questoes({ questoes, userId, ativo, mostrarTema = true, vazio, a
       <div className="qdots" ref={faixa}>
         {questoes.map((x, i) => {
           const r = respostas[x.id]
+          const classificacao = classificacoes[x.id]
+          const prova = temFaixaProva(x)
+          const descricao = `Questão ${i + 1}${r ? (r.acertou ? ', acertou' : ', errou') : ''}${prova ? ', PROVA' : ''}${classificacao ? `, ${rotuloClassificacao(classificacao)}` : ''}`
           return (
-            <button
-              key={x.id}
-              className={`qd ${r ? (r.acertou ? 'ok' : 'bad') : ''} ${i === idx ? 'cur' : ''}`}
-              onClick={() => irPara(i)}
-              aria-label={`Questão ${i + 1}${r ? (r.acertou ? ', acertou' : ', errou') : ''}`}
-            >
-              {i + 1}
-            </button>
+            <span className="qd-item" key={x.id}>
+              <button
+                className={`qd ${r ? (r.acertou ? 'ok' : 'bad') : ''} ${i === idx ? 'cur' : ''}`}
+                onClick={() => irPara(i)}
+                aria-label={descricao}
+                aria-current={i === idx ? 'step' : undefined}
+                title={descricao}
+              >
+                {prova && <span className="qd-prova" aria-hidden="true">PROVA</span>}
+                {i + 1}
+                {classificacao && <span className="qd-prioridade"><PlacaPrioridade valor={classificacao} /></span>}
+              </button>
+            </span>
           )
         })}
       </div>
@@ -493,12 +502,12 @@ export function Questoes({ questoes, userId, ativo, mostrarTema = true, vazio, a
                         <button
                           key={valor}
                           type="button"
-                          className="pill"
+                          className={`qclassificacao-btn prioridade--${valor}`}
                           aria-pressed={classificacoes[q.id] === valor}
                           onClick={() => void classificar(q.id, classificacoes[q.id] === valor ? null : valor)}
                         >
-                          {classificacoes[q.id] === valor && Icone.certo}
-                          {rotulo}
+                          <PlacaPrioridade valor={valor} />
+                          <span>{rotulo}</span>
                         </button>
                       ))}
                     </div>
