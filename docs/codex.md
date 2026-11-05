@@ -25,6 +25,8 @@ Em chatgpt.com/codex → **Settings → Environments** → o ambiente do `cadern
 1. **Environment variables** (não em "Secrets": os segredos somem depois da preparação e o agente não os vê):
    - `SUPABASE_ACCESS_TOKEN` = o token do passo 1;
    - `SUPABASE_SECRET_KEY` = a mesma chave secreta da Vercel (para o `scripts/gravar-rascunho.mjs`).
+   - `NODE_USE_ENV_PROXY` = `1` (o Codex sai para a internet por um proxy, e o Node só usa o proxy com isso; sem ele,
+     os programas dizem que não há conexão).
 2. **Agent internet access** → **On**, com a lista de endereços permitidos:
    - `api.supabase.com`
    - `xtlpmtylifbalzxnfkib.supabase.co`
