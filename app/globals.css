@@ -53,8 +53,9 @@ button.row:hover{background:var(--card-2)}
 .chip.revisar{background:var(--accent-soft);color:var(--accent)}
 .chip.emdia{background:var(--ok-soft);color:var(--ok)}
 
-/* Aulas da matéria: rodapé integrado, transparente sobre o vidro atual. */
-.materia-aula+.materia-aula{border-top:1px solid var(--line-2)}
+/* Aulas da matéria: um cartão de vidro por aula, com o rodapé dentro dele. */
+.materia-aulas{display:grid;gap:16px}
+.materia-aula{min-width:0;border:1px solid transparent;border-radius:var(--r-lg);overflow:hidden}
 .materia-aula-topo{border-top:0}
 .materia-aula-numero{flex:none;display:flex;flex-direction:column;align-items:center;gap:4px;min-width:40px}
 .materia-aula-data{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}
@@ -957,7 +958,7 @@ body::after{content:"";position:fixed;z-index:-1;top:0;right:0;width:390px;heigh
 
 /* superfícies de vidro líquido */
 .group,.stat,.pdfbar,.qcard,.fc-sum,.flash,.perf,.how,.admin-form,.vazio,
-.ed-bloco,.ed-q,.turma,.recado,.painel-m,.ag-dia .row,.ecard,.done{
+.ed-bloco,.ed-q,.turma,.recado,.painel-m,.ag-dia .row,.ecard,.done,.materia-aula{
   background:var(--vidro);border-color:transparent;box-shadow:var(--vidro-sombra);
   -webkit-backdrop-filter:blur(22px) saturate(180%);backdrop-filter:blur(22px) saturate(180%)}
 .vazio{border:1px dashed var(--line-strong)}
