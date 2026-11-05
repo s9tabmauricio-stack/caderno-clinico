@@ -20,4 +20,3 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
-| Conferir questões da Nefro A2 | Claude | `claude/zealous-fermat-s37p0a` | `nefro-a2` (questões) | 05/11/2026 |
