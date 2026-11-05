@@ -53,6 +53,28 @@ button.row:hover{background:var(--card-2)}
 .chip.revisar{background:var(--accent-soft);color:var(--accent)}
 .chip.emdia{background:var(--ok-soft);color:var(--ok)}
 
+/* Aulas da matéria: rodapé integrado, transparente sobre o vidro atual. */
+.materia-aula+.materia-aula{border-top:1px solid var(--line-2)}
+.materia-aula-topo{border-top:0}
+.materia-aula-numero{flex:none;display:flex;flex-direction:column;align-items:center;gap:4px;min-width:40px}
+.materia-aula-data{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}
+.materia-aula-professor{display:block;margin-bottom:2px;font-size:13px;font-weight:500;color:var(--accent)}
+.materia-aula-acoes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--line-2)}
+.materia-aula-acao{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;align-content:center;gap:4px 8px;min-width:0;min-height:48px;padding:9px 6px;color:var(--accent);font-size:14px;font-weight:600;text-align:center}
+.materia-aula-acao+.materia-aula-acao{border-left:1px solid var(--line-2)}
+.materia-aula-acao-rotulo{display:inline-flex;align-items:center;justify-content:center;gap:6px}
+.materia-aula-acao svg{width:20px;height:20px}
+.materia-aula-quantidade{white-space:nowrap;font-variant-numeric:tabular-nums}
+.materia-aula-acao:focus-visible,.materia-aula-topo:focus-visible{outline-offset:-3px}
+.materia-aula-acao:hover .materia-aula-acao-rotulo{text-decoration:underline;text-underline-offset:3px}
+@media (max-width:599px){
+  .materia-aula-topo{gap:10px;padding-inline:12px}
+  .materia-aula-acao{font-size:12px;flex-direction:column;flex-wrap:nowrap}
+  .materia-aula-acao-rotulo{flex-direction:column;gap:3px}
+  .materia-aula-quantidade{display:block}
+  .materia-aula-acao .chip{font-size:10px;padding:2px 5px}
+}
+
 .link{background:none;border:0;color:var(--accent);font-weight:600;cursor:pointer;padding:2px 4px;white-space:nowrap}
 
 .btn-white{justify-self:start;background:#fff;color:#16315C;border:0;border-radius:14px;padding:12px 18px;font-weight:600;cursor:pointer}
