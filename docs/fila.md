@@ -20,5 +20,4 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
-| Questões da Nefro A1 | Claude | `claude/cool-mendel-1v3h2v` | `nefro-a1` (questões) | 05/11/2026 |
 | Flashcards da Nefro A6 | Claude | `claude/blissful-lovelace-stwh02` | `nefro-a6` (flashcards) | 05/11/2026 |
