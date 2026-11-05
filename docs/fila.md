@@ -20,4 +20,3 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
-| Cards individuais das aulas | Codex | codex/cards-aulas | Matéria: lista de aulas; app/globals.css | 05/11/2026 |

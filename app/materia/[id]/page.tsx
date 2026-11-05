@@ -44,7 +44,7 @@ export default async function MateriaPage(props: PageProps<'/materia/[id]'>) {
       <AbasMateria id={id} ativa="aulas" totalQuestoes={pm?.total_questoes ?? 0} totalCards={totalCards} />
 
       {aulas.data?.length ? (
-        <div className="group">
+        <div className="materia-aulas">
           {aulas.data.map((a) => {
             const p = progresso.find((x) => x.aula_id === a.id)
             const vencidos = p ? pendentes([p]).vencidos : 0
