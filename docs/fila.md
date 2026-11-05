@@ -20,4 +20,3 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
-| Flashcards da Nefro A6 | Claude | `claude/blissful-lovelace-stwh02` | `nefro-a6` (flashcards) | 05/11/2026 |
