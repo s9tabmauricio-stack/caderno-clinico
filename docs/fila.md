@@ -20,4 +20,3 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
-| Liberar mudança de estrutura do banco sem perguntar | Claude | `claude/dazzling-maxwell-5gqwb8` | `.claude/settings.json`, `AGENTS.md`, `.agents/rules/medgenius.md` | 05/11/2026 |
