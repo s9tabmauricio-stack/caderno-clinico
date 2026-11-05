@@ -1,3 +1,5 @@
+import { BarraMaterias } from '@/components/BarraMaterias'
+import { carregarMateriasPorProva } from '@/lib/materias'
 import type { Metadata } from 'next'
 import { retornoSeguro, rotuloRetorno } from '@/lib/navegacao'
 import Link from 'next/link'
@@ -20,11 +22,12 @@ export default async function MateriaPage(props: PageProps<'/materia/[id]'>) {
   const { retorno } = await props.searchParams
   const origem = retornoSeguro(retorno)
   const { supabase } = await sessao()
-  const [materia, aulas, progresso, banco] = await Promise.all([
+  const [materia, aulas, progresso, banco, materias] = await Promise.all([
     supabase.from('materias').select('id, nome, descricao').eq('id', id).maybeSingle(),
     supabase.from('aulas').select('id, ordem, titulo, resumo, data_aula, professor').eq('materia_id', id).eq('publicada', true).order('ordem'),
     carregarProgresso(supabase),
     carregarProgressoMaterias(supabase),
+    carregarMateriasPorProva(supabase),
   ])
   if (!materia.data) notFound()
   const pm = banco.find((b) => b.materia_id === id)
@@ -33,10 +36,10 @@ export default async function MateriaPage(props: PageProps<'/materia/[id]'>) {
   return (
     <Pagina larga pendentes={pendentes(progresso).hoje}>
       <Voltar href={origem ?? "/estudar"} rotulo={origem ? rotuloRetorno(origem) : "Matérias"} />
-      <header className="top">
+      <header className="top top-materia">
         <div>
-          <div className="eyebrow">Matéria</div>
-          <h1 className="big">{materia.data.nome}</h1>
+          <div className="eyebrow">Matérias</div>
+          <BarraMaterias id={id} nome={materia.data.nome} materias={materias} secao="aulas" retorno={origem} />
           {materia.data.descricao && <p className="lead">{materia.data.descricao}</p>}
         </div>
       </header>

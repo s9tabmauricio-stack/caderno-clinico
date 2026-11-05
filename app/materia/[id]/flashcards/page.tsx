@@ -1,3 +1,5 @@
+import { BarraMaterias } from '@/components/BarraMaterias'
+import { carregarMateriasPorProva } from '@/lib/materias'
 import type { Metadata } from 'next'
 import { retornoSeguro, rotuloRetorno } from '@/lib/navegacao'
 import Link from 'next/link'
@@ -21,11 +23,12 @@ export default async function FlashcardsMateriaPage(props: PageProps<'/materia/[
   const { retorno } = await props.searchParams
   const origem = retornoSeguro(retorno)
   const { supabase, userId } = await sessao()
-  const [materia, cards, progresso, banco] = await Promise.all([
+  const [materia, cards, progresso, banco, materias] = await Promise.all([
     supabase.from('materias').select('id, nome').eq('id', id).maybeSingle(),
     carregarCardsDaMateria(supabase, id),
     carregarProgresso(supabase),
     carregarProgressoMaterias(supabase),
+    carregarMateriasPorProva(supabase),
   ])
   if (!materia.data) notFound()
   const totalBanco = banco.find((b) => b.materia_id === id)?.total_questoes ?? 0
@@ -33,10 +36,10 @@ export default async function FlashcardsMateriaPage(props: PageProps<'/materia/[
   return (
     <Pagina larga pendentes={pendentes(progresso).hoje}>
       <Voltar href={origem ?? "/estudar"} rotulo={origem ? rotuloRetorno(origem) : "Matérias"} />
-      <header className="top">
+      <header className="top top-materia">
         <div>
           <div className="eyebrow">Flashcards</div>
-          <h1 className="big">{materia.data.nome}</h1>
+          <BarraMaterias id={id} nome={materia.data.nome} materias={materias} secao="flashcards" retorno={origem} />
           <p className="lead">
             {cards.length} {plural(cards.length, 'flashcard', 'flashcards')} de todas as aulas da matéria para consultar e estudar livremente. As avaliações também atualizam sua próxima revisão.
           </p>

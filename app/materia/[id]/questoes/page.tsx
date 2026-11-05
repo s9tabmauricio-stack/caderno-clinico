@@ -1,3 +1,5 @@
+import { BarraMaterias } from '@/components/BarraMaterias'
+import { carregarMateriasPorProva } from '@/lib/materias'
 import type { Metadata } from 'next'
 import { cookies } from 'next/headers'
 import { notFound } from 'next/navigation'
@@ -21,10 +23,11 @@ export default async function BancoPage(props: PageProps<'/materia/[id]/questoes
   const { id } = await props.params
   const { tema, prova, mostrar, de, retorno } = await props.searchParams
   const { supabase, userId, email } = await sessao()
-  const [materia, questoes, progresso] = await Promise.all([
+  const [materia, questoes, progresso, materias] = await Promise.all([
     supabase.from('materias').select('id, nome').eq('id', id).maybeSingle(),
     supabase.from('questoes_do_aluno').select('*').eq('materia_id', id).order('prova').order('ordem').limit(1000),
     carregarProgresso(supabase),
+    carregarMateriasPorProva(supabase),
   ])
   if (!materia.data) notFound()
   if (questoes.error) throw new Error(`Não foi possível carregar as questões: ${questoes.error.message}`)
@@ -61,10 +64,10 @@ export default async function BancoPage(props: PageProps<'/materia/[id]/questoes
   return (
     <Pagina larga pendentes={pendentes(progresso).hoje}>
       <Voltar href={voltar.href} rotulo={voltar.rotulo} />
-      <header className="top">
+      <header className="top top-materia">
         <div>
           <div className="eyebrow">Banco de questões</div>
-          <h1 className="big">{materia.data.nome}</h1>
+          <BarraMaterias id={id} nome={materia.data.nome} materias={materias} secao="banco" retorno={origem ?? (de === 'desempenho' ? '/desempenho' : null)} />
           <p className="lead">
             {lista.length} {plural(lista.length, 'questão', 'questões')} de provas anteriores, com gabarito comentado e o porquê
             de cada alternativa errada.

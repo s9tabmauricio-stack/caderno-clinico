@@ -20,4 +20,3 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
-| Barra de matérias por ordem de prova | Codex | codex/barra-materias | Cabeçalho das telas da matéria; app/globals.css | 05/11/2026 |

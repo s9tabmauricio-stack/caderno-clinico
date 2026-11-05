@@ -13,3 +13,13 @@ export function rotuloRetorno(href: string): string {
   if (href.startsWith('/aula/')) return 'Aula'
   return 'Matéria'
 }
+
+export type SecaoMateria = 'aulas' | 'banco' | 'flashcards'
+
+/** Troca de matéria mantendo a seção e a origem, sem levar filtros de outra matéria. */
+export function linkMateria(id: string, secao: SecaoMateria, retorno?: string | null): string {
+  const sufixo = secao === 'aulas' ? '' : secao === 'banco' ? '/questoes' : '/flashcards'
+  const href = `/materia/${encodeURIComponent(id)}${sufixo}`
+  const origem = retornoSeguro(retorno)
+  return origem ? `${href}?${new URLSearchParams({ retorno: origem })}` : href
+}
