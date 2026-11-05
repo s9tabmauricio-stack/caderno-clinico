@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="478pt" height="245pt" viewBox="0 0 478 245">
+<text x="0.0" y="9.0" font-family="Inter" font-size="7.6" font-weight="600" fill="#4F5B70" text-anchor="start">Taxa de filtração</text>
+<text x="0.0" y="19.0" font-family="Inter" font-size="7.2" font-weight="400" fill="#4F5B70" text-anchor="start">(mL/min/1,73 m²)</text>
+<text x="300.0" y="9.0" font-family="Inter" font-size="7.6" font-weight="600" fill="#4F5B70" text-anchor="middle">Albumina na urina (mg/g)</text>
+<rect x="122.0" y="16.0" width="116.7" height="36.0" rx="6" ry="6" fill="#F5F8FF" stroke="#C3D8F8" stroke-width="1"/>
+<text x="130.0" y="30.0" font-family="Inter" font-size="9.4" font-weight="700" fill="#16315C" text-anchor="start">A1</text>
+<text x="145.6" y="30.0" font-family="Inter" font-size="8.2" font-weight="600" fill="#0B5BD3" text-anchor="start">até 30</text>
+<text x="130.0" y="40.6" font-family="Inter" font-size="7.2" font-weight="400" fill="#4F5B70" text-anchor="start">normal ou levemente</text>
+<text x="130.0" y="50.0" font-family="Inter" font-size="7.2" font-weight="400" fill="#4F5B70" text-anchor="start">aumentada</text>
+<rect x="241.7" y="16.0" width="116.7" height="36.0" rx="6" ry="6" fill="#F5F8FF" stroke="#C3D8F8" stroke-width="1"/>
+<text x="249.7" y="30.0" font-family="Inter" font-size="9.4" font-weight="700" fill="#16315C" text-anchor="start">A2</text>
+<text x="267.6" y="30.0" font-family="Inter" font-size="8.2" font-weight="600" fill="#0B5BD3" text-anchor="start">30 a 300</text>
+<text x="249.7" y="40.6" font-family="Inter" font-size="7.2" font-weight="400" fill="#4F5B70" text-anchor="start">moderadamente aumentada</text>
+<rect x="361.3" y="16.0" width="116.7" height="36.0" rx="6" ry="6" fill="#F5F8FF" stroke="#C3D8F8" stroke-width="1"/>
+<text x="369.3" y="30.0" font-family="Inter" font-size="9.4" font-weight="700" fill="#16315C" text-anchor="start">A3</text>
+<text x="387.4" y="30.0" font-family="Inter" font-size="8.2" font-weight="600" fill="#0B5BD3" text-anchor="start">acima de 300</text>
+<text x="369.3" y="40.6" font-family="Inter" font-size="7.2" font-weight="400" fill="#4F5B70" text-anchor="start">gravemente aumentada</text>
+<rect x="0.0" y="55.0" width="119.0" height="25.0" rx="6" ry="6" fill="#F5F8FF" stroke="#C3D8F8" stroke-width="1"/>
+<text x="8.0" y="70.8" font-family="Inter" font-size="9.4" font-weight="700" fill="#16315C" text-anchor="start">G1</text>
+<text x="40.0" y="70.5" font-family="Inter" font-size="8.2" font-weight="400" fill="#1F2933" text-anchor="start">90 ou mais</text>
+<rect x="122.0" y="55.0" width="116.7" height="25.0" rx="6" ry="6" fill="#F3F7FF" stroke="#F3F7FF" stroke-width="1"/>
+<rect x="241.7" y="55.0" width="116.7" height="25.0" rx="6" ry="6" fill="#E1ECFD" stroke="#E1ECFD" stroke-width="1"/>
+<rect x="361.3" y="55.0" width="116.7" height="25.0" rx="6" ry="6" fill="#C9DBF9" stroke="#C9DBF9" stroke-width="1"/>
+<rect x="0.0" y="83.0" width="119.0" height="25.0" rx="6" ry="6" fill="#F5F8FF" stroke="#C3D8F8" stroke-width="1"/>
+<text x="8.0" y="98.8" font-family="Inter" font-size="9.4" font-weight="700" fill="#16315C" text-anchor="start">G2</text>
+<text x="40.0" y="98.5" font-family="Inter" font-size="8.2" font-weight="400" fill="#1F2933" text-anchor="start">60 a 89</text>
+<rect x="122.0" y="83.0" width="116.7" height="25.0" rx="6" ry="6" fill="#E1ECFD" stroke="#E1ECFD" stroke-width="1"/>
+<rect x="241.7" y="83.0" width="116.7" height="25.0" rx="6" ry="6" fill="#C9DBF9" stroke="#C9DBF9" stroke-width="1"/>
+<rect x="361.3" y="83.0" width="116.7" height="25.0" rx="6" ry="6" fill="#A9C4EE" stroke="#A9C4EE" stroke-width="1"/>
+<rect x="0.0" y="111.0" width="119.0" height="25.0" rx="6" ry="6" fill="#F5F8FF" stroke="#C3D8F8" stroke-width="1"/>
+<text x="8.0" y="126.8" font-family="Inter" font-size="9.4" font-weight="700" fill="#16315C" text-anchor="start">G3a</text>
+<text x="40.0" y="126.5" font-family="Inter" font-size="8.2" font-weight="400" fill="#1F2933" text-anchor="start">45 a 59</text>
+<rect x="122.0" y="111.0" width="116.7" height="25.0" rx="6" ry="6" fill="#C9DBF9" stroke="#C9DBF9" stroke-width="1"/>
+<rect x="241.7" y="111.0" width="116.7" height="25.0" rx="6" ry="6" fill="#A9C4EE" stroke="#A9C4EE" stroke-width="1"/>
+<rect x="361.3" y="111.0" width="116.7" height="25.0" rx="6" ry="6" fill="#82A6E0" stroke="#82A6E0" stroke-width="1"/>
+<rect x="0.0" y="139.0" width="119.0" height="25.0" rx="6" ry="6" fill="#F5F8FF" stroke="#C3D8F8" stroke-width="1"/>
+<text x="8.0" y="154.8" font-family="Inter" font-size="9.4" font-weight="700" fill="#16315C" text-anchor="start">G3b</text>
+<text x="40.0" y="154.5" font-family="Inter" font-size="8.2" font-weight="400" fill="#1F2933" text-anchor="start">30 a 44</text>
+<rect x="122.0" y="139.0" width="116.7" height="25.0" rx="6" ry="6" fill="#A9C4EE" stroke="#A9C4EE" stroke-width="1"/>
+<text x="180.3" y="149.4" font-family="Inter" font-size="7.6" font-weight="600" fill="#16315C" text-anchor="middle">risco moderado de ir para</text>
+<text x="180.3" y="158.5" font-family="Inter" font-size="7.6" font-weight="600" fill="#16315C" text-anchor="middle">diálise</text>
+<rect x="241.7" y="139.0" width="116.7" height="25.0" rx="6" ry="6" fill="#82A6E0" stroke="#82A6E0" stroke-width="1"/>
+<rect x="361.3" y="139.0" width="116.7" height="25.0" rx="6" ry="6" fill="#5A84CC" stroke="#5A84CC" stroke-width="1"/>
+<text x="419.7" y="153.9" font-family="Inter" font-size="7.6" font-weight="600" fill="#FFFFFF" text-anchor="middle">risco muito elevado</text>
+<rect x="0.0" y="167.0" width="119.0" height="25.0" rx="6" ry="6" fill="#F5F8FF" stroke="#C3D8F8" stroke-width="1"/>
+<text x="8.0" y="182.8" font-family="Inter" font-size="9.4" font-weight="700" fill="#16315C" text-anchor="start">G4</text>
+<text x="40.0" y="182.5" font-family="Inter" font-size="8.2" font-weight="400" fill="#1F2933" text-anchor="start">15 a 29</text>
+<rect x="122.0" y="167.0" width="116.7" height="25.0" rx="6" ry="6" fill="#82A6E0" stroke="#82A6E0" stroke-width="1"/>
+<rect x="241.7" y="167.0" width="116.7" height="25.0" rx="6" ry="6" fill="#5A84CC" stroke="#5A84CC" stroke-width="1"/>
+<rect x="361.3" y="167.0" width="116.7" height="25.0" rx="6" ry="6" fill="#3461AE" stroke="#3461AE" stroke-width="1"/>
+<rect x="0.0" y="195.0" width="119.0" height="25.0" rx="6" ry="6" fill="#F5F8FF" stroke="#C3D8F8" stroke-width="1"/>
+<text x="8.0" y="210.8" font-family="Inter" font-size="9.4" font-weight="700" fill="#16315C" text-anchor="start">G5</text>
+<text x="40.0" y="210.5" font-family="Inter" font-size="8.2" font-weight="400" fill="#1F2933" text-anchor="start">menos de 15</text>
+<rect x="122.0" y="195.0" width="116.7" height="25.0" rx="6" ry="6" fill="#3461AE" stroke="#3461AE" stroke-width="1"/>
+<rect x="241.7" y="195.0" width="116.7" height="25.0" rx="6" ry="6" fill="#16315C" stroke="#16315C" stroke-width="1"/>
+<rect x="361.3" y="195.0" width="116.7" height="25.0" rx="6" ry="6" fill="#16315C" stroke="#16315C" stroke-width="1"/>
+<text x="122.0" y="239.0" font-family="Inter" font-size="7.4" font-weight="500" fill="#4F5B70" text-anchor="start">menor risco</text>
+<text x="478.0" y="239.0" font-family="Inter" font-size="7.4" font-weight="500" fill="#4F5B70" text-anchor="end">maior risco</text>
+<rect x="172.2" y="232.0" width="31.3" height="9.0" rx="2" ry="2" fill="#F3F7FF" stroke="#F3F7FF" stroke-width="1"/>
+<rect x="204.5" y="232.0" width="31.3" height="9.0" rx="2" ry="2" fill="#E1ECFD" stroke="#E1ECFD" stroke-width="1"/>
+<rect x="236.8" y="232.0" width="31.3" height="9.0" rx="2" ry="2" fill="#C9DBF9" stroke="#C9DBF9" stroke-width="1"/>
+<rect x="269.1" y="232.0" width="31.3" height="9.0" rx="2" ry="2" fill="#A9C4EE" stroke="#A9C4EE" stroke-width="1"/>
+<rect x="301.4" y="232.0" width="31.3" height="9.0" rx="2" ry="2" fill="#82A6E0" stroke="#82A6E0" stroke-width="1"/>
+<rect x="333.7" y="232.0" width="31.3" height="9.0" rx="2" ry="2" fill="#5A84CC" stroke="#5A84CC" stroke-width="1"/>
+<rect x="366.0" y="232.0" width="31.3" height="9.0" rx="2" ry="2" fill="#3461AE" stroke="#3461AE" stroke-width="1"/>
+<rect x="398.3" y="232.0" width="31.3" height="9.0" rx="2" ry="2" fill="#16315C" stroke="#16315C" stroke-width="1"/>
+</svg>
