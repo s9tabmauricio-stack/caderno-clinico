@@ -20,3 +20,4 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
+| Token do Codex só para o projeto | Claude | claude/awesome-thompson-k5vgdv | `docs/codex.md` | 05/11/2026 |
