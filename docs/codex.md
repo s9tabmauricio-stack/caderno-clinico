@@ -7,11 +7,16 @@ o Mauricio configura (uma vez).
 
 ## 1. Criar o token do Supabase
 
-1. Entre em https://supabase.com/dashboard/account/tokens (logado na conta dona do projeto `xtlpmtylifbalzxnfkib`).
-2. **Generate new token**, nome `codex`, copie o valor (começa com `sbp_`). Ele só aparece uma vez.
+Em https://supabase.com/dashboard/account/tokens → **Generate new token**:
 
-O token dá acesso a todos os projetos dessa conta do Supabase: guarde só no Codex. Se vazar, apague-o na
-mesma página e crie outro.
+1. **Name**: `CODEX`. **Expires in**: pode ficar `Never` (se um dia vazar, apague o token nesta mesma página).
+2. **Resource access**: **Project** → organização **MGenius** → em **Select projects**, marque só o projeto do
+   Med Genius (`xtlpmtylifbalzxnfkib`). Assim o token não serve para mais nada da conta.
+3. **Permissions**: abra **Database** e dê leitura e escrita no acesso por SQL (o que o conector faz). Deixe o
+   resto em `None`.
+4. Gere e copie o valor (começa com `sbp_`). Ele só aparece uma vez.
+
+Não use **Create legacy token**: esse dá acesso a todos os projetos da conta.
 
 ## 2. Configurar o ambiente do Codex
 
@@ -20,6 +25,8 @@ Em chatgpt.com/codex → **Settings → Environments** → o ambiente do `cadern
 1. **Environment variables** (não em "Secrets": os segredos somem depois da preparação e o agente não os vê):
    - `SUPABASE_ACCESS_TOKEN` = o token do passo 1;
    - `SUPABASE_SECRET_KEY` = a mesma chave secreta da Vercel (para o `scripts/gravar-rascunho.mjs`).
+   - `NODE_USE_ENV_PROXY` = `1` (o Codex sai para a internet por um proxy, e o Node só usa o proxy com isso; sem ele,
+     os programas dizem que não há conexão).
 2. **Agent internet access** → **On**, com a lista de endereços permitidos:
    - `api.supabase.com`
    - `xtlpmtylifbalzxnfkib.supabase.co`
