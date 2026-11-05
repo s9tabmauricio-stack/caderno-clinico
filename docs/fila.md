@@ -20,4 +20,3 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
-| Conferência das questões da Nefro 6: questão nova e questões de prova sem aula | Claude | claude/wizardly-cray-x8f8uq | nefro-a6 (banco: questoes) | 05/11/2026 |
