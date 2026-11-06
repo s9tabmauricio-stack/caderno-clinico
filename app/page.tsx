@@ -89,12 +89,6 @@ export default async function Inicio() {
             <h2 id="in-marca">medGenUs</h2>
           </div>
         </div>
-        <p className="in-manifesto">Grandes ideias.<br />O futuro da medicina começa aqui.</p>
-        <p className="in-proposito">Conhecimento e inteligência artificial para impulsionar sua jornada na medicina.</p>
-        <div className="in-tecnologia">
-          <p>Desenvolvida com inteligência artificial da</p>
-          <p className="in-empresas"><span>Anthropic</span><span className="in-mais" aria-label="e">+</span><span>OpenAI</span></p>
-        </div>
       </section>
 
       <div className="inicio">
