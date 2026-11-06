@@ -1105,9 +1105,6 @@ h1.big{background:var(--metal-titulo);-webkit-background-clip:text;background-cl
    No celular, um embaixo do outro; no tablet deitado, a agenda é a coluna da esquerda.
    Quadro com a proposta (E · Tudo do dia): https://claude.ai/artifact/BjQhu55DNueYG5a7zFWucg
    ===================================================================== */
-.in-foco-prova{margin-bottom:24px}
-.in-foco-prova h2{margin:8px 0}
-.in-foco-prova p{margin:8px 0;line-height:1.5}
 .in-status{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
 .in-card,.in-mat{position:relative;min-width:0;border-radius:var(--r-lg);background:var(--vidro);box-shadow:var(--vidro-sombra);
   -webkit-backdrop-filter:blur(22px) saturate(180%);backdrop-filter:blur(22px) saturate(180%)}
