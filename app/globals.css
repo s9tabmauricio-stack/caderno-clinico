@@ -2,7 +2,7 @@
 /* Layout: app de coluna única no estilo iOS, listas agrupadas e barra de abas de vidro flutuante; mesma linguagem das apostilas Liquid Glass (azul = conteúdo, verde = valor, vermelho = alerta) */
 :root{
   --font-texto:"Inter Variable","Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-  --font-marca:"Cinzel Variable","Cinzel",var(--font-texto);
+  --font-marca:var(--font-texto);
   --font:var(--font-texto);
   --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
   --r-lg:20px; --r-md:14px;
@@ -869,18 +869,13 @@ body:has(.tela-entrar){background:#07080B}
 }
 
 /* =====================================================================
-   Letras: Inter em tudo o que se lê e se digita (enunciado, alternativas, flashcards,
-   recados, campos, números); a Cinzel, letra da marca, só nos títulos, nos nomes das
-   matérias, nos rótulos em maiúsculas e nos números grandes isolados.
-   A Cinzel não tem minúsculas de verdade (mg e Mg ficam quase iguais), nem algarismos
-   de largura fixa, nem símbolos como β, ≥ e →.
+   Letras: Inter em todo o app, incluindo títulos, nomes das matérias, rótulos,
+   números, enunciados, alternativas, flashcards, recados e campos.
    ===================================================================== */
 h1.big,.centro h1,.done h2,.lg-marca h1,.lg-entrar,
 .eyebrow,.sec,.res-n .n,.perf-h .t,.painel-h .t{font-family:var(--font-marca)}
 .sec a{font-family:var(--font-texto)}
-/* letras romanas pedem ar: sem o espaçamento negativo pensado para a Inter */
-h1.big,.centro h1,.done h2,.res-n .n,.perf-h .t,.painel-h .t{letter-spacing:0}
-/* saudação do Início numa linha: "Boa noite, Mauricio" cabe na Cinzel em qualquer celular (100vw - margens - engrenagem) */
+/* Saudação do Início ajustada à largura disponível no celular. */
 h1.big.saudacao{font-size:clamp(20px,calc((100vw - 86px) / 11.2),34px)}
 
 /* =====================================================================
