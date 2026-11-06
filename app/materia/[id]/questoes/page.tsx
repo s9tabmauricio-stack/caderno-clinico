@@ -9,7 +9,7 @@ import { AbasMateria } from '@/components/AbasMateria'
 import { carregarProgresso, paraQuestao, pendentes, sessao, totais } from '@/lib/dados'
 import { createClient } from '@/lib/supabase/server'
 import { plural } from '@/lib/formato'
-import { retornoSeguro, rotuloRetorno } from '@/lib/navegacao'
+import { retornoDaMateria, rotuloRetorno } from '@/lib/navegacao'
 import { ehAdmin } from '@/lib/admin'
 import { filtroClassificacaoValido } from '@/lib/classificacao-questoes'
 
@@ -48,15 +48,15 @@ export default async function BancoPage(props: PageProps<'/materia/[id]/questoes
     situacao: situacao === 'erradas' ? ('erradas' as const) : situacao === 'abertas' ? ('abertas' as const) : ('todas' as const),
   }
 
-  // "Voltar" leva de volta a quem mandou o aluno para cá (Matérias, Desempenho ou a aula)
-  let voltar = { href: '/estudar', rotulo: 'Matérias' }
+  // Só mostra "Voltar" quando o aluno veio de outra tela, como Desempenho ou uma aula.
+  let voltar: { href: string; rotulo: string } | null = null
   if (de === 'desempenho') voltar = { href: '/desempenho', rotulo: 'Desempenho' }
   else if (typeof de === 'string' && /^aula:[\w-]{1,60}$/.test(de)) {
     const aulaId = de.slice(5)
     const { data: aula } = await supabase.from('aulas').select('titulo').eq('id', aulaId).eq('materia_id', id).maybeSingle()
     if (aula) voltar = { href: `/aula/${aulaId}?aba=questoes`, rotulo: aula.titulo }
   }
-  const origem = retornoSeguro(retorno)
+  const origem = retornoDaMateria(retorno)
   if (origem) voltar = { href: origem, rotulo: rotuloRetorno(origem) }
   // Administrador: botão Editar nas questões
   const edicao = ehAdmin(email)
@@ -65,7 +65,7 @@ export default async function BancoPage(props: PageProps<'/materia/[id]/questoes
 
   return (
     <Pagina larga pendentes={pendentes(progresso).hoje}>
-      <Voltar href={voltar.href} rotulo={voltar.rotulo} />
+      {voltar && <Voltar href={voltar.href} rotulo={voltar.rotulo} />}
       <header className="top top-materia">
         <div>
           <div className="eyebrow">Banco de questões</div>

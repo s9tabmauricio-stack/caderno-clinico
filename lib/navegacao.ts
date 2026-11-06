@@ -1,3 +1,6 @@
+/** Entrada de Matérias: abre as aulas de Pneumologia sem uma lista intermediária. */
+export const INICIO_MATERIAS = '/materia/pneumo'
+
 /** Retornos internos permitidos; nunca aceita URLs externas ou protocolos. */
 export function retornoSeguro(valor: unknown): string | null {
   if (typeof valor !== 'string' || valor.length > 2000 || /[\\\r\n]/.test(valor)) return null
@@ -14,12 +17,18 @@ export function rotuloRetorno(href: string): string {
   return 'Matéria'
 }
 
+/** Nas matérias, só oferece voltar quando há uma origem além da lista removida. */
+export function retornoDaMateria(valor: unknown): string | null {
+  const origem = retornoSeguro(valor)
+  return origem && !origem.startsWith('/estudar') ? origem : null
+}
+
 export type SecaoMateria = 'aulas' | 'banco' | 'flashcards'
 
 /** Troca de matéria mantendo a seção e a origem, sem levar filtros de outra matéria. */
 export function linkMateria(id: string, secao: SecaoMateria, retorno?: string | null): string {
   const sufixo = secao === 'aulas' ? '' : secao === 'banco' ? '/questoes' : '/flashcards'
   const href = `/materia/${encodeURIComponent(id)}${sufixo}`
-  const origem = retornoSeguro(retorno)
+  const origem = retornoDaMateria(retorno)
   return origem ? `${href}?${new URLSearchParams({ retorno: origem })}` : href
 }

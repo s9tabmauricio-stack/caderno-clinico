@@ -1,6 +1,6 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
-import { linkMateria, retornoSeguro, rotuloRetorno } from '../lib/navegacao.ts'
+import { linkMateria, retornoDaMateria, retornoSeguro, rotuloRetorno } from '../lib/navegacao.ts'
 
 test('retorno preserva busca, filtros, aba e âncora', () => {
   for (const href of ['/estudar?q=pneumonia+hospitalar', '/desempenho#materia-pneumo', '/aula/pneumo-a2?aba=questoes&retorno=%2Festudar%3Fq%3Dpneumonia', '/materia/pneumo/questoes?tema=DPOC&prova=p1&mostrar=erradas']) {
@@ -30,4 +30,17 @@ test('troca de matéria mantém cada seção e o retorno interno', () => {
     assert.equal(linkMateria('nefro', secao), `/materia/nefro${sufixo}`)
   }
   assert.equal(linkMateria('pneumo', 'aulas', 'https://example.com'), '/materia/pneumo')
+})
+
+test('matérias não voltam à lista removida e preservam a origem de aulas e desempenho', () => {
+  for (const origem of [undefined, '/estudar', '/estudar?q=pneumonia', '/estudar#pneumo']) {
+    assert.equal(retornoDaMateria(origem), null)
+    for (const secao of ['aulas', 'banco', 'flashcards']) {
+      assert.equal(new URL(linkMateria('nefro', secao, origem), 'https://medgenius.local').search, '')
+    }
+  }
+  for (const origem of ['/desempenho#materia-pneumo', '/aula/pneumo-a2?aba=questoes']) {
+    assert.equal(retornoDaMateria(origem), origem)
+  }
+  assert.equal(retornoDaMateria('https://example.com'), null)
 })

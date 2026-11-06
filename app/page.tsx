@@ -18,6 +18,7 @@ import { agoraBrasilia, COR_MATERIA, ehDiaTodo, ehDoAluno, fmtHora, inicioMs, si
 import { agendaDoDia, proximasProvas } from '@/lib/agenda-dados'
 import { AgendaAvisos, AgendaDiaTodo, AgendaLista, AgendaProvas } from '@/components/AgendaLista'
 import { ContagemProva } from '@/components/ContagemProva'
+import { INICIO_MATERIAS } from '@/lib/navegacao'
 
 export const metadata: Metadata = { title: { absolute: 'Med Genius · Início' } }
 
@@ -187,7 +188,7 @@ export default async function Inicio() {
                   </span>
                 </Link>
               ) : (
-                <Link className="btn ghost" href="/estudar">
+                <Link className="btn ghost" href={INICIO_MATERIAS}>
                   Responder questões
                 </Link>
               )}
@@ -256,7 +257,7 @@ export default async function Inicio() {
         <section className="in-materias" aria-label="Matérias">
           <div className="sec ag-h">
             <span>Matérias</span>
-            <Link href="/estudar">Estudar →</Link>
+            <Link href={INICIO_MATERIAS}>Estudar →</Link>
           </div>
           <div className="in-mats">
             {ordenarMateriasPorProva(materias, todasProvas, agora.ms).map((m) => {

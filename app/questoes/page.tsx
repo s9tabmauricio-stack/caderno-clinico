@@ -1,6 +1,7 @@
 import { redirect } from 'next/navigation'
+import { INICIO_MATERIAS } from '@/lib/navegacao'
 
-// A aba Questões virou parte da aba Estudar; este endereço continua valendo para quem o tinha salvo
+// Endereço antigo: abre diretamente a tela de matérias atual.
 export default function QuestoesAntiga() {
-  redirect('/estudar')
+  redirect(INICIO_MATERIAS)
 }
