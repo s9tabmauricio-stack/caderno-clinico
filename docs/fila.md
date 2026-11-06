@@ -20,3 +20,4 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
+| Substituir Cinzel por Inter | Codex | codex/substituir-cinzel-inter | app/globals.css, app/layout.tsx, package.json, package-lock.json, docs/visual.md, AGENTS.md | 06/11/2026 |
