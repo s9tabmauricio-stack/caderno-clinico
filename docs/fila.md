@@ -20,4 +20,3 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
-| Retirar Cards, Questões e Matérias do Início | Codex | `codex/inicio-agenda-provas` | Início (`app/page.tsx`, `app/globals.css`) | 06/11/2026 |
