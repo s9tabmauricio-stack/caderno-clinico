@@ -20,3 +20,4 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
+| Abrir Matérias direto nas aulas | Codex | codex/materias-direto-aulas | /estudar, navegação e retornos das matérias | 06/11/2026 |
