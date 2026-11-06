@@ -40,7 +40,6 @@ export default async function MateriaPage(props: PageProps<'/materia/[id]'>) {
         <div>
           <div className="eyebrow">Matérias</div>
           <BarraMaterias id={id} nome={materia.data.nome} materias={materias} secao="aulas" retorno={origem} />
-          {materia.data.descricao && <p className="lead">{materia.data.descricao}</p>}
         </div>
       </header>
 
