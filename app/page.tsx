@@ -13,6 +13,7 @@ import {
   totais,
   totaisQuestoes,
 } from '@/lib/dados'
+import { daProximaProva, ritmoDiario } from '@/lib/preparacao-prova'
 import { plural, saudacao } from '@/lib/formato'
 import { agoraBrasilia, COR_MATERIA, ehDiaTodo, ehDoAluno, fmtHora, inicioMs, situacoes } from '@/lib/agenda'
 import { agendaDoDia, proximasProvas } from '@/lib/agenda-dados'
@@ -57,7 +58,7 @@ export default async function Inicio() {
   const idsMaterias = materias.map((m) => m.id)
 
   // Provas: a próxima (que ainda não começou) com a contagem regressiva e as três seguintes em lista
-  const provas = todasProvas.filter((p) => inicioMs(p) > agora.ms)
+  const provas = todasProvas.filter((p) => !p.cancelado && ehDoAluno(p.grupos, grupo) && inicioMs(p) > agora.ms)
   const [prova, ...depois] = provas
   const diasAteProva = prova ? Math.round((Date.parse(`${prova.data}T12:00:00Z`) - Date.parse(`${agora.data}T12:00:00Z`)) / 86_400_000) : 0
   const diaDaProva = prova
@@ -76,24 +77,29 @@ export default async function Inicio() {
   const { texto, data } = saudacao()
 
   // Cards: para revisar hoje (vencidos), novos e em dia
-  const pend = pendentes(progresso)
+  const materiaProva = materias.find((m) => m.id === prova?.materia)
+  const progressoProva = daProximaProva(progresso, materiaProva?.id)
+  const bancoProva = daProximaProva(banco, materiaProva?.id)
+  const revisao = materiaProva ? `/revisao?materia=${encodeURIComponent(materiaProva.id)}` : '/agenda#provas'
+  const questoes = materiaProva ? `/materia/${encodeURIComponent(materiaProva.id)}/questoes` : '/agenda#provas'
+  const pend = pendentes(progressoProva)
   const cardsAtivos = pend.novos + pend.vencidos + pend.emDia
 
   // Questões: certas, erradas e a fazer (pelo banco de cada matéria)
-  const tq = totaisQuestoes(banco)
+  const tq = totaisQuestoes(bancoProva)
   const erradas = tq.respondidas - tq.acertos
   const afazer = tq.questoes - tq.respondidas
   const acerto = tq.respondidas ? Math.round((100 * tq.acertos) / tq.respondidas) : null
-  // Erradas numa matéria só: o botão já abre o banco dela filtrado; em várias, o Desempenho mostra cada uma
-  const comErradas = banco.filter((b) => b.respondidas > b.acertos)
-  const refazer = comErradas.length === 1 ? `/materia/${comErradas[0].materia_id}/questoes?mostrar=erradas` : '/desempenho'
+  const refazer = `${questoes}?mostrar=erradas`
+  const metaCards = ritmoDiario(pend.novos, diasAteProva)
+  const metaQuestoes = ritmoDiario(afazer, diasAteProva)
 
   const ultima = progresso
     .filter((p) => p.ultima_atividade)
     .sort((a, b) => (b.ultima_atividade ?? '').localeCompare(a.ultima_atividade ?? ''))[0]
 
   return (
-    <Pagina larga pendentes={pend.hoje}>
+    <Pagina larga pendentes={pendentes(progresso).hoje}>
       <header className="top">
         <div>
           <div className="eyebrow">{data}</div>
@@ -103,12 +109,32 @@ export default async function Inicio() {
         </div>
       </header>
 
+      <section className="in-card in-foco-prova" aria-label="Preparação para a próxima prova">
+        <div className="sec">Próxima prova</div>
+        {prova ? (
+          <>
+            <h2>{prova.titulo}</h2>
+            <p>{diaDaProva}{prova.inicio ? ` · ${fmtHora(prova.inicio)}` : ''} · {diasAteProva === 0 ? 'A prova é hoje' : `Faltam ${diasAteProva} ${plural(diasAteProva, 'dia', 'dias')}`}</p>
+            {materiaProva ? (
+              <>
+                <p>Cards e questões de {materiaProva.nome}. Todos os números abaixo se referem a essa matéria.</p>
+                <p className={pend.vencidos > 0 ? 'alerta' : ''}>
+                  {pend.vencidos > 0 ? `${pend.vencidos} ${plural(pend.vencidos, 'revisão pendente', 'revisões pendentes')}. Coloque a revisão em dia hoje.` : pend.novos > 0 ? 'Nenhuma revisão vencida. Estude os cards novos de hoje.' : cardsAtivos > 0 ? 'Revisões em dia. Mantenha a frequência.' : 'Ainda não há cards disponíveis para esta matéria.'}
+                </p>
+                <p>Ritmo necessário {diasAteProva <= 1 ? 'para hoje' : 'por dia até a prova'}: <b>{metaCards} cards novos</b> e <b>{metaQuestoes} questões ainda não respondidas</b>.</p>
+                {erradas > 0 && <p className="ruim">{erradas} {plural(erradas, 'questão errada para corrigir', 'questões erradas para corrigir')}. Refaça e confira a explicação.</p>}
+              </>
+            ) : <p>Vincule uma matéria à próxima prova na Agenda para acompanhar a preparação.</p>}
+          </>
+        ) : <p>Nenhuma próxima prova cadastrada. Confira a <Link href="/agenda#provas">Agenda</Link>.</p>}
+      </section>
+
       <div className="inicio">
-        <div className="in-status">
+        {materiaProva && <div className="in-status">
           <div className="in-col">
             <div className="sec ag-h">
               <span>Cards</span>
-              <Link href="/revisao">Revisão →</Link>
+              <Link href={revisao}>Revisão →</Link>
             </div>
             <section className="in-card destaque" aria-label="Cards">
               <div className="in-n">
@@ -135,11 +161,11 @@ export default async function Inicio() {
                 <span className="b-al" style={{ width: `${cardsAtivos ? (100 * pend.vencidos) / cardsAtivos : 0}%` }} />
               </div>
               {pend.vencidos > 0 ? (
-                <Link className="btn-white" href="/revisao">
+                <Link className="btn-white" href={revisao}>
                   Começar revisão
                 </Link>
               ) : pend.novos > 0 ? (
-                <Link className="btn-white" href="/revisao">
+                <Link className="btn-white" href={revisao}>
                   <span>
                     Estudar <span className="longo">cards </span>novos
                   </span>
@@ -153,7 +179,7 @@ export default async function Inicio() {
           <div className="in-col">
             <div className="sec ag-h">
               <span>Questões</span>
-              <Link href="/desempenho">Desempenho →</Link>
+              <Link href={`${questoes}?mostrar=todas`}>Banco →</Link>
             </div>
             <section className="in-card" aria-label="Questões">
               <div className="in-n">
@@ -194,7 +220,7 @@ export default async function Inicio() {
               )}
             </section>
           </div>
-        </div>
+        </div>}
 
         <div className="in-esq">
           <section className="in-agenda" aria-label="Agenda de hoje">
