@@ -23,4 +23,4 @@ Versões do visual salvas no GitHub (ramos fixos, não publicados; não apague):
 
 ## Letras
 
-Inter (`--font-texto`) em tudo o que se lê e se digita (enunciado, alternativas, flashcards, recados, campos, números); Cinzel (`--font-marca`) só nos títulos das telas, nomes das matérias, rótulos em maiúsculas, números grandes isolados e na tela de entrada (MED GENIUS, ENTRAR). A Cinzel não tem minúsculas de verdade (mg e Mg ficam quase iguais), nem algarismos de largura fixa, nem símbolos como β, ≥ e →. A lista fica no bloco "Letras" no fim de `app/globals.css`.
+Inter em todo o app: títulos das telas e saudação do Início, nomes das matérias, rótulos, números, tela de entrada, enunciados, alternativas, flashcards, recados e campos. `--font-texto` define a família; `--font-marca` aponta para a mesma Inter. A Cinzel foi retirada do app a pedido do Mauricio em 06/11/2026; fica apenas nos quadros e registros históricos das versões antigas. A lista fica no bloco "Letras" de `app/globals.css`.
