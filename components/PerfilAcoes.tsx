@@ -4,9 +4,10 @@ import { useMemo, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { createClient } from '@/lib/supabase/client'
 import { cpfDoEmail, formatarCpf } from '@/lib/cpf'
+import { apagarClassificacoes } from '@/lib/apagar-classificacoes'
 import { Icone } from './Icones'
 
-type OQue = 'ambos' | 'questoes' | 'flashcards'
+type OQue = 'ambos' | 'questoes' | 'flashcards' | 'classificacoes'
 type Onde = 'tudo' | 'materia' | 'aula'
 
 export function PerfilAcoes({
@@ -31,6 +32,7 @@ export function PerfilAcoes({
   const [editando, setEditando] = useState(false)
   const [msgDados, setMsgDados] = useState<{ ok: boolean; texto: string } | null>(null)
   const [confirmar, setConfirmar] = useState(false)
+  const [apagando, setApagando] = useState(false)
   const [abrirApagar, setAbrirApagar] = useState(false)
   const [msgApagar, setMsgApagar] = useState<{ ok: boolean; texto: string } | null>(null)
   const [oQue, setOQue] = useState<OQue>('ambos')
@@ -110,50 +112,64 @@ export function PerfilAcoes({
       ? 'as respostas das questões'
       : oQue === 'flashcards'
         ? 'as revisões dos flashcards'
-        : 'as respostas das questões e as revisões dos flashcards',
+        : oQue === 'classificacoes'
+          ? 'as classificações das questões'
+          : 'as respostas das questões e as revisões dos flashcards',
     onde === 'tudo' ? 'de todas as matérias' : onde === 'materia' ? `de ${alvoNome}` : `da aula ${alvoNome}`,
   ].join(' ')
   const pronto = onde === 'tudo' || alvo !== ''
 
   async function apagarProgresso() {
+    if (!pronto || apagando) return
+    setApagando(true)
     let falhou = false
 
-    if (oQue !== 'flashcards') {
-      let ids: string[] | null = null
-      if (onde !== 'tudo') {
-        const busca = supabase.from('questoes').select('id')
-        const { data, error } = await (onde === 'materia' ? busca.eq('materia_id', alvo) : busca.eq('aula_id', alvo))
-        falhou ||= Boolean(error)
-        ids = (data ?? []).map((r) => r.id)
+    try {
+      if (oQue === 'classificacoes') {
+        await apagarClassificacoes(supabase, userId, onde === 'tudo' ? { onde } : { onde, alvo })
       }
-      if (!falhou && (ids === null || ids.length > 0)) {
-        const del = supabase.from('respostas').delete().eq('user_id', userId)
-        const { error } = await (ids ? del.in('questao_id', ids) : del)
-        falhou ||= Boolean(error)
-        // o histórico de tentativas dessas questões vai junto (refazer uma questão não o apaga, só este botão)
-        if (!falhou) {
-          const delHistorico = supabase.from('historico_respostas').delete().eq('user_id', userId)
-          const { error: erroHistorico } = await (ids ? delHistorico.in('questao_id', ids) : delHistorico)
-          falhou ||= Boolean(erroHistorico)
+
+      if (oQue === 'ambos' || oQue === 'questoes') {
+        let ids: string[] | null = null
+        if (onde !== 'tudo') {
+          const busca = supabase.from('questoes').select('id')
+          const { data, error } = await (onde === 'materia' ? busca.eq('materia_id', alvo) : busca.eq('aula_id', alvo))
+          falhou ||= Boolean(error)
+          ids = (data ?? []).map((r) => r.id)
+        }
+        if (!falhou && (ids === null || ids.length > 0)) {
+          const del = supabase.from('respostas').delete().eq('user_id', userId)
+          const { error } = await (ids ? del.in('questao_id', ids) : del)
+          falhou ||= Boolean(error)
+          // o histórico de tentativas dessas questões vai junto (refazer uma questão não o apaga, só este botão)
+          if (!falhou) {
+            const delHistorico = supabase.from('historico_respostas').delete().eq('user_id', userId)
+            const { error: erroHistorico } = await (ids ? delHistorico.in('questao_id', ids) : delHistorico)
+            falhou ||= Boolean(erroHistorico)
+          }
         }
       }
-    }
 
-    if (oQue !== 'questoes' && !falhou) {
-      let ids: string[] | null = null
-      if (onde !== 'tudo') {
-        const { data, error } = await supabase
-          .from('flashcards')
-          .select('id')
-          .in('aula_id', onde === 'materia' ? aulasDaMateria : [alvo])
-        falhou ||= Boolean(error)
-        ids = (data ?? []).map((r) => r.id)
+      if ((oQue === 'ambos' || oQue === 'flashcards') && !falhou) {
+        let ids: string[] | null = null
+        if (onde !== 'tudo') {
+          const { data, error } = await supabase
+            .from('flashcards')
+            .select('id')
+            .in('aula_id', onde === 'materia' ? aulasDaMateria : [alvo])
+          falhou ||= Boolean(error)
+          ids = (data ?? []).map((r) => r.id)
+        }
+        if (!falhou && (ids === null || ids.length > 0)) {
+          const del = supabase.from('revisoes').delete().eq('user_id', userId)
+          const { error } = await (ids ? del.in('flashcard_id', ids) : del)
+          falhou ||= Boolean(error)
+        }
       }
-      if (!falhou && (ids === null || ids.length > 0)) {
-        const del = supabase.from('revisoes').delete().eq('user_id', userId)
-        const { error } = await (ids ? del.in('flashcard_id', ids) : del)
-        falhou ||= Boolean(error)
-      }
+    } catch {
+      falhou = true
+    } finally {
+      setApagando(false)
     }
 
     setConfirmar(false)
@@ -308,7 +324,7 @@ export function PerfilAcoes({
           </span>
           <span className="main">
             <span className="t">Apagar progresso</span>
-            <span className="s">Questões e flashcards</span>
+            <span className="s">Questões, flashcards e classificações</span>
           </span>
           {!abrirApagar && (
             <button
@@ -327,7 +343,7 @@ export function PerfilAcoes({
             className="apagar-form"
             onSubmit={(e) => {
               e.preventDefault()
-              if (!pronto) return
+              if (!pronto || apagando) return
               setConfirmar(true)
               setMsgApagar(null)
             }}
@@ -340,6 +356,7 @@ export function PerfilAcoes({
               id="apagar-o-que"
               className="campo"
               value={oQue}
+              disabled={apagando}
               onChange={(e) => {
                 setOQue(e.target.value as OQue)
                 setConfirmar(false)
@@ -348,7 +365,11 @@ export function PerfilAcoes({
               <option value="ambos">Questões e flashcards</option>
               <option value="questoes">Só questões</option>
               <option value="flashcards">Só flashcards</option>
+              <option value="classificacoes">Só classificação das questões</option>
             </select>
+            {oQue === 'classificacoes' && (
+              <p className="foot">Remove suas marcações de revisão. Suas respostas, tentativas e flashcards são mantidos.</p>
+            )}
 
             <label htmlFor="apagar-onde" className="rotulo">
               De onde
@@ -357,6 +378,7 @@ export function PerfilAcoes({
               id="apagar-onde"
               className="campo"
               value={onde}
+              disabled={apagando}
               onChange={(e) => {
                 setOnde(e.target.value as Onde)
                 setAlvo('')
@@ -377,7 +399,11 @@ export function PerfilAcoes({
                   id="apagar-materia"
                   className="campo"
                   value={alvo}
-                  onChange={(e) => setAlvo(e.target.value)}
+                  disabled={apagando}
+                  onChange={(e) => {
+                    setAlvo(e.target.value)
+                    setConfirmar(false)
+                  }}
                 >
                   <option value="">Escolha a matéria</option>
                   {materias.map((m) => (
@@ -394,7 +420,16 @@ export function PerfilAcoes({
                 <label htmlFor="apagar-aula" className="rotulo">
                   Aula
                 </label>
-                <select id="apagar-aula" className="campo" value={alvo} onChange={(e) => setAlvo(e.target.value)}>
+                <select
+                  id="apagar-aula"
+                  className="campo"
+                  value={alvo}
+                  disabled={apagando}
+                  onChange={(e) => {
+                    setAlvo(e.target.value)
+                    setConfirmar(false)
+                  }}
+                >
                   <option value="">Escolha a aula</option>
                   {materias.map((m) => (
                     <optgroup key={m.id} label={m.nome}>
@@ -415,6 +450,7 @@ export function PerfilAcoes({
               <button
                 className="btn ghost"
                 type="button"
+                disabled={apagando}
                 onClick={() => {
                   setAbrirApagar(false)
                   setConfirmar(false)
@@ -422,7 +458,7 @@ export function PerfilAcoes({
               >
                 Cancelar
               </button>
-              <button className="btn danger" type="submit" disabled={!pronto}>
+              <button className="btn danger" type="submit" disabled={!pronto || apagando}>
                 Apagar
               </button>
             </div>
@@ -437,14 +473,15 @@ export function PerfilAcoes({
               <span className="t">Apagar {descricaoApagar}?</span>
               <span className="s">
                 Não dá para desfazer.
-                {oQue !== 'flashcards' && ' O histórico de tentativas dessas questões também é apagado.'}
+                {(oQue === 'ambos' || oQue === 'questoes') && ' O histórico de tentativas dessas questões também é apagado.'}
+                {oQue === 'classificacoes' && ' Suas respostas, tentativas e flashcards serão mantidos.'}
               </span>
             </span>
-            <button className="btn ghost sm" onClick={() => setConfirmar(false)}>
+            <button className="btn ghost sm" onClick={() => setConfirmar(false)} disabled={apagando}>
               Cancelar
             </button>
-            <button className="btn danger sm" onClick={apagarProgresso}>
-              Apagar
+            <button className="btn danger sm" onClick={apagarProgresso} disabled={apagando}>
+              {apagando ? 'Apagando…' : 'Apagar'}
             </button>
           </div>
         </div>
