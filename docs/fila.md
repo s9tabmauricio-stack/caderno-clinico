@@ -20,3 +20,4 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
+| Compactar layout das matérias | Codex | codex/materias-layout-compacto | app/materia/[id]/page.tsx; app/globals.css (.top-materia) | 06/11/2026 |
