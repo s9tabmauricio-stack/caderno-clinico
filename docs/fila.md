@@ -20,3 +20,4 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
+| Inicial focada na próxima prova | Codex | codex/inicio-proxima-prova | Início, app/page.tsx | 2026-11-06 |
