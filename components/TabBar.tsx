@@ -3,11 +3,12 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Icone } from './Icones'
+import { INICIO_MATERIAS } from '@/lib/navegacao'
 
 const ABAS = [
   { href: '/', chave: 'inicio', rotulo: 'Início', icone: Icone.inicio },
   { href: '/agenda', chave: 'agenda', rotulo: 'Agenda', icone: Icone.agenda },
-  { href: '/estudar', chave: 'estudar', rotulo: 'Matérias', icone: Icone.estudar },
+  { href: INICIO_MATERIAS, chave: 'estudar', rotulo: 'Matérias', icone: Icone.estudar },
   { href: '/revisao', chave: 'revisao', rotulo: 'Revisão', icone: Icone.cards },
   { href: '/desempenho', chave: 'desempenho', rotulo: 'Desempenho', icone: Icone.grafico },
 ] as const

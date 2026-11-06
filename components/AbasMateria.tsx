@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { useSearchParams } from 'next/navigation'
-import { retornoSeguro } from '@/lib/navegacao'
+import { retornoDaMateria } from '@/lib/navegacao'
 
 type Aba = 'aulas' | 'banco' | 'flashcards'
 
@@ -19,7 +19,7 @@ export function AbasMateria({
   totalCards: number
 }) {
   const parametros = useSearchParams()
-  const retorno = retornoSeguro(parametros.get('retorno')) ?? (parametros.get('de') === 'desempenho' ? '/desempenho' : null)
+  const retorno = retornoDaMateria(parametros.get('retorno')) ?? (parametros.get('de') === 'desempenho' ? '/desempenho' : null)
   const abas: [Aba, string, string, number | null][] = [
     ['aulas', `/materia/${id}`, 'Aulas', null],
     ['banco', `/materia/${id}/questoes`, 'Banco de questões', totalQuestoes],

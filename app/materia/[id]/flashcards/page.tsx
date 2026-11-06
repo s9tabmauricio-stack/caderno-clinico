@@ -1,7 +1,7 @@
 import { BarraMaterias } from '@/components/BarraMaterias'
 import { carregarMateriasPorProva } from '@/lib/materias'
 import type { Metadata } from 'next'
-import { retornoSeguro, rotuloRetorno } from '@/lib/navegacao'
+import { retornoDaMateria, rotuloRetorno } from '@/lib/navegacao'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { Pagina, Voltar } from '@/components/Pagina'
@@ -21,7 +21,7 @@ export async function generateMetadata(props: PageProps<'/materia/[id]/flashcard
 export default async function FlashcardsMateriaPage(props: PageProps<'/materia/[id]/flashcards'>) {
   const { id } = await props.params
   const { retorno } = await props.searchParams
-  const origem = retornoSeguro(retorno)
+  const origem = retornoDaMateria(retorno)
   const { supabase, userId } = await sessao()
   const [materia, cards, progresso, banco, materias] = await Promise.all([
     supabase.from('materias').select('id, nome').eq('id', id).maybeSingle(),
@@ -35,7 +35,7 @@ export default async function FlashcardsMateriaPage(props: PageProps<'/materia/[
 
   return (
     <Pagina larga pendentes={pendentes(progresso).hoje}>
-      <Voltar href={origem ?? "/estudar"} rotulo={origem ? rotuloRetorno(origem) : "Matérias"} />
+      {origem && <Voltar href={origem} rotulo={rotuloRetorno(origem)} />}
       <header className="top top-materia">
         <div>
           <div className="eyebrow">Flashcards</div>

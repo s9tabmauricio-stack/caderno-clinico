@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Pagina } from '@/components/Pagina'
 import { Flashcards } from '@/components/Flashcards'
+import { INICIO_MATERIAS } from '@/lib/navegacao'
 import { carregarMaterias, carregarProgresso, lerTudo, paraCard, pendentes, sessao, totais } from '@/lib/dados'
 
 export const metadata: Metadata = { title: 'Revisão' }
@@ -45,7 +46,7 @@ export default async function RevisaoPage(props: PageProps<'/revisao'>) {
         Aqui estão os flashcards novos e os que precisam de revisão hoje. Suas respostas definem quando cada card volta.
       </p>
 
-      <p className="foot">Quer escolher uma aula ou consultar todos os cards? <Link href={alvo ? `/materia/${alvo.id}/flashcards` : "/estudar"}>Abra os Flashcards em Matérias.</Link></p>
+      <p className="foot">Quer escolher uma aula ou consultar todos os cards? <Link href={alvo ? `/materia/${alvo.id}/flashcards` : INICIO_MATERIAS}>Abra os Flashcards em Matérias.</Link></p>
 
       <nav className="filtro-barra revisao" aria-label="Revisar por matéria">
         <Link className="pill todas" href="/revisao" aria-current={alvo ? undefined : 'true'}>
