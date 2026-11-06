@@ -20,4 +20,3 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
-| Apagar classificação das questões | Codex | codex/apagar-classificacao-questoes | Configurações; components/PerfilAcoes.tsx; lib/apagar-classificacoes.ts | 06/11/2026 |
