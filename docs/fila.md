@@ -20,4 +20,3 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
-| Remover cartão medGenUs do Início | Codex | codex/remover-cartao-medgenus | Início; app/page.tsx; app/globals.css; docs/telas.md | 06/11/2026 |

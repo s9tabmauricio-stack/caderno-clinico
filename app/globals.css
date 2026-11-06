@@ -1098,21 +1098,6 @@ h1.big{background:var(--metal-titulo);-webkit-background-clip:text;background-cl
 /* =====================================================================
    Início (06/11/2026): agenda do dia e próximas provas em uma coluna.
    ===================================================================== */
-/* Apresentação institucional: mesma identidade de titânio nos temas Dia e Noite. */
-.in-institucional{position:relative;isolation:isolate;overflow:hidden;min-width:0;margin:0 0 28px;padding:28px;border-radius:var(--r-lg);background:var(--vidro);box-shadow:var(--vidro-sombra);-webkit-backdrop-filter:blur(22px) saturate(180%);backdrop-filter:blur(22px) saturate(180%)}
-.in-institucional::before{content:"";position:absolute;z-index:-1;inset:0;background:radial-gradient(ellipse at 100% 0%,var(--accent-soft),transparent 65%);pointer-events:none}
-.in-identidade{display:flex;flex-wrap:wrap;align-items:center;gap:16px;min-width:0}
-.in-identidade img{display:block;flex:none;width:64px;height:64px;border-radius:16px}
-.in-identidade>div{min-width:0}
-.in-assinatura{margin:0 0 4px;font-size:10px;font-weight:600;line-height:1.5;letter-spacing:.13em;text-transform:uppercase;color:var(--rotulo-marca)}
-.in-identidade h2{margin:0;font-family:var(--font-texto);font-size:clamp(30px,5vw,40px);font-weight:700;line-height:1.15;letter-spacing:-.045em;color:var(--ink);background:var(--metal-titulo);-webkit-background-clip:text;background-clip:text;color:transparent}
-@media (max-width:599px){
-  .in-institucional{padding:20px;margin-bottom:24px}
-  .in-identidade{gap:12px}
-  .in-identidade img{width:48px;height:48px;border-radius:12px}
-  .in-assinatura{max-width:24ch;font-size:9px;letter-spacing:.1em}
-}
-
 .inicio{display:grid;grid-template-columns:minmax(0,1fr)}
 .in-agenda>.sec:first-child{margin-top:0}
 .in-card{position:relative;min-width:0;border-radius:var(--r-lg);background:var(--vidro);box-shadow:var(--vidro-sombra);

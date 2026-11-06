@@ -81,16 +81,6 @@ export default async function Inicio() {
         </div>
       </header>
 
-      <section className="in-institucional" aria-labelledby="in-marca">
-        <div className="in-identidade">
-          <img src="/brand/med-genius.webp" width={64} height={64} alt="" />
-          <div>
-            <p className="in-assinatura">Medicina · Conhecimento · Tecnologia</p>
-            <h2 id="in-marca">medGenUs</h2>
-          </div>
-        </div>
-      </section>
-
       <div className="inicio">
         <section className="in-agenda" aria-label="Agenda de hoje">
           <div className="sec ag-h">
