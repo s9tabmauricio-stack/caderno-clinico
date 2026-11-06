@@ -81,6 +81,22 @@ export default async function Inicio() {
         </div>
       </header>
 
+      <section className="in-institucional" aria-labelledby="in-marca">
+        <div className="in-identidade">
+          <img src="/brand/med-genius.webp" width={64} height={64} alt="" />
+          <div>
+            <p className="in-assinatura">Medicina · Conhecimento · Tecnologia</p>
+            <h2 id="in-marca">medGenUs</h2>
+          </div>
+        </div>
+        <p className="in-manifesto">Grandes ideias.<br />O futuro da medicina começa aqui.</p>
+        <p className="in-proposito">Conhecimento e inteligência artificial para impulsionar sua jornada na medicina.</p>
+        <div className="in-tecnologia">
+          <p>Desenvolvida com inteligência artificial da</p>
+          <p className="in-empresas"><span>Anthropic</span><span className="in-mais" aria-label="e">+</span><span>OpenAI</span></p>
+        </div>
+      </section>
+
       <div className="inicio">
         <section className="in-agenda" aria-label="Agenda de hoje">
           <div className="sec ag-h">
