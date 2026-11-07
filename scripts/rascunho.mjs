@@ -227,7 +227,8 @@ export function idNovaVersao(id) {
  * SQL para trocar questões do banco pelas do rascunho (título com "substitui: <id>"),
  * como manda o manual: inclui a versão nova copiando da antiga ordem, tema, fonte, origem,
  * prova e cai_na_prova; marca a antiga com substituida_por e leva os recados junto.
- * Só age se a antiga ainda estiver ativa, então rodar duas vezes não duplica nada.
+ * Só age se a antiga ainda estiver ativa e for montada (questão de prova real não se reescreve),
+ * então rodar duas vezes não duplica nada.
  */
 export function sqlSubstituicoes(questoes) {
   return questoes.map((q) => {
@@ -236,7 +237,7 @@ export function sqlSubstituicoes(questoes) {
     const novo = sqlTexto(idNovaVersao(q.substitui))
     return `insert into public.questoes (id, materia_id, aula_id, ordem, enunciado, alternativas, correta, comentario, por_que_erradas, tema, prova, fonte, origem, cai_na_prova)
 select ${novo}, materia_id, aula_id, ordem, ${sqlMultilinha(q.enunciado)}, ${sqlTexto(JSON.stringify(q.alternativas))}::jsonb, ${q.correta}, ${sqlMultilinha(q.comentario)}, ${sqlMultilinha(q.por_que_erradas)}, tema, prova, fonte, origem, cai_na_prova
-from public.questoes where id = ${velho} and substituida_por is null
+from public.questoes where id = ${velho} and substituida_por is null and origem = 'montada'
 on conflict (id) do nothing;
 update public.questoes set substituida_por = ${novo} where id = ${velho} and substituida_por is null and exists (select 1 from public.questoes where id = ${novo});
 update public.recados set questao_id = ${novo} where questao_id = ${velho} and exists (select 1 from public.questoes where id = ${novo});
