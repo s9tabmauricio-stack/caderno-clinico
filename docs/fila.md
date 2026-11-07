@@ -20,3 +20,4 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
+| Regra da marca PROVA na apostila (insinuação conta) | Claude | claude/charming-noether-njnol8 | skill apostila-padrao, docs/apostila-molde.md | 07/11/2026 |
