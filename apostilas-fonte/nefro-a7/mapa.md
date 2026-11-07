@@ -21,9 +21,29 @@ Conceito → Como a pressão é feita → Fatores de risco → Classificação e
 | 09 | Tratamento sem remédio | P2 24:08–35:31; P3 00:00–02:40 | Tratamento sem remédio | valores (peso, sal, álcool, exercício), tiles de sódio dos alimentos, SVG de quando começar o remédio, discutíveis, espiritualidade |
 | 10 | Véspera da prova | tudo | — | itens "Guardar" com os números da aula, erros comuns, glossário, anotações |
 
-## PROVA: evidência
-- Nenhuma indicação direta de cobrança nesta aula. Nenhuma marca PROVA.
-- Ênfases dela que viraram itens "Guardar" na véspera: P2 03:50 "esse slide é um resumo ... do que a gente precisa gravar" (causas secundárias); P1 39:28 "isto é obrigatório: saber se tem lesão em órgão-alvo"; P1 14:38 "quem aprendeu isso daqui sabe tratar pressão alta" (fórmula); P1 32:46 primária só depois de excluir secundária ("muito real"); P2 34:19 e P3 01:45 "guardem na cabeça: tratamento não farmacológico cabe ao médico"; P2 17:30 não baixar rápido; P1 50:55 nunca medir no braço da fístula; P1 53:46 diastólica só com estetoscópio.
+## PROVA: evidência (regra de 07/11/2026: vale o que ela dá a entender)
+Ela não disse "cai na prova" em nenhum momento. Pela regra nova (`docs/apostila-molde.md`), as marcas vão onde ela insinuou importância:
+- Conceito: elevação persistente — "parece frágil e boba, mas ela é muito importante" [P1 04:58].
+- A conta da pressão — "Quem aprendeu isso daqui sabe tratar pressão alta" [P1 14:38].
+- Sódio e volume — volta ao assunto várias vezes e pergunta à turma: "Vocês conseguiram perceber a importância do sódio?" [P1 07:09, 16:40, 25:55].
+- Pegadinha do anti-inflamatório — pergunta à turma ("Alguém aqui já ouviu falar...?") e retoma depois [P1 27:22; P2 29:35].
+- Corticoide e anti-inflamatório no hipertenso — "pode parecer uma bobagem, mas não é"; "é obrigação do médico explicar efeito colateral" [P1 29:22].
+- Primária e secundária — "parece muito frágil, mas é muito real"; repete na parte 2 ("Lembram que eu falei...") [P1 32:46; P2 07:19].
+- Lesão de órgão-alvo — "isto é obrigatório" [P1 39:28].
+- Albuminúria — demonstração com um aluno; "Não usem milimol, gente!" [P1 40:54, 41:28].
+- Pegadinha "minha mulher não põe sal" — diálogo encenado [P1 43:27].
+- Exame físico — "Obrigatório: peso, altura, IMC..."; "isto é muito interessante" [P1 45:43, 46:46].
+- Preparo e posição — "eu já falei isso para vocês, mas vou falar de novo"; demonstra a manga arregaçada [P2 18:15, 18:48].
+- Nunca no braço da fístula — "é proibido medir — nunca meça" [P1 50:55].
+- Pegadinha da diastólica no pulso — "se vocês virem alguém fazendo isso, por favor: não é o método correto" [P1 53:03].
+- Medir fora do consultório — avental branco e monitorização ambulatorial repetidos três vezes [P1 45:43, 55:35; P2 21:28].
+- Quando suspeitar — sopro abdominal: "isso tem que ficar guardado na cabeça" [P1 60:00].
+- Pegadinha da "ansiosa" — "Nunca tachem uma mulher de piti ou de ansiosa..."; retoma na parte 2 [P1 57:02; P2 04:41].
+- Pegadinha do edema agudo de pulmão — "uma característica muito importante" [P1 61:25].
+- As causas, uma a uma — "esse slide é um resumo... do que a gente precisa gravar" [P2 03:50].
+- Pegadinha de baixar rápido — "não deve ter a sua pressão rapidamente abaixada" [P2 17:30].
+- Para quem e até quando — "em absolutamente todos"; "é obrigação do médico"; "Guardem na cabeça" [P2 34:19; P3 01:45].
+- Ficaram sem marca, de propósito: néfrons sobrecarregados (só analogia e "é muito fácil de entender") e a novidade de 2025 (só "algo novo"); entram na véspera dentro de outros itens.
 
 ## Pegadinhas (caixa vermelha no lugar)
 - "Se sal subisse a pressão, ninguém tomaria soro" — cap. 02.
@@ -59,7 +79,10 @@ Sem slides. Todos os minutos das três partes cobertos pelos capítulos acima.
 - Nome da marca das bolachas (ela não disse).
 - Final da parte 3 (começo da nefropatia do diabetes, que é outra aula).
 
-## Paginação (como saiu: 23 páginas)
+## Paginação (07/11/2026, com as marcas PROVA: 23 páginas)
+- A véspera cresceu (13 itens PROVA). Para caber em 23 páginas: os itens do sal e da aldosterona entraram em "Fecham o vaso" e "As causas para gravar", a redação da véspera foi enxugada sem tirar informação e o glossário foi regrupado (2 + 3×5) para começar na página 22. A última página ficou com 4 linhas de anotação.
+
+## Paginação anterior (como saiu: 23 páginas)
 - A véspera começa no meio da página 21 (sem quebra forçada): com a quebra, sobravam 275 pt vazios no fim do capítulo 09.
 - A grade "Números da aula" saiu: os números foram para dentro dos itens da véspera, na ordem da trilha (como pede o molde), e a última página ganhou espaço para as anotações.
 - Comparação benigna × maligna e lista de remédios divididas em dois blocos para não deixar buraco.
