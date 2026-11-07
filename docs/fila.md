@@ -20,3 +20,4 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
+| Questões diretas viram caso clínico (nível residência) | Claude | `claude/hopeful-shannon-9hmw82` | aulas `angio-a1` e `nefro-a6` (questões) | 07/11/2026 |
