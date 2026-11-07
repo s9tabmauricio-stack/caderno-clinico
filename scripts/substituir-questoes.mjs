@@ -10,8 +10,9 @@
 // Cada questão nova herda da antiga a ordem, o tema, a fonte e a marca PROVA; a antiga fica
 // com substituida_por preenchido e os recados vão para a nova. O Mauricio limpa as antigas
 // depois em Conteúdo → Limpeza.
+import { createHash } from 'node:crypto'
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'
-import { lerQuestoes, lotes, materiaDaAula, sqlSubstituicoes } from './rascunho.mjs'
+import { idNovaVersao, lerQuestoes, lotes, materiaDaAula, sqlSubstituicoes } from './rascunho.mjs'
 
 function parar(msg) {
   console.error('PAROU: ' + msg)
@@ -45,4 +46,12 @@ partes.forEach((lote, i) => {
   writeFileSync(`rascunhos/sql/${aulaId}-substituir-${i + 1}.sql`, sqlSubstituicoes(lote))
 })
 console.log(`${questoes.length} questões para substituir, em ${partes.length} lotes: rascunhos/sql/${aulaId}-substituir-1.sql a -${partes.length}.sql.`)
-console.log(`Depois confira: select count(*) from public.questoes where aula_id = '${aulaId}' and substituida_por is not null;`)
+// Assinatura para conferir que o banco ficou igual ao rascunho, letra por letra.
+const md5 = (t) => createHash('md5').update(t).digest('hex')
+const jsonbTexto = (lista) => '[' + lista.map((a) => JSON.stringify(a)).join(', ') + ']' // como o Postgres escreve jsonb
+const novos = questoes.map((q) => ({ id: idNovaVersao(q.substitui), q })).sort((a, b) => (a.id < b.id ? -1 : 1))
+const assinatura = md5(novos.map(({ id, q }) =>
+  `${id}:${q.correta}:${md5(q.enunciado)}${md5(jsonbTexto(q.alternativas))}${md5(q.comentario)}${md5(q.por_que_erradas)}`).join('|'))
+const ids = novos.map((n) => `'${n.id}'`).join(', ')
+console.log(`Depois de rodar, confira no conector (a assinatura deve dar ${assinatura}):`)
+console.log(`select count(*) as gravadas, md5(string_agg(id || ':' || correta || ':' || md5(enunciado) || md5(alternativas::text) || md5(comentario) || md5(por_que_erradas), '|' order by id)) as assinatura from public.questoes where id in (${ids}) and substituida_por is null;`)
