@@ -25,7 +25,16 @@ Sem slides, o mapa liga capítulos a minutos da transcrição.
 - **A apostila é um material de estudo com leitura autônoma.** Ensine o conteúdo diretamente, sem narrar repetidamente que "o professor disse", "comentou" ou "explicou".
 - **O PDF não mostra o processo de produção:** não mencionar gravação, áudio, transcrição, minutagem, ruídos, trechos ininteligíveis, lacunas da fonte nem ausência de slides. A rastreabilidade, as dúvidas e o que falta conferir ficam no mapa e nos arquivos internos de revisão.
 - **As citações do professor devem permanecer**, com autoria e sem minutagem, quando destacarem lições de vida e profissão, experiência clínica, humanidade, ética, relação com o paciente ou sinais do que pode ser cobrado na prova. Selecione as que ensinam algo; não transforme cada explicação técnica em citação.
-- **PROVA exige fundamento no que ele sinalizou:** vale uma indicação direta ou uma insinuação inequívoca de cobrança. Registre a evidência no mapa; não invente uma promessa de prova a partir da importância do assunto.
+- **Marca PROVA: quando o professor diz ou dá a entender que é importante** (regra do Mauricio, 07/11/2026). Ninguém fala "isso cai na prova"; o professor insinua. Conta como sinal:
+  - **palavra de ênfase:** "é importante", "obrigatório", "precisa gravar", "guardem na cabeça", "não esqueçam", "lembrem";
+  - **repetição:** volta ao assunto várias vezes, ou "já falei, mas vou falar de novo";
+  - **ordem direta:** "nunca", "sempre", "é proibido";
+  - **teatro:** demonstra com um aluno, encena um diálogo, conta "aquele paciente que chega no pronto-socorro…";
+  - **alerta de erro:** "se virem alguém fazendo isso, não é o certo";
+  - **resumo:** "esse slide é o que vocês precisam gravar";
+  - **pergunta à turma** sobre o ponto, esperando a resposta.
+
+  Não conta: o assunto ser importante na medicina em geral, ocupar muito tempo, aparecer só no slide, ou ser parêntese ou piada. A marca vai no bloco exato (subtítulo ou quadro), nunca na seção inteira. No mapa, cada PROVA leva a frase do professor e o minuto. Na dúvida, marque; mas se a maioria dos subtítulos ganhar PROVA, a marca perde o valor: reveja. É a mesma regra das questões e dos flashcards (`cai_na_prova`): o que é PROVA na apostila vira faixa PROVA na questão.
 - Notas clínicas, limites dos dados e referências científicas continuam quando necessários, com redação natural e a identificação roxa de complemento quando couber, sem expor problemas de gravação ou de elaboração da apostila.
 
 ## Antes de escrever: o mapa
