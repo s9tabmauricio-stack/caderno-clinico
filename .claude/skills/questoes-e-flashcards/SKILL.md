@@ -5,7 +5,7 @@ description: Regras das questões e dos flashcards do Med Genius (formato no ban
 
 # Questões e flashcards
 
-Para montar a partir da apostila de uma aula, chame o agente (`questoes`, `flashcards` ou `conteudo`); não refaça a receita aqui. Para corrigir o que já está no banco, siga o "Limite do conector" do manual (versão `-v2`).
+Para montar a partir da apostila de uma aula, chame o agente (`questoes`, `flashcards` ou `conteudo`); não refaça a receita aqui. Para corrigir o que já está no banco, siga o "Limite do conector" do manual (versão `-v2`). Para trocar várias de uma vez (ex.: refazer as questões diretas de uma aula como caso clínico), o agente `questoes` escreve `rascunhos/questoes-refazer/<aula>.md` com `substitui: <id antigo>` no título de cada questão, o `revisor` confere e `node scripts/substituir-questoes.mjs <aula>` monta os lotes de SQL (versão `-v2`, ordem e PROVA da antiga, recados junto) para rodar no conector.
 
 ## Questões
 

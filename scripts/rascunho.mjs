@@ -91,8 +91,10 @@ export function lerQuestoes(md) {
     if (cab) {
       const resto = cab[2]
       const tema = /tema:\s*(.+)$/i.exec(resto)
+      const substitui = /substitui:\s*([a-z0-9-]+)/i.exec(resto)
       q = {
         n: Number(cab[1]),
+        ...(substitui ? { substitui: substitui[1] } : {}),
         prova: /(^|·)\s*PROVA\s*(·|$)/.test(resto),
         tema: tema ? tema[1].trim() : '',
         enunciado: '',
@@ -211,4 +213,34 @@ export function lotes(lista, n) {
   const saida = []
   for (let i = 0; i < lista.length; i += n) saida.push(lista.slice(i, i + n))
   return saida
+}
+
+// ---------- Substituir questões que já estão no banco (versões -v2) ----------
+
+/** Id da versão nova: "x-q07" → "x-q07-v2"; "x-q07-v2" → "x-q07-v3". */
+export function idNovaVersao(id) {
+  const m = /^(.*)-v(\d+)$/.exec(id)
+  return m ? `${m[1]}-v${Number(m[2]) + 1}` : `${id}-v2`
+}
+
+/**
+ * SQL para trocar questões do banco pelas do rascunho (título com "substitui: <id>"),
+ * como manda o manual: inclui a versão nova copiando da antiga ordem, tema, fonte, origem,
+ * prova e cai_na_prova; marca a antiga com substituida_por e leva os recados junto.
+ * Só age se a antiga ainda estiver ativa e for montada (questão de prova real não se reescreve),
+ * então rodar duas vezes não duplica nada.
+ */
+export function sqlSubstituicoes(questoes) {
+  return questoes.map((q) => {
+    if (!q.substitui) throw new Error(`Questão ${q.n}: falta o "substitui: <id>" no título.`)
+    const velho = sqlTexto(q.substitui)
+    const novo = sqlTexto(idNovaVersao(q.substitui))
+    return `insert into public.questoes (id, materia_id, aula_id, ordem, enunciado, alternativas, correta, comentario, por_que_erradas, tema, prova, fonte, origem, cai_na_prova)
+select ${novo}, materia_id, aula_id, ordem, ${sqlMultilinha(q.enunciado)}, ${sqlTexto(JSON.stringify(q.alternativas))}::jsonb, ${q.correta}, ${sqlMultilinha(q.comentario)}, ${sqlMultilinha(q.por_que_erradas)}, tema, prova, fonte, origem, cai_na_prova
+from public.questoes where id = ${velho} and substituida_por is null and origem = 'montada'
+on conflict (id) do nothing;
+update public.questoes set substituida_por = ${novo} where id = ${velho} and substituida_por is null and exists (select 1 from public.questoes where id = ${novo});
+update public.recados set questao_id = ${novo} where questao_id = ${velho} and exists (select 1 from public.questoes where id = ${novo});
+`
+  }).join('\n')
 }
