@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="478pt" height="280pt" viewBox="0 0 478 280">
+<rect x="0.0" y="2.0" width="478.0" height="42.8" rx="10" fill="#F5F8FF" stroke="#0B5BD3" stroke-width="1.4"/>
+<text x="239.0" y="19.0" font-family="Inter" font-size="9.6" font-weight="700" fill="#16315C" text-anchor="middle">Todo hipertenso: mudança de estilo de vida</text>
+<text x="239.0" y="34.0" font-family="Inter" font-size="8" font-weight="400" fill="#1F2933" text-anchor="middle">É tratamento, faz parte do protocolo do Ministério da Saúde e cabe ao médico prescrever.</text>
+<line x1="113.0" y1="46.8" x2="113.0" y2="60.8" stroke="#8AA9DF" stroke-width="1.4"/>
+<polygon points="113.0,64.8 109.7,59.3 116.3,59.3" fill="#8AA9DF"/>
+<rect x="0.0" y="66.8" width="226.0" height="39.2" rx="9" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="1"/>
+<text x="9.0" y="82.8" font-family="Inter" font-size="8.6" font-weight="600" fill="#16315C" text-anchor="start">Pré-hipertensão ou estágio 1</text>
+<text x="9.0" y="95.8" font-family="Inter" font-size="7.7" font-weight="400" fill="#1F2933" text-anchor="start">120 a 159 por 80 a 99 mmHg</text>
+<line x1="113.0" y1="108.0" x2="113.0" y2="118.0" stroke="#8AA9DF" stroke-width="1.4"/>
+<polygon points="113.0,122.0 109.7,116.5 116.3,116.5" fill="#8AA9DF"/>
+<rect x="0.0" y="124.0" width="226.0" height="39.2" rx="9" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="1"/>
+<text x="9.0" y="140.0" font-family="Inter" font-size="8.6" font-weight="600" fill="#16315C" text-anchor="start">Só a mudança de estilo de vida</text>
+<text x="9.0" y="153.0" font-family="Inter" font-size="7.7" font-weight="400" fill="#1F2933" text-anchor="start">acompanhar por 3 meses</text>
+<line x1="113.0" y1="165.2" x2="113.0" y2="175.2" stroke="#8AA9DF" stroke-width="1.4"/>
+<polygon points="113.0,179.2 109.7,173.7 116.3,173.7" fill="#8AA9DF"/>
+<rect x="0.0" y="181.2" width="226.0" height="39.2" rx="9" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="1"/>
+<text x="9.0" y="197.2" font-family="Inter" font-size="8.6" font-weight="600" fill="#16315C" text-anchor="start">Em 3 meses não melhorou?</text>
+<text x="9.0" y="210.2" font-family="Inter" font-size="7.7" font-weight="400" fill="#1F2933" text-anchor="start">pressão ainda acima de 140 mmHg</text>
+<line x1="113.0" y1="222.4" x2="113.0" y2="232.4" stroke="#8AA9DF" stroke-width="1.4"/>
+<polygon points="113.0,236.4 109.7,230.9 116.3,230.9" fill="#8AA9DF"/>
+<rect x="0.0" y="238.4" width="226.0" height="39.2" rx="9" fill="#FFFFFF" stroke="#0B5BD3" stroke-width="1.4"/>
+<text x="9.0" y="254.4" font-family="Inter" font-size="8.6" font-weight="600" fill="#0B5BD3" text-anchor="start">Começa o remédio</text>
+<text x="9.0" y="267.4" font-family="Inter" font-size="7.7" font-weight="400" fill="#1F2933" text-anchor="start">sem tirar a mudança de estilo de vida</text>
+<line x1="365.0" y1="46.8" x2="365.0" y2="60.8" stroke="#8AA9DF" stroke-width="1.4"/>
+<polygon points="365.0,64.8 361.7,59.3 368.3,59.3" fill="#8AA9DF"/>
+<rect x="252.0" y="66.8" width="226.0" height="49.4" rx="9" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="1"/>
+<text x="261.0" y="82.8" font-family="Inter" font-size="8.6" font-weight="600" fill="#16315C" text-anchor="start">Estágios 2 e 3</text>
+<text x="261.0" y="95.8" font-family="Inter" font-size="7.7" font-weight="400" fill="#1F2933" text-anchor="start">160 por 100 mmHg ou mais; a conduta só sem remédio</text>
+<text x="261.0" y="106.0" font-family="Inter" font-size="7.7" font-weight="400" fill="#1F2933" text-anchor="start">fica para a pré-hipertensão e o estágio 1</text>
+<line x1="365.0" y1="118.2" x2="365.0" y2="232.4" stroke="#8AA9DF" stroke-width="1.4"/>
+<polygon points="365.0,236.4 361.7,230.9 368.3,230.9" fill="#8AA9DF"/>
+<rect x="252.0" y="238.4" width="226.0" height="39.2" rx="9" fill="#FFFFFF" stroke="#0B5BD3" stroke-width="1.4"/>
+<text x="261.0" y="254.4" font-family="Inter" font-size="8.6" font-weight="600" fill="#0B5BD3" text-anchor="start">Remédio junto com a mudança de estilo de vida</text>
+<text x="261.0" y="267.4" font-family="Inter" font-size="7.7" font-weight="400" fill="#1F2933" text-anchor="start">as classes de remédio são o assunto do seminário</text>
+</svg>
