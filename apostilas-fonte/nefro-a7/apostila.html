@@ -1,0 +1,608 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<title>Nefrologia · Aula 7 · Hipertensão arterial</title>
+<meta name="rodape" content="Mauricio Faria · Nefrologia · Aula 7 — Hipertensão arterial">
+<link rel="stylesheet" href="apostila.css">
+<style>
+/* ===== componentes do molde novo (docs/apostila-molde.md) ===== */
+.simples { background: #FFFFFF; border: 1px solid #C3D8F8; border-left: 4pt solid #0B5BD3; border-radius: 12pt; padding: 9pt 14pt 10pt; margin: 0 0 10pt; break-inside: avoid; }
+.simples p { font-size: 10.2pt; line-height: 1.5; color: #1F2933; margin: 0; }
+.aqui { display: flex; margin-top: 7pt; }
+.aqui span { flex: 1; border-top: 3pt solid #DCDCE2; padding-top: 2.5pt; margin-right: 2.5pt; font-family: "Inter Medium"; font-size: 6pt; line-height: 1.25; color: #8E8E93; }
+.aqui span:last-child { margin-right: 0; }
+.aqui span.feito { border-top-color: #A9C4EE; color: #6C6C70; }
+.aqui span.on { border-top-color: #0B5BD3; color: #0B5BD3; font-family: "Inter SemiBold"; }
+.aqui span.ramo { border-top-style: dashed; }
+.figure .olhar { margin-top: 8pt; }
+.figure .olhar .kick { margin-bottom: 3pt; }
+.figure .olhar ul { margin: 0; }
+.figure .olhar li { padding-left: 0; font-size: 8.7pt; line-height: 1.45; margin-bottom: 2pt; }
+.figure .olhar li::before { display: none; }
+.figure .olhar li b { color: #0B5BD3; }
+.figure .leg { font-size: 7.8pt; color: #8E8E93; margin: 5pt 0 0; }
+.reg { font-size: 8.3pt; line-height: 1.45; color: #6C6C70; background: #F7F7FA; border: 1px solid #E3E3E8; border-radius: 9pt; padding: 5pt 10pt; margin: 6pt 0 9pt; break-inside: avoid; }
+.reg b { font-family: "Inter SemiBold"; color: #4F5B70; }
+.livros { font-size: 8.3pt; line-height: 1.45; color: #6E3AA7; background: #F4EBFB; border: 1px solid #DEC7F1; border-radius: 9pt; padding: 5pt 10pt; margin: 6pt 0 9pt; break-inside: avoid; }
+.livros b { color: #6E3AA7; }
+.sw.simples-sw { background: #FFFFFF; border-color: #C3D8F8; border-left: 3pt solid #0B5BD3; }
+.sw.aqui-sw { background: linear-gradient(90deg, #A9C4EE 0, #A9C4EE 45%, #0B5BD3 45%, #0B5BD3 70%, #DCDCE2 70%); border: 0; height: 4pt; border-radius: 2pt; }
+.sw.exame-sw { background: #1F2933; border-color: #1F2933; }
+.cmp .destaque { font-family: "Inter SemiBold"; color: #0B5BD3; }
+.cmp.c4 .k { width: 62pt; }
+.cmp.c4 .c { font-size: 8.3pt; padding-right: 8pt; }
+.vesp { break-before: page; }
+.vesp .item { display: flex; align-items: baseline; background: #FFFFFF; border: 1px solid #E3E3E8; border-radius: 12pt; padding: 7pt 12pt; margin: 0 0 6pt; break-inside: avoid; }
+.vesp .item .prova { flex: none; margin: 0 9pt 0 0; }
+.vesp .item p { margin: 0; font-size: 9.2pt; }
+.tiles.t4 { margin: 6pt 0 8pt; }
+.figure.lado { display: flex; align-items: center; }
+.figure.lado > img { flex: none; }
+.figure.lado .olhar { flex: 1; margin: 0 0 0 12pt; }
+.cover .toc a { padding: 3.6pt 0; }
+/* ===== desta apostila ===== */
+.prova.guarda { background: #0B5BD3; color: #FFFFFF; }
+.dialogo p { margin: 0 0 2pt; }
+.vesp { break-before: auto; }
+</style>
+</head><body>
+
+<!-- ================================================================ capa -->
+<div class="cover">
+  <div class="kicker">Nefrologia · Aula 7 · Hipertensão arterial</div>
+  <h1>Hipertensão arterial sistêmica</h1>
+  <p class="sub">Do sal ao rim: como a pressão sobe, como medir direito, quando procurar uma causa por trás e por que mudar o estilo de vida já é tratamento.</p>
+  <div class="author"><span class="av">V</span><div><b>Dra. Vanessa Uscocovich</b><span>Nefrologista · 21 de outubro de 2026</span></div></div>
+  <div class="keynums"><div class="kick">Três números para levar</div>
+    <div class="kn-grid">
+      <div class="kn"><div class="n">90% a 95%</div><div class="l">das hipertensões são primárias, mas só depois de excluir as secundárias</div></div>
+      <div class="kn"><div class="n">1 mmHg</div><div class="l">a menos na pressão para cada quilo perdido</div></div>
+      <div class="kn"><div class="n">30 mg/g</div><div class="l">de albuminúria: acima disso, o rim já sofre com a pressão</div></div>
+    </div></div>
+  <div class="toc"><div class="kick">Nesta apostila</div>
+    <a href="#s00"><span class="tn">00</span><span class="tt">Recados da disciplina</span><span class="pg">{{s00}}</span></a>
+    <a href="#s01"><span class="tn">01</span><span class="tt">O que é hipertensão e por que importa</span><span class="pg">{{s01}}</span></a>
+    <a href="#s02"><span class="tn">02</span><span class="tt">Como o corpo faz a pressão</span><span class="pg">{{s02}}</span></a>
+    <a href="#s03"><span class="tn">03</span><span class="tt">Fatores de risco e os dois tipos de hipertensão</span><span class="pg">{{s03}}</span></a>
+    <a href="#s04"><span class="tn">04</span><span class="tt">Classificação de 2025 e lesão de órgão-alvo</span><span class="pg">{{s04}}</span></a>
+    <a href="#s05"><span class="tn">05</span><span class="tt">A consulta: anamnese e exame físico</span><span class="pg">{{s05}}</span></a>
+    <a href="#s06"><span class="tn">06</span><span class="tt">Como medir a pressão</span><span class="pg">{{s06}}</span></a>
+    <a href="#s07"><span class="tn">07</span><span class="tt">Hipertensão secundária</span><span class="pg">{{s07}}</span></a>
+    <a href="#s08"><span class="tn">08</span><span class="tt">O rim na hipertensão: nefroesclerose</span><span class="pg">{{s08}}</span></a>
+    <a href="#s09"><span class="tn">09</span><span class="tt">Tratamento sem remédio</span><span class="pg">{{s09}}</span></a>
+    <a href="#s10"><span class="tn">10</span><span class="tt">Véspera da prova</span><span class="pg">{{s10}}</span></a>
+    <p class="note">Organizada a partir da aula, com a linguagem ajustada para o estudo. A legenda de cores está na página 2.</p>
+  </div>
+</div>
+
+<!-- ================================================================ página 2 -->
+<div class="legend"><div class="kick">Como ler esta apostila</div><div class="lg-grid">
+  <div class="lg"><span class="sw blue"></span><div><b>Azul</b> conteúdo da aula e raciocínio</div></div>
+  <div class="lg"><span class="sw green"></span><div><b>Verde</b> dose ou valor de referência</div></div>
+  <div class="lg"><span class="sw red"></span><div><b>Vermelho</b> alerta, erro comum ou pegadinha</div></div>
+  <div class="lg"><span class="sw orange"></span><div><b>Laranja</b> fala ou parêntese da professora</div></div>
+  <div class="lg"><span class="sw purple"></span><div><b>Roxo</b> complemento que não foi dito em aula</div></div>
+  <div class="lg"><span class="prova">PROVA</span><div><b>Marca de prova</b> o ponto que cai na prova</div></div>
+  <div class="lg"><span class="sw simples-sw"></span><div><b>Em palavras simples</b> a abertura de cada capítulo</div></div>
+  <div class="lg"><span class="sw aqui-sw"></span><div><b>Você está aqui</b> a etapa da trilha da aula</div></div>
+</div></div>
+
+<div class="prof"><div class="kick">Sobre a professora · Dra. Vanessa Uscocovich</div>
+<div class="rows">
+  <div class="row"><div class="k">Atuação</div><div class="v">Nefrologia e terapia intensiva, com plantões na unidade de terapia intensiva do Hospital São Lucas. Acompanha pacientes com doença renal crônica e leva a turma às aulas práticas de hemodiálise.</div></div>
+  <div class="row"><div class="k">Docência</div><div class="v">Professora de Nefrologia. Reencontra a turma no sexto ano e na residência de Clínica Médica, onde também ensina os residentes de Anestesiologia e de Medicina Intensiva.</div></div>
+</div></div>
+
+<!-- ================================================================ 00 -->
+<section id="s00">
+  <div class="sec-head"><div class="lado"><span class="k">Seção</span><span class="num">00</span></div><div class="corpo"><h2>Recados da disciplina</h2></div></div>
+  <div class="date"><div class="d"><span class="m">Novembro</span><span class="dd">12</span></div><div class="t"><b>Prova de Nefrologia</b><span>Quinta-feira, 12 de novembro de 2026, às 16h30. A turma será dividida em três salas.</span></div></div>
+  <div class="rows">
+    <div class="row"><div class="k">Seminário</div><div class="v">Tratamento com remédio da hipertensão: diuréticos, inibidores da enzima conversora da angiotensina, betabloqueadores e bloqueadores adrenérgicos. Cada um pesquisa antes e o seminário termina em debate. Dura cerca de uma hora e meia e acontece no dia seguinte ao fim desta aula.</div></div>
+    <div class="row"><div class="k">Pré e pós-teste</div><div class="v">As mesmas questões no começo e no fim do seminário, para cada um medir o quanto aprendeu. Não precisa entregar; a presença é conferida pela chamada.</div></div>
+    <div class="row"><div class="k">Esta aula</div><div class="v">Dada em dois encontros, por ser longa. O tratamento com remédio fica para o seminário; em seguida começa a nefropatia do diabetes.</div></div>
+  </div>
+  <div class="box orange"><div class="kick"><span class="dot"></span>Pergunta da turma: antibiótico na gestação</div><p>Existe um antibiótico de escolha entre as penicilinas e as cefalosporinas? Não existe um só. Há uma gama de antibióticos seguros na gravidez, e cada serviço de Ginecologia e Obstetrícia elege os de sua preferência. A vantagem é que eles existem, porque nem todo remédio pode ser usado pela gestante.</p></div>
+
+  <h3 data-bm="A trilha da aula">A trilha da aula</h3>
+  <div class="figure"><img src="trilha.svg" alt="Trilha da aula em oito etapas"><p class="leg">O caminho da aula. No começo de cada capítulo, a faixa "você está aqui" mostra a etapa.</p></div>
+</section>
+
+<!-- ================================================================ 01 -->
+<section id="s01">
+  <div class="sec-head"><div class="lado"><span class="k">Seção</span><span class="num">01</span></div><div class="corpo"><h2>O que é hipertensão e por que importa</h2><div class="aqui"><span class="on">Conceito</span><span>Como a pressão é feita</span><span>Fatores de risco</span><span>Classificação e órgão-alvo</span><span>Consulta e medida</span><span>Causas secundárias</span><span>O rim</span><span>Tratamento</span></div></div></div>
+  <div class="simples"><div class="kick">Em palavras simples</div><p>Hipertensão é pressão alta que fica alta: uma subida num dia de nervoso não conta. É comum, está crescendo no Brasil e lesa coração, rim, cérebro e olhos. Controlar a pressão é proteger esses órgãos.</p></div>
+
+  <h3 data-bm="Conceito: elevação persistente">Conceito: elevação persistente</h3>
+  <p>Hipertensão arterial é a <b>elevação persistente da pressão arterial</b> acima dos níveis considerados ótimos. Parece um detalhe frágil, mas é a base para entender a doença: não é uma subida única nem uma situação eventual.</p>
+  <div class="box"><div class="kick"><span class="dot"></span>Exemplo</div><p>A pressão subiu no dia do falecimento de um parente; passada a situação, voltou ao normal e nunca mais subiu. Isso foi uma eventualidade por estresse, não hipertensão arterial.</p></div>
+
+  <h3 data-bm="Características">Características</h3>
+  <div class="card wide"><ul class="cols2">
+    <li><span class="medium">Raça:</span> não diferencia, mas é pior em negros.</li>
+    <li><span class="medium">Geografia:</span> atinge todos os continentes.</li>
+    <li><span class="medium">Sexo:</span> aparece em homens e em mulheres.</li>
+    <li><span class="medium">Hábitos:</span> relaciona-se com obesidade e sedentarismo.</li>
+    <li><span class="medium">Evolução:</span> complica órgãos-alvo.</li>
+  </ul></div>
+  <p>Só de olhar a epidemiologia já se enxerga o tratamento: se a doença anda junto com obesidade, sedentarismo e sal, mudar o hábito de vida trata hipertensão.</p>
+
+  <h3 data-bm="Os números">Os números</h3>
+  <div class="tiles">
+    <div class="tile"><div class="lab">No mundo</div><div class="n">32%</div><div class="s">média mundial de hipertensos</div></div>
+    <div class="tile"><div class="lab">China e Coreia do Sul</div><div class="n">50%</div><div class="s">dos adultos, talvez pelo tipo de alimentação</div></div>
+    <div class="tile"><div class="lab">Brasil, 2024</div><div class="n">40 milhões</div><div class="s">de hipertensos, segundo estimativa</div></div>
+  </div>
+  <div class="tiles">
+    <div class="tile"><div class="lab">Brasil, 2006</div><div class="n">21%</div><div class="s">da população hipertensa</div></div>
+    <div class="tile"><div class="lab">Brasil, 2009</div><div class="n">24%</div><div class="s">da população hipertensa</div></div>
+    <div class="tile"><div class="lab">Brasil, 2018</div><div class="n">24,7%</div><div class="s">da população hipertensa</div></div>
+  </div>
+  <p>Acima dos 65 anos, a proporção de hipertensos subiu mais de 5% de 2006 para 2009, e o número de hipertensos aumentou 14% de 2007 a 2017. A mortalidade também cresceu: em 2023 foram 211 óbitos a cada 100 mil habitantes, segundo o boletim epidemiológico do Ministério da Saúde de setembro de 2025. O Dia Nacional de Prevenção e Controle da Hipertensão é 26 de abril, mas quase não se veem campanhas.</p>
+
+  <h3 data-bm="Onde estamos errando">Onde estamos errando</h3>
+  <p>O Sistema Único de Saúde entrega todas as classes de remédio para a pressão, e mesmo assim os hipertensos aumentam. O erro não está na prescrição: está em não parar para ensinar que a mudança de hábito de vida faz parte do tratamento.</p>
+  <div class="quote"><p>“Não é falta de remédio. É falta de ensinar o que melhora o controle da pressão além de tomar o remédio.”</p><div class="who">Dra. Vanessa, sobre o aumento da hipertensão no Brasil</div></div>
+  <p>Isso importa porque a hipertensão aumenta o risco de doença cardiovascular, tanto isquêmica quanto dilatada, aumenta a chance de doença renal, piora a evolução do diabetes e contribui para o acidente vascular cerebral. Por isso o mundo inteiro fala em controlar a pressão para evitar lesão de órgão-alvo.</p>
+</section>
+
+<!-- ================================================================ 02 -->
+<section id="s02">
+  <div class="sec-head"><div class="lado"><span class="k">Seção</span><span class="num">02</span></div><div class="corpo"><h2>Como o corpo faz a pressão</h2><div class="aqui"><span class="feito">Conceito</span><span class="on">Como a pressão é feita</span><span>Fatores de risco</span><span>Classificação e órgão-alvo</span><span>Consulta e medida</span><span>Causas secundárias</span><span>O rim</span><span>Tratamento</span></div></div></div>
+  <div class="simples"><div class="kick">Em palavras simples</div><p>A pressão depende de quanto sangue o coração bombeia e de quão fechadas estão as arteríolas. Há sistemas que fecham o vaso e sistemas que abrem; quando a balança pende para o lado que fecha, a pressão sobe. Cada remédio mexe num ponto dessa conta.</p></div>
+
+  <h3 data-bm="A conta da pressão">A conta da pressão</h3>
+  <p>A pressão arterial é o produto do <b>débito cardíaco pela resistência vascular periférica</b>. O débito cardíaco é o volume sistólico vezes a frequência cardíaca. A resistência periférica é o tônus das arteríolas, que depende de um sistema constritor e de um sistema hormonal. Onde houver vaso, essa conta está em jogo.</p>
+  <div class="figure"><img src="formula.svg" alt="Pressão arterial igual a débito cardíaco vezes resistência vascular periférica, com o ponto de ação de cada classe de remédio"><p class="leg">Embaixo, em cada caixa, a classe de remédio que mexe naquele ponto da conta.</p></div>
+  <p>Betabloqueador mexe na frequência cardíaca; diurético, no volume; vasodilatador, no sistema constritor; inibidor da enzima conversora da angiotensina, no sistema hormonal. Para saber tratar a pressão, é preciso saber como ela é causada.</p>
+  <div class="quote"><p>“É isso que o médico tem que saber para ser diferente do moço que vende remédio da pressão. Ele conhece de vender remédio, mas não conhece em qual ação o remédio que está vendendo vai trabalhar.”</p><div class="who">Dra. Vanessa, sobre a conta da pressão</div></div>
+
+  <h3 data-bm="A balança: o que fecha e o que abre o vaso">A balança: o que fecha e o que abre o vaso</h3>
+  <p>Se só existisse o sistema que contrai, cada susto (um celular tocando no meio da aula) daria uma crise de pressão alta. Isso não acontece porque há um contraponto, o sistema vasodilatador.</p>
+  <div class="cmp">
+    <div class="r h"><div class="k"></div><div class="c">Fecham o vaso</div><div class="c">Abrem o vaso</div></div>
+    <div class="r"><div class="k">Sistema 1</div><div class="c">Sódio e volume</div><div class="c">Calicreína-cinina: bradicinina, prostaciclina e óxido nítrico</div></div>
+    <div class="r"><div class="k">Sistema 2</div><div class="c">Sistema nervoso simpático</div><div class="c">Peptídeos natriuréticos: atrial, cerebral e tipo C</div></div>
+    <div class="r"><div class="k">Sistema 3</div><div class="c">Renina-angiotensina-aldosterona</div><div class="c muted">Sem terceiro sistema deste lado</div></div>
+    <div class="r"><div class="k">Dos dois lados</div><div class="c">Prostaglandinas: o tromboxano fecha</div><div class="c">Prostaglandinas: a prostaciclina abre</div></div>
+  </div>
+
+  <h3 data-bm="Sódio e volume">Sódio e volume</h3>
+  <p>O primeiro sistema vasoconstritor é o excesso de sódio (sal) e de volume. Comer mais sal retém água, aumenta o volume extracelular e eleva a pressão: ativa o sistema nervoso simpático, aumenta o débito cardíaco e aumenta a resposta das arteríolas.</p>
+  <p>Há pessoas <b>sal-sensíveis</b>, que desencadeiam esse processo mesmo com ingestão normal ou moderada de sal, e pessoas sal-resistentes. Como ninguém traz escrito na testa qual é o seu tipo, a orientação de diminuir o sal vale para todos: é consenso.</p>
+  <div class="box red"><div class="kick"><span class="dot"></span>Pegadinha: "se sal subisse a pressão, ninguém tomaria soro"</div><p>O argumento circula nas redes e não se sustenta na fisiologia. O soro fisiológico tem 0,9% de sal, em média 154 mEq (entre 145 e 154); o Ringer e o Ringer com lactato têm menos. Um soro de 1.000 mL leva mais ou menos uma colherzinha de sal diluída em um litro de água. Jogar a mesma colherzinha pura em cima da batata frita é outra coisa: concentração alta e rápida, e a pressão sobe. O soro hidrata, e só depois a pressão pode subir. Sal aumenta a pressão.</p></div>
+
+  <h3 data-bm="Sistema nervoso simpático">Sistema nervoso simpático</h3>
+  <p>Também é vasoconstritor. A hiperatividade dele causa hipertensão por aumentar demais o tônus das artérias periféricas. É o sistema ativado por qualquer estresse: sobe a pressão, acelera o coração, dilata a pupila e contrai as arteríolas.</p>
+
+  <h3 data-bm="Sistema renina-angiotensina-aldosterona">Sistema renina-angiotensina-aldosterona</h3>
+  <p>Ativam a renina a baixa perfusão renal, a redução do volume dentro dos vasos e o aumento do transporte de sódio pela mácula densa. A mácula densa fica mais ou menos em cima do túbulo distal; o néfron segue a ordem glomérulo, túbulo proximal, alça de Henle, túbulo distal e ducto coletor.</p>
+  <p class="livros"><b>Nos livros:</b> o sinal da mácula densa que libera renina é a chegada de menos sódio e cloreto ao túbulo distal.</p>
+  <ol class="flow">
+    <li><b class="t">Cai a pressão.</b> Chega menos sangue ao rim.</li>
+    <li><b class="t">O rim libera renina,</b> que dá início à formação da angiotensina.</li>
+    <li><b class="t">A angiotensina avisa a suprarrenal,</b> que libera aldosterona.</li>
+    <li><b class="t">A aldosterona retém sal</b> no túbulo distal e no ducto coletor.</li>
+  </ol>
+  <div class="card wide"><span class="tag">Angiotensina II</span><h4>Por que bloquear a angiotensina</h4><ul class="cols2">
+    <li>É fortemente vasoconstritora.</li>
+    <li>Aumenta o inotropismo (a força do coração).</li>
+    <li>Aumenta a absorção de sódio e água.</li>
+    <li>Ativa o sistema simpático.</li>
+    <li>Aumenta a massa muscular do ventrículo esquerdo.</li>
+    <li>Espessa a parede das arteríolas.</li>
+  </ul></div>
+  <p>A <b>aldosterona</b> absorve sódio e água e elimina potássio. Doenças da suprarrenal que ativam a aldosterona deixam o paciente inchado, com pressão alta e perdendo muito potássio.</p>
+
+  <h3 data-bm="O lado que abre o vaso">O lado que abre o vaso</h3>
+  <p>A bradicinina, principal representante do sistema calicreína-cinina, ativa as células do endotélio a produzir prostaciclina e óxido nítrico. Esse sistema regula a excreção de sódio e inibe a proliferação de células dentro das artérias.</p>
+  <div class="box orange"><div class="kick"><span class="dot"></span>Parêntese da professora: a beterraba</div><p>A beterraba tem nitrato, que vira óxido nítrico e dilata os vasos em volta dos músculos; por isso a cápsula ou o suco de beterraba virou moda como pré-treino. É a mesma lógica dos nitratos por via oral na angina e no infarto: dilatar as coronárias. Ninguém vai dar beterraba no infarto.</p></div>
+  <p>Os peptídeos natriuréticos (atrial, cerebral e tipo C) agem sobre o sistema renina-angiotensina-aldosterona: inibem a liberação de renina e de aldosterona, antagonizam a angiotensina, aumentam a excreção de sódio e dilatam diretamente o vaso. Em quase todo sistema aparece o sódio, e é por isso que ele pesa tanto na hipertensão.</p>
+
+  <h3 data-bm="Prostaglandinas: dos dois lados">Prostaglandinas: dos dois lados</h3>
+  <p>O sistema das prostaglandinas pode contrair o vaso (o maior representante é o tromboxano) ou dilatar (as prostaciclinas). Nas mulheres com tendência à doença hipertensiva da gravidez, ele está mais ativado: parece haver excesso de tromboxano em relação à prostaciclina.</p>
+  <div class="box red"><div class="kick"><span class="dot"></span>Pegadinha: o anti-inflamatório</div><p>O anti-inflamatório não ativa nada: ele inibe o sistema das prostaglandinas. Por isso retém sódio e água, incha e pode subir a pressão.</p></div>
+</section>
+
+<!-- ================================================================ 03 -->
+<section id="s03">
+  <div class="sec-head"><div class="lado"><span class="k">Seção</span><span class="num">03</span></div><div class="corpo"><h2>Fatores de risco e os dois tipos de hipertensão</h2><div class="aqui"><span class="feito">Conceito</span><span class="feito">Como a pressão é feita</span><span class="on">Fatores de risco</span><span>Classificação e órgão-alvo</span><span>Consulta e medida</span><span>Causas secundárias</span><span>O rim</span><span>Tratamento</span></div></div></div>
+  <div class="simples"><div class="kick">Em palavras simples</div><p>Algumas causas de pressão alta não mudam (genética, idade, sexo, etnia); outras dependem do dia a dia (sal, peso, álcool, cigarro, sono, remédios). E há dois tipos: a primária, que é a maioria, e a secundária, que tem uma causa por trás e às vezes tem cura.</p></div>
+
+  <h3 data-bm="Fatores de risco">Fatores de risco</h3>
+  <div class="card wide"><ul class="cols2">
+    <li><span class="medium">Remédios:</span> anti-inflamatório, corticoide e anticoncepcional, que retém sódio e água.</li>
+    <li><span class="medium">Genética:</span> famílias hipertensas passam os genes.</li>
+    <li><span class="medium">Idade:</span> quanto mais idoso, mais aterosclerose e mais resistência periférica.</li>
+    <li><span class="medium">Sexo:</span> mais em homens; fica igual quando a mulher entra na menopausa.</li>
+    <li><span class="medium">Etnia:</span> mais comum em negros e asiáticos.</li>
+    <li><span class="medium">Álcool:</span> o abuso piora a hipertensão.</li>
+    <li><span class="medium">Cigarro:</span> tabaco, narguilé e cigarro eletrônico.</li>
+    <li><span class="medium">Sono ruim</span> e estresse do ambiente.</li>
+    <li><span class="medium">Sal, sedentarismo</span> e sobrepeso.</li>
+    <li><span class="medium">Poluição:</span> a "nefrologia verde" estuda por que ela parece gerar mais hipertensão.</li>
+    <li><span class="medium">Fatores psicossociais:</span> ansiedade e depressão.</li>
+  </ul></div>
+  <p>O álcool gera hipertensão acima de 30 mL por dia, o que corresponde a dois copos de cerveja ou de vinho, ou a duas doses de destilado (os limites estão no capítulo 09). Já a covid-19 não parece causar hipertensão: ainda se estuda, mas os resultados preliminares não mostraram relação de causa e efeito.</p>
+  <div class="box orange"><div class="kick"><span class="dot"></span>Pergunta da turma: e a Coca Zero?</div><p>Pode tomar: tem pouco sódio e ninguém incha por uma lata. Mas é a de 350 mL, não a garrafa de 2 litros, que multiplica o sódio por seis. O problema é outro: o ácido fosfórico vira fosfato e aumenta a chance de cálculo de fosfato de cálcio. Do sódio ela foi redimida; do ácido fosfórico, não.</p></div>
+
+  <h3 data-bm="Corticoide e anti-inflamatório no hipertenso">Corticoide e anti-inflamatório no hipertenso</h3>
+  <p>Num paciente sabidamente hipertenso, anti-inflamatório e corticoide pedem muito cuidado: podem deixá-lo mais hipertenso e mais inchado. No corticoide prolongado, medir a pressão duas vezes por semana; se ela subir ou o paciente reter sódio e água, aumentar o anti-hipertensivo. É rotina do ambulatório.</p>
+  <div class="box orange"><div class="kick"><span class="dot"></span>Parêntese da professora: avise o paciente</div><p>Diga que o remédio pode subir a pressão e causar inchaço, e que isso é sinal de alerta para procurar um pronto-atendimento e ajustar a dose. Atendido numa quinta-feira véspera de feriado, ele passaria sexta, sábado e domingo sem controle nenhum e poderia ter uma crise hipertensiva.</p></div>
+  <div class="quote"><p>“É obrigação do médico explicar efeito colateral.”</p><div class="who">Dra. Vanessa, sobre corticoide e anti-inflamatório no hipertenso</div></div>
+
+  <h3 data-bm="O sono">O sono</h3>
+  <p>Não precisa bater o martelo em 8 horas: 6 horas de sono de qualidade estão muito bem, e cada um tem seu padrão (há quem durma 4 horas e acorde bem e quem precise de 12). O que importa é o sono ser profundo e de qualidade. Quem não descansa e não chega ao sono REM fica com o sistema nervoso simpático mais ativo, e o simpático contrai os vasos.</p>
+  <p>Por isso o sono de qualidade hoje é visto como tratamento da pressão: estimular, de preferência sem remédio, com psicoterapia estimuladora do sono; medicação só se não houver resposta.</p>
+  <div class="quote"><p>“Sono de qualidade é igual a pressão arterial de qualidade.”</p><div class="who">Dra. Vanessa, respondendo à pergunta sobre a apneia do sono</div></div>
+
+  <h3 data-bm="Primária e secundária">Primária e secundária</h3>
+  <p>A hipertensão primária responde por <b>90% a 95% dos casos</b>, mas só pode ser chamada de primária depois de excluídas as causas secundárias. O motivo: muitas causas secundárias são tratáveis a ponto de o paciente ficar sem hipertensão.</p>
+  <p>O que é comum na hipertensão primária:</p>
+  <div class="rows">
+    <div class="row"><div class="k">Herança</div><div class="v">Pais e avós hipertensos terão filhos hipertensos.</div></div>
+    <div class="row"><div class="k">Idade</div><div class="v">Costuma aparecer depois dos 50 anos.</div></div>
+    <div class="row"><div class="k">Condição social</div><div class="v">Quanto pior a condição socioeconômica, pior a hipertensão.</div></div>
+  </div>
+  <div class="rows">
+    <div class="row"><div class="k">Etnia</div><div class="v">Pior em negros, pardos e asiáticos.</div></div>
+    <div class="row"><div class="k">Tabagismo</div><div class="v">Pela vasoconstrição que os componentes do cigarro provocam.</div></div>
+    <div class="row"><div class="k">Obesidade</div><div class="v">Até três vezes mais frequente no obeso.</div></div>
+  </div>
+  <div class="rows">
+    <div class="row"><div class="k">Sal</div><div class="v">Os "comedores de sal": olhe o rótulo de sucos prontos, suco de soja, bolacha recheada doce e pão de forma.</div></div>
+    <div class="row"><div class="k">Sexo</div><div class="v">Mais em homens; iguala na menopausa, quando cai o estrógeno, que protege contra a hipertensão.</div></div>
+  </div>
+</section>
+
+<!-- ================================================================ 04 -->
+<section id="s04">
+  <div class="sec-head"><div class="lado"><span class="k">Seção</span><span class="num">04</span></div><div class="corpo"><h2>Classificação de 2025 e lesão de órgão-alvo</h2><div class="aqui"><span class="feito">Conceito</span><span class="feito">Como a pressão é feita</span><span class="feito">Fatores de risco</span><span class="on">Classificação e órgão-alvo</span><span>Consulta e medida</span><span>Causas secundárias</span><span>O rim</span><span>Tratamento</span></div></div></div>
+  <div class="simples"><div class="kick">Em palavras simples</div><p>A pressão é classificada em faixas, de normal a estágio 3. Em todo hipertenso é obrigatório procurar lesão em quatro lugares: coração, grandes vasos, rim e retina. No rim, o primeiro sinal é a albumina escapando na urina.</p></div>
+
+  <h3 data-bm="A classificação de 2025">A classificação de 2025</h3>
+  <p>A classificação mudou em 2025 no mundo inteiro, e as sociedades brasileiras de cardiologia e de hipertensão a adaptaram para o Brasil. É a que se usa hoje (valores em mmHg):</p>
+  <div class="cmp">
+    <div class="r h"><div class="k"></div><div class="c">Sistólica</div><div class="c">Diastólica</div></div>
+    <div class="r"><div class="k">Normal</div><div class="c g">Menor que 120</div><div class="c g">Menor que 80</div></div>
+    <div class="r"><div class="k">Pré-hipertensão</div><div class="c">120 a 139</div><div class="c">80 a 89</div></div>
+    <div class="r"><div class="k">Estágio 1</div><div class="c">140 a 159</div><div class="c">90 a 99</div></div>
+    <div class="r"><div class="k">Estágio 2</div><div class="c">160 a 179</div><div class="c">100 a 109</div></div>
+    <div class="r"><div class="k">Estágio 3</div><div class="c">180 ou mais</div><div class="c">110 ou mais</div></div>
+  </div>
+
+  <h3 data-bm="Lesão de órgão-alvo">Lesão de órgão-alvo</h3>
+  <p>Também mudou em 2025 o que conta como hipertensão com lesão de órgão-alvo. Avaliar isso é <b>obrigatório em todo hipertenso</b>: ao discutir o caso com alguém, a primeira pergunta será "tem lesão de órgão-alvo?". O foco fica em quatro órgãos.</p>
+  <div class="grid2">
+    <div class="card"><span class="tag">Coração</span><p>Alterações no eletrocardiograma ou no ecocardiograma.</p></div>
+    <div class="card"><span class="tag">Grandes vasos</span><p>Índice tornozelo-braquial alterado ou ultrassom de carótida alterado.</p></div>
+  </div>
+  <div class="grid2">
+    <div class="card"><span class="tag">Rim</span><p>Taxa de filtração glomerular alterada ou albuminúria.</p></div>
+    <div class="card"><span class="tag">Retina</span><p>Alteração no fundo de olho.</p></div>
+  </div>
+
+  <h3 data-bm="Albuminúria: o primeiro sinal no rim">Albuminúria: o primeiro sinal no rim</h3>
+  <p>Para a cardiologia e a nefrologia, o foco é a presença ou não de microalbuminúria. Ela significa perda da estrutura do glomérulo: os <b>podócitos</b>, células com "pezinhos" que ficam encostados uns nos outros, se afastam. Com essa separação podocitária, a albumina passa para a urina. Quanto mais grave e mais longa a hipertensão, mais fácil a albumina passa.</p>
+  <div class="quote"><p>“Ele é o meu podócito e eu sou uma podócita. Nós temos que ficar com um pé colado no outro.”</p><div class="who">Dra. Vanessa, demonstrando com um aluno a separação dos podócitos</div></div>
+  <p>A albuminúria é um senhor marcador de gravidade, tanto para o rim quanto para o coração e os vasos: quanto mais alta, mais grave a lesão de órgão-alvo.</p>
+  <div class="tiles">
+    <div class="tile g"><div class="lab">Normal</div><div class="n">Menor que 30 mg/g</div><div class="s">albuminúria normal</div></div>
+    <div class="tile r"><div class="lab">Moderada</div><div class="n">30 a 300 mg/g</div><div class="s">moderadamente aumentada</div></div>
+    <div class="tile r"><div class="lab">Alta</div><div class="n">Acima de 300 mg/g</div><div class="s">gravemente aumentada</div></div>
+  </div>
+  <div class="box red"><div class="kick"><span class="dot"></span>Pegadinha: a unidade</div><p>No Brasil, a albuminúria vem em miligrama por grama (mg/g) de creatinina. Não usem milimol: o laboratório não vai dar nessa unidade.</p></div>
+  <p class="livros"><b>Nos livros:</b> a relação em mg/mmol é a do sistema internacional de unidades, usada em países como o Reino Unido; nos Estados Unidos, como no Brasil, os laboratórios usam mg/g.</p>
+</section>
+
+<!-- ================================================================ 05 -->
+<section id="s05">
+  <div class="sec-head"><div class="lado"><span class="k">Seção</span><span class="num">05</span></div><div class="corpo"><h2>A consulta: anamnese e exame físico</h2><div class="aqui"><span class="feito">Conceito</span><span class="feito">Como a pressão é feita</span><span class="feito">Fatores de risco</span><span class="feito">Classificação e órgão-alvo</span><span class="on">Consulta e medida</span><span>Causas secundárias</span><span>O rim</span><span>Tratamento</span></div></div></div>
+  <div class="simples"><div class="kick">Em palavras simples</div><p>Na consulta, cada pergunta tem um objetivo: a família, a comida, a adesão ao remédio. O exame físico procura lesão de órgão-alvo e sinais de uma doença por trás da pressão alta.</p></div>
+
+  <h3 data-bm="Anamnese">Anamnese</h3>
+  <p>Anotar sexo, idade, cor da pele, profissão, condição socioeconômica, se já sabia ser hipertenso e se já tem doença de órgão-alvo (doença coronariana, insuficiência cardíaca, doença vascular). Mais do que perguntar, é saber o objetivo de cada pergunta: <b>história familiar, hábitos alimentares e adesão</b> ao tratamento.</p>
+  <div class="box red dialogo"><div class="kick"><span class="dot"></span>Pegadinha: "minha mulher não põe sal"</div>
+    <p>— O senhor usa muito sal na comida?</p>
+    <p>— Não, minha mulher não põe sal. A gente come só tempero da horta.</p>
+    <p>— Que bom. E como ela cozinha?</p>
+    <p>— Ela faz o arroz e, em vez de água, põe caldo pronto.</p>
+    <p>Caldo pronto é riquíssimo em sódio. Pergunte como a comida é feita, e não só se leva sal.</p></div>
+  <p>Outras fontes de sódio escondido para investigar: temperos prontos, macarrão instantâneo com o pozinho, shoyu e comidas congeladas de comer fácil (é só tirar do freezer e pôr no micro-ondas), como pizzas prontas, que usam fosfato de sódio como estabilizante e são ricas em fosfato e em sódio. A máxima das nutricionistas resume a conduta: não desembalar, e sim descascar. Ou seja, não abra o que vem pronto; descasque o que é natural.</p>
+
+  <h3 data-bm="Exame físico">Exame físico</h3>
+  <p>Obter <b>medidas repetidas e acuradas da pressão nos dois braços</b>. Uma medida única não diz se alguém é hipertenso: muita gente sobe a pressão só de chegar ao consultório, a hipertensão do avental branco. E não é só o avental do médico: pode ser o da enfermeira ou o do técnico de enfermagem. É o medo do que vai ouvir e de ter que mudar alguma coisa na vida.</p>
+  <div class="card wide"><span class="tag">Obrigatório no exame</span><ul class="cols2">
+    <li>Peso, altura e índice de massa corporal.</li>
+    <li>Frequência cardíaca.</li>
+    <li>Ausculta do coração, dos pulmões e das carótidas.</li>
+    <li>Fundo de olho: a retina é órgão-alvo.</li>
+    <li>Sinais de doença endócrina: síndrome de Cushing, hipertireoidismo, hipotireoidismo.</li>
+    <li>Região cervical.</li>
+    <li>Extremidades: edema, enchimento capilar dos dedos dos pés, doença vascular periférica.</li>
+    <li>Abdome: palpar e auscultar em busca de sopro.</li>
+    <li>Déficit motor e história de acidente vascular cerebral.</li>
+  </ul></div>
+  <div class="box"><div class="kick"><span class="dot"></span>Resumo da avaliação do hipertenso</div><p>Anamnese e exame físico completos; comorbidades (diabetes, dislipidemia, doença renal); história familiar e risco cardiovascular; exames complementares (capítulo 07); medidas acuradas da pressão; e, principalmente, pesquisa de lesão de órgão-alvo: rins, retina, coração e cérebro.</p></div>
+</section>
+
+<!-- ================================================================ 06 -->
+<section id="s06">
+  <div class="sec-head"><div class="lado"><span class="k">Seção</span><span class="num">06</span></div><div class="corpo"><h2>Como medir a pressão</h2><div class="aqui"><span class="feito">Conceito</span><span class="feito">Como a pressão é feita</span><span class="feito">Fatores de risco</span><span class="feito">Classificação e órgão-alvo</span><span class="on">Consulta e medida</span><span>Causas secundárias</span><span>O rim</span><span>Tratamento</span></div></div></div>
+  <div class="simples"><div class="kick">Em palavras simples</div><p>O manguito fecha a artéria; ao soltar, escuta-se o sangue voltando. O primeiro som é a pressão máxima e o sumiço do som é a mínima. Detalhes como café, bexiga cheia, conversa e manga dobrada mudam o número.</p></div>
+
+  <h3 data-bm="Preparo e posição">Preparo e posição</h3>
+  <ol class="flow">
+    <li><b class="t">Nada de cafeína, cigarro ou exercício nos 30 minutos antes.</b> A cafeína tende a contrair o vaso e acelera o coração. Tomou o cafezinho da sala de espera? Espere um pouco antes de medir.</li>
+    <li><b class="t">Bexiga vazia.</b> A ansiedade da bexiga cheia sobe a pressão.</li>
+    <li><b class="t">Sentado, pés no chão, costas apoiadas no encosto,</b> braço livre de roupa e na posição mais relaxada possível. Deitado na maca também vale, sabendo que a pressão sai sempre um pouco mais baixa.</li>
+    <li><b class="t">Manguito do tamanho certo para o braço.</b> Braço mais grosso, braço mais fino e criança têm manguitos diferentes.</li>
+    <li><b class="t">Sem conversar durante a medida.</b> A agitação aumenta a pressão.</li>
+    <li><b class="t">Uma medida em cada braço,</b> e mais de uma vez antes de dizer que alguém é hipertenso.</li>
+  </ol>
+  <div class="box red"><div class="kick"><span class="dot"></span>Pegadinha: a manga arregaçada</div><p>Amontoar a roupa no alto do braço muda o diâmetro dele, e a pressão sai mais alta. Se o paciente não quiser tirar a blusa, peça para tirar só a manga: o braço tem que estar livre.</p></div>
+
+  <h3 data-bm="Nunca no braço da fístula">Nunca no braço da fístula</h3>
+  <p>No paciente em hemodiálise com fístula arteriovenosa, <b>nunca medir a pressão no braço da fístula</b>: medir no outro braço e numa das pernas. O motivo vem do próprio método. O manguito colaba a artéria para que depois ela volte a funcionar, mas a fístula pode não voltar: ou a sutura abre, ou o sangue coagula lá dentro e ela para de funcionar.</p>
+
+  <h3 data-bm="Os sons de Korotkoff">Os sons de Korotkoff</h3>
+  <p>Ao insuflar o manguito com a pera, a artéria fecha e o sangue não passa. Ao soltar, ele volta a circular: o primeiro som (fase I de Korotkoff) marca a <b>pressão sistólica</b>, a máxima. Os sons continuam até desaparecer; o desaparecimento do som (fase V) marca a pressão diastólica. Depois do primeiro som, a deflação pode ser um pouco mais rápida.</p>
+  <div class="box red"><div class="kick"><span class="dot"></span>Pegadinha: a diastólica no pulso</div><p>A sistólica pode ser percebida com a mão na artéria (método palpatório), porque o pulso volta a bater. A diastólica não: o som para na ausculta, mas o pulso continua batendo na mão. Se vir alguém medindo a diastólica sem estetoscópio, saiba que não é o método correto. Diastólica só com estetoscópio.</p></div>
+  <div class="quote"><p>“O som para na ausculta, mas não para de bater na tua mão! A artéria continua pulsando, senão o paciente morreu!”</p><div class="who">Dra. Vanessa, sobre medir a diastólica sem estetoscópio</div></div>
+
+  <h3 data-bm="Com que frequência medir">Com que frequência medir</h3>
+  <div class="rows">
+    <div class="row"><div class="k">Menor que 120 por 80</div><div class="v">Pressão ótima: medir uma vez por ano.</div></div>
+    <div class="row"><div class="k">120 a 129 por 80 a 84</div><div class="v">Medir anualmente.</div></div>
+    <div class="row"><div class="k">Pré-hipertensão ou estágios 1 a 3</div><div class="v">Descobrir se é hipertensão do avental branco ou hipertensão mascarada, com medidas fora do consultório.</div></div>
+  </div>
+  <p class="livros"><b>Complemento: fora da aula.</b> Hipertensão mascarada é o contrário do avental branco: pressão normal no consultório e alta fora dele.</p>
+
+  <h3 data-bm="Medir fora do consultório">Medir fora do consultório</h3>
+  <p>Além da medida comum, três métodos ajudam na dúvida. A monitorização ambulatorial da pressão arterial (o exame chamado MAPA) é a mais usada; a monitorização residencial (MRPA) é muito parecida com ela; e a automedida da pressão arterial (AMPA) usa o aparelho do próprio paciente.</p>
+  <div class="cmp">
+    <div class="r h"><div class="k"></div><div class="c">Ambulatorial (MAPA)</div><div class="c">Automedida (AMPA)</div></div>
+    <div class="r"><div class="k">Aparelho</div><div class="c">Programado pela clínica, em geral de cardiologia, preso ao braço</div><div class="c">Do próprio paciente, comprado por ele</div></div>
+    <div class="r"><div class="k">Como</div><div class="c">Mede a pressão em série por 24 horas, em casa, no trabalho, na caminhada e no sono; o resultado sai impresso</div><div class="c">O paciente mede em casa, anota e traz para comparar com as medidas da clínica</div></div>
+    <div class="r"><div class="k">Para quê</div><div class="c destaque">O melhor método para diagnosticar a hipertensão do avental branco</div><div class="c">Ver a pressão do dia a dia</div></div>
+    <div class="r"><div class="k">Atenção</div><div class="c">Medir a cada 15 minutos e se sentir monitorado estressa, e a pressão pode subir</div><div class="c">Sem a obrigação do aparelho, a pressão tende a ser mais real</div></div>
+  </div>
+</section>
+
+<!-- ================================================================ 07 -->
+<section id="s07">
+  <div class="sec-head"><div class="lado"><span class="k">Seção</span><span class="num">07</span></div><div class="corpo"><h2>Hipertensão secundária</h2><div class="aqui"><span class="feito">Conceito</span><span class="feito">Como a pressão é feita</span><span class="feito">Fatores de risco</span><span class="feito">Classificação e órgão-alvo</span><span class="feito">Consulta e medida</span><span class="on">Causas secundárias</span><span>O rim</span><span>Tratamento</span></div></div></div>
+  <div class="simples"><div class="kick">Em palavras simples</div><p>Hipertensão secundária tem uma causa por trás: um rim doente, uma artéria do rim estreitada, um tumor da suprarrenal, a tireoide, a apneia do sono. Achar a causa pode curar a pressão alta, por isso ela é procurada antes de se falar em hipertensão primária.</p></div>
+
+  <h3 data-bm="Quando suspeitar">Quando suspeitar</h3>
+  <div class="card wide"><ul class="cols2">
+    <li>Início <span class="medium">antes dos 30 ou depois dos 50 anos.</span></li>
+    <li>Hipertensão grave já no começo: estágio 3, 180 por 110 mmHg ou mais.</li>
+    <li>Pressão alta com a tríade do feocromocitoma: palpitação, sudorese e crise de dor de cabeça.</li>
+    <li>Uso de remédios ou drogas que sobem a pressão.</li>
+    <li>Fácies ou sinais de doença: Cushing, a palidez cor de palha do renal crônico, a agitação do hipertireoidismo.</li>
+    <li>Massa ou sopro no abdome; pulsos femorais assimétricos.</li>
+    <li>Creatinina ou taxa de filtração alterada, potássio baixo, exame de urina alterado.</li>
+    <li>Apneia durante o sono.</li>
+  </ul></div>
+  <p>Faça disso conduta: auscultar sempre a região mediana do abdome. Sopro abdominal é sinal de aneurisma de aorta, de aneurisma das artérias renais ou de estenose de artéria renal, e isso precisa ficar guardado na cabeça.</p>
+  <div class="box red"><div class="kick"><span class="dot"></span>Pegadinha: a "ansiosa" de repetição</div><p>A mulher que volta ao pronto-socorro inúmeras vezes, ansiosa, com mal-estar, dor no peito, palpitação e pelos arrepiados, e de quem todos dizem "está aqui de novo", pode ter um feocromocitoma. Nem toda crise de ansiedade é crise de ansiedade: pode ser uma doença com tratamento, e precisa ser investigada como causa de hipertensão.</p></div>
+  <div class="quote"><p>“Nunca tachem uma mulher de piti ou de ansiosa sem vocês terem certeza de que ela não tem um feocromocitoma. Observem, cuidem, protejam.”</p><div class="who">Dra. Vanessa, sobre o feocromocitoma</div></div>
+
+  <h3 data-bm="Da pista à causa">Da pista à causa</h3>
+  <div class="figure"><img src="pistas.svg" alt="Pistas clínicas e a causa secundária em que cada uma faz pensar"><p class="leg">Cada pista e a causa secundária em que ela faz pensar.</p></div>
+
+  <h3 data-bm="As causas, uma a uma">As causas, uma a uma</h3>
+  <div class="rows">
+    <div class="row"><div class="k">Rim</div><div class="v"><span class="medium">Doença renal parenquimatosa:</span> a principal causa de hipertensão secundária. O excesso de sódio, com expansão do volume, gera a pressão alta. Edema, anemia, anorexia, fadiga, ureia e creatinina altas, exame de urina alterado.</div></div>
+    <div class="row"><div class="k">Artéria renal</div><div class="v"><span class="medium">Estenose de artéria renal</span> (hipertensão renovascular): aparecimento súbito, antes dos 30 ou depois dos 55 anos, hipertensão severa, sopro abdominal e disfunção renal.</div></div>
+    <div class="row"><div class="k">Aorta</div><div class="v"><span class="medium">Coarctação da aorta:</span> mais rara. Diferença entre a pressão dos braços e a das pernas.</div></div>
+  </div>
+  <div class="box red"><div class="kick"><span class="dot"></span>Pegadinha: edema agudo de pulmão sem explicação</div><p>Paciente de 45 a 50 anos chega ao pronto-atendimento em edema agudo de pulmão súbito: não fuma, não está inchado, não tem doença cardiovascular. Trate o edema, claro, mas interprete o quadro e investigue estenose de artéria renal.</p></div>
+  <div class="rows">
+    <div class="row"><div class="k">Suprarrenal</div><div class="v"><span class="medium">Hiperaldosteronismo primário:</span> cada vez mais visto. Hiperplasia ou adenoma da suprarrenal produz aldosterona demais, que retém sódio e água (a pressão sobe) e joga potássio fora: hipertenso com potássio baixo no sangue e alto na urina. Diagnóstico fácil e tratável; tirar o adenoma pode curar a hipertensão.</div></div>
+    <div class="row"><div class="k">Suprarrenal</div><div class="v"><span class="medium">Feocromocitoma:</span> tumor neuroendócrino da suprarrenal que secreta noradrenalina e adrenalina; causa de 0,1% a 0,5% das hipertensões. Crises de pressão alta com dor de cabeça, tontura, ansiedade, palidez, taquicardia, sudorese, palpitação, calafrios e pelos arrepiados. Diagnóstico mais difícil: dosar metanefrina no sangue e na urina.</div></div>
+  </div>
+  <div class="ref">
+    <div class="txt"><div class="kick"><span class="dot"></span>Aldosterona no hiperaldosteronismo</div><p>Quando dá para dosar, a aldosterona no sangue costuma vir acima deste valor.</p></div>
+    <div class="val">15 ng/dL<small>no sangue</small></div>
+  </div>
+  <div class="rows">
+    <div class="row"><div class="k">Suprarrenal</div><div class="v"><span class="medium">Síndrome de Cushing:</span> menos rara. Por doença da suprarrenal ou pelo uso crônico de corticoide. Ganho de peso, menos libido, amenorreia e, principalmente, rosto em lua cheia e giba dorsal: a gordura atrás do pescoço deixa a cabeça sempre um pouco para baixo. Corpo em pera: barriga maior e pernas finas.</div></div>
+    <div class="row"><div class="k">Tireoide</div><div class="v"><span class="medium">Hipertireoidismo:</span> pela agitação do sistema nervoso simpático. Paciente magra, com intolerância ao calor, taquicardia, palpitação e fraqueza; fala rápido e não para quieta. A exoftalmia nem sempre aparece.</div></div>
+    <div class="row"><div class="k">Tireoide</div><div class="v"><span class="medium">Hipotireoidismo:</span> cansaço, ganho de peso, fraqueza e queda de cabelo; a hipertensão é principalmente diastólica.</div></div>
+  </div>
+  <div class="rows">
+    <div class="row"><div class="k">Sono</div><div class="v"><span class="medium">Apneia do sono:</span> mais em homens e em mulheres na menopausa. Ronco toda noite, sono fragmentado, acorda várias vezes, sono não reparador e sonolência excessiva de dia. O abdome avantajado empurra o diafragma, mas magros também podem ter.</div></div>
+    <div class="row"><div class="k">Outras</div><div class="v">Doença hipertensiva da gravidez; remédios e drogas que sobem a pressão (capítulo 09); hiperparatireoidismo, que é muito raro.</div></div>
+  </div>
+
+  <h3 data-bm="Exames do hipertenso">Exames do hipertenso</h3>
+  <p>Como a primária só se confirma depois de excluir a secundária, a avaliação de laboratório pede:</p>
+  <div class="card wide"><span class="tag">Sangue e urina</span><ul class="cols2">
+    <li>Hemograma.</li>
+    <li>Ureia e creatinina.</li>
+    <li>Glicemia.</li>
+    <li>Potássio e sódio.</li>
+    <li>Ácido úrico.</li>
+    <li>Colesterol e triglicerídeos.</li>
+    <li>Exame de urina (parcial de urina).</li>
+    <li>Relação albumina/creatinina em amostra de urina (microalbuminúria).</li>
+  </ul></div>
+  <p>Se a suspeita for de feocromocitoma, pedir catecolaminas no sangue e também a dosagem de renina e de aldosterona no sangue. Hoje são exames tranquilos, feitos pela maioria dos laboratórios, inclusive o municipal: dá para conseguir na rede pública.</p>
+  <div class="rows">
+    <div class="row"><div class="k">Radiografia de tórax</div><div class="v">Tamanho do coração.</div></div>
+    <div class="row"><div class="k">Eletro&shy;cardiograma</div><div class="v">Frequência cardíaca e sinais de isquemia.</div></div>
+    <div class="row"><div class="k">Ecocardiograma</div><div class="v">Alteração da fração de ejeção.</div></div>
+  </div>
+  <div class="rows">
+    <div class="row"><div class="k">Ultrassom de rins e vias urinárias</div><div class="v">Tamanho dos rins e chance de obstrução.</div></div>
+    <div class="row"><div class="k">Eco-Doppler das artérias renais</div><div class="v">Se alguma artéria renal tem isquemia.</div></div>
+  </div>
+</section>
+
+<!-- ================================================================ 08 -->
+<section id="s08">
+  <div class="sec-head"><div class="lado"><span class="k">Seção</span><span class="num">08</span></div><div class="corpo"><h2>O rim na hipertensão: nefroesclerose</h2><div class="aqui"><span class="feito">Conceito</span><span class="feito">Como a pressão é feita</span><span class="feito">Fatores de risco</span><span class="feito">Classificação e órgão-alvo</span><span class="feito">Consulta e medida</span><span class="feito">Causas secundárias</span><span class="on">O rim</span><span>Tratamento</span></div></div></div>
+  <div class="simples"><div class="kick">Em palavras simples</div><p>Anos de pressão alta envelhecem antes da hora as arteríolas que levam sangue ao glomérulo. Os glomérulos vão se perdendo, os que sobram trabalham dobrado e adoecem também. Na forma maligna, uma crise grave fecha as arteríolas, e é emergência.</p></div>
+  <p>A hipertensão lesa principalmente as <b>arteríolas aferentes</b>, que se esclerosam (arterioloesclerose): a pressão dentro do glomérulo aumenta e tudo o que chega de sangue ao rim vai sendo esclerosado. O dano é o mesmo do envelhecimento normal, só que precoce. A luz das arteríolas estreita e o glomérulo fica isquêmico. A lesão é pior em negros e asiáticos e pode ser benigna ou maligna.</p>
+
+  <h3 data-bm="Nefroesclerose benigna">Nefroesclerose benigna</h3>
+  <p>Começa como glomeruloesclerose focal: pequenas partes do glomérulo envelhecem, as paredes das arteríolas enrijecem e aquela parte deixa de funcionar. Com os anos de hipertensão, a lesão passa a segmentar, atinge mais de um espaço e acaba tomando o glomérulo inteiro (global). A esclerose das arteríolas causa isquemia crônica do parênquima renal: dos glomérulos e do túbulo-interstício.</p>
+  <p class="livros"><b>Nos livros:</b> focal é a lesão que atinge alguns glomérulos; segmentar, a que atinge parte de um glomérulo; global, a que toma o glomérulo inteiro.</p>
+  <p>Temos cerca de 1 milhão de néfrons, e cada néfron é um glomérulo mais os túbulos. Com o tempo de hipertensão, eles vão sendo destruídos. Os que sobram ficam <b>sobrecarregados</b> para dar conta da filtração, e esse esforço tem limite: adoecem também, e é isso que perpetua a lesão renal.</p>
+  <div class="box orange"><div class="kick"><span class="dot"></span>Parêntese da professora: o trabalho em grupo</div><p>É como trabalho em grupo: se um não faz a sua parte, os outros da equipe têm que trabalhar mais. Um glomérulo isquêmico, que não recebe sangue a contento, joga o serviço para os vizinhos, até que eles também cansem.</p></div>
+  <div class="figure"><img src="nefroesclerose.svg" alt="Da pressão alta à perda do glomérulo e o ciclo dos néfrons sobrecarregados"><p class="leg">Em cima, como a pressão alta destrói o glomérulo; embaixo, o ciclo dos néfrons que sobram.</p></div>
+  <div class="box"><div class="kick"><span class="dot"></span>O foco do tratamento</div><p>Que menos glomérulos sejam destruídos ao longo do tempo, deixando a destruição o mais lenta possível. O cuidado é o controle ideal da pressão. Hoje há, além dos tiazídicos e dos inibidores da enzima conversora da angiotensina, um conjunto grande de remédios; quais protegem melhor o rim é assunto do seminário.</p></div>
+
+  <h3 data-bm="Nefroesclerose maligna">Nefroesclerose maligna</h3>
+  <p>Aparece na hipertensão muito grave, estágio 3 com <b>pressão diastólica acima de 120 mmHg</b>, no paciente em surto hipertensivo grave. As arteríolas do glomérulo ficam completamente obstruídas. O paciente desenvolve insuficiência renal progressiva, proteinúria e retinopatia, por isso olhar o fundo de olho é importante. Na parede do vaso aparece necrose fibrinoide ou lesão em bulbo de cebola. Por fora, o rim fica com várias áreas de necrose, como se tivesse sido mordido por várias pulguinhas. A nefroesclerose maligna é uma emergência hipertensiva.</p>
+  <div class="box red"><div class="kick"><span class="dot"></span>Pegadinha: baixar a pressão rápido</div><p>Com pressão acima de 180 por 120 mmHg, a pressão não deve ser abaixada rapidamente: a queda tem que ser gradativa. Baixar rápido pode romper arteríolas, causar acidente vascular cerebral ou lesão grave da retina.</p></div>
+  <p>Sem controle da pressão, a insuficiência renal piora. Controlar a pressão na nefroesclerose maligna evita a perda da função renal.</p>
+  <div class="cmp">
+    <div class="r h"><div class="k"></div><div class="c">Benigna</div><div class="c">Maligna</div></div>
+    <div class="r"><div class="k">Quem</div><div class="c">Hipertensão de longa data</div><div class="c">Hipertensão muito grave, em surto: diastólica acima de 120 mmHg</div></div>
+    <div class="r"><div class="k">Arteríola</div><div class="c">Esclerosada, com a luz estreita</div><div class="c">Completamente obstruída: necrose fibrinoide, bulbo de cebola</div></div>
+  </div>
+  <div class="cmp">
+    <div class="r h"><div class="k"></div><div class="c">Benigna</div><div class="c">Maligna</div></div>
+    <div class="r"><div class="k">Glomérulo</div><div class="c">Focal <span class="arr"></span> segmentar <span class="arr"></span> global, ao longo de anos</div><div class="c">Necrose em vários pontos: o rim "mordido por pulguinhas"</div></div>
+    <div class="r"><div class="k">Rim</div><div class="c">Perda lenta de néfrons</div><div class="c">Insuficiência renal progressiva, proteinúria, retinopatia</div></div>
+    <div class="r"><div class="k">Conduta</div><div class="c">Controle ideal da pressão</div><div class="c destaque">Emergência: baixar de forma gradativa</div></div>
+  </div>
+</section>
+
+<!-- ================================================================ 09 -->
+<section id="s09">
+  <div class="sec-head"><div class="lado"><span class="k">Seção</span><span class="num">09</span></div><div class="corpo"><h2>Tratamento sem remédio</h2><div class="aqui"><span class="feito">Conceito</span><span class="feito">Como a pressão é feita</span><span class="feito">Fatores de risco</span><span class="feito">Classificação e órgão-alvo</span><span class="feito">Consulta e medida</span><span class="feito">Causas secundárias</span><span class="feito">O rim</span><span class="on">Tratamento</span></div></div></div>
+  <div class="simples"><div class="kick">Em palavras simples</div><p>Receitar remédio para pressão todo mundo sabe. O que diferencia o médico é tratar com mudança de estilo de vida: perder peso, cortar sal, mexer o corpo, dormir bem, beber pouco, parar de fumar. Vale para todo hipertenso, e na pressão mais leve pode ser o único tratamento por três meses.</p></div>
+  <div class="quote"><p>“A gente está errando quando acha que tratamento não farmacológico, mudança de estilo de vida, não tem importância. E tem.”</p><div class="who">Dra. Vanessa, sobre o tratamento sem remédio</div></div>
+  <p>Se só remédio resolvesse, a hipertensão não seria causa tão importante de lesão de órgão-alvo. A própria indústria farmacêutica olhou para isso: as canetas emagrecedoras ganharam importância médica porque tratam as doenças que mais causam complicações crônicas, a hipertensão e o diabetes. Emagrecer deixou de ser estética e virou saúde.</p>
+
+  <h3 data-bm="Peso">Peso</h3>
+  <div class="ref">
+    <div class="txt"><div class="kick"><span class="dot"></span>Emagrecer</div><p>Perder 10 kg baixa a pressão em 10 mmHg: o bastante para passar do estágio 2 ao 1, ou do estágio 1 à pressão normal.</p></div>
+    <div class="val">1 mmHg<small>a menos por quilo perdido</small></div>
+  </div>
+  <div class="ref">
+    <div class="txt"><div class="kick"><span class="dot"></span>Índice de massa corporal</div><p>Mantido abaixo de 25, reduz em 40% a hipertensão em mulheres.</p></div>
+    <div class="val">Menor que 25<small>kg/m²</small></div>
+  </div>
+
+  <h3 data-bm="Sal e potássio">Sal e potássio</h3>
+  <div class="ref">
+    <div class="txt"><div class="kick"><span class="dot"></span>Sódio da dieta</div><p>Diminuir o sódio e aumentar o potássio da dieta. O americano come, em média, 12 g de sal por dia.</p></div>
+    <div class="val">2 g<small>por dia</small></div>
+  </div>
+  <p class="livros"><b>Nos livros:</b> a meta das diretrizes é de até 2 g de sódio por dia, o equivalente a cerca de 5 g de sal de cozinha.</p>
+  <p>É preciso aprender a ler rótulo. Um levantamento de 2012, que continua valendo, mostra o sódio de alimentos do dia a dia:</p>
+  <div class="tiles">
+    <div class="tile"><div class="lab">Pão francês</div><div class="n">Quase 600 mg</div><div class="s">de sódio em um pão</div></div>
+    <div class="tile"><div class="lab">Maionese</div><div class="n">1.052 mg</div><div class="s">de sódio</div></div>
+    <div class="tile"><div class="lab">Biscoito salgado</div><div class="n">Quase 700 mg</div><div class="s">em um pacotinho</div></div>
+  </div>
+  <p>Até o que parece doce tem sódio: o biscoito recheado tem quase 300 mg, e os bolinhos prontos do lanche das crianças têm uma quantidade absurda. Sucos prontos, suco de soja e pão de forma também. Uma boa atividade é ir ao supermercado olhar os rótulos: a quantidade de sódio por embalagem surpreende.</p>
+  <div class="box orange"><div class="kick"><span class="dot"></span>Parêntese da professora: a coquinha</div><p>Uma lata por dia está liberada: tem pouco sódio. O defeito dela é o ácido fosfórico, que piora o cálculo renal. Mas a coquinha junto com pão francês e maionese passa de boa para ruim: "diga-me com quem andas e te direi quem és".</p></div>
+
+  <h3 data-bm="Exercício, cigarro, álcool e sono">Exercício, cigarro, álcool e sono</h3>
+  <div class="ref">
+    <div class="txt"><div class="kick"><span class="dot"></span>Atividade física aeróbica</div><p>Regular, segundo a Organização Mundial da Saúde (2024).</p></div>
+    <div class="vals"><div class="val"><small>Frequência</small>5 vezes por semana</div><div class="val"><small>Duração</small>30 minutos</div></div>
+  </div>
+  <div class="box red"><div class="kick"><span class="dot"></span>Pegadinha: 30 minutos no primeiro dia</div><p>O sedentário que nunca caminhou e sai andando 30 minutos no primeiro dia terá uma dor muscular absurda no segundo, vai falar mal do médico e não volta a caminhar. Comece com menos tempo e aumente aos poucos até chegar aos 30 minutos.</p></div>
+  <div class="ref">
+    <div class="txt"><div class="kick"><span class="dot"></span>Álcool: limite por dia</div><p>A mulher se alcooliza mais facilmente do que o homem, por isso o limite dela é menor.</p></div>
+    <div class="vals"><div class="val"><small>Homens</small>2 doses (até 30 mL)</div><div class="val"><small>Mulheres</small>1 dose</div></div>
+  </div>
+  <p>Parar de fumar: a nicotina contrai os vasos, e quem fuma tende a ter a pressão mais alta. Dormir bem: não é só o tempo, é a qualidade; quanto melhor o sono, menor a chance de pressão alta.</p>
+
+  <h3 data-bm="Remédios e drogas que sobem a pressão">Remédios e drogas que sobem a pressão</h3>
+  <div class="rows">
+    <div class="row"><div class="k">Anticoncepcional</div><div class="v">Tende a reter sódio e água e aumenta a pressão.</div></div>
+    <div class="row"><div class="k">Anti-inflamatórios</div><div class="v">Ácido acetilsalicílico em dose anti-inflamatória e todos os outros anti-inflamatórios: causam isquemia renal, aumentam a pressão dentro do glomérulo e pioram a pressão arterial.</div></div>
+  </div>
+  <div class="rows">
+    <div class="row"><div class="k">Corticoides e anabolizantes</div><div class="v">Retêm sódio e água.</div></div>
+    <div class="row"><div class="k">Cocaína</div><div class="v">É vasoconstritora e piora a pressão.</div></div>
+  </div>
+  <p class="livros"><b>Nos livros:</b> o anti-inflamatório tira as prostaglandinas que mantêm aberta a arteríola aferente; chega menos sangue ao glomérulo e o rim retém sódio e água.</p>
+
+  <h3 data-bm="Dietas">Dietas</h3>
+  <p>A <b>dieta DASH</b> (sigla em inglês para "abordagens alimentares para parar a hipertensão") é uma prima americana da dieta mediterrânea: pobre em sal, rica em frutas, verduras, minerais e laticínios, com pouca gordura. Diminui em 14% o risco de hipertensão.</p>
+  <div class="box orange"><div class="kick"><span class="dot"></span>Parêntese da professora: os temperos</div><p>Existem temperos prontos no estilo da dieta DASH, em vidrinhos de tampa colorida: misturas de temperos secos, como pimenta-calabresa, manjerona, manjericão, alho e cebola desidratados. Hoje se acham no país vizinho. O único alimento intragável sem sal é a carne, que pede um pouquinho; o resto se tempera com tempero seco.</p></div>
+  <div class="grid2">
+    <div class="card"><span class="tag">Dieta vegetariana</span><p>Reduz a pressão, mas leva a falta de ferro e de vitamina B12: precisa de acompanhamento de nutricionista ou nutrólogo.</p></div>
+    <div class="card"><span class="tag">Chocolate meio amargo</span><p>Acima de 60% de cacau, 30 g por dia: reduz a pressão por ser rico em polifenóis.</p></div>
+  </div>
+
+  <h3 data-bm="O que é discutível">O que é discutível</h3>
+  <div class="rows">
+    <div class="row"><div class="k">Controle do estresse</div><div class="v">É subjetivo: o que é grave para um não é para outro, e não há como medir o estresse. Por isso não se sabe o impacto dele na pressão.</div></div>
+    <div class="row"><div class="k">Cálcio e magnésio</div><div class="v">Não é preciso suplementar. Até hoje nada mostra que tratem hipertensão; o magnésio está na moda, mas não trata.</div></div>
+    <div class="row"><div class="k">Fibras e óleo de peixe</div><div class="v">O óleo de peixe tem papel na doença aterosclerótica, não na hipertensão.</div></div>
+  </div>
+
+  <h3 data-bm="Diretriz de 2025: centrada na pessoa">Diretriz de 2025: centrada na pessoa</h3>
+  <p>O tratamento hoje é centrado na pessoa: exercício físico, alimentação saudável, tempo de sono, controle do álcool, conexão social e controle do peso. A novidade da diretriz brasileira de 2025 é a <b>abordagem da espiritualidade e da religiosidade</b>, que as diretrizes nunca tinham assumido: meditação, respiração lenta e prática espiritual passam a contar como mudança de hábito de vida na hipertensão.</p>
+
+  <h3 data-bm="Para quem e até quando">Para quem e até quando</h3>
+  <p>Para absolutamente todos os hipertensos. Faz parte do Protocolo Clínico e Diretrizes Terapêuticas da hipertensão do Ministério da Saúde, e conhecê-lo é obrigação do médico. Na pré-hipertensão e no estágio 1, pode ser o único tratamento orientado: se em três meses não houver melhora, com a pressão ainda acima de 140 mmHg, começa o remédio. Mas todos seguem com a mudança de estilo de vida.</p>
+  <div class="figure"><img src="inicio.svg" alt="Quando começar o remédio: todo hipertenso faz mudança de estilo de vida; na pré-hipertensão e no estágio 1, só ela por três meses"><p class="leg">Quando entra o remédio. A mudança de estilo de vida nunca sai.</p></div>
+  <div class="quote"><p>“Tratamento não farmacológico cabe ao médico fazer. Isso é procedimento médico.”</p><div class="who">Dra. Vanessa, sobre a mudança de estilo de vida</div></div>
+</section>
+
+<!-- ================================================================ 10 -->
+<section id="s10" class="vesp">
+  <div class="sec-head"><div class="lado"><span class="k">Seção</span><span class="num">10</span></div><div class="corpo"><h2>Véspera da prova</h2></div></div>
+  <p>O que ela pediu para guardar e os números da aula, na ordem da trilha.</p>
+  <div class="item"><span class="prova guarda">GUARDAR</span><p><b>Hipertensão é elevação persistente</b> da pressão. Uma subida isolada, por estresse, não é hipertensão. Cerca de 32% de hipertensos no mundo; 40 milhões no Brasil em 2024, pela estimativa.</p></div>
+  <div class="item"><span class="prova guarda">GUARDAR</span><p><b>Pressão = débito cardíaco × resistência periférica</b>; débito = volume sistólico × frequência. Betabloqueador <span class="arr"></span> frequência; diurético <span class="arr"></span> volume; vasodilatador <span class="arr"></span> sistema constritor; inibidor da enzima conversora <span class="arr"></span> sistema hormonal.</p></div>
+  <div class="item"><span class="prova guarda">GUARDAR</span><p><b>Fecham o vaso:</b> sódio e volume, simpático, renina-angiotensina-aldosterona. <b>Abrem:</b> calicreína-cinina (óxido nítrico) e peptídeos natriuréticos. Prostaglandinas dos dois lados; o anti-inflamatório as inibe e retém sódio e água.</p></div>
+  <div class="item"><span class="prova guarda">GUARDAR</span><p><b>Aldosterona</b> retém sódio e água e elimina potássio: hipertenso com potássio baixo faz pensar em hiperaldosteronismo primário.</p></div>
+  <div class="item"><span class="prova guarda">GUARDAR</span><p><b>Primária: 90% a 95%</b> dos casos, mas só depois de excluir as secundárias, que podem ter cura.</p></div>
+  <div class="item"><span class="prova guarda">GUARDAR</span><p><b>Classificação de 2025:</b> normal menor que 120/80; pré-hipertensão 120 a 139/80 a 89; estágio 1, 140 a 159/90 a 99; estágio 2, 160 a 179/100 a 109; estágio 3, 180/110 ou mais.</p></div>
+  <div class="item"><span class="prova guarda">GUARDAR</span><p><b>Lesão de órgão-alvo é obrigatória:</b> coração, grandes vasos, rim e retina. Albuminúria normal abaixo de 30 mg/g; moderada de 30 a 300; alta acima de 300.</p></div>
+  <div class="item"><span class="prova guarda">GUARDAR</span><p><b>Medida:</b> 30 minutos sem café, cigarro ou exercício; bexiga vazia; sentado e quieto; manguito certo; diastólica só com estetoscópio; nunca no braço da fístula. Avental branco: monitorização ambulatorial de 24 horas.</p></div>
+  <div class="item"><span class="prova guarda">GUARDAR</span><p><b>Pense em secundária</b> antes dos 30 ou depois dos 50 anos, no estágio 3 de início, na tríade do feocromocitoma, no potássio baixo (aldosterona acima de 15 ng/dL), no sopro abdominal e no edema agudo de pulmão súbito. A principal causa secundária é a doença renal parenquimatosa.</p></div>
+  <div class="item"><span class="prova guarda">GUARDAR</span><p><b>Nefroesclerose benigna:</b> focal, segmentar, global; os néfrons que sobram se sobrecarregam e adoecem. <b>Maligna:</b> diastólica acima de 120, emergência; baixar a pressão devagar.</p></div>
+  <div class="item"><span class="prova guarda">GUARDAR</span><p><b>Mudança de estilo de vida para todos</b> e cabe ao médico. Só ela por 3 meses na pré-hipertensão e no estágio 1; remédio se a pressão seguir acima de 140. Cada quilo perdido, 1 mmHg a menos; sódio 2 g por dia; exercício aeróbico 5 vezes por semana, 30 minutos; álcool até 2 doses por dia no homem e 1 na mulher.</p></div>
+
+  <div class="box red"><div class="kick"><span class="dot"></span>Erros comuns</div><ul>
+    <li><span class="medium">Rotular de hipertenso por uma medida só.</span> Medir mais vezes, nos dois braços.</li>
+    <li><span class="medium">Chamar de primária sem procurar causa secundária.</span> A secundária pode ter cura.</li>
+    <li><span class="medium">Tratar só com remédio.</span> A mudança de estilo de vida é tratamento para todos.</li>
+  </ul></div>
+
+  <h3 data-bm="Palavras da aula em linguagem simples">Palavras da aula em linguagem simples</h3>
+  <div class="rows terms">
+    <div class="row"><div class="k">Arterioloesclerose</div><div class="v">Endurecimento e espessamento da parede das arteríolas.</div></div>
+    <div class="row"><div class="k">Automedida (AMPA)</div><div class="v">Medidas feitas pelo paciente em casa, com o próprio aparelho, anotadas para a consulta.</div></div>
+    <div class="row"><div class="k">Avental branco</div><div class="v">Pressão que sobe no consultório e é normal em casa.</div></div>
+  </div>
+  <div class="rows terms">
+    <div class="row"><div class="k">Bradicinina</div><div class="v">Substância que manda o endotélio produzir óxido nítrico e prostaciclina, que dilatam o vaso.</div></div>
+    <div class="row"><div class="k">Bulbo de cebola</div><div class="v">Camadas na parede da arteríola, típicas da nefroesclerose maligna.</div></div>
+    <div class="row"><div class="k">Dieta DASH</div><div class="v">Dieta pobre em sal e rica em frutas, verduras, minerais e laticínios, criada para baixar a pressão.</div></div>
+  </div>
+  <div class="rows terms">
+    <div class="row"><div class="k">Feocromocitoma</div><div class="v">Tumor da suprarrenal que solta adrenalina e noradrenalina em crises.</div></div>
+    <div class="row"><div class="k">Fístula arteriovenosa</div><div class="v">Ligação entre uma artéria e uma veia do braço, feita por cirurgia, usada na hemodiálise.</div></div>
+    <div class="row"><div class="k">Korotkoff</div><div class="v">Os sons escutados ao medir a pressão; o primeiro marca a sistólica e o sumiço, a diastólica.</div></div>
+  </div>
+  <div class="rows terms">
+    <div class="row"><div class="k">Mácula densa</div><div class="v">Grupo de células do néfron, junto ao túbulo distal, que ajuda a regular a liberação de renina.</div></div>
+    <div class="row"><div class="k">Monitorização ambulatorial (MAPA)</div><div class="v">Aparelho preso ao braço que mede a pressão por 24 horas, durante a vida normal.</div></div>
+    <div class="row"><div class="k">Monitorização residencial (MRPA)</div><div class="v">Medidas da pressão feitas em casa, parecidas com as da monitorização ambulatorial.</div></div>
+  </div>
+  <div class="rows terms">
+    <div class="row"><div class="k">Necrose fibrinoide</div><div class="v">Morte da parede do vaso, que fica impregnada de fibrina, na hipertensão muito grave.</div></div>
+    <div class="row"><div class="k">Podócito</div><div class="v">Célula do glomérulo com "pezinhos" encostados uns nos outros, que segura a albumina no sangue.</div></div>
+    <div class="row"><div class="k">Sal-sensível</div><div class="v">Pessoa cuja pressão sobe com sal mesmo em quantidade normal ou moderada.</div></div>
+  </div>
+  <div class="rows terms">
+    <div class="row"><div class="k">Sono REM</div><div class="v">A fase do sono em que se sonha; sem chegar a ela, o descanso não é reparador.</div></div>
+    <div class="row"><div class="k">Tromboxano</div><div class="v">Prostaglandina que contrai o vaso; a prostaciclina faz o contrário.</div></div>
+  </div>
+  {{NOTAS}}
+</section>
+
+</body></html>

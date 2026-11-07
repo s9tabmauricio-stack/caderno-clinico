@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="478pt" height="236pt" viewBox="0 0 478 236">
+<rect x="154.0" y="2.0" width="170.0" height="30.0" rx="9" fill="#F5F8FF" stroke="#0B5BD3" stroke-width="1.4"/>
+<text x="239.0" y="21.0" font-family="Inter" font-size="10" font-weight="700" fill="#16315C" text-anchor="middle">Pressão arterial</text>
+<line x1="239.0" y1="32.0" x2="239.0" y2="46.0" stroke="#8AA9DF" stroke-width="1.4"/>
+<line x1="119.5" y1="46.0" x2="119.5" y2="62.0" stroke="#8AA9DF" stroke-width="1.4"/>
+<line x1="239.0" y1="32.0" x2="239.0" y2="46.0" stroke="#8AA9DF" stroke-width="1.4"/>
+<line x1="358.5" y1="46.0" x2="358.5" y2="62.0" stroke="#8AA9DF" stroke-width="1.4"/>
+<line x1="119.5" y1="46.0" x2="358.5" y2="46.0" stroke="#8AA9DF" stroke-width="1.4"/>
+<rect x="31.5" y="62.0" width="176.0" height="30.0" rx="9" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="1"/>
+<text x="119.5" y="81.0" font-family="Inter" font-size="9" font-weight="600" fill="#16315C" text-anchor="middle">Débito cardíaco</text>
+<rect x="270.5" y="62.0" width="176.0" height="30.0" rx="9" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="1"/>
+<text x="358.5" y="81.0" font-family="Inter" font-size="9" font-weight="600" fill="#16315C" text-anchor="middle">Resistência vascular periférica</text>
+<text x="239.0" y="82.0" font-family="Inter" font-size="13" font-weight="600" fill="#0B5BD3" text-anchor="middle">×</text>
+<text x="243.0" y="42.0" font-family="Inter" font-size="7" font-weight="500" fill="#6C6C70" text-anchor="start">é o produto de</text>
+<line x1="119.5" y1="92.0" x2="119.5" y2="116.0" stroke="#8AA9DF" stroke-width="1.4"/>
+<line x1="59.8" y1="116.0" x2="179.2" y2="116.0" stroke="#8AA9DF" stroke-width="1.4"/>
+<line x1="59.8" y1="116.0" x2="59.8" y2="132.0" stroke="#8AA9DF" stroke-width="1.4"/>
+<line x1="179.2" y1="116.0" x2="179.2" y2="132.0" stroke="#8AA9DF" stroke-width="1.4"/>
+<line x1="358.5" y1="92.0" x2="358.5" y2="116.0" stroke="#8AA9DF" stroke-width="1.4"/>
+<line x1="298.8" y1="116.0" x2="418.2" y2="116.0" stroke="#8AA9DF" stroke-width="1.4"/>
+<line x1="298.8" y1="116.0" x2="298.8" y2="132.0" stroke="#8AA9DF" stroke-width="1.4"/>
+<line x1="418.2" y1="116.0" x2="418.2" y2="132.0" stroke="#8AA9DF" stroke-width="1.4"/>
+<text x="362.5" y="102.0" font-family="Inter" font-size="7" font-weight="500" fill="#6C6C70" text-anchor="start">tônus das arteríolas</text>
+<text x="123.5" y="102.0" font-family="Inter" font-size="7" font-weight="500" fill="#6C6C70" text-anchor="start">é o produto de</text>
+<rect x="7.8" y="132.0" width="104.0" height="28.0" rx="9" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="1"/>
+<text x="59.8" y="149.5" font-family="Inter" font-size="8.4" font-weight="600" fill="#16315C" text-anchor="middle">Volume sistólico</text>
+<rect x="127.2" y="132.0" width="104.0" height="28.0" rx="9" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="1"/>
+<text x="179.2" y="149.5" font-family="Inter" font-size="8.4" font-weight="600" fill="#16315C" text-anchor="middle">Frequência cardíaca</text>
+<rect x="246.8" y="132.0" width="104.0" height="28.0" rx="9" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="1"/>
+<text x="298.8" y="149.5" font-family="Inter" font-size="8.4" font-weight="600" fill="#16315C" text-anchor="middle">Sistema constritor</text>
+<rect x="366.2" y="132.0" width="104.0" height="28.0" rx="9" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="1"/>
+<text x="418.2" y="149.5" font-family="Inter" font-size="8.4" font-weight="600" fill="#16315C" text-anchor="middle">Sistema hormonal</text>
+<text x="119.5" y="150.0" font-family="Inter" font-size="12" font-weight="600" fill="#0B5BD3" text-anchor="middle">×</text>
+<text x="358.5" y="150.0" font-family="Inter" font-size="12" font-weight="600" fill="#0B5BD3" text-anchor="middle">+</text>
+<line x1="59.8" y1="184.0" x2="59.8" y2="167.0" stroke="#8AA9DF" stroke-width="1.4"/>
+<polygon points="59.8,163.0 63.0,168.5 56.5,168.5" fill="#8AA9DF"/>
+<rect x="7.8" y="186.0" width="104.0" height="46.6" rx="9" fill="#F5F8FF" stroke="#C3D8F8" stroke-width="1"/>
+<text x="59.8" y="201.0" font-family="Inter" font-size="8.2" font-weight="600" fill="#0B5BD3" text-anchor="middle">Diurético</text>
+<text x="59.8" y="213.5" font-family="Inter" font-size="7.4" font-weight="400" fill="#1F2933" text-anchor="middle">baixa o volume</text>
+<line x1="179.2" y1="184.0" x2="179.2" y2="167.0" stroke="#8AA9DF" stroke-width="1.4"/>
+<polygon points="179.2,163.0 182.6,168.5 175.9,168.5" fill="#8AA9DF"/>
+<rect x="127.2" y="186.0" width="104.0" height="46.6" rx="9" fill="#F5F8FF" stroke="#C3D8F8" stroke-width="1"/>
+<text x="179.2" y="201.0" font-family="Inter" font-size="8.2" font-weight="600" fill="#0B5BD3" text-anchor="middle">Betabloqueador</text>
+<text x="179.2" y="213.5" font-family="Inter" font-size="7.4" font-weight="400" fill="#1F2933" text-anchor="middle">baixa a frequência</text>
+<line x1="298.8" y1="184.0" x2="298.8" y2="167.0" stroke="#8AA9DF" stroke-width="1.4"/>
+<polygon points="298.8,163.0 302.1,168.5 295.4,168.5" fill="#8AA9DF"/>
+<rect x="246.8" y="186.0" width="104.0" height="46.6" rx="9" fill="#F5F8FF" stroke="#C3D8F8" stroke-width="1"/>
+<text x="298.8" y="201.0" font-family="Inter" font-size="8.2" font-weight="600" fill="#0B5BD3" text-anchor="middle">Vasodilatador</text>
+<text x="298.8" y="213.5" font-family="Inter" font-size="7.4" font-weight="400" fill="#1F2933" text-anchor="middle">relaxa a arteríola</text>
+<line x1="418.2" y1="184.0" x2="418.2" y2="167.0" stroke="#8AA9DF" stroke-width="1.4"/>
+<polygon points="418.2,163.0 421.6,168.5 414.9,168.5" fill="#8AA9DF"/>
+<rect x="366.2" y="186.0" width="104.0" height="46.6" rx="9" fill="#F5F8FF" stroke="#C3D8F8" stroke-width="1"/>
+<text x="418.2" y="201.0" font-family="Inter" font-size="8.2" font-weight="600" fill="#0B5BD3" text-anchor="middle">Inibidor da enzima</text>
+<text x="418.2" y="211.5" font-family="Inter" font-size="8.2" font-weight="600" fill="#0B5BD3" text-anchor="middle">conversora</text>
+<text x="418.2" y="224.0" font-family="Inter" font-size="7.4" font-weight="400" fill="#1F2933" text-anchor="middle">freia a angiotensina</text>
+</svg>
