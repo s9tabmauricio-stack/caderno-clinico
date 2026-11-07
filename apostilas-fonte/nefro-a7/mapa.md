@@ -65,6 +65,7 @@ Ela não disse "cai na prova" em nenhum momento. Pela regra nova (`docs/apostila
 - Bexiga "cheia... vazia" [P2 09:50]: ela se corrige; bexiga vazia.
 - "Mulatos" [P1 33:30] escrito "pardos".
 - Peptídeos natriuréticos: siglas trocadas pelos nomes.
+- Albuminúria A1, A2 e A3 [P1 41:28]: aparecem entre parênteses na transcrição (devem ser do slide que ela lia). Incluídos a pedido do Mauricio (07/11/2026) nos cartões do capítulo 04 e no item da véspera; continua com 23 páginas.
 
 ## Figuras
 - trilha.svg (antes do capítulo 01), formula.svg (cap. 02), pistas.svg (cap. 07), nefroesclerose.svg (cap. 08), inicio.svg (cap. 09). Gerados por figuras.py.

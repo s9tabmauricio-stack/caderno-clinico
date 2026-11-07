@@ -20,4 +20,3 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
-| Apostila nefro-a7: nomes A1, A2 e A3 da albuminúria | Claude | claude/amazing-allen-e4rkx4 | nefro-a7 (apostila) | 07/11/2026 |
