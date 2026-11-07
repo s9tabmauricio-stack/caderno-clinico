@@ -20,4 +20,3 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
-| Apostila da Nefrologia aula 7 (hipertensão arterial) | Claude | `claude/gracious-gauss-qzcic7` | `nefro-a7`, `apostilas-fonte/nefro-a7/` | 07/11/2026 |
