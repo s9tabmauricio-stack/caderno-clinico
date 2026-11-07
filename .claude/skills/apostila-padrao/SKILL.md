@@ -35,7 +35,7 @@ O visual antigo (guia clínico em Poppins e azul-petróleo) foi substituído pel
 - Números no formato brasileiro: 2.100; 1,2; 10h30.
 - **Negrito com parcimônia**: no máximo um trecho por parágrafo. Em listas, negrito só no termo inicial do item.
 - **Complemento**: tudo o que não foi dito em aula vai só em caixa roxa "Complemento: fora da aula" (ou no valor de referência roxo). Nunca misturar com o conteúdo da aula.
-- **Marca PROVA**: só em blocos específicos (um título de subseção, um quadro), nunca na seção inteira, e só onde a fonte diz que cai ou que ele cobra. Se a fonte não diz, não marcar.
+- **Marca PROVA**: onde o professor diz ou dá a entender que é importante (regra do Mauricio, 07/11/2026). Ninguém fala "isso cai na prova": valem palavra de ênfase ("obrigatório", "precisa gravar", "guardem na cabeça"), repetição ("vou falar de novo"), ordem direta ("nunca", "é proibido"), demonstração ou caso encenado, alerta de erro, slide de resumo "para gravar" e pergunta à turma. Não basta o assunto ser importante na medicina, longo ou estar só no slide. A lista completa está em `docs/apostila-molde.md` ("Redação da apostila"). Só em blocos específicos (um título de subseção, um quadro), nunca na seção inteira; no mapa, a frase e o minuto de cada uma. Na dúvida, marque; se a maioria dos subtítulos ganhar PROVA, reveja.
 - Falas marcantes do professor viram citação (laranja), com atribuição curta.
 - Glossário "Palavras da aula em linguagem simples" em **ordem alfabética**.
 - **Não incluir banco de questões nem flashcards** na apostila.
