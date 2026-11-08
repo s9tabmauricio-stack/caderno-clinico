@@ -21,4 +21,3 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
 | Temas das questões de Pneumo (filtro do Banco) | Claude | `claude/hopeful-shannon-9hmw82` | aulas `pneumo-a1` a `pneumo-a4` (campo `tema` das questões) | 07/11/2026 |
-| 14 questões novas de TEP (arquivo de simulado), liberado pelo Mauricio apesar da linha acima | Claude | `claude/intelligent-allen-y3iiqq` | aula `pneumo-a1` (só inclusão de questões novas no banco) | 08/11/2026 |
