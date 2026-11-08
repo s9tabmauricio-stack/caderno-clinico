@@ -20,3 +20,4 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
+| Barra de fonte nas questões da aula (FAG, residência, professor) | Claude | claude/practical-cannon-ck5rhh | Aula → Questões (`components/Questoes.tsx`, aba da aula) | 08/11/2026 |
