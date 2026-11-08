@@ -11,7 +11,7 @@ import { createClient } from '@/lib/supabase/server'
 import { plural } from '@/lib/formato'
 import { retornoDaMateria, rotuloRetorno } from '@/lib/navegacao'
 import { ehAdmin } from '@/lib/admin'
-import { filtroClassificacaoValido, fonteValida } from '@/lib/classificacao-questoes'
+import { filtroClassificacaoValido, fonteValida, ordenarPorFonte } from '@/lib/classificacao-questoes'
 
 export async function generateMetadata(props: PageProps<'/materia/[id]/questoes'>): Promise<Metadata> {
   const { id } = await props.params
@@ -32,7 +32,7 @@ export default async function BancoPage(props: PageProps<'/materia/[id]/questoes
   ])
   if (!materia.data) notFound()
   if (questoes.error) throw new Error(`Não foi possível carregar as questões: ${questoes.error.message}`)
-  const lista = (questoes.data ?? []).map(paraQuestao)
+  const lista = ordenarPorFonte((questoes.data ?? []).map(paraQuestao))
   // Filtros: um link com filtro (ex.: Desempenho → tema) vale sozinho; sem ele, abre com o últimos filtros deste aluno
   const comFiltroNoLink = typeof tema === 'string' || typeof fonte === 'string' || typeof mostrar === 'string' || typeof classificacao === 'string'
   let lembrados: { tema?: unknown; fonte?: unknown; situacao?: unknown; classificacao?: unknown } = {}

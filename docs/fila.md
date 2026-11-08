@@ -20,4 +20,3 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
-| Ordem das questões (FAG, residência, montadas) | Claude | claude/practical-cannon-ck5rhh | Aula → Questões, Banco de questões, `lib/classificacao-questoes.ts` | 08/11/2026 |

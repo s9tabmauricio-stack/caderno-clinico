@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { Pagina, Voltar } from '@/components/Pagina'
 import { AulaAbas, type Aba } from '@/components/AulaAbas'
+import { ordenarPorFonte } from '@/lib/classificacao-questoes'
 import { carregarProgresso, carregarProgressoMaterias, paraCard, paraQuestao, pendentes, sessao } from '@/lib/dados'
 import { createClient } from '@/lib/supabase/server'
 import { retornoSeguro, rotuloRetorno } from '@/lib/navegacao'
@@ -84,7 +85,7 @@ export default async function AulaPage(props: PageProps<'/aula/[id]'>) {
         abaInicial={abaInicial}
         apostilaHtml={aula.data.apostila_html}
         pdfUrl={pdfUrl}
-        questoes={(questoes.data ?? []).map(paraQuestao)}
+        questoes={ordenarPorFonte((questoes.data ?? []).map(paraQuestao))}
         cards={(cards.data ?? []).map(paraCard)}
         userId={userId}
         materiaId={materiaId}
