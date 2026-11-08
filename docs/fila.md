@@ -20,4 +20,3 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
-| Agenda: "prova teórica" virava aula | Claude | claude/bold-gates-kuv9jp | lib/agenda.ts | 08/11/2026 |
