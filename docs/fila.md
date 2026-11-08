@@ -20,4 +20,3 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
-| Programa de limpeza das versões antigas de questões | Claude | `claude/exciting-maxwell-q5a8kd` | `scripts/limpar-versoes.mjs` (novo), manual (`AGENTS.md`, skill `conferir-questoes`, `docs/codex.md`) | 08/11/2026 |
