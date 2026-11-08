@@ -507,7 +507,10 @@ export function Questoes({ questoes, userId, ativo, mostrarTema = true, vazio, a
                           onClick={() => void classificar(q.id, classificacoes[q.id] === valor ? null : valor)}
                         >
                           <PlacaPrioridade valor={valor} />
-                          <span>{rotulo}</span>
+                          <span className="qclassificacao-rotulo">
+                            <span>{rotulo}</span>
+                            <span className="qclassificacao-selecionada" aria-hidden="true">✓ Selecionado</span>
+                          </span>
                         </button>
                       ))}
                     </div>
