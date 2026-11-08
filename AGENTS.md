@@ -102,7 +102,7 @@ Pelo conector, **incluir dados e alterações curtas funcionam**; **apagar e ree
 
 ## Claude, Codex e Antigravity (três assistentes no mesmo projeto)
 
-- Este manual vale para os três. O `CLAUDE.md` só aponta para cá, e o Antigravity (versão 2.28 em diante) lê a regra `.agents/rules/medgenius.md` (com "s"; a pasta antiga `.agent/` não é mais lida), que também aponta para cá: mudanças no manual vão neste arquivo.
+- Este manual vale para os três e é o único: o Codex lê este arquivo direto; o `CLAUDE.md` só tem `@AGENTS.md`; o Antigravity (versão 2.28 em diante) lê a regra `.agents/rules/medgenius.md` (com "s"; a pasta antiga `.agent/` não é mais lida), que só manda ler este arquivo. Regra nova ou mudada vai aqui, nunca no `CLAUDE.md` nem na regra do Antigravity. O `npm test` (`tests/manual-assistentes.test.mjs`) confere essa ligação e o tamanho deste arquivo (até 32 KB, o que o Codex lê).
 - **Qualquer um faz qualquer trabalho, mas passa pela fila** ([`docs/fila.md`](docs/fila.md)): antes de começar, leia a fila no `main` e anote o assunto e onde vai mexer; se outro já está na mesma tela, aula ou arquivo, não comece e avise o Mauricio. Ao publicar, o PR apaga a linha. As regras estão no topo do arquivo.
 
 | | Código e telas | Conteúdo (aulas, apostilas, questões, flashcards, provas) e banco |
@@ -111,7 +111,7 @@ Pelo conector, **incluir dados e alterações curtas funcionam**; **apagar e ree
 | **Antigravity** (PC do Mauricio) | sim | sim, pelo conector do Supabase |
 | **Codex** (site do ChatGPT) | sim | sim, pelo `node scripts/sql.mjs "<SQL>"` no lugar do conector ([`docs/codex.md`](docs/codex.md)) |
 
-- **Conteúdo segue as mesmas regras, venha de quem vier.** As skills e os agentes em `.claude/` são o manual de cada assunto e valem para os três: quem não é o Claude lê o arquivo e segue os passos (onde a receita cita uma ferramenta só do Claude, ela diz o que fazer no lugar).
+- **Conteúdo segue as mesmas regras, venha de quem vier.** As skills e os agentes em `.claude/` são o manual de cada assunto e valem para os três: quem não é o Claude lê o arquivo e segue os passos (onde a receita cita uma ferramenta só do Claude, ela diz o que fazer no lugar). As skills têm uma cópia em `.agents/skills/`, onde o Codex e o Antigravity as acham sozinhos: edite sempre em `.claude/skills/` e rode `node scripts/sincronizar-skills.mjs` (o `npm test` avisa se esquecer). Os agentes de `.claude/agents/` não têm cópia: os outros dois leem o arquivo.
 - O Codex não tem o conector: onde as receitas mandam usar o `execute_sql`, ele roda o mesmo SQL com `node scripts/sql.mjs` (token `SUPABASE_ACCESS_TOKEN` no ambiente do Codex, configurado pelo Mauricio; ver [`docs/codex.md`](docs/codex.md)). Valem as mesmas regras do banco.
 - O conector (Claude e Antigravity; o do Antigravity fica em `~/.gemini/config/mcp_config.json`, preso ao projeto `xtlpmtylifbalzxnfkib`) segue a seção "Limite do conector do Supabase". Mudança na estrutura do banco não precisa mais do "pode" do Mauricio (regra dele, 05/11/2026): leia `supabase/estrutura-atual.sql` antes, atualize a cópia depois e conte a ele em uma frase o que mudou.
 - **Publicar:** ramo `claude/…`, `codex/…` ou `antigravity/…` saído do `main` atualizado, `npm test` e `npx next build`, PR para o `main` (o GitHub junta sozinho se passar; rascunho não é juntado). Nunca empurre direto para o `main`, salvo a fila e as exceções. Passo a passo de cada assistente e exceções: [`docs/publicar.md`](docs/publicar.md).

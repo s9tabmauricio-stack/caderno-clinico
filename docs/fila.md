@@ -20,4 +20,3 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
-| Manual único dos assistentes (regra do Antigravity, teste, skills em `.agents/skills/`) | Claude | `claude/modest-hypatia-ycdw7v` | `.agents/`, `AGENTS.md`, `scripts/sincronizar-skills.mjs`, `tests/` | 08/11/2026 |
