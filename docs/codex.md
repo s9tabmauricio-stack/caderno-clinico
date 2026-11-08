@@ -40,7 +40,8 @@ Para conferir, peça ao Codex: `node scripts/sql.mjs "select id, titulo from aul
   `node scripts/sql.mjs "<o mesmo SQL>"` (ou grava o SQL num arquivo `.sql` e passa o caminho).
 - Rascunhos revisados de flashcards e questões vão pelo `node scripts/gravar-rascunho.mjs <aula-id>`, como para todos.
 - As regras do banco são as mesmas (seção "Limite do conector do Supabase" do `AGENTS.md`): corrigir questão é
-  versão nova + `substituida_por`; apagar conteúdo é com o Mauricio em Conteúdo → Limpeza; mudou a estrutura,
+  versão nova + `substituida_por`; apagar conteúdo é com o Mauricio em Conteúdo (versões antigas de questões: botão Limpeza ou, quando ele pedir,
+  `node scripts/limpar-versoes.mjs --apagar`, que precisa de `SUPABASE_SECRET_KEY`); mudou a estrutura,
   atualize `supabase/estrutura-atual.sql` no mesmo trabalho.
 - Se o programa disser que falta o token ou que não há conexão, o ambiente não está configurado: avise o Mauricio
   apontando este arquivo e pare a parte do banco.
