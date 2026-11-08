@@ -4,12 +4,21 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { useSearchParams } from 'next/navigation'
 import type { CardAluno, QuestaoAluno } from '@/lib/dados'
+import { fonteDaQuestao, fonteValida, type FonteQuestao } from '@/lib/classificacao-questoes'
 import { Icone } from './Icones'
 import { Questoes } from './Questoes'
 import { Flashcards } from './Flashcards'
 import { Apostila } from './Apostila'
 
 export type Aba = 'apostila' | 'questoes' | 'flashcards'
+
+// Os três grupos da barra de baixo, na ordem: provas da FAG, residência e concursos, e as feitas
+// pela apostila (que segue o que o professor falou em aula)
+const GRUPOS: { valor: FonteQuestao; rotulo: string; vazio: string }[] = [
+  { valor: 'fag', rotulo: 'Provas da FAG', vazio: 'Nenhuma questão de prova da FAG sobre esta aula.' },
+  { valor: 'concursos', rotulo: 'Residência e concursos', vazio: 'Nenhuma questão de residência ou concurso sobre esta aula.' },
+  { valor: 'apostila', rotulo: 'Falas do professor', vazio: 'Nenhuma questão feita a partir da aula do professor ainda.' },
+]
 
 type Props = {
   aulaId: string
@@ -45,6 +54,34 @@ export function AulaAbas({
   const voltarParaAula = `/aula/${aulaId}?${contexto}`
   const [aba, setAba] = useState<Aba>(abaInicial)
 
+  // Segunda barra, só na aba Questões: de onde veio a questão (regra do Mauricio, 08/11/2026).
+  // Respostas e marcações dadas nesta visita ficam guardadas aqui, para valerem ao trocar de grupo.
+  const [extras, setExtras] = useState<Record<string, QuestaoAluno['resposta']>>({})
+  const [marcas, setMarcas] = useState<Record<string, QuestaoAluno['classificacao']>>({})
+  const atuais = questoes.map((q) => ({
+    ...q,
+    resposta: q.id in extras ? extras[q.id] : q.resposta,
+    classificacao: q.id in marcas ? marcas[q.id] : q.classificacao,
+  }))
+  const grupos = GRUPOS.map((g) => ({ ...g, lista: atuais.filter((q) => fonteDaQuestao(q) === g.valor) }))
+  const [fonte, setFonte] = useState<FonteQuestao>(() => {
+    const pedida = fonteValida(parametros.get('fonte'))
+    return pedida ?? grupos.find((g) => g.lista.length)?.valor ?? 'fag'
+  })
+  // A lista em estudo só muda quando o aluno troca de grupo, para não pular questões no meio
+  const [lista, setLista] = useState(() => grupos.find((g) => g.valor === fonte)!.lista)
+  const grupo = grupos.find((g) => g.valor === fonte)!
+  const proximoGrupo = grupos.slice(grupos.indexOf(grupo) + 1).find((g) => g.lista.length)
+
+  function trocarFonte(nova: FonteQuestao, rolar = false) {
+    setFonte(nova)
+    setLista(grupos.find((g) => g.valor === nova)!.lista)
+    const url = new URL(window.location.href)
+    url.searchParams.set('fonte', nova)
+    window.history.replaceState(null, '', url)
+    if (rolar) document.querySelector('.segm')?.scrollIntoView({ block: 'start', behavior: 'smooth' })
+  }
+
   function trocar(nova: Aba, rolar = false) {
     setAba(nova)
     const url = new URL(window.location.href)
@@ -65,10 +102,15 @@ export function AulaAbas({
       Próxima aula: {proximaAula.titulo}
     </Link>
   )
-  const passoDepoisDasQuestoes = (cards.length > 0 || proximaAula) && (
+  const passoDepoisDasQuestoes = (proximoGrupo || cards.length > 0 || proximaAula) && (
     <>
+      {proximoGrupo && (
+        <button className="btn" onClick={() => trocarFonte(proximoGrupo.valor, true)}>
+          Ir para {proximoGrupo.rotulo} ({proximoGrupo.lista.length})
+        </button>
+      )}
       {cards.length > 0 && (
-        <button className="btn" onClick={() => trocar('flashcards', true)}>
+        <button className={proximoGrupo ? 'btn ghost' : 'btn'} onClick={() => trocar('flashcards', true)}>
           Estudar os {cards.length} flashcards
         </button>
       )}
@@ -104,6 +146,23 @@ export function AulaAbas({
         ))}
       </div>
 
+      {aba === 'questoes' && questoes.length > 0 && (
+        <div className="segm segm-fonte" role="tablist" aria-label="De onde vêm as questões">
+          {grupos.map((g) => (
+            <button
+              key={g.valor}
+              role="tab"
+              aria-selected={fonte === g.valor}
+              aria-controls="painel-questoes"
+              className={fonte === g.valor ? 'on' : ''}
+              onClick={() => trocarFonte(g.valor)}
+            >
+              {g.rotulo} <small>{g.lista.length}</small>
+            </button>
+          ))}
+        </div>
+      )}
+
       <div className="pane" role="tabpanel" id="painel-apostila" aria-labelledby="aba-apostila" hidden={aba !== 'apostila'}>
         {pdfUrl && (
           <div className="pdfbar">
@@ -138,12 +197,15 @@ export function AulaAbas({
 
       <div className="pane" role="tabpanel" id="painel-questoes" aria-labelledby="aba-questoes" hidden={aba !== 'questoes'}>
         <Questoes
-          questoes={questoes}
+          key={fonte}
+          questoes={lista}
           userId={userId}
           ativo={aba === 'questoes'}
           edicao={edicao}
           proximoPasso={passoDepoisDasQuestoes || undefined}
-          vazio="Nenhuma questão das provas anteriores é sobre o assunto desta aula. Treine pelo banco de questões da matéria."
+          vazio={questoes.length ? grupo.vazio : 'Esta aula ainda não tem questões. Treine pelo banco de questões da matéria.'}
+          aoResponder={(id, r) => setExtras((e) => ({ ...e, [id]: r }))}
+          aoClassificar={(id, valor) => setMarcas((m) => ({ ...m, [id]: valor }))}
         />
         {totalBanco > questoes.length && (
           <Link className="btn ghost wide" style={{ marginTop: 16 }} href={`/materia/${materiaId}/questoes?${new URLSearchParams({ de: `aula:${aulaId}`, retorno: voltarParaAula })}`}>
