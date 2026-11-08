@@ -26,6 +26,7 @@ Este manual tem só as regras de sempre. Os detalhes ficam onde são usados; lei
 | Gerar o PDF de uma apostila (CSS, `render.py`, `checar.py`, fonte Inter) | [`apostilas-fonte/ferramentas/`](apostilas-fonte/README.md): `preparar.sh <pasta>` copia tudo; nunca redigitar |
 | Regras das questões e dos flashcards (formato, origem, PROVA, Revalida) | skill `questoes-e-flashcards` e os agentes em `.claude/agents/` |
 | Gravar no banco os rascunhos revisados de flashcards e questões | `node scripts/gravar-rascunho.mjs <aula-id>` (precisa de `SUPABASE_SECRET_KEY` no ambiente ou em `.env.local`; sem ela, `--sql`) |
+| Limpar as versões antigas de questões corrigidas (o mesmo que o botão Limpeza) | `node scripts/limpar-versoes.mjs` mostra o que sai; `--apagar` apaga, só quando o Mauricio pedir (precisa de `SUPABASE_SECRET_KEY`) |
 | Conferir as questões de uma aula contra a apostila | skill `conferir-questoes` (`.claude/skills/conferir-questoes/SKILL.md`) |
 | Conferir os flashcards de uma aula (já no banco) contra a apostila, em blocos ao mesmo tempo | skill `conferir-flashcards` (`.claude/skills/conferir-flashcards/SKILL.md`) |
 | Bula de medicamento no chat | skill `bula-padrao` (`.claude/skills/bula-padrao/SKILL.md`) |
@@ -82,8 +83,8 @@ Este manual tem só as regras de sempre. Os detalhes ficam onde são usados; lei
 ### Limite do conector do Supabase (importante)
 
 Pelo conector, **incluir dados e alterações curtas funcionam**; **apagar e reescrever textos longos são cancelados** (trava de confirmação que a sessão não consegue mostrar). Não tente contornar.
-- Corrigir uma questão: inclua uma versão nova (`<id>-v2`, mesma ordem) e marque a antiga com `update ... set substituida_por = '<id>-v2'`. Leve os recados junto: `update public.recados set questao_id = '<id>-v2' where questao_id = '<id>'`. Depois o Mauricio limpa em Conteúdo → Limpeza (a limpeza também move os recados que sobrarem para a versão nova).
-- Apagar ou ajustar texto: o Mauricio faz em Conteúdo.
+- Corrigir uma questão: inclua uma versão nova (`<id>-v2`, mesma ordem) e marque a antiga com `update ... set substituida_por = '<id>-v2'`. Leve os recados junto: `update public.recados set questao_id = '<id>-v2' where questao_id = '<id>'`. Depois a versão antiga é limpa: o Mauricio pelo botão em Administração → Conteúdo → Limpeza, ou o assistente com `node scripts/limpar-versoes.mjs --apagar` quando ele pedir (a limpeza move os recados que sobrarem para a versão nova e apaga as respostas dadas na antiga).
+- Apagar ou ajustar texto: o Mauricio faz em Conteúdo. Única exceção: limpar versões antigas de questões pelo `scripts/limpar-versoes.mjs` (regra do Mauricio, 08/11/2026).
 - Autorização (regra do Mauricio, 05/11/2026): o `.claude/settings.json` libera o `execute_sql` e o `apply_migration` (estrutura do banco) do conector sem perguntar, em toda conversa do Claude neste projeto.
 
 ## Conteúdo (apostilas, questões, flashcards)

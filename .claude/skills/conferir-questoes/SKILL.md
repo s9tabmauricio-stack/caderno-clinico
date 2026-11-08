@@ -60,10 +60,10 @@ order by q.ordem;
 ## Mudar o site: só depois do "sim" dele, uma questão por vez
 
 - Nada é gravado durante a conferência.
-- **Corrigir** (jeito aprovado do projeto): incluir uma versão nova `<id>-v2` (ou o próximo número), com todos os campos copiados, a correção aplicada e a mesma `ordem`; marcar a antiga com `update questoes set substituida_por = '<id>-v2' where id = '<id>'`; levar os recados com `update recados set questao_id = '<id>-v2' where questao_id = '<id>'`. As respostas antigas dos alunos ficam na versão antiga.
+- **Corrigir** (jeito aprovado do projeto): incluir uma versão nova `<id>-v2` (ou o próximo número), com todos os campos copiados, a correção aplicada e a mesma `ordem`; marcar a antiga com `update questoes set substituida_por = '<id>-v2' where id = '<id>'`; levar os recados com `update recados set questao_id = '<id>-v2' where questao_id = '<id>'`. As respostas antigas dos alunos ficam na versão antiga até a limpeza, que as apaga.
 - **Tirar da aula**: se ela é de outra aula, `update questoes set aula_id = '<outra-aula>' where id = '<id>'`. Se não é de nenhuma, oferecer `aula_id = null` (ela continua no Banco de questões da matéria) ou que ele a apague em Conteúdo.
 - Apagar e reescrever textos longos pelo conector são cancelados: isso ele faz em Configurações → Conteúdo. Não tentar contornar.
-- No fim, lembrar de limpar as versões antigas em Conteúdo → Limpeza.
+- No fim, oferecer a limpeza das versões antigas: ele aperta o botão em Administração → Conteúdo → Limpeza, ou pede e o assistente roda `node scripts/limpar-versoes.mjs` (mostra o que sai) e depois `--apagar`.
 
 ## Regras
 
