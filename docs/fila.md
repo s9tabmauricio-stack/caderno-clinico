@@ -20,4 +20,3 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
-| Barra de fonte no Banco de questões (FAG, residência, professor) | Claude | claude/practical-cannon-ck5rhh | Banco de questões (`components/BancoQuestoes.tsx`, `app/materia/[id]/questoes/page.tsx`) | 08/11/2026 |

@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import type { QuestaoAluno } from '@/lib/dados'
 import { plural } from '@/lib/formato'
-import { CLASSIFICACOES_QUESTAO, FONTES_QUESTAO, filtrarQuestoes, fonteDaQuestao, rotuloClassificacao, rotuloFonte, type ClassificacaoQuestao, type FiltrosQuestoes } from '@/lib/classificacao-questoes'
+import { CLASSIFICACOES_QUESTAO, FONTES_QUESTAO, filtrarQuestoes, fonteDaQuestao, rotuloClassificacao, type ClassificacaoQuestao, type FiltrosQuestoes, type FonteQuestao } from '@/lib/classificacao-questoes'
 import { Questoes, type Resposta } from './Questoes'
 
 type Filtros = FiltrosQuestoes
@@ -32,12 +32,19 @@ export function BancoQuestoes({
   // Respostas dadas nesta visita (o resto veio do servidor)
   const [extras, setExtras] = useState<Record<string, Resposta | null>>({})
   const [classificacoes, setClassificacoes] = useState<Record<string, ClassificacaoQuestao | null>>({})
-  const [filtros, setFiltros] = useState<Filtros>({ tema: null, fonte: null, situacao: 'todas', classificacao: 'todas', ...inicial })
   const atuais = questoes.map((q) => ({
     ...q,
     resposta: q.id in extras ? extras[q.id] : q.resposta,
     classificacao: q.id in classificacoes ? classificacoes[q.id] : q.classificacao,
   }))
+  // A barra de fonte sempre tem um grupo escolhido: sem um pedido, o primeiro que tem questões neste filtro
+  const [filtros, setFiltros] = useState<Filtros>(() => {
+    const f: Filtros = { tema: null, fonte: null, situacao: 'todas', classificacao: 'todas', ...inicial }
+    if (f.fonte) return f
+    const tem = (valor: FonteQuestao) => filtrarQuestoes(questoes, { ...f, fonte: valor }).length > 0
+    const fonte = FONTES_QUESTAO.find((g) => tem(g.valor))?.valor ?? FONTES_QUESTAO.find((g) => questoes.some((q) => fonteDaQuestao(q) === g.valor))?.valor ?? 'fag'
+    return { ...f, fonte }
+  })
   // A lista em estudo só muda quando o aluno troca o filtro, para não pular questões no meio
   const [lista, setLista] = useState(() => filtrarQuestoes(questoes, filtros))
   const [versao, setVersao] = useState(0)
@@ -63,12 +70,9 @@ export function BancoQuestoes({
     if (q.tema) temasContados.set(q.tema, (temasContados.get(q.tema) ?? 0) + 1)
   })
   const temas = [...temasContados.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
-  // As três fontes, na ordem fixa, só as que têm questões nesta matéria
-  const fontes = FONTES_QUESTAO.map(({ valor, rotulo }) => ({
-    valor,
-    rotulo,
-    n: questoes.filter((q) => fonteDaQuestao(q) === valor).length,
-  })).filter((f) => f.n > 0)
+  // Barra de fonte: os três grupos, com quantas questões cada um tem nos outros filtros escolhidos
+  const grupos = FONTES_QUESTAO.map((g) => ({ ...g, n: filtrarQuestoes(atuais, { ...filtros, fonte: g.valor }).length }))
+  const grupo = grupos.find((g) => g.valor === filtros.fonte) ?? grupos[0]
 
   const respondidas = atuais.filter((q) => q.resposta)
   const certas = respondidas.filter((q) => q.resposta?.acertou).length
@@ -81,7 +85,6 @@ export function BancoQuestoes({
       tirar: () => aplicar({ situacao: 'todas' }),
     },
     filtros.tema && { rotulo: filtros.tema, tirar: () => aplicar({ tema: null }) },
-    filtros.fonte && { rotulo: rotuloFonte(filtros.fonte), tirar: () => aplicar({ fonte: null }) },
     filtros.classificacao !== 'todas' && {
       rotulo: filtros.classificacao === 'marcadas' ? 'Todas as marcadas' : rotuloClassificacao(filtros.classificacao),
       tirar: () => aplicar({ classificacao: 'todas' }),
@@ -97,6 +100,20 @@ export function BancoQuestoes({
 
   return (
     <>
+      <div className="segm segm-fonte" role="tablist" aria-label="De onde vêm as questões">
+        {grupos.map((g) => (
+          <button
+            key={g.valor}
+            role="tab"
+            aria-selected={filtros.fonte === g.valor}
+            className={filtros.fonte === g.valor ? 'on' : ''}
+            onClick={() => aplicar({ fonte: g.valor })}
+          >
+            {g.rotulo} <small>{g.n}</small>
+          </button>
+        ))}
+      </div>
+
       <div className="filtro-barra banco-barra">
         <button
           className="pill filtro-btn"
@@ -161,15 +178,6 @@ export function BancoQuestoes({
             {temas.map(([t, n]) => pill(filtros.tema === t, t, () => aplicar({ tema: filtros.tema === t ? null : t }), n))}
           </div>
         )}
-        {fontes.length > 1 && (
-          <div className="filtro">
-            <span className="rot">Fonte</span>
-            {pill(!filtros.fonte, 'Todas', () => aplicar({ fonte: null }))}
-            {fontes.map(({ valor, rotulo, n }) =>
-              pill(filtros.fonte === valor, rotulo, () => aplicar({ fonte: filtros.fonte === valor ? null : valor }), n),
-            )}
-          </div>
-        )}
       </div>
       )}
 
@@ -184,7 +192,9 @@ export function BancoQuestoes({
         vazio={
           filtros.situacao === 'erradas'
             ? 'Nenhuma questão errada neste filtro. Bom sinal.'
-            : 'Nenhuma questão neste filtro.'
+            : ativos.length
+              ? `${grupo.vazio} neste filtro.`
+              : `${grupo.vazio} nesta matéria.`
         }
         aoResponder={(id, r) => setExtras((e) => ({ ...e, [id]: r }))}
         aoClassificar={(id, valor) => setClassificacoes((anteriores) => ({ ...anteriores, [id]: valor }))}

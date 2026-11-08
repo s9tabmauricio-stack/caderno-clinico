@@ -4,7 +4,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { useSearchParams } from 'next/navigation'
 import type { CardAluno, QuestaoAluno } from '@/lib/dados'
-import { fonteDaQuestao, fonteValida, type FonteQuestao } from '@/lib/classificacao-questoes'
+import { FONTES_QUESTAO, fonteDaQuestao, fonteValida, type FonteQuestao } from '@/lib/classificacao-questoes'
 import { Icone } from './Icones'
 import { Questoes } from './Questoes'
 import { Flashcards } from './Flashcards'
@@ -12,13 +12,6 @@ import { Apostila } from './Apostila'
 
 export type Aba = 'apostila' | 'questoes' | 'flashcards'
 
-// Os três grupos da barra de baixo, na ordem: provas da FAG, residência e concursos, e as feitas
-// pela apostila (que segue o que o professor falou em aula)
-const GRUPOS: { valor: FonteQuestao; rotulo: string; vazio: string }[] = [
-  { valor: 'fag', rotulo: 'Provas da FAG', vazio: 'Nenhuma questão de prova da FAG sobre esta aula.' },
-  { valor: 'concursos', rotulo: 'Residência e concursos', vazio: 'Nenhuma questão de residência ou concurso sobre esta aula.' },
-  { valor: 'apostila', rotulo: 'Falas do professor', vazio: 'Nenhuma questão feita a partir da aula do professor ainda.' },
-]
 
 type Props = {
   aulaId: string
@@ -63,7 +56,7 @@ export function AulaAbas({
     resposta: q.id in extras ? extras[q.id] : q.resposta,
     classificacao: q.id in marcas ? marcas[q.id] : q.classificacao,
   }))
-  const grupos = GRUPOS.map((g) => ({ ...g, lista: atuais.filter((q) => fonteDaQuestao(q) === g.valor) }))
+  const grupos = FONTES_QUESTAO.map((g) => ({ ...g, lista: atuais.filter((q) => fonteDaQuestao(q) === g.valor) }))
   const [fonte, setFonte] = useState<FonteQuestao>(() => {
     const pedida = fonteValida(parametros.get('fonte'))
     return pedida ?? grupos.find((g) => g.lista.length)?.valor ?? 'fag'
@@ -203,7 +196,7 @@ export function AulaAbas({
           ativo={aba === 'questoes'}
           edicao={edicao}
           proximoPasso={passoDepoisDasQuestoes || undefined}
-          vazio={questoes.length ? grupo.vazio : 'Esta aula ainda não tem questões. Treine pelo banco de questões da matéria.'}
+          vazio={questoes.length ? `${grupo.vazio} nesta aula.` : 'Esta aula ainda não tem questões. Treine pelo banco de questões da matéria.'}
           aoResponder={(id, r) => setExtras((e) => ({ ...e, [id]: r }))}
           aoClassificar={(id, valor) => setMarcas((m) => ({ ...m, [id]: valor }))}
         />

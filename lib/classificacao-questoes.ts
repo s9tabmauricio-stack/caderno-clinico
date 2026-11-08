@@ -26,13 +26,13 @@ export function rotuloClassificacao(valor: ClassificacaoQuestao): string {
   return CLASSIFICACOES_QUESTAO.find((c) => c.valor === valor)!.rotulo
 }
 
-// De onde veio a questão: as três fontes do filtro "Fonte" do Banco (regra do Mauricio, 08/11/2026).
-// O grupo sai dos campos prova e fonte, sem mudar nada no banco; o detalhe (ex.: "P2 T23 · nº 9")
-// continua escrito na própria questão.
+// De onde veio a questão: os três grupos da barra de baixo, na aula e no Banco (regra do Mauricio, 08/11/2026),
+// nesta ordem. O grupo sai dos campos prova e fonte, sem mudar nada no banco; o detalhe (ex.: "P2 T23 · nº 9")
+// continua escrito na própria questão. "Falas do professor" = as montadas pela apostila.
 export const FONTES_QUESTAO = [
-  { valor: 'apostila', rotulo: 'Apostila' },
-  { valor: 'concursos', rotulo: 'Residência e concursos' },
-  { valor: 'fag', rotulo: 'Provas da FAG' },
+  { valor: 'fag', rotulo: 'Provas da FAG', vazio: 'Nenhuma questão de prova da FAG' },
+  { valor: 'concursos', rotulo: 'Residência e concursos', vazio: 'Nenhuma questão de residência ou concurso' },
+  { valor: 'apostila', rotulo: 'Falas do professor', vazio: 'Nenhuma questão feita a partir das falas do professor' },
 ] as const
 
 export type FonteQuestao = (typeof FONTES_QUESTAO)[number]['valor']
