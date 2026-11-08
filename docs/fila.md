@@ -21,3 +21,4 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
 | Temas das questões de Pneumo (filtro do Banco) | Claude | `claude/hopeful-shannon-9hmw82` | aulas `pneumo-a1` a `pneumo-a4` (campo `tema` das questões) | 07/11/2026 |
+| Conferência das questões da Pneumo 1 (correções aprovadas pelo Mauricio, uma por vez) | Claude | `claude/exciting-maxwell-q5a8kd` | aula `pneumo-a1` (comentários das questões `pn-p2-30`, `pn-t26-01`, `pn-ufsc19-tep`, `pn-p2-29-v2`, `pn-p2-26-v2`) | 08/11/2026 |
