@@ -3,12 +3,10 @@
 import { useState } from 'react'
 import type { QuestaoAluno } from '@/lib/dados'
 import { plural } from '@/lib/formato'
-import { CLASSIFICACOES_QUESTAO, filtrarQuestoes, rotuloClassificacao, type ClassificacaoQuestao, type FiltrosQuestoes } from '@/lib/classificacao-questoes'
+import { CLASSIFICACOES_QUESTAO, FONTES_QUESTAO, filtrarQuestoes, fonteDaQuestao, rotuloClassificacao, rotuloFonte, type ClassificacaoQuestao, type FiltrosQuestoes } from '@/lib/classificacao-questoes'
 import { Questoes, type Resposta } from './Questoes'
 
 type Filtros = FiltrosQuestoes
-
-const ROTULO_PROVA = (p: string) => p.replace(/^p(\d)-t(\d+)$/i, 'P$1 T$2')
 
 // O servidor lê este cookie na próxima visita e já abre o banco com o mesmos filtros
 function lembrarFiltros(chave: string, f: Filtros) {
@@ -34,7 +32,7 @@ export function BancoQuestoes({
   // Respostas dadas nesta visita (o resto veio do servidor)
   const [extras, setExtras] = useState<Record<string, Resposta | null>>({})
   const [classificacoes, setClassificacoes] = useState<Record<string, ClassificacaoQuestao | null>>({})
-  const [filtros, setFiltros] = useState<Filtros>({ tema: null, prova: null, situacao: 'todas', classificacao: 'todas', ...inicial })
+  const [filtros, setFiltros] = useState<Filtros>({ tema: null, fonte: null, situacao: 'todas', classificacao: 'todas', ...inicial })
   const atuais = questoes.map((q) => ({
     ...q,
     resposta: q.id in extras ? extras[q.id] : q.resposta,
@@ -51,7 +49,8 @@ export function BancoQuestoes({
     lembrarFiltros(chave, f)
     const url = new URL(window.location.href)
     url.searchParams.set('tema', f.tema ?? '')
-    url.searchParams.set('prova', f.prova ?? '')
+    url.searchParams.delete('prova')
+    url.searchParams.set('fonte', f.fonte ?? '')
     url.searchParams.set('mostrar', f.situacao)
     url.searchParams.set('classificacao', f.classificacao)
     window.history.replaceState(null, '', url)
@@ -59,16 +58,17 @@ export function BancoQuestoes({
     setVersao((v) => v + 1)
   }
 
-  const contar = (campo: 'tema' | 'prova') => {
-    const m = new Map<string, number>()
-    questoes.forEach((q) => {
-      const v = q[campo]
-      if (v) m.set(v, (m.get(v) ?? 0) + 1)
-    })
-    return [...m.entries()]
-  }
-  const temas = contar('tema').sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
-  const provas = contar('prova').sort((a, b) => a[0].localeCompare(b[0]))
+  const temasContados = new Map<string, number>()
+  questoes.forEach((q) => {
+    if (q.tema) temasContados.set(q.tema, (temasContados.get(q.tema) ?? 0) + 1)
+  })
+  const temas = [...temasContados.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+  // As três fontes, na ordem fixa, só as que têm questões nesta matéria
+  const fontes = FONTES_QUESTAO.map(({ valor, rotulo }) => ({
+    valor,
+    rotulo,
+    n: questoes.filter((q) => fonteDaQuestao(q) === valor).length,
+  })).filter((f) => f.n > 0)
 
   const respondidas = atuais.filter((q) => q.resposta)
   const certas = respondidas.filter((q) => q.resposta?.acertou).length
@@ -81,7 +81,7 @@ export function BancoQuestoes({
       tirar: () => aplicar({ situacao: 'todas' }),
     },
     filtros.tema && { rotulo: filtros.tema, tirar: () => aplicar({ tema: null }) },
-    filtros.prova && { rotulo: ROTULO_PROVA(filtros.prova), tirar: () => aplicar({ prova: null }) },
+    filtros.fonte && { rotulo: rotuloFonte(filtros.fonte), tirar: () => aplicar({ fonte: null }) },
     filtros.classificacao !== 'todas' && {
       rotulo: filtros.classificacao === 'marcadas' ? 'Todas as marcadas' : rotuloClassificacao(filtros.classificacao),
       tirar: () => aplicar({ classificacao: 'todas' }),
@@ -161,12 +161,12 @@ export function BancoQuestoes({
             {temas.map(([t, n]) => pill(filtros.tema === t, t, () => aplicar({ tema: filtros.tema === t ? null : t }), n))}
           </div>
         )}
-        {(provas.length > 1 || (provas.length === 1 && provas[0][1] < questoes.length)) && (
+        {fontes.length > 1 && (
           <div className="filtro">
-            <span className="rot">Prova</span>
-            {pill(!filtros.prova, 'Todas', () => aplicar({ prova: null }))}
-            {provas.map(([p, n]) =>
-              pill(filtros.prova === p, ROTULO_PROVA(p), () => aplicar({ prova: filtros.prova === p ? null : p }), n),
+            <span className="rot">Fonte</span>
+            {pill(!filtros.fonte, 'Todas', () => aplicar({ fonte: null }))}
+            {fontes.map(({ valor, rotulo, n }) =>
+              pill(filtros.fonte === valor, rotulo, () => aplicar({ fonte: filtros.fonte === valor ? null : valor }), n),
             )}
           </div>
         )}

@@ -11,7 +11,7 @@ import { createClient } from '@/lib/supabase/server'
 import { plural } from '@/lib/formato'
 import { retornoDaMateria, rotuloRetorno } from '@/lib/navegacao'
 import { ehAdmin } from '@/lib/admin'
-import { filtroClassificacaoValido } from '@/lib/classificacao-questoes'
+import { filtroClassificacaoValido, fonteValida } from '@/lib/classificacao-questoes'
 
 export async function generateMetadata(props: PageProps<'/materia/[id]/questoes'>): Promise<Metadata> {
   const { id } = await props.params
@@ -22,7 +22,7 @@ export async function generateMetadata(props: PageProps<'/materia/[id]/questoes'
 
 export default async function BancoPage(props: PageProps<'/materia/[id]/questoes'>) {
   const { id } = await props.params
-  const { tema, prova, mostrar, classificacao, de, retorno } = await props.searchParams
+  const { tema, fonte, mostrar, classificacao, de, retorno } = await props.searchParams
   const { supabase, userId, email } = await sessao()
   const [materia, questoes, progresso, materias] = await Promise.all([
     supabase.from('materias').select('id, nome').eq('id', id).maybeSingle(),
@@ -34,17 +34,17 @@ export default async function BancoPage(props: PageProps<'/materia/[id]/questoes
   if (questoes.error) throw new Error(`Não foi possível carregar as questões: ${questoes.error.message}`)
   const lista = (questoes.data ?? []).map(paraQuestao)
   // Filtros: um link com filtro (ex.: Desempenho → tema) vale sozinho; sem ele, abre com o últimos filtros deste aluno
-  const comFiltroNoLink = typeof tema === 'string' || typeof prova === 'string' || typeof mostrar === 'string' || typeof classificacao === 'string'
-  let lembrados: { tema?: unknown; prova?: unknown; situacao?: unknown; classificacao?: unknown } = {}
+  const comFiltroNoLink = typeof tema === 'string' || typeof fonte === 'string' || typeof mostrar === 'string' || typeof classificacao === 'string'
+  let lembrados: { tema?: unknown; fonte?: unknown; situacao?: unknown; classificacao?: unknown } = {}
   try {
     if (!comFiltroNoLink) lembrados = JSON.parse(decodeURIComponent((await cookies()).get(`mgf_${id}`)?.value ?? '{}')) ?? {}
   } catch {}
-  const existe = (campo: 'tema' | 'prova', v: unknown) => (typeof v === 'string' && lista.some((q) => q[campo] === v) ? v : null)
+  const existe = (campo: 'tema', v: unknown) => (typeof v === 'string' && lista.some((q) => q[campo] === v) ? v : null)
   const situacao = comFiltroNoLink ? mostrar : lembrados.situacao
   const inicial = {
     classificacao: filtroClassificacaoValido(comFiltroNoLink ? classificacao : lembrados.classificacao),
     tema: existe('tema', tema) ?? existe('tema', lembrados.tema),
-    prova: existe('prova', prova) ?? existe('prova', lembrados.prova),
+    fonte: (comFiltroNoLink ? fonteValida(fonte) : fonteValida(lembrados.fonte)) ?? null,
     situacao: situacao === 'erradas' ? ('erradas' as const) : situacao === 'abertas' ? ('abertas' as const) : ('todas' as const),
   }
 
@@ -79,7 +79,7 @@ export default async function BancoPage(props: PageProps<'/materia/[id]/questoes
       <AbasMateria id={id} ativa="banco" totalQuestoes={lista.length} totalCards={totais(progresso.filter((p) => p.materia_id === id)).cards} />
       {lista.length ? (
         <BancoQuestoes
-          key={`${inicial.tema}|${inicial.prova}|${inicial.situacao}|${inicial.classificacao}`}
+          key={`${inicial.tema}|${inicial.fonte}|${inicial.situacao}|${inicial.classificacao}`}
           chave={id}
           questoes={lista}
           userId={userId}
