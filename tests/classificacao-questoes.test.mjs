@@ -1,6 +1,6 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
-import { classificacaoValida, filtroClassificacaoValido, filtrarQuestoes, fonteDaQuestao, fonteValida, rotuloClassificacao } from '../lib/classificacao-questoes.ts'
+import { classificacaoValida, filtroClassificacaoValido, filtrarQuestoes, fonteDaQuestao, fonteValida, ordenarPorFonte, rotuloClassificacao } from '../lib/classificacao-questoes.ts'
 
 const base = { tema: 'TEP', prova: 'p2', fonte: 'P2 · nº 4', resposta: { acertou: true } }
 const questoes = [
@@ -66,4 +66,16 @@ test('cada questão cai numa das três fontes', () => {
   assert.equal(fonteValida('fag'), 'fag')
   assert.equal(fonteValida('p2'), null)
   assert.deepEqual(ids({ fonte: 'apostila' }), ['outra-fonte'])
+})
+
+test('questões aparecem com as da FAG primeiro, depois residência, depois as montadas', () => {
+  const lista = [
+    { id: 'm1', prova: null, fonte: 'Montada (aula 2026)' },
+    { id: 'r1', prova: 'Residência', fonte: 'USP 2020' },
+    { id: 'f1', prova: 'p2', fonte: 'P2 · nº 4' },
+    { id: 'm2', prova: null, fonte: null },
+    { id: 'f2', prova: null, fonte: 'Guia de estudo' },
+    { id: 'r2', prova: 'Revalida 2022.1', fonte: 'INEP' },
+  ]
+  assert.deepEqual(ordenarPorFonte(lista).map((q) => q.id), ['f1', 'f2', 'r1', 'r2', 'm1', 'm2'])
 })

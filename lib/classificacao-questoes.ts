@@ -51,6 +51,18 @@ export function fonteDaQuestao(q: { prova: string | null; fonte: string | null }
   return 'concursos'
 }
 
+// Ordem em que as questões aparecem na aula e no Banco (regra do Mauricio, 08/11/2026):
+// primeiro as provas da FAG, depois residência e concursos, por último as montadas pela apostila.
+// Dentro de cada grupo fica a ordem que já vinha (a ordem da questão).
+const ORDEM_DA_FONTE: Record<FonteQuestao, number> = { fag: 0, concursos: 1, apostila: 2 }
+
+export function ordenarPorFonte<T extends { prova: string | null; fonte: string | null }>(lista: T[]): T[] {
+  return lista
+    .map((q, i) => ({ q, i, grupo: ORDEM_DA_FONTE[fonteDaQuestao(q)] }))
+    .sort((a, b) => a.grupo - b.grupo || a.i - b.i)
+    .map((x) => x.q)
+}
+
 export function fonteValida(valor: unknown): FonteQuestao | null {
   return FONTES_QUESTAO.find((f) => f.valor === valor)?.valor ?? null
 }
