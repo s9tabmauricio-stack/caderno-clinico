@@ -1,8 +1,8 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
-import { classificacaoValida, filtroClassificacaoValido, filtrarQuestoes, rotuloClassificacao } from '../lib/classificacao-questoes.ts'
+import { classificacaoValida, filtroClassificacaoValido, filtrarQuestoes, fonteDaQuestao, fonteValida, rotuloClassificacao } from '../lib/classificacao-questoes.ts'
 
-const base = { tema: 'TEP', prova: 'p2', resposta: { acertou: true } }
+const base = { tema: 'TEP', prova: 'p2', fonte: 'P2 · nº 4', resposta: { acertou: true } }
 const questoes = [
   { ...base, id: 'urgente-certa', classificacao: 'rever' },
   { ...base, id: 'urgente-errada', classificacao: 'rever', resposta: { acertou: false } },
@@ -11,14 +11,14 @@ const questoes = [
   { ...base, id: 'complicada', classificacao: 'complicado' },
   { ...base, id: 'sem-marca', classificacao: null, resposta: null },
   { ...base, id: 'outro-tema', classificacao: 'rever', tema: 'Asma' },
-  { ...base, id: 'outra-prova', classificacao: 'rever', prova: 'p1' },
+  { ...base, id: 'outra-fonte', classificacao: 'rever', prova: null, fonte: 'Montada (aula 2026)' },
 ]
-const todos = { tema: null, prova: null, situacao: 'todas', classificacao: 'todas' }
+const todos = { tema: null, fonte: null, situacao: 'todas', classificacao: 'todas' }
 const ids = (f) => filtrarQuestoes(questoes, { ...todos, ...f }).map((q) => q.id)
 
-test('revisão inclui questões certas marcadas e combina tema, prova e situação', () => {
-  assert.deepEqual(ids({ classificacao: 'rever', tema: 'TEP', prova: 'p2' }), ['urgente-certa', 'urgente-errada'])
-  assert.deepEqual(ids({ classificacao: 'rever', tema: 'TEP', prova: 'p2', situacao: 'erradas' }), ['urgente-errada'])
+test('revisão inclui questões certas marcadas e combina tema, fonte e situação', () => {
+  assert.deepEqual(ids({ classificacao: 'rever', tema: 'TEP', fonte: 'fag' }), ['urgente-certa', 'urgente-errada'])
+  assert.deepEqual(ids({ classificacao: 'rever', tema: 'TEP', fonte: 'fag', situacao: 'erradas' }), ['urgente-errada'])
   assert.deepEqual(ids({ classificacao: 'marcadas', situacao: 'abertas' }), [])
 })
 
@@ -52,4 +52,18 @@ test('cookies antigos e filtros inválidos voltam para todas as questões', () =
   // As marcas e os links antigos do amarelo continuam válidos, com o texto novo.
   assert.equal(classificacaoValida('se_der_tempo'), 'se_der_tempo')
   assert.equal(rotuloClassificacao('se_der_tempo'), 'É bom rever cara')
+})
+
+test('cada questão cai numa das três fontes', () => {
+  const f = (prova, fonte) => fonteDaQuestao({ prova, fonte })
+  assert.equal(f(null, 'Montada (aula 2026)'), 'apostila')
+  assert.equal(f(null, null), 'apostila')
+  for (const p of ['p1', 'p2', 'p2-t23', 'exame']) assert.equal(f(p, 'qualquer'), 'fag')
+  assert.equal(f(null, 'Guia de estudo do 2º bimestre (material da turma)'), 'fag')
+  assert.equal(f('Residência', 'HOB-DF 2025'), 'concursos')
+  assert.equal(f('Revalida 2024.1', 'Revalida INEP 2024.1 · nº 45'), 'concursos')
+  assert.equal(f('UFPR 2020', 'UFPR Residência Médica 2020 · nº 19'), 'concursos')
+  assert.equal(fonteValida('fag'), 'fag')
+  assert.equal(fonteValida('p2'), null)
+  assert.deepEqual(ids({ fonte: 'apostila' }), ['outra-fonte'])
 })
