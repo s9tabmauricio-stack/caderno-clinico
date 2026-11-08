@@ -1007,6 +1007,10 @@ h1.big{background:var(--metal-titulo);-webkit-background-clip:text;background-cl
 .segm{background:var(--field);border:1px solid var(--line);border-radius:22px;padding:4px;box-shadow:var(--campo-sombra)}
 .segm button,.segm a{border-radius:18px}
 .segm button.on,.segm a.on{background:var(--vidro);color:var(--ink);box-shadow:var(--vidro-sombra)}
+/* segunda barra da aba Questões (Provas da FAG | Residência e concursos | Falas do professor), logo abaixo da primeira */
+.segm-fonte{margin-top:-8px}
+.segm-fonte button small{font-weight:500;opacity:.75;font-variant-numeric:tabular-nums;margin-left:2px}
+@media (max-width:520px){.segm-fonte button{font-size:13px;line-height:1.2}.segm-fonte button small{display:block;margin:0}}
 
 /* matérias: cartão de vidro com a gema da matéria (cores de pedra preciosa) */
 .gema{flex:none;width:44px;height:44px;border-radius:14px;display:grid;place-items:center;color:#fff;font-family:var(--font-marca);font-size:13px;font-weight:700;letter-spacing:.06em;
