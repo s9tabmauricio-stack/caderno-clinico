@@ -20,3 +20,4 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
+| Filtro "Fonte" no Banco de questões (Apostila · Residência e concursos · Provas da FAG) | Claude | claude/busy-carson-cfd7mb | Banco de questões (`components/BancoQuestoes.tsx`, `lib/classificacao-questoes.ts`) | 08/11/2026 |
