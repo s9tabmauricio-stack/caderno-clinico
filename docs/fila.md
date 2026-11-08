@@ -20,3 +20,4 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
+| Destacar a prioridade selecionada nas questões | Codex | `codex/destacar-prioridade-selecionada` | `app/globals.css`, `components/Questoes.tsx` | 08/11/2026 |
