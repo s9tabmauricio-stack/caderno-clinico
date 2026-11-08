@@ -36,6 +36,7 @@ Para conferir, peça ao Codex: `node scripts/sql.mjs "select id, titulo from aul
 
 ## Como o Codex usa
 
+- O Codex acha as skills sozinho em `.agents/skills/` (cópia de `.claude/skills/`; para mudar uma skill, edite em `.claude/skills/` e rode `node scripts/sincronizar-skills.mjs`).
 - Onde as receitas (`.claude/skills/`, `.claude/agents/`) mandam usar o conector (`execute_sql`), o Codex roda
   `node scripts/sql.mjs "<o mesmo SQL>"` (ou grava o SQL num arquivo `.sql` e passa o caminho).
 - Rascunhos revisados de flashcards e questões vão pelo `node scripts/gravar-rascunho.mjs <aula-id>`, como para todos.
