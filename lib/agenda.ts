@@ -116,7 +116,9 @@ function destrinchar(textoBruto: string) {
 
 function tipoDe(texto: string): EventoAgenda['tipo'] {
   const s = semAcento(texto.toLowerCase())
-  if (/vista d[ae] prova|prova/.test(s) && !/teorica/.test(s)) return 'prova'
+  // "Prova teórica/prática de ..." é prova; "aula teórica ... para a prova" continua teórica
+  if (/vista d[ae] prova|\bprova (?:teorica|pratica)\b/.test(s)) return 'prova'
+  if (/prova/.test(s) && !/teorica/.test(s)) return 'prova'
   if (/pratica/.test(s)) return 'pratica'
   if (/teorica/.test(s)) return 'teorica'
   if (/seminario/.test(s)) return 'seminario'
