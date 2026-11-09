@@ -20,4 +20,3 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
-| Fonte da aula: transcrição e slides guardados, base da apostila, questões, flashcards e conferências | Claude | claude/tender-lamport-8u409z | AGENTS.md, docs/apostila-molde.md, apostilas-fonte/README.md, .claude/agents/ (apostila, conteudo, flashcards, questoes, revisor), skills aula-nova, conferir-questoes, conferir-flashcards, questoes-e-flashcards, apostila-padrao; scripts/fonte-aula.py | 09/11/2026 |

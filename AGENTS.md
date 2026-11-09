@@ -20,6 +20,7 @@ Este manual tem só as regras de sempre. Os detalhes ficam onde são usados; lei
 | Como cada tela funciona (Início, Revisão, Banco, Aula, Admin, tablet deitado, Agenda) | [`docs/telas.md`](docs/telas.md) |
 | Tabelas, visões e gatilhos do banco; subpastas do Drive | [`docs/banco.md`](docs/banco.md) |
 | Visual: cores, letras, ícones, versões antigas | [`docs/visual.md`](docs/visual.md) |
+| Fonte da aula (transcrição e slides num arquivo só, base de tudo): guardar e ler um pedaço | `python3 -I scripts/fonte-aula.py guardar <aula-id> --transcricao <arq> --slides <arq>` e `… trecho <aula-id> --minutos 10-35`; detalhes em [`apostilas-fonte/README.md`](apostilas-fonte/README.md) |
 | Como fazer uma apostila (mapa, slides, as cinco mudanças, imagens do GPT; o que o professor fala manda sempre) | [`docs/apostila-molde.md`](docs/apostila-molde.md) |
 | Visual e regras de escrita da apostila (padrão aprovado) | skill `apostila-padrao` (`.claude/skills/apostila-padrao/SKILL.md`, desde 03/11/2026 no projeto) |
 | Subir ou trocar uma apostila | skill `subir-apostila` (`.claude/skills/subir-apostila/SKILL.md`) |
@@ -27,8 +28,9 @@ Este manual tem só as regras de sempre. Os detalhes ficam onde são usados; lei
 | Regras das questões e dos flashcards (formato, origem, PROVA, Revalida) | skill `questoes-e-flashcards` e os agentes em `.claude/agents/` |
 | Gravar no banco os rascunhos revisados de flashcards e questões | `node scripts/gravar-rascunho.mjs <aula-id>` (precisa de `SUPABASE_SECRET_KEY` no ambiente ou em `.env.local`; sem ela, `--sql`) |
 | Limpar as versões antigas de questões corrigidas (o mesmo que o botão Limpeza) | `node scripts/limpar-versoes.mjs` mostra o que sai; `--apagar` apaga, só quando o Mauricio pedir (precisa de `SUPABASE_SECRET_KEY`) |
-| Conferir as questões de uma aula contra a apostila | skill `conferir-questoes` (`.claude/skills/conferir-questoes/SKILL.md`) |
-| Conferir os flashcards de uma aula (já no banco) contra a apostila, em blocos ao mesmo tempo | skill `conferir-flashcards` (`.claude/skills/conferir-flashcards/SKILL.md`) |
+| Conferir a apostila de uma aula contra a fonte da aula | skill `conferir-apostila` (`.claude/skills/conferir-apostila/SKILL.md`) |
+| Conferir as questões de uma aula contra a fonte e a apostila | skill `conferir-questoes` (`.claude/skills/conferir-questoes/SKILL.md`) |
+| Conferir os flashcards de uma aula (já no banco) contra a fonte e a apostila, em blocos ao mesmo tempo | skill `conferir-flashcards` (`.claude/skills/conferir-flashcards/SKILL.md`) |
 | Bula de medicamento no chat | skill `bula-padrao` (`.claude/skills/bula-padrao/SKILL.md`) |
 | Lançar provas na Agenda | skill `provas-agenda` |
 | Publicar o cronograma da semana colado na conversa | `node scripts/publicar-agenda.mjs <arquivo>` (`--conferir` só mostra; precisa de `SUPABASE_SECRET_KEY`; sem ela, o Mauricio cola em `/admin/agenda`) |
@@ -90,11 +92,15 @@ Pelo conector, **incluir dados e alterações curtas funcionam**; **apagar e ree
 
 ## Conteúdo (apostilas, questões, flashcards)
 
+- **Fonte da aula** (regra do Mauricio, 09/11/2026): cada aula tem um arquivo fonte, `apostilas-fonte/<aula-id>/fonte.md`, com a transcrição e o texto dos slides como vieram. Quando ele mandar a transcrição ou os slides de uma aula, a primeira coisa é guardar: `python3 -I scripts/fonte-aula.py guardar <aula-id> --transcricao <arq> --slides <arq>` (texto colado na conversa: salve num arquivo antes; o arquivo original dos slides vai para o Drive) e pôr no Git junto com o trabalho. Material que chega depois entra com `--acrescentar`.
+  - A apostila, as questões e os flashcards são feitos **a partir da fonte**, e as conferências (da apostila, das questões e dos flashcards) também são feitas **contra a fonte**. A apostila continua de guia: ordem, páginas, termos que a transcrição automática errou e complementos "Fora da aula".
+  - Fonte e apostila divergem: vale a fonte (o que o professor falou; a fala manda sobre o slide), e a apostila entra na lista do que corrigir.
+  - Aula sem fonte (as antigas): tudo segue pela apostila, como antes. Se ele mandar a transcrição de uma aula antiga, guarde do mesmo jeito.
 - Toda apostila nova ou refeita guarda o HTML de origem em [`apostilas-fonte/<aula-id>/`](apostilas-fonte/README.md). Como publicar: skill `subir-apostila`.
 - Questões e flashcards da aula saem dos agentes `questoes`, `flashcards` ou `conteudo`, passam pelo `revisor` e vão para o banco pelo `scripts/gravar-rascunho.mjs` (sem agente). Regras: skill `questoes-e-flashcards`.
 - Os agentes de conteúdo (`apostila`, `conteudo`, `flashcards`, `questoes`, `revisor`) rodam sempre no Opus com esforço extra-alto (regra do Mauricio: não abrir mão de qualidade; está no topo de cada arquivo em `.claude/agents/`). Etapas mecânicas não usam agente.
 - **Cronograma da semana** (regra do Mauricio, 08/11/2026): quando ele colar na conversa o cronograma do WhatsApp ("CRONOGRAMA SEMANAL", dias e horários), publique na hora, sem perguntar: salve o texto num arquivo (fora do Git) e rode `node scripts/publicar-agenda.mjs <arquivo>`. Depois mostre o resumo e aponte o que o leitor pode ter lido errado (prova marcada como aula, professor com texto grudado). Se algo saiu errado, corrija o leitor (`lib/agenda.ts`) e publique de novo.
-- **Aula nova** (regra do Mauricio, 31/10/2026): ele manda o áudio da aula na conversa ("aula nova") e não encosta em mais nada até publicar. Siga a skill `aula-nova`: transcrição, apostila, flashcards e questões, revisão e publicação, sem perguntar nada.
+- **Aula nova** (regra do Mauricio, 31/10/2026): ele manda o áudio da aula na conversa ("aula nova"), ou a transcrição e os slides pedindo para fazer a aula, e não encosta em mais nada até publicar. Siga a skill `aula-nova`: transcrição, fonte da aula, apostila, flashcards e questões, revisão e publicação, sem perguntar nada.
 
 ## Visual
 

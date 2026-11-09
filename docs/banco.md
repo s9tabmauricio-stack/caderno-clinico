@@ -19,5 +19,5 @@ O manual (`AGENTS.md`) tem o resumo e o limite do conector. Aqui ficam as tabela
 
 ## Pasta MEDGENIUS no Google Drive
 
-Subpastas: `1 - ENTRADA (coloque os áudios aqui)` (id `13zTV8kYtmAWZyUJA9TOo5yC0tFfw3gk-`: o Mauricio só solta o áudio da aula; o Claude descobre a aula pela data e pela Agenda, faz o resto e tira o áudio daqui), `2 - Aulas` (id `1_ND6Ao_6W11oNyhQwAKEWxwuxi8FsiQi`: uma pasta por aula, `<aula-id> · <Título>`, com áudio original, transcrição, apostila PDF/HTML e rascunhos de flashcards e questões), `3 - Provas e fontes` (id `1Eff4u0H9F15JVkfMvUN_lLTnqzIFFHLD`: provas antigas, Revalida, slides e referências)
+Subpastas: `1 - ENTRADA (coloque os áudios aqui)` (id `13zTV8kYtmAWZyUJA9TOo5yC0tFfw3gk-`: o Mauricio só solta o áudio da aula; o Claude descobre a aula pela data e pela Agenda, faz o resto e tira o áudio daqui), `2 - Aulas` (id `1_ND6Ao_6W11oNyhQwAKEWxwuxi8FsiQi`: uma pasta por aula, `<aula-id> · <Título>`, com áudio original, transcrição, slides originais, apostila PDF/HTML e rascunhos de flashcards e questões; o texto da transcrição e dos slides fica também no Git, na fonte da aula `apostilas-fonte/<aula-id>/fonte.md`), `3 - Provas e fontes` (id `1Eff4u0H9F15JVkfMvUN_lLTnqzIFFHLD`: provas antigas, Revalida, slides e referências)
 - A aula de Angiologia (pé diabético) tem o id `angio-a1`.
