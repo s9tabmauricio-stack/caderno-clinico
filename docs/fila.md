@@ -20,3 +20,4 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
+| Agenda: no fim de semana mostrar a próxima semana | Claude | claude/bold-gates-kuv9jp | lib/agenda-dados.ts | 08/11/2026 |
