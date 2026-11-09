@@ -20,4 +20,3 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
-| Agenda: publicar o cronograma colado na conversa na hora | Claude | claude/bold-gates-kuv9jp | scripts/publicar-agenda.mjs, AGENTS.md | 08/11/2026 |

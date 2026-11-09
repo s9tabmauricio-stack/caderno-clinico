@@ -23,7 +23,7 @@ O manual (`AGENTS.md`) tem só os nomes das telas. Aqui fica como cada tela func
 
 ## Agenda (a tela)
 
-- O Mauricio cola o cronograma do WhatsApp em `/admin/agenda`; `lib/agenda.ts` separa dias, horários, matéria (emoji ou palavra), professor, local, grupos, cancelamentos (❌) e avisos. Grupos por letra (A = práticas 1 a 7…) viram números.
+- O Mauricio cola o cronograma do WhatsApp em `/admin/agenda` ou na conversa com o assistente, que publica na hora com `scripts/publicar-agenda.mjs` (mesmo efeito do botão); `lib/agenda.ts` separa dias, horários, matéria (emoji ou palavra), professor, local, grupos, cancelamentos (❌) e avisos. Grupos por letra (A = práticas 1 a 7…) viram números.
 - De segunda a sexta a Agenda mostra a semana de hoje; no sábado e no domingo já mostra a próxima semana publicada (se ainda não houver, continua a atual). Regra em `escolherSemana` (`lib/agenda.ts`).
 - Teóricas valem para todos; práticas, só para os grupos listados. O aluno informa o grupo na própria Agenda (seletor ao lado dos filtros) ou em Configurações. Tocar numa aula abre a matéria dela.
 
