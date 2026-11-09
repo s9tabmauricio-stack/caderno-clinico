@@ -18,3 +18,13 @@ test('agenda: "prova teórica" e "prova prática" viram prova; aula teórica con
   assert.equal(tipo('orto'), 'prova')
   assert.equal(tipo('uro'), 'teorica')
 })
+
+test('agenda: no sábado e no domingo mostra a próxima semana já publicada', async () => {
+  const { escolherSemana } = await import('../lib/agenda.ts')
+  const semanas = [{ semana: '2026-11-02' }, { semana: '2026-11-09' }]
+  assert.equal(escolherSemana(semanas, '2026-11-06').semana, '2026-11-02') // sexta
+  assert.equal(escolherSemana(semanas, '2026-11-07').semana, '2026-11-09') // sábado
+  assert.equal(escolherSemana(semanas, '2026-11-08').semana, '2026-11-09') // domingo
+  assert.equal(escolherSemana(semanas, '2026-11-09').semana, '2026-11-09') // segunda
+  assert.equal(escolherSemana([{ semana: '2026-11-02' }], '2026-11-08').semana, '2026-11-02') // sem a próxima
+})
