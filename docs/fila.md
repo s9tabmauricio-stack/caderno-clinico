@@ -20,3 +20,4 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
+| Questões do caderno de Pneumo (provas antigas) nas aulas | Claude | claude/great-ramanujan-3veye2 | banco: questões de pneumo-a1 a a6 | 09/11/2026 |
