@@ -139,3 +139,18 @@ test('substituição: lê o id antigo e monta a versão -v2', async () => {
   assert.match(sql, /update public\.recados set questao_id = 'gastro-a4-q07-v2' where questao_id = 'gastro-a4-q07'/)
   assert.throws(() => sqlSubstituicoes([q2]), /substitui/)
 })
+
+test('questão de prova: lê Prova, Fonte e Origem e grava no lugar de "montada"', () => {
+  const md = QUESTOES.replace('A, B, C e D: não são o começo.\n',
+    'A, B, C e D: não são o começo.\n**Prova:** p2-t28\n**Fonte:** P2 T28 · Dr. Cássio\n**Origem:** adaptada\n')
+  const [q1, q2] = lerQuestoes(md)
+  assert.equal(q2.por_que_erradas, 'A, B, C e D: não são o começo.')
+  const [l1, l2] = linhasQuestoes('gastro-a4', [q1, q2], { ultimaOrdem: 0, ultimoNumero: 0, ano: 2026 })
+  assert.equal(l1.prova, null)
+  assert.equal(l1.origem, 'montada')
+  assert.deepEqual([l2.prova, l2.fonte, l2.origem], ['p2-t28', 'P2 T28 · Dr. Cássio', 'adaptada'])
+  assert.match(sqlQuestoes([l2]), /'tema'|'p2-t28', 'P2 T28 · Dr\. Cássio', 'adaptada', false/)
+  assert.throws(() => lerQuestoes(md.replace('**Origem:** adaptada', '**Origem:** oficial')), /Questão 2: origem "oficial"/)
+  assert.throws(() => lerQuestoes(md.replace('**Prova:** p2-t28', '**Prova:** PROVA')), /nunca "PROVA"/)
+  assert.throws(() => lerQuestoes(md.replace('**Fonte:** P2 T28 · Dr. Cássio\n', '')), /precisa do \*\*Fonte/)
+})

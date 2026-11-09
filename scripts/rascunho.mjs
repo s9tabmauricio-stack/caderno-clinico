@@ -77,6 +77,7 @@ export function linhasFlashcards(aulaId, cards) {
 /**
  * Questões: "### N · [PROVA ·] tema: …", enunciado, cinco "- A) …" (a certa com *),
  * "**Comentário:** …" e "**Por que as erradas:**" com uma linha por letra.
+ * Questão tirada de prova (opcional): linhas "**Prova:** …", "**Fonte:** …" e "**Origem:** …".
  * Devolve [{ n, prova, tema, enunciado, alternativas, correta, comentario, por_que_erradas }].
  */
 export function lerQuestoes(md) {
@@ -121,6 +122,9 @@ export function lerQuestoes(md) {
     if (com) { q.comentario = com[1].trim(); parte = 'comentario'; continue }
     const pq = /^\*\*Por que as erradas:\*\*\s*(.*)$/.exec(linha)
     if (pq) { q.por_que_erradas = pq[1].trim(); parte = 'porque'; continue }
+    // Questão de prova (opcional): "**Prova:** p2-t28", "**Fonte:** P2 T28 · Dr. Cássio", "**Origem:** adaptada".
+    const meta = /^\*\*(Prova|Fonte|Origem):\*\*\s*(.+)$/.exec(linha)
+    if (meta) { q[{ Prova: 'nome_prova', Fonte: 'fonte', Origem: 'origem' }[meta[1]]] = meta[2].trim(); parte = null; continue }
 
     if (!linha.trim()) continue
     if (parte === 'enunciado') q.enunciado = juntar(q.enunciado, linha.trim())
@@ -137,12 +141,17 @@ export function lerQuestoes(md) {
     if (!x.tema) erro('falta o "tema:" no título.')
     if (!x.comentario) erro('falta o **Comentário:**.')
     if (!x.por_que_erradas) erro('falta o **Por que as erradas:**.')
+    if (x.origem && !ORIGENS.includes(x.origem)) erro(`origem "${x.origem}" não existe (use ${ORIGENS.join(', ')}).`)
+    if (x.nome_prova && /^prova$/i.test(x.nome_prova)) erro('o campo Prova é o nome da prova (p2, exame…), nunca "PROVA".')
+    if ((x.nome_prova || x.origem) && !x.fonte) erro('questão de prova precisa do **Fonte:**.')
     x.correta = x.certas[0]
     delete x.certas
   }
   confereSequencia(questoes, 'Questões')
   return questoes
 }
+
+const ORIGENS = ['professor', 'unica', 'inferido', 'montada', 'resolvida', 'adaptada']
 
 /** Linhas do banco para as questões, continuando a ordem da matéria e a numeração da aula. */
 export function linhasQuestoes(aulaId, questoes, { ultimaOrdem, ultimoNumero, ano }) {
@@ -158,9 +167,9 @@ export function linhasQuestoes(aulaId, questoes, { ultimaOrdem, ultimoNumero, an
     comentario: x.comentario,
     por_que_erradas: x.por_que_erradas,
     tema: x.tema,
-    prova: null,
-    fonte: `Montada (aula ${ano})`,
-    origem: 'montada',
+    prova: x.nome_prova ?? null,
+    fonte: x.fonte ?? `Montada (aula ${ano})`,
+    origem: x.origem ?? 'montada',
     cai_na_prova: x.prova,
   }))
 }
@@ -203,7 +212,7 @@ export function sqlQuestoes(linhas) {
     sqlTexto(l.id), sqlTexto(l.materia_id), sqlTexto(l.aula_id), l.ordem,
     sqlMultilinha(l.enunciado), sqlTexto(JSON.stringify(l.alternativas)) + '::jsonb', l.correta,
     sqlMultilinha(l.comentario), sqlMultilinha(l.por_que_erradas), sqlTexto(l.tema),
-    'null', sqlTexto(l.fonte), sqlTexto(l.origem), l.cai_na_prova,
+    sqlTexto(l.prova), sqlTexto(l.fonte), sqlTexto(l.origem), l.cai_na_prova,
   ].join(', ') + ')')
   return `insert into public.questoes (id, materia_id, aula_id, ordem, enunciado, alternativas, correta, comentario, por_que_erradas, tema, prova, fonte, origem, cai_na_prova) values\n${valores.join(',\n')}\non conflict (id) do nothing returning id;\n`
 }
