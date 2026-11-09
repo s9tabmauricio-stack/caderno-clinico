@@ -1,6 +1,37 @@
-# Arquivos de origem das apostilas
+# Fonte da aula e arquivos de origem das apostilas
 
-Aqui fica o HTML de cada apostila, que é o arquivo de onde o PDF é gerado.
+Aqui ficam, por aula, duas coisas diferentes:
+- a **fonte da aula** (`fonte.md`): a transcrição e o texto dos slides, como vieram. É a base da apostila, das questões e dos flashcards, e é contra ela que tudo se confere (regra do Mauricio, 09/11/2026; seção abaixo);
+- o **HTML da apostila**, que é o arquivo de onde o PDF é gerado.
+
+## Fonte da aula (`fonte.md`)
+
+Cada aula tem um arquivo fonte. Quando chegam a transcrição ou os slides de uma aula, a primeira coisa é guardar, **sem o modelo reescrever nada** (é trabalho mecânico):
+
+```bash
+python3 -I scripts/fonte-aula.py guardar <aula-id> --transcricao <arquivo> --slides <arquivo>
+```
+
+- Transcrição: `.txt`, `.md`, `.srt`, `.vtt`, `.docx` ou `.pdf`; aula em partes = `--transcricao` repetido. Texto colado na conversa: salve num `.txt` antes.
+- Slides: `.pdf` ou `.pptx`. Entra o texto de cada página; a página que é só imagem fica marcada ("só imagem"), para quem conferir olhar o original. O arquivo original dos slides não vai para o Git (pesa): fica na pasta da aula no Drive (MEDGENIUS → `2 - Aulas`); sem acesso ao Drive, peça ao Mauricio para guardar lá.
+- O que chega depois (os slides de uma aula que já tem a transcrição) entra com `--acrescentar`; material igual ao que já está é pulado. Não edite o `fonte.md` à mão: os erros da transcrição automática ficam como vieram, e quem corrige é a apostila.
+- Vai para o Git no mesmo commit do trabalho da aula (na aula nova, junto com a apostila).
+
+**Ler um pedaço** (a conferência em blocos não precisa da aula inteira):
+
+```bash
+python3 -I scripts/fonte-aula.py trecho <aula-id> --minutos 10-35 --slides 4-9
+```
+
+`--minutos` pega as falas desse intervalo (minutos, ou `1:05:00-1:20:00`), `--parte 2` só a segunda parte da transcrição, `--slides` só aquelas páginas. Os minutos de cada capítulo estão no `mapa.md` da aula.
+
+**Como usar a fonte:**
+- **Base de tudo.** A apostila sai da fonte (molde em `docs/apostila-molde.md`); as questões e os flashcards também: cobrem o que o professor ensinou e enfatizou na fonte. A apostila é o guia de ordem e páginas, corrige os termos que a transcrição automática errou e traz os complementos "Fora da aula".
+- **Conferência contra a fonte.** Apostila (skill `conferir-apostila`), questões (skill `conferir-questoes` e agente `revisor`) e flashcards (skill `conferir-flashcards` e agente `revisor`) são conferidos contra a fonte.
+- **Divergência:** vale a fonte, o que o professor falou (a fala manda sobre o slide). A apostila entra na lista do que corrigir; a questão ou o card segue a fonte.
+- **Aula sem fonte** (as feitas antes de 09/11/2026): segue tudo pela apostila, como antes. Chegou a transcrição de uma aula antiga? Guarde do mesmo jeito.
+
+## HTML da apostila
 
 **Para que serve:** sem isto, mudar o visual de uma apostila obriga a remontá-la
 inteira a partir do PDF (ler o texto, redesenhar as figuras, recolocar as cores),
@@ -13,6 +44,8 @@ como PDF e imagens em `public/apostilas/`.
 
 ## O que tem em cada pasta
 
+- `fonte.md` — a fonte da aula (acima).
+- `mapa.md` — o mapa da apostila (`docs/apostila-molde.md`): capítulos ligados a páginas dos slides e minutos da fonte.
 - `apostila.html` — o arquivo da apostila, exatamente como gerou o PDF que está
   no ar. Não edite para "arrumar": qualquer mudança aqui só vale depois de gerar
   o PDF de novo e publicar.

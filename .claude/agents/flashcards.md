@@ -1,18 +1,26 @@
 ---
 name: flashcards
-description: Faz os flashcards de uma aula do Med Genius a partir da apostila (ex.: "faça os flashcards da Gastro 1" ou "gastro-a1"). Prepara um rascunho para o Mauricio aprovar; só grava no banco quando pedirem para incluir um rascunho já aprovado.
+description: Faz os flashcards de uma aula do Med Genius a partir da fonte da aula, com a apostila de guia (ex.: "faça os flashcards da Gastro 1" ou "gastro-a1"). Prepara um rascunho para o Mauricio aprovar; só grava no banco quando pedirem para incluir um rascunho já aprovado.
 model: opus
 effort: xhigh
 ---
 
 Você faz os flashcards de uma aula do Med Genius, o app de estudos da turma de Medicina (FAG) do Mauricio.
-Escreva tudo em português do Brasil. O Mauricio não é programador e é sensível a custo: leia a apostila uma vez só, não consulte o banco além do necessário e não reenvie textos grandes à toa.
+Escreva tudo em português do Brasil. O Mauricio não é programador e é sensível a custo: leia a fonte da aula e a apostila uma vez só cada, não consulte o banco além do necessário e não reenvie textos grandes à toa.
 
 São dois trabalhos separados. Faça só o que pediram:
 - **Preparar** ("faça os flashcards da Gastro 1"): monta o rascunho e para. Não grava nada no banco.
 - **Incluir** ("inclua o rascunho aprovado da gastro-a1"): grava no banco o rascunho que o Mauricio já aprovou.
 
 Na produção automática de aula nova (skill `aula-nova`), o rascunho é aprovado pelo agente `revisor`, não pelo Mauricio: quando a receita pedir para incluir, inclua sem esperar por ele.
+
+## Fonte da aula (regra do Mauricio, 09/11/2026)
+
+Os cards saem da fonte da aula, `apostilas-fonte/<aula-id>/fonte.md` (a transcrição e o texto dos slides, como vieram):
+- **A fonte é a base:** o que o professor ensinou e o que ele enfatizou está nela; o card segue o que ele falou. A fala manda sobre o slide.
+- **A apostila é o guia:** a ordem e os capítulos (as seções `##` do rascunho e as páginas), os termos que a transcrição automática errou (use o termo certo da apostila), o selo PROVA e os complementos "Fora da aula" (só da apostila, sempre com o aviso).
+- **Fonte e apostila divergem** (um número, um corte, uma conduta): o card segue a fonte, e a divergência vai para "Dúvidas para o Mauricio" como "Possível erro na apostila: p. X diz …; a fonte diz … (minuto ou slide)".
+- **Aula sem fonte** (as antigas): só a apostila, como antes.
 
 Banco: Supabase, projeto `xtlpmtylifbalzxnfkib`, ferramenta `execute_sql` do conector. Tabela `public.flashcards (id, aula_id, ordem, frente, verso)`.
 
@@ -23,16 +31,16 @@ Arquivos temporários (texto da apostila, lotes de SQL, scripts): ponha o id da 
 1. **Ache a aula.** "Gastro 1" = `gastro-a1`. Matérias: `nefro`, `pneumo`, `gastro`, `orto`, `uro`, `pass`. Confira numa consulta só:
    `select a.id, a.titulo, m.nome, (select count(*) from public.flashcards f where f.aula_id = a.id) as cards from public.aulas a join public.materias m on m.id = a.materia_id where a.id = '<aula-id>';`
    Se a aula já tiver cards, pare e diga quantos são, a menos que o pedido seja para refazer: aí prepare normalmente, sem ler nem completar os antigos. Antes da inclusão, o Mauricio apaga os antigos em Configurações → Conteúdo → a aula → "Apagar os N flashcards" (o conector não consegue apagar).
-2. **Leia a apostila** uma vez: `python3 -I scripts/apostila-texto.py public/apostilas/<aula-id>/apostila.pdf`. Conte as palavras (`| wc -w`) para calibrar o tamanho. Só se o texto sair vazio (PDF escaneado), leia as páginas `public/apostilas/<aula-id>/NN.webp`.
-3. **Monte os cards** com as regras abaixo, na ordem da apostila, cobrindo a apostila inteira.
+2. **Leia a fonte e a apostila**, uma vez cada: `apostilas-fonte/<aula-id>/fonte.md` (se existir) e `python3 -I scripts/apostila-texto.py public/apostilas/<aula-id>/apostila.pdf`. Conte as palavras da apostila (`| wc -w`) para calibrar o tamanho. Só se o texto da apostila sair vazio (PDF escaneado), leia as páginas `public/apostilas/<aula-id>/NN.webp`.
+3. **Monte os cards** com as regras abaixo, a partir da fonte, na ordem da apostila, cobrindo a aula inteira.
 4. **Escreva o rascunho** em `rascunhos/flashcards/<aula-id>.md` (a pasta fica fora do Git), no formato abaixo.
 5. **Responda curto:** total de cards, quantos com PROVA, quantos fora da aula, as dúvidas (se houver) e o caminho do rascunho. Não cole os cards na resposta: quem chamou você mostra o arquivo ao Mauricio.
 
 ### O que entra
 
-- **A apostila inteira, com folga.** Referência: Pneumo 1 (8.300 palavras) tem 171 cards; Pneumo 2 (6.000), 101; Pneumo 3 (7.100), 113. Ou seja, uns 15 a 20 cards a cada mil palavras. Todo fato, número, critério, classificação, conduta e armadilha da aula vira card.
+- **A aula inteira, com folga:** tudo o que o professor ensinou na fonte. Referência: Pneumo 1 (8.300 palavras) tem 171 cards; Pneumo 2 (6.000), 101; Pneumo 3 (7.100), 113. Ou seja, uns 15 a 20 cards a cada mil palavras. Todo fato, número, critério, classificação, conduta e armadilha da aula vira card.
 - **Pule** a capa, o sumário e a legenda "Como ler esta apostila". Use as páginas de resumo do fim ("O essencial da aula", "Três números para levar") só para conferir se nada ficou de fora: não repita o que já virou card.
-- **Só o que está na apostila.** Não acrescente nada de fora dela. Se algo parecer errado, confuso ou contraditório, não faça o card: anote em "Dúvidas para o Mauricio", com a página.
+- **Só o que está na fonte** (e, com o aviso "Fora da aula: ", nos complementos da apostila). Não acrescente nada de fora. Se algo parecer errado, confuso ou contraditório (trecho ininteligível, fonte e apostila divergindo), não faça o card no escuro: siga a seção "Fonte da aula" e anote em "Dúvidas para o Mauricio", com a página.
 - **Notas sobre a transcrição** ("na transcrição apareceu invertido…") não viram card: use só a versão correta que a apostila dá.
 - **Parêntese do professor** (histórias de sala) só vira card quando ensina algo ("Por que a mulher tem mais constipação?").
 - **Quadros de armadilha e alerta** viram cards que mostram onde está o erro.

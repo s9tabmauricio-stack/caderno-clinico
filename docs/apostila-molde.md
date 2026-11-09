@@ -7,13 +7,14 @@ Combinado com o Mauricio em 02/11/2026 e aprovado na pneumo-a5 (primeira apostil
 1. **Mapa** (abaixo) e, se a aula pedir ilustrações, `imagens-gpt.md` com os prompts. O Mauricio gera as imagens no ChatGPT e manda na conversa; a conversa principal confere cada uma (anatomia, nenhuma letra) antes de usar.
 2. **Apostila**, seguindo o mapa.
 
-**Guarde a fonte, não só a imagem.** O site mostra as páginas em imagem, mas o que se corrige é o HTML. Toda apostila nova ou refeita vai para o Git em `apostilas-fonte/<aula-id>/`: `apostila.html`, as figuras (`*.svg`) e os programas que as desenham (como em [`apostilas-fonte/README.md`](../apostilas-fonte/README.md)). Para corrigir, mude o HTML, gere o PDF de novo e publique com a skill `subir-apostila`.
+**Guarde o HTML, não só a imagem.** O site mostra as páginas em imagem, mas o que se corrige é o HTML. Toda apostila nova ou refeita vai para o Git em `apostilas-fonte/<aula-id>/`: `apostila.html`, o `mapa.md`, as figuras (`*.svg`) e os programas que as desenham (como em [`apostilas-fonte/README.md`](../apostilas-fonte/README.md)). Para corrigir, mude o HTML, gere o PDF de novo e publique com a skill `subir-apostila`.
 
 **Na aula nova automática** (skill `aula-nova`), ninguém espera imagens: a apostila sai com as imagens dos slides e os SVGs, sem ilustrações do GPT. O agente deixa `imagens-gpt.md` pronto e põe na lista do que conferir as ilustrações que valeriam a pena; o Mauricio decide depois se gera e troca a apostila.
 Sem slides, o mapa liga capítulos a minutos da transcrição.
 
 ## Fontes: transcrição + slides
 
+- **Tudo sai da fonte da aula** (regra do Mauricio, 09/11/2026): antes de começar, a transcrição e os slides são guardados num arquivo só, `apostilas-fonte/<aula-id>/fonte.md`, com `scripts/fonte-aula.py` ([`apostilas-fonte/README.md`](../apostilas-fonte/README.md)). A apostila é escrita a partir dele, e é contra ele que ela é conferida depois (skill `conferir-apostila`). Os minutos e as páginas de slide do mapa são os da fonte. O arquivo original dos slides serve para as imagens e para as páginas marcadas como "só imagem".
 - **A fala manda**: o que o professor ensinou, como explicou e o que destacou.
 - **Os slides completam**: números, tabelas, definições, fluxogramas, referências e as imagens para onde ele apontava ("isso aqui", "nesse fluxograma").
 - **O que está só no slide conta como aula**, sem caixa roxa. O roxo fica para o que não está em nenhum dos dois.

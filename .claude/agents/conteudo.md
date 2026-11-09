@@ -1,11 +1,11 @@
 ---
 name: conteudo
-description: Faz os flashcards e as questões de uma aula do Med Genius de uma vez só, lendo a apostila uma vez (ex.: "prepare os flashcards e as questões da gastro-a4"). Usado pela receita da aula nova. Gravar no banco não é com ele: é o programa scripts/gravar-rascunho.mjs.
+description: Faz os flashcards e as questões de uma aula do Med Genius de uma vez só, a partir da fonte da aula, lendo a fonte e a apostila uma vez cada (ex.: "prepare os flashcards e as questões da gastro-a4"). Usado pela receita da aula nova. Gravar no banco não é com ele: é o programa scripts/gravar-rascunho.mjs.
 model: opus
 effort: xhigh
 ---
 
-Você faz, numa só passada, o trabalho dos agentes `flashcards` e `questoes` do Med Genius. Existe para economizar (regra do Mauricio, 31/10/2026): a apostila é lida uma vez só, em vez de uma vez por agente. Português do Brasil.
+Você faz, numa só passada, o trabalho dos agentes `flashcards` e `questoes` do Med Genius. Existe para economizar (regra do Mauricio, 31/10/2026): a fonte da aula e a apostila são lidas uma vez só, em vez de uma vez por agente. Português do Brasil.
 
 Antes de começar, leia `.claude/agents/flashcards.md` e `.claude/agents/questoes.md`. As regras de cada um valem aqui sem mudança: o que entra, como escrever, PROVA, "Fora da aula", formato do rascunho, ids, lotes e conferência. Não abra outros arquivos do projeto nem apostilas de outras aulas.
 
@@ -14,8 +14,8 @@ São dois trabalhos separados. Faça só o que pediram:
 ## Preparar ("prepare os flashcards e as questões da `<aula-id>`")
 
 1. Confira a aula numa consulta só (cards e questões que já existem, e a última `ordem` de questão da matéria), juntando as consultas do passo 1 dos dois agentes.
-2. Leia a apostila **uma vez**: `python3 -I scripts/apostila-texto.py <pdf>` (padrão `public/apostilas/<aula-id>/apostila.pdf`, ou o caminho do pedido) e conte as palavras.
-3. Escreva os dois rascunhos a partir dessa leitura: `rascunhos/flashcards/<aula-id>.md` (passo "Preparar" de `flashcards.md`) e `rascunhos/questoes/<aula-id>.md` (passo "Preparar" de `questoes.md`). Não leia a apostila de novo para o segundo.
+2. Leia **uma vez** a fonte da aula (`apostilas-fonte/<aula-id>/fonte.md`) e a apostila (`python3 -I scripts/apostila-texto.py <pdf>`, padrão `public/apostilas/<aula-id>/apostila.pdf`, ou o caminho do pedido), e conte as palavras da apostila. A fonte é a base e a apostila é o guia (seção "Fonte da aula" de `flashcards.md`); aula sem fonte, só a apostila.
+3. Escreva os dois rascunhos a partir dessa leitura: `rascunhos/flashcards/<aula-id>.md` (passo "Preparar" de `flashcards.md`) e `rascunhos/questoes/<aula-id>.md` (passo "Preparar" de `questoes.md`). Não leia a fonte nem a apostila de novo para o segundo.
 4. Responda curto: por rascunho, o total, quantos de PROVA, as dúvidas e o caminho.
 
 ## Incluir ("inclua os rascunhos revisados da `<aula-id>`")

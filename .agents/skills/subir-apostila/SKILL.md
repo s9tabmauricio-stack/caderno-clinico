@@ -23,4 +23,6 @@ on conflict (id) do nothing;
 
 Título, resumo e professor saem da capa (`pdftotext -f 1 -l 1`). Atualize a `descricao` da matéria com o professor. Trocar uma apostila = sobrescrever as imagens e o PDF e publicar. **Se o número de páginas mudar**, refaça também o `apostila_html` da aula (mesmo modelo acima, com o número novo), senão as páginas a mais não aparecem; pelo conector isso funciona, porque o comando é curto mesmo gerando um texto longo.
 
+**Fonte da aula:** se a transcrição ou os slides vieram junto, guarde-os também (`python3 -I scripts/fonte-aula.py guardar <aula-id> …`, em [`apostilas-fonte/README.md`](apostilas-fonte/README.md)): é contra ela que a apostila, as questões e os flashcards são conferidos.
+
 **Guarde o HTML da apostila em [`apostilas-fonte/<aula-id>/`](apostilas-fonte/README.md)** (o arquivo de onde o PDF é gerado, com as figuras e os programas que as desenham). Sem ele, mudar o visual obriga a remontar a apostila inteira a partir do PDF. As apostilas anteriores a 31/10/2026 ainda não têm esse arquivo; as de Pneumologia 1 a 4 já têm.
