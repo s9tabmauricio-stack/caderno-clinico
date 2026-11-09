@@ -31,6 +31,7 @@ Este manual tem só as regras de sempre. Os detalhes ficam onde são usados; lei
 | Conferir os flashcards de uma aula (já no banco) contra a apostila, em blocos ao mesmo tempo | skill `conferir-flashcards` (`.claude/skills/conferir-flashcards/SKILL.md`) |
 | Bula de medicamento no chat | skill `bula-padrao` (`.claude/skills/bula-padrao/SKILL.md`) |
 | Lançar provas na Agenda | skill `provas-agenda` |
+| Publicar o cronograma da semana colado na conversa | `node scripts/publicar-agenda.mjs <arquivo>` (`--conferir` só mostra; precisa de `SUPABASE_SECRET_KEY`; sem ela, o Mauricio cola em `/admin/agenda`) |
 | Aula nova a partir do áudio | skill `aula-nova` |
 | Computador Windows do Mauricio | [`docs/windows.md`](docs/windows.md) |
 | Codex com acesso ao banco (`scripts/sql.mjs`, como configurar o ambiente) | [`docs/codex.md`](docs/codex.md) |
@@ -92,6 +93,7 @@ Pelo conector, **incluir dados e alterações curtas funcionam**; **apagar e ree
 - Toda apostila nova ou refeita guarda o HTML de origem em [`apostilas-fonte/<aula-id>/`](apostilas-fonte/README.md). Como publicar: skill `subir-apostila`.
 - Questões e flashcards da aula saem dos agentes `questoes`, `flashcards` ou `conteudo`, passam pelo `revisor` e vão para o banco pelo `scripts/gravar-rascunho.mjs` (sem agente). Regras: skill `questoes-e-flashcards`.
 - Os agentes de conteúdo (`apostila`, `conteudo`, `flashcards`, `questoes`, `revisor`) rodam sempre no Opus com esforço extra-alto (regra do Mauricio: não abrir mão de qualidade; está no topo de cada arquivo em `.claude/agents/`). Etapas mecânicas não usam agente.
+- **Cronograma da semana** (regra do Mauricio, 08/11/2026): quando ele colar na conversa o cronograma do WhatsApp ("CRONOGRAMA SEMANAL", dias e horários), publique na hora, sem perguntar: salve o texto num arquivo (fora do Git) e rode `node scripts/publicar-agenda.mjs <arquivo>`. Depois mostre o resumo e aponte o que o leitor pode ter lido errado (prova marcada como aula, professor com texto grudado). Se algo saiu errado, corrija o leitor (`lib/agenda.ts`) e publique de novo.
 - **Aula nova** (regra do Mauricio, 31/10/2026): ele manda o áudio da aula na conversa ("aula nova") e não encosta em mais nada até publicar. Siga a skill `aula-nova`: transcrição, apostila, flashcards e questões, revisão e publicação, sem perguntar nada.
 
 ## Visual
