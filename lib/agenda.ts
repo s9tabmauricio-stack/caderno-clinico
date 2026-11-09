@@ -273,6 +273,23 @@ export function lerCronograma(texto: string, ano = new Date().getFullYear()): Se
 
 export const FUSO_AGENDA = 'America/Sao_Paulo'
 
+/**
+ * Qual semana a Agenda mostra (semanas em ordem, cada uma pela segunda-feira).
+ * De segunda a sexta, a semana de hoje; no sábado e no domingo, a próxima já publicada,
+ * se houver (o cronograma novo costuma chegar no fim de semana); senão, a de hoje ou a última.
+ */
+export function escolherSemana<T extends { semana: string }>(semanas: T[], hoje: string): T {
+  const diaDaSemana = new Date(`${hoje}T12:00:00Z`).getUTCDay() // 0 = domingo, 6 = sábado
+  const proxima = semanas.find((s) => s.semana > hoje)
+  if ((diaDaSemana === 0 || diaDaSemana === 6) && proxima) return proxima
+  const fim = (s: string) => {
+    const d = new Date(`${s}T12:00:00Z`)
+    d.setUTCDate(d.getUTCDate() + 6)
+    return d.toISOString().slice(0, 10)
+  }
+  return semanas.find((s) => s.semana <= hoje && hoje <= fim(s.semana)) ?? proxima ?? semanas[semanas.length - 1]
+}
+
 /** Data (AAAA-MM-DD) e minutos do dia agora, no horário de Brasília (e o instante, em milissegundos). */
 export function agoraBrasilia(base = new Date()) {
   const p = Object.fromEntries(

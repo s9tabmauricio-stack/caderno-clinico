@@ -1,6 +1,6 @@
 import type { SupabaseClient } from '@supabase/supabase-js'
 import type { Database } from '@/lib/database.types'
-import { agoraBrasilia } from '@/lib/agenda'
+import { agoraBrasilia, escolherSemana } from '@/lib/agenda'
 
 type Cliente = SupabaseClient<Database>
 export type EventoBanco = Database['public']['Tables']['agenda_eventos']['Row']
@@ -31,7 +31,7 @@ export async function agendaDoDia(supabase: Cliente, data: string) {
   return semProvaRepetida(evs)
 }
 
-/** Semana que contém hoje; no fim de semana, a próxima publicada (ou a última). */
+/** Semana que contém hoje; no sábado e no domingo, a próxima publicada (ou a última). */
 export async function agendaDaSemana(supabase: Cliente) {
   const { data: hoje } = agoraBrasilia()
   // Semana sem cronograma (texto vazio) só existe por causa das provas: entra quando chegar, nunca como "a próxima"
@@ -41,15 +41,7 @@ export async function agendaDaSemana(supabase: Cliente) {
     .or(`texto.not.is.null,semana.lte.${hoje}`)
     .order('semana')
   if (!semanas?.length) return null
-  const fimDaSemana = (s: string) => {
-    const d = new Date(`${s}T12:00:00Z`)
-    d.setUTCDate(d.getUTCDate() + 6)
-    return d.toISOString().slice(0, 10)
-  }
-  const escolhida =
-    semanas.find((s) => s.semana <= hoje && hoje <= fimDaSemana(s.semana)) ??
-    semanas.find((s) => s.semana > hoje) ??
-    semanas[semanas.length - 1]
+  const escolhida = escolherSemana(semanas, hoje)
   const { data: evs } = await supabase
     .from('agenda_eventos')
     .select(COLUNAS)
