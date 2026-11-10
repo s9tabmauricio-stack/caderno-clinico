@@ -20,4 +20,3 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
-| Flashcards Dia D da pneumo-a5 | Claude | claude/festive-ptolemy-ox4ip5 | aula `pneumo-a5` (flashcards_dia_d) | 10/11/2026 |
