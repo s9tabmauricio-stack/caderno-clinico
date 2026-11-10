@@ -20,4 +20,3 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
-| Flashcards Dia D da pneumo-a4 | Claude (nuvem) | `claude/gifted-mendel-ush4vy` | aula `pneumo-a4` (tabela `flashcards_dia_d`) | 10/11/2026 |
