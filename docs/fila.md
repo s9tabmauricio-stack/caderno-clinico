@@ -20,4 +20,3 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
-| Corrigir "exacerbado com febre" em pn-dpoc-15 e pneumo-a3-q04 | Claude | `claude/pensive-wozniak-5bt4ts` | `pneumo-a3` (questões) | 10/11/2026 |
