@@ -35,6 +35,9 @@ async function apagarQuestoes(admin: Admin, ids: string[]) {
 }
 
 /** Apaga flashcards e as revisões dos alunos. */
+// Cards do Dia D (tabela flashcards_dia_d) têm id "<aula>-d01"; os flashcards normais, "<aula>-f01".
+const ehCardDiaD = (id: string) => /-d\d+$/.test(id)
+
 async function apagarCards(admin: Admin, ids: string[]) {
   if (!ids.length) return null
   const r1 = await admin.from('revisoes').delete().in('flashcard_id', ids)
@@ -142,7 +145,7 @@ export async function salvarCard(_: Msg, form: FormData): Promise<Msg> {
   if (!id || !frente || !verso) return { ok: false, texto: 'Frente e verso não podem ficar vazios.' }
   try {
     const admin = await clienteAdmin()
-    const { error } = await admin.from('flashcards').update({ frente, verso }).eq('id', id)
+    const { error } = await admin.from(ehCardDiaD(id) ? 'flashcards_dia_d' : 'flashcards').update({ frente, verso }).eq('id', id)
     if (error) return { ok: false, texto: `Não deu para salvar: ${error.message}` }
   } catch (e) {
     return { ok: false, texto: (e as Error).message }
@@ -153,7 +156,10 @@ export async function salvarCard(_: Msg, form: FormData): Promise<Msg> {
 
 export async function apagarCard(form: FormData) {
   const admin = await clienteAdmin()
-  const erro = await apagarCards(admin, [String(form.get('id'))])
+  const id = String(form.get('id'))
+  const erro = ehCardDiaD(id)
+    ? (await admin.from('flashcards_dia_d').delete().eq('id', id)).error?.message
+    : await apagarCards(admin, [id])
   if (erro) throw new Error(erro)
   atualizarTelas()
 }
@@ -165,5 +171,13 @@ export async function apagarCardsDaAula(form: FormData) {
   if (error) throw new Error(error.message)
   const erro = await apagarCards(admin, (cards ?? []).map((c: { id: string }) => c.id))
   if (erro) throw new Error(erro)
+  atualizarTelas()
+}
+
+/** Apaga todos os cards Dia D de uma aula (para refazer); os flashcards normais e as questões ficam. */
+export async function apagarCardsDiaDaAula(form: FormData) {
+  const admin = await clienteAdmin()
+  const { error } = await admin.from('flashcards_dia_d').delete().eq('aula_id', String(form.get('id')))
+  if (error) throw new Error(error.message)
   atualizarTelas()
 }

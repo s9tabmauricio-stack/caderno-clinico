@@ -9,8 +9,9 @@ import { Icone } from './Icones'
 import { Questoes } from './Questoes'
 import { Flashcards } from './Flashcards'
 import { Apostila } from './Apostila'
+import { FlashcardsDiaD, type CardDiaD } from './FlashcardsDiaD'
 
-export type Aba = 'apostila' | 'questoes' | 'flashcards'
+export type Aba = 'apostila' | 'questoes' | 'flashcards' | 'diad'
 
 
 type Props = {
@@ -20,6 +21,8 @@ type Props = {
   pdfUrl: string | null
   questoes: QuestaoAluno[]
   cards: CardAluno[]
+  // Flashcards Dia D: baralho de véspera para as questões das Provas da FAG (a aba só aparece se houver)
+  cardsDiaD: CardDiaD[]
   userId: string
   materiaId: string
   totalBanco: number
@@ -35,6 +38,7 @@ export function AulaAbas({
   pdfUrl,
   questoes,
   cards,
+  cardsDiaD,
   userId,
   materiaId,
   totalBanco,
@@ -83,11 +87,14 @@ export function AulaAbas({
     if (rolar) document.querySelector('.segm')?.scrollIntoView({ block: 'start', behavior: 'smooth' })
   }
 
-  const abas: [Aba, string][] = [
+  const abas: [Aba, React.ReactNode][] = [
     ['apostila', 'Apostila'],
     ['questoes', 'Questões'],
     ['flashcards', 'Flashcards'],
   ]
+  if (cardsDiaD.length) abas.push(['diad', <>Flashcards <span className="nw">Dia D</span></>])
+  // Rótulo de cada questão da aula (ex.: "P2 · nº 10"), mostrado no card do Dia D que ajuda nela
+  const rotulosQuestoes = Object.fromEntries(questoes.map((q) => [q.id, q.fonte ?? q.prova ?? '']))
 
   // Próximo passo mostrado quando o aluno termina as questões ou os cards da aula
   const irParaProxima = proximaAula && (
@@ -123,7 +130,7 @@ export function AulaAbas({
 
   return (
     <>
-      <div className="segm" role="tablist" aria-label="Conteúdo da aula">
+      <div className={`segm segm-aula${abas.length > 3 ? ' quatro' : ''}`} role="tablist" aria-label="Conteúdo da aula">
         {abas.map(([chave, rotulo]) => (
           <button
             key={chave}
@@ -211,6 +218,20 @@ export function AulaAbas({
         <p className="foot">Estude livremente os cards desta aula. Suas avaliações atualizam a próxima revisão. <Link href={`/revisao?materia=${materiaId}`}>Ver a fila de hoje</Link>.</p>
         <Flashcards cards={cards} userId={userId} modo="aula" ativo={aba === 'flashcards'} proximoPasso={passoDepoisDosCards || undefined} />
       </div>
+
+      {cardsDiaD.length > 0 && (
+        <div className="pane" role="tabpanel" id="painel-diad" aria-labelledby="aba-diad" hidden={aba !== 'diad'}>
+          <FlashcardsDiaD
+            cards={cardsDiaD}
+            rotulos={rotulosQuestoes}
+            ativo={aba === 'diad'}
+            irParaQuestoes={() => {
+              trocarFonte('fag')
+              trocar('questoes', true)
+            }}
+          />
+        </div>
+      )}
     </>
   )
 }

@@ -253,3 +253,84 @@ update public.recados set questao_id = ${novo} where questao_id = ${velho} and e
 `
   }).join('\n')
 }
+
+// ---------- Flashcards Dia D (regra do Mauricio, 10/11/2026) ----------
+// Baralho de véspera: cada card ajuda a resolver uma questão das Provas da FAG da aula.
+// Fica na tabela flashcards_dia_d, fora da Revisão do dia.
+
+// Mesma regra de fonteDaQuestao em lib/classificacao-questoes.ts (o teste confere que as duas batem).
+const PROVA_DA_FAG = /^(p\d+(-t\d+)?|exame)$/i
+const MATERIAL_DA_FAG = /material da turma|guia de estudo|compilados? da turma/i
+
+/** A questão é das Provas da FAG (P1, P2, P2 de outra turma, exame ou material da turma)? */
+export function ehQuestaoFag(q) {
+  return PROVA_DA_FAG.test(q.prova?.trim() ?? '') || MATERIAL_DA_FAG.test(q.fonte?.trim() ?? '')
+}
+
+/**
+ * Rascunho Dia D: uma seção "## <id da questão> · …" para cada questão FAG, com os cards que a resolvem
+ * ("**N.** frente" e "↳ verso", como nos flashcards). Um card que também resolve outra questão leva,
+ * logo abaixo do verso, a linha "+ também: <id>, <id>".
+ * Devolve [{ n, frente, verso, questoes: [ids] }].
+ */
+export function lerFlashcardsDiaD(md, aulaId) {
+  const secao = new RegExp(`^##\\s+(${aulaId}-q\\d+(?:-v\\d+)?)\\b`)
+  const questoesDoCard = new Map()
+  const sobra = []
+  let atual = null
+  let ultimo = null
+  for (const linha of linhasUteis(md)) {
+    const t = linha.trim()
+    if (/^##\s/.test(t)) {
+      const m = secao.exec(t)
+      atual = m ? m[1] : null
+      sobra.push(linha)
+      continue
+    }
+    const cab = /^\*\*(\d+)\.\*\*/.exec(t)
+    if (cab) {
+      ultimo = Number(cab[1])
+      if (!atual) throw new Error(`Card ${ultimo}: está fora de uma seção "## ${aulaId}-qNN · …" (diga qual questão ele resolve).`)
+      questoesDoCard.set(ultimo, [atual])
+      sobra.push(linha)
+      continue
+    }
+    const tambem = /^\+\s*também:\s*(.+)$/i.exec(t)
+    if (tambem) {
+      if (!ultimo) throw new Error('Linha "+ também:" antes do primeiro card.')
+      for (const id of tambem[1].split(/[,\s]+/).filter(Boolean)) {
+        const lista = questoesDoCard.get(ultimo)
+        if (!lista.includes(id)) lista.push(id)
+      }
+      continue
+    }
+    sobra.push(linha)
+  }
+  return lerFlashcards(sobra.join('\n')).map((c) => ({ ...c, questoes: questoesDoCard.get(c.n) }))
+}
+
+/** Questões FAG sem card e ids citados que não são questões FAG da aula. */
+export function coberturaDiaD(cards, idsFag) {
+  const citadas = new Set(cards.flatMap((c) => c.questoes))
+  return {
+    semCard: idsFag.filter((id) => !citadas.has(id)),
+    desconhecidas: [...citadas].filter((id) => !idsFag.includes(id)),
+  }
+}
+
+/** Linhas do banco para os cards Dia D (id <aula>-d01…). */
+export function linhasDiaD(aulaId, cards) {
+  return cards.map((c) => ({
+    id: `${aulaId}-d${numeroId(c.n)}`,
+    aula_id: aulaId,
+    ordem: c.n,
+    frente: c.frente,
+    verso: c.verso,
+    questoes: c.questoes,
+  }))
+}
+
+export function sqlDiaD(linhas) {
+  const valores = linhas.map((l) => `(${[l.id, l.aula_id, l.ordem, l.frente, l.verso].map(sqlTexto).join(', ')}, array[${l.questoes.map(sqlTexto).join(', ')}]::text[])`)
+  return `insert into public.flashcards_dia_d (id, aula_id, ordem, frente, verso, questoes) values\n${valores.join(',\n')}\non conflict (id) do nothing returning id;\n`
+}

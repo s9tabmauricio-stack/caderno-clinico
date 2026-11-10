@@ -2,7 +2,7 @@
 
 import { useActionState, useState } from 'react'
 import { useFormStatus } from 'react-dom'
-import { apagarAula, apagarCard, apagarCardsDaAula, apagarQuestao, limparVersoesAntigas, salvarAula, salvarCard, salvarQuestao, type Msg } from '@/app/admin/conteudo/acoes'
+import { apagarAula, apagarCard, apagarCardsDaAula, apagarCardsDiaDaAula, apagarQuestao, limparVersoesAntigas, salvarAula, salvarCard, salvarQuestao, type Msg } from '@/app/admin/conteudo/acoes'
 
 const LETRAS = 'ABCDE'
 
@@ -199,7 +199,7 @@ export function EditorAula({
 
 // ---------- Flashcard ----------
 
-export function EditorCard({ card, n }: { card: { id: string; frente: string; verso: string }; n: number }) {
+export function EditorCard({ card, n, aviso = 'Apaga o card e as revisões dos alunos.' }: { card: { id: string; frente: string; verso: string }; n: number; aviso?: string }) {
   const [m, acao] = useActionState(salvarCard, null)
   return (
     <div className="ed-bloco">
@@ -214,8 +214,19 @@ export function EditorCard({ card, n }: { card: { id: string; frente: string; ve
           <Mensagem m={m} />
         </div>
       </form>
-      <Apagar acao={apagarCard} id={card.id} rotulo="Apagar card" aviso="Apaga o card e as revisões dos alunos." />
+      <Apagar acao={apagarCard} id={card.id} rotulo="Apagar card" aviso={aviso} />
     </div>
+  )
+}
+
+export function ApagarCardsDiaDaAula({ aulaId, total }: { aulaId: string; total: number }) {
+  return (
+    <Apagar
+      acao={apagarCardsDiaDaAula}
+      id={aulaId}
+      rotulo={total === 1 ? 'Apagar o card Dia D' : `Apagar os ${total} cards Dia D`}
+      aviso="Apaga todos os flashcards Dia D desta aula. Os flashcards normais e as questões ficam."
+    />
   )
 }
 
