@@ -273,8 +273,9 @@ export function ehQuestaoFag(q) {
  * logo abaixo do verso, a linha "+ também: <id>, <id>".
  * Devolve [{ n, frente, verso, questoes: [ids] }].
  */
-export function lerFlashcardsDiaD(md, aulaId) {
-  const secao = new RegExp(`^##\\s+(${aulaId}-q\\d+(?:-v\\d+)?)\\b`)
+export function lerFlashcardsDiaD(md) {
+  // Título da seção: "## <id da questão> · …". Ids antigos não seguem <aula>-qNN (ex.: pn-p2-10-v3).
+  const secao = /^##\s+([a-z0-9]+(?:-[a-z0-9]+)+)\s+·/
   const questoesDoCard = new Map()
   const sobra = []
   let atual = null
@@ -290,7 +291,7 @@ export function lerFlashcardsDiaD(md, aulaId) {
     const cab = /^\*\*(\d+)\.\*\*/.exec(t)
     if (cab) {
       ultimo = Number(cab[1])
-      if (!atual) throw new Error(`Card ${ultimo}: está fora de uma seção "## ${aulaId}-qNN · …" (diga qual questão ele resolve).`)
+      if (!atual) throw new Error(`Card ${ultimo}: está fora de uma seção "## <id da questão> · …" (diga qual questão ele resolve).`)
       questoesDoCard.set(ultimo, [atual])
       sobra.push(linha)
       continue

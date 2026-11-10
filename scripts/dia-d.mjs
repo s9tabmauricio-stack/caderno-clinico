@@ -70,7 +70,7 @@ function idsDoExportado() {
   const i = resto.indexOf('--questoes')
   if (i !== -1) return resto[i + 1]?.split(',').map((s) => s.trim()).filter(Boolean) ?? []
   if (!existsSync(arqQuestoes)) parar(`não achei ${arqQuestoes}. Rode antes "exportar" ou passe --questoes id1,id2,… (ids das questões FAG da aula, pelo conector).`)
-  const re = new RegExp(`^##\\s+(${aulaId}-q\\d+(?:-v\\d+)?)\\b`, 'gm')
+  const re = /^##\s+([a-z0-9]+(?:-[a-z0-9]+)+)\s+·/gm
   return [...readFileSync(arqQuestoes, 'utf8').matchAll(re)].map((m) => m[1])
 }
 
@@ -103,7 +103,7 @@ if (comando === 'exportar') {
 // ---------- gravar ----------
 if (!existsSync(arqCards)) parar(`não achei ${arqCards}.`)
 let cards
-try { cards = lerFlashcardsDiaD(readFileSync(arqCards, 'utf8'), aulaId) } catch (e) { parar(e.message) }
+try { cards = lerFlashcardsDiaD(readFileSync(arqCards, 'utf8')) } catch (e) { parar(e.message) }
 
 const semBanco = tem('--sql')
 const db = semBanco ? null : await banco()

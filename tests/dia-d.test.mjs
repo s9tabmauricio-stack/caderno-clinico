@@ -17,7 +17,7 @@ na espirometria do adulto?
 ↳ Padrão restritivo.
 + também: pneumo-a1-q12
 
-## pneumo-a1-q12-v2 · P2 T23 · nº 9 — Asma grave
+## pn-t23-09-v2 · P2 T23 · nº 9 — Asma grave
 
 **3.** Qual é o primeiro passo na asma de difícil controle?
 ↳ Conferir a técnica inalatória e a adesão.
@@ -31,28 +31,28 @@ na espirometria do adulto?
 `
 
 test('lê os cards do Dia D com as questões de cada um', () => {
-  const cards = lerFlashcardsDiaD(RASCUNHO, 'pneumo-a1')
+  const cards = lerFlashcardsDiaD(RASCUNHO)
   assert.equal(cards.length, 4)
   assert.equal(cards[0].frente, 'Qual é o critério de resposta ao broncodilatador na espirometria do adulto?')
   assert.deepEqual(cards[0].questoes, ['pneumo-a1-q07'])
   assert.deepEqual(cards[1].questoes, ['pneumo-a1-q07', 'pneumo-a1-q12'])
   assert.equal(cards[1].verso, 'Padrão restritivo.')
-  assert.deepEqual(cards[2].questoes, ['pneumo-a1-q12-v2'])
+  assert.deepEqual(cards[2].questoes, ['pn-t23-09-v2'])
 })
 
 test('card fora de uma seção de questão para o programa', () => {
-  assert.throws(() => lerFlashcardsDiaD('## Sem id\n\n**1.** Frente?\n↳ Verso.\n', 'pneumo-a1'), /fora de uma seção/)
+  assert.throws(() => lerFlashcardsDiaD('## Sem id\n\n**1.** Frente?\n↳ Verso.\n'), /fora de uma seção/)
 })
 
 test('cobertura: questão FAG sem card e id que não é FAG', () => {
-  const cards = lerFlashcardsDiaD(RASCUNHO, 'pneumo-a1')
-  const r = coberturaDiaD(cards, ['pneumo-a1-q07', 'pneumo-a1-q12-v2', 'pneumo-a1-q20'])
+  const cards = lerFlashcardsDiaD(RASCUNHO)
+  const r = coberturaDiaD(cards, ['pneumo-a1-q07', 'pn-t23-09-v2', 'pneumo-a1-q20'])
   assert.deepEqual(r.semCard, ['pneumo-a1-q20'])
   assert.deepEqual(r.desconhecidas, ['pneumo-a1-q12'])
 })
 
 test('linhas e SQL do Dia D', () => {
-  const linhas = linhasDiaD('pneumo-a1', lerFlashcardsDiaD(RASCUNHO, 'pneumo-a1'))
+  const linhas = linhasDiaD('pneumo-a1', lerFlashcardsDiaD(RASCUNHO))
   assert.equal(linhas[0].id, 'pneumo-a1-d01')
   assert.equal(linhas[3].ordem, 4)
   const sql = sqlDiaD(linhas.slice(1, 2))

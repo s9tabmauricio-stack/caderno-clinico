@@ -26,7 +26,7 @@ Tabela `flashcards_dia_d (id, aula_id, ordem, frente, verso, questoes text[])`: 
 
 ### Formato do rascunho
 
-Uma seção `##` por questão FAG, começando pelo id da questão; os cards dela embaixo, numerados de 1 até o fim. Card que ajuda em mais de uma questão leva `+ também: <id>` abaixo do verso.
+Uma seção `##` por questão FAG, começando pelo id da questão como está no banco (ids antigos não seguem `<aula>-qNN`, ex.: `pn-p2-10-v3`), seguido de ` · `; os cards dela embaixo, numerados de 1 até o fim. Card que ajuda em mais de uma questão leva `+ também: <id>` abaixo do verso.
 
 ```markdown
 # Flashcards Dia D · Pneumologia 1 — Asma
