@@ -1363,3 +1363,11 @@ h1.big{background:var(--metal-titulo);-webkit-background-clip:text;background-cl
   box-shadow:0 0 0 1px rgba(0,0,0,.25)}
 @media (max-width:599px){.fita-prova{--fita-lado:7px}.fita-prova .fita{height:26px}}
 :root[data-tema="dia"] .fita-prova{box-shadow:inset 0 0 0 1px rgba(0,0,0,.25),0 12px 26px rgba(30,35,50,.18)}
+
+/* Aula: barra de abas com a quarta aba Flashcards Dia D (regra do Mauricio, 10/11/2026) */
+.segm.segm-aula{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr)}
+.segm-aula .nw{white-space:nowrap}
+@media (max-width:520px){.segm-aula.quatro button{font-size:13px;line-height:1.2;padding-inline:2px}}
+.grades.grades-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.diad-ajuda{margin-top:12px;font-size:12.5px;font-weight:600;color:var(--muted)}
+.counts.counts-2{grid-template-columns:repeat(2,minmax(0,1fr))}

@@ -22,10 +22,10 @@ export default async function AulaPage(props: PageProps<'/aula/[id]'>) {
   const { id } = await props.params
   const { aba, retorno } = await props.searchParams
   const origem = retornoSeguro(retorno)
-  const abaInicial: Aba = aba === 'questoes' || aba === 'flashcards' ? aba : 'apostila'
+  const abaInicial: Aba = aba === 'questoes' || aba === 'flashcards' || aba === 'diad' ? aba : 'apostila'
 
   const { supabase, userId, email } = await sessao()
-  const [aula, questoes, cards, progresso, banco] = await Promise.all([
+  const [aula, questoes, cards, diaD, progresso, banco] = await Promise.all([
     supabase
       .from('aulas')
       .select('id, materia_id, ordem, titulo, data_aula, professor, apostila_html, pdf_caminho, materias(nome)')
@@ -34,12 +34,14 @@ export default async function AulaPage(props: PageProps<'/aula/[id]'>) {
       .maybeSingle(),
     supabase.from('questoes_do_aluno').select('*').eq('aula_id', id).order('ordem'),
     supabase.from('flashcards_do_aluno').select('*').eq('aula_id', id).order('ordem'),
+    supabase.from('flashcards_dia_d').select('id, frente, verso, questoes').eq('aula_id', id).order('ordem'),
     carregarProgresso(supabase),
     carregarProgressoMaterias(supabase),
   ])
   if (!aula.data) notFound()
   if (questoes.error) throw new Error(`Não foi possível carregar as questões: ${questoes.error.message}`)
   if (cards.error) throw new Error(`Não foi possível carregar os flashcards: ${cards.error.message}`)
+  if (diaD.error) throw new Error(`Não foi possível carregar os flashcards do Dia D: ${diaD.error.message}`)
 
   // Link temporário (1 hora) para o PDF da apostila, se já tiver sido enviado
   let pdfUrl: string | null = null
@@ -87,6 +89,7 @@ export default async function AulaPage(props: PageProps<'/aula/[id]'>) {
         pdfUrl={pdfUrl}
         questoes={ordenarPorFonte((questoes.data ?? []).map(paraQuestao))}
         cards={(cards.data ?? []).map(paraCard)}
+        cardsDiaD={diaD.data ?? []}
         userId={userId}
         materiaId={materiaId}
         totalBanco={totalBanco}

@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { Pagina, Voltar } from '@/components/Pagina'
-import { ApagarCardsDaAula, EditorAula, EditorCard } from '@/components/admin/Editores'
+import { ApagarCardsDaAula, ApagarCardsDiaDaAula, EditorAula, EditorCard } from '@/components/admin/Editores'
 import { clienteAdmin, ehAdmin } from '@/lib/admin'
 import { sessao } from '@/lib/dados'
 
@@ -13,10 +13,11 @@ export default async function EditarAulaPage(props: PageProps<'/admin/conteudo/a
   const { email } = await sessao()
   if (!ehAdmin(email)) notFound()
   const admin = await clienteAdmin()
-  const [{ data: aula }, { data: cards }, { count }] = await Promise.all([
+  const [{ data: aula }, { data: cards }, { count }, { data: cardsDiaD }] = await Promise.all([
     admin.from('aulas').select('id, materia_id, ordem, titulo, resumo, publicada').eq('id', id).maybeSingle(),
     admin.from('flashcards').select('id, frente, verso, ordem').eq('aula_id', id).order('ordem'),
     admin.from('questoes').select('id', { count: 'exact', head: true }).eq('aula_id', id).is('substituida_por', null),
+    admin.from('flashcards_dia_d').select('id, frente, verso').eq('aula_id', id).order('ordem'),
   ])
   if (!aula) notFound()
 
@@ -50,6 +51,21 @@ export default async function EditarAulaPage(props: PageProps<'/admin/conteudo/a
         </div>
       ) : (
         <p className="vazio">Esta aula ainda não tem flashcards.</p>
+      )}
+
+      <div className="sec">Flashcards Dia D ({cardsDiaD?.length ?? 0})</div>
+      {cardsDiaD?.length ? (
+        <div className="ed-lista">
+          <div className="ed-bloco">
+            <p style={{ margin: 0 }}>Baralho de véspera para as questões das Provas da FAG. Para refazer, apague todos de uma vez.</p>
+            <ApagarCardsDiaDaAula aulaId={aula.id} total={cardsDiaD.length} />
+          </div>
+          {cardsDiaD.map((c: { id: string; frente: string; verso: string }, i: number) => (
+            <EditorCard key={c.id} card={c} n={i + 1} aviso="Apaga este card do Dia D." />
+          ))}
+        </div>
+      ) : (
+        <p className="vazio">Esta aula ainda não tem flashcards Dia D.</p>
       )}
     </Pagina>
   )

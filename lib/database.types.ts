@@ -43,6 +43,20 @@ export type Database = {
           },
         ]
       }
+      flashcards_dia_d: {
+        Row: { id: string; aula_id: string; ordem: number; frente: string; verso: string; questoes: string[] }
+        Insert: { id: string; aula_id: string; ordem?: number; frente: string; verso: string; questoes?: string[] }
+        Update: { id?: string; aula_id?: string; ordem?: number; frente?: string; verso?: string; questoes?: string[] }
+        Relationships: [
+          {
+            foreignKeyName: 'flashcards_dia_d_aula_id_fkey'
+            columns: ['aula_id']
+            isOneToOne: false
+            referencedRelation: 'aulas'
+            referencedColumns: ['id']
+          },
+        ]
+      }
       aulas: {
         Row: {
           apostila_html: string | null

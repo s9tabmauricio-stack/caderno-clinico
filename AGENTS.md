@@ -26,6 +26,7 @@ Este manual tem só as regras de sempre. Os detalhes ficam onde são usados; lei
 | Subir ou trocar uma apostila | skill `subir-apostila` (`.claude/skills/subir-apostila/SKILL.md`) |
 | Gerar o PDF de uma apostila (CSS, `render.py`, `checar.py`, fonte Inter) | [`apostilas-fonte/ferramentas/`](apostilas-fonte/README.md): `preparar.sh <pasta>` copia tudo; nunca redigitar |
 | Regras das questões e dos flashcards (formato, origem, PROVA, Revalida) | skill `questoes-e-flashcards` e os agentes em `.claude/agents/` |
+| Flashcards Dia D (4ª aba da aula: baralho de véspera para resolver as questões das Provas da FAG; fora da Revisão) | [`docs/dia-d.md`](docs/dia-d.md); gravar com `node scripts/dia-d.mjs gravar <aula-id>` |
 | Gravar no banco os rascunhos revisados de flashcards e questões | `node scripts/gravar-rascunho.mjs <aula-id>` (precisa de `SUPABASE_SECRET_KEY` no ambiente ou em `.env.local`; sem ela, `--sql`) |
 | Limpar as versões antigas de questões corrigidas (o mesmo que o botão Limpeza) | `node scripts/limpar-versoes.mjs` mostra o que sai; `--apagar` apaga, só quando o Mauricio pedir (precisa de `SUPABASE_SECRET_KEY`) |
 | Conferir a apostila de uma aula contra a fonte da aula | skill `conferir-apostila` (`.claude/skills/conferir-apostila/SKILL.md`) |

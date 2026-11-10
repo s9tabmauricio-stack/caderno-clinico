@@ -2,6 +2,7 @@
 -- Copiada do próprio banco em 02/11/2026 (PostgreSQL 17.11); campo questoes.cai_na_prova incluído em 03/11/2026. Só a estrutura, sem dados.
 -- Quarta classificação (complicado) incluída em 05/11/2026: migração 20261105224624_quarta_classificacao_questoes.sql.
 -- Classificação pessoal de questões incluída em 05/11/2026: migração 20261105214247_classificacao_individual_questoes.sql.
+-- Flashcards Dia D incluídos em 10/11/2026: migração 20261110010015_flashcards_dia_d.sql.
 -- Suspensão individual aplicada em 03/11/2026: migração 20261103162543_suspensao_individual_flashcards.sql.
 --
 -- Para que serve: é a referência confiável de como o banco está montado
@@ -218,6 +219,25 @@ create policy "Reativar os próprios cards" on public.flashcards_suspensos
 revoke all on public.flashcards_suspensos from anon, authenticated;
 grant select, insert, update, delete on public.flashcards_suspensos to authenticated;
 grant all on public.flashcards_suspensos to service_role;
+
+-- Flashcards Dia D (10/11/2026): baralho de véspera da aula, para resolver as questões das Provas da FAG.
+-- Fora da Revisão do dia; sem progresso do aluno. questoes = ids das questões FAG que o card ajuda a resolver.
+create table public.flashcards_dia_d (
+  id text not null,
+  aula_id text not null,
+  ordem integer default 0 not null,
+  frente text not null,
+  verso text not null,
+  questoes text[] default '{}'::text[] not null,
+  constraint flashcards_dia_d_pkey PRIMARY KEY (id),
+  constraint flashcards_dia_d_aula_id_fkey FOREIGN KEY (aula_id) REFERENCES aulas(id) ON DELETE CASCADE
+);
+create index flashcards_dia_d_aula_idx on public.flashcards_dia_d (aula_id, ordem);
+alter table public.flashcards_dia_d enable row level security;
+create policy "Alunos leem os cards do Dia D" on public.flashcards_dia_d as permissive for select to authenticated using (true);
+revoke all on public.flashcards_dia_d from anon, authenticated;
+grant select on public.flashcards_dia_d to authenticated;
+grant all on public.flashcards_dia_d to service_role;
 
 
 -- Uma prioridade por aluno e questão, independente das respostas e do histórico.
