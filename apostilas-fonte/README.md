@@ -100,6 +100,7 @@ senão a última página não aparece no app.
 | Pasta | Apostila | Páginas |
 |---|---|---|
 | `pneumo-a1` | Pneumologia · Aula 1 · Tromboembolia pulmonar | 25 |
+| `pneumo-a1/provas-fag` | Pneumologia · Aula 1 · Embolia pulmonar nas Provas da FAG (pessoal do Mauricio, fora do site) | 15 |
 | `pneumo-a2` | Pneumologia · Aula 2 · Pneumonia adquirida na comunidade | 19 |
 | `pneumo-a3` | Pneumologia · Aula 3 · Doença pulmonar obstrutiva crônica | 21 |
 | `pneumo-a4` | Pneumologia · Aula 4 · Pneumonia hospitalar | 21 |
