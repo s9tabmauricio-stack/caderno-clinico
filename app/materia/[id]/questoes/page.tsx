@@ -5,8 +5,7 @@ import { cookies } from 'next/headers'
 import { notFound } from 'next/navigation'
 import { Pagina, Voltar } from '@/components/Pagina'
 import { BancoQuestoes } from '@/components/BancoQuestoes'
-import { AbasMateria } from '@/components/AbasMateria'
-import { carregarProgresso, paraQuestao, pendentes, sessao, totais } from '@/lib/dados'
+import { carregarProgresso, paraQuestao, pendentes, sessao } from '@/lib/dados'
 import { createClient } from '@/lib/supabase/server'
 import { plural } from '@/lib/formato'
 import { retornoDaMateria, rotuloRetorno } from '@/lib/navegacao'
@@ -76,7 +75,6 @@ export default async function BancoPage(props: PageProps<'/materia/[id]/questoes
           </p>
         </div>
       </header>
-      <AbasMateria id={id} ativa="banco" totalQuestoes={lista.length} totalCards={totais(progresso.filter((p) => p.materia_id === id)).cards} />
       {lista.length ? (
         <BancoQuestoes
           key={`${inicial.tema}|${inicial.fonte}|${inicial.situacao}|${inicial.classificacao}`}

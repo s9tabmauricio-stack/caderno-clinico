@@ -20,4 +20,3 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
-| Tirar a barra Aulas/Banco/Flashcards da matéria | Claude | claude/exciting-goldberg-nsmn0m | Matérias (`components/AbasMateria.tsx`, `app/materia/[id]/`) | 10/11/2026 |

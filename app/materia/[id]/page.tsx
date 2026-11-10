@@ -6,8 +6,7 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { Pagina, Voltar } from '@/components/Pagina'
 import { Icone } from '@/components/Icones'
-import { AbasMateria } from '@/components/AbasMateria'
-import { carregarProgresso, carregarProgressoMaterias, concluido, pendentes, sessao, totais } from '@/lib/dados'
+import { carregarProgresso, concluido, pendentes, sessao } from '@/lib/dados'
 import { createClient } from '@/lib/supabase/server'
 
 export async function generateMetadata(props: PageProps<'/materia/[id]'>): Promise<Metadata> {
@@ -22,16 +21,13 @@ export default async function MateriaPage(props: PageProps<'/materia/[id]'>) {
   const { retorno } = await props.searchParams
   const origem = retornoDaMateria(retorno)
   const { supabase } = await sessao()
-  const [materia, aulas, progresso, banco, materias] = await Promise.all([
+  const [materia, aulas, progresso, materias] = await Promise.all([
     supabase.from('materias').select('id, nome, descricao').eq('id', id).maybeSingle(),
     supabase.from('aulas').select('id, ordem, titulo, resumo, data_aula, professor').eq('materia_id', id).eq('publicada', true).order('ordem'),
     carregarProgresso(supabase),
-    carregarProgressoMaterias(supabase),
     carregarMateriasPorProva(supabase),
   ])
   if (!materia.data) notFound()
-  const pm = banco.find((b) => b.materia_id === id)
-  const totalCards = totais(progresso.filter((p) => p.materia_id === id)).cards
 
   return (
     <Pagina larga pendentes={pendentes(progresso).hoje}>
@@ -42,8 +38,6 @@ export default async function MateriaPage(props: PageProps<'/materia/[id]'>) {
           <BarraMaterias id={id} nome={materia.data.nome} materias={materias} secao="aulas" retorno={origem} />
         </div>
       </header>
-
-      <AbasMateria id={id} ativa="aulas" totalQuestoes={pm?.total_questoes ?? 0} totalCards={totalCards} />
 
       {aulas.data?.length ? (
         <div className="materia-aulas">
