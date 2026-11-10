@@ -20,4 +20,3 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
-| Slides da Pneumo 1 na fonte | Claude (nuvem) | claude/awesome-gates-sarpwo | `apostilas-fonte/pneumo-a1/` | 10/11/2026 |
