@@ -10,6 +10,7 @@ import { Questoes } from './Questoes'
 import { Flashcards } from './Flashcards'
 import { Apostila } from './Apostila'
 import { FlashcardsDiaD, type CardDiaD } from './FlashcardsDiaD'
+import type { ProgressoDiaD } from '@/lib/dia-d-progresso'
 
 export type Aba = 'apostila' | 'questoes' | 'flashcards' | 'diad'
 
@@ -23,6 +24,7 @@ type Props = {
   cards: CardAluno[]
   // Flashcards Dia D: baralho de véspera para as questões das Provas da FAG (a aba só aparece se houver)
   cardsDiaD: CardDiaD[]
+  progressoDiaD: ProgressoDiaD | null
   userId: string
   materiaId: string
   totalBanco: number
@@ -39,6 +41,7 @@ export function AulaAbas({
   questoes,
   cards,
   cardsDiaD,
+  progressoDiaD,
   userId,
   materiaId,
   totalBanco,
@@ -222,7 +225,10 @@ export function AulaAbas({
       {cardsDiaD.length > 0 && (
         <div className="pane" role="tabpanel" id="painel-diad" aria-labelledby="aba-diad" hidden={aba !== 'diad'}>
           <FlashcardsDiaD
+            aulaId={aulaId}
+            userId={userId}
             cards={cardsDiaD}
+            progresso={progressoDiaD}
             rotulos={rotulosQuestoes}
             ativo={aba === 'diad'}
             irParaQuestoes={() => {

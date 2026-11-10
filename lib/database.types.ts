@@ -43,6 +43,20 @@ export type Database = {
           },
         ]
       }
+      progresso_dia_d: {
+        Row: { user_id: string; aula_id: string; fila: string[]; erros: string[]; feitos: number; atualizado_em: string }
+        Insert: { user_id?: string; aula_id: string; fila?: string[]; erros?: string[]; feitos?: number; atualizado_em?: string }
+        Update: { user_id?: string; aula_id?: string; fila?: string[]; erros?: string[]; feitos?: number; atualizado_em?: string }
+        Relationships: [
+          {
+            foreignKeyName: 'progresso_dia_d_aula_id_fkey'
+            columns: ['aula_id']
+            isOneToOne: false
+            referencedRelation: 'aulas'
+            referencedColumns: ['id']
+          },
+        ]
+      }
       flashcards_dia_d: {
         Row: { id: string; aula_id: string; ordem: number; frente: string; verso: string; questoes: string[] }
         Insert: { id: string; aula_id: string; ordem?: number; frente: string; verso: string; questoes?: string[] }
