@@ -8,6 +8,7 @@ import { carregarProgresso, carregarProgressoMaterias, paraCard, paraQuestao, pe
 import { createClient } from '@/lib/supabase/server'
 import { retornoSeguro, rotuloRetorno } from '@/lib/navegacao'
 import { ehAdmin } from '@/lib/admin'
+import { ajustarProgressoDiaD } from '@/lib/dia-d-progresso'
 
 const dataCurta = (d: string) => d.split('-').reverse().join('/')
 
@@ -25,7 +26,7 @@ export default async function AulaPage(props: PageProps<'/aula/[id]'>) {
   const abaInicial: Aba = aba === 'questoes' || aba === 'flashcards' || aba === 'diad' ? aba : 'apostila'
 
   const { supabase, userId, email } = await sessao()
-  const [aula, questoes, cards, diaD, progresso, banco] = await Promise.all([
+  const [aula, questoes, cards, diaD, progressoDiaD, progresso, banco] = await Promise.all([
     supabase
       .from('aulas')
       .select('id, materia_id, ordem, titulo, data_aula, professor, apostila_html, pdf_caminho, materias(nome)')
@@ -35,6 +36,7 @@ export default async function AulaPage(props: PageProps<'/aula/[id]'>) {
     supabase.from('questoes_do_aluno').select('*').eq('aula_id', id).order('ordem'),
     supabase.from('flashcards_do_aluno').select('*').eq('aula_id', id).order('ordem'),
     supabase.from('flashcards_dia_d').select('id, frente, verso, questoes').eq('aula_id', id).order('ordem'),
+    supabase.from('progresso_dia_d').select('fila, erros, feitos').eq('aula_id', id).eq('user_id', userId).maybeSingle(),
     carregarProgresso(supabase),
     carregarProgressoMaterias(supabase),
   ])
@@ -90,6 +92,7 @@ export default async function AulaPage(props: PageProps<'/aula/[id]'>) {
         questoes={ordenarPorFonte((questoes.data ?? []).map(paraQuestao))}
         cards={(cards.data ?? []).map(paraCard)}
         cardsDiaD={diaD.data ?? []}
+        progressoDiaD={ajustarProgressoDiaD(progressoDiaD.data, (diaD.data ?? []).map((c) => c.id))}
         userId={userId}
         materiaId={materiaId}
         totalBanco={totalBanco}

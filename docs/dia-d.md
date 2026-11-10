@@ -5,13 +5,14 @@ Regra do Mauricio (10/11/2026): cada aula pode ter uma 4ª aba, **Flashcards Dia
 ## Como funciona na tela
 
 - A aba só aparece na aula que tem cards Dia D (`components/FlashcardsDiaD.tsx`, ligado em `components/AulaAbas.tsx`; endereço direto `/aula/<id>?aba=diad`).
-- Não entra na Revisão do dia e não grava nada do aluno: ele vira o card e marca **Sabia** (2) ou **Não sabia** (1). O que ele não sabia volta no fim da fila, até fechar todos. No fim: repetir os que errou ou ir para as questões das Provas da FAG da aula.
+- Não entra na Revisão do dia: ele vira o card e marca **Sabia** (2) ou **Não sabia** (1). O que ele não sabia volta no fim da fila, até fechar todos. No fim: repetir os que errou ou ir para as questões das Provas da FAG da aula.
+- O progresso fica guardado na conta do aluno (tabela `progresso_dia_d`, pedido do Mauricio de 10/11/2026): saiu da aula ou trocou de aparelho, ao voltar aparece **Continuar de onde parei**. **Encerrar** só pausa; **Recomeçar do zero** apaga o progresso daquela aula.
 - Cada card mostra, depois de virado, em qual questão ajuda ("Ajuda na questão P2 · nº 10").
 - Editar ou apagar: Configurações → Conteúdo → a aula → seção "Flashcards Dia D" (editar card por card ou "Apagar os N cards Dia D" para refazer).
 
 ## Banco
 
-Tabela `flashcards_dia_d (id, aula_id, ordem, frente, verso, questoes text[])`: id `<aula-id>-d01`…, `questoes` = ids das questões FAG que o card ajuda a resolver. Alunos só leem; escrita pela chave secreta ou pelo conector. Estrutura em `supabase/estrutura-atual.sql`.
+Tabela `flashcards_dia_d (id, aula_id, ordem, frente, verso, questoes text[])`: id `<aula-id>-d01`…, `questoes` = ids das questões FAG que o card ajuda a resolver. Alunos só leem; escrita pela chave secreta ou pelo conector. Progresso do aluno: `progresso_dia_d (user_id, aula_id, fila, erros, feitos)`. Estrutura em `supabase/estrutura-atual.sql`.
 
 ## Fazer o Dia D de uma aula
 

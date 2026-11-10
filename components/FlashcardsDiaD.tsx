@@ -1,17 +1,24 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
+import { createClient } from '@/lib/supabase/client'
 import { plural } from '@/lib/formato'
+import { comecarDiaD, responderDiaD, type ProgressoDiaD } from '@/lib/dia-d-progresso'
 import { Icone } from './Icones'
 
 // Flashcards Dia D (regra do Mauricio, 10/11/2026): baralho de véspera da aula, feito para resolver
-// as questões das Provas da FAG. Fica fora da Revisão do dia e não grava nada: "Não sabia" só manda
-// o card para o fim da fila desta sessão, até o aluno acertar todos.
+// as questões das Provas da FAG. Fica fora da Revisão do dia: "Não sabia" manda o card para o fim da
+// fila, até o aluno acertar todos. O progresso fica na conta do aluno (tabela progresso_dia_d), para
+// ele sair da aula e continuar de onde parou, em qualquer aparelho.
 
 export type CardDiaD = { id: string; frente: string; verso: string; questoes: string[] }
 
 type Props = {
+  aulaId: string
+  userId: string
   cards: CardDiaD[]
+  // progresso guardado na conta, já acertado com os cards de hoje (null = nunca começou ou recomeçou)
+  progresso: ProgressoDiaD | null
   // id da questão FAG → como ela aparece na aula (ex.: "P2 · nº 10")
   rotulos: Record<string, string>
   ativo: boolean
@@ -19,30 +26,46 @@ type Props = {
   irParaQuestoes?: () => void
 }
 
-type Sessao = { fila: string[]; virado: boolean; feitos: number; erros: string[] }
-
-export function FlashcardsDiaD({ cards, rotulos, ativo, irParaQuestoes }: Props) {
-  const [sessao, setSessao] = useState<Sessao | null>(null)
+export function FlashcardsDiaD({ aulaId, userId, cards, progresso: inicial, rotulos, ativo, irParaQuestoes }: Props) {
+  const supabase = useMemo(() => createClient(), [])
+  // progresso: o que está guardado na conta; aberto: mostrando o baralho (cards ou fim) em vez do resumo
+  const [progresso, setProgresso] = useState<ProgressoDiaD | null>(inicial)
+  const [aberto, setAberto] = useState(false)
+  const [virado, setVirado] = useState(false)
+  const [falhaSalvar, setFalhaSalvar] = useState('')
+  // As gravações vão uma de cada vez, na ordem: a última resposta é sempre a que fica no banco.
+  const gravacoes = useRef<Promise<void>>(Promise.resolve())
   const totalQuestoes = new Set(cards.flatMap((c) => c.questoes)).size
   const rotuloDe = (c: CardDiaD) => c.questoes.map((id) => rotulos[id]).filter(Boolean).join(' · ')
 
-  function comecar(ids: string[]) {
-    setSessao({ fila: ids, virado: false, feitos: 0, erros: [] })
+  function guardar(p: ProgressoDiaD) {
+    setProgresso(p)
+    gravacoes.current = gravacoes.current.then(async () => {
+      const { error } = await supabase
+        .from('progresso_dia_d')
+        .upsert({ user_id: userId, aula_id: aulaId, ...p, atualizado_em: new Date().toISOString() }, { onConflict: 'user_id,aula_id' })
+      setFalhaSalvar(error ? 'Não deu para guardar o seu progresso do Dia D. Confira sua internet; ele fica guardado na próxima resposta.' : '')
+    })
+  }
+
+  function abrir() {
+    setAberto(true)
+    setVirado(false)
     document.querySelector('.segm')?.scrollIntoView({ block: 'start', behavior: 'smooth' })
   }
 
-  function responder(sabia: boolean) {
-    setSessao((s) => {
-      if (!s || !s.fila.length) return s
-      const [atual, ...resto] = s.fila
-      return {
-        fila: sabia ? resto : [...resto, atual],
-        virado: false,
-        feitos: s.feitos + (sabia ? 1 : 0),
-        erros: sabia || s.erros.includes(atual) ? s.erros : [...s.erros, atual],
-      }
-    })
+  function comecar(ids: string[]) {
+    guardar(comecarDiaD(ids))
+    abrir()
   }
+
+  function responder(sabia: boolean) {
+    if (!progresso?.fila.length) return
+    guardar(responderDiaD(progresso, sabia))
+    setVirado(false)
+  }
+
+  const sessao = aberto ? progresso : null
 
   // Atalhos: espaço mostra a resposta; 1 = não sabia; 2 = sabia
   useEffect(() => {
@@ -50,10 +73,10 @@ export function FlashcardsDiaD({ cards, rotulos, ativo, irParaQuestoes }: Props)
     function tecla(e: KeyboardEvent) {
       const alvo = e.target as HTMLElement
       if (e.metaKey || e.ctrlKey || e.altKey || alvo.closest('input, textarea, button, a, [contenteditable="true"]')) return
-      if (!sessao?.virado && (e.key === ' ' || e.key === 'Enter')) {
+      if (!virado && (e.key === ' ' || e.key === 'Enter')) {
         e.preventDefault()
-        setSessao((s) => (s ? { ...s, virado: true } : s))
-      } else if (sessao?.virado && (e.key === '1' || e.key === '2')) {
+        setVirado(true)
+      } else if (virado && (e.key === '1' || e.key === '2')) {
         e.preventDefault()
         responder(e.key === '2')
       }
@@ -63,6 +86,12 @@ export function FlashcardsDiaD({ cards, rotulos, ativo, irParaQuestoes }: Props)
   })
 
   if (!cards.length) return <p className="vazio">Esta aula ainda não tem flashcards do Dia D.</p>
+
+  const aviso = falhaSalvar && (
+    <div className="erro-salvar" role="alert">
+      <p>{falhaSalvar}</p>
+    </div>
+  )
 
   // ---------- Baralho fechado ----------
   if (sessao && !sessao.fila.length) {
@@ -83,7 +112,7 @@ export function FlashcardsDiaD({ cards, rotulos, ativo, irParaQuestoes }: Props)
               {errados.length === 1 ? 'Repetir o que errei' : `Repetir os ${errados.length} que errei`}
             </button>
           )}
-          <button className="btn ghost" onClick={() => setSessao(null)}>
+          <button className="btn ghost" onClick={() => setAberto(false)}>
             Voltar ao Dia D
           </button>
         </div>
@@ -94,13 +123,15 @@ export function FlashcardsDiaD({ cards, rotulos, ativo, irParaQuestoes }: Props)
             </button>
           </div>
         )}
+        {aviso}
       </div>
     )
   }
 
   // ---------- Sessão em andamento ----------
   if (sessao) {
-    const card = cards.find((c) => c.id === sessao.fila[0])!
+    const card = cards.find((c) => c.id === sessao.fila[0])
+    if (!card) return null
     const restam = sessao.fila.length
     const progresso = Math.round((100 * sessao.feitos) / (sessao.feitos + restam))
     const ajuda = rotuloDe(card)
@@ -111,8 +142,8 @@ export function FlashcardsDiaD({ cards, rotulos, ativo, irParaQuestoes }: Props)
             {restam} {plural(restam, 'card restante', 'cards restantes')}
           </span>
           <div className="sess-acoes">
-            <button className="link" onClick={() => setSessao(null)}>
-              Encerrar
+            <button className="link" onClick={() => setAberto(false)}>
+              Pausar
             </button>
           </div>
         </div>
@@ -121,12 +152,12 @@ export function FlashcardsDiaD({ cards, rotulos, ativo, irParaQuestoes }: Props)
         </div>
         <div
           className="flash"
-          onClick={sessao.virado ? undefined : () => setSessao({ ...sessao, virado: true })}
-          data-act={sessao.virado ? undefined : 'virar'}
+          onClick={virado ? undefined : () => setVirado(true)}
+          data-act={virado ? undefined : 'virar'}
         >
           <div className="side">Dia D · Provas da FAG</div>
           <div className="front">{card.frente}</div>
-          {sessao.virado ? (
+          {virado ? (
             <>
               <div className="verso">{card.verso}</div>
               {ajuda && <div className="diad-ajuda">Ajuda na questão {ajuda}</div>}
@@ -135,7 +166,7 @@ export function FlashcardsDiaD({ cards, rotulos, ativo, irParaQuestoes }: Props)
             <div className="tap">Toque no card para ver a resposta</div>
           )}
         </div>
-        {sessao.virado ? (
+        {virado ? (
           <div className="grades grades-2" role="group" aria-label="Você sabia?">
             <button className="grade g0" onClick={() => responder(false)}>
               <b>Não sabia</b>
@@ -147,11 +178,12 @@ export function FlashcardsDiaD({ cards, rotulos, ativo, irParaQuestoes }: Props)
             </button>
           </div>
         ) : (
-          <button className="btn wide" onClick={() => setSessao({ ...sessao, virado: true })}>
+          <button className="btn wide" onClick={() => setVirado(true)}>
             Mostrar resposta
           </button>
         )}
-        <p className="hint">No teclado: espaço mostra a resposta; 1 = não sabia; 2 = sabia.</p>
+        <p className="hint">No teclado: espaço mostra a resposta; 1 = não sabia; 2 = sabia. Seu progresso fica guardado: pode sair e continuar depois.</p>
+        {aviso}
       </div>
     )
   }
@@ -174,10 +206,31 @@ export function FlashcardsDiaD({ cards, rotulos, ativo, irParaQuestoes }: Props)
             <span className="l">{plural(totalQuestoes, 'Questão da FAG', 'Questões da FAG')}</span>
           </div>
         </div>
-        <button className="btn wide" onClick={() => comecar(cards.map((c) => c.id))}>
-          Estudar os {cards.length} {plural(cards.length, 'card', 'cards')} do Dia D
-        </button>
+        {progresso?.fila.length ? (
+          <>
+            <button className="btn wide" onClick={abrir}>
+              Continuar de onde parei · {progresso.fila.length} {plural(progresso.fila.length, 'card restante', 'cards restantes')}
+            </button>
+            <button className="btn ghost wide" onClick={() => comecar(cards.map((c) => c.id))}>
+              Recomeçar do zero
+            </button>
+          </>
+        ) : progresso ? (
+          <>
+            <button className="btn wide" onClick={abrir}>
+              Ver como fechei o Dia D
+            </button>
+            <button className="btn ghost wide" onClick={() => comecar(cards.map((c) => c.id))}>
+              Estudar os {cards.length} {plural(cards.length, 'card', 'cards')} de novo
+            </button>
+          </>
+        ) : (
+          <button className="btn wide" onClick={() => comecar(cards.map((c) => c.id))}>
+            Estudar os {cards.length} {plural(cards.length, 'card', 'cards')} do Dia D
+          </button>
+        )}
       </div>
+      {aviso}
       <div className="sec">Cards do Dia D</div>
       <div className="group">
         {cards.map((c) => (

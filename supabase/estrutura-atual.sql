@@ -3,6 +3,7 @@
 -- Quarta classificação (complicado) incluída em 05/11/2026: migração 20261105224624_quarta_classificacao_questoes.sql.
 -- Classificação pessoal de questões incluída em 05/11/2026: migração 20261105214247_classificacao_individual_questoes.sql.
 -- Flashcards Dia D incluídos em 10/11/2026: migração 20261110010015_flashcards_dia_d.sql.
+-- Progresso do Dia D incluído em 10/11/2026: migração 20261110015525_progresso_dia_d.sql.
 -- Suspensão individual aplicada em 03/11/2026: migração 20261103162543_suspensao_individual_flashcards.sql.
 --
 -- Para que serve: é a referência confiável de como o banco está montado
@@ -221,7 +222,7 @@ grant select, insert, update, delete on public.flashcards_suspensos to authentic
 grant all on public.flashcards_suspensos to service_role;
 
 -- Flashcards Dia D (10/11/2026): baralho de véspera da aula, para resolver as questões das Provas da FAG.
--- Fora da Revisão do dia; sem progresso do aluno. questoes = ids das questões FAG que o card ajuda a resolver.
+-- Fora da Revisão do dia (o progresso fica em progresso_dia_d). questoes = ids das questões FAG que o card ajuda a resolver.
 create table public.flashcards_dia_d (
   id text not null,
   aula_id text not null,
@@ -238,6 +239,33 @@ create policy "Alunos leem os cards do Dia D" on public.flashcards_dia_d as perm
 revoke all on public.flashcards_dia_d from anon, authenticated;
 grant select on public.flashcards_dia_d to authenticated;
 grant all on public.flashcards_dia_d to service_role;
+
+-- Progresso do Dia D (10/11/2026): uma linha por aluno e aula, para continuar de onde parou em qualquer aparelho.
+create table public.progresso_dia_d (
+  user_id uuid not null default auth.uid() references auth.users(id) on delete cascade,
+  aula_id text not null references public.aulas(id) on delete cascade,
+  fila text[] not null default '{}'::text[],  -- ids dos cards que faltam, na ordem; vazia = baralho fechado
+  erros text[] not null default '{}'::text[], -- cards que ele não sabia em alguma volta
+  feitos integer not null default 0,          -- cards marcados como "Sabia"
+  atualizado_em timestamptz not null default now(),
+  primary key (user_id, aula_id)
+);
+create index progresso_dia_d_aula_idx on public.progresso_dia_d (aula_id);
+alter table public.progresso_dia_d enable row level security;
+
+create policy "Ver o próprio progresso do Dia D" on public.progresso_dia_d
+  for select to authenticated using ((select auth.uid()) = user_id);
+create policy "Guardar o próprio progresso do Dia D" on public.progresso_dia_d
+  for insert to authenticated with check ((select auth.uid()) = user_id);
+create policy "Atualizar o próprio progresso do Dia D" on public.progresso_dia_d
+  for update to authenticated using ((select auth.uid()) = user_id)
+  with check ((select auth.uid()) = user_id);
+create policy "Recomeçar o próprio Dia D" on public.progresso_dia_d
+  for delete to authenticated using ((select auth.uid()) = user_id);
+
+revoke all on public.progresso_dia_d from anon, authenticated;
+grant select, insert, update, delete on public.progresso_dia_d to authenticated;
+grant all on public.progresso_dia_d to service_role;
 
 
 -- Uma prioridade por aluno e questão, independente das respostas e do histórico.

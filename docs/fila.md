@@ -20,4 +20,3 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
-| Dia D: guardar o progresso ao sair da aula | Claude | `claude/great-bardeen-iwi5pl` | `components/FlashcardsDiaD.tsx` | 10/11/2026 |
