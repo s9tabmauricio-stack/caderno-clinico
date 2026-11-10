@@ -20,3 +20,4 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
+| Conferir a apostila da pneumo-a1 | Claude (nuvem) | claude/awesome-gates-sarpwo | `pneumo-a1` (apostila) | 10/11/2026 |
