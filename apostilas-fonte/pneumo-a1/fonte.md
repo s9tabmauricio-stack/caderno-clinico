@@ -8,6 +8,7 @@ Não edite à mão: para juntar material novo, rode o programa com --acrescentar
 ## O que tem aqui
 
 - Transcrição 1: `3378eb07-Transcricao_Pneumologia_Aula_1_Embolia_Pulmonar.txt` (18.892 palavras, duração até 01:35:48).
+- Slides 1: `74c5587c-TEP_v2026.pdf` (51 páginas; só imagem, sem texto: 2, 49 (ver o original no Drive)).
 
 ## Transcrição 1 · 3378eb07-Transcricao_Pneumologia_Aula_1_Embolia_Pulmonar.txt
 <!-- parte transcricao 1 | arquivo=3378eb07-Transcricao_Pneumologia_Aula_1_Embolia_Pulmonar.txt | sha=4e3be290efce | palavras=18.892 | duracao=01:35:48 -->
@@ -505,3 +506,555 @@ Estilo            : Clean Verbatim (100% integral, sem omissões ou resumos)
 [95:13] "Ah, não pode usar heparina convencional?" Pode, se você mantiver ela internada por 6 meses, fazendo heparina na veia, sem poder tirar a heparina para nada... é impossível, né? Obviamente, é algo que não dá para ser feito. Então, você vai fazer heparina de baixo peso molecular, que você faz ela subcutânea, duas vezes por dia, faz em casa, aplicação duas vezes em casa, duas vezes por dia em casa. Depois que nasceu o nenê, você até pode dar varfarina para ela. Não pode usar ainda DOAC; DOAC não pode nem na gestação, nem na lactação. Na lactação, até pode usar varfarina, mas DOAC não pode.
 
 [95:48] Tempo de tratamento, como eu falei para vocês: mínimo de 6 meses no total. Geralmente, se você foi até o parto, você inclui as primeiras semanas do puerpério, mesmo que tenha passado dos 6 meses, porque a gente sabe que o período puerperal é um alto risco de recorrência pelo próprio período puerperal. Se a paciente já concluiu o tratamento antes do parto, você poderia, então, parar, né, com 6 meses de tratamento, e a paciente já ter o parto sem o anticoagulante. Mas volto a dizer para vocês: é raro isso acontecer, é muito raro a paciente diagnosticar a embolia pulmonar antes ali do terceiro mês. Geralmente, é diagnosticado numa fase até mais avançada da gestação, justamente porque a estase venosa piora muito, né? O útero grandão comprime a veia cava, faz mais estase venosa, que é quando ela faz TVP e TEP, tá bom? E acho que é isso. (risos e suspiros de alívio da turma) Vocês cansam, eu canso mais que vocês, porque eu falo aí na frente. Só que eu não tenho o que fazer, essa aula eu dividiria em duas, em três...
+
+## Slides 1 · 74c5587c-TEP_v2026.pdf
+<!-- parte slides 1 | arquivo=74c5587c-TEP_v2026.pdf | sha=a967792abe2f | paginas=51 | so_imagem=2, 49 -->
+
+### Slide 1 de 51
+<!-- slide 1 -->
+Tromboembolia pulmonar (TEP)
+
+### Slide 2 de 51
+<!-- slide 2 -->
+(só imagem, sem texto)
+
+### Slide 3 de 51
+<!-- slide 3 -->
+Introdução
+Tromboembolia pulmonar (TEP)
+• Obstrução aguda ou episódica da circulação arterial pulmonar
+→ súbita redução ou cessação fluxo sanguíneo zona pulmonar
+distal
+• Principal causa: trombo sanguíneo de veia sistêmica → passa
+pelo coração direito → obstrui um vaso arterial pulmonar
+Menna-Barreto SS – Medicina Respiratória 4ª ed.
+VAGuerra
+
+### Slide 4 de 51
+<!-- slide 4 -->
+Introdução
+Tromboembolia pulmonar (TEP) e Trombose venosa profunda
+(TVP) são condições correlacionadas, com história natural comum
+-> tromboembolia venosa (TEV)
+• Trombose venosa profunda (TVP): condição básica / TEP:
+complicação
+TVP TEP
+Podem co-existir ou
+não...
+Menna-Barreto SS – Medicina Respiratória 4ª ed.
+VAGuerra
+
+### Slide 5 de 51
+<!-- slide 5 -->
+Introdução
+• >90% das TEP → decorrentes de TVP MMII
+• Restante:
+– Veias pélvicas
+– Renais
+– Mesentéricas
+– Trombos intracavitários cardíacos
+– TVP MMSS
+– Veias superficiais
+VAGuerra
+
+### Slide 6 de 51
+<!-- slide 6 -->
+Introdução
+• Principal complicação pulmonar aguda em pacientes
+hospitalizados
+• Uma das principais causas de mortalidade hospitalar
+• Terceiro lugar nas doenças cardiovasculares mais comuns
+(atrás de IAM e AVE)
+Menna-Barreto SS – Medicina Respiratória 4ª ed.
+ESC Guideline 2019
+VAGuerra
+
+### Slide 7 de 51
+<!-- slide 7 -->
+Classificação
+• Temporal: aguda / subaguda / recorrente – doença
+crônica
+– Hipertensão pulmonar tromboembólica crônica (HPTEC): doença
+progressiva...
+• Estabilidade ou instabilidade hemodinâmica: maciça (risco
+alto) / submaciça (risco intermediário) / não maciça (risco
+baixo)
+• Localização anatômica: “em sela”, lobar, segmentar,
+subsegmentar
+• Sintomática ou assintomática
+Thompson et al. Uptodate v. 3.2.0
+VAGuerra
+
+### Slide 8 de 51
+<!-- slide 8 -->
+Epidemiologia
+• Incidência de estimativa incerta: subdiagnóstico
+• Prevalência de TEV aguda ~1% em pctes
+hospitalizados
+Menna-Barreto SS – Medicina Respiratória 4ª ed.
+Incidência aumenta
+com a idade!
+Incidência média:
+~60-80 por 100.000
+pessoas-ano
+VAGuerra
+
+### Slide 9 de 51
+<!-- slide 9 -->
+Epidemiologia
+• Taxa de mortalidade alta:
+VAGuerra
+
+### Slide 10 de 51
+<!-- slide 10 -->
+Epidemiologia
+• n= 399 pacientes com
+TEP aguda
+• 374 tratados com
+Mortalidade em 3m:
+anticoagulantes
+15,3% (365/2349)
+• Mortalidade em 1 ano =
+23,8%
+– >50% delas nas primeiras
+2 semanas do estudo
+VAGuerra
+
+### Slide 11 de 51
+<!-- slide 11 -->
+Epidemiologia
+• Fatores de risco associados a aumento da
+mortalidade (aguda):
+✓ Apresentação da TEP
+✓ Idade avançada
+✓ Câncer e/ou doença cerebrovascular adjacente
+• Recorrência: alta
+– 7-10% nos primeiros 6-12 meses
+– 1-2% nos anos subsequentes
+– 20-30% no seguimento de 5-10 anos
+Menna-Barreto SS – Medicina Respiratória 4ª ed.
+VAGuerra
+
+### Slide 12 de 51
+<!-- slide 12 -->
+História natural
+Sem TEV
+TEV
+• Trombogênese venosa
+✓ Estase venosa
+– Tríade de Virchow
+✓ Lesão endotélio vascular
+– Inflamação
+✓ Pró-coagulabilidade
+Menna-Barreto SS – Medicina Respiratória 4ª ed.
+VAGuerra
+
+### Slide 13 de 51
+<!-- slide 13 -->
+História natural
+• Proceso de trombose venosa
+Fase de Fase de Fase de Resolução
+iniciação propagação terminação do trombo
+Total ou
+parcial
+~14 dias
+NEJM 2008; 359: 938-49
+Arteriosc Thromb Vasc Biol 2008; 28: 387-91
+Thromb Ress 2009; 123 (Suppl 4): S30-34
+VAGuerra
+
+### Slide 14 de 51
+<!-- slide 14 -->
+TEV: Fatores de risco
+VAGuerra
+
+### Slide 15 de 51
+<!-- slide 15 -->
+TEV: Fatores de risco
+VAGuerra
+
+### Slide 16 de 51
+<!-- slide 16 -->
+TEV: Fatores de risco
+VAGuerra
+
+### Slide 17 de 51
+<!-- slide 17 -->
+TEV: Fatores de risco
+VAGuerra
+
+### Slide 18 de 51
+<!-- slide 18 -->
+TEP: Manifestações clínicas
+• Espectro amplo: desde assintomático até morte súbita
+✓ Dispneia
+✓ Taquipneia (FR>20)
+✓ Dor torácica
+✓ Hemoptise
+✓ Dessaturação
+✓ Taquicardia (FC>100)
+✓ Apreensão (sensação de
+morte iminente)
+✓ Ruídos adventícios
+✓ Febre
+✓ Sintomas de TVP
+✓ Síncope (ou pré-síncope)
+Menna-Barreto SS – Medicina Respiratória 4ª ed.
+ESC Guidelines on the diagnosis and management of acute pulmonary embolism
+VAGuerra
+
+### Slide 19 de 51
+<!-- slide 19 -->
+TEP: Diagnósticos diferenciais
+• Ampla gama de diagnósticos diferenciais:
+✓ Asma aguda
+✓ Pneumonia
+✓ Pneumotórax
+✓ Pleurite / derrame pleural
+✓ IAM / Edema agudo de pulmão
+✓ Aneurisma dissecante de aorta
+✓ Dores osteomusculares
+✓ Ansiedade
+✓ Ruptura do esôfago
+✓ Herpes zoster
+✓ Hipertensão arterial pulmonar
+✓ Câncer de pulmão...
+Menna-Barreto SS – Medicina Respiratória 4ª ed.
+VAGuerra
+
+### Slide 20 de 51
+<!-- slide 20 -->
+Fisiopatologia
+VAGuerra
+
+### Slide 21 de 51
+<!-- slide 21 -->
+Fisiopatologia / desfechos
+VAGuerra
+
+### Slide 22 de 51
+<!-- slide 22 -->
+TEP: Exames complementares
+RX: quase sempre normal
+• Útil para excluir outros
+diagnósticos
+Achados clássicos:
+• Oligoemia periférica (Sinal
+de Westermark)
+• Consolidações periféricas
+de base pleural (corcova
+de Hamptom)
+Menna-Barreto SS – Medicina Respiratória 4ª ed.
+VAGuerra ESC Guidelines of acute pulmonary embolism 2019
+
+### Slide 23 de 51
+<!-- slide 23 -->
+TEP: Exames complementares
+• ECG:
+– Mais comum: taquicardia sinusal inexplicada
+– Padrão clássico de sobrecarga de VD (S1Q3T3) é incomum,
+mas bastante específico para TEP
+• S1Q3T3, inversão de onda T nas derivações anteriores (V1-V4), BRD
+recente, elevação da onda P (P-pulmonale), desvio do eixo para
+direita, FA de início súbito
+VAGuerra
+
+### Slide 24 de 51
+<!-- slide 24 -->
+TEP: Exames diagnósticos
+• D-dímeros: alta sensibilidade e VPN, baixa
+especificidade
+– Portanto, útil para afastar o diagnóstico em casos de baixa
+probabilidade
+✓ Produto de degradação da fibrina
+✓ Eleva-se em pacientes com câncer, processo
+inflamatório agudo, trauma, cirurgia recente, gravidez,
+hospitalizados...
+• Valor ideal?
+Menna-Barreto SS – Medicina Respiratória 4ª ed.
+2026 Acute Pulmonary Embolism Guideline
+VAGuerra
+
+### Slide 25 de 51
+<!-- slide 25 -->
+TEP: Exames diagnósticos
+VR < Idade x 10
+VAGuerra
+
+### Slide 26 de 51
+<!-- slide 26 -->
+TEP: Exames diagnósticos
+• Angiotomografia de tórax: exame de imagem de
+escolha para o diagnóstico
+– Alto VPP para os casos de moderada a alta probabilidade
+pré-teste
+– Alto VPN para casos de baixa a moderada probabilidade
+pré-teste
+• Cintilografia ventilação/perfusão (V/Q):
+– “Mismatch”: áreas ventiladas mas não perfundidas –
+diagnóstico de TEP
+– Alternativa em situações específicas (renais crônicos,
+história de alergia pelo contraste iônico)
+Menna-Barreto SS – Medicina Respiratória 4ª ed.
+2026 Acute Pulmonary Embolism Guideline
+VAGuerra
+
+### Slide 27 de 51
+<!-- slide 27 -->
+TEP: Exames diagnósticos
+• Arteriografia pulmonar: por anos considerado padrão-
+ouro
+– Invasivo, pouco utilizado hoje em dia
+• Ecocardiograma:
+– Não utilizado diretamente para o diagnóstico; basicamente
+utilizado para estratificação do risco (e consequente
+determinação da terapêutica)
+Menna-Barreto SS – Medicina Respiratória 4ª ed.
+2026 Acute Pulmonary Embolism Guideline
+VAGuerra
+
+### Slide 28 de 51
+<!-- slide 28 -->
+TEP: Exames diagnósticos
+• Ecodoppler venoso MMII: alta sensibilidade e
+especificidade para TVP
+– TVP presente em ~70% dos casos de TEP
+– Ecodoppler será positivo em 30-50% dos casos de TEP
+– Se positivo, não há necessidade de testes diagnósticos
+complementares em situações de baixo risco de
+mortalidade;
+Menna-Barreto SS – Medicina Respiratória 4ª ed.
+2026 Acute Pulmonary Embolism Guideline
+VAGuerra
+
+### Slide 29 de 51
+<!-- slide 29 -->
+TEP: Algoritmo diagnóstico – Paciente estável
+2026 Acute Pulmonary Embolism Guideline
+VAGuerra
+
+### Slide 30 de 51
+<!-- slide 30 -->
+TEP: Avaliação da probabilidade clínica
+VAGuerra
+
+### Slide 31 de 51
+<!-- slide 31 -->
+TEP: Avaliação da probabilidade clínica
+VAGuerra
+
+### Slide 32 de 51
+<!-- slide 32 -->
+TEP: Algoritmo diagnóstico – Paciente estável
+2026 Acute Pulmonary Embolism Guideline
+VAGuerra
+
+### Slide 33 de 51
+<!-- slide 33 -->
+TEP: Avaliação da probabilidade clínica
+VAGuerra
+
+### Slide 34 de 51
+<!-- slide 34 -->
+TEP: Avaliação da probabilidade clínica
+VAGuerra
+
+### Slide 35 de 51
+<!-- slide 35 -->
+TEP: Algoritmo diagnóstico – Paciente estável
+Resumo:
+NÃO
+Critério YEARS (sinais clínicos
+Ponto de corte de TVP, hemoptise ou TEP
+d-dímero: como diagnóstico mais provável
+1000
+SIM
+Ponto de corte d-dímero:
+500 OU IDADE X 10
+(o que for maior)
+2026 Acute Pulmonary Embolism Guideline
+VAGuerra
+
+### Slide 36 de 51
+<!-- slide 36 -->
+TEP: Algoritmo diagnóstico – Paciente chocado!
+ESC Guidelines on the diagnosis and management of acute pulmonary embolism
+VAGuerra
+
+### Slide 37 de 51
+<!-- slide 37 -->
+TEP: Avaliação prognóstica e tratamento
+“Feito o diagnóstico. Vamos tratar? Como?”
+VAGuerra
+
+### Slide 38 de 51
+<!-- slide 38 -->
+TEP: Tratamento
+• Anticoagulantes parenterais:
+– Heparina convencional
+– Heparina de baixo peso molecular (enoxaparina, por ex.) –
+preferidas!
+2026 Acute Pulmonary Embolism Guideline
+VAGuerra
+
+### Slide 39 de 51
+<!-- slide 39 -->
+TEP: Tratamento
+• Anticoagulantes orais:
+– Antagonistas da vitamina K (varfarin – marevan): não pode-
+se iniciar diretamente com esta classe, deve-se realizar
+anticoagulação parenteral na fase inicial
+– Novos anticoagulantes orais – anticoagulantes diretos
+(rivaroxaban, apixaban) são preferidos: podem ser iniciados
+sem anticoagulação parenteral concomitante
+• Lembrar que edoxaban e dabigatran precisam ponte com
+anticoagulação parenteral
+• Todos os anticoagulantes (parenterais e orais) tem
+risco: sangramento!
+VAGuerra 2026 Acute Pulmonary Embolism Guideline
+
+### Slide 40 de 51
+<!-- slide 40 -->
+TEP: Tratamento de reperfusão
+• Trombolíticos
+– Estreptoquinase, alteplase, tenecteplase
+– Também com risco de sangramento
+(ainda maior que os anticoagulantes)
+• Tratamento cateter-dirigido
+– Trombectomia mecânica
+– Trombólise intra-arterial, também chamada de trombólise dirigida
+por cateter (menor dose de fibrinolítico; menor risco de
+sangramento que trombólise sistêmica)
+• Tratamento cirúrgico: embolectomia cirúrgica
+– Cirurgia grande porte, altíssima mortalidade, raramente utilizada
+2026 Acute Pulmonary Embolism Guideline
+VAGuerra
+
+### Slide 41 de 51
+<!-- slide 41 -->
+TEP: Tratamento
+• Filtro de veia cava inferior: indicado em pacientes com
+contra-indicação absoluta à anticoagulação oral ou
+com TEP recorrente mesmo com anticoagulação
+adequada
+2026 Acute Pulmonary Embolism Guideline
+VAGuerra
+
+### Slide 42 de 51
+<!-- slide 42 -->
+2026 Acute Pulmonary Embolism Guideline
+VAGuerra
+
+### Slide 43 de 51
+<!-- slide 43 -->
+PESI ≤ 85 PESI > 85
+sPESI = 0 sPESI ≥ 1
+Bova ≤ 4 Bova > 4
+2026 Acute Pulmonary Embolism Guideline
+VAGuerra
+
+### Slide 44 de 51
+<!-- slide 44 -->
+2026 Acute Pulmonary Embolism Guideline
+VAGuerra
+
+### Slide 45 de 51
+<!-- slide 45 -->
+TEP: Avaliação prognóstica e tratamento
+• Disfunção de VD: ponto-chave na determinação do
+prognóstico e tratamento
+Como avaliar a
+função do VD?
+Imagem:
+✓ Ecocardiograma
+✓ Angio-TC: relação
+VD/VE
+Biomarcadores:
+✓ Troponina
+✓ BNP / NT-proBNP
+2026 Acute Pulmonary Embolism Guideline
+Lancet 1999; 353: 1386–89
+VAGuerra
+
+### Slide 46 de 51
+<!-- slide 46 -->
+TEP: Tratamento
+Categoria Descrição clínica Local de atendimento Terapia primária Terapia de Reperfusão
+Anticoagulação
+oral Contraindicadas (Dano
+A Assintomático Domicílio
+(preferencialmente > Benefício)
+DOACs)
+Sintomático, escore de Alta precoce (domicílio Anticoagulação
+B Contraindicadas
+gravidade baixo ou hospitalização breve) oral
+Escore de gravidade alto Hospitalar
+Anticoagulação Geralmente não
+C (VD alterado ou (enfermaria ou unidade
+parenteral recomendadas
+biomarcadores alterados) intermediária)
+Podem ser
+consideradas
+Falência cardiopulmonar Hospitalar Anticoagulação (Trombectomia
+D
+incipiente (monitorizado / UTI) parenteral mecânica ou
+trombólise cateter-
+direcionada)
+Anticoagulação Recomendadas
+Falência cardiopulmonar parenteral + (Trombólise sistêmica,
+E UTI
+com hipotensão persistente Suporte Trombectomia
+Hemodinâmico mecânica)
+2026 Acute Pulmonary Embolism Guideline
+VAGuerra
+
+### Slide 47 de 51
+<!-- slide 47 -->
+TEV: Duração do tratamento
+• Fase inicial de tratamento: 3 a 6 meses
+– Indicada para todos os pacientes
+– Dose habitual de DOAC
+• Apixabana 5 mg 2x/d
+• Rivaroxabana 15 mg 2x/dia até o 21º dia de tratamento e 20 mg/d
+após o 22º dia de tratamento
+• Fase de tratamento estendida: > 6 meses
+– Dose menor de DOAC
+• Apixabana 2,5 mg 2x/d
+• Rivaroxabana 10 mg/d
+• Quando pensar em anticoagulação indefinidamente?
+2026 Acute Pulmonary Embolism Guideline
+VAGuerra
+
+### Slide 48 de 51
+<!-- slide 48 -->
+Decisão
+Suspender
+compartilhada: Não suspender
+anticoagulante
+tendência a anticoagulante
+após fase inicial
+suspender após (exceto se alto risco de
+sangramento)
+fase inicial
+2026 Acute Pulmonary Embolism Guideline
+
+### Slide 49 de 51
+<!-- slide 49 -->
+(só imagem, sem texto)
+
+### Slide 50 de 51
+<!-- slide 50 -->
+TEP: Tratamento na gestante
+• Contra-indicado anticoagulante oral;
+• Podem usar apenas anticoagulantes parenterais
+(heparina ou enoxaparina)
+• Tempo de tratamento: mínimo 6 meses no total
+(incluindo 6 semanas pós-parto);
+• Lactação: pode usar varfarin; DOACs não.
+2026 Acute Pulmonary Embolism Guideline
+VAGuerra
+
+### Slide 51 de 51
+<!-- slide 51 -->
+Tromboembolia pulmonar (TEP)
+Dúvidas???
