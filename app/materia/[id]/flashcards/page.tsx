@@ -6,8 +6,7 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { Pagina, Voltar } from '@/components/Pagina'
 import { Flashcards } from '@/components/Flashcards'
-import { AbasMateria } from '@/components/AbasMateria'
-import { carregarCardsDaMateria, carregarProgresso, carregarProgressoMaterias, pendentes, sessao } from '@/lib/dados'
+import { carregarCardsDaMateria, carregarProgresso, pendentes, sessao } from '@/lib/dados'
 import { createClient } from '@/lib/supabase/server'
 import { plural } from '@/lib/formato'
 
@@ -23,15 +22,13 @@ export default async function FlashcardsMateriaPage(props: PageProps<'/materia/[
   const { retorno } = await props.searchParams
   const origem = retornoDaMateria(retorno)
   const { supabase, userId } = await sessao()
-  const [materia, cards, progresso, banco, materias] = await Promise.all([
+  const [materia, cards, progresso, materias] = await Promise.all([
     supabase.from('materias').select('id, nome').eq('id', id).maybeSingle(),
     carregarCardsDaMateria(supabase, id),
     carregarProgresso(supabase),
-    carregarProgressoMaterias(supabase),
     carregarMateriasPorProva(supabase),
   ])
   if (!materia.data) notFound()
-  const totalBanco = banco.find((b) => b.materia_id === id)?.total_questoes ?? 0
 
   return (
     <Pagina larga pendentes={pendentes(progresso).hoje}>
@@ -45,7 +42,6 @@ export default async function FlashcardsMateriaPage(props: PageProps<'/materia/[
           </p>
         </div>
       </header>
-      <AbasMateria id={id} ativa="flashcards" totalQuestoes={totalBanco} totalCards={cards.length} />
       <p className="foot">Para fazer apenas a fila de hoje, <Link href={`/revisao?materia=${id}`}>abrir Revisão desta matéria</Link>.</p>
       <Flashcards cards={cards} userId={userId} modo="materia" ativo />
     </Pagina>
