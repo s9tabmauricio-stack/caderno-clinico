@@ -20,3 +20,4 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
+| Flashcards Dia D (aba nova na aula, tabela nova no banco, piloto numa aula) | Claude | `claude/kind-goldberg-hk1hth` | Aula (`app/aula/[id]`, `components/AulaAbas.tsx`), tabela `flashcards_dia_d`, `scripts/gravar-rascunho.mjs` | 10/11/2026 |
