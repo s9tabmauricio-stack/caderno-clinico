@@ -78,7 +78,7 @@ Depois chame o agente `apostila` no modelo Opus com esforço extra-alto (regra d
 
 ## 6. Flashcards e questões (um agente só)
 
-Chame o agente `conteudo` ("prepare os flashcards e as questões da `<aula-id>`"). Ele lê a fonte da aula e a apostila, uma vez cada, e escreve os dois rascunhos a partir da fonte.
+Chame o agente `conteudo` ("prepare os flashcards e as questões da `<aula-id>`"). Ele lê só a fonte da aula, uma vez, e escreve os dois rascunhos a partir dela (a apostila não entra).
 
 ## 7. Revisão
 

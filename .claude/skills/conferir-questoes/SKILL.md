@@ -1,19 +1,18 @@
 ---
 name: "conferir-questoes"
-description: "Use quando o Mauricio pedir para conferir as questões de uma aula do MedGenius (ex.: Nefrologia aula 1): resolve pela fonte da aula (transcrição e slides), com a apostila de guia, e diz o que manter, corrigir ou tirar da aula."
+description: "Use quando o Mauricio pedir para conferir as questões de uma aula do MedGenius (ex.: Nefrologia aula 1): resolve só pela fonte da aula (transcrição e slides), sem a apostila, e diz o que manter, corrigir ou tirar da aula."
 ---
 
 # Conferir as questões de uma aula do MedGenius contra a fonte da aula
 
 Objetivo: em cada aula do MedGenius, deixar só questões do tema da aula que dá para responder pelo que o professor ensinou, com o gabarito, o comentário e o "por que as erradas" batendo com a fonte da aula. O gabarito que veio com a prova original não decide nada.
 
-**A referência é a fonte da aula** (regra do Mauricio, 09/11/2026): `apostilas-fonte/<aula-id>/fonte.md`, a transcrição e o texto dos slides. A apostila ajuda a achar e a citar (seção e página), corrige os termos que a transcrição automática errou e traz os complementos "Fora da aula". Fonte e apostila divergem: vale a fonte (a fala manda sobre o slide), e a apostila vai para "Possível erro na apostila". **Aula sem fonte** (as antigas): a referência é a apostila, como antes; onde abaixo diz "fonte", leia "apostila".
+**A referência é a fonte da aula** (regra do Mauricio, 09/11/2026): `apostilas-fonte/<aula-id>/fonte.md`, a transcrição e o texto dos slides. **A apostila não entra** (regra do Mauricio, 10/11/2026): é produto da fonte e pode ter erros; não a abra. Dentro da fonte, a fala manda sobre o slide; termo que a transcrição automática errou, vale o slide ou o termo médico correto. **Aula sem fonte** (as antigas): pare e peça a transcrição ao Mauricio.
 
 ## Onde está cada coisa
 
 - **Aula**: id `<matéria>-a<N>`. Matérias: `nefro` (Nefrologia), `pneumo` (Pneumologia), `gastro` (Gastroenterologia), `orto` (Ortopedia), `uro` (Urologia), `pass` (PASS), `angio` (Angiologia); na dúvida, `select id, nome from materias`. "Nefrologia aula 1" = `nefro-a1`. Se ele disser só "aula 1", perguntar a matéria (cada matéria tem a sua aula 1).
-- **Fonte da aula**: `apostilas-fonte/<aula-id>/fonte.md` (se existir). Leia uma vez. Página de slide marcada "só imagem": peça o original ao Mauricio só se a questão depender dela.
-- **Apostila**: `public/apostilas/<aula-id>/apostila.pdf`, no próprio projeto. Leia o texto uma vez com `python3 -I scripts/apostila-texto.py public/apostilas/<aula-id>/apostila.pdf` (guarda os selos PROVA, que o `pdftotext` perde). Para tabela, régua ou figura, olhe só a imagem daquela página (`public/apostilas/<aula-id>/NN.webp`).
+- **Fonte da aula**: `apostilas-fonte/<aula-id>/fonte.md`. Leia uma vez. Página de slide marcada "só imagem": peça o original ao Mauricio só se a questão depender dela.
 - **Questões**: Supabase, projeto `xtlpmtylifbalzxnfkib`, tabela `questoes`. Só leitura nesta etapa:
 
 ```sql
@@ -29,36 +28,35 @@ order by q.ordem;
 
 - `alternativas` é a lista sem letra; `correta` é o índice (0 = A, 1 = B...). Mostrar sempre com letra.
 - `erros_apontados` são colegas avisando erro na questão: levar em conta.
-- `origem = professor` quer dizer que o professor corrigiu em sala. Se a apostila discordar, não decidir sozinho: mostrar e perguntar.
+- `origem = professor` quer dizer que o professor corrigiu em sala. Se a fonte discordar, não decidir sozinho: mostrar e perguntar.
 - Sem o conector do Supabase (o Codex): rode o mesmo SQL com `node scripts/sql.mjs "<SQL>"` (`docs/codex.md`). Se o ambiente não estiver configurado, avise e peça ao Mauricio a lista das questões (Configurações → Conteúdo).
 
 ## Fluxo
 
 1. **Identificar a aula** (`<aula-id>`) e confirmar o título com `select titulo from aulas where id = '<aula-id>'`.
-2. **Ler a fonte e a apostila inteiras**, uma vez cada. Na fonte, anotar o que o professor ensinou, os números e o que ele enfatizou (sinais de PROVA do `docs/apostila-molde.md`). Na apostila, anotar seções (número e título) e página, valores, doses, critérios, marcas PROVA, caixas "Complemento: fora da aula" e o que o professor disse que cobra e que não cobra.
+2. **Ler a fonte inteira**, uma vez. Anotar o que o professor ensinou, os números, o que ele enfatizou (sinais de PROVA do `docs/apostila-molde.md`) e o que ele disse que cobra e que não cobra.
 3. **Buscar as questões** com o SQL acima.
 4. **Resolver cada questão só pela fonte**, sem olhar `correta`:
-   - achar o trecho que responde (minuto ou slide na fonte; seção e página na apostila);
+   - achar o trecho que responde (minuto ou slide na fonte);
    - definir a alternativa certa;
    - ver se outra alternativa também fica certa pela fonte;
-   - ver se algum valor, dose, ponto de corte ou critério diverge da fonte (e se a apostila diz o mesmo).
+   - ver se algum valor, dose, ponto de corte ou critério diverge da fonte.
    Só depois comparar com `correta`.
 5. **Conferir o comentário e o "por que as erradas"**: o aluno lê esses textos depois de responder, então nada neles pode contradizer a fonte.
 6. **Classificar:**
    - **Manter**: tudo bate.
    - **Corrigir**: gabarito errado, duas alternativas certas, dado divergente ou comentário que contradiz a fonte. Escrever a mudança exata.
-   - **Fora desta aula**: nem a fonte nem a apostila trazem o que a questão cobra. Procurar no texto das outras apostilas da matéria (`scripts/apostila-texto.py` + `grep`, sem ler tudo) para ver se ela é de outra aula.
-   - **Só pelo complemento**: a resposta está apenas numa caixa roxa. Ele decide.
-7. **Cobertura**: listar os pontos com marca PROVA que ficaram sem nenhuma questão.
+   - **Fora desta aula**: a fonte não traz o que a questão cobra. Procurar nas fontes das outras aulas da matéria (`grep` em `apostilas-fonte/<materia>-a*/fonte.md`, sem ler tudo) para ver se ela é de outra aula.
+   - **Só "Fora da aula"**: a resposta só existia num complemento da apostila (questão antiga). Ele decide.
+7. **Cobertura**: listar os pontos que o professor disse que caem ou enfatizou e que ficaram sem nenhuma questão.
 8. **Questões sem aula** (`aula_id is null` na mesma matéria): só dizer quantas existem e oferecer ver se alguma é desta aula.
 
 ## Resposta (no chat)
 
-1. Resumo em uma linha: "Nefrologia aula 1: 12 questões, 9 manter, 2 corrigir, 1 fora da apostila."
-2. Tabela: Nº | Veredito | Pela fonte | No site | Onde está (minuto ou slide; página da apostila) | Observação.
-3. Depois, uma questão problemática por vez: texto completo (enunciado e alternativas com letra), o problema, o trecho da fonte (e da apostila) e a proposta. Esperar a decisão antes de passar para a próxima.
+1. Resumo em uma linha: "Nefrologia aula 1: 12 questões, 9 manter, 2 corrigir, 1 fora da aula."
+2. Tabela: Nº | Veredito | Pela fonte | No site | Onde está (minuto ou slide) | Observação.
+3. Depois, uma questão problemática por vez: texto completo (enunciado e alternativas com letra), o problema, o trecho da fonte e a proposta. Esperar a decisão antes de passar para a próxima.
 4. Pontos PROVA sem questão.
-5. "Possível erro na apostila" (onde ela diverge da fonte), só se houver: vale conferir a apostila inteira com a skill `conferir-apostila`.
 
 ## Mudar o site: só depois do "sim" dele, uma questão por vez
 
@@ -70,7 +68,7 @@ order by q.ordem;
 
 ## Regras
 
-- A referência é a fonte da aula (na falta dela, a apostila), não o gabarito original nem o conhecimento geral. Se a fonte parecer errada ou desatualizada, avisar à parte, sem mudar o veredito.
-- Nunca inventar seção ou página. Se o trecho não existe, a questão não é respondível pela apostila.
-- Ele é sensível a custo: não reler a fonte nem a apostila nem reenviar textos longos sem necessidade; aula com muitas questões vai em blocos, mas todas são conferidas.
+- A referência é a fonte da aula, não o gabarito original, a apostila nem o conhecimento geral. Se a fonte parecer errada ou desatualizada, avisar à parte, sem mudar o veredito.
+- Nunca inventar minuto ou slide. Se o trecho não existe, a questão não é respondível pela aula.
+- Ele é sensível a custo: não reler a fonte nem reenviar textos longos sem necessidade; aula com muitas questões vai em blocos, mas todas são conferidas.
 - Linguagem simples: ele não é programador.

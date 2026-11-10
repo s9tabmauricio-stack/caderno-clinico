@@ -30,8 +30,8 @@ Este manual tem só as regras de sempre. Os detalhes ficam onde são usados; lei
 | Gravar no banco os rascunhos revisados de flashcards e questões | `node scripts/gravar-rascunho.mjs <aula-id>` (precisa de `SUPABASE_SECRET_KEY` no ambiente ou em `.env.local`; sem ela, `--sql`) |
 | Limpar as versões antigas de questões corrigidas (o mesmo que o botão Limpeza) | `node scripts/limpar-versoes.mjs` mostra o que sai; `--apagar` apaga, só quando o Mauricio pedir (precisa de `SUPABASE_SECRET_KEY`) |
 | Conferir a apostila de uma aula contra a fonte da aula | skill `conferir-apostila` (`.claude/skills/conferir-apostila/SKILL.md`) |
-| Conferir as questões de uma aula contra a fonte e a apostila | skill `conferir-questoes` (`.claude/skills/conferir-questoes/SKILL.md`) |
-| Conferir os flashcards de uma aula (já no banco) contra a fonte e a apostila, em blocos ao mesmo tempo | skill `conferir-flashcards` (`.claude/skills/conferir-flashcards/SKILL.md`) |
+| Conferir as questões de uma aula contra a fonte da aula | skill `conferir-questoes` (`.claude/skills/conferir-questoes/SKILL.md`) |
+| Conferir os flashcards de uma aula (já no banco) contra a fonte da aula, em blocos ao mesmo tempo | skill `conferir-flashcards` (`.claude/skills/conferir-flashcards/SKILL.md`) |
 | Bula de medicamento no chat | skill `bula-padrao` (`.claude/skills/bula-padrao/SKILL.md`) |
 | Lançar provas na Agenda | skill `provas-agenda` |
 | Publicar o cronograma da semana colado na conversa | `node scripts/publicar-agenda.mjs <arquivo>` (`--conferir` só mostra; precisa de `SUPABASE_SECRET_KEY`; sem ela, o Mauricio cola em `/admin/agenda`) |
@@ -94,9 +94,9 @@ Pelo conector, **incluir dados e alterações curtas funcionam**; **apagar e ree
 ## Conteúdo (apostilas, questões, flashcards)
 
 - **Fonte da aula** (regra do Mauricio, 09/11/2026): cada aula tem um arquivo fonte, `apostilas-fonte/<aula-id>/fonte.md`, com a transcrição e o texto dos slides como vieram. Quando ele mandar a transcrição ou os slides de uma aula, a primeira coisa é guardar: `python3 -I scripts/fonte-aula.py guardar <aula-id> --transcricao <arq> --slides <arq>` (texto colado na conversa: salve num arquivo antes; o arquivo original dos slides vai para o Drive) e pôr no Git junto com o trabalho. Material que chega depois entra com `--acrescentar`.
-  - A apostila, as questões e os flashcards são feitos **a partir da fonte**, e as conferências (da apostila, das questões e dos flashcards) também são feitas **contra a fonte**. A apostila continua de guia: ordem, páginas, termos que a transcrição automática errou e complementos "Fora da aula".
-  - Fonte e apostila divergem: vale a fonte (o que o professor falou; a fala manda sobre o slide), e a apostila entra na lista do que corrigir.
-  - Aula sem fonte (as antigas): tudo segue pela apostila, como antes. Se ele mandar a transcrição de uma aula antiga, guarde do mesmo jeito.
+  - A apostila, as questões e os flashcards são feitos **a partir da fonte, e só dela**, e as conferências (da apostila, das questões e dos flashcards) também são feitas **contra a fonte, e só contra ela**. **A apostila não é guia de nada** (regra do Mauricio, 10/11/2026): ela é produto da fonte e pode ter erros; questões, flashcards e conferências não a leem, nem para achar página, termo ou selo PROVA. A única receita que abre a apostila é a `conferir-apostila` (para corrigi-la pela fonte). Dentro da fonte, a fala manda sobre o slide.
+  - Termo que a transcrição automática errou: use o texto dos slides na fonte ou o termo médico correto; nunca a apostila.
+  - Aula sem fonte (as antigas): não faça questões, flashcards nem conferência; peça a transcrição ao Mauricio e guarde-a primeiro.
 - Toda apostila nova ou refeita guarda o HTML de origem em [`apostilas-fonte/<aula-id>/`](apostilas-fonte/README.md). Como publicar: skill `subir-apostila`.
 - Questões e flashcards da aula saem dos agentes `questoes`, `flashcards` ou `conteudo`, passam pelo `revisor` e vão para o banco pelo `scripts/gravar-rascunho.mjs` (sem agente). Regras: skill `questoes-e-flashcards`.
 - Os agentes de conteúdo (`apostila`, `conteudo`, `flashcards`, `questoes`, `revisor`) rodam sempre no Opus com esforço extra-alto (regra do Mauricio: não abrir mão de qualidade; está no topo de cada arquivo em `.claude/agents/`). Etapas mecânicas não usam agente.

@@ -73,7 +73,7 @@ Regra de bolso do manual da Anthropic: se o Claude errou por **falta de conhecim
 
 **Ultracode.** Com ele, o Claude monta um *workflow*: um roteiro que põe vários agentes trabalhando ao mesmo tempo e conferindo o trabalho uns dos outros.
 
-- **Sim**, só quando a mesma tarefa se repete em muitas coisas ou precisa de conferência cruzada. Por exemplo: conferir todas as questões de uma matéria contra a apostila, revisar todas as telas, procurar um tipo de erro no projeto inteiro, pesquisar em muitas fontes.
+- **Sim**, só quando a mesma tarefa se repete em muitas coisas ou precisa de conferência cruzada. Por exemplo: conferir todas as questões de uma matéria contra a fonte da aula, revisar todas as telas, procurar um tipo de erro no projeto inteiro, pesquisar em muitas fontes.
   - Recomende a palavra no começo do pedido (`ultracode: …`): ela vale só para aquele pedido.
   - Não recomende `/effort ultracode`, que fica ligado na conversa toda e encarece cada pedido seguinte.
   - Sugira testar numa parte pequena primeiro (uma aula ou uma matéria, antes de todas).
@@ -139,7 +139,7 @@ Pedido: "o botao copiar ta copiando o gabarito junto"
 Pedido: "confere se as questoes de nefro tao certas"
 
 **Pedido melhorado** (copie e mande):
-> ultracode: confira as questões da nefro-a1 contra a apostila da aula, usando a skill conferir-questoes. Para cada questão, diga se mantém, corrige ou tira, com o motivo e o trecho da apostila. Não grave nada no banco: só me entregue a lista. Se der certo, depois eu peço as outras aulas de Nefrologia.
+> ultracode: confira as questões da nefro-a1 contra a fonte da aula, usando a skill conferir-questoes. Para cada questão, diga se mantém, corrige ou tira, com o motivo e o trecho da fonte. Não grave nada no banco: só me entregue a lista. Se der certo, depois eu peço as outras aulas de Nefrologia.
 
 **O que mudei:** comecei por uma aula só, para ver o custo antes das outras; pedi a lista sem gravar nada.
 
