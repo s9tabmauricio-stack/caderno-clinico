@@ -20,3 +20,4 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
+| Flashcards Dia D da pneumo-a2 (PAC) | Claude | claude/intelligent-lamport-wwsuic | pneumo-a2 (flashcards_dia_d) | 10/11/2026 |
