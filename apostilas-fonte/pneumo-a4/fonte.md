@@ -8,6 +8,7 @@ Não edite à mão: para juntar material novo, rode o programa com --acrescentar
 ## O que tem aqui
 
 - Transcrição 1: `5a0ee639-Transcricao_Pneumo_A4_Pneumonia_Hospitalar.txt` (13.559 palavras, duração até 01:09:05).
+- Slides 1: `c275ef63-AULA_5_-_VINICIUS_-_Pneumonia_hospitalar_e_PAV.pdf` (26 páginas; só imagem, sem texto: 19, 21 (ver o original no Drive)).
 
 ## Transcrição 1 · 5a0ee639-Transcricao_Pneumo_A4_Pneumonia_Hospitalar.txt
 <!-- parte transcricao 1 | arquivo=5a0ee639-Transcricao_Pneumo_A4_Pneumonia_Hospitalar.txt | sha=d5043a58629d | palavras=13.559 | duracao=01:09:05 -->
@@ -366,3 +367,297 @@ Padrão de Transcrição: Clean Verbatim (100% integral, sem cortes ou resumos)
 ================================================================================
 
 [69:05] Professor: Aula ruim, aula chata? É um pouco. Para quem vai trabalhar no hospital, vai fazer mais sentido; para quem não vai trabalhar no hospital, talvez não faça tanto sentido, mas para as provas vocês vão precisar saber isso aqui e vocês vão passar ainda no internato muito tempo dentro do hospital, então vocês vão ter que saber esses conceitos, porque muitas vezes vocês vão ser cobrados por isso, mesmo na cirurgia, na gineco, em outros locais. Ok? Dúvidas?
+
+## Slides 1 · c275ef63-AULA_5_-_VINICIUS_-_Pneumonia_hospitalar_e_PAV.pdf
+<!-- parte slides 1 | arquivo=c275ef63-AULA_5_-_VINICIUS_-_Pneumonia_hospitalar_e_PAV.pdf | sha=19d191d59da3 | paginas=26 | so_imagem=19, 21 -->
+
+### Slide 1 de 26
+<!-- slide 1 -->
+Pneumonia hospitalar
+(e pneumonia associada a
+ventilação mecânica – PAV)
+
+### Slide 2 de 26
+<!-- slide 2 -->
+Roteiro
+• Introdução
+• Conceitos
+• Etiologia
+• Patogenia
+• Fatores de risco
+• Diagnóstico
+• Tratamento
+• Prevenção
+VAGuerra
+
+### Slide 3 de 26
+<!-- slide 3 -->
+Clin Infect Dis. 2016 Sep 1;63(5):e61-e111
+VAGuerra
+
+### Slide 4 de 26
+<!-- slide 4 -->
+Introdução
+• Segunda causa mais comum de infecção hospitalar – 15% das infecções
+• 0,5 – 2% de pacientes afetados
+• Taxas de mortalidade variam de 30-50%
+• Principal causa de óbito secundária à infecções hospitalares
+• Aumenta tempo de hospitalização
+• Doença grave, custo alto
+Chest. 2016;150(5):1008-1014
+VAGuerra
+
+### Slide 5 de 26
+<!-- slide 5 -->
+Clin Infect Dis. 2010 Aug 1;51 Suppl 1:S120-5
+VAGuerra
+
+### Slide 6 de 26
+<!-- slide 6 -->
+Chest. 2016;150(5):1008-1014
+VAGuerra
+
+### Slide 7 de 26
+<!-- slide 7 -->
+Chest. 2016;150(5):1008-1014
+VAGuerra
+
+### Slide 8 de 26
+<!-- slide 8 -->
+Conceitos / definições
+• Pneumonia: infiltrado pulmonar novo asociado à evidência clínica de que o
+infiltrado tem origem infecciosa (início de febre, escarro purulento,
+leucocitose e declínio da SpO2)
+• Pneumonia hospitalar (HAP): pneumonia com início após 48h de internação
+• Precoce até 4 dias de hospitalização
+• Tardia após o 5º dia de hospitalização
+• Pneumonia associada à VM (VAP): pneumonia com início após 48h da IOT
+• Pneumonia associada a cuidados de saúde (HCAP): retirada das últimas
+diretrizes
+Prever os patógenos mais prováveis envolvidos!
+VAGuerra
+
+### Slide 9 de 26
+<!-- slide 9 -->
+Etiologia
+• Agentes etiológicos mais frequentes:
+• Bacilos Gram-negativos (BGN): Pseudomonas, enterobacteriáceas, Acinetobacter
+• Cocos Gram-positivos: Staphylococcus aureus
+• Etiologias virais
+• Sempre que possível: culturas
+• Basear-se também no perfil microbiológico local (SCIH – hospitais)
+• Lembrar que risco de GMR aumenta com o tempo de internação hospitalar e uso
+prévio de ATBs
+VAGuerra
+
+### Slide 10 de 26
+<!-- slide 10 -->
+Patogenia
+ Anormalidade de deglutição
+ Depressão sensorial
+• Entrada trato respiratório inferior:
+ Instrumentação via aérea inferior
+• Aspiração material orofaringe  Ventilação mecânica
+ Instrumentação do TGI
+ Pós operatório de cirurgia abdominal
+• Colonização da faringe por bactérias Gram-negativas  Adesão bacteriana
+ Virulência do germe
+• Estômago – reservatório de microorganismos: controvérsia quanto ao uso de
+profilaxia úlcera estresse
+ Risco potencial pela inoculação direta
+de microorganismos
+• Inalação aerossóis  Gases utilizados terapia respiratória/
+anestesia
+• Disseminação hematogênica
+ Fluidos usados para aerossol
+ Risco maior: TOT ou TQT
+VAGuerra
+
+### Slide 11 de 26
+<!-- slide 11 -->
+Fatores de risco
+• Mais significante: ventilação mecânica!
+• 48h de VM: risco 6-21x maior de desenvolvimento pneumonia
+• Risco cumulativo 1-3% ao dia de VM
+• Idade avançada
+• Doenças prévias (principalmente doenças respiratórias) e gravidade das mesmas
+• Redução do nível de consciência / aspiração
+• Uso prévio de ATB amplo espectro
+• Tempo de permanência no hospital ou UTI
+• Cirurgia abdominal ou torácica
+• Elevação do pH gástrico (medicamentos, dieta enteral)
+• Entre outros...
+VAGuerra
+
+### Slide 12 de 26
+<!-- slide 12 -->
+Diagnóstico
+• Pneumonia hospitalar:
+• Sindrome infecciosa (febre, aumento do escarro, leucocitose, declínio da SpO2...) +
+infiltrado pulmonar novo
+• Pneumonia associada à VM:
+• Sindrome infecciosa + piora parâmetros ventilatórios + infiltrado pulmonar novo +
+identificação de patógenos em culturas do trato respiratório inferior
+VAGuerra
+
+### Slide 13 de 26
+<!-- slide 13 -->
+Diagnóstico
+• Coleta de material para tentativa de identificação etiológica
+• Hemoculturas
+• Escarro espontâneo
+• Aspirado traqueal (em pacientes com prótese traqueal)
+• LBA (ou mini-LBA)
+• Escovado pulmonar protegido
+• Biópsia pulmonar
+• Análise do líquido pleural
+• Biomarcadores
+• Proteina C reativa
+• Procalcitonina
+VAGuerra
+
+### Slide 14 de 26
+<!-- slide 14 -->
+Diagnóstico
+• Controvérsia na coleta de material - métodos invasivos (broncoscopia) X
+somente não invasivos (escarro espontâneo, escarro induzido, aspirado
+nasotraqueal ou ATQ)
+• Se utilizados métodos invasivos: valores negativos podem ser utilizados
+para suspender ATBs
+• Nem escores de predição clínica (baseadas em sinais e sintomas) nem
+biomarcadores devem ser usados para guiar início do ATB – basear-se em
+critérios clínicos
+VAGuerra
+
+### Slide 15 de 26
+<!-- slide 15 -->
+Tratamento
+• Início precoce de ATB / Cobertura empírica adequada
+Demora no início do ATB  Aumento da mortalidade
+• Fatores que influenciam na escolha ATB:
+• ATBterapia prévia realizada pelo paciente
+• Flora microbiana local e taxa de resistência antibiótica (SCIH)
+• Presença de comorbidades
+• Severidade da apresentação
+• Culturas disponíveis até aquele momento (culturas anteriores do mesmo paciente)
+• Avaliação dos fatores de risco para GMR
+• Outros fatores (toxicidade do ATB, interação medicamentosa, custo, disponibilidade,
+familiaridade clínica com a droga...)
+VAGuerra
+
+### Slide 16 de 26
+<!-- slide 16 -->
+Tratamento
+• Uso inadequado associado a:
+• Efeitos adversos dos medicamentos
+• Risco de infecção por C. difficile
+• Resistência bacteriana
+• Aumento da mortalidade
+• Desenvolvimento de novos ATBs: escasso
+VAGuerra
+
+### Slide 17 de 26
+<!-- slide 17 -->
+Tratamento
+• Tanto na pneumonia hospitalar quanto na PAV, lembrar que deve-se cobrir
+bacilos gram negativos (como por exemplo a P. aeruginosa) e cocos gram-
+positivos (S. aureus)
+• Identificar fatores de risco para desfecho desfavorável
+• “Agressividade” do tratamento (número de ATBs) muda entre PNM
+hospitalar e PAV
+VAGuerra
+
+### Slide 18 de 26
+<!-- slide 18 -->
+Tratamento empírico
+• Na pneumonia hospitalar:
+Na cobertura para Gram negativos...
+Há fatores de risco para desfecho desfavorável?
+• Uso prévio de ATB últimos 90 dias
+• Alto risco de morte (VM ou choque séptico)
+• Doença pulmonar estrutural
+Na cobertura de Gram positivos - Há uma taxa de MRSA >20% para S. aureus (ou taxa
+desconhecida)?
+VAGuerra
+
+### Slide 19 de 26
+<!-- slide 19 -->
+VAGuerra
+
+### Slide 20 de 26
+<!-- slide 20 -->
+Tratamento empírico
+• Na PAV:
+• Para cobrir gram negativos:
+Se houver fatores de risco para GMR
+OU taxa de resistência local >10%
+OU taxa de resistência local desconhecida
+• Para cobrir MRSA:
+Se taxa de resistência local desconhecida
+ou >10-20%
+VAGuerra
+
+### Slide 21 de 26
+<!-- slide 21 -->
+VAGuerra
+
+### Slide 22 de 26
+<!-- slide 22 -->
+Tratamento
+Além da escolha da droga:
+• Conhecer farmacocinética / farmacodinâmica das drogas
+• Quando modificar ATB?
+ Identificação do agente – redirecionamento (descalonamento)
+ Crescimento de germe não coberto no esquema empírico no ATQ ou HMC
+ Deterioração clínica importante nas primeiras horas após início do tto
+• Por que não houve resposta?
+ Doença incorreta? É pneumonia?
+ ATB adequado? Uso correto?
+ Fatores de risco do hospedeiro? DPOC, uso prévio ATB, imunossupressão...
+ Fatores do agente? Resistência ATB, polimicrobiana, agente não
+bacteriano...
+VAGuerra
+
+### Slide 23 de 26
+<!-- slide 23 -->
+Tratamento
+• Tempo de tto: “apenas” 7 dias é superior a terapias estendidas (8-15 dias)
+• Exceções: doença pulmonar estrutural
+• Descalonamento preferido a terapia fixa
+• Transição para VO quando possível (melhora clínica, hemodinamicamente
+estáveis e tolerando bem a VO)
+• Suspensão do ATB pode ser baseada com a queda da procalcitonina
+• Não se pode usar outros marcadores (por ex. a proteína C reativa)
+VAGuerra
+
+### Slide 24 de 26
+<!-- slide 24 -->
+Prevenção
+• Estratégias físicas
+• Estratégias posicionais
+• Estratégias farmacológicas
+VAGuerra
+
+### Slide 25 de 26
+<!-- slide 25 -->
+Prevenção
+• Estratégias físicas
+• Preferir intubação orotraqueal
+• Tentar extubar os pacientes assim que possível / Preferir VNI
+• Circuitos novos para cada paciente
+• Trocar umidificadores a cada 5-7 dias
+• Tubos com drenagem subglótica nos pacientes que irão necessitar VM>72h
+• Estratégias posicionais
+• Elevação da cabeceira a 45º
+• Estratégias farmacológicas
+• Higiene oral com clorexidine
+• Nutrição enteral a parenteral
+• Evitar o uso de sedação profunda e constante – despertar diário
+VAGuerra
+
+### Slide 26 de 26
+<!-- slide 26 -->
+Pneumonia hospitalar
+(e pneumonia associada a
+ventilação mecânica – PAV)
+Dúvidas? Comentários?
