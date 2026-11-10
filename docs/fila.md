@@ -20,3 +20,4 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
+| Flashcards Dia D da Pneumo 3 (DPOC) + fonte da aula | Claude | `claude/pensive-wozniak-5bt4ts` | `pneumo-a3` | 10/11/2026 |
