@@ -18,7 +18,7 @@ Tabela `flashcards_dia_d (id, aula_id, ordem, frente, verso, questoes text[])`: 
 
 1. **Cards:** agente `flashcards` (ele já roda no Opus extra-alto), com o pedido de "Flashcards Dia D". O que pedir a ele:
    - ler as questões FAG da aula pelo conector (consulta no topo de `scripts/dia-d.mjs`) ou pelo arquivo de `node scripts/dia-d.mjs exportar <aula-id>` (só onde o programa alcança o Supabase);
-   - fazer os cards a partir da fonte da aula (`apostilas-fonte/<aula-id>/fonte.md`; aula sem fonte: a apostila), com a apostila de guia;
+   - fazer os cards só a partir da fonte da aula (`apostilas-fonte/<aula-id>/fonte.md`), sem abrir a apostila (aula sem fonte: peça a transcrição ao Mauricio antes);
    - para cada questão, o conceito que dá a resposta certa e por que cada alternativa errada está errada, sem decorar gabarito; sem o prefixo "PROVA · " (no Dia D tudo é de prova);
    - conferir o gabarito de cada questão contra a fonte e pôr em "Dúvidas para o Mauricio" a que não bater;
    - escrever em `rascunhos/flashcards-dia-d/<aula-id>.md` no formato abaixo.
