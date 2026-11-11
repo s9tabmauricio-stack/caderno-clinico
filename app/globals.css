@@ -1371,6 +1371,11 @@ h1.big{background:var(--metal-titulo);-webkit-background-clip:text;background-cl
 .segm.segm-aula{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr)}
 .segm-aula .nw{white-space:nowrap}
 @media (max-width:520px){.segm-aula.quatro button{font-size:13px;line-height:1.2;padding-inline:2px}}
+/* Aula: barra das aulas da matéria acima das abas, para trocar de aula sem voltar (pedido do Mauricio, 11/11/2026) */
+.segm.segm-aulas{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:minmax(30px,1fr);overflow-x:auto;scrollbar-width:none;margin:6px 0 8px}
+.segm-aulas::-webkit-scrollbar{display:none}
+.segm-aulas a{white-space:nowrap;padding-inline:6px;font-variant-numeric:tabular-nums}
+@media (max-width:640px){.segm-aulas .rot{display:none}.segm-aulas a{padding-inline:2px}}
 .grades.grades-2{grid-template-columns:repeat(2,minmax(0,1fr))}
 .diad-ajuda{margin-top:12px;font-size:12.5px;font-weight:600;color:var(--muted)}
 .counts.counts-2{grid-template-columns:repeat(2,minmax(0,1fr))}
