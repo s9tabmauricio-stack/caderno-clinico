@@ -20,3 +20,4 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
+| Aula nova: Nefro 8 (nefropatia do diabetes) | Claude | claude/tender-cannon-e2rwl3 | nefro-a8 | 11/11/2026 |
