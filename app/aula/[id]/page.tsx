@@ -55,20 +55,15 @@ export default async function AulaPage(props: PageProps<'/aula/[id]'>) {
   const materiaNome = aula.data.materias?.nome ?? 'Matéria'
   const materiaId = aula.data.materia_id
   const totalBanco = banco.find((b) => b.materia_id === materiaId)?.total_questoes ?? 0
-  // Próxima aula publicada da matéria (para o "próximo passo" no fim das questões e dos cards)
-  // e, só para o administrador, as aulas da matéria (seletor do botão Editar nas questões)
-  const [proxima, aulasDaMateria] = await Promise.all([
-    supabase
-      .from('aulas')
-      .select('id, titulo')
-      .eq('materia_id', materiaId)
-      .eq('publicada', true)
-      .gt('ordem', aula.data.ordem)
-      .order('ordem')
-      .limit(1)
-      .maybeSingle(),
+  // Aulas publicadas da matéria (barra para trocar de aula e "próximo passo" no fim das questões e dos cards)
+  // e, só para o administrador, todas as aulas da matéria (seletor do botão Editar nas questões)
+  const [publicadas, aulasDaMateria] = await Promise.all([
+    supabase.from('aulas').select('id, ordem, titulo').eq('materia_id', materiaId).eq('publicada', true).order('ordem'),
     ehAdmin(email) ? supabase.from('aulas').select('id, titulo').eq('materia_id', materiaId).order('ordem') : null,
   ])
+  const aulas = publicadas.data ?? []
+  const ordemAtual = aula.data.ordem
+  const proxima = aulas.find((a) => a.ordem > ordemAtual)
   const edicao = aulasDaMateria ? { aulas: aulasDaMateria.data ?? [] } : undefined
 
   return (
@@ -96,7 +91,8 @@ export default async function AulaPage(props: PageProps<'/aula/[id]'>) {
         userId={userId}
         materiaId={materiaId}
         totalBanco={totalBanco}
-        proximaAula={proxima.data}
+        proximaAula={proxima ? { id: proxima.id, titulo: proxima.titulo } : null}
+        aulas={aulas}
         edicao={edicao}
       />
     </Pagina>

@@ -51,7 +51,7 @@ export function FlashcardsDiaD({ aulaId, userId, cards, progresso: inicial, rotu
   function abrir() {
     setAberto(true)
     setVirado(false)
-    document.querySelector('.segm')?.scrollIntoView({ block: 'start', behavior: 'smooth' })
+    document.querySelector('.segm-aula')?.scrollIntoView({ block: 'start', behavior: 'smooth' })
   }
 
   function comecar(ids: string[]) {

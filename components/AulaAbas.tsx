@@ -30,6 +30,8 @@ type Props = {
   totalBanco: number
   // próxima aula publicada da matéria, se houver
   proximaAula: { id: string; titulo: string } | null
+  // aulas publicadas da matéria, para trocar de aula sem voltar (barra acima das abas)
+  aulas: { id: string; ordem: number; titulo: string }[]
   edicao?: { aulas: { id: string; titulo: string }[] }
 }
 
@@ -46,6 +48,7 @@ export function AulaAbas({
   materiaId,
   totalBanco,
   proximaAula,
+  aulas,
   edicao,
 }: Props) {
   const parametros = useSearchParams()
@@ -79,7 +82,7 @@ export function AulaAbas({
     const url = new URL(window.location.href)
     url.searchParams.set('fonte', nova)
     window.history.replaceState(null, '', url)
-    if (rolar) document.querySelector('.segm')?.scrollIntoView({ block: 'start', behavior: 'smooth' })
+    if (rolar) document.querySelector('.segm-aula')?.scrollIntoView({ block: 'start', behavior: 'smooth' })
   }
 
   function trocar(nova: Aba, rolar = false) {
@@ -87,7 +90,7 @@ export function AulaAbas({
     const url = new URL(window.location.href)
     url.searchParams.set('aba', nova)
     window.history.replaceState(null, '', url)
-    if (rolar) document.querySelector('.segm')?.scrollIntoView({ block: 'start', behavior: 'smooth' })
+    if (rolar) document.querySelector('.segm-aula')?.scrollIntoView({ block: 'start', behavior: 'smooth' })
   }
 
   const abas: [Aba, React.ReactNode][] = [
@@ -131,8 +134,32 @@ export function AulaAbas({
     </>
   )
 
+  // Link para outra aula da matéria: abre na mesma aba e mantém o retorno de origem
+  function linkAula(outra: string) {
+    const p = new URLSearchParams({ aba })
+    const retorno = parametros.get('retorno')
+    if (retorno) p.set('retorno', retorno)
+    return `/aula/${outra}?${p}`
+  }
+
   return (
     <>
+      {aulas.length > 1 && (
+        <nav className="segm segm-aulas" aria-label="Aulas da matéria">
+          {aulas.map((a) => (
+            <Link
+              key={a.id}
+              href={linkAula(a.id)}
+              className={a.id === aulaId ? 'on' : undefined}
+              aria-current={a.id === aulaId ? 'page' : undefined}
+              title={a.titulo}
+            >
+              <span className="rot">Aula </span>
+              {a.ordem}
+            </Link>
+          ))}
+        </nav>
+      )}
       <div className={`segm segm-aula${abas.length > 3 ? ' quatro' : ''}`} role="tablist" aria-label="Conteúdo da aula">
         {abas.map(([chave, rotulo]) => (
           <button
