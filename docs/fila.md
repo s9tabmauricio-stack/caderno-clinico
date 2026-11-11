@@ -20,4 +20,3 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
-| Aula nova (Nefro 7.1: tratamento farmacológico da HAS) | Claude | claude/affectionate-planck-4p7uc5 | nefro-a9; ordem das aulas da nefro | 2026-11-11 |
