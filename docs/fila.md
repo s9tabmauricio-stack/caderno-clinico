@@ -20,3 +20,4 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
+| P2 T19 de Nefro: questão 9 (versão nova) | Claude | (só banco) | nefro-a7 (questões) | 11/11 |
