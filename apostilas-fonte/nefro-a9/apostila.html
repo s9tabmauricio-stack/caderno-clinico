@@ -1,0 +1,507 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<title>Nefrologia · Aula 7.1 · Tratamento farmacológico da hipertensão</title>
+<meta name="rodape" content="Mauricio Faria · Nefrologia · Aula 7.1 — Tratamento da hipertensão">
+<link rel="stylesheet" href="apostila.css">
+<style>
+/* ===== componentes do molde novo (em teste na pneumo-a5) ===== */
+.simples { background: #FFFFFF; border: 1px solid #C3D8F8; border-left: 4pt solid #0B5BD3; border-radius: 12pt; padding: 9pt 14pt 10pt; margin: 0 0 10pt; break-inside: avoid; }
+.simples p { font-size: 10.2pt; line-height: 1.5; color: #1F2933; margin: 0; }
+.aqui { display: flex; margin-top: 7pt; }
+.aqui span { flex: 1; border-top: 3pt solid #DCDCE2; padding-top: 2.5pt; margin-right: 2.5pt; font-family: "Inter Medium"; font-size: 6pt; line-height: 1.25; color: #8E8E93; }
+.aqui span:last-child { margin-right: 0; }
+.aqui span.feito { border-top-color: #A9C4EE; color: #6C6C70; }
+.aqui span.on { border-top-color: #0B5BD3; color: #0B5BD3; font-family: "Inter SemiBold"; }
+.aqui span.ramo { border-top-style: dashed; }
+.figure .olhar { margin-top: 8pt; }
+.figure .olhar .kick { margin-bottom: 3pt; }
+.figure .olhar ul { margin: 0; }
+.figure .olhar li { padding-left: 0; font-size: 8.7pt; line-height: 1.45; margin-bottom: 2pt; }
+.figure .olhar li::before { display: none; }
+.figure .olhar li b { color: #0B5BD3; }
+.figure .leg { font-size: 7.8pt; color: #8E8E93; margin: 5pt 0 0; }
+.reg { font-size: 8.3pt; line-height: 1.45; color: #6C6C70; background: #F7F7FA; border: 1px solid #E3E3E8; border-radius: 9pt; padding: 5pt 10pt; margin: 6pt 0 9pt; break-inside: avoid; }
+.reg b { font-family: "Inter SemiBold"; color: #4F5B70; }
+.livros { font-size: 8.3pt; line-height: 1.45; color: #6E3AA7; background: #F4EBFB; border: 1px solid #DEC7F1; border-radius: 9pt; padding: 5pt 10pt; margin: 6pt 0 9pt; break-inside: avoid; }
+.livros b { color: #6E3AA7; }
+.sw.simples-sw { background: #FFFFFF; border-color: #C3D8F8; border-left: 3pt solid #0B5BD3; }
+.sw.aqui-sw { background: linear-gradient(90deg, #A9C4EE 0, #A9C4EE 45%, #0B5BD3 45%, #0B5BD3 70%, #DCDCE2 70%); border: 0; height: 4pt; border-radius: 2pt; }
+.sw.exame-sw { background: #1F2933; border-color: #1F2933; }
+.cmp .destaque { font-family: "Inter SemiBold"; color: #0B5BD3; }
+.cmp.c4 .k { width: 62pt; }
+.cmp.c4 .c { font-size: 8.3pt; padding-right: 8pt; }
+.vesp { break-before: page; }
+.vesp .item { display: flex; align-items: baseline; background: #FFFFFF; border: 1px solid #E3E3E8; border-radius: 12pt; padding: 7pt 12pt; margin: 0 0 6pt; break-inside: avoid; }
+.vesp .item .prova { flex: none; margin: 0 9pt 0 0; }
+.vesp .item p { margin: 0; font-size: 9.2pt; }
+.tiles.t4 { margin: 6pt 0 8pt; }
+.figure.lado { display: flex; align-items: center; }
+.figure.lado > img { flex: none; }
+.figure.lado .olhar { flex: 1; margin: 0 0 0 12pt; }
+.cover .toc a { padding: 3.6pt 0; }
+/* ===== desta apostila ===== */
+.caso-en p { font-size: 9.2pt; }
+</style>
+</head><body>
+
+<div class="cover">
+  <div class="kicker">Nefrologia · Aula 7.1 · Tratamento da hipertensão</div>
+  <h1>Tratamento farmacológico da hipertensão</h1>
+  <p class="sub">As classes de anti-hipertensivos (como agem, o que causam e quando evitar) e cinco casos reais de efeito colateral para não errar na prescrição.</p>
+  <div class="author"><span class="av">V</span><div><b>Dra. Vanessa</b><span>Professora de Nefrologia · 28 de outubro de 2026</span></div></div>
+  <div class="keynums"><div class="kick">Três números para levar</div>
+    <div class="kn-grid">
+      <div class="kn"><div class="n">4 semanas</div><div class="l">de uso, no mínimo, antes de aumentar a dose</div></div>
+      <div class="kn"><div class="n">130–139</div><div class="l">por 80–89 mmHg: faixa que pode começar com um remédio só, de qualquer classe</div></div>
+      <div class="kn"><div class="n">1 classe</div><div class="l">fora do Sistema Único de Saúde: o alisquireno</div></div>
+    </div></div>
+  <div class="toc"><div class="kick">Nesta apostila</div>
+    <a href="#s01"><span class="tn">01</span><span class="tt">Como escolher e combinar os remédios</span><span class="pg">{{s01}}</span></a>
+    <a href="#s02"><span class="tn">02</span><span class="tt">Diuréticos</span><span class="pg">{{s02}}</span></a>
+    <a href="#s03"><span class="tn">03</span><span class="tt">Bloqueadores adrenérgicos: central, beta e alfa</span><span class="pg">{{s03}}</span></a>
+    <a href="#s04"><span class="tn">04</span><span class="tt">Bloqueadores dos canais de cálcio</span><span class="pg">{{s04}}</span></a>
+    <a href="#s05"><span class="tn">05</span><span class="tt">Bloqueio do sistema renina-angiotensina</span><span class="pg">{{s05}}</span></a>
+    <a href="#s06"><span class="tn">06</span><span class="tt">Vasodilatadores diretos: minoxidil e hidralazina</span><span class="pg">{{s06}}</span></a>
+    <a href="#s07"><span class="tn">07</span><span class="tt">Seminário: cinco casos clínicos</span><span class="pg">{{s07}}</span></a>
+    <a href="#s08"><span class="tn">08</span><span class="tt">O essencial da aula</span><span class="pg">{{s08}}</span></a>
+    <p class="note">Organizada a partir da aula expositiva e do seminário de casos clínicos de 28 de outubro de 2026, continuação da Aula 7 (hipertensão arterial sistêmica). A legenda de cores está na página 2.</p>
+  </div>
+</div>
+
+<div class="legend"><div class="kick">Como ler esta apostila</div><div class="lg-grid">
+  <div class="lg"><span class="sw blue"></span><div><b>Azul</b> conteúdo da aula e raciocínio</div></div>
+  <div class="lg"><span class="sw green"></span><div><b>Verde</b> dose ou valor de referência</div></div>
+  <div class="lg"><span class="sw red"></span><div><b>Vermelho</b> alerta, erro comum ou pegadinha da professora</div></div>
+  <div class="lg"><span class="sw orange"></span><div><b>Laranja</b> fala ou parêntese da professora</div></div>
+  <div class="lg"><span class="sw purple"></span><div><b>Roxo</b> complemento que não foi dito em aula</div></div>
+  <div class="lg"><span class="prova">PROVA</span><div><b>Marca de prova</b> o ponto que cai na prova</div></div>
+  <div class="lg"><span class="sw simples-sw"></span><div><b>Em palavras simples</b> a ideia do capítulo, em linguagem de conversa</div></div>
+  <div class="lg"><span class="sw aqui-sw"></span><div><b>Você está aqui</b> a etapa da trilha da aula em que o capítulo está</div></div>
+</div></div>
+
+<div class="prof"><div class="kick">Sobre a professora · Dra. Vanessa</div>
+<div class="rows">
+  <div class="row"><div class="k">Atuação</div><div class="v">Nefrologia.</div></div>
+  <div class="row"><div class="k">Casos</div><div class="v">Os casos do seminário são reais: pacientes que ela e a equipe já viveram, do ambulatório à unidade de terapia intensiva.</div></div>
+  <div class="row"><div class="k">Método</div><div class="v">Pré-teste e pós-teste: medir o que a turma sabe do assunto, explicar e testar de novo.</div></div>
+</div></div>
+
+<h3 data-bm="A trilha da aula">A trilha da aula</h3>
+<div class="figure"><img src="trilha.svg" alt="Trilha da aula em sete etapas: bom remédio e estratégia, diuréticos, simpático, canais de cálcio, renina-angiotensina, vasodilatadores diretos e cinco casos clínicos.">
+<p class="leg">Do remédio ideal às classes, uma a uma, e aos casos em que o efeito colateral denuncia o remédio.</p></div>
+
+<!-- ============================================================ 01 -->
+<section id="s01">
+<div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">01</span></div><div class="corpo"><div class="de">Etapa 1 de 7 · Estratégia</div><h2>Como escolher e combinar os remédios</h2><div class="aqui"><span class="on">Estratégia</span><span>Diuréticos</span><span>Simpático</span><span>Cálcio</span><span>Angiotensina</span><span>Vasodilatadores</span><span>Casos</span></div></div></div>
+<div class="simples"><p><b>Em palavras simples:</b> remédio de pressão bom funciona por boca, tem poucos efeitos, é tomado uma vez ao dia e comprovadamente evita derrame, infarto e perda do rim. A base continua sendo mudar o estilo de vida; o remédio entra por cima, um só ou em dupla, conforme o quanto a pressão está alta e o perfil do paciente.</p></div>
+
+<h3 data-bm="Sete características de um bom anti-hipertensivo">Sete características de um bom anti-hipertensivo</h3>
+<ol class="flow">
+  <li><b class="t">Eficaz por via oral.</b></li>
+  <li><b class="t">Seguro e bem tolerado,</b> com relação risco-benefício favorável ao paciente.</li>
+  <li><b class="t">Poucas doses por dia:</b> de preferência, dose única diária.</li>
+  <li><b class="t">Começar pela menor dose efetiva</b> preconizada para cada situação clínica e aumentar aos poucos. Quanto maior a dose, mais efeitos colaterais.</li>
+  <li><b class="t">Não ser manipulado:</b> não existe informação adequada de controle de qualidade da fórmula manipulada.</li>
+  <li><b class="t">Ser usado por pelo menos 4 semanas</b> antes de aumentar a dose.</li>
+  <li><b class="t">Ter prova em ensaios clínicos</b> de que reduz a morbidade e a mortalidade cardiovascular.</li>
+</ol>
+<div class="ref">
+  <div class="txt"><div class="kick"><span class="dot"></span>Antes de aumentar a dose</div><p>Tempo mínimo de uso do anti-hipertensivo na dose em que começou.</p></div>
+  <div class="val">4 semanas<small>no mínimo</small></div>
+</div>
+<p>Nos estágios 2 e 3, o bom anti-hipertensivo é pensado em associação: os remédios funcionam de mãos dadas uns com os outros. Quando o paciente não melhora com um só, eles são associados entre si. E tratar a hipertensão não é só baixar o número: é evitar lesão de órgão-alvo.</p>
+
+<h3 data-bm="A pirâmide do tratamento">A pirâmide do tratamento <span class="prova">PROVA</span></h3>
+<div class="figure"><img src="piramide.svg" alt="Pirâmide do tratamento: base mudança de estilo de vida; para começar, tiazídico, inibidor da enzima de conversão, bloqueador dos canais de cálcio ou betabloqueador; depois espironolactona, betabloqueador e alfabloqueador.">
+<p class="leg">Da base para o topo: o estilo de vida sustenta tudo; os remédios entram por cima.</p></div>
+<p>A base da pirâmide é a <b>mudança de estilo de vida</b>. Por cima dela, o tratamento pode começar com tiazídico, inibidor da enzima de conversão, bloqueador dos canais de cálcio ou betabloqueador. Depois, se a pressão não controlar, entram a espironolactona, o betabloqueador e os alfabloqueadores (bloqueadores alfa-1).</p>
+<div class="quote"><p>“Não se fala, de novo, em hipertensão arterial sem falar em mudança de estilo de vida.”</p><div class="who">Dra. Vanessa, sobre a base da pirâmide</div></div>
+<div class="es">
+  <div class="kick">O foco do tratamento farmacológico</div>
+  <p class="lead">Reduzir a taxa de acidente vascular cerebral, de doença arterial coronariana, de insuficiência cardíaca e de doença renal crônica. Este é o foco do tratamento da hipertensão arterial.</p>
+</div>
+
+<h3 data-bm="Um remédio só ou dois">Um remédio só ou dois? <span class="prova">PROVA</span></h3>
+<p>Tratar com um anti-hipertensivo só (monoterapia) é o ideal, mas nem todo paciente consegue. A novidade: com pressão entre 130 e 139 por 80 e 89 mmHg, dá para começar em monoterapia com qualquer uma das classes anti-hipertensivas.</p>
+<div class="grid2">
+  <div class="card"><span class="tag">Monoterapia</span><h4>Começa com um remédio só</h4>
+    <ul><li>130 a 139 por 80 a 89 mmHg, com risco cardiovascular</li><li>Idoso com mais de 80 anos</li><li>Indivíduo frágil</li><li>Hipertensão grau 1</li><li>Hipotensão ortostática</li></ul></div>
+  <div class="card"><span class="tag">Associação</span><h4>Começa com dois ou mais</h4>
+    <p>Fora desses perfis, o estágio 1 geralmente já começa com dois medicamentos. Nos estágios 2 e 3, os remédios vão sendo acoplados, até a polifarmácia do estágio 3: mais de quatro ou cinco anti-hipertensivos ao mesmo tempo.</p></div>
+</div>
+
+<h3 data-bm="No Sistema Único de Saúde, só falta o alisquireno">No Sistema Único de Saúde, só falta o alisquireno</h3>
+<p>Com exceção do inibidor direto da renina, o alisquireno (“um remédio que não veio para mudar a história”), todas as classes estão no Sistema Único de Saúde: basta a receita e ir buscar no posto. Com tudo disponível, o controle da pressão deveria ser melhor; mesmo assim, há pacientes tendo derrame e infarto.</p>
+<div class="quote"><p>“O que está acontecendo? Não é só ter o remédio no posto: é tomar o remédio do posto e mudar estilo de vida.”</p><div class="who">Dra. Vanessa, repetindo o que disse na aula anterior</div></div>
+</section>
+
+<!-- ============================================================ 02 -->
+<section id="s02">
+<div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">02</span></div><div class="corpo"><div class="de">Etapa 2 de 7 · Diuréticos</div><h2>Diuréticos</h2><div class="aqui"><span class="feito">Estratégia</span><span class="on">Diuréticos</span><span>Simpático</span><span>Cálcio</span><span>Angiotensina</span><span>Vasodilatadores</span><span>Casos</span></div></div></div>
+<div class="simples"><p><b>Em palavras simples:</b> diurético faz o rim perder mais sódio e água pela urina. Cada tipo age num trecho do túbulo do rim, e é esse lugar que define a força, os efeitos e o uso: do manitol do trauma de crânio à furosemida do paciente inchado.</p></div>
+
+<h3 data-bm="O que faz um diurético">O que faz um diurético</h3>
+<p>O diurético aumenta o fluxo urinário porque reduz a capacidade do túbulo de reabsorver sódio e água; isso pode até elevar a taxa de filtração glomerular.</p>
+<h3 data-bm="Para que servem os diuréticos">Para que servem os diuréticos</h3>
+<div class="card wide"><ul>
+  <li><b>Hipertensão.</b></li>
+  <li><b>Doenças edematosas:</b> edema de origem cardíaca, edema renal (pela síndrome nefrótica ou pela insuficiência renal crônica) e edema da insuficiência hepática.</li>
+  <li><b>Hipercalcemia:</b> a grave é tratada com hiper-hidratação mais diurético de alça, recado para os futuros oncologistas e hematologistas.</li>
+  <li><b>Síndrome da secreção inapropriada do hormônio antidiurético.</b></li>
+</ul></div>
+
+<h3 data-bm="Onde cada diurético age">Onde cada diurético age</h3>
+<p>Os diuréticos são classificados pelo local onde agem: glomérulo, túbulo proximal, alça de Henle, túbulo distal e ducto coletor.</p>
+<div class="figure"><img src="nefron.svg" alt="Mapa dos diuréticos pelo trecho do túbulo: glomérulo e túbulo proximal (manitol, acetazolamida, glifozinas), alça de Henle (diuréticos de alça), túbulo distal e ducto coletor (espoliadores e poupadores de potássio).">
+<p class="leg">Os diuréticos pelo lugar onde agem, na ordem em que o filtrado percorre o túbulo.</p></div>
+<div class="box"><div class="kick"><span class="dot"></span>Revise antes</div><p>Os locais de reabsorção de cada trecho do túbulo são os das aulas do Dr. Guilherme. O diurético é dado para inibir a reabsorção de sódio e água: saber onde ela acontece é saber onde cada diurético age.</p></div>
+
+<h3 data-bm="Glomérulo e túbulo proximal">Glomérulo e túbulo proximal</h3>
+<div class="cmp c4">
+  <div class="r h"><div class="k"></div><div class="c">Manitol</div><div class="c">Acetazolamida</div><div class="c">Glifozinas</div></div>
+  <div class="r"><div class="k">O que é</div><div class="c">Soro injetável com um tipo de açúcar</div><div class="c">Inibidor da anidrase carbônica (Diamox)</div><div class="c">Inibidores do cotransportador de sódio e glicose tipo 2: dapagliflozina, empagliflozina, canagliflozina</div></div>
+  <div class="r"><div class="k">Como age</div><div class="c">Aumenta a diurese</div><div class="c">Inibe a reabsorção de bicarbonato, sódio e água no rim</div><div class="c">Diurético do túbulo contornado proximal</div></div>
+  <div class="r"><div class="k">Uso</div><div class="c">Trauma cranioencefálico: aumentar a diurese e diminuir o edema cerebral</div><div class="c">Glaucoma (pressão intraocular aumentada); é hoje o diurético mais usado na oftalmologia</div><div class="c">Um dos pilares do “quarteto fantástico”, que trata insuficiência cardíaca, insuficiência renal e diabetes</div></div>
+  <div class="r"><div class="k">Lembrar</div><div class="c">Geralmente causa depleção hipernatrêmica</div><div class="c">“Desidrata” a pressão do olho, eliminando o líquido com mais facilidade</div><div class="c">Assunto da aula de diabetes</div></div>
+</div>
+<p>A albumina também é considerada um diurético desse grupo, mas os mais importantes são esses três.</p>
+<div class="livros"><b>Nos livros:</b> o manitol é um diurético osmótico; a perda de água supera a de sódio, e por isso o sódio do sangue tende a subir.</div>
+<div class="box"><div class="kick"><span class="dot"></span>Guarde para a próxima aula</div><p>Os quatro remédios que hoje são os pilares do tratamento da nefropatia do diabetes, o “quarteto fantástico” em que entram as glifozinas, são assunto da aula de diabetes da semana seguinte.</p></div>
+
+<h3 data-bm="Alça de Henle: os mais potentes">Alça de Henle: os mais potentes</h3>
+<p>Os diuréticos de alça agem no ramo espesso da alça de Henle e tornam inativo o cotransportador de sódio, potássio e dois cloretos. São os mais potentes e os mais rápidos.</p>
+<div class="rows">
+  <div class="row"><div class="k">Furosemida</div><div class="v">Lasix. A mais importante da classe, extremamente potente, e a que se acha na Unidade Básica de Saúde.</div></div>
+  <div class="row"><div class="k">Outros</div><div class="v">Bumetanida (Burinax), ácido etacrínico e piretanida (Arelix).</div></div>
+</div>
+<div class="card wide"><span class="tag">Furosemida</span><h4>O que ela trata</h4>
+  <ul class="cols2"><li>Hipertensão, principalmente a associada à insuficiência cardíaca com edema</li><li>Hipertensão da síndrome nefrótica da criança</li><li>Hipertensão da síndrome nefrítica da criança</li><li>Cirrose</li></ul></div>
+
+<h3 data-bm="Túbulo distal e ducto coletor">Túbulo distal e ducto coletor: espoliadores e poupadores de potássio</h3>
+<div class="cmp">
+  <div class="r h"><div class="k"></div><div class="c">Espoliadores de potássio</div><div class="c">Poupadores de potássio</div></div>
+  <div class="r"><div class="k">Mais famoso</div><div class="c">Hidroclorotiazida, um benzotiazídico (tem na farmácia básica)</div><div class="c">Espironolactona (Aldactone)</div></div>
+  <div class="r"><div class="k">Outros</div><div class="c">Sulfamídicos: clortalidona e indapamida</div><div class="c">Triantereno e amilorida (Amilorid)</div></div>
+  <div class="r"><div class="k">O nome diz</div><div class="c">O potássio é perdido</div><div class="c">O potássio é poupado</div></div>
+</div>
+
+
+</section>
+
+<!-- ============================================================ 03 -->
+<section id="s03">
+<div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">03</span></div><div class="corpo"><div class="de">Etapa 3 de 7 · Simpático</div><h2>Bloqueadores adrenérgicos: central, beta e alfa</h2><div class="aqui"><span class="feito">Estratégia</span><span class="feito">Diuréticos</span><span class="on">Simpático</span><span>Cálcio</span><span>Angiotensina</span><span>Vasodilatadores</span><span>Casos</span></div></div></div>
+<div class="simples"><p><b>Em palavras simples:</b> estes remédios baixam a pressão freando o sistema nervoso simpático, o “acelerador” do corpo: no cérebro (ação central), no coração (betabloqueadores) ou nos vasos (alfabloqueadores). Cada grupo tem um efeito colateral típico, e é ele que o paciente vai contar no consultório.</p></div>
+
+<h3 data-bm="Ação central: como age">Ação central: como age</h3>
+<p>Os bloqueadores adrenérgicos de ação central estimulam receptores alfa-adrenérgicos no tronco encefálico. Isso inibe a ação simpática e diminui a resistência vascular periférica.</p>
+<div class="quote"><p>“Tratamento de hipertensão passa pela gente entender fisiologia. Se nós não entendermos a fisiologia da hipertensão, a gente não sabe prescrever o melhor remédio.”</p><div class="who">Dra. Vanessa, sobre por que dar diurético e por que dar ação central</div></div>
+
+<h3 data-bm="Efeitos colaterais da ação central">Efeitos colaterais da ação central <span class="prova">PROVA</span></h3>
+<div class="card wide"><ul>
+  <li><b>Sedação:</b> o paciente fica mais sonolento.</li>
+  <li><b>Boca seca:</b> extremamente importante. Resseca a mucosa oral, e o paciente precisa tomar líquido; cuidado ao prescrever para o paciente que incha fácil.</li>
+  <li><b>Hipotensão postural.</b></li>
+  <li><b>Diminuição da atividade sexual.</b></li>
+</ul></div>
+<div class="box red"><div class="kick"><span class="dot"></span>Pegadinha da professora</div><p><span class="medium">“Remédio da pressão tira o vigor sexual.”</span> Muitos pacientes de 60 anos ou mais recusam o tratamento por isso. Entre as classes de anti-hipertensivos, só a de ação central diminui a atividade sexual; todas as outras não interferem. Lembre disso ao prescrever e ao conversar com o paciente.</p></div>
+
+<h3 data-bm="Alfametildopa e clonidina">Alfametildopa e clonidina</h3>
+<div class="grid2">
+  <div class="card"><span class="tag">Gestação</span><h4>Alfametildopa (Aldomet)</h4><p>Pode ser usada na gestante e é, inclusive, a preferida na gestação.</p></div>
+  <div class="card"><span class="tag">Controle da pressão</span><h4>Clonidina (Atensina)</h4><p>Vasodilatador de ação central: dá essencialmente boca seca e diminui um pouco a atividade sexual, mas controla muito bem a pressão.</p></div>
+</div>
+<p>A boca seca da clonidina é o caso 1 do seminário (capítulo 07).</p>
+
+<h3 data-bm="Betabloqueadores: três grupos">Betabloqueadores: três grupos</h3>
+<p>Ainda dentro dos bloqueadores adrenérgicos, os betabloqueadores diminuem o débito cardíaco e a secreção de renina.</p>
+<div class="cmp c4">
+  <div class="r h"><div class="k"></div><div class="c">Cardiosseletivos</div><div class="c">Não cardiosseletivos</div><div class="c">Ação beta e alfa</div></div>
+  <div class="r"><div class="k">Bloqueiam</div><div class="c">Beta-1; não inibem os receptores dos vasos e da traqueia</div><div class="c">Beta-1 e beta-2</div><div class="c">Receptores beta e alfa</div></div>
+  <div class="r"><div class="k">Exemplos</div><div class="c">Atenolol e metoprolol</div><div class="c">Propranolol, nadolol e timolol</div><div class="c">Carvedilol</div></div>
+  <div class="r"><div class="k">Lembrar</div><div class="c">Os receptores da traqueia também são assunto da pneumologia</div><div class="c">O timolol também trata glaucoma, porque diminui a pressão intraocular</div><div class="c">Trata a hipertensão e melhora a função do coração na insuficiência cardíaca</div></div>
+</div>
+
+<h3 data-bm="Betabloqueador: cuidado na prescrição">Betabloqueador: cuidado na prescrição <span class="prova">PROVA</span></h3>
+<div class="box red"><div class="kick"><span class="dot"></span>Cuidado ao prescrever betabloqueador para</div><ul>
+  <li><span class="medium">Doença pulmonar obstrutiva crônica e asma.</span></li>
+  <li><span class="medium">Bloqueio atrioventricular de primeiro e segundo grau.</span></li>
+  <li><span class="medium">Depressão.</span></li>
+  <li><span class="medium">Diabetes: uso restrito.</span> Quando a glicose cai, o corpo ativa a glicogenólise muscular (o músculo passa a liberar glicose). O betabloqueador inibe essa reação normal e pode mascarar ou prolongar a hipoglicemia.</li>
+</ul></div>
+
+<h3 data-bm="Alfabloqueadores: o efeito de primeira dose">Alfabloqueadores: o efeito de primeira dose</h3>
+<p>Os alfabloqueadores (bloqueadores alfa-1) têm efeito hipotensor discreto a longo prazo. Mas, no efeito de primeira dose, causam vertigem, fraqueza e cefaleia: nos primeiros dias de uso, o paciente faz hipotensão ortostática e fica com a sensação de estar “mole”.</p>
+<p>São úteis no paciente prostático (hiperplasia prostática benigna), porque diminuem o tônus da próstata, e na hipertensão leve a moderada. Exemplos: doxazosina, prazosina e terazosina.</p>
+<div class="livros"><b>Nos livros:</b> o alfabloqueador relaxa o músculo liso da próstata e do colo da bexiga e alivia os sintomas urinários, mas não reduz o tamanho da glândula.</div>
+
+<h3 data-bm="No idoso prostático, vigiar a pressão">No idoso prostático, vigiar a pressão <span class="prova">PROVA</span></h3>
+<div class="box red"><div class="kick"><span class="dot"></span>Pegadinha da professora</div><p><span class="medium">Acrescentar doxazosina sem olhar a pressão.</span> Ao tratar a hiperplasia prostática benigna do idoso com doxazosina, é preciso monitorizar a pressão arterial; senão ele faz hipotensão, pode desmaiar e cair. É o caso 2 do seminário.</p></div>
+</section>
+
+<!-- ============================================================ 04 -->
+<section id="s04">
+<div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">04</span></div><div class="corpo"><div class="de">Etapa 4 de 7 · Canais de cálcio</div><h2>Bloqueadores dos canais de cálcio</h2><div class="aqui"><span class="feito">Estratégia</span><span class="feito">Diuréticos</span><span class="feito">Simpático</span><span class="on">Cálcio</span><span>Angiotensina</span><span>Vasodilatadores</span><span>Casos</span></div></div></div>
+<div class="simples"><p><b>Em palavras simples:</b> sem cálcio entrando na célula do músculo do vaso, o vaso não contrai e fica dilatado, e a pressão cai. O preço é um inchaço em volta dos tornozelos que assusta o paciente: é efeito do próprio remédio, e explicar isso é o que impede que ele abandone o tratamento.</p></div>
+
+<h3 data-bm="Como agem">Como agem</h3>
+<p>Os antagonistas (ou bloqueadores) dos canais de cálcio reduzem a resistência vascular periférica diminuindo a concentração de cálcio nas células musculares lisas dos vasos. Bloqueada a entrada de cálcio, não há contração vascular, e os vasos ficam dilatados.</p>
+<div class="figure"><img src="bcc.svg" alt="Do bloqueio do cálcio à vasodilatação e aos três efeitos: pressão baixa, edema bimaleolar e rubor facial."></div>
+
+<h3 data-bm="Edema bimaleolar: explicar ao paciente">Edema bimaleolar: explicar ao paciente <span class="prova">PROVA</span></h3>
+<p>Exatamente por dilatarem os vasos, eles fazem <b>edema bimaleolar</b>: um inchaço em volta dos maléolos, porque a vasodilatação diminui o retorno venoso. Todos os remédios da classe fazem (é efeito de classe). É um efeito natural da droga e vai desaparecendo com o uso crônico.</p>
+<div class="quote"><p>“— Eu não quero mais tomar aquele remédio que a senhora me deu, porque depois que eu comecei a tomar eu fiquei inchado.<br>— Não! O senhor não ficou inchado, o senhor ficou vasodilatado. E graças a Deus: tudo o que ele está fazendo no seu tornozelo, ele está vasodilatando o seu coração.”</p><div class="who">Dra. Vanessa, encenando a conversa no consultório</div></div>
+<div class="box red"><div class="kick"><span class="dot"></span>Pegadinha da professora</div><p><span class="medium">Tratar o inchaço como problema e deixar o paciente parar o remédio.</span> Se o médico não souber explicar ao paciente e convencê-lo da importância de tomar o remédio, ele vai parar de tomar.</p></div>
+
+<h3 data-bm="Dois tipos">Dois tipos</h3>
+<div class="cmp">
+  <div class="r h"><div class="k"></div><div class="c">Tipo 1: di-hidropiridinas</div><div class="c">Tipo 2: benzotiazepinas e fenilalquilaminas</div></div>
+  <div class="r"><div class="k">Ação</div><div class="c">Bloqueiam os canais de cálcio lentos; vasodilatadores potentes</div><div class="c">Agem também sobre a frequência cardíaca (ação depressora cardíaca maior)</div></div>
+  <div class="r"><div class="k">Exemplos</div><div class="c">Nifedipina (Adalat), anlodipina (Norvasc, Pressat), felodipina, nicardipina, nitrendipina, isradipina</div><div class="c">Diltiazem (Cardizem), uma benzotiazepina; verapamil (Dilacoron), uma fenilalquilamina, derivada da papaverina</div></div>
+</div>
+<p>Entre as di-hidropiridinas, cada indústria farmacêutica mudou um detalhe da molécula e pôs o seu nome: fazem a mesma coisa.</p>
+
+<h3 data-bm="Efeitos colaterais da classe">Efeitos colaterais da classe</h3>
+<p>Edema maleolar, cefaleia, tontura, rubor facial (a mesma vasodilatação do coração e da periferia chega ao rosto) e, em alguns casos, depressão miocárdica.</p>
+</section>
+
+<!-- ============================================================ 05 -->
+<section id="s05">
+<div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">05</span></div><div class="corpo"><div class="de">Etapa 5 de 7 · Renina-angiotensina</div><h2>Bloqueio do sistema renina-angiotensina</h2><div class="aqui"><span class="feito">Estratégia</span><span class="feito">Diuréticos</span><span class="feito">Simpático</span><span class="feito">Cálcio</span><span class="on">Angiotensina</span><span>Vasodilatadores</span><span>Casos</span></div></div></div>
+<div class="simples"><p><b>Em palavras simples:</b> o sistema renina-angiotensina-aldosterona produz a angiotensina II, que contrai os vasos, e a aldosterona, que segura sódio e água e elimina potássio. Bloqueá-lo baixa a pressão e protege o rim, mas tem preços que o paciente precisa conhecer: tosse, potássio alto e proibição na gravidez.</p></div>
+
+<div class="figure"><img src="raa.svg" alt="Cascata renina, angiotensina I, angiotensina II, receptor do vaso e aldosterona, com os pontos de bloqueio do alisquireno, do inibidor da enzima de conversão e do bloqueador do receptor.">
+<p class="leg">Onde cada classe bloqueia o sistema e o que acontece depois.</p></div>
+
+<h3 data-bm="Inibidores da enzima de conversão: como agem">Inibidores da enzima de conversão: como agem</h3>
+<p>Bloqueiam a conversão de angiotensina I em angiotensina II, ou seja, inibem o sistema renina-angiotensina-aldosterona. A enzima que faz essa conversão é uma cininase: bloqueada, as cininas (bradicinina) aumentam, e esse aumento das cininas circulantes é alergênico.</p>
+
+<h3 data-bm="Tosse seca: avisar antes de prescrever">Tosse seca: avisar antes de prescrever <span class="prova">PROVA</span></h3>
+<p>É o efeito colateral mais comum da classe: uma tosse seca, curta e repetida. Pode evoluir para reação anafilactoide e até edema angioneurótico (angioedema); o edema de glote pode ser fatal.</p>
+<div class="quote"><p>“Eu vou lhe prescrever um remédio que vai proteger o seu rim, vai proteger o seu coração, vai baixar a pressão. Mas, se o senhor começar a ter tosse com ele, pare de tomar e vá para o pronto-socorro.”</p><div class="who">Dra. Vanessa, sobre o aviso que acompanha toda receita de inibidor da enzima de conversão</div></div>
+
+<h3 data-bm="Potássio alto: vale para os dois bloqueios">Potássio alto: vale para os dois bloqueios <span class="prova">PROVA</span></h3>
+<p>Inibido o sistema, a aldosterona também fica inibida. E o que a aldosterona faz? Absorve sódio e água e elimina potássio. Sem ela, o potássio fica retido: o inibidor da enzima de conversão causa <b>hiperpotassemia</b> (hipercalemia). O bloqueador do receptor da angiotensina II faz o mesmo, pela mesma razão.</p>
+<div class="box red"><div class="kick"><span class="dot"></span>Pegadinha da professora</div><p><span class="medium">Somar os dois bloqueios.</span> Inibidor da enzima de conversão junto com bloqueador do receptor soma a queda da pressão e soma o potássio alto. É o caso 4 do seminário.</p></div>
+
+<h3 data-bm="Proibido na gestação">Proibido na gestação <span class="prova">PROVA</span></h3>
+<div class="es">
+  <div class="kick">Gestante com hipertensão</div>
+  <div class="cells">
+    <div class="cell"><div class="lab">Proibido</div><p>Inibidor da enzima de conversão: faz fechamento precoce das cartilagens do feto e malformações renais e fetais.</p></div>
+    <div class="cell"><div class="lab">Pode usar</div><p>Alfametildopa (a preferida), bloqueadores dos canais de cálcio e hidralazina.</p></div>
+  </div>
+</div>
+<div class="livros"><b>Nos livros:</b> o bloqueador do receptor da angiotensina II também é contraindicado na gestação, pelo mesmo motivo.</div>
+
+<h3 data-bm="Nefroproteção">Nefroproteção</h3>
+<p>Os inibidores da enzima de conversão são nefroprotetores: melhoram a lesão glomerular causada principalmente pela hipertensão e pelo diabetes, reduzindo a pressão dentro do glomérulo. Por isso podem e devem ser usados nessas duas doenças; no diabetes, reduzem inclusive a proteinúria.</p>
+
+<h3 data-bm="Exemplos e efeito de classe">Exemplos e efeito de classe</h3>
+<p>O primeiro da classe é o captopril (Capoten). Há também enalapril (Renitec), benazepril, lisinopril, ramipril, fosinopril e quinapril.</p>
+<div class="es">
+  <div class="kick">Efeito de classe</div>
+  <p class="lead">Dentro de uma classe, os efeitos colaterais são os mesmos: não importa qual inibidor da enzima de conversão você prescreva, o efeito colateral vai ser o mesmo. Vale igual para os bloqueadores dos canais de cálcio (todos fazem edema bimaleolar) e para os bloqueadores do receptor (nenhum é melhor que o outro).</p>
+</div>
+
+<h3 data-bm="Bloqueadores do receptor da angiotensina II">Bloqueadores do receptor da angiotensina II</h3>
+<p>Aqui a angiotensina II é produzida (diferente do inibidor da enzima, que impedia o aparecimento dela), mas não age sobre as células dos vasos, porque o receptor dela (tipo 1) está bloqueado. Como as cininas não sobem, não há a tosse dos inibidores da enzima de conversão.</p>
+<p>Também são nefroprotetores na nefropatia diabética, da mesma maneira: protegem o endotélio vascular do glomérulo da esclerose da hipertensão e da esclerose do diabetes. Exemplos: losartana (Cozaar), irbesartana, olmesartana (Benicar), valsartana (Diovan, Tareg), candesartana e telmisartana. Todos têm o mesmo efeito cardiovascular: dentro da classe, nenhum é melhor que o outro.</p>
+<div class="cmp">
+  <div class="r h"><div class="k"></div><div class="c">Inibidor da enzima de conversão</div><div class="c">Bloqueador do receptor</div></div>
+  <div class="r"><div class="k">Angiotensina II</div><div class="c">Não é formada</div><div class="c">É formada, mas não age no vaso</div></div>
+  <div class="r"><div class="k">Cininas</div><div class="c">Sobem</div><div class="c">Não sobem</div></div>
+  <div class="r"><div class="k">Tosse seca</div><div class="c destaque">Sim: o efeito mais comum</div><div class="c">Não</div></div>
+  <div class="r"><div class="k">Potássio</div><div class="c destaque">Sobe</div><div class="c destaque">Sobe</div></div>
+  <div class="r"><div class="k">Nefroproteção</div><div class="c">Hipertensão e diabetes</div><div class="c">Nefropatia diabética</div></div>
+  <div class="r"><div class="k">Exemplos</div><div class="c">Captopril, enalapril</div><div class="c">Losartana, valsartana</div></div>
+</div>
+
+<h3 data-bm="Alisquireno: a promessa que não se cumpriu">Alisquireno: a promessa que não se cumpriu</h3>
+<p>O inibidor direto da renina, o alisquireno, age inibindo a renina e diminuindo a formação de angiotensina. Lançado há uns 15 anos como a melhor medicação que ia existir para a hipertensão, tem preço elevado e não se mostrou melhor do que o inibidor da enzima de conversão nem do que o bloqueador do receptor, nem em desfecho cardiovascular, nem na evolução para insuficiência renal. É o menos importante da aula e o único que não está no Sistema Único de Saúde.</p>
+</section>
+
+<!-- ============================================================ 06 -->
+<section id="s06">
+<div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">06</span></div><div class="corpo"><div class="de">Etapa 6 de 7 · Vasodilatadores</div><h2>Vasodilatadores diretos: minoxidil e hidralazina</h2><div class="aqui"><span class="feito">Estratégia</span><span class="feito">Diuréticos</span><span class="feito">Simpático</span><span class="feito">Cálcio</span><span class="feito">Angiotensina</span><span class="on">Vasodilatadores</span><span>Casos</span></div></div></div>
+<div class="simples"><p><b>Em palavras simples:</b> relaxam diretamente o músculo da parede das arteríolas, e a pressão cai. O corpo reage acelerando o coração e segurando líquido; por isso eles andam sempre acompanhados de diurético e betabloqueador. Cada um tem um efeito curioso: o minoxidil faz crescer cabelo e a hidralazina imita o lúpus.</p></div>
+
+<h3 data-bm="Como agem e por que vão sempre associados">Como agem e por que vão sempre associados</h3>
+<p>Promovem o relaxamento direto das células musculares lisas: vasodilatação arteriolar, queda da resistência vascular periférica e aumento do débito cardíaco.</p>
+<div class="es">
+  <div class="kick">Por que nunca sozinhos</div>
+  <p class="lead">Devem ser usados em associação com outros anti-hipertensivos.</p>
+  <div class="cells">
+    <div class="cell"><div class="lab">O vasodilatador causa</div><p>Um pouco de edema, pela pressão hidrostática; retenção hídrica; taquicardia reflexa.</p></div>
+    <div class="cell"><div class="lab">Por isso se associa</div><p>Diurético e betabloqueador.</p></div>
+  </div>
+</div>
+
+<h3 data-bm="Minoxidil: do remédio da pressão à loção da calvície">Minoxidil: do remédio da pressão à loção da calvície</h3>
+<p>O minoxidil (Loniten) é, sim, um anti-hipertensivo. Homens com algum tipo de alopecia, tratados da hipertensão com minoxidil, começaram a ter crescimento capilar (hipertricose). Era um efeito colateral; estudou-se então o efeito reverso, e viu-se que a vasodilatação periférica acontecia também no couro cabeludo. Por isso o minoxidil em loção é usado para tratar a calvície: é o efeito da vasodilatação arteriolar.</p>
+
+<h3 data-bm="Hidralazina: síndrome lúpus-like">Hidralazina: síndrome lúpus-like <span class="prova">PROVA</span></h3>
+<p>A hidralazina (Apresolina) pode causar uma <b>síndrome lúpus-like</b>, um lúpus farmacológico, com:</p>
+<div class="card wide"><ul class="cols2">
+  <li><b>Artralgia:</b> dor articular.</li>
+  <li><b>Lesão de pele</b> e prurido.</li>
+  <li><b>Febre baixa.</b></li>
+</ul></div>
+<div class="box red"><div class="kick"><span class="dot"></span>Ao prescrever hidralazina</div><p>Fique atento e avise o paciente: se ele tiver algum desses sintomas, precisa voltar para a substituição do remédio.</p></div>
+
+<h3 data-bm="O que vem por aí">O que vem por aí</h3>
+<div class="box"><div class="kick"><span class="dot"></span>Anti-hipertensivos novos</div><p>Já há anti-hipertensivos em estudo de fase 3, para inibir a endotelina e para inibir a renina por outra via. Nos próximos 3 a 5 anos, quando a turma estiver se formando ou começando a residência, devem aparecer classes novas.</p></div>
+</section>
+
+<!-- ============================================================ 07 -->
+<section id="s07">
+<div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">07</span></div><div class="corpo"><div class="de">Etapa 7 de 7 · Casos</div><h2>Seminário: cinco casos clínicos</h2><div class="aqui"><span class="feito">Estratégia</span><span class="feito">Diuréticos</span><span class="feito">Simpático</span><span class="feito">Cálcio</span><span class="feito">Angiotensina</span><span class="feito">Vasodilatadores</span><span class="on">Casos</span></div></div></div>
+<div class="simples"><p><b>Em palavras simples:</b> cinco pacientes reais, cada um com o efeito colateral de uma classe estudada nesta aula. A lição de todos é a mesma: antes de pensar em doença nova, olhe o que foi prescrito, converse com quem mais prescreveu e avise o paciente do que pode acontecer.</p></div>
+<div class="quote"><p>“Vocês vão responder para vocês mesmos. Por favor, não procurem no Google! Procurem pelo tempo que vocês passaram aqui para aprender alguma coisa.”</p><div class="who">Dra. Vanessa, antes dos casos</div></div>
+
+<h3 data-bm="Antes dos casos: o efeito que denuncia cada classe">Antes dos casos: o efeito que denuncia cada classe</h3>
+<div class="rows">
+  <div class="row"><div class="k">Ação central</div><div class="v">Boca seca, sedação, hipotensão postural, menos atividade sexual. Clonidina: caso 1.</div></div>
+  <div class="row"><div class="k">Alfabloqueador</div><div class="v">Hipotensão ortostática nos primeiros dias (efeito de primeira dose). Doxazosina: caso 2.</div></div>
+  <div class="row"><div class="k">Hidralazina</div><div class="v">Síndrome lúpus-like: dor articular, lesão de pele e prurido, febre baixa. Caso 3.</div></div>
+</div>
+<div class="rows">
+  <div class="row"><div class="k">Enzima de conversão e receptor</div><div class="v">Os dois sobem o potássio; somados, potássio alto e pressão baixa. Caso 4.</div></div>
+  <div class="row"><div class="k">Minoxidil</div><div class="v">Taquicardia reflexa, retenção hídrica, crescimento de pelos. Caso 5.</div></div>
+  <div class="row"><div class="k">Canais de cálcio</div><div class="v">Edema bimaleolar, rubor facial, cefaleia.</div></div>
+</div>
+
+<!-- caso 1 -->
+<h3 data-bm="Caso 1: a boca seca da clonidina">Caso 1 · A boca seca da clonidina <span class="prova">PROVA</span></h3>
+<div class="box caso-en"><div class="kick"><span class="dot"></span>O caso</div><p>Durante uma internação hospitalar prolongada, um paciente de 62 anos com hipertensão arterial sistêmica de difícil controle e insuficiência renal crônica estágio 3b passa a usar clonidina no esquema anti-hipertensivo. Após uma semana, relata redução do apetite, perda de peso e desconforto ao se alimentar (rachaduras nas mucosas), com função hepática preservada, sem sinais infecciosos e sem queixas gastrointestinais relevantes. Ao exame, mucosas orais ressecadas e dificuldade para articular palavras. Qual a hipótese mais provável para os sintomas?</p></div>
+<div class="rows">
+  <div class="row"><div class="k">Resposta</div><div class="v"><span class="medium">Efeito colateral de início da clonidina.</span></div></div>
+  <div class="row"><div class="k">Por quê</div><div class="v">A clonidina, de ação central, resseca a mucosa oral (boca seca). A boca rachada incomoda ao comer, o apetite e o peso caem, e a fala fica difícil.</div></div>
+</div>
+<div class="box red"><div class="kick"><span class="dot"></span>Pegadinha da professora</div><p><span class="medium">Procurar doença nova.</span> Hepatopatia, gastroenterocolite aguda, desidratação porque não está comendo, depressão: não. O paciente está fazendo efeito colateral do remédio que foi dado a ele.</p></div>
+<div class="quote"><p>“Quando vocês quiserem passar a visita e ficar bem com o chefe, prestem atenção no que foi prescrito para o paciente.”</p><div class="who">Dra. Vanessa, sobre o caso 1</div></div>
+
+<!-- caso 2 -->
+<h3 data-bm="Caso 2: a doxazosina e a queda do idoso">Caso 2 · A doxazosina e a queda do idoso <span class="prova">PROVA</span></h3>
+<div class="box caso-en"><div class="kick"><span class="dot"></span>O caso</div><p>Paciente de 70 anos, com insuficiência cardíaca com fração de ejeção reduzida e hipertensão arterial sistêmica, volta ao ambulatório com tontura ao se levantar, sensação de “cabeça leve” pela manhã e um episódio recente de quase desmaio ao sair da cama. Usa captopril e furosemida e recebeu há pouco nitroprussiato na veia, numa internação por crise hipertensiva. Há 15 dias trata o prostatismo com doxazosina. O residente suspeita de hipotensão ortostática induzida por medicamentos. Quais fármacos estão mais associados a esse efeito, e por qual mecanismo?</p></div>
+<div class="rows">
+  <div class="row"><div class="k">Resposta</div><div class="v"><span class="medium">A doxazosina, um antagonista alfa-1 (alfabloqueador):</span> causa hipotensão ortostática, sobretudo nos primeiros dias de uso (efeito de primeira dose).</div></div>
+</div>
+<div class="rows">
+  <div class="row"><div class="k">O que somou</div><div class="v">Captopril (inibidor da enzima de conversão) e furosemida, os dois em dose plena pela insuficiência cardíaca, com a pressão já bem baixa depois da crise hipertensiva tratada com nitroprussiato na unidade de terapia intensiva.</div></div>
+  <div class="row"><div class="k">Onde errou</div><div class="v">A doxazosina estava certa para o prostatismo. O erro foi de conversa: o urologista não falou com o cardiologista, e ninguém avisou o paciente de que ele podia cair.</div></div>
+</div>
+<div class="livros"><b>Nos livros:</b> o nitroprussiato é um vasodilatador direto, de artérias e veias, dado na veia em infusão contínua.</div>
+<div class="quote"><p>“Ninguém contou para o vovô de 70 anos que ele podia cair. Esse é o caso do meu avô: ele caiu e fez um traumatismo cranioencefálico. O que a gente tinha de um problema, nós transformamos em cinco problemas.”</p><div class="who">Dra. Vanessa, sobre o caso 2</div></div>
+
+<!-- caso 3 -->
+<h3 data-bm="Caso 3: o lúpus que veio do remédio">Caso 3 · O lúpus que veio do remédio <span class="prova">PROVA</span></h3>
+<div class="box caso-en"><div class="kick"><span class="dot"></span>O caso</div><p>Mulher de 42 anos, previamente saudável, é encaminhada à reumatologia (que a encaminhou ao ambulatório de nefrologia) com artralgia, febre baixa, mialgia difusa e anticorpos antinucleares positivos (fator antinuclear) em padrão homogêneo. Há 6 meses começou a tratar a hipertensão arterial com remédios de que não se lembra, mas eram dois comprimidos diferentes. Considera-se lúpus induzido por fármacos. Quais as prováveis medicações em uso e qual o papel delas no controle da pressão?</p></div>
+<div class="rows">
+  <div class="row"><div class="k">Resposta</div><div class="v"><span class="medium">Hidralazina,</span> que leva à síndrome lúpus-like (lúpus farmacológico).</div></div>
+  <div class="row"><div class="k">Na pressão</div><div class="v">Vasodilatador direto: relaxa as arteríolas e diminui a resistência vascular periférica.</div></div>
+  <div class="row"><div class="k">O segundo comprimido</div><div class="v">O vasodilatador direto deve ir associado a diurético ou betabloqueador (capítulo 06): o segundo comprimido provavelmente é um deles.</div></div>
+  <div class="row"><div class="k">Atenção</div><div class="v">Paciente que não lembra o nome dos remédios é extremamente comum.</div></div>
+</div>
+
+<!-- caso 4 -->
+<h3 data-bm="Caso 4: dois remédios branquinhos">Caso 4 · Dois remédios branquinhos <span class="prova">PROVA</span></h3>
+<div class="box caso-en"><div class="kick"><span class="dot"></span>O caso</div><p>Homem de 78 anos, diabético há mais de 20 anos, em uso de metformina e insulina NPH, com hemoglobina glicada de 7,8% (elevada). Hipertenso há 10 anos, usa enalapril com boa resposta. Nos últimos 2 meses, depois da morte da esposa, mudou de cidade, foi morar com a filha e a pressão descontrolou, chegando a 150 por 100 mmHg. Na Unidade Básica de Saúde da nova cidade, perguntado sobre o remédio que usava, respondeu: “um branquinho pequeno”. O médico, sem saber qual era, prescreveu losartana, pensando em tratar a hipertensão e proteger o rim do diabetes, e pediu exames. No retorno, fraqueza intensa, mal-estar e cãibras frequentes; os exames vieram tão alterados que o médico chamou a ambulância de urgência para levá-lo ao pronto atendimento. Quais as hipóteses, por que chamar a ambulância e quais as consequências?</p></div>
+<div class="ref">
+  <div class="txt"><div class="kick"><span class="dot"></span>As duas receitas</div><p>Dois comprimidos brancos e pequenos.</p></div>
+  <div class="vals"><div class="val"><small>Enalapril, o de casa</small>10 mg de 12 em 12 h</div><div class="val"><small>Losartana, a nova</small>50 mg de 12 em 12 h</div></div>
+</div>
+<div class="figure"><img src="caso4.svg" alt="Fluxo do caso 4: enalapril de casa e losartana nova, tomados juntos, derrubam a pressão e sobem o potássio, levando à ambulância e à terapia intensiva.">
+<p class="leg">Como dois remédios brancos e pequenos viraram uma emergência.</p></div>
+<div class="rows">
+  <div class="row"><div class="k">Hipótese</div><div class="v">Duplo bloqueio do sistema renina-angiotensina: o paciente tomou o enalapril de casa (inibidor da enzima de conversão) e a losartana nova (bloqueador do receptor), um dia um, um dia outro ou, muito provavelmente, os dois juntos.</div></div>
+  <div class="row"><div class="k">Por que a ambulância</div><div class="v"><span class="medium">Hiperpotassemia:</span> os dois remédios inibem a aldosterona e somam o potássio alto, e foram os exames que assustaram o médico. Somam também dois hipotensores: a pressão cai, o que explica em parte a fraqueza.</div></div>
+  <div class="row"><div class="k">Consequências</div><div class="v">Hospital, unidade de terapia intensiva e remédio para baixar o potássio.</div></div>
+  <div class="row"><div class="k">O que faltou</div><div class="v">A prescrição da losartana estava perfeita: idoso, hipertenso, diabético, com pressão alta. Faltou anamnese: insistir com a família para voltar no dia seguinte com a caixinha dos remédios que ele tomava em casa.</div></div>
+</div>
+<div class="box red"><div class="kick"><span class="dot"></span>Pegadinha da professora</div><p><span class="medium">Explicar o caso só pela pressão baixa.</span> O raciocínio da sobreposição dos remédios está certo, mas o pulo do gato é o potássio.</p></div>
+<div class="box purple"><div class="kick"><span class="dot"></span>Complemento: fora da aula</div><p>Potássio muito alto altera a condução elétrica do coração e pode causar arritmias graves e parada cardíaca: por isso é emergência.</p></div>
+<div class="quote"><p>“Vender remédio é fácil; difícil é prescrever remédio.”</p><div class="who">Dra. Vanessa, sobre o caso 4</div></div>
+
+<!-- caso 5 -->
+<h3 data-bm="Caso 5: minoxidil na hipertensão refratária">Caso 5 · Minoxidil na hipertensão refratária <span class="prova">PROVA</span></h3>
+<div class="box caso-en"><div class="kick"><span class="dot"></span>O caso</div><p>Homem de 51 anos com hipertensão arterial sistêmica grave e refratária, depois de várias associações de anti-hipertensivos convencionais (inibidor da enzima de conversão, bloqueador dos canais de cálcio e diurético tiazídico: já tomava três), sem controle adequado da pressão. Tem retinopatia hipertensiva grau 3 e boa adesão ao tratamento, conferida. A equipe introduz minoxidil, com ajuste cauteloso de dose e monitoramento rigoroso de taquicardia reflexa e retenção hídrica. Qual é o mecanismo farmacodinâmico do minoxidil?</p></div>
+<div class="reg"><b>Registro:</b> no enunciado do slide, o terceiro remédio aparece como diurético de alça; na discussão, diurético tiazídico.</div>
+<div class="rows">
+  <div class="row"><div class="k">Resposta</div><div class="v"><span class="medium">Vasodilatador direto:</span> abre os canais de potássio da musculatura lisa das arteríolas, que relaxa, e a resistência vascular periférica cai.</div></div>
+</div>
+<div class="rows">
+  <div class="row"><div class="k">Vigiar</div><div class="v">Taquicardia reflexa e retenção hídrica (por isso vai com diurético e betabloqueador).</div></div>
+  <div class="row"><div class="k">Retinopatia grau 3</div><div class="v">No fundo de olho, mácula inchada e alteração no cruzamento de artéria com veia: é lesão de órgão-alvo, hipertensão grave.</div></div>
+  <div class="row"><div class="k">Avisar o paciente</div><div class="v">“Olha, nós vamos lhe dar um remédio, mas ele pode inchar o senhor e dar um pouco de batedeira.”</div></div>
+</div>
+<div class="box orange"><div class="kick"><span class="dot"></span>Parêntese da professora</div><p>Na Unidade Básica de Saúde, use muito o agente comunitário de saúde: ele vai à casa do paciente, confere o remédio e vê o que está errado. É peça-chave no acompanhamento do programa Hiperdia, de hipertensão e diabetes.</p></div>
+
+<h3 data-bm="O que os cinco casos ensinam">O que os cinco casos ensinam</h3>
+<ol class="flow">
+  <li><b class="t">Olhe a prescrição antes de procurar doença nova.</b> Boca seca, tontura ao levantar, febre com dor nas juntas: pode ser o remédio (casos 1, 2 e 3).</li>
+  <li><b class="t">Converse com os outros médicos do paciente.</b> Três médicos, nenhuma conversa: um problema virou cinco (caso 2).</li>
+  <li><b class="t">Avise o paciente do que pode acontecer.</b> Que ele pode cair, que os sintomas do lúpus farmacológico obrigam a voltar, que o remédio pode inchar e dar batedeira (casos 2, 3 e 5).</li>
+  <li><b class="t">Pergunte o que ele já toma.</b> Se ele não sabe, peça que a família traga a caixinha dos remédios de casa (caso 4).</li>
+  <li><b class="t">Conte com o agente comunitário de saúde.</b> Ele vai à casa e confere o remédio (caso 5).</li>
+</ol>
+<div class="box red"><div class="kick"><span class="dot"></span>Erros comuns</div><ul>
+  <li><span class="medium">Parar o bloqueador dos canais de cálcio pelo inchaço no tornozelo:</span> é vasodilatação.</li>
+  <li><span class="medium">Prescrever inibidor da enzima de conversão sem avisar</span> da tosse e do angioedema.</li>
+  <li><span class="medium">Somar inibidor da enzima de conversão e bloqueador do receptor:</span> o potássio sobe.</li>
+  <li><span class="medium">Dar doxazosina ao idoso já tratado sem medir a pressão:</span> ele cai.</li>
+</ul></div>
+</section>
+
+<!-- ============================================================ 08 -->
+<section id="s08">
+<div class="vesp">
+<div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">08</span></div><div class="corpo"><div class="de">Revisão final</div><h2>O essencial da aula</h2></div></div>
+<h3 data-bm="Página de véspera">Página de véspera</h3>
+<div class="item"><span class="prova">PROVA</span><p><b>Pirâmide:</b> a base é a mudança de estilo de vida; começar com tiazídico, inibidor da enzima de conversão, bloqueador dos canais de cálcio ou betabloqueador.</p></div>
+<div class="item"><span class="prova">PROVA</span><p><b>Um remédio só:</b> 130 a 139 por 80 a 89 mmHg com risco cardiovascular, idoso acima de 80 anos, frágil, hipertensão grau 1, hipotensão ortostática. Fora disso, dois ou mais.</p></div>
+<div class="item"><span class="prova">PROVA</span><p><b>Ação central:</b> sedação, boca seca, hipotensão postural, menos atividade sexual (só esta classe).</p></div>
+<div class="item"><span class="prova">PROVA</span><p><b>Betabloqueador:</b> cuidado na doença pulmonar obstrutiva crônica e na asma, no bloqueio atrioventricular, na depressão e no diabetes (mascara a hipoglicemia).</p></div>
+<div class="item"><span class="prova">PROVA</span><p><b>Alfabloqueador:</b> hipotensão ortostática nos primeiros dias; doxazosina no idoso prostático exige vigiar a pressão.</p></div>
+<div class="item"><span class="prova">PROVA</span><p><b>Canais de cálcio:</b> edema bimaleolar por vasodilatação, efeito de classe que melhora com o tempo; explicar ao paciente para ele não parar.</p></div>
+<div class="item"><span class="prova">PROVA</span><p><b>Inibidor da enzima de conversão:</b> tosse seca pelas cininas, que pode virar angioedema. Avisar: com tosse, parar e ir ao pronto-socorro.</p></div>
+<div class="item"><span class="prova">PROVA</span><p><b>Potássio alto:</b> inibidor da enzima de conversão e bloqueador do receptor inibem a aldosterona; juntos, somam.</p></div>
+<div class="item"><span class="prova">PROVA</span><p><b>Gestação:</b> inibidor da enzima de conversão é proibido; pode alfametildopa (a preferida), bloqueador dos canais de cálcio e hidralazina.</p></div>
+<div class="item"><span class="prova">PROVA</span><p><b>Hidralazina:</b> síndrome lúpus-like (dor articular, lesão de pele e prurido, febre baixa): trocar o remédio.</p></div>
+<div class="item"><span class="prova">PROVA</span><p><b>Casos:</b> 1, boca seca e perda de apetite após clonidina; 2, doxazosina somada a captopril e furosemida, queda; 3, lúpus induzido, hidralazina; 4, enalapril e losartana juntos, hiperpotassemia (faltou anamnese); 5, minoxidil, vasodilatador direto que abre canais de potássio da arteríola.</p></div>
+<div class="tiles">
+  <div class="tile"><div class="lab">Antes de subir a dose</div><div class="n">4 semanas</div><div class="s">de uso, no mínimo</div></div>
+  <div class="tile"><div class="lab">Monoterapia</div><div class="n">130–139/80–89</div><div class="s">mmHg, qualquer classe</div></div>
+  <div class="tile"><div class="lab">Idoso em monoterapia</div><div class="n">80 anos</div><div class="s">acima de</div></div>
+</div>
+</div>
+
+<h3 data-bm="Palavras da aula em linguagem simples">Palavras da aula em linguagem simples</h3>
+<div class="rows terms">
+  <div class="row"><div class="k">Angioedema</div><div class="v">Ou edema angioneurótico: inchaço súbito de face, lábios, língua e glote; o da glote pode ser fatal.</div></div>
+  <div class="row"><div class="k">Bradicinina</div><div class="v">Cinina que se acumula com o inibidor da enzima de conversão; causa a tosse seca.</div></div>
+  <div class="row"><div class="k">Depleção hipernatrêmica</div><div class="v">Perda de líquido que deixa o sódio do sangue alto.</div></div>
+</div>
+<div class="rows terms">
+  <div class="row"><div class="k">Di-hidropiridinas</div><div class="v">Bloqueadores dos canais de cálcio vasodilatadores potentes, como nifedipina e anlodipina.</div></div>
+  <div class="row"><div class="k">Efeito de primeira dose</div><div class="v">Queda da pressão nos primeiros dias de alfabloqueador.</div></div>
+  <div class="row"><div class="k">Fator antinuclear</div><div class="v">Exame de anticorpos contra o núcleo das células; positivo no lúpus.</div></div>
+</div>
+<div class="rows terms">
+  <div class="row"><div class="k">Glicogenólise</div><div class="v">Quebra do glicogênio para liberar glicose; o betabloqueador a inibe no músculo.</div></div>
+  <div class="row"><div class="k">Hiperpotassemia</div><div class="v">Ou hipercalemia: potássio alto no sangue.</div></div>
+  <div class="row"><div class="k">Hipotensão ortostática</div><div class="v">Ou postural: queda da pressão ao ficar de pé, com tontura ou desmaio.</div></div>
+</div>
+<div class="rows terms">
+  <div class="row"><div class="k">Insulina NPH</div><div class="v">Insulina de ação intermediária (a sigla é o nome dela).</div></div>
+  <div class="row"><div class="k">Lesão de órgão-alvo</div><div class="v">Dano que a hipertensão causa em coração, cérebro, rim, olhos e vasos.</div></div>
+  <div class="row"><div class="k">Resistência vascular periférica</div><div class="v">A resistência que os vasos oferecem ao sangue; cai com a vasodilatação.</div></div>
+</div>
+<div class="rows terms">
+  <div class="row"><div class="k">Retinopatia hipertensiva</div><div class="v">Lesão da retina pela hipertensão, vista no fundo de olho.</div></div>
+  <div class="row"><div class="k">Síndrome lúpus-like</div><div class="v">Quadro parecido com lúpus causado por remédio, como a hidralazina.</div></div>
+  <div class="row"><div class="k">Taquicardia reflexa</div><div class="v">Coração acelerado em resposta à queda da pressão.</div></div>
+</div>
+{{NOTAS}}
+</section>
+</body></html>

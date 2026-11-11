@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="478" height="206" viewBox="0 0 478 206">
+<rect x="0.5" y="1.0" width="146.3" height="34.0" rx="8" fill="#16315C" stroke="#16315C" stroke-width="1"/>
+<text x="73.7" y="21.0" font-family="Inter SemiBold" font-weight="600" font-size="8.8" fill="#FFFFFF" text-anchor="middle">Glomérulo e túbulo proximal</text>
+<polygon points="149.3,16.4 157.3,16.4 157.3,12.5 163.3,18.0 157.3,23.5 157.3,19.6 149.3,19.6" fill="#8AA9DF"/>
+<rect x="165.8" y="1.0" width="146.3" height="34.0" rx="8" fill="#16315C" stroke="#16315C" stroke-width="1"/>
+<text x="239.0" y="21.0" font-family="Inter SemiBold" font-weight="600" font-size="8.8" fill="#FFFFFF" text-anchor="middle">Alça de Henle (ramo espesso)</text>
+<polygon points="314.7,16.4 322.7,16.4 322.7,12.5 328.7,18.0 322.7,23.5 322.7,19.6 314.7,19.6" fill="#8AA9DF"/>
+<rect x="331.2" y="1.0" width="146.3" height="34.0" rx="8" fill="#16315C" stroke="#16315C" stroke-width="1"/>
+<text x="404.3" y="21.0" font-family="Inter SemiBold" font-weight="600" font-size="8.8" fill="#FFFFFF" text-anchor="middle">Túbulo distal e ducto coletor</text>
+<rect x="0.5" y="47.0" width="146.3" height="47.8" rx="8" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="1"/>
+<text x="9.0" y="62.0" font-family="Inter SemiBold" font-weight="600" font-size="8.8" fill="#16315C" text-anchor="start">Manitol</text>
+<text x="9.0" y="73.5" font-family="Inter" font-weight="400" font-size="8" fill="#1F2933" text-anchor="start">soro injetável; trauma de crânio</text>
+<text x="9.0" y="83.9" font-family="Inter" font-weight="400" font-size="8" fill="#1F2933" text-anchor="start">(edema cerebral)</text>
+<rect x="0.5" y="101.8" width="146.3" height="47.8" rx="8" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="1"/>
+<text x="9.0" y="116.8" font-family="Inter SemiBold" font-weight="600" font-size="8.8" fill="#16315C" text-anchor="start">Acetazolamida</text>
+<text x="9.0" y="128.3" font-family="Inter" font-weight="400" font-size="8" fill="#1F2933" text-anchor="start">inibe a anidrase carbônica;</text>
+<text x="9.0" y="138.7" font-family="Inter" font-weight="400" font-size="8" fill="#1F2933" text-anchor="start">glaucoma</text>
+<rect x="0.5" y="156.6" width="146.3" height="47.8" rx="8" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="1"/>
+<text x="9.0" y="171.6" font-family="Inter SemiBold" font-weight="600" font-size="8.8" fill="#16315C" text-anchor="start">Glifozinas</text>
+<text x="9.0" y="183.1" font-family="Inter" font-weight="400" font-size="8" fill="#1F2933" text-anchor="start">dapagliflozina, empagliflozina,</text>
+<text x="9.0" y="193.5" font-family="Inter" font-weight="400" font-size="8" fill="#1F2933" text-anchor="start">canagliflozina</text>
+<polygon points="72.1,36.0 75.3,36.0 75.3,40.0 79.2,40.0 73.7,46.0 68.2,40.0 72.1,40.0" fill="#8AA9DF"/>
+<rect x="165.8" y="47.0" width="146.3" height="47.8" rx="8" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="1"/>
+<text x="174.3" y="62.0" font-family="Inter SemiBold" font-weight="600" font-size="8.8" fill="#16315C" text-anchor="start">Diuréticos de alça</text>
+<text x="174.3" y="73.5" font-family="Inter" font-weight="400" font-size="8" fill="#1F2933" text-anchor="start">furosemida, bumetanida, ácido</text>
+<text x="174.3" y="83.9" font-family="Inter" font-weight="400" font-size="8" fill="#1F2933" text-anchor="start">etacrínico, piretanida</text>
+<rect x="165.8" y="101.8" width="146.3" height="47.8" rx="8" fill="#F5F8FF" stroke="#C3D8F8" stroke-width="1"/>
+<text x="174.3" y="116.8" font-family="Inter SemiBold" font-weight="600" font-size="8.8" fill="#16315C" text-anchor="start">Os mais potentes e rápidos</text>
+<text x="174.3" y="128.3" font-family="Inter" font-weight="400" font-size="8" fill="#1F2933" text-anchor="start">inativam o cotransportador de</text>
+<text x="174.3" y="138.7" font-family="Inter" font-weight="400" font-size="8" fill="#1F2933" text-anchor="start">sódio, potássio e dois cloretos</text>
+<rect x="165.8" y="156.6" width="146.3" height="47.8" rx="8" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="1"/>
+<text x="174.3" y="171.6" font-family="Inter SemiBold" font-weight="600" font-size="8.8" fill="#16315C" text-anchor="start">Furosemida</text>
+<text x="174.3" y="183.1" font-family="Inter" font-weight="400" font-size="8" fill="#1F2933" text-anchor="start">a que existe na Unidade Básica</text>
+<text x="174.3" y="193.5" font-family="Inter" font-weight="400" font-size="8" fill="#1F2933" text-anchor="start">de Saúde</text>
+<polygon points="237.4,36.0 240.6,36.0 240.6,40.0 244.5,40.0 239.0,46.0 233.5,40.0 237.4,40.0" fill="#8AA9DF"/>
+<rect x="331.2" y="47.0" width="146.3" height="68.6" rx="8" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="1"/>
+<text x="339.7" y="62.0" font-family="Inter SemiBold" font-weight="600" font-size="8.8" fill="#16315C" text-anchor="start">Espoliadores de potássio</text>
+<text x="339.7" y="73.5" font-family="Inter" font-weight="400" font-size="8" fill="#1F2933" text-anchor="start">benzotiazídicos</text>
+<text x="339.7" y="83.9" font-family="Inter" font-weight="400" font-size="8" fill="#1F2933" text-anchor="start">(hidroclorotiazida, da farmácia</text>
+<text x="339.7" y="94.3" font-family="Inter" font-weight="400" font-size="8" fill="#1F2933" text-anchor="start">básica) e sulfamídicos</text>
+<text x="339.7" y="104.7" font-family="Inter" font-weight="400" font-size="8" fill="#1F2933" text-anchor="start">(clortalidona, indapamida)</text>
+<rect x="331.2" y="122.6" width="146.3" height="81.8" rx="8" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="1"/>
+<text x="339.7" y="137.6" font-family="Inter SemiBold" font-weight="600" font-size="8.8" fill="#16315C" text-anchor="start">Poupadores de potássio</text>
+<text x="339.7" y="149.1" font-family="Inter" font-weight="400" font-size="8" fill="#1F2933" text-anchor="start">espironolactona (a mais famosa),</text>
+<text x="339.7" y="159.5" font-family="Inter" font-weight="400" font-size="8" fill="#1F2933" text-anchor="start">triantereno, amilorida</text>
+<polygon points="402.7,36.0 405.9,36.0 405.9,40.0 409.8,40.0 404.3,46.0 398.8,40.0 402.7,40.0" fill="#8AA9DF"/>
+</svg>

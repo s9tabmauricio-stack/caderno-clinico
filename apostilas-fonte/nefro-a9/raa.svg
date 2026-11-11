@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="478" height="270" viewBox="0 0 478 270">
+<rect x="0.5" y="1.0" width="196.0" height="27.2" rx="8" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="1"/>
+<text x="98.0" y="16.5" font-family="Inter SemiBold" font-weight="600" font-size="8.8" fill="#16315C" text-anchor="middle">Renina</text>
+<polygon points="96.4,30.2 99.6,30.2 99.6,46.2 103.5,46.2 98.0,52.2 92.5,46.2 96.4,46.2" fill="#8AA9DF"/>
+<rect x="0.5" y="54.2" width="196.0" height="27.2" rx="8" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="1"/>
+<text x="98.0" y="69.7" font-family="Inter SemiBold" font-weight="600" font-size="8.8" fill="#16315C" text-anchor="middle">Angiotensina I</text>
+<polygon points="28.4,83.4 31.6,83.4 31.6,99.4 35.5,99.4 30.0,105.4 24.5,99.4 28.4,99.4" fill="#8AA9DF"/>
+<text x="44.0" y="97.2" font-family="Inter Medium" font-weight="500" font-size="7.8" fill="#16315C" text-anchor="start">enzima de conversão (uma cininase)</text>
+<rect x="0.5" y="107.4" width="196.0" height="27.2" rx="8" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="1"/>
+<text x="98.0" y="122.9" font-family="Inter SemiBold" font-weight="600" font-size="8.8" fill="#16315C" text-anchor="middle">Angiotensina II</text>
+<polygon points="96.4,136.6 99.6,136.6 99.6,152.6 103.5,152.6 98.0,158.6 92.5,152.6 96.4,152.6" fill="#8AA9DF"/>
+<rect x="0.5" y="160.6" width="196.0" height="38.4" rx="8" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="1"/>
+<text x="98.0" y="176.1" font-family="Inter SemiBold" font-weight="600" font-size="8.8" fill="#16315C" text-anchor="middle">Receptor da angiotensina II nas células</text>
+<text x="98.0" y="187.3" font-family="Inter SemiBold" font-weight="600" font-size="8.8" fill="#16315C" text-anchor="middle">do vaso</text>
+<polygon points="96.4,201.0 99.6,201.0 99.6,217.0 103.5,217.0 98.0,223.0 92.5,217.0 96.4,217.0" fill="#8AA9DF"/>
+<rect x="0.5" y="225.0" width="196.0" height="38.4" rx="8" fill="#F5F8FF" stroke="#C3D8F8" stroke-width="1"/>
+<text x="98.0" y="240.5" font-family="Inter Medium" font-weight="500" font-size="8.8" fill="#1F2933" text-anchor="middle">Vaso contrai; aldosterona segura sódio e</text>
+<text x="98.0" y="251.7" font-family="Inter Medium" font-weight="500" font-size="8.8" fill="#1F2933" text-anchor="middle">água e elimina potássio</text>
+<rect x="236.0" y="1.0" width="241.5" height="36.4" rx="8" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="1"/>
+<rect x="236.0" y="7.0" width="3" height="24.4" rx="1.5" fill="#16315C"/>
+<text x="247.0" y="16.0" font-family="Inter SemiBold" font-weight="600" font-size="8.8" fill="#16315C" text-anchor="start">Alisquireno</text>
+<text x="247.0" y="27.5" font-family="Inter" font-weight="400" font-size="8" fill="#1F2933" text-anchor="start">inibe a renina direto: forma menos angiotensina</text>
+<polygon points="234.0,13.2 204.0,13.2 204.0,9.6 198.0,14.6 204.0,19.6 204.0,16.0 234.0,16.0" fill="#8AA9DF"/>
+<rect x="236.0" y="71.0" width="241.5" height="46.8" rx="8" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="1"/>
+<rect x="236.0" y="77.0" width="3" height="34.8" rx="1.5" fill="#16315C"/>
+<text x="247.0" y="86.0" font-family="Inter SemiBold" font-weight="600" font-size="8.8" fill="#16315C" text-anchor="start">Inibidor da enzima de conversão</text>
+<text x="247.0" y="97.5" font-family="Inter" font-weight="400" font-size="8" fill="#1F2933" text-anchor="start">bloqueia a passagem de I para II; as cininas (bradicinina)</text>
+<text x="247.0" y="107.9" font-family="Inter" font-weight="400" font-size="8" fill="#1F2933" text-anchor="start">se acumulam: tosse seca e, no pior caso, angioedema</text>
+<polygon points="234.0,93.0 204.0,93.0 204.0,89.4 198.0,94.4 204.0,99.4 204.0,95.8 234.0,95.8" fill="#8AA9DF"/>
+<rect x="236.0" y="156.4" width="241.5" height="46.8" rx="8" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="1"/>
+<rect x="236.0" y="162.4" width="3" height="34.8" rx="1.5" fill="#16315C"/>
+<text x="247.0" y="171.4" font-family="Inter SemiBold" font-weight="600" font-size="8.8" fill="#16315C" text-anchor="start">Bloqueador do receptor</text>
+<text x="247.0" y="182.9" font-family="Inter" font-weight="400" font-size="8" fill="#1F2933" text-anchor="start">a angiotensina II se forma, mas não age no vaso; não</text>
+<text x="247.0" y="193.3" font-family="Inter" font-weight="400" font-size="8" fill="#1F2933" text-anchor="start">acumula cinina: sem tosse</text>
+<polygon points="234.0,178.4 204.0,178.4 204.0,174.8 198.0,179.8 204.0,184.8 204.0,181.2 234.0,181.2" fill="#8AA9DF"/>
+<rect x="236.0" y="220.8" width="241.5" height="46.8" rx="8" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="1"/>
+<rect x="236.0" y="226.8" width="3" height="34.8" rx="1.5" fill="#16315C"/>
+<text x="247.0" y="235.8" font-family="Inter SemiBold" font-weight="600" font-size="8.8" fill="#16315C" text-anchor="start">Nos dois bloqueios</text>
+<text x="247.0" y="247.3" font-family="Inter" font-weight="400" font-size="8" fill="#1F2933" text-anchor="start">a pressão cai e a aldosterona fica inibida: o potássio sobe</text>
+<text x="247.0" y="257.7" font-family="Inter" font-weight="400" font-size="8" fill="#1F2933" text-anchor="start">(hiperpotassemia)</text>
+<polygon points="234.0,242.8 204.0,242.8 204.0,239.2 198.0,244.2 204.0,249.2 204.0,245.6 234.0,245.6" fill="#8AA9DF"/>
+</svg>

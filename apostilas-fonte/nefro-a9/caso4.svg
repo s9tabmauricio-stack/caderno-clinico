@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="478" height="223" viewBox="0 0 478 223">
+<rect x="0.5" y="1.0" width="231.0" height="47.8" rx="8" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="1"/>
+<text x="116.0" y="16.0" font-family="Inter SemiBold" font-weight="600" font-size="8.8" fill="#16315C" text-anchor="middle">Remédio de casa</text>
+<text x="116.0" y="27.5" font-family="Inter" font-weight="400" font-size="8" fill="#1F2933" text-anchor="middle">enalapril, inibidor da enzima de conversão, há 10 anos</text>
+<rect x="246.5" y="1.0" width="231.0" height="47.8" rx="8" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="1"/>
+<text x="362.0" y="16.0" font-family="Inter SemiBold" font-weight="600" font-size="8.8" fill="#16315C" text-anchor="middle">Remédio novo</text>
+<text x="362.0" y="27.5" font-family="Inter" font-weight="400" font-size="8" fill="#1F2933" text-anchor="middle">losartana, bloqueador do receptor, prescrita sem saber</text>
+<text x="362.0" y="37.9" font-family="Inter" font-weight="400" font-size="8" fill="#1F2933" text-anchor="middle">do outro</text>
+<rect x="114.4" y="50.8" width="3.2" height="8" fill="#8AA9DF"/>
+<rect x="360.4" y="50.8" width="3.2" height="8" fill="#8AA9DF"/>
+<rect x="114.4" y="57.2" width="249.2" height="3.2" fill="#8AA9DF"/>
+<polygon points="237.4,58.8 240.6,58.8 240.6,62.8 244.5,62.8 239.0,68.8 233.5,62.8 237.4,62.8" fill="#8AA9DF"/>
+<rect x="0.5" y="68.8" width="477.0" height="37.4" rx="8" fill="#F5F8FF" stroke="#C3D8F8" stroke-width="1"/>
+<text x="239.0" y="83.8" font-family="Inter SemiBold" font-weight="600" font-size="8.8" fill="#16315C" text-anchor="middle">Os dois juntos: duplo bloqueio</text>
+<text x="239.0" y="95.3" font-family="Inter" font-weight="400" font-size="8" fill="#1F2933" text-anchor="middle">um dia um, um dia outro ou, muito provavelmente, os dois ao mesmo tempo</text>
+<rect x="237.4" y="108.2" width="3.2" height="7" fill="#8AA9DF"/>
+<rect x="114.4" y="113.8" width="249.2" height="3.2" fill="#8AA9DF"/>
+<polygon points="114.4,115.2 117.6,115.2 117.6,120.2 121.5,120.2 116.0,126.2 110.5,120.2 114.4,120.2" fill="#8AA9DF"/>
+<polygon points="360.4,115.2 363.6,115.2 363.6,120.2 367.5,120.2 362.0,126.2 356.5,120.2 360.4,120.2" fill="#8AA9DF"/>
+<rect x="0.5" y="126.2" width="231.0" height="37.4" rx="8" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="1"/>
+<text x="116.0" y="141.2" font-family="Inter SemiBold" font-weight="600" font-size="8.8" fill="#16315C" text-anchor="middle">A pressão cai</text>
+<text x="116.0" y="152.7" font-family="Inter" font-weight="400" font-size="8" fill="#1F2933" text-anchor="middle">dois hipotensores somados</text>
+<rect x="246.5" y="126.2" width="231.0" height="37.4" rx="8" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="1"/>
+<text x="362.0" y="141.2" font-family="Inter SemiBold" font-weight="600" font-size="8.8" fill="#16315C" text-anchor="middle">O potássio sobe</text>
+<text x="362.0" y="152.7" font-family="Inter" font-weight="400" font-size="8" fill="#1F2933" text-anchor="middle">a aldosterona fica inibida pelos dois: hiperpotassemia</text>
+<rect x="114.4" y="165.6" width="3.2" height="8" fill="#8AA9DF"/>
+<rect x="360.4" y="165.6" width="3.2" height="8" fill="#8AA9DF"/>
+<rect x="114.4" y="172.0" width="249.2" height="3.2" fill="#8AA9DF"/>
+<polygon points="237.4,173.6 240.6,173.6 240.6,177.6 244.5,177.6 239.0,183.6 233.5,177.6 237.4,177.6" fill="#8AA9DF"/>
+<rect x="0.5" y="183.6" width="477.0" height="37.4" rx="8" fill="#16315C" stroke="#16315C" stroke-width="1"/>
+<text x="239.0" y="198.6" font-family="Inter SemiBold" font-weight="600" font-size="8.8" fill="#FFFFFF" text-anchor="middle">Fraqueza, mal-estar e cãibras; exames muito alterados</text>
+<text x="239.0" y="210.1" font-family="Inter" font-weight="400" font-size="8" fill="#DCE7FA" text-anchor="middle">ambulância de urgência, terapia intensiva e remédio para baixar o potássio</text>
+</svg>
