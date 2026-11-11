@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="478pt" height="366pt" viewBox="0 0 478 366">
+<rect x="99.0" y="4.0" width="280.0" height="39.0" rx="8" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="1"/>
+<text x="239.0" y="19.8" font-family="Inter" font-size="8.8" font-weight="600" fill="#16315C" text-anchor="middle">Paciente com diabetes</text>
+<text x="239.0" y="33.2" font-family="Inter" font-size="8.4" font-weight="400" fill="#1F2933" text-anchor="middle">pesquisar albumina na urina (microalbuminúria)</text>
+<polyline points="239.0,44.0 239.0,56.0" fill="none" stroke="#8AA9DF" stroke-width="1.6"/>
+<polyline points="111.0,56.0 367.0,56.0" fill="none" stroke="#8AA9DF" stroke-width="1.6"/>
+<line x1="111.0" y1="56.0" x2="111.0" y2="67.0" stroke="#8AA9DF" stroke-width="1.6"/>
+<polygon points="107.0,66.0 115.0,66.0 111.0,72.0" fill="#8AA9DF"/>
+<line x1="367.0" y1="56.0" x2="367.0" y2="67.0" stroke="#8AA9DF" stroke-width="1.6"/>
+<polygon points="363.0,66.0 371.0,66.0 367.0,72.0" fill="#8AA9DF"/>
+<rect x="0.0" y="73.0" width="222.0" height="50.5" rx="8" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="1"/>
+<text x="111.0" y="94.6" font-family="Inter" font-size="8.8" font-weight="600" fill="#16315C" text-anchor="middle">Diabetes tipo 1</text>
+<text x="111.0" y="107.9" font-family="Inter" font-size="8.4" font-weight="400" fill="#1F2933" text-anchor="middle">primeiro exame a partir do 5º ano de doença</text>
+<rect x="256.0" y="73.0" width="222.0" height="50.5" rx="8" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="1"/>
+<text x="367.0" y="88.8" font-family="Inter" font-size="8.8" font-weight="600" fill="#16315C" text-anchor="middle">Diabetes tipo 2</text>
+<text x="367.0" y="102.2" font-family="Inter" font-size="8.4" font-weight="400" fill="#1F2933" text-anchor="middle">logo no diagnóstico: já chega com hipertensão e</text>
+<text x="367.0" y="113.6" font-family="Inter" font-size="8.4" font-weight="400" fill="#1F2933" text-anchor="middle">obesidade cedo</text>
+<polyline points="111.0,124.5 111.0,136.5 367.0,136.5 367.0,124.5" fill="none" stroke="#8AA9DF" stroke-width="1.6"/>
+<line x1="239.0" y1="136.5" x2="239.0" y2="147.5" stroke="#8AA9DF" stroke-width="1.6"/>
+<polygon points="235.0,146.5 243.0,146.5 239.0,152.5" fill="#8AA9DF"/>
+<rect x="99.0" y="153.5" width="280.0" height="39.0" rx="8" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="1"/>
+<text x="239.0" y="169.3" font-family="Inter" font-size="8.8" font-weight="600" fill="#16315C" text-anchor="middle">Repetir uma vez por ano</text>
+<text x="239.0" y="182.7" font-family="Inter" font-size="8.4" font-weight="400" fill="#1F2933" text-anchor="middle">nos dois tipos</text>
+<line x1="239.0" y1="193.5" x2="239.0" y2="204.5" stroke="#8AA9DF" stroke-width="1.6"/>
+<polygon points="235.0,203.5 243.0,203.5 239.0,209.5" fill="#8AA9DF"/>
+<rect x="99.0" y="210.5" width="280.0" height="25.6" rx="8" fill="#F5F8FF" stroke="#C3D8F8" stroke-width="1"/>
+<text x="239.0" y="226.3" font-family="Inter" font-size="8.8" font-weight="600" fill="#16315C" text-anchor="middle">Albumina acima de 30 mg?</text>
+<line x1="239.0" y1="237.2" x2="239.0" y2="248.2" stroke="#8AA9DF" stroke-width="1.6"/>
+<polygon points="235.0,247.2 243.0,247.2 239.0,253.2" fill="#8AA9DF"/>
+<rect x="39.0" y="254.2" width="400.0" height="50.5" rx="8" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="1"/>
+<text x="239.0" y="270.0" font-family="Inter" font-size="8.8" font-weight="600" fill="#16315C" text-anchor="middle">Antes de culpar o rim, afastar as outras causas</text>
+<text x="239.0" y="283.3" font-family="Inter" font-size="8.4" font-weight="400" fill="#1F2933" text-anchor="middle">infecção urinária, febre, hematúria, menstruação, gravidez, obesidade maciça, insuficiência</text>
+<text x="239.0" y="294.8" font-family="Inter" font-size="8.4" font-weight="400" fill="#1F2933" text-anchor="middle">cardíaca, exercício antes da coleta, mau controle metabólico</text>
+<line x1="239.0" y1="305.6" x2="239.0" y2="316.6" stroke="#8AA9DF" stroke-width="1.6"/>
+<polygon points="235.0,315.6 243.0,315.6 239.0,321.6" fill="#8AA9DF"/>
+<rect x="89.0" y="322.6" width="300.0" height="39.0" rx="8" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="1"/>
+<text x="239.0" y="338.4" font-family="Inter" font-size="8.8" font-weight="600" fill="#16315C" text-anchor="middle">Sem outra causa: nefropatia incipiente</text>
+<text x="239.0" y="351.8" font-family="Inter" font-size="8.4" font-weight="400" fill="#1F2933" text-anchor="middle">função renal ainda normal; é a hora de agir</text>
+</svg>

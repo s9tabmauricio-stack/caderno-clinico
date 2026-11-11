@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="478pt" height="64pt" viewBox="0 0 478 64">
+<rect x="0.0" y="2.0" width="107.5" height="59.9" rx="8" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="1"/>
+<text x="53.8" y="22.5" font-family="Inter" font-size="8.8" font-weight="600" fill="#16315C" text-anchor="middle">Bexiga neurogênica</text>
+<text x="53.8" y="35.9" font-family="Inter" font-size="8.4" font-weight="400" fill="#1F2933" text-anchor="middle">a musculatura não</text>
+<text x="53.8" y="47.3" font-family="Inter" font-size="8.4" font-weight="400" fill="#1F2933" text-anchor="middle">elimina toda a urina</text>
+<line x1="109.5" y1="31.9" x2="117.5" y2="31.9" stroke="#8AA9DF" stroke-width="1.6"/>
+<polygon points="116.5,27.9 116.5,35.9 122.5,31.9" fill="#8AA9DF"/>
+<rect x="123.5" y="2.0" width="107.5" height="59.9" rx="8" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="1"/>
+<text x="177.2" y="16.8" font-family="Inter" font-size="8.8" font-weight="600" fill="#16315C" text-anchor="middle">Estase</text>
+<text x="177.2" y="30.2" font-family="Inter" font-size="8.4" font-weight="400" fill="#1F2933" text-anchor="middle">a bexiga fica distendida</text>
+<text x="177.2" y="41.6" font-family="Inter" font-size="8.4" font-weight="400" fill="#1F2933" text-anchor="middle">e sobra urina dentro</text>
+<text x="177.2" y="53.0" font-family="Inter" font-size="8.4" font-weight="400" fill="#1F2933" text-anchor="middle">dela</text>
+<line x1="233.0" y1="31.9" x2="241.0" y2="31.9" stroke="#8AA9DF" stroke-width="1.6"/>
+<polygon points="240.0,27.9 240.0,35.9 246.0,31.9" fill="#8AA9DF"/>
+<rect x="247.0" y="2.0" width="107.5" height="59.9" rx="8" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="1"/>
+<text x="300.8" y="22.5" font-family="Inter" font-size="8.8" font-weight="600" fill="#16315C" text-anchor="middle">Infecção urinária</text>
+<text x="300.8" y="35.9" font-family="Inter" font-size="8.4" font-weight="400" fill="#1F2933" text-anchor="middle">a urina parada facilita a</text>
+<text x="300.8" y="47.3" font-family="Inter" font-size="8.4" font-weight="400" fill="#1F2933" text-anchor="middle">infecção</text>
+<line x1="356.5" y1="31.9" x2="364.5" y2="31.9" stroke="#8AA9DF" stroke-width="1.6"/>
+<polygon points="363.5,27.9 363.5,35.9 369.5,31.9" fill="#8AA9DF"/>
+<rect x="370.5" y="2.0" width="107.5" height="59.9" rx="8" fill="#F5F8FF" stroke="#C3D8F8" stroke-width="1"/>
+<text x="424.2" y="22.5" font-family="Inter" font-size="8.8" font-weight="600" fill="#16315C" text-anchor="middle">Piora da função renal</text>
+<text x="424.2" y="35.9" font-family="Inter" font-size="8.4" font-weight="400" fill="#1F2933" text-anchor="middle">uma das causas de o</text>
+<text x="424.2" y="47.3" font-family="Inter" font-size="8.4" font-weight="400" fill="#1F2933" text-anchor="middle">rim piorar</text>
+</svg>

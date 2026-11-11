@@ -1,0 +1,539 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<title>Nefrologia · Aula 8 · Nefropatia do diabetes</title>
+<meta name="rodape" content="Mauricio Faria · Nefrologia · Aula 8 — Nefropatia do diabetes">
+<link rel="stylesheet" href="apostila.css">
+<style>
+/* ===== componentes do molde novo (docs/apostila-molde.md) ===== */
+.simples { background: #FFFFFF; border: 1px solid #C3D8F8; border-left: 4pt solid #0B5BD3; border-radius: 12pt; padding: 9pt 14pt 10pt; margin: 0 0 10pt; break-inside: avoid; }
+.simples p { font-size: 10.2pt; line-height: 1.5; color: #1F2933; margin: 0; }
+.aqui { display: flex; margin-top: 7pt; }
+.aqui span { flex: 1; border-top: 3pt solid #DCDCE2; padding-top: 2.5pt; margin-right: 2.5pt; font-family: "Inter Medium"; font-size: 6pt; line-height: 1.25; color: #8E8E93; }
+.aqui span:last-child { margin-right: 0; }
+.aqui span.feito { border-top-color: #A9C4EE; color: #6C6C70; }
+.aqui span.on { border-top-color: #0B5BD3; color: #0B5BD3; font-family: "Inter SemiBold"; }
+.aqui span.ramo { border-top-style: dashed; }
+.figure .olhar { margin-top: 8pt; }
+.figure .olhar .kick { margin-bottom: 3pt; }
+.figure .olhar ul { margin: 0; }
+.figure .olhar li { padding-left: 0; font-size: 8.7pt; line-height: 1.45; margin-bottom: 2pt; }
+.figure .olhar li::before { display: none; }
+.figure .olhar li b { color: #0B5BD3; }
+.figure .leg { font-size: 7.8pt; color: #8E8E93; margin: 5pt 0 0; }
+.reg { font-size: 8.3pt; line-height: 1.45; color: #6C6C70; background: #F7F7FA; border: 1px solid #E3E3E8; border-radius: 9pt; padding: 5pt 10pt; margin: 6pt 0 9pt; break-inside: avoid; }
+.reg b { font-family: "Inter SemiBold"; color: #4F5B70; }
+.livros { font-size: 8.3pt; line-height: 1.45; color: #6E3AA7; background: #F4EBFB; border: 1px solid #DEC7F1; border-radius: 9pt; padding: 5pt 10pt; margin: 6pt 0 9pt; break-inside: avoid; }
+.livros b { color: #6E3AA7; }
+.sw.simples-sw { background: #FFFFFF; border-color: #C3D8F8; border-left: 3pt solid #0B5BD3; }
+.sw.aqui-sw { background: linear-gradient(90deg, #A9C4EE 0, #A9C4EE 45%, #0B5BD3 45%, #0B5BD3 70%, #DCDCE2 70%); border: 0; height: 4pt; border-radius: 2pt; }
+.sw.exame-sw { background: #1F2933; border-color: #1F2933; }
+.cmp .destaque { font-family: "Inter SemiBold"; color: #0B5BD3; }
+.cmp.c4 .k { width: 62pt; }
+.cmp.c4 .c { font-size: 8.3pt; padding-right: 8pt; }
+.vesp { break-before: page; }
+.vesp .item { display: flex; align-items: baseline; background: #FFFFFF; border: 1px solid #E3E3E8; border-radius: 12pt; padding: 7pt 12pt; margin: 0 0 6pt; break-inside: avoid; }
+.vesp .item .prova { flex: none; margin: 0 9pt 0 0; }
+.vesp .item p { margin: 0; font-size: 9.2pt; }
+.tiles.t4 { margin: 6pt 0 8pt; }
+.figure.lado { display: flex; align-items: center; }
+.figure.lado > img { flex: none; }
+.figure.lado .olhar { flex: 1; margin: 0 0 0 12pt; }
+.cover .toc a { padding: 3.6pt 0; }
+/* ===== ajustes desta apostila ===== */
+
+.simples .kick { margin-bottom: 3pt; }
+.flow.junto { break-inside: avoid; }
+.nw { white-space: nowrap; }
+</style>
+</head><body>
+
+<div class="cover">
+  <div class="kicker">Nefrologia · Aula 8 · Doença renal do diabetes</div>
+  <h1>Nefropatia do diabetes</h1>
+  <p class="sub">Como o açúcar em excesso lesa o glomérulo, como achar a lesão cedo pela microalbuminúria e como frear a doença com pressão controlada, dieta e os remédios que protegem o rim.</p>
+  <div class="author"><span class="av">V</span><div><b>Dra. Vanessa</b><span>Nefrologista e nutróloga · 4 de novembro de 2026</span></div></div>
+  <div class="keynums"><div class="kick">Três números para levar</div>
+    <div class="kn-grid">
+      <div class="kn"><div class="n">30 mg</div><div class="l">de albumina na urina: acima disso, já é microalbuminúria</div></div>
+      <div class="kn"><div class="n">120x80</div><div class="l">mmHg, a meta de pressão do diabético; 120x75 com proteinúria</div></div>
+      <div class="kn"><div class="n">0,6 a 0,8 g/kg</div><div class="l">de proteína por dia na dieta: controlar, nunca retirar</div></div>
+    </div></div>
+  <div class="toc"><div class="kick">Nesta apostila</div>
+    <a href="#s00"><span class="tn">00</span><span class="tt">Recados da disciplina</span><span class="pg">{{s00}}</span></a>
+    <a href="#s01"><span class="tn">01</span><span class="tt">O glomérulo e o açúcar</span><span class="pg">{{s01}}</span></a>
+    <a href="#s02"><span class="tn">02</span><span class="tt">Uma epidemia que chega ao rim</span><span class="pg">{{s02}}</span></a>
+    <a href="#s03"><span class="tn">03</span><span class="tt">As três fases e a biópsia</span><span class="pg">{{s03}}</span></a>
+    <a href="#s04"><span class="tn">04</span><span class="tt">Fatores de risco</span><span class="pg">{{s04}}</span></a>
+    <a href="#s05"><span class="tn">05</span><span class="tt">Diagnóstico</span><span class="pg">{{s05}}</span></a>
+    <a href="#s06"><span class="tn">06</span><span class="tt">Metas, hábitos e dieta</span><span class="pg">{{s06}}</span></a>
+    <a href="#s07"><span class="tn">07</span><span class="tt">Remédios que protegem o rim</span><span class="pg">{{s07}}</span></a>
+    <a href="#s08"><span class="tn">08</span><span class="tt">Outras doenças urinárias do diabético</span><span class="pg">{{s08}}</span></a>
+    <a href="#s09"><span class="tn">09</span><span class="tt">Véspera da prova</span><span class="pg">{{s09}}</span></a>
+    <p class="note">Organizada a partir da aula e dos slides, com a linguagem ajustada para leitura autônoma. A legenda de cores está na página 2.</p>
+  </div>
+</div>
+
+<div class="legend"><div class="kick">Como ler esta apostila</div><div class="lg-grid">
+  <div class="lg"><span class="sw blue"></span><div><b>Azul</b> conteúdo da aula e raciocínio</div></div>
+  <div class="lg"><span class="sw green"></span><div><b>Verde</b> dose ou valor de referência</div></div>
+  <div class="lg"><span class="sw red"></span><div><b>Vermelho</b> alerta, erro comum ou pegadinha da professora</div></div>
+  <div class="lg"><span class="sw orange"></span><div><b>Laranja</b> fala ou parêntese da professora</div></div>
+  <div class="lg"><span class="sw purple"></span><div><b>Roxo</b> complemento que não foi dito em aula</div></div>
+  <div class="lg"><span class="prova">PROVA</span><div><b>Marca de prova</b> o ponto que cai na prova</div></div>
+  <div class="lg"><span class="sw simples-sw"></span><div><b>Em palavras simples</b> o capítulo contado como numa conversa</div></div>
+  <div class="lg"><span class="sw aqui-sw"></span><div><b>Você está aqui</b> a etapa da aula em cada capítulo</div></div>
+</div></div>
+
+<div class="prof"><div class="kick">Sobre a professora · Dra. Vanessa</div>
+<div class="rows">
+  <div class="row"><div class="k">Especialidades</div><div class="v">Nefrologia e Nutrologia.</div></div>
+  <div class="row"><div class="k">Formação</div><div class="v">Mestrado. Pós-graduação em Nutrologia, feita para tratar melhor os pacientes que acompanha.</div></div>
+  <div class="row"><div class="k">Atuação</div><div class="v">Nefrologia; dieta do paciente diabético e hipertenso para evitar a doença renal crônica.</div></div>
+</div></div>
+
+<section id="s00">
+  <div class="sec-head"><div class="lado"><span class="k">Seção</span><span class="num">00</span></div><div class="corpo"><div class="de">Antes da aula</div><h2>Recados da disciplina</h2></div></div>
+  <div class="date"><div class="d"><span class="m">Novembro</span><span class="dd">12</span></div><div class="t"><b>Prova de Nefrologia</b><span>Quinta-feira, 12 de novembro de 2026, às 16h30. As salas serão definidas pela coordenação.</span></div></div>
+  <div class="rows">
+    <div class="row"><div class="k">Na prova</div><div class="v">Valem os valores já publicados, da tabela atualizada de 2026. Mudanças previstas para 2027 e 2028 ainda não contam.</div></div>
+    <div class="row"><div class="k">Seminário</div><div class="v">A Dra. Andressa mandou questões sobre o seminário dela: uma entra na prova da Dra. Vanessa e outra na prova de exame, para quem ficar.</div></div>
+    <div class="row"><div class="k">Próxima aula</div><div class="v">Doença renal crônica, a última aula da disciplina.</div></div>
+  </div>
+</section>
+
+<div class="figure trilha"><div class="kick">O caminho da aula</div><img src="trilha.svg" alt="As oito etapas da aula, do glomérulo lesado pelo açúcar até as outras doenças urinárias do diabético"></div>
+
+<section id="s01">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">01</span></div><div class="corpo"><div class="de">Etapa 1 de 8</div><h2>O glomérulo e o açúcar</h2><div class="aqui"><span class="on">Glomérulo</span><span>Quem adoece</span><span>Três fases</span><span>Fatores de risco</span><span>Diagnóstico</span><span>Metas e dieta</span><span>Remédios</span><span>Outras doenças</span></div></div></div>
+  <div class="simples"><div class="kick">Em palavras simples</div><p>O açúcar que sobra no sangue passa pelo filtro do rim. No caminho, inflama o filtro, que passa a deixar escapar proteína, e estraga as pequenas artérias do rim, o que faz a pressão subir. Por isso o diabético com o rim lesado tem proteína na urina e pressão alta.</p></div>
+
+  <h3 data-bm="O que é">O que é</h3>
+  <p>A nefropatia do diabetes, também chamada de doença renal do diabetes, é a presença de proteína na urina (proteinúria) num paciente com <b>diabetes tipo 2 de longa duração</b>, com mais de 10 anos de doença, que vem acompanhada de retinopatia e de hipertensão. As lesões aparecem de preferência nos glomérulos, mas atingem também os túbulos e o interstício.</p>
+  <div class="reg"><b>No slide:</b> "diabetes de longa duração (mais de 10 anos)", sem dizer o tipo.</div>
+
+  <h3 data-bm="Onde começa a lesão">Onde começa a lesão</h3>
+  <p>A glicose é filtrada pelo glomérulo, que forma a urina. O glomérulo funciona como um filtro com furinhos do tamanho certo para segurar as proteínas. No diabetes, o excesso de glicose e dos polióis (substâncias que a glicose em excesso forma) inflama esse filtro: os podócitos, as células que fecham os poros, se abrem, e a proteína escapa.</p>
+  <p>Ao mesmo tempo, o açúcar em excesso lesa as arteríolas do glomérulo. Elas cicatrizam e endurecem (esclerose glomerular), e isso gera hipertensão.</p>
+  <div class="figure"><img src="fisio.svg" alt="Fluxograma: a glicose em excesso abre os podócitos e causa proteinúria, e lesa as arteríolas, causando esclerose glomerular e hipertensão"></div>
+
+  <h3 data-bm="Uma doença dos vasos">Uma doença dos vasos <span class="prova">PROVA</span></h3>
+  <p>Quando o diabético tem uma consequência da doença, o que costuma aparecer é proteinúria e hipertensão, porque a <b>doença diabética é essencialmente vascular</b>. Ela pode atingir os nervos, e isso não é raro, mas o centro da lesão está nos vasos.</p>
+  <p>Tudo o que acontece no diabético com doença das artérias das pernas (arteriopatia periférica) acontece igualzinho no rim. A diferença é o calibre:</p>
+  <div class="grid2">
+    <div class="card"><span class="tag">Calibre grande</span><h4>Artéria poplítea</h4><p>A lesão do diabetes também chega, claro, mas demora mais.</p></div>
+    <div class="card"><span class="tag">Calibre pequeno</span><h4>Arteríolas do rim</h4><p>A lesão aparece mais cedo e é mais grave.</p></div>
+  </div>
+  <div class="quote"><p>“Lembrem: a gente é um pool de artérias, né, no corpo inteiro.”</p><div class="who">Dra. Vanessa, sobre por que o rim adoece junto com as outras artérias</div></div>
+</section>
+
+<section id="s02">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">02</span></div><div class="corpo"><div class="de">Etapa 2 de 8</div><h2>Uma epidemia que chega ao rim</h2><div class="aqui"><span class="feito">Glomérulo</span><span class="on">Quem adoece</span><span>Três fases</span><span>Fatores de risco</span><span>Diagnóstico</span><span>Metas e dieta</span><span>Remédios</span><span>Outras doenças</span></div></div></div>
+  <div class="simples"><div class="kick">Em palavras simples</div><p>O número de diabéticos no mundo mais que triplicou em 14 anos. No Brasil, o diabetes já é a segunda causa de diálise, quase empatado com a hipertensão. Quando o rim adoece, o risco de morte dispara; o que mais protege é mudar os hábitos.</p></div>
+
+  <h3 data-bm="Os números do diabetes">Os números do diabetes</h3>
+  <p>Olhar a epidemiologia é olhar o passado da doença para resolver o presente. Os números são do diabetes tipo 2, o diabetes do adulto, e quase lembram uma pandemia: não no sentido da palavra, mas no tamanho.</p>
+  <div class="tiles">
+    <div class="tile"><div class="lab">2010</div><div class="n">240 milhões</div><div class="s">de diabéticos no mundo</div></div>
+    <div class="tile"><div class="lab">2015</div><div class="n">380 milhões</div><div class="s">de diabéticos no mundo</div></div>
+    <div class="tile"><div class="lab">2024</div><div class="n">800 milhões</div><div class="s">de diabéticos no mundo</div></div>
+  </div>
+  <p>Em 2022 eram 537 milhões. No Brasil, pelos dados de 2025:</p>
+  <div class="tiles">
+    <div class="tile"><div class="lab">Diabetes tipo 1</div><div class="n">92 mil</div><div class="s">crianças</div></div>
+    <div class="tile"><div class="lab">Diabetes tipo 1</div><div class="n">600 mil</div><div class="s">somando crianças e adultos jovens</div></div>
+    <div class="tile"><div class="lab">Diabetes tipo 2</div><div class="n">20 milhões</div><div class="s">de portadores</div></div>
+  </div>
+  <p>A nefropatia acomete, em média, menos de 35% dos diabéticos tipo 1 e de 10% a 40% dos diabéticos tipo 2.</p>
+
+  <h3 data-bm="Causa de diálise">Causa de diálise</h3>
+  <p>O diabetes é a primeira causa de doença renal com necessidade de diálise nos países desenvolvidos, como os Estados Unidos. No Brasil é a segunda: a primeira é a hipertensão, mas o diabetes está quase empatado com ela. É um padrão que o país está copiando dos países desenvolvidos.</p>
+  <div class="quote"><p>“Está nas nossas mãos, como profissionais de saúde, resolver isso. Nós precisamos tratar bem, e muito bem, os nossos pacientes para que não cheguem a ficar renais crônicos.”</p><div class="who">Dra. Vanessa, sobre o diabetes como causa de diálise</div></div>
+
+  <h3 data-bm="Quanto custa">Quanto custa</h3>
+  <p>Pelos dados do King's College, que acompanha os perfis de tratamento no mundo, o Sistema Único de Saúde gastou 57,7 bilhões de reais em 2015, com previsão de 97 bilhões de dólares em 2030. O tratamento ambulatorial do diabético pelo Sistema Único de Saúde custa cerca de 2.108 dólares por paciente, dos quais 1.335 são custos diretos.</p>
+  <p>O país tem remédios de última geração, de muita qualidade, inclusive na rede pública. O que falta é orientar bem o paciente.</p>
+
+  <h3 data-bm="Risco de morte">Risco de morte</h3>
+  <p>A nefropatia é o motivo de se falar do diabetes como causa de doença renal: ela multiplica o risco de morte, um índice de mortalidade muito alto.</p>
+  <div class="tiles">
+    <div class="tile r"><div class="lab">Diabetes tipo 1</div><div class="n">100 vezes</div><div class="s">mais risco de morte com nefropatia</div></div>
+    <div class="tile r"><div class="lab">Diabetes tipo 2</div><div class="n">5 vezes</div><div class="s">mais risco de morte com nefropatia</div></div>
+    <div class="tile"><div class="lab">No Brasil</div><div class="n">2ª causa</div><div class="s">de doença renal com diálise</div></div>
+  </div>
+
+  <h3 data-bm="Por que nem todo diabético adoece">Por que nem todo diabético adoece</h3>
+  <p>Nem todo diabético chega à nefropatia e à doença renal. Há dois motivos:</p>
+  <div class="grid2">
+    <div class="card"><span class="tag">1</span><h4>Genética</h4><p>Parece haver um fator genético que protege alguns diabéticos das formas graves.</p></div>
+    <div class="card"><span class="tag">2</span><h4>Estilo de vida</h4><p>É onde entra o médico: quem muda a dieta, para de fumar e deixa o sedentarismo costuma evoluir muito bem.</p></div>
+  </div>
+  <div class="ref"><div class="txt"><div class="kick"><span class="dot"></span>Exercício que protege</div><p>Para deixar de ser sedentário.</p></div><div class="val">5 vezes por semana<small>30 minutos cada vez</small></div></div>
+  <div class="box orange"><div class="kick"><span class="dot"></span>Enquete em sala</div><p>Para a turma, o mais difícil ao cuidar de um parente diabético é a alimentação e o estilo de vida. Remédio existe: o que há de mais moderno está na rede pública. Hoje há muitos alimentos diet e light de fácil acesso no supermercado, de preferência os diet, que não têm açúcar. Na segunda enquete, só quatro mãos se levantaram: poucos parentes fazem exercício 5 vezes por semana, 30 minutos.</p></div>
+  <div class="quote"><p>“Cabe a cada um de nós fazermos o trabalho de formiga de convencer os nossos parentes a cuidarem da sua alimentação. Eu vou pedir a ajuda de vocês na prevenção da doença renal.”</p><div class="who">Dra. Vanessa, sobre mudar os hábitos</div></div>
+</section>
+
+<section id="s03">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">03</span></div><div class="corpo"><div class="de">Etapa 3 de 8</div><h2>As três fases e a biópsia</h2><div class="aqui"><span class="feito">Glomérulo</span><span class="feito">Quem adoece</span><span class="on">Três fases</span><span>Fatores de risco</span><span>Diagnóstico</span><span>Metas e dieta</span><span>Remédios</span><span>Outras doenças</span></div></div></div>
+  <div class="simples"><div class="kick">Em palavras simples</div><p>A doença avança em três fases. Primeiro escapa só um pouco de albumina na urina e o rim ainda funciona bem; depois sai muita proteína e aparecem outras complicações do diabetes; por fim o rim para e o paciente vai para a diálise. Quanto mais cedo se age, mais se freia.</p></div>
+
+  <p>A doença renal do diabetes tem três estágios clínicos: a nefropatia incipiente, a nefropatia clínica e a fase de doença renal crônica já instalada.</p>
+  <div class="cmp c4">
+    <div class="r h"><div class="k"></div><div class="c">Incipiente</div><div class="c">Clínica</div><div class="c">Doença renal crônica</div></div>
+    <div class="r"><div class="k">Marca</div><div class="c">Microalbuminúria: albumina acima de 30 mg</div><div class="c">Proteinúria maior que <span class="nw">500 mg/dL</span></div><div class="c">Diabetes com mais de 7 a 10 anos</div></div>
+    <div class="r"><div class="k">Função do rim</div><div class="c">Ainda normal</div><div class="c">Filtração caindo: 1 mL/min por mês no tipo 1 e 0,5 no tipo 2</div><div class="c">Perdida</div></div>
+    <div class="r"><div class="k">O que acompanha</div><div class="c">Só a perda de albumina</div><div class="c">Hipertensão, neuropatias, retinopatia, cardiopatia isquêmica</div><div class="c">Insuficiência renal terminal e diálise</div></div>
+  </div>
+
+  <h3 data-bm="Nefropatia incipiente: a microalbuminúria">Nefropatia incipiente: a microalbuminúria <span class="prova">PROVA</span></h3>
+  <p>A primeira fase é marcada pelo aparecimento de microalbuminúria. No Brasil, o valor é guardado em miligramas: o normal é albumina <b>menor que 30 mg</b>; acima de 30 mg já é microalbuminúria. É a mesma tabela de três graus usada na hipertensão.</p>
+  <div class="regua">
+    <div class="ticks"><span class="first" style="left:0">0</span><span style="left:34%">30 mg</span><span style="left:67%">300 mg</span></div>
+    <div class="bar"><span class="seg g" style="width:34%"></span><span class="seg r" style="width:33%"></span><span class="seg r" style="width:33%"></span></div>
+    <div class="labs"><div class="lab g" style="width:34%"><div class="nm">Normal <span class="v">menor que 30 mg</span></div>Sem perda de albumina.</div><div class="lab r" style="width:33%"><div class="nm">Microalbuminúria <span class="v">30 a 300 mg</span></div>Nefropatia incipiente.</div><div class="lab r" style="width:33%"><div class="nm">Proteinúria <span class="v">acima de 300 mg</span></div>Perda franca de proteína.</div></div>
+  </div>
+  <p class="regua-note">Escala sem proporção. O slide traz a microalbuminúria também como 30 a 300 mg em 24 horas ou 20 a 200 microgramas por minuto.</p>
+  <div class="quote"><p>“Guardem esse número: menor que 30. Neste momento e na prova, o nosso limite é o que já está publicado, não é o in press que vai ser publicado talvez no ano que vem.”</p><div class="who">Dra. Vanessa, sobre o corte da microalbuminúria, que deve mudar entre 2027 e 2028</div></div>
+
+  <h3 data-bm="Quem tem e como evolui">Quem tem e como evolui</h3>
+  <p>A microalbuminúria aparece em 30% a 45% dos diabéticos tipo 1 com mais de 10 anos de doença e em 13% a 26% dos diabéticos tipo 2. Nessa fase só há perda de proteína, porque o glomérulo abriu um pouco: a função renal ainda está normal.</p>
+  <p>Sem tratamento, a microalbuminúria <b>piora 20% ao ano</b> e é sinal de mau prognóstico: quanto mais ela sobe, mais o rim está filtrando menos.</p>
+  <p>Uma curiosidade, somando os diabéticos tipo 1 e tipo 2:</p>
+  <div class="tiles">
+    <div class="tile"><div class="lab">Proteinúria</div><div class="n">30% a 45%</div><div class="s">proteína acima de 300 mg</div></div>
+    <div class="tile"><div class="lab">Normoalbuminúria</div><div class="n">30%</div><div class="s">por razão genética, nunca perderão albumina pelo rim</div></div>
+    <div class="tile"><div class="lab">Microalbuminúria</div><div class="n">25% a 40%</div><div class="s">perda pequena de albumina</div></div>
+  </div>
+
+  <h3 data-bm="Nefropatia clínica">Nefropatia clínica</h3>
+  <p>A segunda fase é a proteinúria maior que 500 mg/dL. Ela costuma vir com outras complicações do diabetes: hipertensão em até 90% dos pacientes (73% a 90%, pelo slide), neuropatia periférica, neuropatia autonômica, retinopatia e cardiopatia isquêmica. É quando o diabetes está pior: não é só o rim que está doente, outros órgãos também sofreram com a falta de circulação causada pela doença.</p>
+  <div class="livros"><b>Nos livros:</b> a perda de proteína costuma ser medida em mg por 24 horas (ou por grama de creatinina na urina); de 30 a 300 mg de albumina em 24 horas é microalbuminúria, e acima de 300 mg, macroalbuminúria.</div>
+
+  <h3 data-bm="Doença renal crônica">Doença renal crônica</h3>
+  <p>Com mais de 7 a 10 anos de diabetes, esse paciente fatalmente evolui para insuficiência renal terminal e diálise. O que faz passar da nefropatia clínica para a doença renal crônica:</p>
+  <div class="card wide"><ul class="cols2">
+    <li><span class="medium">Piora da hipertensão</span> arterial</li>
+    <li><span class="medium">Colesterol</span> aumentado</li>
+    <li><span class="medium">Cigarro</span>, sem conseguir parar</li>
+    <li><span class="medium">Controle glicêmico</span> ruim</li>
+    <li><span class="medium">Erros</span> na dieta</li>
+    <li><span class="medium">Polimorfismo</span> do gene da enzima conversora da angiotensina</li>
+  </ul></div>
+  <p>Algumas pessoas nascem com esse polimorfismo, um gene deficiente no rim que não responde ao tratamento com remédios. Elas evoluem muito mal e, por volta do sétimo ano de diabetes, já têm doença renal crônica. São raras: o mais comum é a piora pela pressão alta, pelo colesterol, por não parar de fumar e pelo erro na dieta.</p>
+
+  <h3 data-bm="O que a biópsia mostra">O que a biópsia mostra</h3>
+  <p>Ao lado de um glomérulo normal, o glomérulo doente mostra uma lesão esclerosante fácil de enxergar. Não há diferença de lesão entre o diabetes tipo 1 e o tipo 2; são três tipos de lesão glomerular:</p>
+  <div class="rows">
+    <div class="row"><div class="k">Nodular</div><div class="v">Glomeruloesclerose nodular ou lesão de Kimmelstiel-Wilson: um nódulo de esclerose dentro do glomérulo, característico do diabético.</div></div>
+    <div class="row"><div class="k">Difusa</div><div class="v">Glomeruloesclerose difusa: a lesão de Kimmelstiel-Wilson cresce e deixa de ser só focal.</div></div>
+    <div class="row"><div class="k">Exsudativa</div><div class="v">Lesões exsudativas.</div></div>
+  </div>
+  <p>Os túbulos também podem ser atingidos, mas é menos comum: quando acontece, é por fibrose progressiva, infiltrado intersticial e até atrofia.</p>
+</section>
+
+<section id="s04">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">04</span></div><div class="corpo"><div class="de">Etapa 4 de 8</div><h2>Fatores de risco</h2><div class="aqui"><span class="feito">Glomérulo</span><span class="feito">Quem adoece</span><span class="feito">Três fases</span><span class="on">Fatores de risco</span><span>Diagnóstico</span><span>Metas e dieta</span><span>Remédios</span><span>Outras doenças</span></div></div></div>
+  <div class="simples"><div class="kick">Em palavras simples</div><p>O que faz a lesão aparecer e piorar é, em grande parte, controlável: açúcar alto, pressão alta, excesso de proteína e de sal, cigarro e colesterol. A herança também pesa, mas não é algo que se meça no dia a dia.</p></div>
+
+  <h3 data-bm="Hiperglicemia">Hiperglicemia</h3>
+  <p>Parece óbvio: com a glicose alta, a matriz extracelular se altera, principalmente pela via dos polióis, que aumenta o estresse oxidativo e hiperosmótico e leva à toxicidade direta do endotélio dos vasos. É uma inflamação direta, como se a glicose e seus metabólitos, principalmente os polióis, se depositassem e fossem roendo a parede do vaso.</p>
+  <p>Um <b>bom controle glicêmico melhora 33% da microalbuminúria</b>: um terço desses pacientes nunca teria doença renal crônica.</p>
+
+  <h3 data-bm="Hipertensão">Hipertensão</h3>
+  <p>A hipertensão piora a microalbuminúria e é o fator promotor mais relevante da progressão da doença; o controle adequado retarda essa progressão.</p>
+  <div class="quote"><p>“Controlar a pressão arterial no diabético é igual a evitar doença renal crônica.”</p><div class="who">Dra. Vanessa, sobre a hipertensão como fator de risco</div></div>
+
+  <h3 data-bm="Proteína e sal em excesso">Proteína e sal em excesso <span class="prova">PROVA</span></h3>
+  <p>Dietas ricas em proteína e sal pioram a filtração glomerular e levam à doença renal crônica precoce. Por quê?</p>
+  <div class="box orange"><div class="kick"><span class="dot"></span>Pergunta à turma</div><p>Um aluno respondeu cetoacidose: certo no pensamento, mas não é a resposta. Cetoacidose é o aumento da produção de cetoácidos pelo fígado quando a glicemia está muito alta. A resposta é a hiperfiltração glomerular.</p></div>
+  <p>Com proteína em excesso, o rim aumenta o fluxo no glomérulo para tentar eliminar o que não sabe eliminar sozinho: é a hiperfiltração glomerular.</p>
+  <ol class="flow junto">
+    <li><b class="t">Excesso de proteína.</b> O rim aumenta o fluxo glomerular para eliminar o excesso.</li>
+    <li><b class="t">Hiperfiltração sem resposta.</b> O esforço não consegue eliminar a proteína.</li>
+    <li><b class="t">Dano à parede capilar.</b> Passam macromoléculas, que são as proteínas.</li>
+    <li><b class="t">Depósito no mesângio.</b> A permeabilidade capilar se altera.</li>
+    <li><b class="t">Glomeruloesclerose.</b> O glomérulo cicatriza e endurece.</li>
+  </ol>
+  <div class="box"><div class="kick"><span class="dot"></span>Pense num liquidificador</div><p>O liquidificador bate bem massas leves; com massa pesada, as pazinhas tentam girar e não conseguem. O rim também sabe eliminar uma certa quantidade de proteína. Com proteína demais, ele faz um esforço que não dá resultado: é a hiperfiltração.</p></div>
+  <p>Em rins normais, essa lesão demora para acontecer. Em rins já doentes pela hipertensão ou pelo diabetes, o excesso de proteína e a maior reabsorção de sal pelo túbulo aumentam a pressão arterial e diminuem o fluxo sanguíneo renal. Por isso, controlar a ingestão de proteína é uma das bases do tratamento.</p>
+  <div class="box red"><div class="kick"><span class="dot"></span>Pegadinha da professora</div><p>Controlar não é retirar. Não se retira proteína de ninguém: o certo é ajustar a quantidade por dia, para não haver excesso enquanto se trata a doença.</p></div>
+
+  <h3 data-bm="Herança genética">Herança genética</h3>
+  <p>Há alterações cromossômicas associadas à nefropatia diabética ao longo do cromossomo 7 (no braço longo, no diabetes tipo 2, pelo slide) e no braço longo do cromossomo 3, no diabetes tipo 1. Ninguém dosa isso para fazer diagnóstico: serve para saber que existe um fator genético, responsável pela história familiar de diabetes e de hipertensão.</p>
+
+  <h3 data-bm="A lista dos fatores de risco">A lista dos fatores de risco</h3>
+  <div class="card wide"><ul class="cols2">
+    <li><span class="medium">História familiar</span></li>
+    <li><span class="medium">Hipertensão</span> arterial</li>
+    <li><span class="medium">Duração do diabetes:</span> acima de 7 a 10 anos, geralmente há doença renal</li>
+    <li><span class="medium">Hemoglobina glicada</span> alta</li>
+    <li><span class="medium">Retinopatia</span></li>
+    <li><span class="medium">Colesterol</span> alto (hipercolesterolemia)</li>
+    <li><span class="medium">Etnia:</span> pior em negros, hispânicos e índios Pima (uma tribo dos Estados Unidos)</li>
+    <li><span class="medium">Tabagismo</span></li>
+  </ul></div>
+
+  <h3 data-bm="Hemoglobina glicada">Hemoglobina glicada <span class="prova">PROVA</span></h3>
+  <p>Hemoglobina glicada e hemoglobina glicosilada são o mesmo exame. Ele mede o <b>histórico da glicose</b>: o quanto de glicose ficou ligada à hemoglobina nos últimos meses, e não só a glicose que circula no momento. Daí o nome.</p>
+  <p>O exame resolve um problema antigo. O paciente controlava a glicemia por dois dias, colhia a glicemia de jejum e o resultado vinha normal, mas os outros órgãos pioravam, com retinopatia e nefropatia. A hemoglobina glicada mostra onde ele vinha errando antes.</p>
+  <div class="livros"><b>Nos livros:</b> a hemoglobina glicada reflete a média da glicose dos últimos 2 a 3 meses, o tempo de vida da hemácia.</div>
+
+  <h3 data-bm="Retinopatia">Retinopatia: o rim é irmão do olho <span class="prova">PROVA</span></h3>
+  <p>A vasculatura do fundo de olho é a mesma que temos dentro do rim. Por isso, a retinopatia entra na lista: o que se vê no fundo de olho está acontecendo no rim, ao mesmo tempo.</p>
+  <div class="quote"><p>“O rim é irmão do fundo de olho. Tudo o que acontece no fundo do olho acontece dentro do rim ao mesmo tempo.”</p><div class="who">Dra. Vanessa, sobre a retinopatia como fator de risco</div></div>
+</section>
+
+<section id="s05">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">05</span></div><div class="corpo"><div class="de">Etapa 5 de 8</div><h2>Diagnóstico</h2><div class="aqui"><span class="feito">Glomérulo</span><span class="feito">Quem adoece</span><span class="feito">Três fases</span><span class="feito">Fatores de risco</span><span class="on">Diagnóstico</span><span>Metas e dieta</span><span>Remédios</span><span>Outras doenças</span></div></div></div>
+  <div class="simples"><div class="kick">Em palavras simples</div><p>Todo diabético precisa fazer o exame que procura albumina na urina: o tipo 2 logo no diagnóstico, o tipo 1 a partir do quinto ano, e depois os dois uma vez por ano. Antes de culpar o rim, porém, é preciso afastar o que faz perder proteína por outro motivo.</p></div>
+
+  <h3 data-bm="Quando pedir a microalbuminúria">Quando pedir a microalbuminúria <span class="prova">PROVA</span></h3>
+  <p>No diabetes tipo 1, o exame é feito a partir do 5º ano de diagnóstico. No diabetes tipo 2, imediatamente, logo no diagnóstico. Nos dois, depois, o controle é anual.</p>
+  <div class="box orange"><div class="kick"><span class="dot"></span>Pergunta da turma</div><p>Por que pedir logo no tipo 2? Porque o diabetes tipo 2 costuma vir com hipertensão e obesidade muito cedo: os fatores de risco aparecem mais precocemente.</p></div>
+  <div class="figure"><img src="diag.svg" alt="Fluxograma: tipo 1 a partir do quinto ano, tipo 2 no diagnóstico, repetir todo ano; albumina acima de 30 mg, afastar outras causas antes de concluir nefropatia incipiente"></div>
+
+  <h3 data-bm="Exames do diabético">Exames do diabético</h3>
+  <div class="card wide"><ul class="cols2">
+    <li><span class="medium">Hemograma</span></li>
+    <li><span class="medium">Ureia e creatinina</span></li>
+    <li><span class="medium">Glicemia</span> de jejum</li>
+    <li><span class="medium">Colesterol</span> total e frações</li>
+    <li><span class="medium">Proteínas</span> totais e frações</li>
+    <li><span class="medium">Microalbuminúria</span> em amostra isolada ou na urina de 24 horas</li>
+    <li><span class="medium">Urina tipo 1</span> (parcial de urina) com urocultura</li>
+  </ul></div>
+
+  <h3 data-bm="O que mais faz perder albumina">O que mais faz perder albumina</h3>
+  <p>O diabético pode ter outras situações que também causam microalbuminúria, e elas precisam ser afastadas:</p>
+  <div class="card wide"><ul class="cols2">
+    <li><span class="medium">Infecção urinária:</span> as infecções fazem perder proteína; diabético perdendo proteína, primeiro ver se não está infectado.</li>
+    <li><span class="medium">Obesidade maciça</span> e <span class="medium">febre</span>.</li>
+    <li><span class="medium">Hematúria:</span> o sangue tem proteína; a albumina é quase 70% da proteína da urina.</li>
+    <li><span class="medium">Menstruação</span> (veja abaixo).</li>
+    <li><span class="medium">Gravidez:</span> muda a proteína da urina; proteína subindo pode ser sinal de pré-eclâmpsia.</li>
+    <li><span class="medium">Insuficiência cardíaca.</span></li>
+    <li><span class="medium">Coleta logo depois de exercício físico.</span></li>
+    <li><span class="medium">Mau controle metabólico:</span> sem a alimentação correta, o exame vem sempre alterado.</li>
+  </ul></div>
+
+  <h3 data-bm="Urina colhida na menstruação">Urina colhida na menstruação <span class="prova">PROVA</span></h3>
+  <div class="box red"><div class="kick"><span class="dot"></span>Pegadinha da professora</div><p>Não valide um exame parcial de urina colhido durante a menstruação: ele não é um exame real. A mistura de sangue altera leucócitos, hemácias e proteína. Vale para qualquer exame de urina, não só no diabético.</p></div>
+  <div class="box"><div class="kick"><span class="dot"></span>Oriente o paciente</div><p>As pessoas gostam de fazer exame na segunda de manhã. No fim de semana antes de qualquer exame de urina (parcial de urina ou microalbuminúria), nada de corrida extenuante nem de bicicleta por muito tempo, porque o exercício altera o resultado. Descansado, o exame de segunda sai mais real.</p></div>
+</section>
+
+<section id="s06">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">06</span></div><div class="corpo"><div class="de">Etapa 6 de 8</div><h2>Metas, hábitos e dieta</h2><div class="aqui"><span class="feito">Glomérulo</span><span class="feito">Quem adoece</span><span class="feito">Três fases</span><span class="feito">Fatores de risco</span><span class="feito">Diagnóstico</span><span class="on">Metas e dieta</span><span>Remédios</span><span>Outras doenças</span></div></div></div>
+  <div class="simples"><div class="kick">Em palavras simples</div><p>O tratamento começa pelo básico: pressão baixa o bastante, glicemia controlada, nada de cigarro e proteína e sal na medida certa. A proteína é controlada, nunca retirada, e dá para montar uma dieta sem passar fome.</p></div>
+
+  <h3 data-bm="Metas de pressão">Metas de pressão <span class="prova">PROVA</span></h3>
+  <p>As metas de pressão para o diabético mudaram com o tempo. Até 2003, o ideal era abaixo de 130x80 mmHg; em 2015, as diretrizes baixaram para 120x80 mmHg; e há previsão de metas ainda mais baixas para 2027 e 2028. Neste momento, valem as metas de 2015.</p>
+  <div class="ref"><div class="txt"><div class="kick"><span class="dot"></span>Meta de pressão</div><p>Com proteinúria (nefropatia clínica), a meta é mais baixa.</p></div>
+    <div class="vals"><div class="val"><small>Nefropatia incipiente</small>abaixo de 120x80 mmHg</div><div class="val"><small>Proteinúria acima de 1 g/dia</small>abaixo de 120x75 mmHg</div></div></div>
+
+  <h3 data-bm="Prevenção primária">Prevenção primária</h3>
+  <p>A prevenção primária passa pelo controle glicêmico ideal (o diabético precisa fazer dieta) e pelo controle da pressão. O controle intensivo da pressão evita que a fase incipiente, de microalbuminúria, evolua para a fase de macroalbuminúria, a proteinúria.</p>
+  <div class="reg"><b>No slide:</b> na prevenção primária, o controle intensivo da pressão evita que o diabético sem microalbuminúria chegue à fase incipiente; a prevenção secundária reúne as medidas que impedem a passagem da fase incipiente para a nefropatia clínica (cigarro e dislipidemia).</div>
+
+  <h3 data-bm="Cigarro">Cigarro</h3>
+  <p>Evitar o tabagismo, com orientação educacional e encaminhamento a serviço especializado. Tabagismo não é só o cigarro comum: cigarro de palha, narguilé e cigarro eletrônico também contam, e o Ministério da Saúde chama todos de tabagismo.</p>
+
+  <h3 data-bm="Colesterol e estatina">Colesterol e estatina</h3>
+  <div class="box red"><div class="kick"><span class="dot"></span>Pegadinha da professora</div><p>A estatina ainda não mostrou melhorar a microalbuminúria: ela não evita a doença renal. Mas evita as outras doenças cardiovasculares do diabetes, nas artérias periféricas e no coração. Por isso, sim, é indicada.</p></div>
+
+  <h3 data-bm="Dieta">Dieta <span class="prova">PROVA</span></h3>
+  <p>A dieta hipoproteica reduz a microalbuminúria. Para não evoluir para doença renal, o diabético come pouca proteína, de preferência de alto valor biológico, e corta o sal:</p>
+  <div class="ref"><div class="txt"><div class="kick"><span class="dot"></span>Na dieta</div><p>Proteína por quilo de peso e sal por dia.</p></div>
+    <div class="vals"><div class="val"><small>Proteína</small>0,6 a 0,8 g/kg/dia</div><div class="val"><small>Sal: de 12 g para</small>5 g/dia ou menos</div></div></div>
+  <ul>
+    <li><span class="medium">Trocar a carne vermelha por peixe</span> reduz a microalbuminúria (o slide cita frango ou peixe).</li>
+    <li><span class="medium">Suspender o álcool.</span></li>
+    <li><span class="medium">Dieta hipocalórica</span> associada, se houver sobrepeso.</li>
+    <li><span class="medium">Controle glicêmico.</span></li>
+  </ul>
+  <p>Com tudo isso junto, reduz-se muito a passagem da nefropatia clínica para a doença renal crônica.</p>
+
+  <h3 data-bm="Não vai faltar proteína?">Não vai faltar proteína?</h3>
+  <p>Não. Faça a conta para um paciente de 70 kg: 0,8 vezes 70. Ele mantém as funções vitais, porque precisamos de proteína para viver, mas não come em excesso e não faz glomeruloesclerose.</p>
+  <div class="ref"><div class="txt"><div class="kick"><span class="dot"></span>Paciente de 70 kg</div><p>0,8 g/kg/dia vezes 70 kg. Com isso, ninguém passa fome.</p></div><div class="val">56 g<small>de proteína por dia</small></div></div>
+  <p>A carne vermelha não sai toda: entra, mas não todo dia, alternada com carnes brancas. A carne de porco também pode, porque dá para retirar a gordura de cima, tem pouca gordura entre as fibras e boa quantidade de proteína.</p>
+  <div class="quote"><p>“É muito discutível como a gente faz dieta para paciente diabético e hipertenso para evitar doença renal crônica: manter a carga proteica de uma maneira em que nem se perca a função da proteína, nem se piore a função do rim. Precisa existir um equilíbrio.”</p><div class="who">Dra. Vanessa, nefrologista e nutróloga, sobre a dieta do diabético</div></div>
+
+  <h3 data-bm="Proteína isolada e ovo">Proteína isolada e ovo</h3>
+  <div class="rows">
+    <div class="row"><div class="k">Proteína isolada</div><div class="v">Pode, mas por quê? Na regra, o alimento vem sempre primeiro: mantém a carga proteica (e também a de carboidrato), faz a biota intestinal trabalhar e não causa inflamação; com a proteína isolada, não se sabe se os vilos intestinais vão dar conta. A exceção é quem não consegue se alimentar normalmente: sonda nasoenteral depois de um acidente vascular cerebral, déficit de mastigação pela idade ou pela sarcopenia.</div></div>
+    <div class="row"><div class="k">Ovo</div><div class="v">A principal proteína do ovo é a albumina, que está na clara; o colesterol está na gema. Pode usar, mas a carne tem ferro e vitamina B12, que o ovo quase não tem. Alterne: carne numa refeição, ovo na outra (no café da manhã ou no lanche). Complementar é importante se a meta proteica não for atingida.</div></div>
+  </div>
+</section>
+
+<section id="s07">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">07</span></div><div class="corpo"><div class="de">Etapa 7 de 8</div><h2>Remédios que protegem o rim</h2><div class="aqui"><span class="feito">Glomérulo</span><span class="feito">Quem adoece</span><span class="feito">Três fases</span><span class="feito">Fatores de risco</span><span class="feito">Diagnóstico</span><span class="feito">Metas e dieta</span><span class="on">Remédios</span><span>Outras doenças</span></div></div></div>
+  <div class="simples"><div class="kick">Em palavras simples</div><p>O remédio de base é o que bloqueia o sistema renina-angiotensina-aldosterona: um ou outro, nunca dois juntos. Por cima entram as gliflozinas, que jogam açúcar na urina, e a finerenona. Cada um traz um cuidado que o paciente precisa conhecer.</p></div>
+
+  <h3 data-bm="Pressão: bloquear o sistema renina-angiotensina">Pressão: bloquear o sistema renina-angiotensina <span class="prova">PROVA</span></h3>
+  <p>O controle da pressão arterial é, sabidamente, a medida mais eficiente para frear a progressão da doença. Várias classes de anti-hipertensivos podem ser usadas, mas as de escolha são as que bloqueiam o sistema renina-angiotensina-aldosterona.</p>
+  <div class="cmp">
+    <div class="r h"><div class="k"></div><div class="c">Podem ser usados</div><div class="c">De escolha</div></div>
+    <div class="r"><div class="k">Classes</div><div class="c">Diuréticos, bloqueadores dos canais de cálcio, hidralazina (vistos no seminário)</div><div class="c destaque">Inibidor da enzima de conversão da angiotensina ou bloqueador do receptor da angiotensina</div></div>
+    <div class="r"><div class="k">Papel</div><div class="c">Ajudam a baixar a pressão</div><div class="c">Bloqueiam o sistema renina-angiotensina-aldosterona e freiam a progressão da doença</div></div>
+  </div>
+  <p>Mesmo sem microalbuminúria, os dois são efetivos para controlar a progressão da doença.</p>
+
+  <h3 data-bm="Duplo bloqueio: nunca os dois juntos">Duplo bloqueio: nunca os dois juntos <span class="prova">PROVA</span></h3>
+  <p>Usar os dois juntos (duplo bloqueio) já pareceu proteger o rim, ao limitar os efeitos nocivos da angiotensina II, com ações complementares e não competitivas. Os estudos novos contraindicam essa associação.</p>
+  <div class="box red"><div class="kick"><span class="dot"></span>Pegadinha da professora</div><p>Ou um, ou outro: inibidor da enzima de conversão ou bloqueador do receptor, nunca os dois ao mesmo tempo. Os dois têm as mesmas funções; juntos, aumentam o risco de hiperpotassemia (potássio alto) e, com ela, de arritmia e de morte.</p></div>
+
+  <h3 data-bm="Gliflozinas: como agem">Gliflozinas: como agem <span class="prova">PROVA</span></h3>
+  <p>Os inibidores do cotransportador de sódio e glicose tipo 2, as gliflozinas, já não são tão novos: têm cerca de 8 a 10 anos. Reduzem a progressão da doença renal.</p>
+  <ol class="flow">
+    <li><b class="t">Agem no túbulo contornado proximal.</b> São diuréticos que atuam no proximal.</li>
+    <li><b class="t">Bloqueiam a reabsorção de glicose e sódio.</b> Sai glicose na urina (glicosúria) e chega mais sódio ao túbulo distal, com mais natriurese.</li>
+    <li><b class="t">Contraem a arteríola aferente.</b> Cai a pressão dentro do glomérulo.</li>
+    <li><b class="t">Baixam a glicemia.</b> Ao jogar açúcar na urina, ajudam a controlar o diabetes.</li>
+  </ol>
+  <div class="rows">
+    <div class="row"><div class="k">Dapagliflozina</div><div class="v">Nomes comerciais Forxiga e Edistride.</div></div>
+    <div class="row"><div class="k">Empagliflozina</div><div class="v">Nome comercial Jardiance.</div></div>
+    <div class="row"><div class="k">Canagliflozina</div><div class="v">Não existe no Brasil.</div></div>
+  </div>
+  <p>Essas drogas participaram de um dos maiores estudos já publicados sobre rim e diabetes, o EMPA-KIDNEY (nome do estudo, de acesso livre na internet), que mudou o tratamento da doença renal do diabetes.</p>
+
+  <h3 data-bm="Gliflozina: o que avisar e quando suspender">Gliflozina: o que avisar e quando suspender <span class="prova">PROVA</span></h3>
+  <ol class="flow">
+    <li><b class="t">Avise: a urina vai ter glicose.</b> Qualquer exame parcial de urina vai dar glicose positiva. É a intenção: prova que o remédio está funcionando, não que há doença.</li>
+    <li><b class="t">Avise: aumenta o risco de infecção.</b> O açúcar na urina facilita infecção urinária na mulher, bacteriana ou por fungo (Candida); balanopostite no homem, pela mesma razão; e prostatite.</li>
+  </ol>
+  <div class="figure"><img src="infec.svg" alt="Fluxograma: infecção localizada, pode manter o remédio; sinais sistêmicos, suspende por 7 dias, trata e retoma"></div>
+  <div class="quote"><p>“Nós vamos começar um remédio para o senhor. Vai melhorar a função do seu rim, vai eliminar mais açúcar na urina, vai controlar o seu diabetes; diminui um pouquinho a circulação dentro do rim, então o rim filtra um pouquinho melhor. Mas, se o senhor tiver dor para urinar, a glande vermelha, desconforto, incontinência ou urgência para urinar, procure uma Unidade Básica de Saúde, porque nós precisamos tratar a infecção causada por esse remédio.”</p><div class="who">Dra. Vanessa, encenando a conversa com o paciente</div></div>
+
+  <h3 data-bm="Finerenona">Finerenona</h3>
+  <p>É um remédio mais novo, com cerca de 4 anos (2 no Brasil), de nome comercial Firialta. É um antagonista seletivo e não esteroidal do receptor mineralocorticoide, um primo da espironolactona, que bloqueia muitos dos efeitos nocivos da superativação desse receptor, uma das principais causas de dano aos rins e ao coração. É cara, entre 140 e 180 reais a caixa, e não está no Sistema Único de Saúde.</p>
+  <div class="cmp">
+    <div class="r h"><div class="k"></div><div class="c">Espironolactona</div><div class="c">Finerenona</div></div>
+    <div class="r"><div class="k">Na prática</div><div class="c">O antagonista mineralocorticoide mais usado</div><div class="c">Novo tratamento da nefropatia do diabetes</div></div>
+    <div class="r"><div class="k">Seletividade</div><div class="c">Menor</div><div class="c destaque">Maior</div></div>
+    <div class="r"><div class="k">Estrutura</div><div class="c">Esteroidal</div><div class="c destaque">Não esteroidal</div></div>
+    <div class="r"><div class="k">Hiperpotassemia</div><div class="c">Mais</div><div class="c">Bem menos: interessante na doença renal crônica</div></div>
+    <div class="r"><div class="k">Ginecomastia</div><div class="c">Pode causar em homens: avise ao prescrever</div><div class="c">Bem menos</div></div>
+  </div>
+
+  <h3 data-bm="Finerenona: potássio toda semana">Finerenona: potássio toda semana <span class="prova">PROVA</span></h3>
+  <div class="box red"><div class="kick"><span class="dot"></span>Não esqueça</div><p>Mesmo com menos tendência a causar hiperpotassemia, é obrigatório controlar o potássio toda semana em quem usa finerenona.</p></div>
+
+  <h3 data-bm="Os três grupos lado a lado">Os três grupos lado a lado</h3>
+  <div class="cmp c4">
+    <div class="r h"><div class="k"></div><div class="c">Bloqueio da angiotensina</div><div class="c">Gliflozinas</div><div class="c">Finerenona</div></div>
+    <div class="r"><div class="k">Quais</div><div class="c">Inibidor da enzima de conversão ou bloqueador do receptor</div><div class="c">Dapagliflozina, empagliflozina</div><div class="c">Firialta (nome comercial)</div></div>
+    <div class="r"><div class="k">Como protege</div><div class="c">Controla a pressão, a medida mais eficiente</div><div class="c">Glicosúria, natriurese, menos pressão no glomérulo</div><div class="c">Bloqueia a superativação do receptor mineralocorticoide</div></div>
+    <div class="r"><div class="k">Cuidado</div><div class="c">Nunca os dois juntos: hiperpotassemia</div><div class="c">Glicose na urina é esperada; infecções</div><div class="c">Potássio toda semana</div></div>
+  </div>
+</section>
+
+<section id="s08">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">08</span></div><div class="corpo"><div class="de">Etapa 8 de 8</div><h2>Outras doenças urinárias do diabético</h2><div class="aqui"><span class="feito">Glomérulo</span><span class="feito">Quem adoece</span><span class="feito">Três fases</span><span class="feito">Fatores de risco</span><span class="feito">Diagnóstico</span><span class="feito">Metas e dieta</span><span class="feito">Remédios</span><span class="on">Outras doenças</span></div></div></div>
+  <div class="simples"><div class="kick">Em palavras simples</div><p>Além da nefropatia, o diabético tem mais infecção urinária, mais Candida na urina e pode ter uma bexiga que não esvazia direito. Tudo isso também pode piorar o rim.</p></div>
+  <p>O diabético pode ter outras doenças renais, que não são obrigatoriamente a perda de proteína e a evolução para insuficiência renal.</p>
+  <div class="tiles">
+    <div class="tile r"><div class="lab">Infecção urinária</div><div class="n">3 vezes</div><div class="s">mais bacteriúria assintomática e infecções complicadas</div></div>
+    <div class="tile"><div class="lab">Candidúria</div><div class="n">Frequente</div><div class="s">tratar com sintoma ou se usa gliflozina</div></div>
+    <div class="tile"><div class="lab">Bexiga neurogênica</div><div class="n">Estase</div><div class="s">sobra urina, vem infecção e o rim piora</div></div>
+  </div>
+
+  <h3 data-bm="Infecção urinária">Infecção urinária</h3>
+  <p>É a mais comum. Bacteriúria assintomática e infecções complicadas são <b>três vezes mais comuns</b> no diabético do que na população geral.</p>
+
+  <h3 data-bm="Candidúria">Candidúria <span class="prova">PROVA</span></h3>
+  <p>A Candida na urina é frequente. A regra é tratar a candidúria quando há sintoma. Lembre que a gliflozina, ao pôr açúcar na urina, facilita a infecção por Candida na mulher e a balanopostite por fungo no homem.</p>
+  <div class="box red"><div class="kick"><span class="dot"></span>Pegadinha da professora</div><p>Em quem usa gliflozina, tratar a candidúria é obrigatório. Fique atento à candidúria nesses pacientes.</p></div>
+  <div class="reg"><b>No slide:</b> candidúria frequente, vista como colonização, que não deve ser tratada.</div>
+
+  <h3 data-bm="Bexiga neurogênica">Bexiga neurogênica</h3>
+  <p>É uma complicação urológica do diabético. A musculatura da bexiga não consegue eliminar toda a urina: a bexiga fica distendida e sobra urina dentro dela (estase), o que facilita a infecção urinária e é uma das causas de piora da função renal.</p>
+  <div class="figure"><img src="bexiga.svg" alt="Bexiga neurogênica, estase, infecção urinária e piora da função renal"></div>
+  <p>Além da nefropatia, portanto, o diabético pode ter outras complicações no rim e nas vias urinárias.</p>
+</section>
+
+<section id="s09" class="vesp">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">09</span></div><div class="corpo"><div class="de">Para revisar</div><h2>Véspera da prova</h2></div></div>
+  <p>Todos os pontos marcados com PROVA, na ordem da aula.</p>
+  <div class="item"><span class="prova">PROVA</span><p>A doença do diabetes é essencialmente vascular: dá proteinúria e hipertensão, e aparece antes e mais grave nas arteríolas do rim.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p>Microalbuminúria é albumina acima de 30 mg (normal, menor que 30). Na prova, vale a tabela publicada de 2026.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p>Proteína e sal em excesso: hiperfiltração, dano capilar, depósito no mesângio e glomeruloesclerose. A proteína se controla, nunca se retira.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p>Hemoglobina glicada é a glicose ligada à hemoglobina: mostra o histórico da glicose, não só a do momento.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p>O rim é irmão do fundo de olho: com retinopatia, o mesmo está acontecendo no rim.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p>Microalbuminúria: tipo 2 logo no diagnóstico, tipo 1 a partir do 5º ano; depois, uma vez por ano.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p>Não valide exame de urina colhido durante a menstruação.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p>Metas: abaixo de 120x80 mmHg; com proteinúria acima de 1 g/dia, abaixo de 120x75 mmHg.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p>Dieta: 0,6 a 0,8 g/kg/dia de proteína (70 kg: 56 g por dia) e sal de 5 g/dia ou menos.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p>Bloqueio do sistema renina-angiotensina-aldosterona é a escolha, mesmo sem microalbuminúria.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p>Nunca inibidor da enzima de conversão com bloqueador do receptor: hiperpotassemia, arritmia e morte.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p>Gliflozinas agem no túbulo proximal; glicose na urina é esperada. Infecção localizada: mantém; sistêmica: suspende por 7 dias.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p>Finerenona: controle do potássio toda semana, obrigatório.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p>Candidúria em quem usa gliflozina: tratar é obrigatório.</p></div>
+
+  <h3 data-bm="Números da aula">Números da aula</h3>
+  <div class="tiles">
+    <div class="tile r"><div class="lab">Microalbuminúria</div><div class="n">acima de 30 mg</div><div class="s">nefropatia incipiente</div></div>
+    <div class="tile r"><div class="lab">Nefropatia clínica</div><div class="n">500 mg/dL</div><div class="s">proteinúria maior que isso</div></div>
+    <div class="tile"><div class="lab">Até a diálise</div><div class="n">7 a 10 anos</div><div class="s">de diabetes</div></div>
+  </div>
+  <div class="tiles">
+    <div class="tile g"><div class="lab">Meta de pressão</div><div class="n">120x80 mmHg</div><div class="s">abaixo disso</div></div>
+    <div class="tile g"><div class="lab">Com proteinúria</div><div class="n">120x75 mmHg</div><div class="s">acima de 1 g/dia</div></div>
+    <div class="tile g"><div class="lab">Proteína</div><div class="n">0,6 a 0,8 g/kg</div><div class="s">por dia; 56 g em 70 kg</div></div>
+  </div>
+  <div class="tiles">
+    <div class="tile g"><div class="lab">Sal</div><div class="n">5 g/dia</div><div class="s">ou menos (antes, 12 g)</div></div>
+    <div class="tile"><div class="lab">Infecção sistêmica</div><div class="n">7 dias</div><div class="s">sem gliflozina</div></div>
+    <div class="tile r"><div class="lab">Risco de morte</div><div class="n">100x e 5x</div><div class="s">tipo 1 e tipo 2 com nefropatia</div></div>
+  </div>
+
+  <div class="box red"><div class="kick"><span class="dot"></span>Erros comuns</div><ul>
+    <li><span class="medium">Tirar a proteína da dieta.</span> Controla-se em 0,6 a 0,8 g/kg/dia.</li>
+    <li><span class="medium">Achar que glicose na urina de quem usa gliflozina é doença.</span> É o remédio funcionando.</li>
+    <li><span class="medium">Achar que a estatina protege o rim.</span> Não protege, mas é indicada pelo coração e pelas artérias.</li>
+  </ul></div>
+
+  <h3 data-bm="Palavras da aula em linguagem simples">Palavras da aula em linguagem simples</h3>
+  <div class="rows terms">
+    <div class="row"><div class="k">Arteríola aferente</div><div class="v">A pequena artéria que leva o sangue para dentro do glomérulo.</div></div>
+    <div class="row"><div class="k">Bacteriúria assintomática</div><div class="v">Bactéria na urina sem nenhum sintoma.</div></div>
+    <div class="row"><div class="k">Balanopostite</div><div class="v">Inflamação da glande e do prepúcio.</div></div>
+    <div class="row"><div class="k">Bexiga neurogênica</div><div class="v">Bexiga que não esvazia direito porque os nervos que a comandam foram lesados.</div></div>
+  </div>
+  <div class="rows terms">
+    <div class="row"><div class="k">Candidúria</div><div class="v">Fungo Candida na urina.</div></div>
+    <div class="row"><div class="k">EMPA-KIDNEY</div><div class="v">Nome de um grande estudo com gliflozina na doença renal.</div></div>
+    <div class="row"><div class="k">Enchimento capilar</div><div class="v">O tempo que a pele leva para voltar a corar depois de apertada; diminuído, indica má circulação.</div></div>
+    <div class="row"><div class="k">Ginecomastia</div><div class="v">Crescimento das mamas no homem.</div></div>
+  </div>
+  <div class="rows terms">
+    <div class="row"><div class="k">Glicosúria</div><div class="v">Glicose na urina.</div></div>
+    <div class="row"><div class="k">Gliflozinas</div><div class="v">Inibidores do cotransportador de sódio e glicose tipo 2: dapagliflozina, empagliflozina, canagliflozina.</div></div>
+  </div>
+  <div class="rows terms">
+    <div class="row"><div class="k">Glomeruloesclerose</div><div class="v">Cicatriz que endurece o glomérulo.</div></div>
+    <div class="row"><div class="k">Hemoglobina glicada</div><div class="v">Glicose ligada à hemoglobina; mostra o histórico da glicose (o mesmo que hemoglobina glicosilada).</div></div>
+  </div>
+  <div class="rows terms">
+    <div class="row"><div class="k">Hiperfiltração glomerular</div><div class="v">Esforço do glomérulo para eliminar um excesso, como o de proteína, que acaba lesando o filtro.</div></div>
+    <div class="row"><div class="k">Hiperpotassemia</div><div class="v">Potássio alto no sangue (o mesmo que hipercalemia).</div></div>
+    <div class="row"><div class="k">Índios Pima</div><div class="v">Tribo dos Estados Unidos em que a nefropatia diabética é pior.</div></div>
+  </div>
+  <div class="rows terms">
+    <div class="row"><div class="k">Kimmelstiel-Wilson</div><div class="v">Lesão em nódulo de esclerose dentro do glomérulo, típica do diabético.</div></div>
+    <div class="row"><div class="k">Mesângio</div><div class="v">Tecido de sustentação entre os capilares do glomérulo.</div></div>
+    <div class="row"><div class="k">Microalbuminúria</div><div class="v">Albumina na urina acima de 30 mg: a primeira marca da nefropatia.</div></div>
+  </div>
+  <div class="rows terms">
+    <div class="row"><div class="k">Natriurese</div><div class="v">Eliminação de sódio pela urina.</div></div>
+    <div class="row"><div class="k">Normoalbuminúria</div><div class="v">Albumina normal na urina.</div></div>
+    <div class="row"><div class="k">Podócitos</div><div class="v">Células do glomérulo que fecham os poros do filtro.</div></div>
+  </div>
+  <div class="rows terms">
+    <div class="row"><div class="k">Polimorfismo</div><div class="v">Variação de um gene que algumas pessoas têm de nascença.</div></div>
+    <div class="row"><div class="k">Polióis</div><div class="v">Substâncias formadas a partir da glicose em excesso, que lesam a parede dos vasos.</div></div>
+    <div class="row"><div class="k">Sarcopenia</div><div class="v">Perda de massa muscular, comum no idoso.</div></div>
+    <div class="row"><div class="k">Sonda nasoenteral</div><div class="v">Sonda que vai do nariz ao intestino para alimentar quem não consegue comer.</div></div>
+  </div>
+{{NOTAS}}
+</section>
+</body></html>
