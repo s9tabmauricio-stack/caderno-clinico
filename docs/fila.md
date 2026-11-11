@@ -20,4 +20,3 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
-| P2 T19 de Nefro: questão 9 (volta ao potássio normal) | Claude | (só banco) | nefro-a7 (questões) | 11/11 |
