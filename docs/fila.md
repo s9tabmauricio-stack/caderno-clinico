@@ -20,3 +20,4 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
+| Fonte da aula Nefro 8 (só guardar) | Claude | claude/practical-clarke-0hmbrx | `nefro-a8` (`apostilas-fonte/nefro-a8/`) | 11/11/2026 |
