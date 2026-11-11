@@ -20,3 +20,4 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
+| Exame 2019 de Nefro (questões coladas) | Claude | claude/intelligent-darwin-q8tyck | banco: questões de nefro (exame) | 11/11/2026 |
