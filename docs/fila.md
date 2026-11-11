@@ -20,3 +20,4 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
+| Regra: questões de prova coladas vão para Provas da FAG e para a aula | Claude | claude/optimistic-darwin-kh2wwx | `.claude/skills/questoes-e-flashcards` | 11/11/2026 |
