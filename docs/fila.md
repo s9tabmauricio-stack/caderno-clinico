@@ -20,4 +20,3 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
-| Questões da P2 T26 de Nefro | Claude | (só banco) | questões de nefro-a2, a4–a10 | 11/11/2026 |
