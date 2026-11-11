@@ -47,35 +47,58 @@ function assinar(avisar: () => void) {
 const escolhaAtual = () => (document.documentElement.getAttribute('data-escolha') as Escolha | null) ?? 'auto'
 const escolhaNoServidor = (): Escolha => 'auto'
 
+// Grava a escolha no aparelho e repinta o app na hora
+function escolher(valor: Escolha) {
+  let salvo = false
+  try {
+    localStorage.setItem(CHAVE_TEMA, valor)
+    salvo = localStorage.getItem(CHAVE_TEMA) === valor
+  } catch {
+    // sem armazenamento (aba anônima): troca só nesta visita
+  }
+  const aplicar = (window as Window & { __mgTema?: () => void }).__mgTema
+  if (aplicar && salvo) {
+    aplicar()
+  } else {
+    const raiz = document.documentElement
+    const dia = valor === 'dia' || (valor === 'auto' && matchMedia('(prefers-color-scheme: light)').matches)
+    raiz.setAttribute('data-tema', dia ? 'dia' : 'noite')
+    raiz.setAttribute('data-escolha', valor)
+  }
+}
+
+const useEscolha = () => useSyncExternalStore(assinar, escolhaAtual, escolhaNoServidor)
+
 /** Auto | Dia | Noite: vale para o app todo, neste aparelho. */
 export function TemaEscolha() {
-  const escolha = useSyncExternalStore(assinar, escolhaAtual, escolhaNoServidor)
-
-  function escolher(valor: Escolha) {
-    let salvo = false
-    try {
-      localStorage.setItem(CHAVE_TEMA, valor)
-      salvo = localStorage.getItem(CHAVE_TEMA) === valor
-    } catch {
-      // sem armazenamento (aba anônima): troca só nesta visita
-    }
-    const aplicar = (window as Window & { __mgTema?: () => void }).__mgTema
-    if (aplicar && salvo) {
-      aplicar()
-    } else {
-      const raiz = document.documentElement
-      const dia = valor === 'dia' || (valor === 'auto' && matchMedia('(prefers-color-scheme: light)').matches)
-      raiz.setAttribute('data-tema', dia ? 'dia' : 'noite')
-      raiz.setAttribute('data-escolha', valor)
-    }
-  }
-
+  const escolha = useEscolha()
   return (
     <div className="tema-seg" role="group" aria-label="Aparência">
       {OPCOES.map((o) => (
         <button key={o.valor} type="button" title={o.dica} aria-pressed={escolha === o.valor} onClick={() => escolher(o.valor)}>
           {o.icone}
           {o.rotulo}
+        </button>
+      ))}
+    </div>
+  )
+}
+
+/** A mesma escolha, só com os ícones, discreta ao lado da engrenagem (todas as telas logadas). */
+export function TemaRapido() {
+  const escolha = useEscolha()
+  return (
+    <div className="tema-rapido" role="group" aria-label="Aparência">
+      {OPCOES.map((o) => (
+        <button
+          key={o.valor}
+          type="button"
+          title={o.dica}
+          aria-label={o.rotulo}
+          aria-pressed={escolha === o.valor}
+          onClick={() => escolher(o.valor)}
+        >
+          {o.icone}
         </button>
       ))}
     </div>

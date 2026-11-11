@@ -20,4 +20,3 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
-| Seletor Auto, Dia, Noite ao lado da engrenagem | Claude | claude/keen-albattani-q86324 | Pagina.tsx, Esqueleto.tsx, TemaEscolha.tsx, globals.css | 11/11/2026 |

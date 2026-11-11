@@ -1196,6 +1196,14 @@ h1.big{background:var(--metal-titulo);-webkit-background-clip:text;background-cl
 .atalhos-globais{display:flex;align-items:center;justify-content:flex-end;gap:8px;flex-wrap:wrap;margin-bottom:16px}
 .atalhos-globais .engrenagem{position:static;flex-shrink:0}
 .atalhos-globais .pill{min-height:44px;text-decoration:none}
+/* Auto | Dia | Noite só com ícones, discreto ao lado da engrenagem (components/TemaEscolha.tsx). */
+.tema-rapido{display:flex;gap:2px;padding:3px;border-radius:22px;background:var(--glass);opacity:.82;transition:opacity .2s ease}
+.tema-rapido:hover,.tema-rapido:focus-within{opacity:1}
+.tema-rapido button{width:34px;height:34px;border:0;border-radius:50%;background:transparent;color:var(--muted);display:grid;place-items:center;cursor:pointer;padding:0;transition:background-color .2s ease,color .2s ease}
+.tema-rapido button svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.9;stroke-linecap:round}
+.tema-rapido button svg path[fill]{fill:currentColor}
+.tema-rapido button[aria-pressed="true"]{color:var(--ink);background:var(--vidro);box-shadow:var(--vidro-sombra)}
+.tema-rapido button:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
 .view>.top:first-child,.view>.back:first-child{padding-right:0}
 .nav-admin{margin-bottom:20px}
 .nav-admin [aria-current="page"]{background:var(--accent);color:var(--bg)}
