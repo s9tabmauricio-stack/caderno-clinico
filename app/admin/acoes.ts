@@ -2,26 +2,28 @@
 
 import { revalidatePath } from 'next/cache'
 import { clienteAdmin } from '@/lib/admin'
-import { cpfParaEmail, formatarCpf, soDigitos } from '@/lib/cpf'
+import { DOMINIO_LOGIN, formatarCpf, loginParaEmail } from '@/lib/cpf'
 
 export type Resultado = { ok: boolean; texto: string } | null
 
-function lerCpfESenha(form: FormData) {
-  const cpf = soDigitos(String(form.get('cpf') ?? ''))
+/** Lê o CPF ou o e-mail do aluno novo (o e-mail é só nome de usuário, nunca recebe mensagem). */
+function lerLoginESenha(form: FormData) {
+  const login = loginParaEmail(String(form.get('cpf') ?? ''))
   const senha = String(form.get('senha') ?? '')
-  if (cpf.length !== 11) return { erro: 'Digite os 11 números do CPF.' }
+  if ('erro' in login) return { erro: login.erro }
+  if (!login.cpf && login.email.endsWith(`@${DOMINIO_LOGIN}`)) return { erro: 'Esse e-mail é reservado. Use o CPF ou outro e-mail.' }
   if (senha.length < 6) return { erro: 'A senha precisa ter pelo menos 6 caracteres.' }
-  return { cpf, senha }
+  return { ...login, senha }
 }
 
 export async function criarAluno(_: Resultado, form: FormData): Promise<Resultado> {
-  const dados = lerCpfESenha(form)
+  const dados = lerLoginESenha(form)
   if ('erro' in dados) return { ok: false, texto: dados.erro! }
   const nome = String(form.get('nome') ?? '').trim()
   try {
     const admin = await clienteAdmin()
     const { error } = await admin.auth.admin.createUser({
-      email: cpfParaEmail(dados.cpf),
+      email: dados.email,
       password: dados.senha,
       email_confirm: true,
       user_metadata: nome ? { full_name: nome } : {},
@@ -30,7 +32,7 @@ export async function criarAluno(_: Resultado, form: FormData): Promise<Resultad
       return {
         ok: false,
         texto: /already|registered|exists/i.test(error.message)
-          ? 'Já existe um aluno com esse CPF.'
+          ? `Já existe um aluno com esse ${dados.cpf ? 'CPF' : 'e-mail'}.`
           : `Não deu para criar: ${error.message}`,
       }
     }
@@ -38,7 +40,8 @@ export async function criarAluno(_: Resultado, form: FormData): Promise<Resultad
     return { ok: false, texto: (e as Error).message }
   }
   revalidatePath('/admin')
-  return { ok: true, texto: `Aluno ${nome || formatarCpf(dados.cpf)} criado. Ele já pode entrar com o CPF e a senha.` }
+  const ident = dados.cpf ? formatarCpf(dados.cpf) : dados.email
+  return { ok: true, texto: `Aluno ${nome || ident} criado. Ele já pode entrar com o ${dados.cpf ? 'CPF' : 'e-mail'} e a senha.` }
 }
 
 export async function trocarSenhaAluno(_: Resultado, form: FormData): Promise<Resultado> {

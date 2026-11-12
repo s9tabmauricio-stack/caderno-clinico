@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { createClient } from '@/lib/supabase/client'
-import { cpfParaEmail, formatarCpf, soDigitos } from '@/lib/cpf'
+import { formatarLogin, loginParaEmail } from '@/lib/cpf'
 
 export function LoginForm({ destino = '/' }: { destino?: string }) {
   const router = useRouter()
@@ -28,8 +28,9 @@ export function LoginForm({ destino = '/' }: { destino?: string }) {
 
   async function entrar(e: React.FormEvent) {
     e.preventDefault()
-    if (soDigitos(cpf).length !== 11) {
-      dispararErro('Digite os 11 números do CPF.')
+    const login = loginParaEmail(cpf)
+    if ('erro' in login) {
+      dispararErro(login.erro)
       return
     }
     if (!senha) {
@@ -39,13 +40,13 @@ export function LoginForm({ destino = '/' }: { destino?: string }) {
     setErro('')
     setEntrando(true)
     const supabase = createClient()
-    const { error } = await supabase.auth.signInWithPassword({ email: cpfParaEmail(cpf), password: senha })
+    const { error } = await supabase.auth.signInWithPassword({ email: login.email, password: senha })
     if (error) {
       dispararErro(
         error.status === 429
           ? 'Muitas tentativas em pouco tempo. Espere alguns minutos e tente de novo.'
           : /invalid/i.test(error.message)
-            ? 'CPF ou senha incorretos.'
+            ? login.cpf ? 'CPF ou senha incorretos.' : 'E-mail ou senha incorretos.'
             : 'Não foi possível entrar agora. Tente de novo em instantes.',
       )
       setEntrando(false)
@@ -64,7 +65,7 @@ export function LoginForm({ destino = '/' }: { destino?: string }) {
       noValidate
     >
       <label className="lg-rotulo" htmlFor="cpf">
-        CPF
+        CPF ou e-mail
       </label>
       <div className={`lg-campo${erro ? ' com-erro' : ''}`}>
         <svg className="lg-ico" viewBox="0 0 24 24" aria-hidden="true">
@@ -75,11 +76,13 @@ export function LoginForm({ destino = '/' }: { destino?: string }) {
           id="cpf"
           name="username"
           autoComplete="username"
-          inputMode="numeric"
-          placeholder="000.000.000-00"
+          autoCapitalize="none"
+          autoCorrect="off"
+          spellCheck={false}
+          placeholder="CPF ou e-mail"
           value={cpf}
           onChange={(e) => {
-            setCpf(formatarCpf(e.target.value))
+            setCpf(formatarLogin(e.target.value))
             setErro('')
           }}
           aria-invalid={erro ? true : undefined}

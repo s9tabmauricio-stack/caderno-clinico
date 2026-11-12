@@ -2,7 +2,7 @@
 
 import { useActionState, useRef, useState } from 'react'
 import { criarAluno, definirAparelhos, trocarSenhaAluno, type Resultado } from '@/app/admin/acoes'
-import { formatarCpf } from '@/lib/cpf'
+import { formatarLogin } from '@/lib/cpf'
 
 function Mensagem({ r }: { r: Resultado }) {
   if (!r) return null
@@ -29,17 +29,19 @@ export function CriarAluno() {
   return (
     <form ref={form} action={acao} className="admin-form" noValidate>
       <label className="flabel" htmlFor="a-cpf">
-        CPF
+        CPF ou e-mail
       </label>
       <input
         id="a-cpf"
         name="cpf"
         className="campo"
-        inputMode="numeric"
-        placeholder="000.000.000-00"
+        placeholder="CPF ou e-mail"
         autoComplete="off"
+        autoCapitalize="none"
+        autoCorrect="off"
+        spellCheck={false}
         value={cpf}
-        onChange={(e) => setCpf(formatarCpf(e.target.value))}
+        onChange={(e) => setCpf(formatarLogin(e.target.value))}
       />
       <label className="flabel" htmlFor="a-nome">
         Nome

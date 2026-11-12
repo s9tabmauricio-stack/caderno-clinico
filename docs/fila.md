@@ -20,4 +20,3 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
-| Entrar com CPF ou e-mail | Claude | `claude/stoic-faraday-xivjp2` | Entrada (`components/LoginForm.tsx`), Alunos no admin, `lib/cpf.ts` | 12/11/2026 |
