@@ -20,4 +20,3 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
-| Matérias abre na 1ª matéria da barra | Claude | ccr-5435a821-hork5e | `app/estudar`, `lib/navegacao.ts` | 12/11/2026 |

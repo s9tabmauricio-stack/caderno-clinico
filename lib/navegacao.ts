@@ -1,5 +1,8 @@
-/** Entrada de Matérias: abre as aulas de Pneumologia sem uma lista intermediária. */
-export const INICIO_MATERIAS = '/materia/pneumo'
+/** Entrada de Matérias: `/estudar` abre a primeira matéria da barra (a da próxima prova). */
+export const INICIO_MATERIAS = '/estudar'
+
+/** Usada só se a lista de matérias vier vazia. */
+export const MATERIA_PADRAO = 'pneumo'
 
 /** Retornos internos permitidos; nunca aceita URLs externas ou protocolos. */
 export function retornoSeguro(valor: unknown): string | null {
