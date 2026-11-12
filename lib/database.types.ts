@@ -260,9 +260,9 @@ export type Database = {
         Relationships: []
       }
       perfis: {
-        Row: { admin: boolean; criado_em: string; id: string; nome: string | null; grupo: number | null }
-        Insert: { admin?: boolean; criado_em?: string; id: string; nome?: string | null; grupo?: number | null }
-        Update: { admin?: boolean; criado_em?: string; id?: string; nome?: string | null; grupo?: number | null }
+        Row: { admin: boolean; criado_em: string; id: string; nome: string | null; grupo: number | null; max_aparelhos: number | null }
+        Insert: { admin?: boolean; criado_em?: string; id: string; nome?: string | null; grupo?: number | null; max_aparelhos?: number | null }
+        Update: { admin?: boolean; criado_em?: string; id?: string; nome?: string | null; grupo?: number | null; max_aparelhos?: number | null }
         Relationships: []
       }
       recados: {
@@ -527,6 +527,8 @@ export type Database = {
     }
     Functions: {
       central_resumo: { Args: never; Returns: Json }
+      sessao_ativa: { Args: never; Returns: boolean }
+      podar_aparelhos: { Args: { p_user: string; p_manter?: string }; Returns: number }
     }
     Enums: { [_ in never]: never }
     CompositeTypes: { [_ in never]: never }

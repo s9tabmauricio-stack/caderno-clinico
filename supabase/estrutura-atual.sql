@@ -4,6 +4,7 @@
 -- Classificação pessoal de questões incluída em 05/11/2026: migração 20261105214247_classificacao_individual_questoes.sql.
 -- Flashcards Dia D incluídos em 10/11/2026: migração 20261110010015_flashcards_dia_d.sql.
 -- Progresso do Dia D incluído em 10/11/2026: migração 20261110015525_progresso_dia_d.sql.
+-- Limite de aparelhos por conta incluído em 12/11/2026: migração 20261112120000_limite_aparelhos.sql.
 -- Suspensão individual aplicada em 03/11/2026: migração 20261103162543_suspensao_individual_flashcards.sql.
 --
 -- Para que serve: é a referência confiável de como o banco está montado
@@ -115,8 +116,10 @@ create table public.perfis (
   admin boolean default false not null,
   criado_em timestamp with time zone default now() not null,
   grupo integer,
+  max_aparelhos smallint default 1, -- aparelhos abertos ao mesmo tempo; null = sem limite (12/11/2026: contas antigas 2, admin null)
   constraint perfis_pkey PRIMARY KEY (id),
   constraint perfis_grupo_check CHECK (((grupo >= 1) AND (grupo <= 99))),
+  constraint perfis_max_aparelhos_check CHECK (((max_aparelhos IS NULL) OR ((max_aparelhos >= 1) AND (max_aparelhos <= 10)))),
   constraint perfis_id_fkey FOREIGN KEY (id) REFERENCES auth.users(id) ON DELETE CASCADE
 );
 
@@ -618,18 +621,89 @@ end;
 $function$
 ;
 
--- Nenhuma função acima pode ser chamada por anon ou authenticated.
+-- Limite de aparelhos (12/11/2026): fecha as sessões que passam de perfis.max_aparelhos,
+-- mantendo as usadas mais recentemente (e p_manter, a que acabou de abrir). Só a chave secreta chama.
+CREATE OR REPLACE FUNCTION public.podar_aparelhos(p_user uuid, p_manter uuid DEFAULT NULL::uuid)
+ RETURNS integer
+ LANGUAGE plpgsql
+ SECURITY DEFINER
+ SET search_path TO ''
+AS $function$
+declare
+  lim smallint;
+  removidas integer;
+begin
+  select p.max_aparelhos into lim from public.perfis p where p.id = p_user;
+  if not found or lim is null then
+    return 0;
+  end if;
+  with fora as (
+    select s.id from auth.sessions s
+    where s.user_id = p_user
+    order by (s.id = p_manter) desc nulls last, greatest(s.created_at, coalesce(s.updated_at, s.created_at)) desc, s.id
+    offset lim
+  )
+  delete from auth.sessions s using fora where s.id = fora.id;
+  get diagnostics removidas = row_count;
+  return removidas;
+end;
+$function$
+;
+
+-- Gatilho em auth.sessions: a cada login, aplica o limite. Um erro aqui nunca impede a entrada.
+CREATE OR REPLACE FUNCTION public.limitar_aparelhos()
+ RETURNS trigger
+ LANGUAGE plpgsql
+ SECURITY DEFINER
+ SET search_path TO ''
+AS $function$
+begin
+  begin
+    perform public.podar_aparelhos(new.user_id, new.id);
+  exception when others then
+    raise warning 'limitar_aparelhos: %', sqlerrm;
+  end;
+  return null;
+end;
+$function$
+;
+
+-- O app (lib/supabase/proxy.ts) pergunta a cada 2 min se a sessão deste aparelho ainda existe.
+-- Esta é a única função que o aluno (authenticated) pode chamar.
+CREATE OR REPLACE FUNCTION public.sessao_ativa()
+ RETURNS boolean
+ LANGUAGE sql
+ STABLE SECURITY DEFINER
+ SET search_path TO ''
+AS $function$
+  select case
+    when nullif(auth.jwt() ->> 'session_id', '') is null then true
+    else exists (
+      select 1 from auth.sessions s
+      where s.id = (auth.jwt() ->> 'session_id')::uuid and s.user_id = auth.uid()
+    )
+  end;
+$function$
+;
+
+-- Nenhuma função acima pode ser chamada por anon ou authenticated (exceto sessao_ativa, só authenticated).
 revoke execute on function public.central_resumo() from public, anon, authenticated;
 revoke execute on function public.criar_perfil() from public, anon, authenticated;
 revoke execute on function public.recados_preencher() from public, anon, authenticated;
 revoke execute on function public.registrar_historico_resposta() from public, anon, authenticated;
 revoke execute on function public.registrar_historico_revisao() from public, anon, authenticated;
+revoke execute on function public.podar_aparelhos(uuid, uuid) from public, anon, authenticated;
+grant execute on function public.podar_aparelhos(uuid, uuid) to service_role;
+revoke execute on function public.limitar_aparelhos() from public, anon, authenticated;
+revoke execute on function public.sessao_ativa() from public, anon;
+grant execute on function public.sessao_ativa() to authenticated;
 
 -- ============================================================
 -- Gatilhos
 -- ============================================================
 
 CREATE TRIGGER ao_criar_usuario AFTER INSERT ON auth.users FOR EACH ROW EXECUTE FUNCTION criar_perfil();
+CREATE TRIGGER limitar_aparelhos AFTER INSERT ON auth.sessions FOR EACH ROW EXECUTE FUNCTION limitar_aparelhos();
 CREATE TRIGGER recados_preencher BEFORE INSERT ON public.recados FOR EACH ROW EXECUTE FUNCTION recados_preencher();
 CREATE TRIGGER respostas_historico AFTER INSERT OR UPDATE ON public.respostas FOR EACH ROW EXECUTE FUNCTION registrar_historico_resposta();
 CREATE TRIGGER revisoes_historico AFTER INSERT OR DELETE OR UPDATE ON public.revisoes FOR EACH ROW EXECUTE FUNCTION registrar_historico_revisao();

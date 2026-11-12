@@ -1,5 +1,6 @@
 import { createServerClient } from '@supabase/ssr'
 import { NextResponse, type NextRequest } from 'next/server'
+import { COOKIE_APARELHO, SAIU_OUTRO_APARELHO, precisaConferir, valorCookieAparelho } from '@/lib/aparelhos'
 import { destinoAposLogin, rotaPublica } from '@/lib/auth'
 import type { Database } from '@/lib/database.types'
 import { SUPABASE_KEY, SUPABASE_URL } from './config'
@@ -35,6 +36,35 @@ export async function updateSession(request: NextRequest) {
     const url = request.nextUrl.clone()
     url.pathname = '/auth/callback'
     return redirecionar(url, response)
+  }
+
+  // Limite de aparelhos: a conta entrou em outro aparelho e este foi derrubado? Sai daqui na hora, com aviso.
+  // Pergunta ao banco no máximo a cada 2 minutos (cookie mg_aparelho); sem isso, sairia só quando o acesso vencesse (até 1 h).
+  if (logado && !publica) {
+    const sessaoId = typeof data?.claims?.session_id === 'string' ? data.claims.session_id : ''
+    const agora = Date.now() / 1000
+    if (sessaoId && precisaConferir(request.cookies.get(COOKIE_APARELHO)?.value, sessaoId, agora)) {
+      const { data: ativa, error: erroConferir } = await supabase.rpc('sessao_ativa')
+      if (!erroConferir && ativa === false) {
+        await supabase.auth.signOut({ scope: 'local' })
+        response.cookies.delete(COOKIE_APARELHO)
+        const url = request.nextUrl.clone()
+        url.pathname = '/login'
+        url.search = ''
+        url.searchParams.set('saiu', SAIU_OUTRO_APARELHO)
+        url.searchParams.set('next', destinoAposLogin(`${pathname}${request.nextUrl.search}`))
+        return redirecionar(url, response)
+      }
+      if (!erroConferir) {
+        response.cookies.set(COOKIE_APARELHO, valorCookieAparelho(sessaoId, agora), {
+          httpOnly: true,
+          sameSite: 'lax',
+          secure: request.nextUrl.protocol === 'https:',
+          path: '/',
+          maxAge: 60 * 60 * 24 * 30,
+        })
+      }
+    }
   }
 
   if (!logado && !publica) {

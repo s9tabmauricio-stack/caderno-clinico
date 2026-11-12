@@ -68,6 +68,7 @@ Este manual tem só as regras de sempre. Os detalhes ficam onde são usados; lei
 - CPF + senha. O Supabase exige e-mail, então cada CPF vira o e-mail interno `CPF@caderno-clinico.vercel.app`
   (`DOMINIO_LOGIN` em `lib/cpf.ts`). **Nunca mude esse domínio**: as contas existentes dependem dele (é só um identificador, não o endereço do site).
 - Contas são criadas pelo administrador em Configurações → Alunos (`/admin`). Cadastro aberto deve ficar desligado no Supabase.
+- **Um aparelho por conta** (regra do Mauricio, 12/11/2026): conta nova fica aberta em 1 aparelho; as de antes dessa data, em 2; o administrador, sem limite. Quem entra num aparelho novo tira a conta do usado há mais tempo, que volta à entrada com aviso. Muda-se por aluno em Alunos → Aparelhos por aluno (`perfis.max_aparelhos`; detalhes em `docs/banco.md`).
 - Nunca digite senhas ou chaves em sites; quem cria contas e configura chaves é o Mauricio.
 - Proteção contra senhas vazadas do Supabase está desligada (recurso do plano pago).
 

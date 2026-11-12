@@ -1,7 +1,7 @@
 'use client'
 
 import { useActionState, useRef, useState } from 'react'
-import { criarAluno, trocarSenhaAluno, type Resultado } from '@/app/admin/acoes'
+import { criarAluno, definirAparelhos, trocarSenhaAluno, type Resultado } from '@/app/admin/acoes'
 import { formatarCpf } from '@/lib/cpf'
 
 function Mensagem({ r }: { r: Resultado }) {
@@ -80,6 +80,40 @@ export function TrocarSenha({ alunos }: { alunos: { id: string; rotulo: string }
       <input id="t-senha" name="senha" className="campo" autoComplete="new-password" />
       <button className="btn" type="submit" disabled={enviando}>
         {enviando ? 'Trocando…' : 'Trocar senha'}
+      </button>
+      <Mensagem r={r} />
+    </form>
+  )
+}
+
+export function LimiteAparelhos({ alunos }: { alunos: { id: string; rotulo: string }[] }) {
+  const [r, acao, enviando] = useActionState(definirAparelhos, null)
+  return (
+    <form action={acao} className="admin-form" noValidate>
+      <label className="flabel" htmlFor="d-id">
+        Aluno
+      </label>
+      <select id="d-id" name="id" className="campo" defaultValue="">
+        <option value="" disabled>
+          Escolha
+        </option>
+        {alunos.map((a) => (
+          <option key={a.id} value={a.id}>
+            {a.rotulo}
+          </option>
+        ))}
+      </select>
+      <label className="flabel" htmlFor="d-limite">
+        Aparelhos ao mesmo tempo
+      </label>
+      <select id="d-limite" name="limite" className="campo" defaultValue="1">
+        <option value="1">1 aparelho</option>
+        <option value="2">2 aparelhos</option>
+        <option value="3">3 aparelhos</option>
+        <option value="livre">Sem limite</option>
+      </select>
+      <button className="btn" type="submit" disabled={enviando}>
+        {enviando ? 'Mudando…' : 'Mudar limite'}
       </button>
       <Mensagem r={r} />
     </form>

@@ -833,6 +833,9 @@ body:has(.tela-entrar){background:#07080B}
 .lg-caps svg{width:15px;height:15px;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .lg-erro{display:flex;align-items:center;justify-content:center;gap:8px;margin:10px 0 0;padding:10px 14px;border-radius:16px;
   background:var(--bad-soft);border:1px solid var(--bad-line);color:var(--bad-txt,var(--bad));font-size:13.5px;font-weight:500;line-height:1.35;text-align:left}
+.lg-aviso{display:flex;align-items:center;gap:10px;margin:0 0 14px;padding:10px 14px;border-radius:16px;
+  background:var(--orange-soft);border:1px solid var(--orange-line);color:var(--orange);font-size:13.5px;font-weight:500;line-height:1.35;text-align:left}
+.lg-aviso svg{width:18px;height:18px;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .lg-erro svg{width:17px;height:17px;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 @media (prefers-reduced-motion:no-preference){
   @keyframes lg-entra{from{opacity:0;transform:translateY(12px) scale(.985)}to{opacity:1;transform:none}}
