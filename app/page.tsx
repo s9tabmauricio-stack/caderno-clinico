@@ -12,6 +12,7 @@ import { agoraBrasilia, COR_MATERIA, ehDiaTodo, ehDoAluno, fmtHora, inicioMs, si
 import { agendaDoDia, proximasProvas } from '@/lib/agenda-dados'
 import { AgendaAvisos, AgendaDiaTodo, AgendaLista, AgendaProvas } from '@/components/AgendaLista'
 import { ContagemProva } from '@/components/ContagemProva'
+import { CopiarPix } from '@/components/CopiarPix'
 
 export const metadata: Metadata = { title: { absolute: 'Med Genius · Início' } }
 
@@ -137,6 +138,24 @@ export default async function Inicio() {
             </div>
           </section>
         )}
+
+        {/* Campanha da Baunilha (pedido do Mauricio, 12/11/2026): imagem e chave Pix da Laura */}
+        <section className="in-baunilha" aria-label="Ajude a Baunilha">
+          <div className="sec ag-h">
+            <span>Ajude a Baunilha</span>
+          </div>
+          <div className="in-card">
+            <img
+              className="bn-img"
+              src="/campanha/baunilha.webp"
+              width={900}
+              height={985}
+              loading="lazy"
+              alt="Ajude a Baunilha: gatinha preta que ainda está doentinha e recebeu mais uma transfusão na FAG. O plano de saúde não cobre tudo, nem os medicamentos. Qualquer trocadinho, R$ 1,00, já ajuda. Pix da Laura: 123.541.616-03. Você não é obrigado(a) a doar para usar o site; é muito bem-vindo(a) aqui, doando ou não."
+            />
+            <CopiarPix chave="12354161603" />
+          </div>
+        </section>
       </div>
     </Pagina>
   )

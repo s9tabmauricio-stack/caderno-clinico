@@ -20,4 +20,3 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
-| Campanha da Baunilha (imagem e Pix) no Início | Claude | `claude/nifty-sagan-k6r7g9` | Início (`app/page.tsx`, `app/globals.css`) | 12/11/2026 |
