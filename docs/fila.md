@@ -20,4 +20,3 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
-| Questões do simulado e "sem origem" de Nefro no banco | Claude | claude/ecstatic-cray-xb91kv | questões de nefro-a1 a nefro-a10 (só inclusão) | 12/11/2026 |
