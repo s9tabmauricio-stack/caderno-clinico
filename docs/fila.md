@@ -20,3 +20,4 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
+| Limite de aparelhos por conta | Claude | `claude/quirky-pasteur-y6hiot` | Login (`lib/supabase/proxy.ts`, `/login`, Administração → Alunos, banco: `perfis`, gatilho em `auth.sessions`) | 12/11/2026 |
