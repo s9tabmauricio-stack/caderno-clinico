@@ -20,6 +20,11 @@ export function chaveConfigurada() {
 export async function clienteAdmin() {
   const { email } = await sessao()
   if (!ehAdmin(email)) throw new Error('Sem permissão.')
+  return clienteServico()
+}
+
+/** Cliente com a chave secreta, sem conferir sessão: só para quem já provou acesso de outro jeito (robô do Gmail). */
+export function clienteServico() {
   const chave = process.env.SUPABASE_SECRET_KEY
   if (!chave) throw new Error('A chave secreta não está configurada na Vercel.')
   return createClient(SUPABASE_URL, chave, { auth: { persistSession: false, autoRefreshToken: false } })

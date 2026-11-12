@@ -20,4 +20,3 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
-| Contas pelo Gmail (robô cria a conta de quem manda e-mail @minha.fag.edu.br) | Claude | `claude/kind-mendel-88vi35` | rota nova `app/api/contas-gmail/`, `lib/auth.ts`, `lib/admin.ts`, `docs/robo-gmail/` | 12/11/2026 |
