@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from 'next'
+import { SAIU_OUTRO_APARELHO } from '@/lib/aparelhos'
 import { destinoAposLogin } from '@/lib/auth'
 import { LoginForm } from '@/components/LoginForm'
 import { TemaEscolha } from '@/components/TemaEscolha'
@@ -109,7 +110,9 @@ function Dendritos() {
 }
 
 export default async function LoginPage({ searchParams }: PageProps<'/login'>) {
-  const destino = destinoAposLogin((await searchParams).next)
+  const params = await searchParams
+  const destino = destinoAposLogin(params.next)
+  const outroAparelho = params.saiu === SAIU_OUTRO_APARELHO
   return (
     <main className="tela-entrar">
       <div className="lg-palco">
@@ -123,6 +126,15 @@ export default async function LoginPage({ searchParams }: PageProps<'/login'>) {
         </div>
         <div className="lg-acesso">
           <section className="lg-vidro" aria-label="Entrar">
+            {outroAparelho && (
+              <p className="lg-aviso" role="status">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <rect x="7" y="2.5" width="10" height="19" rx="2.5" />
+                  <path d="M11 18h2" />
+                </svg>
+                <span>Sua conta foi aberta em outro aparelho, por isso saiu deste. Se entrar aqui de novo, o outro aparelho é que sai.</span>
+              </p>
+            )}
             <LoginForm destino={destino} />
           </section>
           <TemaEscolha />

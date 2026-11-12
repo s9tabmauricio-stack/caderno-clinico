@@ -55,3 +55,26 @@ export async function trocarSenhaAluno(_: Resultado, form: FormData): Promise<Re
   }
   return { ok: true, texto: 'Senha trocada.' }
 }
+
+/** Muda quantos aparelhos a conta pode ter abertos ao mesmo tempo e fecha na hora os que passarem do novo limite. */
+export async function definirAparelhos(_: Resultado, form: FormData): Promise<Resultado> {
+  const id = String(form.get('id') ?? '')
+  const valor = String(form.get('limite') ?? '')
+  if (!id) return { ok: false, texto: 'Escolha o aluno.' }
+  const limite = valor === 'livre' ? null : Number(valor)
+  if (limite !== null && !(Number.isInteger(limite) && limite >= 1 && limite <= 10)) return { ok: false, texto: 'Escolha o limite.' }
+  let fechados = 0
+  try {
+    const admin = await clienteAdmin()
+    const { error } = await admin.from('perfis').update({ max_aparelhos: limite }).eq('id', id)
+    if (error) return { ok: false, texto: `Não deu para mudar: ${error.message}` }
+    const { data, error: erroPoda } = await admin.rpc('podar_aparelhos', { p_user: id })
+    if (erroPoda) return { ok: false, texto: `Limite mudado, mas não deu para fechar os aparelhos a mais: ${erroPoda.message}` }
+    fechados = Number(data ?? 0)
+  } catch (e) {
+    return { ok: false, texto: (e as Error).message }
+  }
+  revalidatePath('/admin')
+  const fim = fechados ? ` ${fechados === 1 ? 'Um aparelho saiu' : `${fechados} aparelhos saíram`} da conta.` : ''
+  return { ok: true, texto: `Limite mudado.${fim}` }
+}
