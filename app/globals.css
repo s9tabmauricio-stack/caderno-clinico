@@ -1107,7 +1107,10 @@ h1.big{background:var(--metal-titulo);-webkit-background-clip:text;background-cl
 .in-card{display:flex;flex-direction:column;gap:12px;padding:18px}
 .in-k{font-family:var(--font-marca);font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--rotulo-marca)}
 .in-card .btn{margin-top:auto;min-height:48px;display:grid;place-items:center;justify-self:stretch;text-decoration:none}
-.in-agenda,.in-provas{min-width:0}
+.in-agenda,.in-provas,.in-baunilha{min-width:0}
+/* Campanha da Baunilha (12/11/2026): a imagem inteira, no máximo 560px de largura */
+.in-baunilha .in-card{max-width:560px}
+.bn-img{display:block;width:100%;height:auto;border-radius:calc(var(--r-lg) - 6px)}
 /* Próxima prova (22/10/2026): título, dia e hora, contagem regressiva em dias, horas e minutos e as seguintes em lista */
 .in-prova{overflow:hidden;isolation:isolate}
 .in-prova::before{content:"";position:absolute;right:-50px;top:-60px;width:170px;height:170px;border-radius:50%;background:radial-gradient(circle,var(--glow,transparent),transparent 70%);opacity:.3;z-index:-1;pointer-events:none}
