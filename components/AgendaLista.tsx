@@ -1,5 +1,6 @@
+import { Fragment } from 'react'
 import Link from 'next/link'
-import { COR_MATERIA, fmtDuracao, fmtFaltaProva, fmtHora, type Situacao } from '@/lib/agenda'
+import { COR_MATERIA, fmtDuracao, fmtEntreProvas, fmtFaltaProva, fmtHora, type Situacao } from '@/lib/agenda'
 import type { EventoBanco } from '@/lib/agenda-dados'
 import { Icone } from './Icones'
 
@@ -88,13 +89,33 @@ export function AgendaLista({
 }
 
 /** Próximas provas: a data no lugar da hora e, embaixo do título, o horário e quanto falta. */
-export function AgendaProvas({ eventos, agora, materias }: { eventos: EventoBanco[]; agora: { data: string; ms: number }; materias?: string[] }) {
+/** Lista de provas; entre uma e a seguinte, a etiqueta com o tempo para estudar (`anterior` = a prova que vem antes da primeira da lista). */
+export function AgendaProvas({
+  eventos,
+  agora,
+  materias,
+  anterior,
+}: {
+  eventos: EventoBanco[]
+  agora: { data: string; ms: number }
+  materias?: string[]
+  anterior?: EventoBanco
+}) {
   if (!eventos.length) return null
   return (
     <div className="group agenda">
-      {eventos.map((e) => {
+      {eventos.map((e, i) => {
         const dt = new Date(`${e.data}T12:00:00Z`)
         const falta = fmtFaltaProva(e, agora)
+        const antes = i ? eventos[i - 1] : anterior
+        const entre = antes ? fmtEntreProvas(antes, e) : null
+        const etiqueta = entre && (
+          <div className={`pv-entre${entre.apertado ? ' apertado' : ''}`}>
+            <span>
+              <i aria-hidden>↕</i> {entre.texto}
+            </span>
+          </div>
+        )
         const detalhes = [fmtHora(e.inicio), e.local, falta].filter(Boolean)
         const href = e.materia && materias?.includes(e.materia) ? `/materia/${e.materia}` : null
         const conteudo = (
@@ -118,14 +139,17 @@ export function AgendaProvas({ eventos, agora, materias }: { eventos: EventoBanc
             {href && Icone.seta}
           </>
         )
-        return href ? (
-          <Link key={e.id} className="row ev" href={href}>
-            {conteudo}
-          </Link>
-        ) : (
-          <div key={e.id} className="row ev static">
-            {conteudo}
-          </div>
+        return (
+          <Fragment key={e.id}>
+            {etiqueta}
+            {href ? (
+              <Link className="row ev" href={href}>
+                {conteudo}
+              </Link>
+            ) : (
+              <div className="row ev static">{conteudo}</div>
+            )}
+          </Fragment>
         )
       })}
     </div>

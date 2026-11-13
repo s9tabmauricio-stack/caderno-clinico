@@ -1134,6 +1134,15 @@ h1.big{background:var(--metal-titulo);-webkit-background-clip:text;background-cl
 .in-prova{--pad:var(--espaco-card)}
 @media (max-width:599px){.in-prova{--pad:14px}}
 .in-prova .group{margin:0 calc(-1 * var(--pad)) calc(-1 * var(--pad));border:0;border-top:1px solid var(--line-2);border-radius:0;background:none;box-shadow:none;-webkit-backdrop-filter:none;backdrop-filter:none}
+/* etiqueta entre uma prova e a seguinte: tempo para estudar entre as duas; âmbar quando são menos de 2 dias */
+.pv-entre{position:relative;display:flex;align-items:center;height:22px;padding-left:calc(var(--espaco-card) + 62px)}
+.pv-entre::before{content:"";position:absolute;inset:50% 0 auto;border-top:1px solid var(--line-2)}
+.pv-entre span{position:relative;font-size:11.5px;font-weight:600;line-height:1;padding:4px 10px;border-radius:99px;background:var(--bg);border:1px solid var(--line-strong);color:var(--text);white-space:nowrap}
+.pv-entre i{font-style:normal}
+.pv-entre.apertado span{color:#FFC874;border-color:rgba(255,181,71,.45);background:color-mix(in srgb,#FFB547 14%,var(--bg))}
+:root[data-tema="dia"] .pv-entre.apertado span{color:#8A5300;border-color:rgba(176,108,0,.4)}
+.agenda .pv-entre+.row{border-top:0}
+.in-prova .group:has(>.pv-entre:first-child){border-top:0;margin-top:-4px}
 .in-amanha{display:flex;flex-direction:column;gap:3px;margin:12px 4px 0;font-size:14px;color:var(--text)}
 .in-amanha b{color:var(--ink)}
 /* o nome da matéria escrito dentro da gema colorida */
