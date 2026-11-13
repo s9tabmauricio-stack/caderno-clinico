@@ -20,4 +20,3 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
-| Foto com balão "Estudar isso aí, cara!" no cartão da próxima prova | Claude | `claude/festive-volta-n4aclk` | Início (`app/page.tsx`, cartão da próxima prova) | 13/11/2026 |

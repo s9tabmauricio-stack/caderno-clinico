@@ -1134,6 +1134,15 @@ h1.big{background:var(--metal-titulo);-webkit-background-clip:text;background-cl
 .in-prova{--pad:var(--espaco-card)}
 @media (max-width:599px){.in-prova{--pad:14px}}
 .in-prova .group{margin:0 calc(-1 * var(--pad)) calc(-1 * var(--pad));border:0;border-top:1px solid var(--line-2);border-radius:0;background:none;box-shadow:none;-webkit-backdrop-filter:none;backdrop-filter:none}
+/* foto recortada no canto de cima do cartão da próxima prova, com o balão "Estudar isso aí, cara!";
+   o busto encosta nos quadros da contagem (o `bottom` é o espaço entre as partes do cartão) */
+.in-prova .pv-topo{position:relative;min-height:70px;padding-right:112px}
+.in-prova .pv-s{padding-right:92px}
+.pv-cara{position:absolute;right:-8px;bottom:-12px;display:flex;align-items:flex-end;pointer-events:none}
+.pv-cara img{display:block;height:86px;width:auto;-webkit-mask-image:linear-gradient(90deg,transparent,#000 16%);mask-image:linear-gradient(90deg,transparent,#000 16%)}
+.pv-fala{position:relative;margin:0 -6px 20px 0;max-width:94px;padding:6px 9px;border-radius:12px;background:var(--ink);color:var(--bg);font-size:11.5px;font-weight:700;line-height:1.2;text-align:center}
+.pv-fala::after{content:"";position:absolute;right:-5px;bottom:9px;width:10px;height:10px;background:inherit;transform:rotate(45deg);border-radius:2px}
+@media (max-width:599px){.pv-cara{bottom:-10px}}
 /* etiqueta entre uma prova e a seguinte: tempo para estudar entre as duas; âmbar quando são menos de 2 dias */
 .pv-entre{position:relative;display:flex;align-items:center;height:22px;padding-left:calc(var(--espaco-card) + 62px)}
 .pv-entre::before{content:"";position:absolute;inset:50% 0 auto;border-top:1px solid var(--line-2)}

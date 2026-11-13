@@ -127,6 +127,12 @@ export default async function Inicio() {
                     {[fmtHora(prova.inicio), prova.local].filter(Boolean).map((x) => ` · ${x}`).join('')}
                   </span>
                 </span>
+                {/* O professor "falando" no canto do cartão (pedido do Mauricio, 13/11/2026); para tirar, apague este bloco */}
+                <span className="pv-cara">
+                  <span className="pv-fala">Estudar isso aí, cara!</span>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src="/inicio/estudar-cara.webp" width={280} height={195} alt="" />
+                </span>
               </div>
               <ContagemProva alvo={inicioMs(prova)} agora={agora.ms} />
               {prova.materia && idsMaterias.includes(prova.materia) && (
