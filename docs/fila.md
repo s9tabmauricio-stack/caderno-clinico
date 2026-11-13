@@ -20,3 +20,4 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
+| Tempo entre uma prova e a seguinte em Próximas provas | Claude | `claude/festive-volta-n4aclk` | Início (`app/page.tsx`), `components/AgendaLista.tsx` | 13/11/2026 |
