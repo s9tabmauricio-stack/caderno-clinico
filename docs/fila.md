@@ -20,3 +20,4 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
+| Provas: "Em 3 dias e 15h" | Claude | claude/jolly-edison-jt673x | `components/AgendaLista.tsx` (Início e Agenda) | 13/11/2026 |
