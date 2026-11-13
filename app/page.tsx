@@ -134,7 +134,7 @@ export default async function Inicio() {
                   Estudar para a prova
                 </Link>
               )}
-              {depois.length > 0 && <AgendaProvas eventos={depois} agora={agora} materias={idsMaterias} />}
+              {depois.length > 0 && <AgendaProvas eventos={depois} agora={agora} materias={idsMaterias} anterior={prova} />}
             </div>
           </section>
         )}

@@ -39,3 +39,16 @@ test('provas: quanto falta conta dias e horas, não só a data', async () => {
   assert.equal(fmtFaltaProva({ data: '2026-11-13', inicio: '20:40' }, agora), 'Em 18h05')
   assert.equal(fmtFaltaProva({ data: '2026-11-16', inicio: null }, agora), 'Em 3 dias')
 })
+
+test('provas: tempo para estudar entre uma prova e a seguinte', async () => {
+  const { fmtEntreProvas } = await import('../lib/agenda.ts')
+  const p = (data, inicio) => ({ data, inicio })
+  assert.deepEqual(fmtEntreProvas(p('2026-11-13', '20:40'), p('2026-11-16', '17:50')), { texto: '2 dias e 21h para estudar', apertado: false })
+  assert.deepEqual(fmtEntreProvas(p('2026-11-16', '17:50'), p('2026-11-17', '18:30')), { texto: 'só 1 dia para estudar', apertado: true })
+  assert.deepEqual(fmtEntreProvas(p('2026-11-17', '18:30'), p('2026-11-19', '14:00')), { texto: '1 dia e 19h para estudar', apertado: true })
+  assert.deepEqual(fmtEntreProvas(p('2026-11-19', '14:00'), p('2026-11-23', '13:45')), { texto: '3 dias e 23h para estudar', apertado: false })
+  assert.deepEqual(fmtEntreProvas(p('2026-11-19', '07:30'), p('2026-11-19', '14:00')), { texto: 'só 6h30 para estudar', apertado: true })
+  // sem horário em uma das duas, conta só os dias
+  assert.deepEqual(fmtEntreProvas(p('2026-11-19', null), p('2026-11-23', '13:45')), { texto: '4 dias para estudar', apertado: false })
+  assert.deepEqual(fmtEntreProvas(p('2026-11-19', null), p('2026-11-19', '13:45')), { texto: 'No mesmo dia', apertado: true })
+})
