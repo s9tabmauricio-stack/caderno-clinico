@@ -345,26 +345,21 @@ export function fmtFaltaProva(e: { data: string; inicio: string | null }, agora:
 }
 
 /**
- * Tempo entre uma prova e a seguinte, do horário de uma ao horário da outra: "2 dias e 21h para estudar".
- * Menos de 2 dias vem com `apertado` (a etiqueta fica âmbar); menos de 1 dia e meio ganha o "só".
- * Sem horário em uma das duas, conta só os dias.
+ * Tempo exato entre uma prova e a seguinte, do horário de uma ao horário da outra, com os minutos:
+ * "2 dias e 21h10 para estudar", "1 dia e 40 min para estudar". Menos de 2 dias vem com `apertado`
+ * (a etiqueta fica âmbar). Sem horário em uma das duas, conta só os dias.
  */
 export function fmtEntreProvas(a: { data: string; inicio: string | null }, b: { data: string; inicio: string | null }) {
-  let min: number
-  let tempo: string
+  const nDias = (n: number) => `${n} ${n === 1 ? 'dia' : 'dias'}`
   if (!a.inicio || !b.inicio) {
     const dias = Math.max(0, Math.round((Date.parse(`${b.data}T12:00:00Z`) - Date.parse(`${a.data}T12:00:00Z`)) / 86_400_000))
-    min = dias * 24 * 60
-    tempo = dias === 0 ? 'mesmo dia' : `${dias} ${dias === 1 ? 'dia' : 'dias'}`
-  } else {
-    min = Math.max(0, Math.floor((inicioMs(b) - inicioMs(a)) / 60_000))
-    const dias = Math.floor(min / (24 * 60))
-    const horas = Math.floor((min % (24 * 60)) / 60)
-    const d = `${dias} ${dias === 1 ? 'dia' : 'dias'}`
-    tempo = dias === 0 ? fmtDuracao(min) : horas ? `${d} e ${horas}h` : d
+    return { texto: dias === 0 ? 'No mesmo dia' : `${nDias(dias)} para estudar`, apertado: dias < 2 }
   }
-  const texto = tempo === 'mesmo dia' ? 'No mesmo dia' : `${min < 36 * 60 ? 'só ' : ''}${tempo} para estudar`
-  return { texto, apertado: min < 48 * 60 }
+  const min = Math.max(0, Math.floor((inicioMs(b) - inicioMs(a)) / 60_000))
+  const dias = Math.floor(min / (24 * 60))
+  const resto = min % (24 * 60)
+  const tempo = dias === 0 ? fmtDuracao(min) : resto ? `${nDias(dias)} e ${fmtDuracao(resto)}` : nDias(dias)
+  return { texto: `${tempo} para estudar`, apertado: min < 48 * 60 }
 }
 
 /** Evento de 6h ou mais (ex.: "coordenação disponível das 8h às 22h30") vale o dia todo: não é uma aula da lista. */
