@@ -20,4 +20,3 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
-| Tempo exato (com minutos) na etiqueta entre provas | Claude | `claude/festive-volta-n4aclk` | `lib/agenda.ts` (`fmtEntreProvas`) | 13/11/2026 |
