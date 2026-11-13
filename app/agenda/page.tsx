@@ -57,7 +57,7 @@ export default async function AgendaPage() {
           <div className="sec" id="provas">
             Próximas provas
           </div>
-          <AgendaProvas eventos={provas} hoje={agora.data} materias={idsMaterias} />
+          <AgendaProvas eventos={provas} agora={agora} materias={idsMaterias} />
         </>
       )}
     </Pagina>

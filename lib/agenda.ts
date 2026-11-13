@@ -330,6 +330,20 @@ export function fmtFalta(min: number) {
   return `Em ${fmtDuracao(min)}`
 }
 
+/** Quanto falta para a prova, contando as horas: "Em 3 dias e 15h", "Em 1 dia", "Em 5h19". Sem horário, conta só os dias. */
+export function fmtFaltaProva(e: { data: string; inicio: string | null }, agora: { data: string; ms: number }) {
+  if (!e.inicio) {
+    const dias = Math.round((Date.parse(`${e.data}T12:00:00Z`) - Date.parse(`${agora.data}T12:00:00Z`)) / 86_400_000)
+    return dias === 0 ? 'Hoje' : dias === 1 ? 'Amanhã' : `Em ${dias} dias`
+  }
+  const min = Math.max(0, Math.floor((inicioMs(e) - agora.ms) / 60_000))
+  if (min < 24 * 60) return fmtFalta(min)
+  const dias = Math.floor(min / (24 * 60))
+  const horas = Math.floor((min % (24 * 60)) / 60)
+  const d = `${dias} ${dias === 1 ? 'dia' : 'dias'}`
+  return horas ? `Em ${d} e ${horas}h` : `Em ${d}`
+}
+
 /** Evento de 6h ou mais (ex.: "coordenação disponível das 8h às 22h30") vale o dia todo: não é uma aula da lista. */
 export function ehDiaTodo(e: { inicio: string | null; fim: string | null; cancelado: boolean; tipo: string }) {
   const ini = minutos(e.inicio)

@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { COR_MATERIA, fmtDuracao, fmtHora, type Situacao } from '@/lib/agenda'
+import { COR_MATERIA, fmtDuracao, fmtFaltaProva, fmtHora, type Situacao } from '@/lib/agenda'
 import type { EventoBanco } from '@/lib/agenda-dados'
 import { Icone } from './Icones'
 
@@ -88,15 +88,13 @@ export function AgendaLista({
 }
 
 /** Próximas provas: a data no lugar da hora e, embaixo do título, o horário e quanto falta. */
-export function AgendaProvas({ eventos, hoje, materias }: { eventos: EventoBanco[]; hoje: string; materias?: string[] }) {
+export function AgendaProvas({ eventos, agora, materias }: { eventos: EventoBanco[]; agora: { data: string; ms: number }; materias?: string[] }) {
   if (!eventos.length) return null
-  const base = new Date(`${hoje}T12:00:00Z`).getTime()
   return (
     <div className="group agenda">
       {eventos.map((e) => {
         const dt = new Date(`${e.data}T12:00:00Z`)
-        const dias = Math.round((dt.getTime() - base) / 86_400_000)
-        const falta = dias === 0 ? 'Hoje' : dias === 1 ? 'Amanhã' : `Em ${dias} dias`
+        const falta = fmtFaltaProva(e, agora)
         const detalhes = [fmtHora(e.inicio), e.local, falta].filter(Boolean)
         const href = e.materia && materias?.includes(e.materia) ? `/materia/${e.materia}` : null
         const conteudo = (
