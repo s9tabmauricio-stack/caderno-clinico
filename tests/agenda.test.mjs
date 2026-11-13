@@ -28,3 +28,14 @@ test('agenda: no sábado e no domingo mostra a próxima semana já publicada', a
   assert.equal(escolherSemana(semanas, '2026-11-09').semana, '2026-11-09') // segunda
   assert.equal(escolherSemana([{ semana: '2026-11-02' }], '2026-11-08').semana, '2026-11-02') // sem a próxima
 })
+
+test('provas: quanto falta conta dias e horas, não só a data', async () => {
+  const { fmtFaltaProva, agoraBrasilia } = await import('../lib/agenda.ts')
+  // Sexta 13/11/2026, 02h35 em Brasília
+  const agora = agoraBrasilia(new Date('2026-11-13T05:35:00Z'))
+  assert.equal(fmtFaltaProva({ data: '2026-11-16', inicio: '17:50' }, agora), 'Em 3 dias e 15h')
+  assert.equal(fmtFaltaProva({ data: '2026-11-17', inicio: '18:30' }, agora), 'Em 4 dias e 15h')
+  assert.equal(fmtFaltaProva({ data: '2026-11-14', inicio: '02:35' }, agora), 'Em 1 dia')
+  assert.equal(fmtFaltaProva({ data: '2026-11-13', inicio: '20:40' }, agora), 'Em 18h05')
+  assert.equal(fmtFaltaProva({ data: '2026-11-16', inicio: null }, agora), 'Em 3 dias')
+})
