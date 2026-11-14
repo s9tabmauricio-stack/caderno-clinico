@@ -46,8 +46,10 @@ export const COR_MATERIA: Record<string, string> = {
   orto: '#FBBF24', pass: '#F472B6', sem: '#9AA3BD', angio: '#FB923C',
 }
 
-const DIA_SEMANA = /^\s*(segunda|ter[cç]a|quarta|quinta|sexta|s[aá]bado|domingo)(?:-feira)?\s*\|\s*(\d{1,2})\s*\/\s*([a-zç]+|\d{1,2})(?:\s*[-–—]\s*(.+))?/i
+const DIA_SEMANA = /^\s*(segunda|ter[cç]a|quarta|quinta|sexta|s[aá]bado|domingo)(?:-feira)?\s*\|\s*(\d{1,2})[º°]?\s*\/\s*([a-zç]+|\d{1,2})(?:\s*[-–—]\s*(.+))?/i
 const HORARIO = /^(\d{1,2})h(\d{2})?(?:\s*[-–a]\s*(\d{1,2})h(\d{2})?)?\s*:\s*(.+)$/i
+// Só o horário, sem texto ("🦴 19h-19h50"): a aula vem nas linhas de baixo ("- Grupo A: Dr. Eduardo")
+const SO_HORARIO = /^(\d{1,2})h(\d{2})?(?:\s*[-–a]\s*(\d{1,2})h(\d{2})?)?\s*:?$/i
 const MARCADOR = /^[\s\u2060]*[-*•·]\s*[\u2060]?\s*/
 
 function hora(h?: string, m?: string) {
@@ -198,6 +200,19 @@ export function lerCronograma(texto: string, ano = new Date().getFullYear()): Se
         cancelado: false,
         notas: [],
         ordem: ordem++,
+      }
+      eventos.push(ultimo)
+      vazioDesdeUltimo = false
+      continue
+    }
+
+    const so = semEmoji.match(SO_HORARIO)
+    if (so) {
+      const materia = materiaDe(linha, '')
+      ultimo = {
+        data, inicio: hora(so[1], so[2]), fim: hora(so[3], so[4]), materia, tipo: 'aula',
+        titulo: materia ? `Aula de ${NOME_MATERIA[materia].toLowerCase()}` : 'Aula',
+        professor: null, local: null, grupos: null, cancelado: false, notas: [], ordem: ordem++,
       }
       eventos.push(ultimo)
       vazioDesdeUltimo = false
