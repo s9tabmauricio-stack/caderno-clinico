@@ -20,4 +20,3 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
-| Apostila de artrose | Codex | codex/apostila-orto-a2 | orto-a2 | 14/11/2026 |

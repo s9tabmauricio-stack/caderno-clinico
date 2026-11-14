@@ -73,10 +73,12 @@ O cartão da capa e a atribuição das citações usam o nome e a descrição de
 |---|---|---|---|---|
 | Gastroenterologia | Dr. Univaldo Etsuo Sagae | Dr. Sagae | Coloproctologista e cirurgião do aparelho digestivo | S |
 | Gastroenterologia | Dr. Gustavo Kurachi | Dr. Kurachi | Coloproctologista e endoscopista | K |
+| Ortopedia | Dr. Gustavo Alves Colombo | Dr. Gustavo Colombo | Ortopedista e traumatologista, especialista em cirurgia do quadril | C |
 | PROEX: Programa de Aprendizagem Saúde e Sociedade V (PASS) | Dr. Filipe Tomasi Keppen Sequeira de Almeida | Dr. Filipe Almeida | Cirurgião cardiovascular | F |
 
 Temas e pistas de cada professor (servem para confirmar quem deu a aula):
 
+- **Dr. Gustavo Alves Colombo (Ortopedia).** Nome, formação e atuação informados pelo Mauricio em 14/11/2026, na produção da aula 2 de 08/10/2026. Temas da aula: artrose, quadril, joelho, polegar, ombro e coluna. Pistas: Medicina pelo Centro Universitário Fundação Assis Gurgacz, residência no Hospital São Lucas de Cascavel e subespecialização em cirurgia do quadril no Hospital Universitário Cajuru, em Curitiba. Atua no Centro Especializado em Ortopedia e Traumatologia, em Cascavel, no grupo de cirurgia do quadril. Membro da Sociedade Brasileira de Ortopedia e Traumatologia e trainee da Sociedade Internacional de Preservação do Quadril (The Hip Preservation Society).
 - **Dr. Filipe Tomasi Keppen Sequeira de Almeida (PASS).** Nome, formação e atuação informados pelo Mauricio em 13/11/2026, na produção da aula 5 de 19/10/2026. Temas da aula: epidemiologia clínica, tabela de exposição e desfecho, medidas de risco, benefício e dano, razão de chances. Professor do Centro Universitário Fundação Assis Gurgacz, cirurgião cardiovascular no Instituto de Cirurgia Cardiovascular do Oeste do Paraná / Instituto Rui Almeida. Não usar a grafia automática “Felipe” quando se tratar deste professor.
 - **Dr. Univaldo Etsuo Sagae (Gastroenterologia).** Temas: coloproctologia e doenças anais (hemorroida, fissura, abscesso, fístula), constipação e incontinência, câncer do aparelho digestivo, cirurgia do cólon e do reto, doenças do fígado, esôfago, estômago, duodeno, vesícula biliar, pâncreas e vias biliares, cirurgia minimamente invasiva e robótica, endometriose intestinal. Pistas na fala: Gastroclínica Cascavel (fundador e diretor), Hospital Gênesis, residência e mestrado na Universidade de São Paulo, técnica COPE (cirurgia conservadora do reto na endometriose, pela vagina), cirurgias NOTES e NOSES, núcleo dos ostomizados do oeste do Paraná. Também é professor da Universidade Estadual do Oeste do Paraná e preceptor de residência de cirurgia geral.
 - **Dr. Gustavo Kurachi (Gastroenterologia).** Temas: doenças do intestino e do ânus, doença inflamatória intestinal (doença de Crohn e retocolite ulcerativa), distúrbios do assoalho pélvico, endoscopia digestiva alta e baixa, diagnóstica e terapêutica. Pistas na fala: graduação na Universidade Estadual de Londrina, residência em coloproctologia na Universidade Federal de Goiás, residência em cirurgia geral no Hospital Governador Celso Ramos, grupo de estudos de doença inflamatória intestinal, Sociedade Brasileira de Endoscopia Digestiva. Professor de cirurgia e gastroenterologia da FAG.
@@ -92,6 +94,15 @@ Regras:
 Currículo de cada professor (HTML pronto para o quadro "Sobre o professor"):
 
 ```html
+<!-- Dr. Gustavo Colombo · dados fornecidos pelo Mauricio em 14/11/2026 -->
+<div class="prof"><div class="kick">Sobre o professor · Dr. Gustavo Colombo</div>
+<div class="rows">
+  <div class="row"><div class="k">Especialidade</div><div class="v">Ortopedia e traumatologia, com especialização em cirurgia do quadril.</div></div>
+  <div class="row"><div class="k">Formação</div><div class="v">Medicina pelo Centro Universitário Fundação Assis Gurgacz. Residência em ortopedia e traumatologia no Hospital São Lucas de Cascavel. Subespecialização em cirurgia do quadril no Hospital Universitário Cajuru, em Curitiba.</div></div>
+  <div class="row"><div class="k">Atuação</div><div class="v">Centro Especializado em Ortopedia e Traumatologia, em Cascavel, no grupo de cirurgia do quadril.</div></div>
+  <div class="row"><div class="k">Sociedades</div><div class="v">Membro da Sociedade Brasileira de Ortopedia e Traumatologia e trainee da Sociedade Internacional de Preservação do Quadril (The Hip Preservation Society).</div></div>
+</div></div>
+
 <!-- Dr. Filipe Almeida · dados fornecidos pelo Mauricio em 13/11/2026 -->
 <div class="prof"><div class="kick">Sobre o professor · Dr. Filipe Almeida</div>
 <div class="rows">
