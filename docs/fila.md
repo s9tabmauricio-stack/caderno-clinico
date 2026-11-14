@@ -20,4 +20,3 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
-| Flashcards e questões de PASS 5 e Orto 2 | Claude | claude/eager-ramanujan-3lzvq9 | pass-a5, orto-a2 (banco) | 14/11/2026 |
