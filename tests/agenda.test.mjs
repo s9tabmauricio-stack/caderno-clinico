@@ -53,3 +53,23 @@ test('provas: tempo para estudar entre uma prova e a seguinte', async () => {
   assert.deepEqual(fmtEntreProvas(p('2026-11-19', null), p('2026-11-23', '13:45')), { texto: '4 dias para estudar', apertado: false })
   assert.deepEqual(fmtEntreProvas(p('2026-11-19', null), p('2026-11-19', '13:45')), { texto: 'No mesmo dia', apertado: true })
 })
+
+test('agenda: "1º/outubro" é dia, e horário sem texto vira aula com os grupos das letras', () => {
+  const s = lerCronograma(`*QUINTA-FEIRA | 1º/outubro*
+
+🦴 *19h-19h50*  
+- Grupo A: Dr. Eduardo. 
+- Grupo B: Dr. Flávio.
+
+*Grupos:*
+- A = práticas 1 a 7
+- ⁠B = práticas 8 a 14
+`, 2026)
+  assert.deepEqual(s.dias, ['2026-10-01'])
+  const aula = s.eventos.find((e) => e.inicio === '19:00')
+  assert.equal(aula.fim, '19:50')
+  assert.equal(aula.materia, 'orto')
+  assert.equal(aula.titulo, 'Aula de ortopedia')
+  assert.deepEqual(aula.grupos, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14])
+  assert.equal(aula.notas.length, 2)
+})
