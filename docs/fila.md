@@ -20,3 +20,4 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
+| Aviso de notas do Sagres no WhatsApp e tela "Meu painel" (só admin) | Claude | claude/hopeful-cannon-p7ckl7 | função `sagres-notas` no Supabase, tabelas novas de notas, tela nova Meu painel | 14/11/2026 |
