@@ -20,3 +20,4 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
+| Agenda completa 28/09 a 14/11 (mudanças, cancelamentos, temas) | Claude | `claude/zealous-knuth-ugoxa7` | Agenda, `lib/agenda.ts` | 14/11 |
