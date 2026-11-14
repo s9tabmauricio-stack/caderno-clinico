@@ -5,6 +5,7 @@
 -- Flashcards Dia D incluídos em 10/11/2026: migração 20261110010015_flashcards_dia_d.sql.
 -- Progresso do Dia D incluído em 10/11/2026: migração 20261110015525_progresso_dia_d.sql.
 -- Limite de aparelhos por conta incluído em 12/11/2026: migração 20261112120000_limite_aparelhos.sql.
+-- Aviso de notas do Sagres incluído em 14/11/2026: migrações sagres_estado e sagres_relogio (tabela sagres_estado, pg_cron, pg_net).
 -- Suspensão individual aplicada em 03/11/2026: migração 20261103162543_suspensao_individual_flashcards.sql.
 --
 -- Para que serve: é a referência confiável de como o banco está montado
@@ -14,7 +15,7 @@
 -- Não rode este arquivo no banco que está no ar: ele descreve o que já existe.
 -- Mudou a estrutura (migração nova)? Gere a cópia de novo, como explicado em docs/banco.md.
 --
--- Extensões: plpgsql, pg_stat_statements, uuid-ossp, pgcrypto, supabase_vault.
+-- Extensões: plpgsql, pg_stat_statements, uuid-ossp, pgcrypto, supabase_vault, pg_cron, pg_net (as duas últimas desde 14/11/2026).
 
 -- ============================================================
 -- Tabelas
@@ -296,6 +297,24 @@ create policy "Desmarcar as próprias questões" on public.classificacoes_questo
 revoke all on public.classificacoes_questoes from anon, authenticated;
 grant select, insert, update, delete on public.classificacoes_questoes to authenticated;
 grant all on public.classificacoes_questoes to service_role;
+
+-- Aviso de notas do Sagres (14/11/2026; só do administrador). Uma linha só (id = 1).
+-- Ninguém lê pelo app: RLS ligada sem regras e sem permissão para anon/authenticated; só a chave secreta.
+-- Quem grava é a função sagres-notas (supabase/functions/sagres-notas/index.ts).
+create table public.sagres_estado (
+  id smallint primary key default 1 check (id = 1),
+  gatilho text not null default encode(gen_random_bytes(24), 'hex'), -- senha interna que o relógio manda para a função
+  ultimo jsonb,            -- última leitura das notas e faltas
+  lido_em timestamptz,     -- quando leu pela última vez
+  mudou_em timestamptz,    -- quando achou novidade pela última vez
+  erro text                -- último erro (null = tudo certo)
+);
+alter table public.sagres_estado enable row level security;
+revoke all on public.sagres_estado from anon, authenticated;
+
+-- Relógio (pg_cron, job 'sagres-notas', '*/30 0-2,10-23 * * *' = de 30 em 30 min, 7h–23h30 de Brasília):
+-- net.http_post para .../functions/v1/sagres-notas?forceFunctionRegion=sa-east-1 com os cabeçalhos
+-- Authorization (chave anon), x-region: sa-east-1 e x-gatilho (lido de sagres_estado.gatilho).
 
 -- ============================================================
 -- Índices (além das chaves)
