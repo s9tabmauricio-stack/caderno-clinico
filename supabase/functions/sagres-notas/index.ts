@@ -154,6 +154,7 @@ async function whatsapp(texto: string) {
   // O começo do texto repete o número e a mensagem, então o erro guarda só o fim.
   const txt = (await r.text()).replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
   if (r.status !== 200 || /invalid|error/i.test(txt)) throw new Error(`WhatsApp (CallMeBot): ${txt.slice(-160)}`);
+  return txt.slice(-160);
 }
 
 Deno.serve(async (req) => {
@@ -169,16 +170,17 @@ Deno.serve(async (req) => {
   try {
     const agora = await ler(anterior);
     const mudou = anterior ? novidades(anterior, agora) : [];
-    if (mudou.length) await whatsapp(`Sagres: novidade!\n\n${mudou.join("\n")}`);
+    let zap: string | null = null; // resposta do CallMeBot, para conferir
+    if (mudou.length) zap = await whatsapp(`Sagres: novidade!\n\n${mudou.join("\n")}`);
     else if (!anterior || testar)
-      await whatsapp(`${anterior ? "Teste do aviso de notas" : "Aviso de notas ligado ✅"}\n\n${resumo(agora)}`);
-    else if (estado.erro) await whatsapp("Aviso de notas: voltou a funcionar ✅");
+      zap = await whatsapp(`${anterior ? "Teste do aviso de notas" : "Aviso de notas ligado ✅"}\n\n${resumo(agora)}`);
+    else if (estado.erro) zap = await whatsapp("Aviso de notas: voltou a funcionar ✅");
     await banco("sagres_estado?id=eq.1", {
       method: "PATCH",
       headers: { Prefer: "return=minimal" },
       body: JSON.stringify({ ultimo: agora, lido_em: agoraIso, erro: null, ...(mudou.length ? { mudou_em: agoraIso } : {}) }),
     });
-    return Response.json({ ok: true, novidades: mudou.length, materias: agora.materias.length });
+    return Response.json({ ok: true, novidades: mudou.length, materias: agora.materias.length, zap });
   } catch (e) {
     const msg = String((e as Error).message ?? e).slice(0, 500);
     // Avisa só quando o erro aparece (não a cada 30 minutos).
