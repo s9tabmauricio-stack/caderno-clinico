@@ -7,143 +7,8 @@ Não edite à mão: para juntar material novo, rode o programa com --acrescentar
 
 ## O que tem aqui
 
-- Transcrição 1: `c53eebf6-transcri_o_da_aula_de_gastroenterologia.md` (2.847 palavras, sem marcação de tempo).
 - Slides 1: `ea4417fa-AULA_FAG_PARTE_2.pdf` (94 páginas; só imagem, sem texto: 1, 6, 8, 14, 17, 18, 20, 23, 31, 33, 44 (ver o original)).
-
-## Transcrição 1 · c53eebf6-transcri_o_da_aula_de_gastroenterologia.md
-<!-- parte transcricao 1 | arquivo=c53eebf6-transcri_o_da_aula_de_gastroenterologia.md | sha=7fddce2c30ae | palavras=2.847 -->
-
-# Transcrição Completa — Aula de Gastroenterologia (Dia 3)
-
-**Arquivo de Origem:** `Gastro dia 3.m4a.mp4`  
-**Palestrante:** Prof. Dr. Gustavo  
-**Duração Total:** 55:41  
-
----
-
-## [00:00 - 15:07] Síndrome do Intestino Irritável (SII)
-
-**[00:00] Professor:** ...intestino irritável. Mas, de qualquer forma, a **Síndrome do Intestino Irritável (SII)** ainda existe. E é importante vocês saberem que existem **doenças funcionais**, né? As doenças funcionais são diferentes das **doenças orgânicas**, porque muitas vezes na doença funcional a gente não vai encontrar inflamação, nódulo, nenhuma alteração visível no órgão, na mucosa ou qualquer alteração significativa.
-
-**[00:31] Professor:** O paciente vai ter sintomas, e o que muita gente taxava no passado de loucura, de doença mental, hoje a gente consegue fazer o diagnóstico e entender que esse paciente realmente tem sintomas. Esses sintomas são reais e a gente precisa abordar e cuidar desses pacientes. Em termos de epidemiologia, esses pacientes correspondem a **5 a 10% dos casos**, com uma correlação mais comum em **mulheres do que em homens**. Como é uma doença funcional, acomete principalmente os jovens — pessoas com **menos de 50 anos**, na maior parte das vezes pacientes jovens iniciando sua vida de trabalho ou casamento.
-
-**[01:28] Professor:** Hoje a nova definição fala que é uma **doença da interação intestino-cérebro**. Tem a ver com a parte cerebral, com a parte emocional, e não é uma doença estrutural — ou seja, não tem doença no órgão em si, mas é uma disfunção funcional baseada em **três critérios principais**:
-1. **Dor abdominal recorrente**;
-2. **Alteração do hábito intestinal** (constipação, diarreia ou distúrbio misto);
-3. **Ausência de doença orgânica**.
-
-**[02:02] Professor:** O **Critério de Roma** é o mais atual — um consenso entre os maiores especialistas, hoje já no **Roma V** (ou quinto modelo), que vai atualizando conforme conhecemos a doença. Pelo critério, o paciente apresenta **dor abdominal pelo menos 1 dia por semana, por pelo menos 3 meses** (com início dos sintomas há mais de 6 meses). Normalmente não é uma dor isolada, mas **associada à evacuação**: ela melhora quando o paciente vai ao banheiro e evacua. Diferentemente do câncer (visto na aula passada), em que a dor recorrente não passa mesmo evacuando, ou da **doença inflamatória intestinal (DII)**, que é uma inflamação crônica em que a evacuação não alivia a dor de imediato.
-
-**[03:04] Professor:** Pode haver alteração da frequência intestinal — indo várias vezes ao dia ou ficando constipado — e modificação do aspecto das fezes conforme a **Escala de Bristol**: **tipos 1 ou 2** (bolinhas ou fezes endurecidas) ou **tipos 6 e 7** (fezes amolecidas/líquidas). Quanto às formas de manifestação:
-* **Forma constipante:** dificuldade evacuatória e fezes duras em **mais de 25% das evacuações** (pelo menos 1 em cada 4 evacuações) por no mínimo 3 meses.
-* **Forma diarreica:** predominância de diarreia.
-* **Forma mista:** alternância entre constipação e diarreia.
-* **Não classificada:** quando o paciente oscila muito (ex.: passa um mês constipado, tem um dia de diarreia e volta a constipar) e não se enquadra nas anteriores.
-
-**[04:12] Professor:** Na **fisiopatologia**, o **eixo intestino-cérebro** tem ganhado grande importância. A comunicação ocorre através do **sistema nervoso central** e do **sistema nervoso entérico** (via **nervo vago**). Não é incomum ficar nervoso e ter diarreia, ou estar com depressão e apresentar constipação — essa é a maior prova dessa correlação. Outro pilar é a **hipersensibilidade visceral**: com um peristaltismo normal, o paciente sente uma dor intensa, incompatível com o movimento fisiológico, por apresentar um **menor limiar à dor**.
-
-**[05:07] Professor:** Hoje estuda-se bastante a correlação com a **microbiota intestinal** (**disbiose**), inflamação de baixo grau (embora as biópsias costumem vir negativas) e aumento da **permeabilidade intestinal**. Também se pesquisa a relação com o metabolismo e a produção de **serotonina** — já que o intestino é um dos principais produtores desse neurotransmissor do bem-estar, e sua falta promove desconforto. Assim, a fisiopatologia envolve **fatores genéticos e história familiar**, **fatores psicológicos** (estilo de vida, ansiedade, depressão, história de abuso) e **fatores biológicos** (desregulação do eixo intestino-cérebro, hipersensibilidade visceral, disbiose, sistema imune e dismotilidade).
-
-**[07:50] Professor:** Na **abordagem diagnóstica**, o pilar é uma história clínica bem feita para avaliar o padrão da dor, sua relação com a evacuação e a duração dos sintomas, aplicando os **Critérios de Roma**. Como é uma doença funcional, é fundamental **descartar os sintomas de alarme** para afastar doenças orgânicas:
-* **Perda de peso** inexplicada;
-* **Anemia ferropriva**;
-* **História familiar** (de câncer colorretal ou DII);
-* **Sangramento digestivo**;
-* **Febre persistente**;
-* **Início dos sintomas após os 50 anos**.
-
-**[08:23] Professor:** Podemos solicitar exames para afastar causas orgânicas: **hemograma** (para afastar anemia ou infecção), **PCR e VHS** (marcadores inflamatórios), **calprotectina fecal** (talvez o exame mais importante hoje para diferenciar SII de DII), **sorologias** (para doença celíaca) ou investigação de **intolerância à lactose**, além de **colonoscopia como rastreamento em pacientes acima de 45 anos**. No quadro comparativo entre SII e DII: na DII há sangramento, perda de peso, PCR elevado e calprotectina fecal elevada; na SII todos os exames (incluindo colonoscopia e histologia) são normais ("inocentes").
-
-**[10:15] Professor:** O **tratamento** é basicamente clínico, sintomático, individualizado e multidisciplinar. Começa pela **educação do paciente**, explicando que é uma doença funcional e benigna, associada ao controle da alimentação, do estresse (psicoterapia) e prática de **exercício físico**. Na parte nutricional, a **dieta Low FODMAP** (desenvolvida na Austrália) reduz a fermentação e produtos osmóticos, apresentando **eficácia comprovada em até 80% dos pacientes** ao retirar alimentos fermentáveis que geram gases e estufamento.
-
-**[11:39] Professor:** Quando o paciente é muito sintomático, utilizamos medicações direcionadas aos sintomas:
-* **Dor / Cólica:** **antiespasmódicos**, como **escopolamina** (Buscopan) e **mebeverina**.
-* **Constipação:** **laxantes** menos irritativos por tempo limitado, associados à correção alimentar.
-* **Diarreia:** **antidiarreicos** (menos frequentes).
-* **Modulação central e intestinal:** **neuromoduladores**, como **amitriptilina** e **duloxetina**, que atuam tanto na função intestinal quanto no componente emocional.
-* **Microbiota:** uso eventual de **antibióticos** (conduta ainda controversa) para modular a flora intestinal.
-
-**[13:26] Professor:** Em consultório, muitos pacientes chegam autodiagnosticados com SII. Cabe a nós afastar diagnósticos diferenciais como intolerância à lactose, intolerância ao glúten, DII e até câncer colorretal. Hoje mesmo atendi uma paciente de 60 e poucos anos que nunca havia feito colonoscopia; convivia com estufamento achando ser SII e só procurou atendimento quando surgiu muco e sangue. Na colonoscopia, era um **câncer de sigmoide** obstruindo 80% da luz intestinal. Acima de 50 anos ou na presença de sinais de alarme, não se pode rotular o paciente sem investigar.
-
----
-
-## [15:07 - 32:51] Doença Diverticular dos Cólons e Diverticulite
-
-**[15:07] Professor:** A próxima doença é a **doença diverticular dos cólons**, uma das mais prevalentes no mundo. Trata-se de uma fraqueza na parede do cólon que leva à **herniação da mucosa** (do latim, "pequeno desvio"), ocorrendo principalmente no intestino grosso. Costumo dizer aos pacientes que, a partir dos 50 anos, os divertículos são como as "rugas" do intestino — um desgaste natural do órgão ao longo da vida, geralmente indolores e assintomáticos.
-
-**[16:20] Professor:** Atenção à pegadinha de prova: o divertículo colônico é, na verdade, um **pseudodivertículo** (divertículo falso), pois **hernia apenas a mucosa e a submucosa**, sem envolver a camada muscular. Essa herniação ocorre nos pontos de fraqueza da camada muscular por onde penetram as **artérias retas** (*vasa recta*). O local mais comum é o **cólon sigmoide**, por ter o menor diâmetro e, consequentemente, a maior pressão intraluminal (**Lei de Laplace**), sendo o local mais propenso a inflamar (**diverticulite**). Já no **cólon direito**, os divertículos são menos comuns, mas têm maior tendência a causar **hemorragias** devido à proximidade direta com o vaso penetrante.
-
-**[17:42] Professor:** Os **fatores de risco** incluem: idade acima de 50 anos, **dieta pobre em fibras** (que gera constipação), alto consumo de carne vermelha, embutidos e carnes processadas, maior nível socioeconômico (pela dieta industrializada), hipertensão, multiparidade, sedentarismo, IMC elevado e doenças do colágeno (como **Síndrome de Ehlers-Danlos** e **Síndrome de Marfan**).
-
-**[18:27] Professor:** Na **fisiopatologia**, a dieta pobre em fibras aumenta o esforço evacuatório e a pressão intraluminal, causando **erosão na parede fina do divertículo**, **micro ou macroperfurações** e inflamação secundária (possivelmente associada à disbiose). Antigamente acreditava-se que a causa era obstrução por **fecalito** ou ingestão de sementes (tomate, uva). Grandes estudos nos EUA já descartaram a relação com sementes — **quem tem doença diverticular pode comer sementes normalmente**.
-
-**[20:01] Professor:** É fundamental diferenciar as terminologias:
-* **Diverticulose:** presença de divertículos **assintomáticos**.
-* **Doença diverticular:** paciente com diverticulose que apresenta **dor abdominal** (sem inflamação aguda), confundindo-se muitas vezes com SII.
-* **Diverticulite:** inflamação do divertículo (aguda ou crônica). Divide-se em **não complicada** (dor em fossa ilíaca esquerda, febre opcional e leucocitose, de manejo ambulatorial) e **complicada** (associada a abscesso, perfuração, peritonite, fístula ou obstrução intestinal).
-
-**[21:14] Professor:** No **diagnóstico** da diverticulite aguda (quadro clássico de dor em quadrante inferior esquerdo e febre — o oposto da apendicite, que é à direita), o exame de escolha é a **tomografia computadorizada (TC) de abdome**, que mostra espessamento da parede, borramento da gordura pericólica e os divertículos. **Colonoscopia e enema opaco são contraindicações absolutas nas primeiras 4 a 6 semanas**, pois a insuflação de ar ou contraste pode transformar uma microperfuração em perfuração franca.
-
-**[22:24] Professor:** A gravidade da diverticulite complicada é avaliada pela **Classificação de Hinchey**:
-* **Hinchey I (Ia / Ib):** pequeno abscesso pericólico/mesentérico (microperfuração bloqueada).
-* **Hinchey II:** abscesso pélvico ou retroperitoneal distante (peritonite localizada/bloqueada).
-* **Hinchey III:** **peritonite purulenta generalizada** (pus espalhado pela cavidade).
-* **Hinchey IV:** **peritonite fecal generalizada** (perfuração ampla com extravasamento de fezes, associada a alta mortalidade).
-
-**[23:02] Professor:** O **tratamento** depende da gravidade:
-* **Diverticulite não complicada (Hinchey 0 / Ia):** consensos atuais mostram que **não há necessidade de antibiótico de rotina** em pacientes imunocompetentes; faz-se dieta líquida/pastosa, analgesia e acompanhamento rigoroso. Reserva-se antibiótico (**amoxicilina + clavulanato** ou **ciprofloxacino + metronidazol**) para idosos, imunossuprimidos, gestantes ou pacientes com PCR muito elevado.
-* **Abscesso complicado (Hinchey Ib / II):** pela **regra dos 4 cm**, abscessos **maiores que $4\text{ cm}$** exigem intervenção — preferencialmente **drenagem percutânea guiada por TC** associada a antibióticos, evitando cirurgia de urgência.
-* **Peritonite (Hinchey III / IV):** cirurgia de urgência. A conduta padrão em prova é a **Cirurgia de Hartmann** (colectomia do segmento acometido, sepultamento do coto retal e **colostomia terminal provisória**). Em centros especializados, a lavagem laparoscópica pode ser tentada em casos selecionados.
-
-**[25:24] Professor:** Após **6 semanas** do quadro agudo, realiza-se a **colonoscopia** para confirmar a resolução e descartar diagnósticos diferenciais, como o câncer colorretal. A cirurgia eletiva após múltiplos surtos não é mais obrigatória por número fixo de crises ou por idade jovem (< 50 anos) — a indicação hoje é **individualizada**. Entre as complicações crônicas, destaca-se a **fístula colovesical** (mais comum em homens, pois o útero protege a bexiga nas mulheres), que cursa com **pneumatúria** (gás na urina), **fecalúria** (fezes na urina) e infecções urinárias de repetição.
-
-**[30:11] Professor:** Os principais **diagnósticos diferenciais** incluem apendicite, câncer colorretal, úlcera péptica perfurada, Doença de Crohn, cistite, gravidez ectópica, doenças biliares, hérnia encarcerada e afecções ginecológicas (cisto ovariano roto, DIP). Relatei o caso de um paciente de 36 anos com dor pélvica e febre persistente mesmo após antibiótico e com TC inicial normal. A ressonância mostrou inflamação aderida à bexiga sem divertículos; na videolaparoscopia de urgência, descobrimos um grande **tumor colônico avançado** — reforçando a importância de nunca subestimar quadros atípicos em jovens.
-
----
-
-## [32:52 - 36:26] Diarreias Agudas e Crônicas
-
-**[32:52] Professor:** Em condições normais, cerca de **99% do líquido** que entra no trato gastrointestinal é reabsorvido. A **diarreia** ocorre quando esse equilíbrio absortivo é rompido, definindo-se pela ocorrência de **três ou mais evacuações amolecidas ou líquidas em 24 horas**.
-
-**[33:41] Professor:** A **diarreia aguda** tem duração **menor que 14 dias (2 semanas)** e, na maioria das vezes, tem etiologia viral (**rotavírus**) ou bacteriana autolimitada (*Escherichia coli*, *Salmonella*, *Shigella*). O manejo baseia-se em avaliar o estado de hidratação (identificando hipovolemia ou choque), instituir **terapia de reidratação oral** (ou endovenosa, se necessário) e manter suporte nutricional para preservar a barreira intestinal. Não se recomenda investigação etiológica nem uso de antibióticos de rotina, exceto em pacientes com **febre alta, mais de 6 evacuações/dia, sinais de alarme, idosos ou imunodeprimidos**. Probióticos e zinco podem ser usados, mas sem evidência robusta de encurtamento significativo do quadro.
-
-**[35:22] Professor:** Já a **diarreia crônica** é aquela que dura **mais de 4 semanas**. Todo quadro crônico exige investigação diagnóstica com exames laboratoriais e de imagem, sendo as causas mais frequentes a **Síndrome do Intestino Irritável**, as **Doenças Inflamatórias Intestinais** e as **síndromes de má absorção**.
-
----
-
-## [36:26 - 50:41] Doenças Inflamatórias Intestinais (DII)
-
-**[36:26] Professor:** As **Doenças Inflamatórias Intestinais (DII)** têm como principais representantes a **Retocolite Ulcerativa (RCU)** e a **Doença de Crohn (DC)**, cuja incidência tem crescido nas últimas décadas devido à dieta ocidental, urbanização e estilo de vida. Na **fisiopatologia**, existe predisposição genética poligênica (mais de 200 genes mapeados) associada à **disbiose** e quebra da barreira mucosa. Quando os antígenos luminais atravessam a mucosa danificada, desencadeiam uma **resposta imune desregulada** ("guerra sem fim" mediada por interleucinas, linfócitos T-helper 1 e macrófagos), perpetuando a inflamação.
-
-**[39:27] Professor:** É essencial saber diferenciar as duas doenças:
-* **Doença de Crohn (DC):** pode acometer **qualquer segmento da boca ao ânus** (sendo a **junção ileocecal** o local mais frequente), apresenta **lesões salteadas** (descontínuas) e acometimento **transmural** (atinge todas as camadas da parede intestinal). Por ser transmural, cursa frequentemente com **estenoses** e **fístulas** (enteroentéricas, enterocutâneas, enterovesicais) e **doença perianal** (fístulas e abscessos). Seu marcador sorológico associado em provas é o **ASCA positivo**.
-* **Retocolite Ulcerativa (RCU):** acomete exclusivamente o cólon, iniciando-se **sempre no reto** e progredindo de forma **contínua e ascendente** (podendo atingir todo o cólon — **pancolite**). A inflamação restringe-se à **mucosa**. Cursa tipicamente com diarreia sanguinolenta (**hematoquezia**), muco, pus, **urgência evacuatória** e **tenesmo**. Seu marcador sorológico cobrado em provas é o **p-ANCA positivo**. *(Em cerca de 10% dos casos, não é possível diferenciá-las inicialmente, denominando-se **colite indeterminada**).*
-
-**[40:38] Professor:** As **manifestações clínicas** gerais incluem diarreia crônica, dor abdominal em cólica (pós-prandial), perda de peso (por medo de se alimentar ou má absorção) e, em crianças, **atraso no crescimento**. Podem ocorrer **manifestações extraintestinais**, como **artrite**, **uveíte**, **eritema nodoso**, **espondilite anquilosante** e **colangite esclerosante primária** (mais ligada à RCU, podendo evoluir para cirrose e necessidade de transplante hepático).
-
-**[42:36] Professor:** Na **investigação diagnóstica**, diante de diarreia > 4 semanas, anemia inexplicada, déficit de crescimento ou hematoquezia, solicitamos hemograma, PCR e **calprotectina fecal** (valores **$> 200\text{ }\mu\text{g/g}$** indicam inflamação intestinal ativa). O exame padrão-ouro é a **colonoscopia com biópsias**, que avalia a extensão, a gravidade endoscópica e confirma o diagnóstico histopatológico.
-
-**[44:18] Professor:** O **tratamento** visa atingir a **remissão clínica e endoscópica**, iniciando-se pelo suporte nutricional. Na escada terapêutica farmacológica utilizamos:
-* **Aminossalicilatos** (**mesalazina**, **sulfassalazina**) para formas leves de RCU;
-* **Corticoides** apenas para indução de remissão na fase aguda (evitando uso crônico pelos efeitos colaterais);
-* **Imunomoduladores** (**azatioprina**, **metotrexato**);
-* **Terapia biológica** (anticorpos monoclonais que bloqueiam a cascata inflamatória), altamente eficaz para casos moderados a graves.
-
-**[48:02] Professor:** A **cirurgia** não é curativa na Doença de Crohn (pois a doença recidiva), sendo indicada apenas para **complicações** (estenoses, abscessos, fístulas complexas) ou **intratabilidade clínica**. Na RCU, a **proctocolectomia total** remove o órgão-alvo, mas implica colostomia definitiva ou anastomose ileoanal com aumento da frequência evacuatória e risco de impotência e infertilidade em jovens. Entre as complicações graves, destacam-se o **megacólon tóxico** (dilatação colônica aguda com risco de perfuração e morte, exigindo cirurgia de emergência) e o **risco aumentado de câncer colorretal a partir de 8 anos de doença** (exigindo colonoscopia de vigilância a cada 1–2 anos).
-
----
-
-## [50:41 - 55:41] Endometriose Intestinal
-
-**[50:41] Professor:** Por fim, um tema que tem aumentado muito na prática clínica e frequentemente se confunde com doenças gastrointestinais é a **endometriose intestinal**. Com o adiamento da maternidade na vida moderna (muitas mulheres planejando filhos após os 25–30 anos, como vocês na medicina), diagnosticamos cada vez mais essa doença silenciosa que compromete a fertilidade e a qualidade de vida.
-
-**[51:51] Professor:** A **endometriose** ocorre quando o tecido endometrial (mucosa interna do útero) implanta-se **fora da cavidade uterina** — nos ovários, trompas, peritônio e **intestino**. A tríade clássica é composta por **dismenorreia intensa** (cólica menstrual incapacitante), **dispareunia** (dor na relação sexual) e **infertilidade**.
-
-**[53:07] Professor:** Como os focos são **hormônio-dependentes**, quando atingem o intestino provocam **sintomas cíclicos durante o período menstrual**: dor ao evacuar (disquezia), alteração do hábito intestinal (constipação ou diarreia no período menstrual) e até **sangramento retal cíclico** (se houver infiltração da mucosa intestinal). Por isso, muitas pacientes passam anos tratadas erroneamente como portadoras de Síndrome do Intestino Irritável ou colite.
-
-**[53:36] Professor:** O diagnóstico exige alta suspeita clínica e exames específicos, como **ressonância magnética de pelve** ou **ultrassonografia transvaginal com preparo intestinal**. O manejo inicial costuma ser medicamentoso (bloqueio hormonal), reservando-se a **cirurgia videolaparoscópica** para casos com comprometimento anatômico severo, obstrução ou infertilidade persistente. Dor menstrual incapacitante não é normal — o diagnóstico precoce é essencial para preservar a fertilidade e aliviar o sofrimento dessas pacientes.
-
-**[55:02] Professor:** Então é isso, pessoal. Se tiverem dúvidas, fiquem à vontade ou mandem mensagem. Nos últimos slides deixei um material bônus com os tópicos que mais caem nas provas do internato e residência. Estou à disposição.
+- Transcrição 1: `Transcricao_Gastro_Dia_3.txt` (8.877 palavras, duração até 00:55:42).
 
 ## Slides 1 · ea4417fa-AULA_FAG_PARTE_2.pdf
 <!-- parte slides 1 | arquivo=ea4417fa-AULA_FAG_PARTE_2.pdf | sha=e907b92cc4e3 | paginas=94 | so_imagem=1, 6, 8, 14, 17, 18, 20, 23, 31, 33, 44 -->
@@ -1444,3 +1309,374 @@ O domínio da classificação e do estadiamento é o diferencial que separa o ca
 nas questões do ENARE.
 Não atribuir a hemorroidas sem
 investigação adequada. Excluir neoplasia.
+
+## Transcrição 1 · Transcricao_Gastro_Dia_3.txt
+<!-- parte transcricao 1 | arquivo=Transcricao_Gastro_Dia_3.txt | sha=5eeb4e719ade | palavras=8.877 | duracao=00:55:42 -->
+
+================================================================================
+TRANSCRIÇÃO COMPLETA DA AULA: GASTROENTEROLOGIA - DIA 3
+================================================================================
+Arquivo de origem: Gastro dia 3.m4a.mp4
+Professor(a): Não identificado(a) nominalmente no áudio (Professor de Gastroenterologia / Cirurgia do Aparelho Digestivo)
+Duração total: 55:42
+Temas abordados: Síndrome do Intestino Irritável (SII), Doença Diverticular dos Cólons e Diverticulite Aguda, Diarreias Agudas e Crônicas, Doença Inflamatória Intestinal (Doença de Crohn e Retocolite Ulcerativa) e Endometriose Intestinal.
+================================================================================
+
+[00:00 - 02:18] Introdução à Síndrome do Intestino Irritável (SII): Conceito de Doença Funcional e Epidemiologia
+--------------------------------------------------------------------------------
+
+[00:00] Professor: ...intestino irritável. Mas, de qualquer forma, a síndrome do intestino irritável (SII) ainda existe. E é importante vocês saberem que existem doenças que são chamadas de doenças funcionais, né? As doenças funcionais são diferentes das doenças orgânicas, porque muitas vezes na doença funcional a gente não vai encontrar inflamação, nódulo, nenhuma alteração visível no órgão, na mucosa ou qualquer alteração significativa.
+
+[00:34] Mas o paciente vai ter sintomas, e o que muita gente tachava no passado de loucura, de doença mental, muitas vezes hoje a gente consegue fazer o diagnóstico e entender que essa paciente, esse paciente realmente tem sintomas, esses sintomas são reais e que a gente precisa abordar e cuidar desses pacientes.
+
+[00:59] Então, em termos de epidemiologia, esses pacientes correspondem a até 5% a 10% dos casos, uma correlação mais comum em mulheres do que em homens, e é uma doença — como é uma doença funcional — que acomete principalmente os jovens, né? Então são doenças que acometem pessoas com menos de 50 anos, na maior parte das vezes pacientes jovens que estão iniciando, por exemplo, sua vida de trabalho, vida de casamento. Então é uma doença que precisa ser bastante importante.
+
+[01:40] E hoje a nova definição fala que é uma doença da interação intestino-cérebro. Então tem a ver com a parte cerebral, né, com a parte emocional. E ela não é uma doença estrutural, ou seja, não tem doença no órgão em si, mas é uma disfunção funcional com base seguida pelos três sintomas principais, que são:
+1. Dor abdominal recorrente;
+2. Alteração do hábito intestinal — esse paciente pode ter tanto constipação quanto diarreia, ou um distúrbio misto;
+3. Ausência de qualquer doença orgânica nesses casos.
+
+================================================================================
+[02:18 - 04:45] Critérios Diagnósticos de Roma, Escala de Bristol e Subtipos Clínicos
+--------------------------------------------------------------------------------
+
+[02:18] Professor: O Critério de Roma é o mais atual. Esse Critério de Roma é um consenso, vamos dizer assim, entre os maiores especialistas. A primeira reunião foi em Roma, por isso que se chama de Roma; hoje já estamos no quinto modelo já, no qual ele vai atualizando conforme a gente vai conhecendo a doença.
+
+[02:42] Então o paciente vai ter dor abdominal 1 dia por semana, pelo menos, por pelo menos 3 meses, e ela normalmente não é uma dor isolada, mas associada à evacuação. Então ela melhora quando a gente vai ao banheiro; quando a gente evacua, normalmente essa dor passa e alivia. Diferentemente, como vocês viram na aula passada, de um câncer, que essa é uma dor recorrente, né, uma dor que não vai passar mesmo indo à evacuação. Assim como a gente vai falar daqui a pouquinho, a doença inflamatória intestinal (DII) é uma inflamação crônica, então o paciente vai ter inflamação; a evacuação não vai aliviar a dor de imediato como no intestino irritável.
+
+[03:32] Ela pode ter alteração dessa frequência, né, da frequência intestinal, tanto indo várias vezes ao dia ou ficando constipada. E as fezes podem também modificar conforme aquele Critério de Bristol (Escala de Bristol) que a gente tem, que ela pode ser do tipo 1 e 2, que são em bolinhas ou fezes endurecidas, ou amolecidas, do tipo 6 e 7.
+
+[03:58] As formas que ela se manifesta, como eu falei, normalmente a gente precisa avaliar o intestino, como que ele funciona:
+- Forma com constipação (SII-C): o paciente vai ter uma dificuldade de evacuação, fezes duras em mais de 25% das evacuações — ou seja, em cada quatro evacuações, se ela tiver uma queixa dessa por pelo menos 3 meses, ela é de constipação do intestino irritável.
+- Forma com diarreia (SII-D): ela pode ser diarreia, né, diarreia predominante.
+- Forma mista (SII-M): ou a mista.
+- Forma não classificada (SII-NC): e pode ter alguma que não é classificada em nenhuma delas, que é quando o paciente oscila muito. E é frequente, às vezes, o paciente ficar constipado um mês, por exemplo, depois ter um dia de diarreia e depois voltar a ficar constipado, e daí não classifica em nenhuma delas.
+
+================================================================================
+[04:45 - 08:25] Fisiopatologia: Eixo Intestino-Cérebro, Hipersensibilidade Visceral, Microbiota e Serotonina
+--------------------------------------------------------------------------------
+
+[04:45] Professor: A fisiopatologia dela, cada dia mais a gente vem conhecendo, né? Como eu comentei na última aula, o eixo intestino-cérebro tem tido uma grande importância nos últimos anos. E essa comunicação através do sistema nervoso central e o sistema nervoso entérico, ela existe. Então, por exemplo, não é incomum a gente ficar nervoso e a gente ter diarreia, né? Então essa é a maior prova de que o intestino e o cérebro se correlacionam. Quando a gente fica com depressão, às vezes a gente pode ter constipação. Então essa é a maior prova de tudo isso.
+
+[05:27] A hipersensibilidade visceral, que é o paciente com um peristaltismo normal que vai ter uma dor absurda, uma dor intensa, incompatível com o movimento normal. Então o paciente fica hipersensível; a gente chama isso de hipersensibilidade visceral.
+
+[05:45] Hoje em dia estão estudando bastante se ela tem correlação com a microbiota, né, com a disbiose e com a inflamação, apesar de que biópsias nesses casos tendem a ser negativas. E a permeabilidade intestinal também pode ser que seja uma das coisas que estejam envolvidas nisso, e isso é o que está sendo estudado nos últimos artigos que a gente pode ver.
+
+[06:09] Então a fisiopatologia envolve:
+- Fator genético e história familiar;
+- Associado a fatores psicológicos, né: o estilo de vida, a parte psicológica, ansiedade, depressão, histórias de abuso;
+- Os fatores biológicos, né: o sistema do eixo intestino-cérebro (uma desregulação), uma hipersensibilidade visceral, a disbiose, sistema imune e a dismotilidade.
+
+Então tudo isso, em conjunto, forma a fisiopatologia do intestino irritável.
+
+[06:44] Quando a gente fala do eixo intestino-cérebro, essa é uma comunicação direta, né, através do nervo vago, que a cada dia tem sido estudado cada vez mais. E esses sinais às vezes são potencializados, causando mais dor, mais hipersensibilidade nesses órgãos. Por isso que um dos fatores principais e facilitadores do diagnóstico é quando a gente associa o estresse psicológico, que vai modular diretamente a motilidade. Então, normalmente, isso está envolvido em mais de 25% a 30% dos casos.
+
+[07:20] E a hipersensibilidade visceral também pode ter relação com o eixo intestino-cérebro, porque a sensibilidade à dor está relacionada à parte do sistema nervoso, e ele tem um menor limiar à dor, causando mais dor com qualquer movimento, né? Então essa é a importância do eixo intestino-cérebro.
+
+[07:39] Aqui mais alguns estudos mais recentes que pesquisaram se existe algum fator a mais ali. Então tentaram correlacionar com a parte de metabolismo, da produção de serotonina, né — que o intestino é um dos principais produtores da serotonina, e a gente sabe que a serotonina é o hormônio do bem-estar. Quando ele está em falta, ele provoca mais desconforto, então pode ter relação com isso.
+
+[08:03] A permeabilidade intestinal, a atividade imunológica da mucosa, causa hipersensibilidade a vários alimentos. Então o paciente começa a fazer uma dieta restritiva, a tirar várias coisas até se sentir melhor, porque o estufamento e a dor causam muito desconforto, e ele começa a selecionar muitos alimentos. E também tem alguns dados que podem estar relacionados a uma infecção prévia, a microbiota instável, mas tudo isso tem sido estudado cada vez mais.
+
+================================================================================
+[08:25 - 11:02] Abordagem Diagnóstica, Exames Complementares, Sinais de Alarme e Diagnóstico Diferencial com DII
+--------------------------------------------------------------------------------
+
+[08:25] Professor: Abordagem diagnóstica: então, basicamente, é uma história clínica bem feita, em que a gente vai ver o padrão de dor, da relação com a evacuação e a duração desses sintomas. A gente aplica o Critério de Roma, né, que é dor pelo menos 1 vez por semana por 3 meses, com início há mais de 6 meses. E, principalmente, como é uma doença funcional, a gente precisa descartar os sintomas de alarme, né?
+
+[08:52] Então os sintomas de alarme — vou falar um pouquinho mais para a frente — mas é pra gente afastar doenças orgânicas, principalmente. Podemos solicitar alguns exames pra gente afastar doenças orgânicas, como, por exemplo:
+- Hemograma, para afastar uma anemia, uma infecção;
+- Proteína C reativa (PCR) e VHS, marcadores inflamatórios;
+- Calprotectina fecal: talvez seja o exame mais importante de hoje, porque ele diferencia o intestino irritável da doença inflamatória intestinal;
+- Sorologias, por exemplo, para doença celíaca ou teste de intolerância à lactose;
+- E, em pacientes com mais de 45 anos, a colonoscopia como rastreamento.
+
+[09:32] Entre os sintomas de alarme, como eu falei, os principais são:
+1. Perda de peso;
+2. Anemia ferropriva;
+3. História familiar;
+4. Sangramento digestivo;
+5. Febre persistente;
+6. Pacientes com mais de 50 anos.
+
+Então, se eles tiverem esses fatores de risco, são sintomas de alarme; então a gente não pode efetivamente confirmar que é um intestino irritável se a gente não afastar, quando o paciente tiver esses sintomas, uma doença orgânica.
+
+[10:00] O tratamento basicamente ele é sintomático... (pausa e retorna o slide) Deixa eu voltar aqui. Então esse quadro é importante para a gente afastar uma doença orgânica, principalmente o que mais se correlaciona com o intestino irritável, que é a doença inflamatória intestinal (DII):
+- Dor abdominal: pode estar presente nos dois;
+- Sangramento: é comum na doença inflamatória e não no intestino irritável;
+- Perda de peso: é comum na doença inflamatória intestinal;
+- PCR elevada: é sinal de inflamação (presente na DII);
+- Calprotectina fecal: um vai ter elevado (DII), o outro não (SII);
+- Colonoscopia e histologia: colonoscopia normal no intestino irritável e histologia normal.
+
+Então a gente observa que, no intestino irritável, os exames normalmente são "inocentes", como a gente diz, enquanto os da doença inflamatória intestinal são todos positivos.
+
+================================================================================
+[11:02 - 13:13] Tratamento Não Farmacológico (Dieta Low FODMAP) e Tratamento Farmacológico
+--------------------------------------------------------------------------------
+
+[11:02] Professor: O tratamento basicamente é observar esse paciente e fazer uma anamnese bem feita para poder identificar os fatores que podem estar sendo o gatilho de toda essa doença. Então a gente vai educar o paciente, explicar que é uma doença funcional, que ela é benigna, que tem que controlar a alimentação, controlar o estresse. O exercício físico ajuda significativamente, porque não se trata de uma doença orgânica, então o tratamento basicamente é clínico, né? Tá?
+
+[11:38] Então a paciente pode fazer terapia, pode fazer psicoterapia, exercícios, né, ir a uma nutricionista para organizar a dieta, e tudo isso tende a melhorar. Essa dieta Low FODMAP, em alguns artigos, mostra que é uma das terapias mais eficazes, porque ela diminui a fermentação, produtos osmóticos, né, e tem eficácia comprovada em até 80% dos pacientes. Então normalmente tem muita relação com o estresse, mas com a alimentação também.
+
+[12:08] Então, quando o paciente corrige essa alimentação — depois, se vocês tiverem curiosidade, a dieta Low FODMAP é um mapa de alguns alimentos até naturais que podem fazer mal para esses pacientes (alguém espirra ao fundo; um aluno diz: "Saúde"), que produzem mais gás, fermentam mais no intestino. Então é bem interessante, é um estudo australiano que hoje no mundo todo está disseminado.
+
+[12:30] E, quando o paciente é muito sintomático, a gente vai usar, sim, medicações para controlar os sintomas:
+- Para dor: se o paciente tem muita dor, a gente vai usar antiespasmódicos, né, que vão funcionar na cólica, para a dor — assim como cólica menstrual, né, as mulheres usam na cólica ali, a gente pode usar os antiespasmódicos. Tem dois exemplos ali: o Buscopan (que é a escopolamina) e a mebeverina, que é um outro medicamento.
+- Para constipação: no paciente constipado, a gente pode usar laxantes, né? A gente sabe que é por um tempo; a correção da alimentação é fundamental, mas a gente tende a usar laxantes que são menos irritativos para o intestino, para não causar mais danos.
+- Para diarreia: em caso de diarreia, a gente pode usar antidiarreicos, o que não é tão comum o paciente ter muita diarreia, mas pode acontecer.
+- Neuromoduladores: em alguns casos, a gente associa neuromoduladores, porque eles ajudam tanto na função intestinal quanto na questão emocional. Então, por exemplo, a amitriptilina e a duloxetina são comumente usadas para ajudar.
+- Antibióticos: e, em alguns casos — isso é um pouco controverso — a gente pode usar um antibiótico para melhorar ali a microbiota e acabar fazendo com que esse paciente volte a ter uma qualidade intestinal melhor.
+
+================================================================================
+[13:13 - 15:11] Resumo de Síndrome do Intestino Irritável e Relato de Caso Clínico (Câncer de Sigmoide)
+--------------------------------------------------------------------------------
+
+[13:13] Professor: Então, basicamente, do intestino irritável é isso:
+- Não é uma doença de causa estrutural, né, não tem problema maior nos órgãos;
+- O diagnóstico é clínico, então normalmente não precisamos de nenhum exame, normalmente só afastamos em caso de sinais de alarme;
+- Sempre pesquisar sintomas de alarme;
+- A hipersensibilidade visceral é o principal mecanismo da dor;
+- A calprotectina fecal talvez seja o exame mais importante para diferenciar de uma doença inflamatória intestinal;
+- E o tratamento é individualizado e multidisciplinar, tá?
+
+[13:51] Então essa é a primeira parte, que é a síndrome do intestino irritável, que é tão frequente. No consultório chegam muitas pessoas hoje com acesso à informação, né, que pesquisam e chegam falando que têm intestino irritável, e cabe a nós orientar, explicar e afastar outros diagnósticos diferenciais. Por exemplo, muita gente que tem intolerância à lactose, intolerância a glúten, chega achando que tem intestino irritável porque o sintoma é bem semelhante, né? Muita gente que tem doença inflamatória intestinal acha que tem intestino irritável, porque é muito semelhante.
+
+[14:21] E até pacientes com câncer mesmo, né? Hoje eu atendi uma pacientinha: ela tinha 60 e poucos anos, nunca fez colonoscopia, sempre tinha estufamento, barriga inchada, desconforto. Aí, nos últimos tempos, ela começou a ver muco e sangue; daí que ela foi se preocupar em vir fazer uma consulta. Mas até lá ela falava: "Ah, eu convivo normal, incomoda, mas eu convivia normal", e ela achava que era intestino irritável. A gente fez a colonoscopia dela hoje e é um câncer, câncer de sigmoide.
+
+[14:49] Então é a partir de muco e sangue que ela foi se preocupar. Então lembra que acima de 50 anos já é um fator de risco, né? A gente precisa afastar, fazer um exame, uma colonoscopia pra gente afastar. E ela provavelmente vai começar a ter sintomas a partir de agora, porque o tumor está em 80% da luz intestinal, então aí que começou a dar sintomas; até então ela não tinha sintoma nenhum. E às vezes chegou tarde, né, porque agora vai passar por cirurgia, dependendo se tiver linfonodos vai passar por quimioterapia e tudo, né? Então tem que orientar tudo isso aí.
+
+[15:00] Então é importante essa diferenciação dos sinais de alarme sempre, para a gente não rotular esses pacientes.
+
+================================================================================
+[15:11 - 17:42] Introdução à Doença Diverticular dos Cólons, Definição de Pseudodivertículo e Localização Anatômica
+--------------------------------------------------------------------------------
+
+[15:11] Professor: A próxima doença que a gente vai falar é a doença diverticular dos cólons. É uma doença bastante famosa também, é talvez uma das doenças mais prevalentes no mundo, porém ela nem sempre, como a gente vai falar um pouco para frente, vai ter sintomas. Então, a doença diverticular é a presença de uma fraqueza ali na parede do cólon, e ela faz essa herniação da mucosa, principalmente no intestino grosso. E o termo é um pequeno desvio — é isso que significa o termo em latim.
+
+[15:52] A doença diverticular, eu falo para os pacientes que, a partir dos 50 anos, é como se fossem as rugas que aparecem no nosso rosto, como um desgaste dos órgãos. Então, de tanto ele trabalhar, ele vai formando esses divertículos e, normalmente, eles são indolentes — indolores, assintomáticos. E o que diferencia é essa questão: a doença diverticular da diverticulite. Muita gente fala: "Eu tenho diverticulite", mas a diverticulite é uma outra coisa que a gente vai falar um pouco para frente, e isso é importante vocês saberem, que na prova às vezes tem pegadinha sobre isso.
+
+[16:28] Então, o que é o divertículo? É um pseudodivertículo. Isso aqui também é uma pegadinha que eles gostam de colocar em prova, porque ele hernia apenas a mucosa e a submucosa. Não hernia a muscular; a muscular tem um defeito ali aonde passam os vasos, que normalmente é por ali que passam os divertículos. Então, eles são divertículos não verdadeiros ou pseudodivertículos. Ele tem alguns pontos de fraqueza ali onde passam as artérias retas, que penetram a camada muscular, e ali, de tanto esforço, aquele buraquinho faz uma hérnia mesmo naquela região, fazendo a herniação que é o pseudodivertículo.
+
+[17:09] O local mais comum é no cólon sigmoide, por conta da maior pressão naquela região — ele é um cólon com menor diâmetro e, pela Lei de Laplace, vocês vão lembrar, na Lei de Laplace, onde tem maior pressão, existe maior chance de herniação. E no cólon direito existem também divertículos, mas normalmente esses divertículos são menos comuns. E o sintoma, por exemplo, do cólon sigmoide é mais frequentemente, por causa dessa pressão maior, de formar diverticulite, e no cólon direito é mais comum ter hemorragias. Então esse é um dado importante.
+
+================================================================================
+[17:42 - 20:42] Fatores de Risco, Fisiopatologia e Classificações Clínicas (Diverticulose, Diverticulite e Doença Diverticular)
+--------------------------------------------------------------------------------
+
+[17:42] Professor: Os fatores de risco para ter doença diverticular: normalmente a idade, a partir dos 50 anos começa a ficar mais frequente; aqueles pacientes que têm uma dieta pobre em fibras, ou seja, pacientes que se tornam constipados; o alto consumo de carne vermelha e os embutidos ou carnes processadas — isso aumenta bastante. Diferente de muitas doenças, é o maior nível socioeconômico, por conta da alimentação, uma alimentação industrializada, isso tende a aumentar; pacientes hipertensos, com mais partos, baixa atividade física, com índice de massa corpórea (IMC) maior, e algumas doenças do colágeno, como a síndrome de Ehlers-Danlos e Marfan, são mais comuns nesses pacientes.
+
+[18:27] Aqui a fisiopatologia: uma dieta deficiente aumenta a pressão da parede do cólon e forma os divertículos. Até aí é chamado de diverticulose. A partir do momento em que esses divertículos se inflamam, a gente começa a chamar isso de diverticulite. E a diverticulite pode ser aguda ou crônica, dependendo do tempo de evolução.
+
+[18:52] Uma coisa interessante é que isso acontece por conta da pressão. Então, quanto mais esse paciente faz esforço evacuatório ou tem as fezes mais duras, aumenta a pressão na luz intestinal, fazendo com que haja uma erosão ali na parede — principalmente nessa parede que é mais fina —, causando micro ou macroperfurações e causando a inflamação por consequência. Isso pode estar ou não associado à disbiose, que hoje está todo mundo estudando sobre isso.
+
+[19:22] Isso vai contra o que o pessoal comentava no passado, que a causa principal era um fecalito — umas fezes que entravam lá e ficavam raspando até perfurar — ou sementes. Então, as pessoas têm muito medo de comer sementes (semente de tomate, semente de uva) por conta de que eles achavam que a sementinha ia ficar ali, causar inflamação e perfurar. Hoje já não tem mais isso: foi feita uma análise enorme nos Estados Unidos para ver o fator de risco, e a semente foi descartada há algum tempo. Então, não é verdade que não pode comer semente quem tem doença diverticular.
+
+[19:55] Então, a doença diverticular se divide em diverticulose, diverticulite e doença diverticular:
+1. Diverticulose: é aquela doença assintomática, o paciente não tem sintomas, ele só tem a hérnia e, às vezes, na autópsia você vai descobrir que ele tinha diverticulose.
+2. Diverticulite: é quando ela está inflamada, então o termo "ite" é inflamação. E ela pode ser dividida em não complicada e complicada:
+   - Não complicada: o paciente vai ter dor, febre, pode ter leucocitose também (a febre é opcional), mas é uma doença leve que a gente consegue tratar em casa com medicação.
+   - Complicada: normalmente vai causar uma complicação mais séria, que é abscesso, perfuração, peritonite, fístula ou obstrução intestinal. Normalmente os sintomas são dor em fossa ilíaca esquerda, febre e leucocitose.
+3. Doença diverticular: o paciente tem diverticulose, mas não é diverticulite; porém, esse paciente normalmente tem dor, e ele confunde com o intestino irritável muitas vezes. Então, o paciente com diverticulose mas com dor, a gente chama de doença diverticular. Esses são os termos utilizados.
+
+================================================================================
+[20:42 - 22:27] Diagnóstico da Diverticulite Aguda e Classificação de Hinchey
+--------------------------------------------------------------------------------
+
+[20:42] Professor: O diagnóstico: então, quando o paciente tem diverticulite — isso aqui é uma coisa que cai em todas as provas, inclusive de residência —, quando a gente tem quadros suspeitos de diverticulite (lembra: dor, febre, dor em quadrante inferior esquerdo; normalmente é o sintoma da "apendicite ao inverso", porque a apendicite é do lado direito e a diverticulite é do lado esquerdo), o exame principal não é a colonoscopia, mas sim a tomografia computadorizada.
+
+[21:11] Porque se a gente pensar: "Vamos fazer uma colonoscopia e fazer o diagnóstico logo", se a gente fizer a colonoscopia, a gente vai causar perfuração do intestino, causar mais complicações e levar o paciente para a cirurgia de imediato. Então, a colonoscopia e o enema opaco (que é um exame de raio-X contrastado) hoje têm que ser uma contraindicação absoluta nas primeiras 4 a 6 semanas. Como o fator da doença é a microperfuração, se a gente insuflar o ar ou um contraste ali, a gente vai causar mais danos. Então, a gente vai fazer a tomografia, que vai detectar o espessamento da parede, borramento da gordura ali ao redor e a presença dos divertículos.
+
+[21:52] A classificação mais utilizada é essa Classificação de Hinchey, que vai ser mostrada aqui:
+- Hinchey I: é um abscesso pequenininho (pericólico/mesentérico), uma microperfuração que pode causar uma pequena infecçãozinha.
+- Hinchey II: ele causa uma peritonite localizada (abscesso pélvico/retroperitoneal distante), então tem pus ou fezes, mas ele está bloqueado ali.
+- Hinchey III: é peritonite purulenta generalizada, então já se espalha o pus por toda a cavidade.
+- Hinchey IV: quando a perfuração é maior, ele vaza fezes por toda a barriga (peritonite fecal), e normalmente isso causa uma mortalidade significativa.
+
+================================================================================
+[22:27 - 26:03] Tratamento Clínico e Cirúrgico da Diverticulite Aguda
+--------------------------------------------------------------------------------
+
+[22:27] Professor: O tratamento da diverticulite não complicada: antigamente a gente usava antibiótico, como a gente sabia que tinha uma pequena infecçãozinha, mas hoje em dia os consensos comprovaram que não precisa de antibiótico — é só uma dieta líquida/pastosa e analgésico para dor, e um acompanhamento bem rígido desses pacientes, que daí a gente consegue controlar a doença. Vamos usar antibiótico só em paciente idoso, imunossuprimido, gestante, ou paciente que está com a PCR, por exemplo, muito aumentada. E quando a gente precisa do antibiótico, a gente vai usar amoxicilina com clavulanato ou ciprofloxacino e metronidazol, que vão abordar as principais bactérias envolvidas. Então isso é quando a gente tem um quadro não complicado.
+
+[23:18] Já quando a gente tem um abscesso complicado, que vão ser esses abscessos maiores que 4 cm (que é a regra dos 4 cm ali), aí normalmente a gente vai ter que fazer algum procedimento: ou a gente vai fazer uma drenagem percutânea para esvaziar esse pus pela tomografia mesmo — o radiologista vai lá, identifica, passa uma agulha e aspira todo esse pus, o que vai evitar a necessidade de uma cirurgia de urgência —, ou a gente já vai para a cirurgia mesmo fazer essa limpeza. Então, quando o abscesso for maior que 4 cm, a gente precisa fazer essa limpeza.
+
+[23:54] E quando o paciente tem peritonite — vocês lembram da aula do Dr. Eduardo de abdome agudo —, a peritonite é quando já tem uma inflamação ou infecção espalhada. Então, nesses casos, o paciente tem que ir imediatamente para a cirurgia, e ele vai ser submetido a uma cirurgia que é, normalmente e mais comumente, uma colectomia (você vai tirar aquele segmento que tem a diverticulite), vai fazer um sepultamento do coto retal (ou seja, você vai fechar o reto) e vai deixar ele com uma colostomia (Procedimento de Hartmann).
+
+[24:25] Então essa é a cirurgia padrão, apesar de que hoje, com a evolução da videolaparoscopia, a gente às vezes faz essa lavagem laparoscópica, faz uma limpeza, tira esse paciente da urgência/emergência e depois opera para não deixar esse paciente com a bolsa. Então existe essa possibilidade, mas só em centros muito especializados. Se cair em prova peritonite, é essa cirurgia que eu falei: colostomia provisória para depois resolver.
+
+[24:54] Já naqueles casos em que o paciente teve um quadro agudo, uma diverticulite não complicada, e passou 6 semanas, a gente vai fazer uma colonoscopia — lembra que depois de 6 semanas a gente pode fazer. Se o paciente estiver ainda com diverticulite aguda, a gente vai pensar em indicar uma cirurgia eletiva para ele; ou o paciente pode ter um diagnóstico diferencial, como por exemplo um câncer, então a gente tem que fazer essa colonoscopia para a gente entender e avaliar adequadamente. E quando esse paciente tiver mais que um ou dois surtos, a gente vai individualizar esse paciente e discutir junto com ele se vale a pena fazer cirurgia ou não para remover esse intestino.
+
+[25:38] Então aqui, só para vocês lembrarem: faz a tomografia:
+- Hinchey 0 e Ia: o tratamento é conservador, com analgesia e antibiótico controverso.
+- Hinchey Ib e II: a gente usa antibiótico e pode fazer a drenagem percutânea.
+- Hinchey III e IV: é cirurgia de urgência, com a colostomia, que é o mais provável.
+
+================================================================================
+[26:03 - 33:07] Complicações (Fístula Colovesical), Pegadinhas de Prova, Mudanças de Paradigma e Caso Clínico
+--------------------------------------------------------------------------------
+
+[26:03] Professor: Existe um risco dessa fístula, ao invés de ela vazar para a barriga e fazer uma peritonite, ela pode perfurar para dentro da bexiga. Então o paciente começa a ter fezes na urina, infecção urinária de repetição ou saída de gases pela bexiga (pela uretra). Então, nesses casos, existe a fístula colovesical, que é uma entidade incomum, mas ela existe — a gente operou acho que ano passado uns dois casos. E aí essa é a fístula mais comum que acontece, tendo pneumatúria (que é gás eliminado pela urina), fecalúria (fezes eliminadas pela urina), que são os sintomas principais, ou infecção urinária de repetição.
+
+[26:49] É mais comum em homens, porque a mulher tem o útero, que faz tipo uma barreira que impede que faça essa comunicação imediata. Então esses são alguns sintomas que podem acontecer, sendo a fístula colovesical (do cólon para a bexiga) a mais frequente.
+
+[27:10] Aqui eu coloquei algumas pegadinhas que caem em provas — talvez vocês não precisem saber já de imediato, mas a gente estava fazendo uma aula para os alunos mais avançados e a gente acabou colocando aqui:
+- Achava-se que, quando o paciente tinha diverticulite com menos de 50 anos, a doença era mais agressiva e já tinha que indicar cirurgia; isso é antigo, não tem indicação precoce apenas pela idade.
+- O antibiótico nem sempre é obrigatório, segundo os últimos artigos.
+- Não fazer colonoscopia nas primeiras 4 a 6 semanas.
+- E a questão do divertículo verdadeiro e pseudodivertículo (pausa enquanto o professor verifica o microfone/slide; conversas paralelas baixas de alunos ao fundo): lembrar que o divertículo é um pseudodivertículo na diverticulose.
+
+[28:15] Só para lembrar as imagens aqui do que é o divertículo: ele falha ali bem naquela tênia, tem um vasinho que passa e é bem por ali que faz a herniação. Então, por isso que às vezes o paciente tem hemorragia, porque passa do ladinho do vaso e esse vaso pode, com a inflamação, sofrer uma erosão e causar hemorragia. Então é só para vocês lembrarem da imagem e entenderem o que é o pseudodivertículo.
+
+[28:45] Aqui só alguns dados da mudança, porque esses artigos são novos, são novas tendências. Então, na conduta clássica, era questionado que:
+- A fisiopatologia era uma obstrução por fezes (pelo fecalito);
+- O antibiótico sempre era obrigatório;
+- Depois do segundo surto tinha que operar todos os casos;
+- Em paciente jovem tinha que operar no primeiro episódio;
+- E a lavagem laparoscópica... (pausa na fala do professor entre 29:12 e 29:37; conversas baixas entre alunos ao fundo comentando sobre os slides da aula).
+
+[29:37] Professor: E hoje mudou, então:
+- É uma erosão com microperfurações, que pode estar associada ou não à disbiose;
+- O antibiótico é seletivo, não se usa em todo mundo;
+- A indicação de cirurgia também é individualizada;
+- Paciente jovem não precisa sair operando todo mundo;
+- E a lavagem laparoscópica, apesar de que eles falam que perdeu a indicação, a gente usa em alguns [30:00] com sucesso até relativo. Às vezes a gente lava e deixa o paciente dois ou três dias até melhorar e já faz a cirurgia definitiva.
+
+[30:10] O diagnóstico diferencial, então, sempre lembrar, apesar do lado oposto, da apendicite, câncer colorretal, uma úlcera péptica, né, que causa a peritonite, a doença de Crohn, que causa inflamação e pode simular uma diverticulite, cistite, gravidez ectópica, doença de vesícula biliar, hérnia encarcerada.
+
+[30:35] Aí tem uns outros menos comuns: cisto de ovário roto, né, abscessos ou neoplasias ovarianas, doença de pâncreas, doença inflamatória pélvica, peritonite, colite, doenças renais e mais outras.
+
+[30:49] Esse ano eu tive um caso bem interessante: um menino de 36 anos chegou com dor abdominal bem no pé da barriga e febre. Aí eu pensei — primeiro diagnóstico que a gente pensa em jovem é apendicite, né? Aí ele já estava tomando antibiótico, tinha uma tomografia normal, normal lá da cidadezinha dele, falando que não tinha nada. Aí como ele estava com febre, eu pensei: "Ele deve ter feito uma diverticulite, então, se não é apendicite". É uma diverticulite, então eu vou dar antibiótico, porque ele estava com febre, estava mal, já tinha tratado uma semana e não tinha melhorado.
+
+[31:27] Aí eu fiz uma semana de antibiótico e falei: "Quando você voltar, a gente vai ver se já dá para fazer colonoscopia — apesar de ter que esperar um tempo, mas como era urgente, o paciente estava assim — a gente vai avaliar". Aí quando acabou o antibiótico, ele voltou alguns dias depois com febre de novo. Aí eu internei e fiz uma, em vez de tomografia, fiz uma ressonância, porque a tomografia não tinha dado nada, né? E aí o radiologista logo estava: "Ó, está meio esquisito, tem uma inflamação que vai para a bexiga, só que não parece diverticulite, não vejo nenhum divertículo e tal". Então a gente indicou cirurgia de emergência para ele.
+
+[32:03] Daí a gente indicou cirurgia videolaparoscópica, 36 anos. E para piorar, a esposa estava gestante do primeiro filho. Aí chegamos na cirurgia: era um baita tumor, enorme! Ele não tinha sintoma nenhum, esse paciente. E aí a gente conseguiu fazer a cirurgia normal, tirar uma lesão, conseguimos fazer a anastomose, porque não tinha pus na barriga e tal. E aí quando veio a biópsia, confirmou que era um baita tumor. Então a gente tem que fazer o diagnóstico diferencial, e esse paciente foi uma surpresa porque ele tinha 36 anos, né? Diverticulite é incomum, e câncer é pior ainda, né, mais incomum. Mas, por fim, esse paciente tinha um câncer de intestino, agora está fazendo quimio, está bem, mas assim, é um prognóstico difícil, porque é um câncer em muito jovem e um câncer avançado, né? Então a gente tem que cuidar, tá?
+
+[32:57] Então aqui só mais umas dicas aqui, só para vocês não esquecerem, como eu falei algumas vezes. Então, de doença diverticular é isso aí, tá?
+
+================================================================================
+[33:07 - 36:56] Diarreias Agudas e Crônicas: Fisiopatologia, Etiologia e Manejo
+--------------------------------------------------------------------------------
+
+[33:07] Professor: Aí o último tema que a gente vai falar hoje é sobre as diarreias e a doença inflamatória intestinal. Então, a diarreia: no nosso sistema digestivo, em condições normais, 99% do líquido que entra no trato gastrointestinal é reabsorvido. E a diarreia acontece principalmente quando ocorre esse desequilíbrio — é rompido esse equilíbrio e muito pouco líquido consegue ser absorvido, e isso vai fazer com que você tenha diarreia, né?
+
+[33:50] Então a diarreia aguda é um episódio que tem menor que 14 dias, normalmente é uma diarreia viral, que a gente não precisa se preocupar. Então, a partir de 4 semanas, toda vez que a gente tiver, a gente precisa investigar.
+
+[34:05] Então a diarreia aguda é de três ou mais evacuações amolecidas ou líquidas em 24 horas, com duração menor que duas semanas ou 14 dias. Então, normalmente a gente precisa avaliar a hidratação desse paciente, né, identificar se ele está com hipovolemia ou risco de choque, fazer a terapia de reidratação oral e, se não der, a gente vai indicar para ir fazer endovenosa, né? E suporte nutricional para manter essa barreira intestinal preservada.
+
+[34:39] Então, normalmente a diarreia aguda a gente não precisa de investigação, porque ela é autolimitada na maior parte das vezes. A gente só vai investigar se o paciente tiver febre, mais de seis evacuações por dia — a gente já liga um sintoma de alarme — ou pacientes imunodeprimidos, idosos, que a gente vai ter que avaliar. Normalmente os agentes mais comuns são o rotavírus e a Escherichia coli, então são infecções que normalmente têm uma duração autolimitada.
+
+[35:15] Outras causas que pode ter: rotavírus, Salmonella, Shigella, né, principais agentes principalmente em pediatria. E ela causava uma mortalidade infantil significativa, mas nas últimas décadas, graças a políticas de saúde pública e saneamento, a gente tem tido evolução, né? O tratamento basicamente é clínico, não tem medicação. Pode usar suplementos como probióticos, zinco? Pode, mas eles não têm evidências de melhora significativa. Então, normalmente é ter paciência, tomar bastante líquido e esperar.
+
+[35:58] Já a diarreia crônica é aquela que dura mais de 4 semanas. Então, quando passou de 4 semanas, a gente vai ter que olhar esse paciente e já fazer uma investigação. As causas mais frequentes são síndrome do intestino irritável, né, doença inflamatória intestinal e algumas síndromes de má absorção.
+
+[36:20] Então o tratamento da diarreia aguda basicamente é prevenir a mortalidade por desidratação, que é a coisa mais comum principalmente em crianças e idosos. Antibiótico só em casos selecionados, né, e não ficar dando antibiótico para todo mundo, porque senão a gente vai causar seleção e às vezes a gente até piora o diagnóstico. Já a diarreia crônica, sempre quando tiver esse diagnóstico, investigar. Sempre investigar: a gente começa com exames laboratoriais, podemos usar alguns de imagem, para a gente poder fazer o diagnóstico, né? Então esse é um dado importante, isso normalmente cai em provas de saúde pública, né, mais do que na parte de gastro mesmo.
+
+================================================================================
+[36:56 - 41:17] Doença Inflamatória Intestinal (DII): Epidemiologia, Fisiopatologia e Diferenciação (Crohn vs. Retocolite Ulcerativa)
+--------------------------------------------------------------------------------
+
+[36:56] Professor: E, por fim, a última doença, que são as doenças inflamatórias intestinais, que as duas principais são a retocolite ulcerativa e a doença de Crohn, tá? São doenças que têm aumentado significativamente nas últimas décadas. A gente imagina que é por conta da alimentação e por causa do estilo de vida que a gente tem tido nos últimos anos, né? Então isso pode estar influenciando.
+
+[37:28] Os fatores de risco são genéticos, né? Então essa predisposição genética não está bem estabelecida porque a gente tem mais de 200 genes envolvidos nisso. Então a gente não conseguiu definir se tem um gene responsável por tudo ou se é uma combinação. Hoje, talvez a parte mais estudada, que eu falei muito aqui para vocês, que hoje é o auge aí dos estudos, é a microbiota, né? Então hoje tem se entendido que a microbiota tem um fator importante, por isso que a qualidade de vida, o estilo de vida, a alimentação, os nossos hábitos têm aumentado muito essa doença, porque a microbiota tem mudado bastante, e isso pode ser um gatilho para que ocorra a inflamação.
+
+[38:15] Então imagina que o nosso intestino tem bilhões de bactérias, e elas vivem em harmonia com o nosso sistema imunológico. Então o nosso sistema imunológico está convivendo com aquele monte de bactéria ali lá de boa, porque elas ajudam, são simbióticas, né, um ajuda o outro. Mas a partir do momento em que ocorre uma quebra dessa barreira mucosa e tudo isso expõe esses antígenos a todo o sistema imunológico, começa a ocorrer uma guerra sem fim, que é essa chamada de imunorregulação, né, ou uma resposta imune desregulada, que esses antígenos começam a inflamar constantemente, sem freio, né? Então isso pode acontecer. E isso é o meio ambiente que expõe a tudo isso: uma dieta ocidental, urbanização, exposição a antibióticos — tudo isso amplia os riscos dessa doença.
+
+[39:11] Aqui tem um esquema que a gente acabou copiando de vários artigos, né? Então a gente vê ali como que é o intestino saudável, daí a fase pré-clínica, que vai causando pequenas alterações, quebra essa barreira e até que a doença inflamatória se define ali por conta dessa exposição a esses antígenos aos nossos anticorpos, né? Então quando quebra essa barreira, tudo começa ali, e aí têm os fatores de risco, né, que são alimentação, antibiótico, tabagismo, estresse, produtos industrializados com corante, emulsificante, né, tudo isso vai desencadear tudo isso, né? Então esse é o caminho desse processo de toda a fisiopatologia, que é bem complexa e bem interessante no fundo, né?
+
+[40:02] Então as duas doenças que são envolvidas nisso — muita gente chama elas de "doenças primas", né — mas elas têm mecanismos diferentes. Então a doença de Crohn é uma doença que pode acometer qualquer lugar da boca até o ânus. E ela normalmente acontece de forma salteada, ela não é constante, não acomete constantemente. Elas são lesões salteadas, né? E a característica dela é que ela é uma lesão mais profunda, então ela é chamada de transmural: ela passa todas as camadas da parede do intestino.
+
+[40:42] Já a retocolite ulcerativa, como o próprio nome diz, ela começa no reto e ela vai ascendente de forma contínua. Então ela vai reto, depois sigmoide, cólon descendente, transverso, e pode chegar até o cólon ascendente, que daí a gente chama isso de pancolite. Então a diferenciação é pela localização e pela forma como ela evolui. Em 10% dos casos a gente não consegue diferenciar entre uma ou outra, né, que a gente chama de colite indeterminada.
+
+================================================================================
+[41:17 - 47:05] Manifestações Clínicas, Investigação Diagnóstica e Quadro Comparativo (Retocolite vs. Doença de Crohn)
+--------------------------------------------------------------------------------
+
+[41:17] Professor: Então as manifestações clínicas principais são diarreia crônica, né, dor abdominal — normalmente essa dor é tipo cólica, intermitente, frequentemente após as refeições — e, por conta dessa dor, por conta da má absorção, é comum a perda de peso. Esse paciente começa a perder peso porque ele tem medo de comer por causa da dor, ou até pela própria absorção, né, causando diarreia.
+
+[41:44] Quando o paciente tem febre e desconfortos sistêmicos, a gente tem que pensar em complicações, né, como por exemplo abscessos intra-abdominais, fístulas — que são comunicações que podem acontecer entre um intestino e outro, que são chamadas enteroentéricas; enterocutânea, do intestino para a pele; ou perianal, né, que acontece do reto para o ânus, né? E também pode ter para a bexiga, para outros órgãos também, que são menos comuns, né? Então, em criança, a gente tem que pensar naquela criança que tem diarreia e não tem um crescimento adequado — a gente tem que suspeitar nesses casos.
+
+[42:25] Outro sintoma muito comum é a hematoquezia, que é chamado sangue vivo nas fezes, e é um sintoma importantíssimo, né, porque diferencia a retocolite ou a doença de Crohn das causas de diarreia funcional. Então, normalmente a retocolite vai ter diarreia com muco ou pus associado, urgência, né — que é aquela vontade: deu vontade de evacuar, o paciente tem que correr para o banheiro — e o tenesmo, aquele alarme falso: o paciente tem vontade, mas ele não consegue fazer cocô, isso por conta da inflamação.
+
+[43:03] E isso pode ter surtos, né, melhorar e piorar com o passar do tempo. E também é associado a algumas manifestações fora do intestino, como artrite, uveíte e lesões de pele como eritema nodoso.
+
+[43:18] Então aqui, quando a gente tiver a suspeita, né, da diarreia com mais de 4 semanas, ou uma anemia inexplicada, ou falha no crescimento, ou sangue nas fezes sem uma causa, a gente tem que começar a investigar a suspeita clínica com história clínica mesmo, né, exame físico, anamnese adequada. Daí a gente vai lançar mão de alguns exames: podemos iniciar com a calprotectina, que a gente conversou um pouquinho antes — se ela vier maior que 200, é um sinal que está com inflamação —, o hemograma, o PCR, né, que podem indicar uma inflamação, que são menos específicos. E daí, por fim, se a gente estiver com essa suspeita forte, é mandatório a gente fazer a colonoscopia para a gente fazer a investigação.
+
+[44:05] Então o manejo é individual, como em todas as doenças, né? Então a gente vai basear na extensão da doença, atividade inflamatória e ver como que esse paciente vai se comportar, mas basicamente a primeira abordagem é nutricional: a gente precisa entrar com alimentos específicos para que não comprometa mais essa inflamação. E a meta principal de tudo isso é fazer a remissão.
+
+[44:27] O diagnóstico, como eu falei, é história clínica, exame físico, e o exame de imagem principal é a colonoscopia que a gente vai fazer, porque pela colonoscopia a gente consegue ver e coletar materiais, né, para a gente fazer o diagnóstico. Então, quando a gente tem a biópsia e o médico patologista consegue ver algumas alterações inflamatórias, a gente consegue fazer o diagnóstico. E pela colonoscopia também a gente consegue ver a extensão da doença e a gravidade, né, desses pacientes.
+
+[44:54] Eu vou falar um pouquinho do tratamento, mas vocês não precisam saber, mas é só uma abordagem para vocês entenderem. Quando a gente tem muitas opções de medicamentos, normalmente nenhuma funciona, né? Mas aqui, na verdade, é uma escadinha da evolução dos medicamentos. No passado a gente só tinha os corticoides, então muita gente foi tratada somente com corticoide, que a eficácia é boa para a remissão aguda, mas depois ela tem muitos riscos e efeitos colaterais, então a gente não usa. Depois vieram os imunomoduladores e os aminossalicilatos, que são tratamentos para doença bem leve, cuja função é em casos de doenças bem [45:00] indolentes, bem pouco agressivas, elas funcionam até uma parte, mas na maior parte do mundo elas já nem estão sendo usadas. E, por fim, os biológicos, que são as medicações mais atuais, que vão combater aquela cascata de inflamação que a gente comentou que acontece. Então, aqui eu já falei.
+
+[45:24] Então, a diferenciação da retocolite ulcerativa e da doença de Crohn — isso aqui é uma coisa que precisa saber, porque nas provas cai bastante. Então, a retocolite:
+- Acomete a mucosa;
+- Sempre o reto está incluído;
+- Ela pode causar megacólon tóxico, que é uma inflamação aguda com ruptura do intestino;
+- Sangramento nas fezes;
+- E existe um marcador que a gente não usa na prática, mas eles cobram em provas, que é esse chamado p-ANCA, tá? Quando ele é positivo, ele é sugestivo de retocolite.
+
+[46:00] Já a doença de Crohn:
+- Ela é transmural, salteada, que vai acometer lugares salteados e aleatórios;
+- Pode acometer todo o trato gastrointestinal, desde a boca até o ânus;
+- É comum ter fístulas e estenoses;
+- A doença perianal, que são as fístulas e os abscessos, também são frequentes;
+- E o marcador mais comum dessa doença é o chamado de ASCA positivo, tá? Eles costumam pedir em prova, a gente não solicita de rotina.
+
+[46:33] Aqui tem mais um quadrinho para vocês darem uma olhadinha, que são as diferenças de um para o outro, de retocolite e doença de Crohn. Então, o que é importante ali é a clínica: a retocolite, como acomete o reto e o ânus, ela vai ter uma diarreia sanguinolenta, tenesmo e urgência fecal. Já a doença de Crohn, o lugar mais frequente é na junção íleo... ileorretal, não, ileocecal — na junção ileocecocólica. Então, a dor é mais comum no lado direito. Então, essa é uma coisa que ajuda bastante a gente a fazer o diagnóstico diferencial.
+
+================================================================================
+[47:05 - 51:15] Imunopatologia, Tratamento Medicamentoso, Cirúrgico e Complicações das DII
+--------------------------------------------------------------------------------
+
+[47:05] Professor: Aqui só para ilustrar que hoje o que tem se estudado são o que vocês estudaram lá na imunologia no ano passado, que é uma coisa chata, mas as interleucinas, T-helper 1 (Th1), macrófago, tudo isso são os alvos da terapia hoje, né? Então, os medicamentos são baseados nessas terapias, então a gente tem que voltar a estudar, quem for para essa área, porque isso é importante.
+
+[47:34] Então, aqui mais uma vez o tratamento, só para vocês saberem o nome quando chegar lá no internato, vocês vão saber que a gente usa bastante:
+- Mesalazina e sulfassalazina;
+- Os corticoides;
+- Imunomoduladores, que são a azatioprina e o metotrexato;
+- Algumas medicações que são chamadas biológicas — vou passar bem rapidinho, que vocês não precisam saber já, mas são todas as opções que a gente tem para tratar essas doenças. São medicamentos caros, medicamentos que têm alto custo para o governo e para os planos de saúde, mas que funcionam muito bem hoje.
+
+[48:11] E quando nada disso funciona, quando a gente não tem solução com medicação, a gente tem que partir muitas vezes para a cirurgia. Então, a cirurgia não é curativa, então não adianta a gente ficar marcando cirurgia: "Ah, fez o diagnóstico, vamos marcar cirurgia", porque a doença volta — como é uma doença sistêmica, ela volta. Então, a gente vai fazer uma cirurgia quando o paciente tiver complicações ou intratabilidade clínica (o paciente não responde à medicação), aí a gente acaba fazendo isso.
+
+[48:41] E na retocolite, lembra que ela acomete o reto bem próximo do ânus, então é uma cirurgia que, se a gente deixar o reto, essa doença não vai ser resolvida. Então, muitas vezes, os pacientes têm que ficar com uma colostomia definitiva em jovens, né? Então, não é uma boa alternativa normalmente. E quando a gente faz essa proctocolectomia e faz uma anastomose lá embaixo, esse paciente normalmente tem uma qualidade de vida ruim, porque ele vai muitas vezes ao banheiro — porque ele não tem mais cólon nem reto —, e existe uma alta chance de causar impotência e infertilidade. Então, imagina em jovens você ir fazendo cirurgia em todo mundo, né? Então, a gente acaba fazendo em poucos casos, em casos em que o paciente teve algum câncer ou teve algum outro fator associado a isso.
+
+[49:44] Então, algumas complicações que acontecem:
+- Megacólon tóxico: é quando o intestino se dilata significativamente e começa a perfurar. Isso é um caso de cirurgia, um caso de emergência, e normalmente pode causar a morte desses pacientes.
+- Colangite esclerosante: é uma manifestação que aparece no fígado, normalmente em paciente com retocolite, e normalmente a colangite esclerosante não tem uma melhora significativa e o paciente tem que ir para um transplante. Por isso, a gente precisa controlar a doença o mais rápido possível para não deixar isso acontecer.
+- Espondilite anquilosante: outra doença que também pode aparecer fora do intestino, que é dor nas articulações, principalmente na articulação central, na coluna, que normalmente também não tem muita relação com a atividade da doença.
+
+[50:38] O câncer colorretal aumenta significativamente a partir do oitavo ano de doença. Então, imagina uma inflamação constante, e essa inflamação por muitos anos vai causar realmente aumento do risco de câncer. Daí, nesses casos, a gente tem que fazer o monitoramento, acompanhar esse paciente a cada 1 ou 2 anos. E as fístulas normalmente são cirúrgicas — o mais comum é a fístula perianal —, para fazer algumas drenagens e colocar alguns drenos (sedenhos) para esse paciente até o remédio fazer efeito. Então, só um resuminho para vocês.
+
+================================================================================
+[51:15 - 55:42] Endometriose Intestinal: Quadro Clínico, Diagnóstico e Manejo
+--------------------------------------------------------------------------------
+
+[51:15] Professor: E o último tema que eu vou falar aqui — normalmente esse tema não é muito comentado nas aulas, mas a gente tem visto um aumento significativo. E parece ser um tema ginecológico, mas cada dia mais tem aumentado e eu, se não servir para a prova, pelo menos que sirva para a vida de vocês, porque a endometriose é uma doença que tem aumentado significativamente e interrompido sonhos de mulheres de ter filhos, principalmente na modernidade, em que as mulheres deixam para ter filho mais tarde. Então, vocês que estão fazendo Medicina provavelmente não vão ter filho aos 20, como era no passado, né? Algumas poucas vão ter, mas a maior parte vai ter depois dos 25, 30 anos, e normalmente é nesse ponto que a gente encontra as endometrioses, tá?
+
+[52:07] Então, é uma doença silenciosa que afeta milhões de mulheres, que são vistas muitas vezes como "doidas", como "loucas", com fatores psicológicos, porque a menstruação normalmente dói. Mas quando essa dor passa do limite — e é difícil a gente saber qual que é o limite —, muitas vezes essa mulher pode estar vivendo com uma endometriose.
+
+[52:28] E a endometriose é uma doença que se instala em ovários... Para começar, a endometriose é uma doença que é o endométrio — que é aquela camada interna do útero que se prepara todo mês para a fertilização e, quando não ocorre a fertilização, ela desaba e sangra, a mulher menstrua; então esse endométrio todo mês se prepara para vir um filho e acaba indo embora. A endometriose é quando esse tecido está fora do útero. Então, ela pode se instalar:
+- No ovário;
+- Nas trompas — então isso afeta diretamente a fertilidade;
+- No peritônio;
+- E no intestino — por isso que eu vim falar para vocês da endometriose, porque hoje tem aumentado significativamente.
+
+[53:09] Então, muitas vezes as pessoas têm confusão com síndrome do intestino irritável, com dor pélvica, e na verdade ela está com endometriose, tá? A tríade clássica é:
+1. Dismenorreia, que é uma dor na menstruação intensa;
+2. Dispareunia, dor na relação;
+3. Dificuldade para engravidar.
+
+[53:27] São os três sintomas mais comuns. Aí pode ter também, se afetar o intestino ou afetar outros órgãos, dor para evacuar, dificuldade para evacuar, constipação. E esses focos são hormônio-dependentes, então toda vez no período menstrual vai doer mais e vai causar mais sintomas.
+
+[53:46] Então, os sintomas típicos do intestino são:
+- Dor cíclica ao evacuar — então, no período menstrual, solta o intestino ou prende o intestino;
+- Pode causar, então, constipação e diarreia;
+- E pode ter até sangramento retal durante a menstruação, se o foco estiver dentro do intestino mesmo, né?
+
+[54:04] Então, confunde com intestino irritável ou colite, e muitas vezes o diagnóstico chega a ter 11 anos de atraso, por isso que é importante a gente pensar sobre isso. O diagnóstico tem que ser especializado: normalmente precisa ter um ginecologista que entenda sobre endometriose — e, pasmem, muitos ginecologistas nem sabem o que é endometriose, então muita gente fica perdida por muito tempo. E, às vezes, se eles não souberem, basta pedir uma ressonância ou um ultrassom dedicado (com preparo intestinal) que consegue identificar. O manejo normalmente inicial vai ser com medicação, não vai ter cirurgia de imediato, a não ser que tenha um comprometimento da anatomia ou uma infertilidade persistente, nesses casos.
+
+[54:51] (Professor exibe vídeo/imagem de laparoscopia no slide) Aqui é uma cirurgia que a gente fez, ó, só para vocês verem como que é a endometriose. Olha como que ela destrói toda a anatomia ali da pelve da mulher: o intestino está acometido, os dois ovários estão grudados ali, o apêndice cecal também às vezes está acometido porque ele fica ali na pelve, né? Então, é só para vocês verem — não deu para ver no de vocês aí, mas é isso aí.
+
+[55:24] Então, a dor não é uma coisa normal. A gente precisa muitas vezes fazer esse diagnóstico precoce para que vocês, principalmente as mulheres, não percam a chance de ter filhos e não convivam com essa dor sem merecer, tá?
+
+[55:42] Então, acho que é isso, a aula é sobre isso. Se tiverem alguma dúvida, fiquem à vontade. Depois a representante tem o meu telefone, se quiserem mandar mensagem com dúvidas, podem mandar, não tem problema, tá? E nos últimos slides eu deixei um bônus lá, que a gente estava formulando as aulas lá para o quinto ano, e aí a gente pegou lá nas provas o que cai mais e daí ficou para vocês também, tá? Que é um resuminho. Então é isso, qualquer dúvida estou à disposição. (aplausos e encerramento da aula)
+================================================================================
