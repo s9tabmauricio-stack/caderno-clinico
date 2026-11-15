@@ -20,3 +20,4 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
+| Questões da P2 Gastro (banco da T29) nas aulas de Gastro | Claude | `claude/epic-mayer-5wb21q` | `gastro-a1` a `gastro-a4` (só questões no banco) | 15/11/2026 |
