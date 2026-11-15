@@ -165,6 +165,11 @@ export function lerCronograma(texto: string, ano = new Date().getFullYear()): Se
       // Cabeçalho da semana
       if (/observa[cç][aã]o/i.test(linha)) aviso = limparEmoji(linha).replace(/^observa[cç][aã]o:\s*/i, '')
       else if (!titulo && /cronograma/i.test(linha)) titulo = limparEmoji(linha)
+      // Recado da semana inteira antes do primeiro dia ("❌ Não haverá mais aulas práticas...")
+      else if (linha.startsWith('❌') || /\bn[aã]o\s+haver[aá]\b/i.test(linha)) {
+        const t = limparEmoji(linha)
+        aviso = aviso ? `${aviso} ${t}` : t
+      }
       continue
     }
 
@@ -220,8 +225,27 @@ export function lerCronograma(texto: string, ano = new Date().getFullYear()): Se
     }
 
     if (linha.startsWith('❌')) {
-      const corpo = semEmoji.replace(/^n[aã]o\s+haver[aá]\s+/i, '')
+      // "Não haverá mais aula teórica de X. A disciplina já foi encerrada.": o que foi cancelado
+      // vira o título e a explicação depois do primeiro ponto vira nota
+      const resto = semEmoji.replace(/^n[aã]o\s+haver[aá]\s+/i, '').replace(/^mais\s+/i, '')
+      // Fim de frase: ponto seguido de letra maiúscula, sem ser abreviação ("Dr. Fulano", "A. Guerra")
+      const ponto = resto.search(/(?<!\b(?:Dr|Dra|Prof|Profa|Sr|Sra|\p{L}))[.!]\s+\p{Lu}/u)
+      const corpo = (ponto >= 0 ? resto.slice(0, ponto) : resto).replace(/\s+e\s+nem\s+/i, ' e ')
+      const explicacao = ponto >= 0 ? resto.slice(ponto + 1).trim() : ''
+      // Dia sem nada ("Não haverá nenhuma atividade"): aviso do dia, com o nome do feriado se houver
+      if (/^nenhuma\s+atividade/i.test(corpo)) {
+        ultimo = {
+          data, inicio: null, fim: null, materia: null, tipo: 'aviso', titulo: rotuloDia ?? 'Sem atividades',
+          professor: null, local: null, grupos: null, cancelado: false,
+          notas: [`Não haverá nenhuma atividade.${explicacao ? ` ${explicacao}` : ''}`], ordem: ordem++,
+        }
+        rotuloDia = null
+        eventos.push(ultimo)
+        vazioDesdeUltimo = false
+        continue
+      }
       const d = destrinchar(corpo)
+      const notas = [...(rotuloDia ? [rotuloDia] : []), ...(explicacao ? [explicacao] : [])]
       ultimo = {
         data,
         inicio: null,
@@ -233,7 +257,7 @@ export function lerCronograma(texto: string, ano = new Date().getFullYear()): Se
         local: d.local,
         grupos: d.grupos,
         cancelado: true,
-        notas: rotuloDia ? [rotuloDia] : [],
+        notas,
         ordem: ordem++,
       }
       rotuloDia = null

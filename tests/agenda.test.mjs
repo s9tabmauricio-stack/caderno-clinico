@@ -73,3 +73,31 @@ test('agenda: "1º/outubro" é dia, e horário sem texto vira aula com os grupos
   assert.deepEqual(aula.grupos, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14])
   assert.equal(aula.notas.length, 2)
 })
+
+test('agenda: cancelamento com explicação, recado da semana e dia sem atividades', () => {
+  const s = lerCronograma(`*CRONOGRAMA SEMANAL*
+_16/novembro — 20/novembro_
+
+❌ *Não haverá mais aulas práticas regulares nesta semana!* As práticas já foram encerradas para todos os grupos.
+
+*QUARTA-FEIRA | 18/novembro*
+
+❌🫁 Não haverá mais aula teórica de pneumologia e nem discussão de casos clínicos. A disciplina já foi encerrada.
+
+❌🫁 Não haverá aula prática de pneumologia com Dr. Vinicius A. Guerra.
+
+*SEXTA-FEIRA | 20/novembro — Dia Nacional de Zumbi e da Consciência Negra*
+
+❌ Não haverá nenhuma atividade.
+`, 2026)
+  assert.match(s.aviso, /^Não haverá mais aulas práticas regulares/)
+  const [pneumo, pratica, sexta] = s.eventos
+  assert.equal(pneumo.titulo, 'Teórica de pneumologia e discussão de casos clínicos')
+  assert.deepEqual(pneumo.notas, ['A disciplina já foi encerrada.'])
+  assert.equal(pneumo.cancelado, true)
+  assert.equal(pratica.professor, 'Dr. Vinicius A. Guerra')
+  assert.deepEqual(pratica.notas, [])
+  assert.equal(sexta.tipo, 'aviso')
+  assert.equal(sexta.titulo, 'Dia Nacional de Zumbi e da Consciência Negra')
+  assert.deepEqual(sexta.notas, ['Não haverá nenhuma atividade.'])
+})
