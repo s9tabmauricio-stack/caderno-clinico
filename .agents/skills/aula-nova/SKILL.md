@@ -63,7 +63,7 @@ Primeiro guarde a fonte, sem agente (mecânico):
 python3 -I scripts/fonte-aula.py guardar <aula-id> --transcricao rascunhos/aulas/<aula-id>/transcricao.txt [--slides <arquivo dos slides>]
 ```
 
-Ele cria `apostilas-fonte/<aula-id>/fonte.md` (vai para o Git no commit do passo 5). Se a aula já tem fonte, use `--acrescentar`. O arquivo original dos slides não vai para o Git: lembre o Mauricio no relatório de guardar na pasta da aula no Drive (ou guarde, se tiver acesso).
+Ele cria `apostilas-fonte/<aula-id>/fonte.md` (vai para o Git no commit do passo 5). Se a aula já tem fonte, use `--acrescentar`. O arquivo original dos slides não vai para o Git.
 
 Depois chame o agente `apostila` no modelo Opus com esforço extra-alto (regra do Mauricio: na chamada, `model: opus` e `effort: xhigh`, que já são o padrão do agente) com: a fonte (`apostilas-fonte/<aula-id>/fonte.md`) e o caminho dos slides originais (se o Mauricio mandou, para as imagens), id da aula, disciplina, número, data, professor e a pasta de trabalho. Ele devolve título, resumo, número de páginas, professor e o que vale conferir.
 
@@ -97,7 +97,6 @@ Chame o agente `revisor` para a `<aula-id>`. Ele confere contra a fonte da aula,
 - Como a aula foi identificada (agenda/transcrição) e qualquer divergência.
 - O que vale conferir: dúvidas da apostila, itens que o revisor tirou e por quê, professor fora da tabela.
 - Quanto tempo levou a transcrição e o que não foi testado.
-- Se vieram slides: que o arquivo original vai para a pasta da aula no Drive (o texto já está na fonte).
 - Envie o PDF da apostila com SendUserFile.
 
 Se algo falhar no meio, a aula continua escondida (`publicada = false`): diga onde parou e o que falta. Nada fica pela metade na frente da turma.

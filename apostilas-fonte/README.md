@@ -13,7 +13,7 @@ python3 -I scripts/fonte-aula.py guardar <aula-id> --transcricao <arquivo> --sli
 ```
 
 - Transcrição: `.txt`, `.md`, `.srt`, `.vtt`, `.docx` ou `.pdf`; aula em partes = `--transcricao` repetido. Texto colado na conversa: salve num `.txt` antes.
-- Slides: `.pdf` ou `.pptx`. Entra o texto de cada página; a página que é só imagem fica marcada ("só imagem"), para quem conferir olhar o original. O arquivo original dos slides não vai para o Git (pesa): fica na pasta da aula no Drive (MEDGENIUS → `2 - Aulas`); sem acesso ao Drive, peça ao Mauricio para guardar lá.
+- Slides: `.pdf` ou `.pptx`. Entra o texto de cada página; a página que é só imagem fica marcada ("só imagem"), para quem conferir olhar o original. O arquivo original dos slides não vai para o Git (pesa).
 - O que chega depois (os slides de uma aula que já tem a transcrição) entra com `--acrescentar`; material igual ao que já está é pulado. Não edite o `fonte.md` à mão: os erros da transcrição automática ficam como vieram, e quem corrige é a apostila.
 - Vai para o Git no mesmo commit do trabalho da aula (na aula nova, junto com a apostila).
 

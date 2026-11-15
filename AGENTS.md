@@ -18,7 +18,7 @@ Este manual tem só as regras de sempre. Os detalhes ficam onde são usados; lei
 | Assunto | Onde |
 |---|---|
 | Como cada tela funciona (Início, Revisão, Banco, Aula, Admin, tablet deitado, Agenda) | [`docs/telas.md`](docs/telas.md) |
-| Tabelas, visões e gatilhos do banco; subpastas do Drive | [`docs/banco.md`](docs/banco.md) |
+| Tabelas, visões e gatilhos do banco | [`docs/banco.md`](docs/banco.md) |
 | Visual: cores, letras, ícones, versões antigas | [`docs/visual.md`](docs/visual.md) |
 | Fonte da aula (transcrição e slides num arquivo só, base de tudo): guardar e ler um pedaço | `python3 -I scripts/fonte-aula.py guardar <aula-id> --transcricao <arq> --slides <arq>` e `… trecho <aula-id> --minutos 10-35`; detalhes em [`apostilas-fonte/README.md`](apostilas-fonte/README.md) |
 | Como fazer uma apostila (mapa, slides, as cinco mudanças, imagens do GPT; o que o professor fala manda sempre) | [`docs/apostila-molde.md`](docs/apostila-molde.md) |
@@ -51,7 +51,6 @@ Este manual tem só as regras de sempre. Os detalhes ficam onde são usados; lei
 | Publicação | A Vercel publica sozinha a cada mudança no `main` (1–2 min); ramos de assistente não geram prévia (limite de 10 GB do "Deployment Storage"). Como publicar: [`docs/publicar.md`](docs/publicar.md) |
 | Banco | Supabase, projeto `xtlpmtylifbalzxnfkib` (São Paulo), plano gratuito |
 | Administrador | CPF 086.994.266-23 (variável `ADMIN_CPFS` na Vercel; padrão no código) |
-| Arquivos do projeto | Pasta **MEDGENIUS** no Google Drive do Mauricio (s9tabmauricio@gmail.com), https://drive.google.com/drive/folders/1i6ftIjwzgyfExlT8PYXXOhe5bFI8vMqR. Desde 31/10/2026, tudo o que for guardado fora do Git (PDFs, rascunhos, apostilas, materiais) vai para lá. Subpastas e ids em `docs/banco.md` |
 | Chave secreta | `SUPABASE_SECRET_KEY` na Vercel (servidor: alunos, agenda, conteúdo) e no ambiente de quem grava conteúdo com `scripts/gravar-rascunho.mjs` (ambiente do Claude na nuvem; `.env.local` no PC, fora do Git) |
 
 ## Tecnologia
@@ -95,7 +94,7 @@ Pelo conector, **incluir dados e alterações curtas funcionam**; **apagar e ree
 
 ## Conteúdo (apostilas, questões, flashcards)
 
-- **Fonte da aula** (regra do Mauricio, 09/11/2026): cada aula tem um arquivo fonte, `apostilas-fonte/<aula-id>/fonte.md`, com a transcrição e o texto dos slides como vieram. Quando ele mandar a transcrição ou os slides de uma aula, a primeira coisa é guardar: `python3 -I scripts/fonte-aula.py guardar <aula-id> --transcricao <arq> --slides <arq>` (texto colado na conversa: salve num arquivo antes; o arquivo original dos slides vai para o Drive) e pôr no Git junto com o trabalho. Material que chega depois entra com `--acrescentar`.
+- **Fonte da aula** (regra do Mauricio, 09/11/2026): cada aula tem um arquivo fonte, `apostilas-fonte/<aula-id>/fonte.md`, com a transcrição e o texto dos slides como vieram. Quando ele mandar a transcrição ou os slides de uma aula, a primeira coisa é guardar: `python3 -I scripts/fonte-aula.py guardar <aula-id> --transcricao <arq> --slides <arq>` (texto colado na conversa: salve num arquivo antes) e pôr no Git junto com o trabalho. Material que chega depois entra com `--acrescentar`.
   - A apostila, as questões e os flashcards são feitos **a partir da fonte, e só dela**, e as conferências (da apostila, das questões e dos flashcards) também são feitas **contra a fonte, e só contra ela**. **A apostila não é guia de nada** (regra do Mauricio, 10/11/2026): ela é produto da fonte e pode ter erros; questões, flashcards e conferências não a leem, nem para achar página, termo ou selo PROVA. A única receita que abre a apostila é a `conferir-apostila` (para corrigi-la pela fonte). Dentro da fonte, a fala manda sobre o slide.
   - Termo que a transcrição automática errou: use o texto dos slides na fonte ou o termo médico correto; nunca a apostila.
   - Aula sem fonte (as antigas): não faça questões, flashcards nem conferência; peça a transcrição ao Mauricio e guarde-a primeiro.
@@ -126,7 +125,7 @@ Pelo conector, **incluir dados e alterações curtas funcionam**; **apagar e ree
 - O Codex não tem o conector: onde as receitas mandam usar o `execute_sql`, ele roda o mesmo SQL com `node scripts/sql.mjs` (token `SUPABASE_ACCESS_TOKEN` no ambiente do Codex, configurado pelo Mauricio; ver [`docs/codex.md`](docs/codex.md)). Valem as mesmas regras do banco.
 - O conector (Claude e Antigravity; o do Antigravity fica em `~/.gemini/config/mcp_config.json`, preso ao projeto `xtlpmtylifbalzxnfkib`) segue a seção "Limite do conector do Supabase". Mudança na estrutura do banco não precisa mais do "pode" do Mauricio (regra dele, 05/11/2026): leia `supabase/estrutura-atual.sql` antes, atualize a cópia depois e conte a ele em uma frase o que mudou.
 - **Publicar:** ramo `claude/…`, `codex/…` ou `antigravity/…` saído do `main` atualizado, `npm test` e `npx next build`, PR para o `main` (o GitHub junta sozinho se passar; rascunho não é juntado). Nunca empurre direto para o `main`, salvo a fila e as exceções. Passo a passo de cada assistente e exceções: [`docs/publicar.md`](docs/publicar.md).
-- **Tudo fica no projeto** (regra do Mauricio, 04/11/2026): o que o app precisa mora neste repositório ou na pasta MEDGENIUS do Drive, nunca só na conta de um assistente (skills da conta do Claude, quadros no claude.ai, memória, instruções de projeto). Se a conta do Claude sumir, Antigravity e Codex seguem como se nada tivesse acontecido. Fez algo fora? Copie para cá no mesmo trabalho (quadros de desenho vão em [`docs/quadros/`](docs/quadros/README.md)).
+- **Tudo fica no projeto** (regra do Mauricio, 04/11/2026): o que o app precisa mora neste repositório, nunca só na conta de um assistente (skills da conta do Claude, quadros no claude.ai, memória, instruções de projeto). Se a conta do Claude sumir, Antigravity e Codex seguem como se nada tivesse acontecido. Fez algo fora? Copie para cá no mesmo trabalho (quadros de desenho vão em [`docs/quadros/`](docs/quadros/README.md)).
 
 ## Como trabalhar com o Mauricio
 
