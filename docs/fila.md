@@ -20,3 +20,4 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
+| Apostila da Gastro 4 (pancreatite aguda e crônica) | Claude | `claude/sweet-gauss-9c6n25` | aula `gastro-a4`, matéria gastro | 15/11/2026 |
