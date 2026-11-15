@@ -20,3 +20,4 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
+| Apostila da Gastro 7 (intestino irritável, diverticulite, diarreias, doença inflamatória, endometriose) | Claude | `claude/bold-edison-pc6o44` | `gastro-a7` (`apostilas-fonte/gastro-a7/`, `public/apostilas/gastro-a7/`) | 15/11/2026 |
