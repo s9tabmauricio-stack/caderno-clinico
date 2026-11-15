@@ -20,3 +20,4 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
+| Questões de prova de pancreatite (gastro-a4) | Claude | claude/affectionate-bell-izlftw | aula gastro-a4 (questões) | 15/11/2026 |
