@@ -3,6 +3,7 @@ import { TabBar } from './TabBar'
 import { NavegacaoAdmin } from './NavegacaoAdmin'
 import { Icone } from './Icones'
 import { TemaRapido } from './TemaEscolha'
+import { RodapeLegal } from './RodapeLegal'
 import { carregarProgresso, pendentes as contarPendentes, sessao } from '@/lib/dados'
 import { ehAdmin } from '@/lib/admin'
 
@@ -44,6 +45,7 @@ export async function Pagina({ pendentes, larga, children }: { pendentes?: numbe
         </nav>
         {ehAdmin(email) && <NavegacaoAdmin />}
         <div className="view">{children}</div>
+        <RodapeLegal />
       </main>
       <TabBar pendentes={revisoes} />
     </>

@@ -20,4 +20,3 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
-| Aviso de direitos autorais e Termos de Uso | Codex | codex/direitos-autorais | components/RodapeLegal.tsx, components/Pagina.tsx, app/login/page.tsx, app/termos/page.tsx, app/globals.css, lib/auth.ts | 15/11/2026 |

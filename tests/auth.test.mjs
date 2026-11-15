@@ -2,9 +2,9 @@ import test from 'node:test'
 import assert from 'node:assert/strict'
 import { destinoAposLogin, rotaPublica } from '../lib/auth.ts'
 
-test('somente rotas de autenticação são públicas', () => {
-  for (const path of ['/login', '/auth', '/auth/callback', '/auth/confirm', '/auth/erro', '/auth/sair']) assert.equal(rotaPublica(path), true)
-  for (const path of ['/', '/admin', '/agenda', '/login-extra', '/authentic', '/aula/pneumo-a2']) assert.equal(rotaPublica(path), false)
+test('autenticação, termos e o robô com chave própria são públicos; telas de estudo ficam protegidas', () => {
+  for (const path of ['/login', '/termos', '/api/contas-gmail', '/auth', '/auth/callback', '/auth/confirm', '/auth/erro', '/auth/sair']) assert.equal(rotaPublica(path), true)
+  for (const path of ['/', '/admin', '/agenda', '/login-extra', '/authentic', '/aula/pneumo-a2', '/termos-extra', '/termos/admin']) assert.equal(rotaPublica(path), false)
 })
 
 test('login preserva a página solicitada e seus filtros', () => {

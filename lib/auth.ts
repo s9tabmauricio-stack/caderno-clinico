@@ -1,6 +1,6 @@
-/** Só as telas de autenticação ficam abertas sem sessão, mais a rota do robô do Gmail (que tem chave própria). */
+/** Autenticação, Termos de Uso e a rota do robô do Gmail (que tem chave própria) ficam abertas sem sessão. */
 export function rotaPublica(pathname: string): boolean {
-  return pathname === '/login' || pathname === '/auth' || pathname.startsWith('/auth/') || pathname === '/api/contas-gmail'
+  return pathname === '/login' || pathname === '/termos' || pathname === '/auth' || pathname.startsWith('/auth/') || pathname === '/api/contas-gmail'
 }
 
 /** Valida o retorno do login, inclusive barras e controles codificados. */

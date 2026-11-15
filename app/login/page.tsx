@@ -3,6 +3,7 @@ import { SAIU_OUTRO_APARELHO } from '@/lib/aparelhos'
 import { destinoAposLogin } from '@/lib/auth'
 import { LoginForm } from '@/components/LoginForm'
 import { TemaEscolha } from '@/components/TemaEscolha'
+import { RodapeLegal } from '@/components/RodapeLegal'
 
 export const metadata: Metadata = { title: { absolute: 'Med Genius · Entrar' } }
 
@@ -138,6 +139,7 @@ export default async function LoginPage({ searchParams }: PageProps<'/login'>) {
             <LoginForm destino={destino} />
           </section>
           <TemaEscolha />
+          <RodapeLegal />
         </div>
       </div>
     </main>
