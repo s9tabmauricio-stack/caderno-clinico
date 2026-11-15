@@ -20,3 +20,4 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
+| Grafia MedGeniUS no aviso legal | Codex | codex/grafia-medgenius | components/RodapeLegal.tsx, app/termos/page.tsx | 15/11/2026 |
