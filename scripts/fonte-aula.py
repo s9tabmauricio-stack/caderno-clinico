@@ -18,8 +18,7 @@ Ler um pedaço (para a conferência em blocos não ler a aula inteira):
   --minutos: só as falas desse intervalo (minutos, ou 1:05:00-1:20:00); --parte:
   só aquela parte da transcrição; --slides: só aquelas páginas. Sem nada, tudo.
 
-Os slides originais (PDF/PPTX) não entram no Git (pesam): vão para a pasta da
-aula no Drive (MEDGENIUS → 2 - Aulas). Página de slide sem texto (só imagem)
+Os slides originais (PDF/PPTX) não entram no Git (pesam): só o texto. Página de slide sem texto (só imagem)
 fica marcada no arquivo, para quem conferir saber que precisa olhar o original.
 """
 import argparse
@@ -178,7 +177,7 @@ def escrever(aula, partes, destino):
             cab.append(f"- Transcrição {p['n']}: `{m.get('arquivo', '?')}` ({m.get('palavras', '?')} palavras{extra}).")
         else:
             so_img = m.get('so_imagem', '')
-            aviso = f'; só imagem, sem texto: {so_img} (ver o original no Drive)' if so_img else ''
+            aviso = f'; só imagem, sem texto: {so_img} (ver o original)' if so_img else ''
             cab.append(f"- Slides {p['n']}: `{m.get('arquivo', '?')}` ({m.get('paginas', '?')} páginas{aviso}).")
     corpo = []
     for p in partes:
@@ -249,8 +248,6 @@ def guardar(a):
             print(f"  transcrição {p['n']}: {m['arquivo']}, {m['palavras']} palavras" + (f", até {m['duracao']}" if m.get('duracao') else ', sem marcação de tempo'))
         else:
             print(f"  slides {p['n']}: {m['arquivo']}, {m['paginas']} páginas" + (f"; só imagem: {m['so_imagem']}" if m.get('so_imagem') else ''))
-    if a.slides:
-        print('O arquivo original dos slides não vai para o Git: guarde na pasta da aula no Drive (MEDGENIUS → 2 - Aulas).')
 
 
 def faixa_paginas(texto):
