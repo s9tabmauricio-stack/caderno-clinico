@@ -1,0 +1,821 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<title>Gastroenterologia · Aula 4 · Pancreatite aguda e crônica</title>
+<meta name="rodape" content="Mauricio Faria · Gastroenterologia · Aula 4 — Pancreatites">
+<link rel="stylesheet" href="apostila.css">
+<style>
+/* ===== componentes do molde novo (em teste na pneumo-a5) ===== */
+.simples { background: #FFFFFF; border: 1px solid #C3D8F8; border-left: 4pt solid #0B5BD3; border-radius: 12pt; padding: 9pt 14pt 10pt; margin: 0 0 10pt; break-inside: avoid; }
+.simples p { font-size: 10.2pt; line-height: 1.5; color: #1F2933; margin: 0; }
+.aqui { display: flex; margin-top: 7pt; }
+.aqui span { flex: 1; border-top: 3pt solid #DCDCE2; padding-top: 2.5pt; margin-right: 2.5pt; font-family: "Inter Medium"; font-size: 6pt; line-height: 1.25; color: #8E8E93; }
+.aqui span:last-child { margin-right: 0; }
+.aqui span.feito { border-top-color: #A9C4EE; color: #6C6C70; }
+.aqui span.on { border-top-color: #0B5BD3; color: #0B5BD3; font-family: "Inter SemiBold"; }
+.aqui span.ramo { border-top-style: dashed; }
+.figure .olhar { margin-top: 8pt; }
+.figure .olhar .kick { margin-bottom: 3pt; }
+.figure .olhar ul { margin: 0; }
+.figure .olhar li { padding-left: 0; font-size: 8.7pt; line-height: 1.45; margin-bottom: 2pt; }
+.figure .olhar li::before { display: none; }
+.figure .olhar li b { color: #0B5BD3; }
+.figure .leg { font-size: 7.8pt; color: #8E8E93; margin: 5pt 0 0; }
+.reg { font-size: 8.3pt; line-height: 1.45; color: #6C6C70; background: #F7F7FA; border: 1px solid #E3E3E8; border-radius: 9pt; padding: 5pt 10pt; margin: 6pt 0 9pt; break-inside: avoid; }
+.reg b { font-family: "Inter SemiBold"; color: #4F5B70; }
+.livros { font-size: 8.3pt; line-height: 1.45; color: #6E3AA7; background: #F4EBFB; border: 1px solid #DEC7F1; border-radius: 9pt; padding: 5pt 10pt; margin: 6pt 0 9pt; break-inside: avoid; }
+.livros b { color: #6E3AA7; }
+.sw.simples-sw { background: #FFFFFF; border-color: #C3D8F8; border-left: 3pt solid #0B5BD3; }
+.sw.aqui-sw { background: linear-gradient(90deg, #A9C4EE 0, #A9C4EE 45%, #0B5BD3 45%, #0B5BD3 70%, #DCDCE2 70%); border: 0; height: 4pt; border-radius: 2pt; }
+.sw.exame-sw { background: #1F2933; border-color: #1F2933; }
+.cmp .destaque { font-family: "Inter SemiBold"; color: #0B5BD3; }
+.cmp.c4 .k { width: 62pt; }
+.cmp.c4 .c { font-size: 8.3pt; padding-right: 8pt; }
+.vesp { break-before: page; }
+.vesp .item { display: flex; align-items: baseline; background: #FFFFFF; border: 1px solid #E3E3E8; border-radius: 12pt; padding: 7pt 12pt; margin: 0 0 6pt; break-inside: avoid; }
+.vesp .item .prova { flex: none; margin: 0 9pt 0 0; }
+.vesp .item p { margin: 0; font-size: 9.2pt; }
+.tiles.t4 { margin: 6pt 0 8pt; }
+.figure.lado { display: flex; align-items: center; }
+.figure.lado > img { flex: none; }
+.figure.lado .olhar { flex: 1; margin: 0 0 0 12pt; }
+.cover .toc a { padding: 3.6pt 0; }
+/* ===== ajustes desta apostila ===== */
+.sw.reg-sw { background: #F7F7FA; border-color: #E3E3E8; }
+.kick .prova { margin-left: 6pt; }
+.vesp .item { padding: 4.5pt 11pt; margin: 0 0 4pt; border-radius: 10pt; }
+.vesp .item p { font-size: 8.7pt; line-height: 1.4; }
+.vesp h3 { margin-top: 10pt; }
+</style>
+</head><body>
+
+<div class="cover">
+  <div class="kicker">Gastroenterologia · Aula 4 · Pâncreas e pancreatites</div>
+  <h1>Pancreatite aguda e crônica</h1>
+  <p class="sub">De um caso de icterícia por pedra no colédoco ao pâncreas que se digere: como reconhecer, medir a gravidade e tratar as duas pancreatites.</p>
+  <div class="author"><span class="av">I</span><div><b>Dr. Ivan Roberto Bonotto Orso</b><span>Cirurgião do aparelho digestivo e endoscopista · 20 de outubro de 2026</span></div></div>
+  <div class="keynums"><div class="kick">Três números para levar</div>
+    <div class="kn-grid">
+      <div class="kn"><div class="n">2 de 3</div><div class="l">critérios fecham a pancreatite aguda: dor típica, enzima acima de 3 vezes, imagem</div></div>
+      <div class="kn"><div class="n">30 a 40 mL/kg</div><div class="l">de soro nas primeiras 24 horas, começando o quanto antes</div></div>
+      <div class="kn"><div class="n">72 horas</div><div class="l">é o momento ideal da tomografia para ver necrose; antes de 48 horas, só na dúvida</div></div>
+    </div></div>
+  <div class="toc"><div class="kick">Nesta apostila</div>
+    <a href="#s01"><span class="tn">01</span><span class="tt">O caso: icterícia que veio do colédoco</span><span class="pg">{{s01}}</span></a>
+    <a href="#s02"><span class="tn">02</span><span class="tt">O pâncreas: anatomia, células e enzimas</span><span class="pg">{{s02}}</span></a>
+    <a href="#s03"><span class="tn">03</span><span class="tt">Pancreatite aguda: definição, mecanismo e causas</span><span class="pg">{{s03}}</span></a>
+    <a href="#s04"><span class="tn">04</span><span class="tt">Quadro clínico e diagnóstico</span><span class="pg">{{s04}}</span></a>
+    <a href="#s05"><span class="tn">05</span><span class="tt">Tomografia, gravidade e prognóstico</span><span class="pg">{{s05}}</span></a>
+    <a href="#s06"><span class="tn">06</span><span class="tt">Tratamento e complicações locais</span><span class="pg">{{s06}}</span></a>
+    <a href="#s07"><span class="tn">07</span><span class="tt">Pancreatite crônica: quadro e diagnóstico</span><span class="pg">{{s07}}</span></a>
+    <a href="#s08"><span class="tn">08</span><span class="tt">Causas da crônica e quatro casos</span><span class="pg">{{s08}}</span></a>
+    <a href="#s09"><span class="tn">09</span><span class="tt">Tratamento da pancreatite crônica</span><span class="pg">{{s09}}</span></a>
+    <a href="#s10"><span class="tn">10</span><span class="tt">O essencial da aula</span><span class="pg">{{s10}}</span></a>
+    <p class="note">Organizada a partir da aula e dos slides, com os termos médicos conferidos e a linguagem ajustada para estudo. A legenda de cores está na página 2.</p>
+  </div>
+</div>
+
+<div class="legend"><div class="kick">Como ler esta apostila</div><div class="lg-grid">
+  <div class="lg"><span class="sw blue"></span><div><b>Azul</b> conteúdo da aula e raciocínio</div></div>
+  <div class="lg"><span class="sw green"></span><div><b>Verde</b> dose ou valor de referência</div></div>
+  <div class="lg"><span class="sw red"></span><div><b>Vermelho</b> alerta, erro comum e a pegadinha do professor</div></div>
+  <div class="lg"><span class="sw orange"></span><div><b>Laranja</b> fala ou parêntese do professor</div></div>
+  <div class="lg"><span class="sw purple"></span><div><b>Roxo</b> complemento que não foi dito em aula</div></div>
+  <div class="lg"><span class="prova">PROVA</span><div><b>Marca de prova</b> o ponto que o professor destacou</div></div>
+  <div class="lg"><span class="sw simples-sw"></span><div><b>Em palavras simples</b> o capítulo em duas ou três linhas</div></div>
+  <div class="lg"><span class="sw aqui-sw"></span><div><b>Você está aqui</b> a etapa do capítulo na trilha da aula</div></div>
+  <div class="lg"><span class="sw reg-sw"></span><div><b>Registro</b> o que o slide traz diferente da fala</div></div>
+  <div class="lg"><span class="sw exame-sw"></span><div><b>O que olhar</b> o roteiro de cada imagem de exame</div></div>
+</div></div>
+
+<div class="prof"><div class="kick">Sobre o professor · Dr. Ivan Roberto Bonotto Orso</div>
+<div class="rows">
+  <div class="row"><div class="k">Especialidades</div><div class="v">Cirurgia do aparelho digestivo, cirurgia geral, endoscopia digestiva e gastroenterologia.</div></div>
+  <div class="row"><div class="k">Atuação</div><div class="v">Doenças do pâncreas, das vias biliares, do fígado e da vesícula biliar; doenças clínicas e cirúrgicas do esôfago, estômago, duodeno, intestino delgado e parede abdominal; tratamento endoscópico da obesidade; endoscopia oncológica e tratamento endoscópico do câncer precoce do aparelho digestivo; endoscopia biliopancreática (colangiografia endoscópica retrógrada e ecoendoscopia).</div></div>
+  <div class="row"><div class="k">Formação</div><div class="v">Doutorado pela Faculdade de Medicina da Universidade de São Paulo. Residência em cirurgia geral, em cirurgia do aparelho digestivo e em endoscopia digestiva diagnóstica e terapêutica no Hospital das Clínicas da Faculdade de Medicina da Universidade de São Paulo.</div></div>
+  <div class="row"><div class="k">Exterior</div><div class="v">Treinamento em ecoendoscopia na escola internacional da World Endoscopy Organization, no Asan Medical Center (Coreia do Sul). Estágio como residente visitante no Serviço de Cirurgia da Universidade de Chicago (Estados Unidos). Programa Emerging Stars da World Endoscopy Organization (Estados Unidos, Alemanha e Egito).</div></div>
+  <div class="row"><div class="k">Cargos</div><div class="v">Coordenador da residência médica em cirurgia geral e diretor do Serviço de Endoscopia Terapêutica do Hospital São Lucas. Endoscopista terapêutico do Hospital do Câncer de Cascavel.</div></div>
+  <div class="row"><div class="k">Docência</div><div class="v">Professor de cirurgia e gastroenterologia do Centro Universitário Fundação Assis Gurgacz.</div></div>
+  <div class="row"><div class="k">Sociedades</div><div class="v">Membro do Núcleo de Endoscopia Bariátrica da Sociedade Brasileira de Endoscopia (2019-2020) e do Comitê Educacional da World Endoscopy Organization (2017-2020).</div></div>
+</div></div>
+
+<div class="figure"><div class="kick">A trilha da aula</div><img src="trilha.svg" alt="Trilha da aula em nove etapas: caso de icterícia obstrutiva, anatomia e enzimas, quatro etapas da pancreatite aguda e três da pancreatite crônica"></div>
+
+<!-- ================================================================ 01 -->
+<section id="s01">
+  <div class="sec-head"><div class="lado"><span class="k">Seção</span><span class="num">01</span></div><div class="corpo"><div class="de">O caso</div><h2>O caso: icterícia que veio do colédoco</h2>
+  <div class="aqui"><span class="on">Caso</span><span>Pâncreas</span><span>Aguda: causas</span><span>Aguda: diagnóstico</span><span>Aguda: gravidade</span><span>Aguda: tratamento</span><span>Crônica: quadro</span><span>Crônica: causas</span><span>Crônica: tratamento</span></div></div></div>
+  <div class="simples"><p><b>Em palavras simples:</b> uma senhora de 69 anos tem dor em cólica há um ano e, na última semana, ficou amarela, com urina escura e fezes claras. O caminho é juntar os sinais, levantar hipóteses e pedir só o exame que responde a dúvida. No fim, era pedra no colédoco: retirada por endoscopia, e a vesícula operada depois.</p></div>
+
+  <h3 data-bm="A história e o exame físico">A história e o exame físico</h3>
+  <div class="rows">
+    <div class="row"><div class="k">Paciente</div><div class="v">Mulher, 69 anos. Sem doenças conhecidas, sem remédios, três filhos de parto normal. Nega cigarro e álcool.</div></div>
+    <div class="row"><div class="k">Dor</div><div class="v">No hipocôndrio direito e no epigástrio, em cólica, de moderada a forte, às vezes irradiando para o dorso. Vem em crises há um ano, mais frequentes e mais fortes no último mês. Piora quando come.</div></div>
+    <div class="row"><div class="k">Junto</div><div class="v">Náuseas e vômitos, às vezes escurecidos; sensação de estômago cheio (plenitude gástrica); azia e queimação (pirose).</div></div>
+    <div class="row"><div class="k">Evolução</div><div class="v">Perdeu 10 kg em seis meses. Na última semana, olhos e pele amarelados (icterícia).</div></div>
+  </div>
+  <div class="rows">
+    <div class="row"><div class="k">Sistemas</div><div class="v">Urina bem escura (colúria), sem ardor para urinar; fezes claras, esbranquiçadas (acolia fecal).</div></div>
+    <div class="row"><div class="k">Família</div><div class="v">Mãe falecida de câncer de estômago aos 65 anos.</div></div>
+    <div class="row"><div class="k">Exame físico</div><div class="v">Bom estado geral, sem febre, frequência cardíaca de 75 batimentos por minuto, pressão 130 × 80 mmHg, ictérica 2+/4+. Sem linfonodos palpáveis; coração e pulmões normais. Abdome flácido, doloroso à palpação profunda do hipocôndrio direito, sem irritação peritoneal: nenhum sinal de doença inflamatória aguda do abdome.</div></div>
+  </div>
+  <div class="box"><div class="kick"><span class="dot"></span>Como descrever uma dor abdominal</div><p>Vá até o fim da dor antes de passar ao resto: <b>localização</b> (que órgãos estão ali), tipo (cólica), intensidade (moderada a forte), irradiação (dorso) e ritmo (contínua ou em crises, intermitente). Depois, sintomas associados, evolução, idade e sexo, hábitos e família.</p></div>
+
+  <h3 data-bm="Urina escura e fezes claras">Urina escura e fezes claras <span class="prova">PROVA</span></h3>
+  <p>Colúria com fezes esbranquiçadas faz pensar em <b>bilirrubina direta</b> alta; as fezes claras, em obstrução da drenagem da bile. O par colúria e acolia é o sinal de que a icterícia é obstrutiva.</p>
+  <div class="box red"><div class="kick"><span class="dot"></span>Pegadinha do professor</div><p>Fezes claras não dizem a altura da obstrução. Qualquer ponto que impeça a drenagem, do hilo hepático até a papila, pode dar acolia.</p></div>
+
+  <h3 data-bm="As hipóteses">As hipóteses</h3>
+  <p>A meta é achar uma doença, ou a complicação de uma doença, que explique todos os fatores. Mas o paciente pode ter mais de uma doença, e os sintomas se sobrepõem.</p>
+  <div class="rows">
+    <div class="row"><div class="k">Hepatite</div><div class="v">Viral, autoimune, por remédio ou sem causa definida. Explica náusea, vômito, icterícia e dor no hipocôndrio direito. Um ano de dor é muito para hepatite aguda, mas a icterícia é recente: pode ser outra doença somada.</div></div>
+    <div class="row"><div class="k">Pedra na via biliar</div><div class="v">O ano de crises seria cólica biliar; a pedra no colédoco (coledocolitíase) obstrui e dá colúria e acolia. Não explica azia, vômito escurecido, perda de peso nem a mãe com câncer.</div></div>
+    <div class="row"><div class="k">Tumor periampular</div><div class="v">Obstrução distal: colédoco distal, cabeça do pâncreas ou papila. Perde peso e dá icterícia.</div></div>
+  </div>
+  <div class="rows">
+    <div class="row"><div class="k">Tumor alto</div><div class="v">Obstrução proximal: colangiocarcinoma no colédoco alto, metástase no hilo hepático ou tumor de vesícula que cresce e invade o colédoco.</div></div>
+    <div class="row"><div class="k">Câncer gástrico</div><div class="v">Avançado, dá metástase em linfonodos perto do tronco celíaco, vizinho do hilo hepático. O linfonodo cresce e comprime a via biliar, “e não é raro”. Explicaria dor, perda de peso, vômito escurecido e a história da mãe.</div></div>
+    <div class="row"><div class="k">Pancreatite crônica</div><div class="v">Crises de dor por muito tempo; o pâncreas cheio de cicatriz e endurecido pode obstruir o colédoco distal. A aguda não encaixa: começa forte e recente.</div></div>
+  </div>
+  <div class="rows">
+    <div class="row"><div class="k">Cirrose</div><div class="v">Quem tem várias crises de hepatite evolui para hepatopatia crônica, que também dá icterícia.</div></div>
+    <div class="row"><div class="k">Dispepsia</div><div class="v">Azia e pirose: doença do refluxo, gastrite. Pode estar somada, ou ser explicada por um câncer gástrico.</div></div>
+    <div class="row"><div class="k">Fora</div><div class="v">Câncer de esôfago: o sintoma principal é disfagia, a comida entala. Ela come e vomita depois; vômito depois de comer sugere obstrução da saída do estômago (antro ou duodeno).</div></div>
+  </div>
+  <div class="quote"><p>“Quando você não consegue colocar tudo na mesma panela, você divide as hipóteses: pode ser que tenha duas doenças associadas.”</p><div class="who">Dr. Ivan, sobre o raciocínio clínico</div></div>
+
+  <h3 data-bm="Exames de sangue">Exames de sangue: o que cada um procura</h3>
+  <p>Amilase e lipase procuram pancreatite. As transaminases (aspartato e alanina aminotransferase) mostram lesão do hepatócito; a fosfatase alcalina e a gama-glutamiltransferase, lesão dos canalículos e ductos. As bilirrubinas dizem se a icterícia é por bilirrubina direta ou indireta, e o hemograma procura infecção ou anemia. Os resultados:</p>
+  <div class="tiles">
+    <div class="tile r"><div class="lab">Bilirrubina total</div><div class="n">8,5</div><div class="s">direta 5,5 e indireta 3: padrão misto</div></div>
+    <div class="tile r"><div class="lab">Canaliculares</div><div class="n">390 e 568</div><div class="s">fosfatase alcalina e gama-glutamiltransferase, bem altas</div></div>
+    <div class="tile r"><div class="lab">Transaminases</div><div class="n">300 e 450</div><div class="s">aspartato e alanina aminotransferase: altas, longe de 1.000</div></div>
+  </div>
+  <div class="tiles">
+    <div class="tile"><div class="lab">Amilase</div><div class="n">180</div><div class="s">discreta, abaixo de 3 a 5 vezes o valor de referência; lipase normal</div></div>
+    <div class="tile"><div class="lab">Hemoglobina</div><div class="n">12</div><div class="s">anemia bem discreta, sem leucocitose</div></div>
+    <div class="tile"><div class="lab">Conclusão</div><div class="n">Colestase</div><div class="s">compatível com obstrução; nenhuma hipótese descartada ainda</div></div>
+  </div>
+  <div class="box red"><div class="kick"><span class="dot"></span>Pegadinha do professor</div><p>Hepatite aguda na fase ictérica tem transaminases muito altas, geralmente acima de 1.000: são todos os hepatócitos sofrendo ao mesmo tempo. Na colestase o fígado entupido também sofre e as transaminases sobem, mas bem menos. Por isso as duas agudas, hepatite e pancreatite, ficam pouco prováveis, sem sair da lista.</p></div>
+
+  <h3 data-bm="Onde está a obstrução">Onde está a obstrução? O ultrassom responde <span class="prova">PROVA</span></h3>
+  <div class="cmp">
+    <div class="r h"><div class="k"></div><div class="c">Obstrução alta (hilo)</div><div class="c">Obstrução baixa (distal)</div></div>
+    <div class="r"><div class="k">Vias no fígado</div><div class="c">Dilatadas</div><div class="c">Dilatadas</div></div>
+    <div class="r"><div class="k">Colédoco</div><div class="c">Fino</div><div class="c destaque">Dilatado</div></div>
+    <div class="r"><div class="k">Vesícula</div><div class="c">Murcha</div><div class="c destaque">Distendida</div></div>
+    <div class="r"><div class="k">Exemplos</div><div class="c">Colangiocarcinoma alto, metástase no hilo, tumor de vesícula</div><div class="c">Pedra no colédoco distal, tumor periampular, pancreatite crônica</div></div>
+  </div>
+  <p>O ultrassom é muito bom para cálculo na vesícula, mais difícil para cálculo no colédoco, e mostra o aspecto do fígado (na cirrose: pequeno, micronodular, de bordas rombas). O pâncreas, escondido atrás do estômago, é bem difícil de ver.</p>
+
+  <h3 data-bm="Endoscopia e ultrassom">Endoscopia e ultrassom: o que saiu e o que ficou</h3>
+  <p>A endoscopia investiga a suspeita de câncer gástrico e a dispepsia; o vômito escurecido com um pouco de anemia também faz pensar em úlcera. O ultrassom procura cálculos, dilatação das vias biliares e o aspecto do fígado.</p>
+  <div class="rows">
+    <div class="row"><div class="k">Endoscopia</div><div class="v">Esofagite moderada (classe B de Los Angeles), gastrite antral erosiva moderada, bulboduodenite erosiva intensa; fundo e corpo gástricos normais.</div></div>
+    <div class="row"><div class="k">O que muda</div><div class="v">Confirma a dispepsia (refluxo e gastrite) e explica o vômito escurecido em pequena quantidade, sem hematêmese. Descarta câncer gástrico e, com a papila bem vista, câncer de papila.</div></div>
+  </div>
+  <div class="rows">
+    <div class="row"><div class="k">Ultrassom</div><div class="v">Vesícula distendida, de paredes espessadas, com vários cálculos com sombra acústica; vias biliares intra e extra-hepáticas dilatadas; colédoco de 12 mm; fígado normal. Colédoco distal e pâncreas não vistos.</div></div>
+    <div class="row"><div class="k">O que muda</div><div class="v">Obstrução baixa. Descarta cirrose e os tumores altos (hilo, vesícula, metástase no fígado). Ficam a coledocolitíase, agora a principal, o tumor periampular e a pancreatite crônica.</div></div>
+  </div>
+
+  <h3 data-bm="Quando a dúvida continua">Quando a dúvida continua: qual imagem pedir</h3>
+  <p>Com o diagnóstico feito, indica-se o tratamento; com dúvida, continua-se a investigar, <b>preferindo sempre o exame menos invasivo</b>. Para ver a via biliar, peça colangiorressonância (os ductos) junto com ressonância de abdome superior (as estruturas em volta).</p>
+  <div class="cmp">
+    <div class="r h"><div class="k"></div><div class="c">O que vê</div><div class="c">Limite</div></div>
+    <div class="r"><div class="k">Colangior&shy;ressonância</div><div class="c">A via biliar inteira, em reconstrução; o cálculo; o pâncreas; tumor no colédoco, dilatação e alteração anatômica.</div><div class="c">É a preferida.</div></div>
+    <div class="r"><div class="k">Tomografia</div><div class="c">Cabeça do pâncreas, vasos, dilatação e todo o trajeto do colédoco.</div><div class="c">O cálculo de colesterol pode não aparecer.</div></div>
+    <div class="r"><div class="k">Ecoendoscopia</div><div class="c">Coledocolitíase e cabeça do pâncreas, de perto.</div><div class="c">Invasiva: sedação e aparelho no estômago.</div></div>
+  </div>
+  <div class="box red"><div class="kick"><span class="dot"></span>Pegadinha do professor<span class="prova">PROVA</span></div><p>A armadilha da tomografia na pedra da via biliar: ela vê bem o cálcio, mas o cálculo de colesterol pode ser radiotransparente, e nem todo cálculo aparece. Ainda assim, via biliar dilatada sem outro fator obstrutivo, numa paciente com a vesícula cheia de pedras, ajuda a descartar o câncer de pâncreas. A ressonância vê o cálculo.</p></div>
+
+  <h3 data-bm="O diagnóstico">O diagnóstico</h3>
+  <div class="rows">
+    <div class="row"><div class="k">Colangior&shy;ressonância</div><div class="v">Com ressonância de abdome: pâncreas preservado, sem lesão; vias biliares dilatadas com cálculo no terço distal do colédoco.</div></div>
+    <div class="row"><div class="k">O que muda</div><div class="v">Descarta pancreatite crônica e tumor periampular. Diagnóstico fechado.</div></div>
+  </div>
+  <div class="box"><div class="kick"><span class="dot"></span>Colelitíase complicada por coledocolitíase</div><p>Junto, uma doença péptica importante (esofagite, gastrite e bulboduodenite erosivas), que explicava vômitos, azia, queimação e distensão. A perda de peso veio dos vômitos e do medo de comer: na cólica biliar, comer dói e provoca crise (sitofobia).</p></div>
+
+  <h3 data-bm="Tirar a pedra do colédoco">Tirar a pedra do colédoco</h3>
+  <p>O tratamento minimamente invasivo da coledocolitíase é a <b>colangiopancreatografia retrógrada endoscópica</b>, que junta a visão do endoscópio com a do raio X.</p>
+  <ol class="flow">
+    <li><b class="t">Até a papila.</b> O endoscópio chega à papila e o cateter (papilótomo) entra nela.</li>
+    <li><b class="t">Papilotomia.</b> A parte de metal do cateter passa energia, corta a mucosa e abre o esfíncter de Oddi (esfincterotomia endoscópica). Sem abrir bem a papila, o cálculo não sai.</li>
+    <li><b class="t">Balão.</b> Um balão entra no colédoco, é insuflado e puxado até a pedra sair.</li>
+    <li><b class="t">Raio X.</b> Dentro do colédoco, quem guia é a fluoroscopia: mostra o colédoco dilatado, o ducto pancreático ao lado e o balão tirando a pedra.</li>
+  </ol>
+
+  <h3 data-bm="Depois da pedra, a vesícula">Depois da pedra, a vesícula <span class="prova">PROVA</span></h3>
+  <p>A dor melhorou e a icterícia começou a sumir, mas ainda há pedras na vesícula. Só se opera paciente com sintomas; quem já teve uma crise ou uma complicação (cólica biliar, coledocolitíase, pancreatite) opera mesmo que fique sem dor, porque outras pedras podem migrar e as crises voltam.</p>
+  <div class="ref">
+    <div class="txt"><div class="kick"><span class="dot"></span>Já teve crise ou complicação</div><p>Chance de novas crises se a vesícula ficar, mesmo sem sintomas agora.</p></div>
+    <div class="val">mais de 70%<small>de chance de voltar</small></div>
+  </div>
+  <p>A cirurgia é a colecistectomia, de preferência por vídeo (laparoscópica), com ótima recuperação; a aberta está quase abandonada. A paciente operou por vídeo, teve alta no dia seguinte e voltou sem sintomas no sétimo dia de pós-operatório. E a dispepsia não pode ser esquecida: com esofagite, gastrite e duodenite, começa o inibidor de bomba de prótons.</p>
+  <div class="box orange"><div class="kick"><span class="dot"></span>Pergunta de aluno: e o cálculo no ducto cístico?</div><p>Para a colangiopancreatografia, o cístico é bem ruim. O ideal é a cirurgia: tira-se o cálculo do cístico junto com a vesícula, de forma tranquila. Já o cálculo no colédoco é difícil na cirurgia: abrir o colédoco traz chance alta de fístula ou estenose. Por isso se evita, embora às vezes seja preciso.</p></div>
+  <div class="figure"><div class="kick">As hipóteses, exame a exame</div><img src="hipoteses.svg" alt="Quadro das hipóteses do caso e o que cada exame fez com elas"></div>
+  <div class="es">
+    <div class="kick">O método do caso, para qualquer paciente</div>
+    <div class="cells">
+      <div class="cell"><div class="lab">1. Fatores</div><p>Marque o que é importante na história, no exame e nos antecedentes.</p></div>
+      <div class="cell"><div class="lab">2. Hipóteses</div><p>Busque o que explica tudo; se não couber numa panela só, divida.</p></div>
+      <div class="cell"><div class="lab">3. Exames</div><p>Para cada um: o que ele vai responder? Comece pelo menos invasivo.</p></div>
+      <div class="cell"><div class="lab">4. Conduta</div><p>Com dúvida, continue investigando; com alta probabilidade, trate.</p></div>
+    </div>
+  </div>
+  <div class="quote"><p>“Cada exame que você for pedir, sempre pensar: o que esse exame vai me responder e como ele vai me ser útil? Senão, às vezes, a gente vai pedir um monte de exame que acaba não ajudando no diagnóstico do nosso paciente.”</p><div class="who">Dr. Ivan, ao fechar o caso</div></div>
+</section>
+
+<!-- ================================================================ 02 -->
+<section id="s02">
+  <div class="sec-head"><div class="lado"><span class="k">Seção</span><span class="num">02</span></div><div class="corpo"><div class="de">A base</div><h2>O pâncreas: anatomia, células e enzimas</h2>
+  <div class="aqui"><span class="feito">Caso</span><span class="on">Pâncreas</span><span>Aguda: causas</span><span>Aguda: diagnóstico</span><span>Aguda: gravidade</span><span>Aguda: tratamento</span><span>Crônica: quadro</span><span>Crônica: causas</span><span>Crônica: tratamento</span></div></div></div>
+  <div class="simples"><p><b>Em palavras simples:</b> o pâncreas fica escondido atrás do estômago, e o colédoco passa por dentro da cabeça dele. Ele faz as enzimas que digerem carboidrato, gordura e proteína, e hormônios como a insulina. As enzimas que digerem proteína saem desligadas e só ligam no intestino: é isso que protege o pâncreas.</p></div>
+
+  <h3 data-bm="Anatomia">Anatomia: o colédoco atravessa a cabeça</h3>
+  <div class="figure lado"><img src="anatomia.jpg" style="width:290pt" alt="Pâncreas com ducto colédoco, ducto pancreático principal e acessório">
+    <div class="olhar"><div class="kick">O que olhar</div><ul>
+      <li><b>Colédoco:</b> o pâncreas, órgão retroperitoneal, tem o colédoco passando por dentro da cabeça.</li>
+      <li><b>Ducto principal (de Wirsung):</b> junta-se ao colédoco num canal comum, a ampola, que drena na papila maior.</li>
+      <li><b>Ducto acessório (de Santorini):</b> drena sobretudo a cabeça, comunica-se com o principal e drena na papila menor.</li>
+    </ul><p class="leg">Imagem dos slides da aula; cabeça, corpo e cauda marcados por nós.</p></div></div>
+  <p>Por isso a pancreatite, aguda ou crônica, pode dar um pouco de icterícia: a cabeça do pâncreas aumentada comprime o colédoco distal.</p>
+
+  <h3 data-bm="Duas glândulas numa só">Duas glândulas numa só</h3>
+  <div class="cmp">
+    <div class="r h"><div class="k"></div><div class="c">Exócrina</div><div class="c">Endócrina</div></div>
+    <div class="r"><div class="k">Células</div><div class="c">Glândulas túbulo-acinares</div><div class="c">Ilhotas de Langerhans, espalhadas</div></div>
+    <div class="r"><div class="k">Produz</div><div class="c">Enzimas e secreção hidroeletrolítica</div><div class="c">Insulina, glucagon e somatostatina</div></div>
+    <div class="r"><div class="k">Para onde vai</div><div class="c">Ductos pancreáticos e intestino</div><div class="c">Capilares e corrente sanguínea</div></div>
+  </div>
+  <div class="figure lado"><img src="ilhota.jpg" style="width:230pt" alt="Ilhota de Langerhans cercada por ácinos, com células alfa, beta e delta e a insulina saindo para o vaso">
+    <div class="olhar"><div class="kick">O que olhar</div><ul>
+      <li><b>Ilhota (roxo):</b> as células endócrinas, alfa, beta e delta, ficam em ilhas espalhadas pela glândula e jogam os hormônios nos capilares, como a insulina saindo pelo vaso.</li>
+      <li><b>Em volta:</b> os ácinos, as células exócrinas, que drenam para os ductos.</li>
+    </ul><p class="leg">Detalhe de imagem dos slides da aula.</p></div></div>
+  <p>No componente exócrino há dois tipos de célula. As <b>ductais e centroacinares</b>, que revestem os ductos e o centro do ácino, fazem a secreção hidroeletrolítica: sódio, potássio, cálcio, cloro e bicarbonato. As acinares fazem as enzimas, como pró-enzimas (zimogênios): amilase, lipase, colipase, fosfolipase, tripsinogênio e quimotripsinogênio.</p>
+  <div class="tiles">
+    <div class="tile"><div class="lab">Carboidratos</div><div class="n">Amilase</div><div class="s">digere os açúcares</div></div>
+    <div class="tile"><div class="lab">Lipídios</div><div class="n">Lipase</div><div class="s">digere as gorduras</div></div>
+    <div class="tile"><div class="lab">Proteínas</div><div class="n">Tripsina</div><div class="s">e as outras proteases</div></div>
+  </div>
+  <p>Quando o pâncreas não funciona, não se digere nada: carboidrato, gordura e proteína ficam prejudicados.</p>
+
+  <h3 data-bm="O que manda o pâncreas secretar">O que manda o pâncreas secretar</h3>
+  <div class="rows">
+    <div class="row"><div class="k">Fase cefálica</div><div class="v">Cheiro e visão da comida estimulam a secreção, por acetilcolina, peptídeo intestinal vasoativo e fator liberador de gastrina, das terminações do nervo vago.</div></div>
+    <div class="row"><div class="k">Fase gástrica</div><div class="v">A distensão do estômago estimula a gastrina, que estimula o pâncreas.</div></div>
+    <div class="row"><div class="k">Fase intestinal</div><div class="v">A comida passando para o duodeno libera secretina e colecistocinina, os dois principais estímulos.</div></div>
+  </div>
+  <div class="cmp">
+    <div class="r h"><div class="k"></div><div class="c">Secretina</div><div class="c">Colecistocinina</div></div>
+    <div class="r"><div class="k">Estimula</div><div class="c">Secreção hidroeletrolítica rica em bicarbonato</div><div class="c">Secreção das enzimas pancreáticas</div></div>
+    <div class="r"><div class="k">Para quê</div><div class="c">Alcaliniza o duodeno (o pH em que as enzimas funcionam melhor) e protege a mucosa do ácido do estômago</div><div class="c">Joga as enzimas nos ductos e, deles, no intestino</div></div>
+  </div>
+
+  <h3 data-bm="Por que as enzimas saem desligadas">Por que as enzimas saem desligadas <span class="prova">PROVA</span></h3>
+  <p>As proteases saem como pró-enzimas e só são ativadas no intestino: se saíssem ativas, digeririam o próprio pâncreas (autodigestão). <b>Amilase e lipase já saem na forma ativa.</b></p>
+  <ol class="flow">
+    <li><b class="t">Enteropeptidase.</b> A enzima do intestino (enteroquinase) transforma o tripsinogênio em tripsina.</li>
+    <li><b class="t">Tripsina.</b> Ela “põe fogo” nas outras: pró-elastase em elastase, quimotripsinogênio em quimotripsina, pró-carboxipeptidase em carboxipeptidase.</li>
+    <li><b class="t">Digestão.</b> As proteases, agora ativas, digerem as proteínas dentro do intestino.</li>
+  </ol>
+  <div class="quote"><p>“Se a gente entender, a gente não precisa nunca decorar.”</p><div class="who">Dr. Ivan, ao ligar a fisiologia à pancreatite aguda</div></div>
+</section>
+
+<!-- ================================================================ 03 -->
+<section id="s03">
+  <div class="sec-head"><div class="lado"><span class="k">Seção</span><span class="num">03</span></div><div class="corpo"><div class="de">Pancreatite aguda</div><h2>Pancreatite aguda: definição, mecanismo e causas</h2>
+  <div class="aqui"><span class="feito">Caso</span><span class="feito">Pâncreas</span><span class="on">Aguda: causas</span><span>Aguda: diagnóstico</span><span>Aguda: gravidade</span><span>Aguda: tratamento</span><span>Crônica: quadro</span><span>Crônica: causas</span><span>Crônica: tratamento</span></div></div></div>
+  <div class="simples"><p><b>Em palavras simples:</b> na pancreatite aguda, as enzimas ligam antes da hora, dentro do pâncreas, e ele começa a se digerir. Pode ser uma inflamação leve ou destruir o pâncreas e a gordura em volta e levar a choque. A causa mais comum é pedra da vesícula; depois vem o álcool.</p></div>
+
+  <h3 data-bm="Definição">Definição</h3>
+  <div class="box"><div class="kick"><span class="dot"></span>Pancreatite aguda</div><p>Condição inflamatória do pâncreas, com acometimento variável das estruturas peripancreáticas e de órgãos à distância, que depende da digestão do tecido pelas próprias enzimas pancreáticas.</p></div>
+  <p>Variável porque depende de quanto se ativa. Poucas enzimas fazem uma inflamação leve. Ativação intensa derrete o pâncreas, cai no retroperitônio e derrete a gordura dali, e dispara a <b>síndrome da resposta inflamatória sistêmica</b>: pulmão inflamado (síndrome do desconforto respiratório agudo), choque por vasodilatação com queda da perfusão e insuficiência renal. É a mesma cascata da sepse, causada pela inflamação do pâncreas.</p>
+
+  <h3 data-bm="O mecanismo">O mecanismo</h3>
+  <div class="figure"><img src="fisiopatologia.svg" alt="Esquema: no normal, as enzimas ligam no intestino; na pancreatite, ligam dentro do pâncreas"></div>
+  <p>Três caminhos levam à lesão das células acinares: obstrução do ducto (cálculo, rolhas do álcool), lesão direta das células (álcool, remédios, trauma, isquemia, vírus, hipercalcemia) e falha do transporte dentro da célula. As enzimas ativadas causam inflamação com edema, proteólise, necrose da gordura e lesão da parede dos vasos, com hemorragia.</p>
+
+  <h3 data-bm="As causas">As causas</h3>
+  <div class="tiles">
+    <div class="tile"><div class="lab">Pedra na vesícula</div><div class="n">40%</div><div class="s">a principal causa</div></div>
+    <div class="tile"><div class="lab">Álcool</div><div class="n">30%</div><div class="s">uso prolongado ou bebedeira de uma noite</div></div>
+    <div class="tile"><div class="lab">Remédios</div><div class="n">1,4%</div><div class="s">dos casos, aproximadamente</div></div>
+  </div>
+  <div class="rows">
+    <div class="row"><div class="k">Pedra</div><div class="v">Os cálculos pequenos (menores que 5 mm) escapam da vesícula para o colédoco, cujo final é fino por causa do esfíncter de Oddi. A pressão sobe e passa ao ducto pancreático, que se comunica com o colédoco, e a tripsina é ativada.</div></div>
+    <div class="row"><div class="k">Álcool</div><div class="v">Quem bebe por muito tempo, mas também quem bebe muito numa festa sem costume. Lesa direto os ácinos e faz um muco espesso que forma rolhas nos ductos pequenos, sobe a pressão e ativa a tripsina. Mais comum em homens jovens com consumo abusivo.</div></div>
+    <div class="row"><div class="k">Hipercalcemia</div><div class="v">Lesão direta, com deposição de cálcio e ativação do tripsinogênio. Ocorre no hiperparatireoidismo, na hipercalcemia paraneoplásica, na sarcoidose e no excesso de vitamina D.</div></div>
+  </div>
+  <div class="ref">
+    <div class="txt"><div class="kick"><span class="dot"></span>Triglicerídeos</div><p>Ácidos graxos liberados lesam as células acinares.</p></div>
+    <div class="vals"><div class="val"><small>Risco importante</small>acima de 1.000 mg/dL</div><div class="val"><small>Já pode causar</small>acima de 500 mg/dL</div></div>
+  </div>
+  <div class="quote"><p>“Dá para decorar todos? Não, você tem que perguntar o que o paciente toma e olhar na bula sempre. E não é vergonha nenhuma a gente pesquisar para saber o que o paciente está tomando, os efeitos e interações de cada um dos medicamentos.”</p><div class="who">Dr. Ivan, sobre a pancreatite por remédios</div></div>
+
+  <h3 data-bm="Acima de 40 anos sem causa">Acima de 40 anos sem causa: pensar em tumor <span class="prova">PROVA</span></h3>
+  <p>Um tumor que obstrui o ducto pancreático pode causar pancreatite, e a pancreatite aguda pode ser <b>a primeira manifestação da neoplasia</b>. Paciente acima de 40 anos, sem pedra, sem álcool, sem remédio e com triglicerídeos e cálcio normais: sempre pensar em neoplasia.</p>
+
+  <h3 data-bm="Lista completa de causas">Lista completa de causas</h3>
+  <div class="rows terms">
+    <div class="row"><div class="k">Mecânicas</div><div class="v">Cálculos biliares, lama biliar, ascaridíase, neoplasias pancreáticas e periampulares, disfunção do esfíncter de Oddi.</div></div>
+    <div class="row"><div class="k">Tóxicas</div><div class="v">Etanol, metanol, veneno de escorpião, inseticidas, organofosforados.</div></div>
+    <div class="row"><div class="k">Metabólicas</div><div class="v">Hipertrigliceridemia (tipos I, IV e V), hiperquilomicronemia, hipercalcemia.</div></div>
+  </div>
+  <div class="rows terms">
+    <div class="row"><div class="k">Infecções</div><div class="v">Caxumba, Coxsackie, hepatite B, citomegalovírus, varicela-zóster, herpes simples, vírus da imunodeficiência humana, <i>Mycoplasma</i>, <i>Legionella</i>, <i>Leptospira</i>, <i>Salmonella</i>, <i>Aspergillus</i>, <i>Toxoplasma</i>, <i>Cryptosporidium</i>, <i>Campylobacter jejuni</i>, <i>Mycobacterium</i>.</div></div>
+    <div class="row"><div class="k">Iatrogenia</div><div class="v">Depois de colangiopancreatografia ou de cirurgia.</div></div>
+    <div class="row"><div class="k">Congênitas</div><div class="v"><i>Pancreas divisum</i>, coledococele tipo V.</div></div>
+  </div>
+  <div class="rows terms">
+    <div class="row"><div class="k">Vasculares</div><div class="v">Isquemia (baixa perfusão após circulação extracorpórea), vasculites (poliarterite nodosa, lúpus eritematoso sistêmico).</div></div>
+    <div class="row"><div class="k">Outras</div><div class="v">Gravidez, trauma fechado no andar superior do abdome, transplante renal, deficiência de alfa-1-antitripsina, úlcera péptica penetrante, doença de Crohn, hipotermia, fibrose cística, síndrome de Reye.</div></div>
+  </div>
+</section>
+
+<!-- ================================================================ 04 -->
+<section id="s04">
+  <div class="sec-head"><div class="lado"><span class="k">Seção</span><span class="num">04</span></div><div class="corpo"><div class="de">Pancreatite aguda</div><h2>Quadro clínico e diagnóstico</h2>
+  <div class="aqui"><span class="feito">Caso</span><span class="feito">Pâncreas</span><span class="feito">Aguda: causas</span><span class="on">Aguda: diagnóstico</span><span>Aguda: gravidade</span><span>Aguda: tratamento</span><span>Crônica: quadro</span><span>Crônica: causas</span><span>Crônica: tratamento</span></div></div></div>
+  <div class="simples"><p><b>Em palavras simples:</b> a dor é forte, no alto do abdome, vai para as costas e vem com vômitos. Para fechar o diagnóstico bastam dois de três: a dor típica, a amilase ou a lipase acima de três vezes o normal, ou uma imagem compatível. Depois, o ultrassom procura a causa: pedra na vesícula.</p></div>
+
+  <h3 data-bm="A dor da pancreatite">A dor da pancreatite <span class="prova">PROVA</span></h3>
+  <div class="rows">
+    <div class="row"><div class="k">Como é</div><div class="v">Contínua e mal definida: o paciente sabe que é no epigástrio ou no andar superior, mas não aponta um ponto. Progressiva, de muito forte intensidade.</div></div>
+    <div class="row"><div class="k">Para onde vai</div><div class="v">Para o dorso, porque o pâncreas é posterior, e pode pegar os flancos direito e esquerdo: a dor em faixa.</div></div>
+    <div class="row"><div class="k">Junto</div><div class="v">Náuseas e vômitos em 90% dos casos.</div></div>
+    <div class="row"><div class="k">Posição</div><div class="v">Paciente agitado; alivia de barriga para baixo ou na posição genupeitoral, piora deitado de costas (supina) e com esforço.</div></div>
+  </div>
+  <div class="es"><div class="kick">Regra de bolso</div><p class="lead">Dor epigástrica irradiada para o dorso, de forte intensidade, com náuseas e vômitos: sempre lembrar de pancreatite.</p></div>
+  <div class="figure lado"><img src="genupeitoral.jpg" style="width:200pt" alt="Paciente de joelhos com o peito apoiado na cama, na posição genupeitoral">
+    <div class="olhar"><div class="kick">O que olhar</div><ul>
+      <li><b>Posição genupeitoral:</b> joelhos dobrados e o peito apoiado na cama. É a posição em que a dor alivia.</li>
+      <li><b>O contrário:</b> deitado de costas (supina) ou fazendo esforço, a dor piora.</li>
+    </ul><p class="leg">Imagem dos slides da aula: paciente com pancreatite crônica alcoólica.</p></div></div>
+
+  <h3 data-bm="Exame físico">Exame físico: pobre no leve, rico no grave</h3>
+  <div class="cmp">
+    <div class="r h"><div class="k"></div><div class="c">Forma leve</div><div class="c">Forma grave</div></div>
+    <div class="r"><div class="k">Abdome</div><div class="c">Dor à palpação do epigástrio e do andar superior, sem descompressão brusca dolorosa</div><div class="c">Doloroso e distendido, com íleo paralítico</div></div>
+    <div class="r"><div class="k">Respiração</div><div class="c">Normal</div><div class="c">Superficial, pela dor e pela irritação do diafragma</div></div>
+    <div class="r"><div class="k">Sinais vitais</div><div class="c">Estáveis</div><div class="c">Taquicardia, febre e hipotensão: já é sinal de choque</div></div>
+  </div>
+  <p>Até 25% têm um pouco de icterícia: um cálculo migrando, o edema da cabeça do pâncreas comprimindo o colédoco distal, ou inflamação da papila.</p>
+
+  <h3 data-bm="Cullen e Grey-Turner">Cullen e Grey-Turner: sinais tardios <span class="prova">PROVA</span></h3>
+  <div class="figure lado"><img src="cullen-grey-turner.jpg" style="width:290pt" alt="Equimose em volta do umbigo (Cullen) e no flanco (Grey-Turner)">
+    <div class="olhar"><div class="kick">O que olhar</div><ul>
+      <li><b>Cullen:</b> equimose em volta do umbigo.</li>
+      <li><b>Grey-Turner:</b> equimose nos flancos.</li>
+      <li><b>Causa:</b> enzimas no retroperitônio digerem vasos; a hemorragia se espalha para a frente ou para os lados. Sugere pancreatite grave e hemorrágica.</li>
+    </ul><p class="leg">Imagens dos slides da aula.</p></div></div>
+  <div class="box red"><div class="kick"><span class="dot"></span>Pegadinha do professor</div><p>Não espere Cullen nem Grey-Turner no pronto-socorro. São sinais bem tardios, de quem sobrevive a uma pancreatite aguda grave e está se recuperando há vários dias na terapia intensiva.</p></div>
+
+  <h3 data-bm="Diagnóstico: dois de três critérios">Diagnóstico: dois de três critérios <span class="prova">PROVA</span></h3>
+  <ol class="flow">
+    <li><b class="t">Dor.</b> Abdominal persistente e de forte intensidade: epigástrica, para o dorso, com náuseas e vômitos.</li>
+    <li><b class="t">Enzima.</b> Amilase ou lipase acima de 3 vezes o valor de referência (na aula, “de 3 a 5 vezes”).</li>
+    <li><b class="t">Imagem.</b> Pâncreas aumentado e edemaciado, borramento da gordura peripancreática, coleção líquida peripancreática.</li>
+  </ol>
+  <p>Dor característica com amilase acima de 3 vezes o valor de referência já fecha o diagnóstico: <b>não é obrigatório pedir imagem</b>. A imagem entra para excluir outras causas e no paciente em quem não dá para avaliar a dor: intubado e sedado na terapia intensiva, com piora súbita e amilase alta.</p>
+  <div class="box red"><div class="kick"><span class="dot"></span>Pegadinha do professor</div><ul>
+    <li><span class="medium">Amilase sozinha não fecha.</span> Quase toda doença inflamatória do abdome sobe um pouco a amilase (colecistite aguda, úlcera gástrica, abdome agudo obstrutivo, isquemia mesentérica), mas menos de 3 a 5 vezes.</li>
+    <li><span class="medium">Nem tudo é pâncreas.</span> A caxumba (parotidite) sobe a amilase salivar no sangue. Na macroamilasemia, uma amilase grande que o rim não filtra, ela sobe 3 a 5 vezes sem dor nenhuma.</li>
+    <li><span class="medium">O contrário também existe.</span> Na pancreatite crônica avançada, a crise aguda pode vir com amilase e lipase normais: não sobra pâncreas para produzi-las. A dor é típica e a tomografia mostra o pâncreas inflamado.</li>
+  </ul></div>
+
+  <h3 data-bm="Depois do diagnóstico: a causa">Depois do diagnóstico: a causa <span class="prova">PROVA</span></h3>
+  <div class="figure"><img src="investigacao.svg" alt="Fluxograma da causa: ultrassom, história, triglicerídeos e cálcio, idade acima de 40 anos"></div>
+  <p>A imagem não é necessária para o diagnóstico, mas o ultrassom é importante para a causa: pedra na vesícula num paciente com pancreatite já permite considerá-la biliar. Sem pedra, triglicerídeos e cálcio sempre são dosados. A própria colangiopancreatografia é fator de risco, porque mexe no canal da papila; nesse caso, a história conta que o procedimento foi feito na véspera.</p>
+</section>
+
+<!-- ================================================================ 05 -->
+<section id="s05">
+  <div class="sec-head"><div class="lado"><span class="k">Seção</span><span class="num">05</span></div><div class="corpo"><div class="de">Pancreatite aguda</div><h2>Tomografia, gravidade e prognóstico</h2>
+  <div class="aqui"><span class="feito">Caso</span><span class="feito">Pâncreas</span><span class="feito">Aguda: causas</span><span class="feito">Aguda: diagnóstico</span><span class="on">Aguda: gravidade</span><span>Aguda: tratamento</span><span>Crônica: quadro</span><span>Crônica: causas</span><span>Crônica: tratamento</span></div></div></div>
+  <div class="simples"><p><b>Em palavras simples:</b> a maioria das pancreatites é leve e melhora sozinha; a grave pode matar até 3 em cada 10. A tomografia não serve para o diagnóstico: mostra necrose e coleções, e só depois de 48 a 72 horas. Escores simples, feitos à beira do leito, ajudam a ver quem vai complicar.</p></div>
+
+  <h3 data-bm="Quando pedir tomografia">Quando pedir tomografia <span class="prova">PROVA</span></h3>
+  <div class="rows">
+    <div class="row"><div class="k">Para quem</div><div class="v">Critérios de pancreatite grave (clínicos ou pelo escore APACHE II) ou piora depois da estabilização inicial. Procura as complicações locais, coleção líquida e necrose, que mudam o prognóstico.</div></div>
+    <div class="row"><div class="k">Quando</div><div class="v">Não antes de 48 horas; o ideal é depois de 72 horas, quando a necrose já se estabeleceu. Cedo demais, só se vê o pâncreas inflamado, e o quadro pode mudar.</div></div>
+    <div class="row"><div class="k">Exceção</div><div class="v">Tomografia precoce, nos dois primeiros dias, só na dúvida diagnóstica: quando pode ser, por exemplo, uma úlcera perfurada.</div></div>
+    <div class="row"><div class="k">Técnica</div><div class="v">Sempre com contraste na veia, trifásica: arterial, portal e equilíbrio. É o contraste que mostra a necrose: o pâncreas que não contrasta não está vascularizado.</div></div>
+  </div>
+  <div class="reg"><b>Registro:</b> o slide lista as fases como sem contraste, arterial e equilíbrio.</div>
+
+  <h3 data-bm="Classificação de Atlanta: dois tipos">Classificação de Atlanta: dois tipos</h3>
+  <div class="cmp">
+    <div class="r h"><div class="k"></div><div class="c">Intersticial edematosa</div><div class="c">Necrosante</div></div>
+    <div class="r"><div class="k">Gravidade</div><div class="c">Leve, a mais tranquila</div><div class="c">Grave</div></div>
+    <div class="r"><div class="k">Tomografia</div><div class="c">O parênquima realça com o contraste; sem necrose</div><div class="c">Áreas que não contrastam (necrose) e bastante líquido em volta</div></div>
+  </div>
+  <p>Quanto mais necrose e quanto mais líquido, mais grave a pancreatite.</p>
+
+  <div class="tiles">
+    <div class="tile"><div class="lab">Leves e autolimitadas</div><div class="n">85%</div><div class="s">das pancreatites agudas</div></div>
+    <div class="tile"><div class="lab">Mortalidade da leve</div><div class="n">3%</div><div class="s">aproximadamente</div></div>
+    <div class="tile"><div class="lab">Mortalidade da grave</div><div class="n">até 30%</div><div class="s">falência de órgãos, infecção, internação longa na terapia intensiva</div></div>
+  </div>
+
+  <h3 data-bm="Leve, moderada ou grave">Leve, moderada ou grave</h3>
+  <div class="cmp c4">
+    <div class="r h"><div class="k"></div><div class="c">Leve</div><div class="c">Moderada</div><div class="c">Grave</div></div>
+    <div class="r"><div class="k">Coleção ou necrose</div><div class="c">Não</div><div class="c">Sim</div><div class="c">Sim</div></div>
+    <div class="r"><div class="k">Falência de órgãos</div><div class="c">Não</div><div class="c">Transitória: um pouco de insuficiência renal ou de droga vasoativa, e melhorou</div><div class="c">Persistente, com resposta inflamatória sistêmica</div></div>
+    <div class="r"><div class="k">O que esperar</div><div class="c">Melhora rápida</div><div class="c">Sobrevive, com alta morbidade: muito tempo na terapia intensiva, vários procedimentos, alto custo</div><div class="c">Alta mortalidade</div></div>
+  </div>
+
+  <p>Os preditores de gravidade são clínicos, laboratoriais e radiológicos, da admissão até 72 horas. O ideal, rápido, barato e preciso já na chegada, não existe: quase todos pedem avaliação seriada.</p>
+
+  <h3 data-bm="Critérios de gravidade de Atlanta">Critérios de gravidade de Atlanta <span class="prova">PROVA</span></h3>
+  <p>A Classificação de Atlanta é o documento de referência da pancreatite. Basta um destes critérios para considerá-la grave:</p>
+  <div class="rows">
+    <div class="row"><div class="k">Ranson</div><div class="v">Maior que 3, somando os critérios da chegada e os de 48 horas depois.</div></div>
+    <div class="row"><div class="k">APACHE II</div><div class="v">Maior que 8. É um escore de terapia intensiva, calculado no computador por uma fórmula logarítmica com vários dados.</div></div>
+    <div class="row"><div class="k">Balthazar</div><div class="v">Maior que 6. É o escore da tomografia.</div></div>
+    <div class="row"><div class="k">Falência de órgãos</div><div class="v">Precisou de droga vasoativa, fez pulmão de síndrome do desconforto respiratório, fez insuficiência renal.</div></div>
+    <div class="row"><div class="k">Complicação local</div><div class="v">Necrose, abscesso ou pseudocisto.</div></div>
+  </div>
+  <div class="reg"><b>Registro:</b> no slide, os cortes aparecem como 3 ou mais (Ranson), 8 ou mais nas primeiras 48 horas (APACHE II) e 6 ou mais (Balthazar).</div>
+  <div class="rows">
+    <div class="row"><div class="k">Proteína C reativa</div><div class="v">Boa sensibilidade: muito alta nas primeiras 48 horas pede observação de perto. No slide, acima de 15 mg/dL em 48 horas, com sensibilidade de 80% e especificidade de 76%.</div></div>
+    <div class="row"><div class="k">Obesidade</div><div class="v">Índice de massa corporal acima de 30: 3,8 vezes mais complicações locais e cerca de 2 vezes mais mortalidade (2,1 no slide).</div></div>
+    <div class="row"><div class="k">Idade</div><div class="v">Acima de 75 anos: mortalidade 15 vezes maior. Pancreatite aguda no idoso é extremamente grave.</div></div>
+  </div>
+
+  <h3 data-bm="BISAP e resposta inflamatória">Escores à beira do leito: BISAP e resposta inflamatória <span class="prova">PROVA</span></h3>
+  <p>São objetivos, simples, e é preciso conhecê-los. O <b>BISAP</b> (do inglês, índice de gravidade da pancreatite aguda à beira do leito) soma um ponto para cada item; maior que 3 é grave, com mortalidade acima de 5%, chegando a 20%.</p>
+  <div class="card wide"><span class="tag">BISAP · um ponto para cada item</span><ul class="cols2">
+    <li><b>Ureia alta</b> (nitrogênio ureico acima de 25 mg/dL)</li>
+    <li><b>Confusão</b> mental</li>
+    <li><b>Síndrome da resposta inflamatória</b> sistêmica</li>
+    <li><b>Idade</b> acima de 60 anos</li>
+    <li><b>Derrame pleural</b></li>
+  </ul></div>
+  <div class="livros"><b>Nos livros:</b> o BISAP costuma ser considerado grave a partir de 3 pontos.</div>
+  <p>O escore da síndrome da resposta inflamatória sistêmica é mais simples ainda: dois ou mais itens já preocupam. Feito na admissão, depois da estabilização, e repetido todo dia, equivale ao APACHE e à proteína C reativa. <b>Fique de olho</b> em quem recebeu soro e analgesia, estabilizou, mas continua taquicárdico e febril: pode estar evoluindo para a forma grave.</p>
+  <div class="card wide"><span class="tag">Resposta inflamatória sistêmica · dois ou mais</span><ul class="cols2">
+    <li><b>Temperatura</b> acima de 38,3 °C ou abaixo de 36 °C</li>
+    <li><b>Frequência cardíaca</b> acima de 90 por minuto</li>
+    <li><b>Respiração</b> acima de 20 por minuto, ou gás carbônico arterial abaixo de 32 mmHg</li>
+    <li><b>Leucócitos</b> acima de 12.000 ou abaixo de 4.000 por mm³, ou mais de 10% de bastões</li>
+  </ul></div>
+
+  <h3 data-bm="Ranson e Balthazar">Ranson e Balthazar, para conhecer</h3>
+  <div class="grid2">
+    <div class="card"><span class="tag">Ranson · na admissão</span><ul>
+      <li>Idade acima de 55 anos</li>
+      <li>Leucócitos acima de 16.000/mm³</li>
+      <li>Glicose acima de 200 mg/dL</li>
+      <li>Desidrogenase lática acima de 350 U/L</li>
+      <li>Aspartato aminotransferase acima de 250 U/L</li>
+    </ul></div>
+    <div class="card"><span class="tag">Ranson · em 48 horas</span><ul>
+      <li>Hematócrito cai 10% ou mais</li>
+      <li>Ureia sobe 5 mg/dL ou mais, apesar do soro</li>
+      <li>Cálcio abaixo de 8 mg/dL</li>
+      <li>Oxigênio arterial abaixo de 60 mmHg</li>
+      <li>Déficit de bases acima de 4 mEq/L</li>
+      <li>Sequestro de líquido acima de 6.000 mL</li>
+    </ul></div>
+  </div>
+  <div class="grid2">
+    <div class="card"><span class="tag">Balthazar · aspecto na tomografia</span><ul>
+      <li><b>A</b> (0) pâncreas normal</li>
+      <li><b>B</b> (1) aumento focal ou difuso, sem inflamação em volta</li>
+      <li><b>C</b> (2) inflamação peripancreática</li>
+      <li><b>D</b> (3) coleção líquida dentro ou fora do pâncreas</li>
+      <li><b>E</b> (4) duas ou mais coleções grandes de gás no pâncreas ou no retroperitônio</li>
+    </ul></div>
+    <div class="card"><span class="tag">Balthazar · necrose com contraste</span><ul>
+      <li>Sem necrose: 0 ponto</li>
+      <li>Menos de 33%: 2 pontos</li>
+      <li>De 33% a 50%: 4 pontos</li>
+      <li>50% ou mais: 6 pontos</li>
+    </ul><p>A soma das duas partes dá o índice de gravidade tomográfico.</p></div>
+  </div>
+</section>
+
+<!-- ================================================================ 06 -->
+<section id="s06">
+  <div class="sec-head"><div class="lado"><span class="k">Seção</span><span class="num">06</span></div><div class="corpo"><div class="de">Pancreatite aguda</div><h2>Tratamento e complicações locais</h2>
+  <div class="aqui"><span class="feito">Caso</span><span class="feito">Pâncreas</span><span class="feito">Aguda: causas</span><span class="feito">Aguda: diagnóstico</span><span class="feito">Aguda: gravidade</span><span class="on">Aguda: tratamento</span><span>Crônica: quadro</span><span>Crônica: causas</span><span>Crônica: tratamento</span></div></div></div>
+  <div class="simples"><p><b>Em palavras simples:</b> quatro pilares: soro cedo e em volume, remédio forte para a dor, comida assim que o paciente aceitar e antibiótico só se infectar. O líquido em volta do pâncreas pode virar pseudocisto ou necrose murada, que só se drena se infectar ou apertar outro órgão, de preferência após quatro semanas.</p></div>
+
+  <h3 data-bm="Hidratação e dor">Hidratação e dor, sempre <span class="prova">PROVA</span></h3>
+  <div class="ref">
+    <div class="txt"><div class="kick"><span class="dot"></span>Soro, o quanto antes</div><p>Meta: estabilidade hemodinâmica, sem taquicardia.</p></div>
+    <div class="vals"><div class="val"><small>Primeiras 24 horas</small>30 a 40 mL/kg</div><div class="val"><small>Débito urinário</small>0,5 a 1 mL/kg/hora</div></div>
+  </div>
+  <p>O volume, além de estabilizar, melhora a perfusão do pâncreas, protege o órgão e reduz a dor: corrige a hipovolemia e a hemoconcentração, que causam dor isquêmica e acidose.</p>
+  <p>Na analgesia vale dipirona, anti-inflamatório, o que for preciso, mas na maior parte das vezes a dor só cede com <b>opioide</b>. Pode entrar cedo com morfina (ou fentanil): a dor é muito difícil de controlar.</p>
+
+  <h3 data-bm="Nutrição">Nutrição: comer assim que tolerar <span class="prova">PROVA</span></h3>
+  <div class="box red"><div class="kick"><span class="dot"></span>Pegadinha do professor</div><p>Jejum de sete dias “não faz o menor sentido”. Antigamente o paciente ficava dias em jejum; hoje se sabe que o alimento não piora a pancreatite e que o jejum e a dieta restritiva pioram a evolução.</p></div>
+  <div class="rows">
+    <div class="row"><div class="k">Leve</div><div class="v">Controlou os vômitos na noite da admissão: já recebe dieta líquida e evolui no dia seguinte, mesmo nas primeiras 24 horas.</div></div>
+    <div class="row"><div class="k">Grave</div><div class="v">Também se prefere a via enteral, por sonda nasoenteral, se não houver íleo paralítico nem acidose importante.</div></div>
+    <div class="row"><div class="k">Sonda</div><div class="v">Não precisa passar da segunda porção do duodeno: a sonda no estômago não piora a pancreatite. Mas, com algum íleo, aumenta regurgitação e vômitos; por isso é melhor enteral, sem ser proibida a gástrica.</div></div>
+    <div class="row"><div class="k">Parenteral</div><div class="v">Só se a enteral não atingir as necessidades calóricas (em 48 a 72 horas). Traz mais distúrbio hidroeletrolítico e risco muito maior de infecção sistêmica pelo cateter central.</div></div>
+  </div>
+
+  <h3 data-bm="Complicações locais">Complicações locais: o líquido que sobra</h3>
+  <div class="cmp">
+    <div class="r h"><div class="k"></div><div class="c">Coleção fluida aguda</div><div class="c">Coleção necrótica aguda</div></div>
+    <div class="r"><div class="k">De onde vem</div><div class="c">Líquido sem necrose</div><div class="c">Pancreatite necrosante: líquido e necrose</div></div>
+    <div class="r"><div class="k">Evolução</div><div class="c">Reabsorve, ou encapsula</div><div class="c">Não reabsorve; encapsula</div></div>
+    <div class="r"><div class="k">Após 4 semanas</div><div class="c destaque">Pseudocisto</div><div class="c destaque">Necrose murada</div></div>
+    <div class="r"><div class="k">Problemas</div><div class="c">Dor; comprime o estômago ou o colédoco (icterícia)</div><div class="c">Comprime estruturas vizinhas</div></div>
+  </div>
+  <div class="figure"><img src="complicacoes-locais.jpg" style="width:410pt;display:block;margin:0 auto" alt="Três tomografias: pseudocisto, necrose pancreática e necrose murada com gás">
+    <div class="olhar"><div class="kick">O que olhar</div><ul>
+      <li><b>À esquerda, pseudocisto:</b> grande bola de líquido encapsulada (círculo), encostada no estômago.</li>
+      <li><b>No meio, necrose:</b> parte do pâncreas que não contrasta (seta), com coleção em volta.</li>
+      <li><b>À direita, necrose murada:</b> bolhas de ar dentro da coleção (setas), sinal de infecção.</li>
+    </ul></div>
+    <p class="leg">Imagens dos slides da aula.</p></div>
+  <p>As duas podem infectar, e o quadro fica bem complexo. O nome pseudocisto vem da cápsula, que não é verdadeira: é formada pelos órgãos vizinhos, incluindo a parede posterior do estômago.</p>
+  <div class="box"><div class="kick"><span class="dot"></span>Ar na coleção é infecção<span class="prova">PROVA</span></div><p>Sempre que há ar dentro de um pseudocisto ou de uma necrose murada, há infecção: entre com antibiótico e, se necessário, drenagem.</p></div>
+
+  <h3 data-bm="Antibiótico">Antibiótico: só com infecção <span class="prova">PROVA</span></h3>
+  <p>Nem a pancreatite grave tem indicação de antibiótico profilático: <b>não muda o desfecho</b>. Antibiótico só na suspeita de infecção, como o paciente que não melhora e mostra gás na coleção na tomografia.</p>
+  <div class="rows">
+    <div class="row"><div class="k">Bactérias</div><div class="v"><i>Escherichia coli</i>, <i>Pseudomonas</i>, <i>Klebsiella</i> e <i>Enterococcus</i>, do intestino. Chegam ao líquido, ao pseudocisto ou à necrose murada por translocação: o intestino fica mais permeável e elas atravessam.</div></div>
+    <div class="row"><div class="k">Escolha</div><div class="v">Boa penetração no pâncreas: quinolonas, cefalosporinas de quarta geração ou carbapenêmicos (meropeném, imipeném).</div></div>
+  </div>
+  <div class="reg"><b>Registro:</b> o slide lista quinolonas, ceftazidima ou cefepima, combinadas com metronidazol, ou carbapenêmico.</div>
+
+  <h3 data-bm="Quando mexer nas coleções">Quando mexer nas coleções <span class="prova">PROVA</span></h3>
+  <div class="rows">
+    <div class="row"><div class="k">Pseudocisto</div><div class="v">Só se causar dor ou obstrução biliar ou gástrica; de preferência minimamente invasivo, por endoscopia.</div></div>
+    <div class="row"><div class="k">Necrose estéril</div><div class="v">Tratamento conservador. O diagnóstico é pela tomografia, procurando bolhas de gás.</div></div>
+    <div class="row"><div class="k">Necrose infectada</div><div class="v">Drenagem, de preferência depois de 4 a 6 semanas, segurando com antibiótico até lá.</div></div>
+  </div>
+  <div class="box red"><div class="kick"><span class="dot"></span>Pegadinha do professor</div><p>Abordar uma pancreatite infectada muito cedo aumenta muito a mortalidade. Espere o máximo possível, cerca de 4 semanas, para a coleção ficar bem bloqueada.</p></div>
+
+  <h3 data-bm="Drenagem por endoscopia">Drenagem e necrosectomia por endoscopia</h3>
+  <ol class="flow">
+    <li><b class="t">Achar o abaulamento.</b> A coleção empurra a parede do estômago.</li>
+    <li><b class="t">Puncionar.</b> Fura-se a parede gástrica até a coleção; o líquido pancreático começa a vazar.</li>
+    <li><b class="t">Dilatar.</b> O trajeto é aberto com balão.</li>
+    <li><b class="t">Necrosectomia.</b> Com uma alça, retira-se a necrose e ela é deixada no estômago, onde é digerida.</li>
+    <li><b class="t">Prótese.</b> Fica um dreno ligando a coleção ao estômago; o suco gástrico entra e dissolve o resto.</li>
+  </ol>
+  <p>Só dá certo porque se esperou 4 a 6 semanas: a coleção está colada e fechada, e é abordada sem contaminar a barriga. Feito cedo demais, vira perfuração gástrica dentro do abdome e peritonite.</p>
+</section>
+
+<!-- ================================================================ 07 -->
+<section id="s07">
+  <div class="sec-head"><div class="lado"><span class="k">Seção</span><span class="num">07</span></div><div class="corpo"><div class="de">Pancreatite crônica</div><h2>Pancreatite crônica: quadro e diagnóstico</h2>
+  <div class="aqui"><span class="feito">Caso</span><span class="feito">Pâncreas</span><span class="feito">Aguda: causas</span><span class="feito">Aguda: diagnóstico</span><span class="feito">Aguda: gravidade</span><span class="feito">Aguda: tratamento</span><span class="on">Crônica: quadro</span><span>Crônica: causas</span><span>Crônica: tratamento</span></div></div></div>
+  <div class="simples"><p><b>Em palavras simples:</b> crises repetidas vão enchendo o pâncreas de cicatriz até ele parar de funcionar. Primeiro vem a dor; anos depois, diarreia com gordura e diabetes. O objetivo é descobrir cedo, antes da destruição, e tirar o que acelera a doença: álcool e cigarro.</p></div>
+
+  <h3 data-bm="Definição">Definição: do pâncreas destruído ao diagnóstico cedo</h3>
+  <div class="cmp">
+    <div class="r h"><div class="k"></div><div class="c">Cambridge, 1984</div><div class="c">Mecanicista, 2016</div></div>
+    <div class="r"><div class="k">O que diz</div><div class="c">Doença inflamatória com alterações morfológicas irreversíveis, que causa dor e perda permanente da função</div><div class="c">Síndrome fibroinflamatória em quem tem predisposição genética, ambiental ou outros fatores, com resposta patológica persistente que lesa o parênquima</div></div>
+    <div class="r"><div class="k">Problema ou meta</div><div class="c">Diagnóstico muito tardio; trata só a perda de função; não diz a causa, não prevê o curso, não orienta prevenção</div><div class="c">Diagnóstico mais precoce e retardar a doença atuando nos fatores modificáveis</div></div>
+  </div>
+  <p>A definição de 2016 mantém as marcas da doença terminal: fibrose, atrofia, dor, distorção dos ductos, estenoses, calcificações, disfunção exócrina e endócrina e displasia. Na prática, vários episódios de pancreatite aguda vão destruindo o pâncreas até ele ficar disfuncional. É nesse paciente, com doença que leva a crises repetidas, que se concentram os esforços. Nas causas genéticas, em que não se evita a progressão, ao menos se retarda, tirando cigarro e álcool.</p>
+
+  <h3 data-bm="Quando suspeitar">Quando suspeitar</h3>
+  <div class="rows">
+    <div class="row"><div class="k">A tríade</div><div class="v">Crises de dor abdominal típica (epigástrica, para o dorso, com náusea e vômito); diabetes, a insuficiência endócrina; diarreia com gordura (esteatorreia), a insuficiência exócrina.</div></div>
+    <div class="row"><div class="k">Suspeitar cedo</div><div class="v">História familiar de pancreatite crônica, com risco maior se beber ou fumar; alterações genéticas conhecidas; crises recorrentes de pancreatite aguda de qualquer causa. Quem tem pedra na vesícula e segue tendo crises sem tratar pode evoluir para a crônica.</div></div>
+  </div>
+
+  <h3 data-bm="Dor, diarreia e diabetes">Dor, diarreia e diabetes</h3>
+  <div class="rows">
+    <div class="row"><div class="k">Dor</div><div class="v">Intensa, no andar superior. Crises de 1 a 7 dias, com intervalos sem dor, quase sempre disparadas por álcool ou comida gordurosa: o paciente passa a ter medo de comer (sitofobia). É a principal causa de cirurgia e de perda de qualidade de vida.</div></div>
+  </div>
+  <div class="rows">
+    <div class="row"><div class="k">Insuficiência exócrina</div><div class="v">Esteatorreia, porque não absorve a gordura; absorve menos carboidrato e proteína. Perda de peso, desnutrição e falta das vitaminas que se dissolvem na gordura: A, D, E e K.</div></div>
+    <div class="row"><div class="k">Insuficiência endócrina</div><div class="v">Diabetes tipo 3c (pancreatogênico), pela destruição das ilhotas de Langerhans. Tratamento parecido com o do tipo 2: hipoglicemiante oral e, com a evolução, insulina.</div></div>
+  </div>
+
+  <h3 data-bm="A dor vem primeiro">A dor vem primeiro <span class="prova">PROVA</span></h3>
+  <div class="figure"><img src="linha-tempo.svg" alt="Linha do tempo: crises de dor no início; cerca de dez anos depois, esteatorreia e diabetes"></div>
+  <p>Má absorção e diabetes são tardios: aparecem, em média, 10 anos depois do início das dores, quando já se perdeu mais de 90% do parênquima. Costumam surgir na mesma época, mas não obrigatoriamente juntos: um pode vir meses ou anos antes do outro.</p>
+  <div class="reg"><b>Registro:</b> o slide fala em perda de mais de 70% do parênquima; ao responder uma dúvida, a aula cita mais de 80% da glândula.</div>
+
+  <h3 data-bm="Complicações">Complicações</h3>
+  <div class="rows">
+    <div class="row"><div class="k">Icterícia</div><div class="v">Obstrutiva: o colédoco passa dentro da cabeça do pâncreas, cheia de fibrose, cicatrizes e nódulos de regeneração.</div></div>
+    <div class="row"><div class="k">Trombose</div><div class="v">Da veia esplênica ou da porta, vizinhas do pâncreas: varizes de esôfago e de fundo gástrico.</div></div>
+    <div class="row"><div class="k">Pseudocisto</div><div class="v">Com hemorragia, infecção ou compressão das estruturas vizinhas.</div></div>
+  </div>
+  <div class="rows">
+    <div class="row"><div class="k">Ascite</div><div class="v">Uma fístula vaza líquido pancreático no abdome, com as enzimas não ativadas: muita ascite, sem autodigestão.</div></div>
+    <div class="row"><div class="k">Sistêmicas</div><div class="v">Do diabetes: nefropatia, retinopatia, úlceras nas pernas, infarto, doença cerebrovascular. Da insuficiência exócrina: desnutrição e falta de vitaminas.</div></div>
+  </div>
+  <div class="box"><div class="kick"><span class="dot"></span>Câncer de pâncreas<span class="prova">PROVA</span></div><p>A pancreatite crônica é o maior fator de risco para câncer de pâncreas.</p></div>
+
+  <h3 data-bm="Diagnóstico por imagem">Diagnóstico por imagem</h3>
+  <div class="figure"><img src="diagnostico-cronica.svg" alt="Fluxograma: suspeita, tomografia ou ressonância, ecoendoscopia, teste genético e histologia"></div>
+  <div class="figure lado"><img src="cronica-imagem.jpg" style="width:300pt" alt="Tomografia com calcificações e colangiorressonância com ducto pancreático dilatado">
+    <div class="olhar"><div class="kick">O que olhar</div><ul>
+      <li><b>Tomografia, letras A a D:</b> A, pseudocisto pequeno; B, calcificações, os pontos brancos; C, ducto dilatado; D, atrofia.</li>
+      <li><b>Colangiorressonância:</b> ducto pancreático muito dilatado, em contas (seta).</li>
+    </ul><p class="leg">Imagens dos slides da aula.</p></div></div>
+  <div class="rows">
+    <div class="row"><div class="k">Tomografia</div><div class="v">Primeira escolha. Mostra as alterações da doença avançada: pseudocistos, calcificações (o cálcio aparece branco), dilatação do ducto principal, atrofia e cálculos dentro do ducto, que também são critério de crônica.</div></div>
+    <div class="row"><div class="k">Ressonância</div><div class="v">Avalia melhor os ductos, na colangiorressonância: ducto pancreático dilatado e irregular, com estreitamentos e dilatações secundárias, enquanto o colédoco segue fino.</div></div>
+  </div>
+  <div class="rows">
+    <div class="row"><div class="k">Ecoendoscopia</div><div class="v">Mais sensível, faz o diagnóstico mais cedo. Mas é invasiva e depende do operador: o exame é dinâmico, interpretado na hora, com menor concordância entre examinadores. Serve para quem já tem dor sem achado conclusivo na tomografia.</div></div>
+  </div>
+
+  <h3 data-bm="Ecoendoscopia">Ecoendoscopia: mais cedo e com agulha <span class="prova">PROVA</span></h3>
+  <p>Outra aplicação bem importante: <b>avaliar massas</b>. A crônica forma muitos nódulos e nem todo nódulo é tumor, mas ela é o maior fator de risco para câncer. Com o aparelho no estômago, a ecoendoscopia vê o nódulo e uma agulha faz a biópsia, separando nódulo inflamatório de câncer. Para câncer, sensibilidade e acurácia ficam entre 79% e 92%. Na ecoendoscopia valem os critérios de Rosemont; cálculo dentro do ducto pancreático é critério maior.</p>
+  <div class="rows">
+    <div class="row"><div class="k">Maior A</div><div class="v">Focos hiperecoicos com sombra acústica posterior; cálculo no ducto pancreático principal.</div></div>
+    <div class="row"><div class="k">Maior B</div><div class="v">Lobularidade em padrão de favo de mel.</div></div>
+    <div class="row"><div class="k">Menores</div><div class="v">Cistos; ducto dilatado acima de 3,5 mm; ducto de Wirsung irregular; ramos secundários dilatados acima de 1 mm; parede do ducto hiperecoica; traves fibrosas; focos hiperecoicos sem sombra; lobularidade sem favo de mel.</div></div>
+  </div>
+</section>
+
+<!-- ================================================================ 08 -->
+<section id="s08">
+  <div class="sec-head"><div class="lado"><span class="k">Seção</span><span class="num">08</span></div><div class="corpo"><div class="de">Pancreatite crônica</div><h2>Causas da crônica e quatro casos</h2>
+  <div class="aqui"><span class="feito">Caso</span><span class="feito">Pâncreas</span><span class="feito">Aguda: causas</span><span class="feito">Aguda: diagnóstico</span><span class="feito">Aguda: gravidade</span><span class="feito">Aguda: tratamento</span><span class="feito">Crônica: quadro</span><span class="on">Crônica: causas</span><span>Crônica: tratamento</span></div></div></div>
+  <div class="simples"><p><b>Em palavras simples:</b> as causas da crônica cabem em seis famílias, uma para cada letra de uma sigla. Descobrir a causa serve para tirar o que dá para tirar, tratar o que tem tratamento e contar ao paciente como a doença vai andar. Quatro casos mostram o raciocínio.</p></div>
+
+  <h3 data-bm="TIGAR-O">TIGAR-O: as seis famílias de causas</h3>
+  <p>Investigar a causa serve para achar os fatores modificáveis, ver se há terapia que faça as crises pararem e, nas doenças progressivas, como as genéticas, dar ao paciente o prognóstico.</p>
+  <div class="rows">
+    <div class="row"><div class="k">T · Tóxico-metabólica</div><div class="v">Álcool, com crises repetidas; cigarro, que aumenta a chance e, junto com o álcool, tem efeito sinérgico; hipercalcemia; hipertrigliceridemia; remédios. São as mesmas causas da aguda: a aguda recorrente lesa o pâncreas de forma crônica.</div></div>
+    <div class="row"><div class="k">I · Idiopática</div><div class="v">Sem causa genética nem fator identificado. Início precoce, antes dos 35 anos: a dor é o principal sintoma. Início tardio, depois dos 35: esteatorreia sem causa aparente.</div></div>
+    <div class="row"><div class="k">G · Genética</div><div class="v">Mutações dos genes PRSS1 (pancreatite hereditária), CFTR (o da fibrose cística) e SPINK1. Sem causa e com pesquisa genética positiva, deixa de ser idiopática. Com mutação, beber e fumar aceleram a doença.</div></div>
+  </div>
+  <div class="rows">
+    <div class="row"><div class="k">A · Autoimune</div><div class="v">Tipo 1, ligada à imunoglobulina G4; tipo 2, ligada à retocolite ulcerativa.</div></div>
+    <div class="row"><div class="k">R · Recorrente ou severa</div><div class="v">Pancreatite aguda recorrente, sem tratamento, ou um único episódio grave que destruiu o pâncreas.</div></div>
+    <div class="row"><div class="k">O · Obstrutiva</div><div class="v"><i>Pancreas divisum</i>; estenose da papila; cálculo no ducto principal; calcificação difusa; estenose do ducto; massa neoplásica. Tudo o que obstrui o ducto leva a crises e à crônica.</div></div>
+  </div>
+
+  <h3 data-bm="Quatro casos">Quatro casos para treinar</h3>
+  <div class="box"><div class="kick"><span class="dot"></span>Caso 1 · Mulher de 33 anos<span class="prova">PROVA</span></div><p>Crises de dor epigástrica forte, recorrentes, com náusea e vômito, há mais de um mês; na última, amilase acima de 3 a 5 vezes: dor típica com amilase alta fecha pancreatite aguda. Sem causa clara para as crises, a tomografia mostrou o pâncreas todo inchado, <b>parecendo uma salsicha</b>: achado patognomônico da pancreatite autoimune; a biópsia mostraria imunoglobulina G4 aumentada. Responde bem ao corticoide, que evita novas crises e a salva da pancreatite crônica. Sem o diagnóstico, as crises destruiriam o pâncreas.</p></div>
+  <div class="box"><div class="kick"><span class="dot"></span>Caso 2 · Homem de 66 anos<span class="prova">PROVA</span></div><p>Dor epigástrica recorrente nos últimos meses, diabetes de diagnóstico recente e perda de 3 kg. Paciente mais velho com diabetes recente: <b>pense em pancreatite crônica e em neoplasia</b>. A tomografia mostrou colédoco bem dilatado, vesícula distendida, ducto pancreático dilatado e massa na cabeça do pâncreas. As crises de dor já eram pela obstrução do ducto: a pancreatite aguda pode ser a primeira manifestação do tumor, sobretudo acima de 40 anos.</p></div>
+  <div class="box"><div class="kick"><span class="dot"></span>Caso 3 · Homem de 20 anos</div><p>Sem sintomas agora, mas já teve três crises de pancreatite aguda. Ultrassom sem cálculo; não bebe, não fuma, sem remédios; triglicerídeos e cálcio normais. A colangiorressonância mostrou o ducto pancreático, em vez de se juntar ao colédoco na ampola, cruzando o colédoco e desembocando na papila menor: <i>pancreas divisum</i>, uma alteração congênita. A papila menor, pequena, não dá conta de drenar todo o pâncreas; a pressão no ducto sobe e vêm as crises. Por colangiopancreatografia, faz-se a papilotomia da papila menor e, às vezes, coloca-se uma prótese para aumentar o calibre.</p></div>
+  <div class="box"><div class="kick"><span class="dot"></span>Caso 4 · Homem de 73 anos</div><p>Diarreia e perda de peso, sem dor. Operou o intestino há dois anos por um câncer de apêndice inicial, sem quimioterapia. Tem diabetes e hipertensão; nega álcool e cigarro. Diabético com diarreia: será esteatorreia? Uma tomografia antiga, do seguimento do câncer, já mostrava pequena dilatação do ducto e pequena calcificação na cabeça, sem ninguém dar importância. A colonoscopia mostrou só a colectomia direita; a gordura nas fezes veio positiva, confirmando a esteatorreia. <b>Diabetes com esteatorreia faz pensar em insuficiência pancreática.</b></p></div>
+  <div class="box"><div class="kick"><span class="dot"></span>Caso 4 · continuação</div><p>A ressonância mostrou ducto dilatado e irregular, com estenoses, dilatações secundárias e um estreitamento na cabeça: tumor ou cálculo? A ecoendoscopia viu parênquima lobulado, ducto dilatado e uma área hiperecoica com sombra acústica posterior: um cálculo obstruindo o ducto principal, critério maior. Descartado o tumor e sem álcool, cigarro, causa metabólica, história familiar ou crises prévias: <b>pancreatite crônica idiopática de início tardio</b>. Diferente porque não tinha dor, que costuma vir primeiro. Tratamento: enzimas pancreáticas e controle do diabetes; sem dor, nada mais. O painel genético pouco ajudaria a ele, mas pode interessar aos filhos.</p></div>
+
+  <h3 data-bm="Teste genético">Teste genético: quando pedir</h3>
+  <div class="rows">
+    <div class="row"><div class="k">Para quem</div><div class="v">Evidência de doença pancreática ou pancreatite crônica sem causa definida, principalmente nos jovens (recomendação forte, com evidência de baixa qualidade).</div></div>
+    <div class="row"><div class="k">Para quê</div><div class="v">Algumas síndromes têm terapia específica, como a fibrose cística (gene CFTR); liga o paciente a redes de apoio; informa o prognóstico; ajuda no planejamento familiar, com o risco de os filhos herdarem a mutação.</div></div>
+    <div class="row"><div class="k">Limite</div><div class="v">Pouco valor na doença avançada, exceto para avaliar o risco da família. O diagnóstico familiar ajuda os parentes a evitar álcool e cigarro.</div></div>
+  </div>
+</section>
+
+<!-- ================================================================ 09 -->
+<section id="s09">
+  <div class="sec-head"><div class="lado"><span class="k">Seção</span><span class="num">09</span></div><div class="corpo"><div class="de">Pancreatite crônica</div><h2>Tratamento da pancreatite crônica</h2>
+  <div class="aqui"><span class="feito">Caso</span><span class="feito">Pâncreas</span><span class="feito">Aguda: causas</span><span class="feito">Aguda: diagnóstico</span><span class="feito">Aguda: gravidade</span><span class="feito">Aguda: tratamento</span><span class="feito">Crônica: quadro</span><span class="feito">Crônica: causas</span><span class="on">Crônica: tratamento</span></div></div></div>
+  <div class="simples"><p><b>Em palavras simples:</b> parar de beber e de fumar é a primeira medida. A dor é tratada em degraus, deixando o opioide para o fim; a diarreia, com enzimas em toda refeição. Rastrear câncer com exames repetidos não ajuda.</p></div>
+
+  <h3 data-bm="Quatro alvos e a primeira medida">Quatro alvos e a primeira medida</h3>
+  <p>O tratamento olha a dor, a insuficiência exócrina, o risco de câncer e o diabetes (tipo 3c), que costuma ficar com o endocrinologista. A primeira medida é <b>parar de beber e parar de fumar</b>: cada vez que bebe, o paciente pode ter nova crise de dor, e a lesão do pâncreas progride.</p>
+
+  <h3 data-bm="A dor da crônica">A dor da crônica, em degraus</h3>
+  <p>Tende a ser contínua, com períodos de acalmia e recaídas, e não desaparece com a evolução: o paciente morre com essa dor. É limitante, incapacitante e leva a péssima qualidade de vida.</p>
+  <ol class="flow">
+    <li><b class="t">Antioxidantes.</b> Selênio, ácido ascórbico, betacaroteno e metionina, manipulados. Eram vistos como perfumaria, mas estudos mostraram efeito positivo no controle da dor.</li>
+    <li><b class="t">Moduladores e analgésicos.</b> Gabapentina, amitriptilina e todo tipo de analgésico.</li>
+    <li><b class="t">Opioide.</b> Só quando tudo já deu errado.</li>
+    <li><b class="t">Bloqueio do plexo celíaco.</b> Corticoide com anestésico em volta do tronco celíaco: por ecoendoscopia, com agulha pela parede do estômago, ou por tomografia, com o radiologista intervencionista entrando pelas costas.</li>
+    <li><b class="t">Endoscopia.</b> No ducto estreitado (estenose na cabeça), a colangiopancreatografia dilata com balão e põe uma prótese plástica que mantém o ducto aberto e melhora a drenagem.</li>
+    <li><b class="t">Cirurgia.</b> Escolhida conforme o calibre do ducto (tabela abaixo).</li>
+  </ol>
+  <div class="box red"><div class="kick"><span class="dot"></span>Pegadinha do professor<span class="prova">PROVA</span></div><p>O opioide da crônica é o contrário da aguda. Na aguda, morfina cedo; na crônica, o paciente usaria morfina direto, e o risco de vício nessas drogas altamente viciantes é muito alto. Evite: use só depois de esgotadas as outras terapias.</p></div>
+  <div class="box red"><div class="kick"><span class="dot"></span>Alerta</div><p>As terapias invasivas para a dor (bloqueio do plexo celíaco, próteses e cirurgia) só valem em quem parou de beber. Em quem ainda bebe, não vale a pena.</p></div>
+  <p>Na crônica obstrutiva, a cirurgia é preferida à endoscopia para o alívio duradouro da dor quando a endoscopia de primeira linha já falhou. A técnica depende do ducto:</p>
+  <div class="cmp">
+    <div class="r h"><div class="k"></div><div class="c">Ducto bem dilatado</div><div class="c">Ducto sem dilatação</div></div>
+    <div class="r"><div class="k">Cirurgia</div><div class="c destaque">Pancreatojejunostomia látero-lateral (Puestow, Partington-Rochelle)</div><div class="c destaque">Duodenopancreatectomia (Whipple)</div></div>
+    <div class="r"><div class="k">Como</div><div class="c">Abre-se todo o ducto e costura-se uma alça de jejuno ao longo dele</div><div class="c">Retira-se parte do estômago, todo o duodeno, o colédoco, a vesícula e a cabeça do pâncreas</div></div>
+    <div class="r"><div class="k">Por que alivia</div><div class="c">O ducto obstruído passa a drenar direto no intestino</div><div class="c">Desnerva a região</div></div>
+  </div>
+
+  <h3 data-bm="Insuficiência exócrina">Insuficiência exócrina: enzimas em toda refeição</h3>
+  <div class="rows">
+    <div class="row"><div class="k">Confirmar</div><div class="v">Teste da elastase fecal, o mais simples e disponível: elastase baixa nas fezes sugere insuficiência exócrina. Pesquisar gordura nas fezes também serve, mas supercrescimento bacteriano e doença celíaca também dão esteatorreia.</div></div>
+    <div class="row"><div class="k">Avaliar sempre</div><div class="v">Estado nutricional, osteoporose e vitaminas A, D, E e K. Manter acompanhamento nutricional: o risco de desnutrição é alto.</div></div>
+  </div>
+  <div class="ref">
+    <div class="txt"><div class="kick"><span class="dot"></span>Enzimas pancreáticas</div><p>Ele já não produz lipase, amilase nem proteases: repõe em toda refeição.</p></div>
+    <div class="val">40 a 50 mil unidades<small>a cada refeição (dois comprimidos)</small></div>
+  </div>
+
+  <h3 data-bm="Câncer: rastrear não ajuda">Câncer: rastrear não ajuda</h3>
+  <p>A crônica é o principal fator de risco para câncer de pâncreas, mas exames de rotina não adiantam: o pâncreas é tão deformado que não se distinguem lesões pequenas de cicatrizes. Tomografia seriada não reduz o risco nem antecipa o diagnóstico, é invasiva e cara. Na alteração muito suspeita, ecoendoscopia com biópsia.</p>
+
+  <h3 data-bm="O resumo da crônica">O resumo da crônica <span class="prova">PROVA</span></h3>
+  <div class="box"><div class="kick"><span class="dot"></span>Para fechar a aula</div><ul>
+    <li><span class="medium">Diagnóstico precoce</span> pela história familiar e nas crises recorrentes, antes da destruição completa.</li>
+    <li><span class="medium">Sempre investigar a causa</span> e tratar os fatores modificáveis para retardar a progressão.</li>
+    <li><span class="medium">Teste genético</span> só nos jovens sem causa definida; nos mais velhos, só pela família.</li>
+    <li><span class="medium">Antioxidantes</span> são indicados no tratamento da dor.</li>
+    <li><span class="medium">Terapias invasivas</span> para a dor só em quem parou de beber.</li>
+    <li><span class="medium">Insuficiência exócrina:</span> repor enzimas e cuidar da nutrição e das vitaminas.</li>
+    <li><span class="medium">Rastreamento do câncer</span> ainda não está bem definido; não há indicação absoluta.</li>
+  </ul></div>
+</section>
+
+<!-- ================================================================ 10 -->
+<section id="s10">
+  <div class="sec-head"><div class="lado"><span class="k">Seção</span><span class="num">10</span></div><div class="corpo"><div class="de">Revisão</div><h2>O essencial da aula</h2>
+  <div class="aqui"><span class="feito">Caso</span><span class="feito">Pâncreas</span><span class="feito">Aguda: causas</span><span class="feito">Aguda: diagnóstico</span><span class="feito">Aguda: gravidade</span><span class="feito">Aguda: tratamento</span><span class="feito">Crônica: quadro</span><span class="feito">Crônica: causas</span><span class="feito">Crônica: tratamento</span></div></div></div>
+
+  <h3 data-bm="Números da aula">Números da aula</h3>
+  <div class="tiles">
+    <div class="tile"><div class="lab">Causa biliar</div><div class="n">40%</div><div class="s">álcool 30%, remédios 1,4%</div></div>
+    <div class="tile g"><div class="lab">Triglicerídeos</div><div class="n">1.000 mg/dL</div><div class="s">risco importante; acima de 500 já pode causar</div></div>
+    <div class="tile"><div class="lab">Icterícia na aguda</div><div class="n">até 25%</div><div class="s">cálculo, edema da cabeça ou inflamação da papila</div></div>
+  </div>
+  <div class="tiles">
+    <div class="tile"><div class="lab">Leves</div><div class="n">85%</div><div class="s">mortalidade de 3%; na grave, até 30%</div></div>
+    <div class="tile g"><div class="lab">Soro</div><div class="n">30 a 40 mL/kg</div><div class="s">nas primeiras 24 horas; diurese 0,5 a 1 mL/kg/hora</div></div>
+    <div class="tile"><div class="lab">Idoso</div><div class="n">15 vezes</div><div class="s">mais mortalidade acima de 75 anos</div></div>
+  </div>
+  <div class="tiles">
+    <div class="tile"><div class="lab">Coleções</div><div class="n">4 semanas</div><div class="s">para virar pseudocisto ou necrose murada e para drenar</div></div>
+    <div class="tile"><div class="lab">Crônica</div><div class="n">10 anos</div><div class="s">da primeira dor até esteatorreia e diabetes</div></div>
+    <div class="tile g"><div class="lab">Enzimas</div><div class="n">40 a 50 mil</div><div class="s">unidades a cada refeição</div></div>
+  </div>
+  <div class="tiles">
+    <div class="tile"><div class="lab">Vesícula que fica</div><div class="n">mais de 70%</div><div class="s">de novas crises depois de uma crise ou complicação</div></div>
+    <div class="tile"><div class="lab">Ranson e BISAP</div><div class="n">maior que 3</div><div class="s">grave; APACHE II maior que 8, Balthazar maior que 6</div></div>
+    <div class="tile"><div class="lab">Resposta inflamatória</div><div class="n">2 ou mais</div><div class="s">itens entre temperatura, pulso, respiração e leucócitos</div></div>
+  </div>
+  <div class="tiles">
+    <div class="tile"><div class="lab">Sem causa</div><div class="n">40 anos</div><div class="s">acima disso, pensar em tumor obstruindo o ducto</div></div>
+    <div class="tile"><div class="lab">Obesidade</div><div class="n">acima de 30</div><div class="s">de índice de massa corporal: 3,8 vezes mais complicações</div></div>
+    <div class="tile"><div class="lab">Crise da crônica</div><div class="n">1 a 7 dias</div><div class="s">intercalada por períodos sem dor</div></div>
+  </div>
+
+  <h3 data-bm="Erros comuns">Erros comuns</h3>
+  <div class="box red"><div class="kick"><span class="dot"></span>Não caia nestes</div><ul>
+    <li><span class="medium">Fechar pancreatite só com amilase.</span> Precisa de dois de três critérios.</li>
+    <li><span class="medium">Pedir tomografia na chegada para diagnosticar.</span> Ela é para complicações, após 48 a 72 horas.</li>
+    <li><span class="medium">Deixar em jejum e dar antibiótico profilático.</span> Dieta cedo; antibiótico só com infecção.</li>
+    <li><span class="medium">Drenar a coleção cedo.</span> Espere cerca de 4 semanas, mesmo infectada.</li>
+    <li><span class="medium">Morfina livre na crônica.</span> Opioide só no fim da escada.</li>
+  </ul></div>
+
+  <div class="vesp">
+  <h3 data-bm="Véspera">Véspera: todos os pontos de prova</h3>
+  <div class="item"><span class="prova">PROVA</span><p>Colúria com acolia: bilirrubina direta e icterícia obstrutiva; fezes claras não dizem a altura.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p>Ultrassom: colédoco fino e vesícula murcha, obstrução alta; colédoco dilatado e vesícula distendida, baixa.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p>Tomografia pode não ver o cálculo de colesterol, que é radiotransparente; a colangiorressonância vê.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p>Depois de crise ou complicação da pedra, opera-se a vesícula mesmo sem sintomas: mais de 70% voltam.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p>Proteases saem desligadas; a enteropeptidase do intestino liga a tripsina, e a tripsina liga as outras.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p>Pancreatite aguda acima de 40 anos sem causa: pensar em tumor; pode ser a primeira manifestação dele.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p>Dor epigástrica para o dorso, forte, com náuseas e vômitos: sempre lembrar de pancreatite.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p>Cullen (umbigo) e Grey-Turner (flancos): hemorragia retroperitoneal, sinais tardios da forma grave.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p>Diagnóstico com dois de três: dor típica, amilase ou lipase acima de 3 vezes, imagem compatível.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p>Causa: ultrassom (pedra), história (álcool, remédio, procedimento), triglicerídeos e cálcio, tumor.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p>Tomografia com contraste, ideal após 72 horas, não antes de 48; precoce só na dúvida diagnóstica.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p>Gravidade de Atlanta: Ranson maior que 3, APACHE II maior que 8, Balthazar maior que 6, falência de órgãos, complicação local.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p>BISAP: ureia, confusão, resposta inflamatória, idade acima de 60, derrame pleural; e o escore de resposta inflamatória todo dia.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p>Hidratação e analgesia sempre: 30 a 40 mL/kg em 24 horas, diurese de 0,5 a 1 mL/kg/hora, morfina cedo.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p>Sem jejum: dieta assim que tolerar; na grave, enteral por sonda; parenteral só se a enteral falhar.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p>Sem antibiótico profilático, nem na grave; só com infecção (quinolona, cefalosporina de quarta geração, carbapenêmico).</p></div>
+  <div class="item"><span class="prova">PROVA</span><p>Ar dentro do pseudocisto ou da necrose murada é infecção. Mexer só se infecta ou comprime, de preferência após 4 semanas.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p>Crônica: a dor vem primeiro; esteatorreia e diabetes cerca de 10 anos depois, com mais de 90% do pâncreas perdido.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p>Pancreatite crônica é o maior fator de risco para câncer de pâncreas; a ecoendoscopia com agulha separa nódulo de tumor.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p>Pâncreas em salsicha: pancreatite autoimune, corticoide. Idoso com diabetes recente: pensar em crônica e em câncer.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p>Na crônica, opioide só quando tudo falhou; antioxidantes sim; terapias invasivas só em quem parou de beber.</p></div>
+
+  </div>
+  <h3 data-bm="Glossário">Palavras da aula em linguagem simples</h3>
+  <div class="rows terms">
+    <div class="row"><div class="k">Acolia fecal</div><div class="v">Fezes claras, esbranquiçadas, porque a bile não chega ao intestino.</div></div>
+    <div class="row"><div class="k">Ampola</div><div class="v">Canal comum do colédoco com o ducto pancreático, que drena na papila maior.</div></div>
+    <div class="row"><div class="k">APACHE II</div><div class="v">Escore de gravidade da terapia intensiva, calculado no computador.</div></div>
+    <div class="row"><div class="k">BISAP</div><div class="v">Escore de gravidade da pancreatite aguda à beira do leito, com cinco itens.</div></div>
+  </div>
+  <div class="rows terms">
+    <div class="row"><div class="k">CFTR, PRSS1, SPINK1</div><div class="v">Genes ligados à pancreatite crônica; o CFTR é o da fibrose cística.</div></div>
+    <div class="row"><div class="k">Colangio&shy;pancreatografia retrógrada endoscópica</div><div class="v">Endoscopia até a papila, com raio X, para tratar o colédoco e o ducto pancreático.</div></div>
+    <div class="row"><div class="k">Colangior&shy;ressonância</div><div class="v">Ressonância que desenha os ductos biliares e pancreáticos.</div></div>
+    <div class="row"><div class="k">Colúria</div><div class="v">Urina escura pela bilirrubina direta.</div></div>
+  </div>
+  <div class="rows terms">
+    <div class="row"><div class="k">Ecoendoscopia</div><div class="v">Endoscopia com ultrassom na ponta; vê o pâncreas de perto e faz biópsia.</div></div>
+    <div class="row"><div class="k">Elastase fecal</div><div class="v">Enzima do pâncreas medida nas fezes; baixa, sugere insuficiência exócrina.</div></div>
+    <div class="row"><div class="k">Enteropeptidase</div><div class="v">Enzima do intestino (enteroquinase) que transforma tripsinogênio em tripsina.</div></div>
+    <div class="row"><div class="k">Esfíncter de Oddi</div><div class="v">Músculo da papila, no fim do colédoco; a papilotomia o abre.</div></div>
+  </div>
+  <div class="rows terms">
+    <div class="row"><div class="k">Macroamilasemia</div><div class="v">Amilase grande que o rim não filtra; sobe no sangue sem doença do pâncreas.</div></div>
+    <div class="row"><div class="k">Pancreas divisum</div><div class="v">Alteração congênita em que quase todo o pâncreas drena pela papila menor.</div></div>
+    <div class="row"><div class="k">Papilotomia</div><div class="v">Corte da papila por endoscopia que abre o esfíncter de Oddi.</div></div>
+    <div class="row"><div class="k">Sitofobia</div><div class="v">Medo de comer, porque comer provoca dor.</div></div>
+    <div class="row"><div class="k">TIGAR-O</div><div class="v">Sigla das causas da crônica: tóxico-metabólica, idiopática, genética, autoimune, recorrente, obstrutiva.</div></div>
+    <div class="row"><div class="k">Zimogênio</div><div class="v">Enzima produzida na forma desligada (pró-enzima), ativada no intestino.</div></div>
+  </div>
+  {{NOTAS}}
+</section>
+</body></html>
