@@ -20,4 +20,3 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
-| Questões da P1 Gastro T23 no banco (sem aula; fissura na gastro-a1) | Claude | (só banco) | banco de Gastro, gastro-a1 | 15/11/2026 |
