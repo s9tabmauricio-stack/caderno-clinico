@@ -20,4 +20,3 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
-| Apostila da aula de aneurismas (21/10) | Claude | claude/gracious-cannon-bijs9v | angio-a2 | 2026-11-16 |
