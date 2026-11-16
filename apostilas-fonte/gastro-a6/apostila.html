@@ -1,0 +1,942 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<title>Gastroenterologia · Aula 6 · Doenças do fígado</title>
+<meta name="rodape" content="Mauricio Faria · Gastroenterologia · Aula 6 — Doenças do fígado">
+<link rel="stylesheet" href="apostila.css">
+<style>
+/* ===== componentes do molde novo (em teste na pneumo-a5) ===== */
+.simples { background: #FFFFFF; border: 1px solid #C3D8F8; border-left: 4pt solid #0B5BD3; border-radius: 12pt; padding: 9pt 14pt 10pt; margin: 0 0 10pt; break-inside: avoid; }
+.simples p { font-size: 10.2pt; line-height: 1.5; color: #1F2933; margin: 0; }
+.aqui { display: flex; margin-top: 7pt; }
+.aqui span { flex: 1; border-top: 3pt solid #DCDCE2; padding-top: 2.5pt; margin-right: 2.5pt; font-family: "Inter Medium"; font-size: 6pt; line-height: 1.25; color: #8E8E93; }
+.aqui span:last-child { margin-right: 0; }
+.aqui span.feito { border-top-color: #A9C4EE; color: #6C6C70; }
+.aqui span.on { border-top-color: #0B5BD3; color: #0B5BD3; font-family: "Inter SemiBold"; }
+.aqui span.ramo { border-top-style: dashed; }
+.figure .olhar { margin-top: 8pt; }
+.figure .olhar .kick { margin-bottom: 3pt; }
+.figure .olhar ul { margin: 0; }
+.figure .olhar li { padding-left: 0; font-size: 8.7pt; line-height: 1.45; margin-bottom: 2pt; }
+.figure .olhar li::before { display: none; }
+.figure .olhar li b { color: #0B5BD3; }
+.figure .leg { font-size: 7.8pt; color: #8E8E93; margin: 5pt 0 0; }
+.reg { font-size: 8.3pt; line-height: 1.45; color: #6C6C70; background: #F7F7FA; border: 1px solid #E3E3E8; border-radius: 9pt; padding: 5pt 10pt; margin: 6pt 0 9pt; break-inside: avoid; }
+.reg b { font-family: "Inter SemiBold"; color: #4F5B70; }
+.livros { font-size: 8.3pt; line-height: 1.45; color: #6E3AA7; background: #F4EBFB; border: 1px solid #DEC7F1; border-radius: 9pt; padding: 5pt 10pt; margin: 6pt 0 9pt; break-inside: avoid; }
+.livros b { color: #6E3AA7; }
+.sw.simples-sw { background: #FFFFFF; border-color: #C3D8F8; border-left: 3pt solid #0B5BD3; }
+.sw.aqui-sw { background: linear-gradient(90deg, #A9C4EE 0, #A9C4EE 45%, #0B5BD3 45%, #0B5BD3 70%, #DCDCE2 70%); border: 0; height: 4pt; border-radius: 2pt; }
+.sw.exame-sw { background: #1F2933; border-color: #1F2933; }
+.cmp .destaque { font-family: "Inter SemiBold"; color: #0B5BD3; }
+.cmp.c4 .k { width: 62pt; }
+.cmp.c4 .c { font-size: 8.3pt; padding-right: 8pt; }
+.vesp { break-before: page; }
+.vesp .item { display: flex; align-items: baseline; background: #FFFFFF; border: 1px solid #E3E3E8; border-radius: 12pt; padding: 7pt 12pt; margin: 0 0 6pt; break-inside: avoid; }
+.vesp .item .prova { flex: none; margin: 0 9pt 0 0; }
+.vesp .item p { margin: 0; font-size: 9.2pt; }
+.tiles.t4 { margin: 6pt 0 8pt; }
+.figure.lado { display: flex; align-items: center; }
+.figure.lado > img { flex: none; }
+.figure.lado .olhar { flex: 1; margin: 0 0 0 12pt; }
+.cover .toc a { padding: 2.4pt 0; }
+/* ===== ajustes desta aula ===== */
+.sw.reg-sw { background: #F7F7FA; border-color: #E3E3E8; }
+.cmp.c5 .k { width: 86pt; }
+.cmp.c5 .c { font-size: 8.1pt; padding-right: 6pt; }
+.vesp .item { padding: 5.5pt 12pt; margin: 0 0 4.5pt; }
+.vesp .item p { font-size: 8.9pt; line-height: 1.42; }
+.aqui { break-after: avoid; }
+</style>
+</head><body>
+
+<div class="cover">
+  <div class="kicker">Gastroenterologia · Aula 6 · Doenças do fígado</div>
+  <h1>Cirrose e doenças do fígado</h1>
+  <p class="sub">Da agressão repetida à cirrose: as causas, os sinais e o tratamento de ascite, varizes, encefalopatia e hepatocarcinoma.</p>
+  <div class="author"><span class="av">B</span><div><b>Dr. Gabriel da Rocha Bonatto</b><span>Cirurgião oncológico · 10 de novembro de 2026</span></div></div>
+  <div class="keynums"><div class="kick">Três números para levar</div>
+    <div class="kn-grid">
+      <div class="kn"><div class="n">12 mmHg</div><div class="l">de pressão na veia porta: acima disso surgem ascite e varizes que sangram</div></div>
+      <div class="kn"><div class="n">MELD 15</div><div class="l">ou mais: já há indicação de transplante de fígado</div></div>
+      <div class="kn"><div class="n">8 g</div><div class="l">de albumina por litro retirado quando a paracentese passa de 5 litros</div></div>
+    </div></div>
+  <div class="toc"><div class="kick">Nesta apostila</div>
+    <a href="#s01"><span class="tn">01</span><span class="tt">O fígado normal</span><span class="pg">{{s01}}</span></a>
+    <a href="#s02"><span class="tn">02</span><span class="tt">Fibrose e cirrose</span><span class="pg">{{s02}}</span></a>
+    <a href="#s03"><span class="tn">03</span><span class="tt">Como avaliar o fígado: fibrose e função</span><span class="pg">{{s03}}</span></a>
+    <a href="#s04"><span class="tn">04</span><span class="tt">Causas da cirrose e hepatite B</span><span class="pg">{{s04}}</span></a>
+    <a href="#s05"><span class="tn">05</span><span class="tt">Hepatite C</span><span class="pg">{{s05}}</span></a>
+    <a href="#s06"><span class="tn">06</span><span class="tt">Esteatose e doença metabólica do fígado</span><span class="pg">{{s06}}</span></a>
+    <a href="#s07"><span class="tn">07</span><span class="tt">Doença hepática alcoólica</span><span class="pg">{{s07}}</span></a>
+    <a href="#s08"><span class="tn">08</span><span class="tt">Hepatite autoimune e esquistossomose</span><span class="pg">{{s08}}</span></a>
+    <a href="#s09"><span class="tn">09</span><span class="tt">O cirrótico no exame físico</span><span class="pg">{{s09}}</span></a>
+    <a href="#s10"><span class="tn">10</span><span class="tt">Ascite, paracentese e peritonite</span><span class="pg">{{s10}}</span></a>
+    <a href="#s11"><span class="tn">11</span><span class="tt">Sangramento de varizes</span><span class="pg">{{s11}}</span></a>
+    <a href="#s12"><span class="tn">12</span><span class="tt">Encefalopatia hepática</span><span class="pg">{{s12}}</span></a>
+    <a href="#s13"><span class="tn">13</span><span class="tt">Hepatocarcinoma e transplante</span><span class="pg">{{s13}}</span></a>
+    <a href="#s14"><span class="tn">14</span><span class="tt">O essencial da aula</span><span class="pg">{{s14}}</span></a>
+    <p class="note">Organizada a partir da aula e dos slides do professor, com a linguagem ajustada para o estudo. A legenda de cores está na página 2.</p>
+  </div>
+</div>
+
+<div class="legend"><div class="kick">Como ler esta apostila</div><div class="lg-grid">
+  <div class="lg"><span class="sw blue"></span><div><b>Azul</b> conteúdo da aula e raciocínio</div></div>
+  <div class="lg"><span class="sw green"></span><div><b>Verde</b> dose ou valor de referência</div></div>
+  <div class="lg"><span class="sw red"></span><div><b>Vermelho</b> alerta, erro comum e a <b>Pegadinha do professor</b></div></div>
+  <div class="lg"><span class="sw orange"></span><div><b>Laranja</b> fala ou parêntese do professor</div></div>
+  <div class="lg"><span class="sw purple"></span><div><b>Roxo</b> complemento que não foi dito em aula</div></div>
+  <div class="lg"><span class="prova">PROVA</span><div><b>Marca de prova</b> o ponto que cai na prova</div></div>
+  <div class="lg"><span class="sw simples-sw"></span><div><b>Em palavras simples</b> o capítulo em duas ou três linhas</div></div>
+  <div class="lg"><span class="sw aqui-sw"></span><div><b>Você está aqui</b> a etapa da trilha da aula</div></div>
+  <div class="lg"><span class="sw reg-sw"></span><div><b>Cinza</b> o valor do slide quando difere da fala</div></div>
+  <div class="lg"><span class="sw exame-sw"></span><div><b>O que olhar</b> guia das imagens de exame</div></div>
+</div></div>
+
+<div class="prof"><div class="kick">Sobre o professor · Dr. Bonatto</div>
+<div class="rows">
+  <div class="row"><div class="k">Especialidade</div><div class="v">Cirurgia oncológica.</div></div>
+  <div class="row"><div class="k">Atuação</div><div class="v">São Lucas Hospital Center, em Cascavel. Professor de Gastroenterologia.</div></div>
+  <div class="row"><div class="k">Na aula</div><div class="v">Contou casos que viveu em plantões e no pronto atendimento: sangramento de varizes, paracentese complicada e tamponamento por balão.</div></div>
+</div></div>
+
+<div class="figure"><div class="kick">A trilha da aula</div><img src="trilha.svg" alt="Trilha da aula em oito etapas"></div>
+
+<!-- ============================================================ 01 -->
+<section id="s01">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">01</span></div><div class="corpo"><div class="de">Etapa 1 · a base</div><h2>O fígado normal</h2></div></div>
+  <div class="aqui"><span class="on">1 · Fígado normal</span><span>2 · Fibrose e cirrose</span><span>3 · Avaliar</span><span>4 · Causas</span><span>5 · Exame físico</span><span>6 · Complicações</span><span>7 · Hepatocarcinoma</span><span>8 · Rastreio</span></div>
+  <div class="simples"><p>O fígado recebe quase todo o sangue que sai do intestino, limpa esse sangue, fabrica proteínas e guarda vitaminas. Ele se regenera e é dividido em segmentos com irrigação própria, o que permite retirar partes dele com segurança.</p></div>
+
+<h3>O que o fígado faz</h3>
+<p>A principal célula é o <b>hepatócito</b>, que responde por 70 a 80% da massa do fígado. Ao redor dele correm sempre uma veia, uma artéria e uma via biliar, e no centro de cada lóbulo fica a veia centrolobular. Tudo precisa funcionar junto para o fígado armazenar, fabricar proteínas, metabolizar e limpar o sangue que passou pelo intestino.</p>
+<div class="card wide"><span class="tag">Funções do fígado</span>
+<ul class="cols2">
+  <li>Produz bile, necessária para digerir gorduras.</li>
+  <li>Tira o excesso de glicose do sangue e mantém a glicemia entre as refeições.</li>
+  <li>Produz proteínas que regulam o volume de sangue no corpo e a coagulação.</li>
+  <li>Produz e metaboliza colesterol, base de hormônios como testosterona e estrogênio.</li>
+  <li>Armazena as vitaminas A, B12, D, E e K e minerais, como o ferro.</li>
+  <li>Transforma e elimina toxinas, medicamentos e álcool.</li>
+</ul></div>
+
+<h3>Um órgão que se regenera</h3>
+<p>Os hepatócitos se multiplicam por mitose. Depois de uma hepatectomia, o fígado pode voltar ao tamanho que tinha. Isso permite operar fígados muito doentes em dois tempos:</p>
+<ol class="flow">
+  <li><b class="t">Ligar um ramo da veia porta.</b> Por exemplo, o ramo esquerdo, para o lado direito crescer.</li>
+  <li><b class="t">Esperar o lado bom crescer.</b> Cerca de uma semana a 10 dias.</li>
+  <li><b class="t">Retirar a parte doente.</b> Fica um remanescente de fígado adequado, e a cirurgia fica livre da doença.</li>
+</ol>
+<div class="box orange"><div class="kick"><span class="dot"></span>Parêntese do professor</div><p>Na mitologia grega, Prometeu ficou preso numa montanha e uma águia vinha comer o fígado dele, que voltava a crescer. Desde a Antiguidade se conhecia a capacidade do fígado de se refazer.</p></div>
+
+<h3>Segmentos: de Cantlie a Couinaud</h3>
+<p>Por volta de 1897, o cirurgião escocês Cantlie descreveu, estudando cadáveres, a linha que leva o seu nome: vai da veia hepática média (supra-hepática média) até o leito da vesícula e separa o lobo direito do esquerdo. Com ela, as hepatectomias passaram a ser feitas sem grande mortalidade na cirurgia. Na superfície, à frente, quem separa os lobos é o ligamento falciforme.</p>
+<p>Mais tarde, o francês Couinaud dividiu o fígado em <b>8 segmentos</b>; depois o segmento IV foi dividido em IVa e IVb, o que dá 9. Cada segmento recebe a sua própria <b>tríade portal</b> (artéria, veia porta e ducto biliar), e por isso as hepatectomias por segmento ficaram possíveis, com muito menos sangramento.</p>
+<div class="figure lado"><img src="fig-couinaud.jpg" style="width:230pt" alt="Segmentos de Couinaud">
+  <div class="olhar"><div class="kick">O que olhar</div><ul>
+    <li><b>Veia porta</b> (azul, no meio): divide o fígado em segmentos de cima e de baixo.</li>
+    <li><b>Veias hepáticas</b> (azul, no alto): separam os segmentos; a média divide o lobo direito do esquerdo.</li>
+    <li><b>Segmento 1</b> (lobo caudado): fica atrás, junto à veia cava inferior.</li>
+    <li><b>Segmentos 6 e 7</b>: posteriores, junto ao rim; para operá-los é preciso soltar os ligamentos e mobilizar bastante o fígado.</li>
+  </ul><p class="leg">Imagem dos slides da aula. A tomografia mostra os mesmos segmentos, o que facilita a conversa com o radiologista.</p></div>
+</div>
+
+<h3>Ligamentos e lobos</h3>
+<p>O fígado é pesado e grande; se ficasse solto no abdome, qualquer trauma o lesaria com sangramento enorme. Os ligamentos o prendem ao diafragma e à parede abdominal.</p>
+<div class="rows">
+  <div class="row"><div class="k">Falciforme, coronário e triangulares</div><div class="v">Fixam o fígado ao diafragma e à parede abdominal.</div></div>
+  <div class="row"><div class="k">Ligamento redondo</div><div class="v">É a veia umbilical, fechada depois do nascimento; corre junto com o falciforme.</div></div>
+  <div class="row"><div class="k">Lobo quadrado</div><div class="v">Segmento IV, à frente, entre a vesícula biliar e o ligamento redondo.</div></div>
+  <div class="row"><div class="k">Lobo caudado</div><div class="v">Segmento I, atrás, junto à veia cava inferior e ao ligamento venoso.</div></div>
+</div>
+
+<h3>De onde vem o sangue</h3>
+<div class="ref">
+  <div class="txt"><div class="kick"><span class="dot"></span>Fluxo de sangue do fígado</div><p>O resto, 20 a 30%, vem da artéria hepática. Mesmo sendo venoso, o sangue da porta leva boa parte do oxigênio do fígado.</p></div>
+  <div class="val">70 a 80%<small>pela veia porta</small></div>
+</div>
+<p>A veia mesentérica inferior desemboca na esplênica, que se junta à mesentérica superior e forma a <b>veia porta</b>, com ramos direito e esquerdo: é o sangue do intestino e do baço. A parte arterial sai do tronco celíaco: artéria hepática comum, hepática própria e ramos direito e esquerdo.</p>
+<div class="box red"><div class="kick"><span class="dot"></span>Pegadinha do professor</div><p>A artéria hepática tem variações comuns: a esquerda pode sair da artéria gástrica esquerda, e a direita, da mesentérica superior. Numa colecistectomia simples, quem liga essa artéria achando que é a cística pode levar o paciente à cirrose, à necrose do fígado e à morte. É preciso conhecer bem a anatomia.</p></div>
+</section>
+
+<!-- ============================================================ 02 -->
+<section id="s02">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">02</span></div><div class="corpo"><div class="de">Etapa 2 · o dano</div><h2>Fibrose e cirrose</h2></div></div>
+  <div class="aqui"><span class="feito">1 · Fígado normal</span><span class="on">2 · Fibrose e cirrose</span><span>3 · Avaliar</span><span>4 · Causas</span><span>5 · Exame físico</span><span>6 · Complicações</span><span>7 · Hepatocarcinoma</span><span>8 · Rastreio</span></div>
+  <div class="simples"><p>Cada agressão ao fígado (álcool, vírus, gordura) deixa um pouco de cicatriz. Com o tempo, a cicatriz toma o fígado, que fica duro e cheio de nódulos: é a cirrose. O sangue passa com dificuldade, a pressão sobe na veia porta e o fígado deixa de fazer o seu trabalho.</p></div>
+
+<h3 data-bm="O que é cirrose">O que é cirrose <span class="prova">PROVA</span></h3>
+<p>A cirrose é o <b>estágio final e tardio da fibrose</b>: uma doença crônica, progressiva e irreversível, com fibrose difusa e nódulos de regeneração que distorcem a arquitetura do fígado e levam à insuficiência hepática. A fibrose é o depósito de tecido conjuntivo fibroso no parênquima. O fígado normal funciona como uma esponja, com o sangue fluindo bem; com fibrose, fica duro, cheio de nódulos, e o sangue passa com dificuldade.</p>
+<p>Com isso o fígado perde a capacidade de produzir albumina e fatores de coagulação e de limpar as substâncias tóxicas, além de fabricar vitaminas, hormônios e proteínas.</p>
+<div class="quote"><p>“Se me perguntarem o que é a cirrose hepática: é uma causa irreversível da fibrose. O paciente nesse estágio não vai conseguir regredir para uma esteatose ou para o fígado normal.”</p><div class="who">Dr. Bonatto, sobre a definição de cirrose</div></div>
+
+<h3 data-bm="A célula estrelada, vilã da fibrose">A célula estrelada, vilã da fibrose <span class="prova">PROVA</span></h3>
+<p>A célula estrelada é a grande vilã do início da fibrose. Ela fica ao lado do hepatócito e reage a qualquer agressão:</p>
+<ol class="flow">
+  <li><b class="t">Agressão.</b> Álcool, vírus, toxinas, estresse oxidativo ou a própria gordura (esteatose) lesam o hepatócito.</li>
+  <li><b class="t">Estrelada em repouso.</b> Na forma quiescente, cheia de bracinhos, ela guarda vitamina A no espaço de Disse.</li>
+  <li><b class="t">Ativação.</b> Estimulada, muda de forma para proteger o hepatócito, como um escudo, e vira miofibroblasto. Células de Kupffer ativadas (por um vírus, por exemplo) e plaquetas também liberam fatores que a estimulam.</li>
+  <li><b class="t">Colágeno.</b> A estrelada ativada produz colágeno e matriz extracelular: começa a fibrose, que pode chegar à cirrose.</li>
+  <li><b class="t">Espaço de Disse fechado.</b> A matriz enche o espaço entre o hepatócito e o sinusoide, os furinhos (fenestras) do sinusoide se fecham e o sangue e os nutrientes não chegam mais ao hepatócito.</li>
+</ol>
+
+<h3>Hipertensão portal: de onde vêm as complicações</h3>
+<p>Como o fígado fica rígido, o sangue precisa de muito mais pressão para atravessá-lo: é a <b>hipertensão portal</b>. Dela saem quase todas as complicações da cirrose, que voltam nos capítulos 09 a 12.</p>
+<div class="figure"><img src="hipertensao-portal.svg" alt="Consequências da hipertensão portal"></div>
+</section>
+
+<!-- ============================================================ 03 -->
+<section id="s03">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">03</span></div><div class="corpo"><div class="de">Etapa 3 · medir</div><h2>Como avaliar o fígado: fibrose e função</h2></div></div>
+  <div class="aqui"><span class="feito">1 · Fígado normal</span><span class="feito">2 · Fibrose e cirrose</span><span class="on">3 · Avaliar</span><span>4 · Causas</span><span>5 · Exame físico</span><span>6 · Complicações</span><span>7 · Hepatocarcinoma</span><span>8 · Rastreio</span></div>
+  <div class="simples"><p>Duas perguntas: quanto o fígado já cicatrizou (elastografia, biópsia, imagem) e quanto ainda funciona (Child-Pugh e MELD, que dizem o prognóstico e a fila do transplante).</p></div>
+
+<h3>Elastografia: medir a dureza</h3>
+<p>É um ultrassom especial que mede a velocidade das ondas dentro do fígado. Quanto mais enrijecido o tecido pela fibrose, <b>maior a velocidade</b>. Um programa do aparelho colore a onda, e o radiologista lê o grau: azul na fibrose leve, amarelo na moderada e um padrão diferente quando já é cirrose. O resultado sai de F0 (normal) a F4 (cirrose).</p>
+
+<h3>METAVIR e biópsia</h3>
+<p>A classificação METAVIR gradua a fibrose (F) e a atividade inflamatória (A). Na biópsia, feita com sedação e uma agulha guiada por ultrassom, o patologista lê a lâmina; o grau dele se compara ao que o radiologista mede na elastografia.</p>
+<div class="cmp">
+  <div class="r h"><div class="k">Grau</div><div class="c">Fibrose (F)</div><div class="c">Atividade (A)</div></div>
+  <div class="r"><div class="k">0</div><div class="c">Ausente</div><div class="c">Ausente</div></div>
+  <div class="r"><div class="k">1</div><div class="c">Fibrose portal, sem septos</div><div class="c">Leve</div></div>
+  <div class="r"><div class="k">2</div><div class="c">Fibrose portal com raros septos</div><div class="c">Moderada</div></div>
+  <div class="r"><div class="k">3</div><div class="c">Numerosos septos, sem cirrose</div><div class="c">Intensa</div></div>
+  <div class="r"><div class="k">4</div><div class="c destaque">Cirrose</div><div class="c">—</div></div>
+</div>
+
+<h3>O que a imagem mostra na cirrose</h3>
+<p>São achados que o radiologista descreve; não precisam ser decorados. No laudo, costumam vir como “fígado com hepatopatia crônica”.</p>
+<div class="card wide"><span class="tag">Achados na tomografia e na ressonância</span>
+<ul class="cols2">
+  <li>Veias dilatadas pela hipertensão portal: mesentérica, esplênica, esofágicas, hemorroidárias e a paraumbilical recanalizada.</li>
+  <li>Fígado menor, de superfície irregular pelos nódulos de regeneração.</li>
+  <li>Edema periportal e alargamento do espaço periportal.</li>
+  <li>Lobo caudado e lobo esquerdo aumentados.</li>
+  <li>Fissuras e fossa da vesícula alargadas.</li>
+  <li>Baço aumentado (esplenomegalia), com a veia esplênica dilatada.</li>
+</ul></div>
+
+<h3 data-bm="Child-Pugh: a função do fígado">Child-Pugh: a função do fígado <span class="prova">PROVA</span></h3>
+<p>É a escala mais usada na clínica médica, no posto de saúde e no internato. Sempre que o paciente tiver algum estigma de cirrose, vale calcular. É ela que aparece na passagem de caso: “paciente hepatopata, Child A, B ou C”.</p>
+<div class="box red"><div class="kick"><span class="dot"></span>Pegadinha do professor</div><p>“Qual o exame para avaliar a função hepática?” Quase todo mundo responde transaminases (TGO e TGP), fosfatase alcalina e gama-GT. Errado. <b>Função do fígado é bilirrubina, albumina e tempo de protrombina (TAP).</b> Some ascite e encefalopatia e está pronta a tabela de Child-Pugh.</p></div>
+<div class="cmp c4">
+  <div class="r h"><div class="k">Critério</div><div class="c">1 ponto</div><div class="c">2 pontos</div><div class="c">3 pontos</div></div>
+  <div class="r"><div class="k">Encefalopatia</div><div class="c">Ausente</div><div class="c">Grau I ou II (leve)</div><div class="c">Grau III ou IV (grave)</div></div>
+  <div class="r"><div class="k">Ascite</div><div class="c">Ausente</div><div class="c">Leve ou moderada (controlável)</div><div class="c">Grave, tensa (refratária)</div></div>
+  <div class="r"><div class="k">Bilirrubina total</div><div class="c">&lt; 2,0 mg/dL</div><div class="c">2,0 a 3,0 mg/dL</div><div class="c">&gt; 3,0 mg/dL</div></div>
+  <div class="r"><div class="k">Albumina</div><div class="c">&gt; 3,5 g/dL</div><div class="c">2,8 a 3,5 g/dL</div><div class="c">&lt; 2,8 g/dL</div></div>
+  <div class="r"><div class="k">TAP</div><div class="c">RNI &lt; 1,7 ou alargamento &lt; 4 s</div><div class="c">RNI 1,7 a 2,3 ou 4 a 6 s</div><div class="c">RNI &gt; 2,3 ou &gt; 6 s</div></div>
+</div>
+<p>A soma classifica o paciente e dá o prognóstico: sobrevida em 1 e 2 anos e mortalidade numa cirurgia. RNI é a razão normalizada internacional, a forma padronizada de dar o tempo de protrombina.</p>
+<div class="cmp c4">
+  <div class="r h"><div class="k">Classe</div><div class="c">Pontos</div><div class="c">Sobrevida em 1 e 2 anos</div><div class="c">Mortalidade numa cirurgia</div></div>
+  <div class="r"><div class="k">Child A</div><div class="c">5 a 6</div><div class="c">Cerca de 100% e 85%</div><div class="c">Baixa (5 a 10%)</div></div>
+  <div class="r"><div class="k">Child B</div><div class="c">7 a 9</div><div class="c">Cerca de 80% e 60%</div><div class="c">Moderada (cerca de 30%)</div></div>
+  <div class="r"><div class="k">Child C</div><div class="c">10 a 15</div><div class="c">Cerca de 45% e 35%</div><div class="c destaque">Altíssima (75 a 80%)</div></div>
+</div>
+
+<h3 data-bm="MELD: gravidade e fila do transplante">MELD: gravidade e fila do transplante <span class="prova">PROVA</span></h3>
+<p>O MELD (sigla em inglês de “modelo para doença hepática terminal”) mede a gravidade da doença crônica do fígado, estima o risco de morte em 3 meses e ordena a fila do transplante. Não se calcula de cabeça, porque usa logaritmos: põem-se os valores na calculadora. Os quatro dados que entram são <b>creatinina, bilirrubina, RNI e sódio</b>.</p>
+<div class="ref">
+  <div class="txt"><div class="kick"><span class="dot"></span>Indicação de transplante</div><p>Outros fatores pesam: quem bebeu nos últimos 6 meses fica clinicamente inapto ao transplante.</p></div>
+  <div class="val">MELD ≥ 15<small>já indica o transplante</small></div>
+</div>
+<p>Na tabela do slide, a mortalidade em 3 meses de pacientes internados sobe com o MELD: 4% abaixo de 10; 27% entre 10 e 19; 76% entre 20 e 29; 83% entre 30 e 39; e 100% a partir de 40. A fórmula do slide é 9,57 × log da creatinina + 3,78 × log da bilirrubina + 11,2 × log do RNI + 6,43; a calculadora atual acrescenta o sódio.</p>
+</section>
+
+<!-- ============================================================ 04 -->
+<section id="s04">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">04</span></div><div class="corpo"><div class="de">Etapa 4 · as causas</div><h2>Causas da cirrose e hepatite B</h2></div></div>
+  <div class="aqui"><span class="feito">1 · Fígado normal</span><span class="feito">2 · Fibrose e cirrose</span><span class="feito">3 · Avaliar</span><span class="on">4 · Causas</span><span>5 · Exame físico</span><span>6 · Complicações</span><span>7 · Hepatocarcinoma</span><span>8 · Rastreio</span></div>
+  <div class="simples"><p>Três causas explicam a maioria das cirroses: álcool, vírus das hepatites B e C e gordura no fígado ligada ao metabolismo. A hepatite B passa pelo sangue e pelo sexo; quase todo adulto cura a infecção aguda, mas quem fica com o vírus pode chegar à cirrose sem sentir nada.</p></div>
+
+<h3>As causas mais comuns</h3>
+<p>No Brasil, o <b>álcool</b> é a causa mais comum de cirrose e de transplante de fígado; depois vêm as hepatites virais crônicas (vírus B ou C) e a doença hepática esteatótica associada à disfunção metabólica, antes chamada de esteato-hepatite não alcoólica. Nos Estados Unidos, a gordura no fígado já é a maior causa de cirrose e de transplante.</p>
+<div class="tiles">
+  <div class="tile"><div class="lab">Álcool</div><div class="n">44%</div><div class="s">das cirroses no Brasil</div></div>
+  <div class="tile"><div class="lab">Hepatite C</div><div class="n">23%</div><div class="s">a segunda causa</div></div>
+  <div class="tile"><div class="lab">Hepatite B</div><div class="n">Um pouco menos</div><div class="s">que a hepatite C</div></div>
+</div>
+<div class="card wide"><span class="tag">Causas menos comuns</span>
+<ul class="cols2">
+  <li>Hemocromatose: doença genética com excesso de ferro, que se deposita e oxida os hepatócitos.</li>
+  <li>Doença de Wilson: distúrbio raro com acúmulo de cobre no fígado e no cérebro.</li>
+  <li>Hepatite autoimune (capítulo 08).</li>
+  <li>Colangite biliar primária e colangite esclerosante (primária e secundária).</li>
+  <li>Deficiência de alfa-1 antitripsina e doença hepática granulomatosa.</li>
+  <li>Insuficiência cardíaca direita e doença veno-oclusiva.</li>
+</ul></div>
+
+<h3>Hepatite B: um vírus resistente</h3>
+<p>O vírus da hepatite B tem material genético de DNA, uma cápsula de proteína com 20 lados e um envelope de gordura. Duas características o tornam muito transmissível: resiste até <b>6 meses</b> no ambiente, e basta um único vírus para infectar. Ele circula no sangue até o fígado, gruda na membrana do hepatócito, libera o seu DNA e assume o comando da célula.</p>
+<div class="tiles">
+  <div class="tile"><div class="lab">Hepatite B</div><div class="n">5 a 40%</div><div class="s">de infecção num contato com sangue, em quem não é vacinado</div></div>
+  <div class="tile"><div class="lab">Hepatite C</div><div class="n">3 a 10%</div><div class="s">no mesmo tipo de contato</div></div>
+  <div class="tile"><div class="lab">Vírus da imunodeficiência humana</div><div class="n">0,2 a 0,5%</div><div class="s">no mesmo tipo de contato</div></div>
+</div>
+<div class="quote"><p>“A gente não passa para o paciente ou para o leigo que o risco de contaminação é muito baixo. Sempre falar que tem alto risco de contaminação.”</p><div class="who">Dr. Bonatto, sobre orientar o paciente</div></div>
+
+<h3>Como se transmite</h3>
+<ul>
+  <li><span class="medium">Sexo sem preservativo</span> com pessoa infectada: o vírus está no sêmen e na secreção vaginal, e por isso a hepatite B é uma infecção sexualmente transmissível.</li>
+  <li><span class="medium">Da mãe para o filho</span>, na gestação ou no parto: hoje é rara no Brasil graças ao pré-natal; aparece mais em mães em situação de rua.</li>
+  <li><span class="medium">Material de drogas</span> (seringa, agulha, cachimbo) e de higiene (lâmina de barbear, escova de dente, alicate de unha).</li>
+  <li><span class="medium">Tatuagem, piercing, dentista ou cirurgia</span> sem as normas de biossegurança, e contato com o corte de uma pessoa infectada.</li>
+  <li><span class="medium">Transfusão de sangue</span>, sobretudo antes de 1993.</li>
+</ul>
+<div class="box"><div class="kick"><span class="dot"></span>Sempre perguntar na anamnese <span class="prova">PROVA</span></div><p>Pergunte se o paciente já recebeu transfusão e <b>em que ano</b>. Antes de 1993 não se testava hepatite em quem doava sangue. Anote a resposta na evolução, no prontuário.</p></div>
+
+<h3>Quem fica com o vírus</h3>
+<p>Primeiro vem a infecção aguda. Cerca de 90% (80 a 95%) dos pacientes se curam em até 6 meses. Quem não cura cronifica, e entre os crônicos, a maioria sem sintomas, 5 a 10% chegam à cirrose. O risco de cronificar depende da idade em que a pessoa se infecta:</p>
+<div class="tiles">
+  <div class="tile"><div class="lab">Recém-nascido</div><div class="n">70 a 90%</div><div class="s">cronificam</div></div>
+  <div class="tile"><div class="lab">Criança de 1 a 5 anos</div><div class="n">20 a 50%</div><div class="s">cronificam</div></div>
+  <div class="tile"><div class="lab">Adulto imunocompetente</div><div class="n">5 a 10%</div><div class="s">cronificam</div></div>
+</div>
+<div class="reg"><b>No slide:</b> 85 a 95% das infecções agudas terminam com a cura.</div>
+<p>Estudante de medicina precisa estar com a vacina da hepatite B em dia: o risco de vocês, adultos vacinados e imunocompetentes, é o mais baixo.</p>
+
+<h3>Sintomas</h3>
+<p>A doença é silenciosa; muitas vezes só se descobre num exame de rotina ou quando já há estigma de cirrose. No começo, os sintomas são vagos: cansaço, tontura, enjoo, vômito, febre, dor abdominal (no slide, também fraqueza, perda de apetite, urina escura e icterícia). As manifestações fora do fígado da forma crônica são raras: artralgia, artrite, poliarterite nodosa, glomerulonefrite e derrame pleural.</p>
+
+<h3 data-bm="Diagnóstico: o HBsAg">Diagnóstico: o HBsAg <span class="prova">PROVA</span></h3>
+<p>Antígenos são partes do vírus que despertam o sistema imune; anticorpos são o que o corpo fabrica contra eles. O vírus tem três antígenos: o de superfície (HBsAg), o do núcleo (HBcAg) e o “e” (HBeAg). O mais importante é guardar que <b>a presença do HBsAg no sangue dá o diagnóstico de hepatite B</b>. Ele aparece cerca de 2 semanas depois da infecção, entre 2 semanas e 2 meses antes dos sintomas.</p>
+<div class="ref">
+  <div class="txt"><div class="kick"><span class="dot"></span>Hepatite B crônica</div><p>A infecção aguda é a dos primeiros 6 meses; depois disso, com HBsAg ainda positivo, é crônica.</p></div>
+  <div class="val">≥ 6 meses<small>com HBsAg reagente</small></div>
+</div>
+<p>O resto da sorologia separa infecção aguda, crônica, antiga e vacinação. É para consultar, não para decorar: no dia a dia, abre-se a tabela no celular.</p>
+<div class="cmp c5">
+  <div class="r h"><div class="k">Marcador</div><div class="c">Aguda</div><div class="c">Crônica</div><div class="c">Já teve</div><div class="c">Vacinado</div></div>
+  <div class="r"><div class="k">HBsAg</div><div class="c">+</div><div class="c">+</div><div class="c">−</div><div class="c">−</div></div>
+  <div class="r"><div class="k">Anti-HBs</div><div class="c">−</div><div class="c">−</div><div class="c">+</div><div class="c">+</div></div>
+  <div class="r"><div class="k">Anti-HBc agudo</div><div class="c">+</div><div class="c">−</div><div class="c">−</div><div class="c">−</div></div>
+  <div class="r"><div class="k">Anti-HBc tardio</div><div class="c">−</div><div class="c">+</div><div class="c">+ ou −</div><div class="c">−</div></div>
+</div>
+<div class="cmp c5">
+  <div class="r h"><div class="k">Marcador</div><div class="c">Aguda</div><div class="c">Crônica</div><div class="c">Já teve</div><div class="c">Vacinado</div></div>
+  <div class="r"><div class="k">HBeAg</div><div class="c">+ ou −</div><div class="c">+ ou −</div><div class="c">−</div><div class="c">−</div></div>
+  <div class="r"><div class="k">Anti-HBe</div><div class="c">−</div><div class="c">+ ou −</div><div class="c">+ ou −</div><div class="c">−</div></div>
+  <div class="r"><div class="k">DNA do vírus</div><div class="c">+</div><div class="c">+</div><div class="c">−</div><div class="c">−</div></div>
+</div>
+<p class="regua-note">Anti-HBc agudo é o anticorpo da classe imunoglobulina M; o tardio, da classe imunoglobulina G.</p>
+
+<h3>As quatro fases da hepatite B crônica</h3>
+<p>Ter hepatite B não significa ir para a cirrose: muita gente convive com o vírus a vida toda, sem sintomas. As fases nem sempre vêm em sequência.</p>
+<div class="cmp c4">
+  <div class="r h"><div class="k">Fase</div><div class="c">HBeAg</div><div class="c">Carga viral</div><div class="c">Transaminases</div></div>
+  <div class="r"><div class="k">Imuno&shy;tolerância</div><div class="c">Positivo</div><div class="c">Muito alta: replicação alta</div><div class="c">Normais: pouca inflamação</div></div>
+  <div class="r"><div class="k">Imuno&shy;rreação ativa</div><div class="c">Positivo</div><div class="c">Alta</div><div class="c">Altas: o sistema imune ataca o fígado</div></div>
+  <div class="r"><div class="k">Portador inativo</div><div class="c">Negativo</div><div class="c">Baixa ou indetectável: replicação controlada</div><div class="c">Normais</div></div>
+  <div class="r"><div class="k">Reativação</div><div class="c">Negativo</div><div class="c">Volta a subir</div><div class="c">Altas, numa queda da imunidade</div></div>
+</div>
+
+<h3>Tratamento da hepatite B</h3>
+<div class="box orange"><div class="kick"><span class="dot"></span>Parêntese do professor</div><p>Quem acompanha e trata a hepatite B é o infectologista ou o hepatologista, com ultrassom e enzimas do fígado de rotina. O tratamento é para conhecer, não para decorar.</p></div>
+<p>O objetivo é suprimir a replicação do vírus e reduzir a lesão do fígado, evitando cirrose e hepatocarcinoma; é raro o HBsAg negativar. Trata-se quem tem <b>HBeAg reagente com transaminases altas</b> (mais de 2 vezes o normal) ou HBeAg não reagente com carga viral alta (mais de 2.000 UI/mL) e transaminases acima de 2 vezes. Também entram, seja qual for o marcador, quem tem cirrose, reativação, hepatite aguda grave, coinfecção com hepatite C ou com o vírus da imunodeficiência humana, história familiar de hepatocarcinoma, fibrose no grau 2 ou mais, quem vai receber imunossupressão ou quimioterapia e as gestantes, pelo risco de transmissão.</p>
+<p>Os remédios, antivirais disponíveis no posto de saúde, são o <b>entecavir</b>, o de uso mais comum na prática, e o tenofovir. Eles não curam, mas retardam a cirrose, reduzem o câncer e melhoram a sobrevida.</p>
+<div class="reg"><b>No slide:</b> o tenofovir (300 mg, 1 comprimido ao dia) é a primeira linha; o entecavir (0,5 mg, 1 a 2 comprimidos ao dia) fica para quem não pode usar tenofovir, como na alteração da função renal, ou está em imunossupressão ou quimioterapia.</div>
+</section>
+
+<!-- ============================================================ 05 -->
+<section id="s05">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">05</span></div><div class="corpo"><div class="de">Etapa 4 · as causas</div><h2>Hepatite C</h2></div></div>
+  <div class="aqui"><span class="feito">1 · Fígado normal</span><span class="feito">2 · Fibrose e cirrose</span><span class="feito">3 · Avaliar</span><span class="on">4 · Causas</span><span>5 · Exame físico</span><span>6 · Complicações</span><span>7 · Hepatocarcinoma</span><span>8 · Rastreio</span></div>
+  <div class="simples"><p>A hepatite C também é um vírus do sangue, mas cronifica muito mais que a B e não tem vacina. Em compensação, tem cura com comprimidos em poucas semanas. No cirrótico por hepatite C, o risco de câncer obriga a fazer exame de imagem a cada 6 meses.</p></div>
+
+<h3 data-bm="Hepatite B × hepatite C">Hepatite B × hepatite C <span class="prova">PROVA</span></h3>
+<p>Ao contrário da B, na hepatite C a forma crônica é a mais comum: cerca de <b>70% dos casos agudos cronificam</b>, e essa é a grande diferença entre as duas. É uma inflamação silenciosa e persistente; entre os crônicos, 15 a 30% chegam à cirrose em 20 anos.</p>
+<div class="cmp">
+  <div class="r h"><div class="k"></div><div class="c">Hepatite B</div><div class="c">Hepatite C</div></div>
+  <div class="r"><div class="k">Vírus</div><div class="c">DNA</div><div class="c">RNA, da família da febre amarela e da dengue</div></div>
+  <div class="r"><div class="k">Transmissão</div><div class="c">Sangue, sêmen e secreção vaginal</div><div class="c">Sobretudo sangue contaminado</div></div>
+  <div class="r"><div class="k">Fora do corpo</div><div class="c">Até 6 meses</div><div class="c">16 horas a 4 dias</div></div>
+  <div class="r"><div class="k">Cronifica</div><div class="c">5 a 10% dos adultos</div><div class="c destaque">Cerca de 70%</div></div>
+  <div class="r"><div class="k">Vacina</div><div class="c">Existe</div><div class="c">Não existe: o vírus muda rápido e escapa do sistema imune</div></div>
+  <div class="r"><div class="k">Diagnóstico</div><div class="c">HBsAg</div><div class="c">Anti-HCV e carga viral</div></div>
+  <div class="r"><div class="k">Tratamento</div><div class="c">Anos, para controlar o vírus</div><div class="c destaque">8 a 12 semanas, cura em mais de 95%</div></div>
+</div>
+
+<h3>Transmissão</h3>
+<p>A hepatite C passa pelo contato com sangue contaminado; o sexo transmite pouco, quando há fissura ou trauma com sangue. Não passa pelo leite materno, pela comida, pela água nem por abraço, beijo ou alimento compartilhado.</p>
+<div class="rows">
+  <div class="row"><div class="k">Drogas injetáveis</div><div class="v">60% dos casos: agulha, seringa e cachimbo compartilhados.</div></div>
+  <div class="row"><div class="k">Sexual</div><div class="v">15%.</div></div>
+</div>
+<div class="rows">
+  <div class="row"><div class="k">Transfusão</div><div class="v">10%, antes de 1993, quando não havia rastreamento do sangue doado.</div></div>
+  <div class="row"><div class="k">Outras e desconhecida</div><div class="v">5% por hemodiálise, acidente de profissional de saúde ou parto; 10% sem causa conhecida. Também manicure, tatuagem e material médico ou odontológico mal esterilizado.</div></div>
+</div>
+
+<h3>Diagnóstico e sintomas</h3>
+<p>Como quase não dá sintomas, costuma ser descoberta já na fase crônica. O <b>anti-HCV</b> positivo mostra que houve contato com o vírus; a <b>carga viral</b> (HCV-RNA, o material genético do vírus no sangue) confirma a infecção ativa. Infecção aguda é a dos primeiros 6 meses; depois, crônica.</p>
+<p>Cerca de 80% não têm sintomas. A incubação vai de 2 a 12 semanas, e quem tem sintoma sente fadiga, dor muscular, náusea, vômito, diarreia, desconforto no hipocôndrio direito, coceira e icterícia. Fora do fígado, muito raros: líquen plano, úlcera de córnea e linfoma de células B.</p>
+
+<h3 data-bm="Câncer e descompensação">Câncer e descompensação <span class="prova">PROVA</span></h3>
+<p>O mais importante na hepatite C é o risco de câncer de fígado.</p>
+<div class="tiles">
+  <div class="tile"><div class="lab">Hepatocarcinoma</div><div class="n">15 a 20 vezes</div><div class="s">mais risco que a população geral</div></div>
+  <div class="tile"><div class="lab">No cirrótico</div><div class="n">1 a 4% ao ano</div><div class="s">desenvolvem câncer</div></div>
+  <div class="tile"><div class="lab">Depois da primeira descompensação</div><div class="n">15 a 20%</div><div class="s">morrem em 12 meses</div></div>
+</div>
+<div class="ref">
+  <div class="txt"><div class="kick"><span class="dot"></span>Cirrótico por hepatite C</div><p>Ultrassom ou tomografia para procurar nódulo.</p></div>
+  <div class="val">A cada 6 meses<small>exame de imagem</small></div>
+</div>
+<p>O risco de descompensação é de 3 a 6% ao ano. Descompensar é piorar a cirrose: piora da ascite, sangramento de varizes do esôfago e as outras complicações dos capítulos 10 a 12. Por isso o paciente precisa estar sempre em acompanhamento com o hepatologista ou o cirurgião.</p>
+
+<h3 data-bm="Tratamento: cura em semanas">Tratamento: cura em semanas <span class="prova">PROVA</span></h3>
+<p>Usam-se antivirais de ação direta, que inibem a replicação do RNA do vírus, por <b>8 a 12 semanas</b>. A diferença em relação à hepatite B é que a taxa de cura passa de 95%: trata uma vez e acabou. Toda unidade básica de saúde tem o teste e o remédio, e quem está na fase inicial pode ser tratado ali, sem consulta na rede especializada.</p>
+<div class="rows">
+  <div class="row"><div class="k">Sem cirrose ou Child A</div><div class="v">Velpatasvir com sofosbuvir por 12 semanas.</div></div>
+  <div class="row"><div class="k">Cirrose Child B ou C</div><div class="v">Velpatasvir com sofosbuvir por 24 semanas, ou com ribavirina por 12 semanas.</div></div>
+</div>
+</section>
+
+<!-- ============================================================ 06 -->
+<section id="s06">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">06</span></div><div class="corpo"><div class="de">Etapa 4 · as causas</div><h2>Esteatose e doença metabólica do fígado</h2></div></div>
+  <div class="aqui"><span class="feito">1 · Fígado normal</span><span class="feito">2 · Fibrose e cirrose</span><span class="feito">3 · Avaliar</span><span class="on">4 · Causas</span><span>5 · Exame físico</span><span>6 · Complicações</span><span>7 · Hepatocarcinoma</span><span>8 · Rastreio</span></div>
+  <div class="simples"><p>Esteatose é gordura dentro das células do fígado, cada vez mais por obesidade, diabetes, pressão alta e colesterol. No começo regride; inflamando por anos, vira cirrose e câncer.</p></div>
+
+<h3>O que é e o que causa</h3>
+<p>Esteatose é o acúmulo de gordura (lipídios) nos hepatócitos; na lâmina, aparecem como pontos amarelos. Pode vir do álcool, da hepatite C ou de doenças metabólicas, como obesidade, hipertensão, diabetes e dislipidemia. Outras causas: resistência à insulina, alguns metais, drogas citotóxicas (como o metotrexato, da reumatologia), antibióticos (como a tetraciclina), o vírus da imunodeficiência humana e a doença inflamatória intestinal.</p>
+
+<h3>Como o ultrassom e a tomografia mostram</h3>
+<p>No ultrassom, a <b>ecogenicidade</b> é a capacidade do tecido de refletir a onda de volta ao aparelho, gerando ecos. O laudo usa quatro palavras: <b>anecoico</b> (preto, não reflete), <b>hipoecoico</b> (cinza, mais escuro que o vizinho), <b>isoecoico</b> (da mesma cor do vizinho) e <b>hiperecoico</b> (mais branco). O fígado com esteatose é hiperecoico.</p>
+<div class="figure lado"><img src="fig-us-esteatose.jpg" style="width:250pt" alt="Ultrassom sem e com esteatose">
+  <div class="olhar"><div class="kick">O que olhar</div><ul>
+    <li><b>À esquerda, sem esteatose:</b> o fígado (Fig) tem quase o mesmo tom do córtex do rim (CR).</li>
+    <li><b>À direita, com esteatose:</b> o fígado fica bem mais branco (hiperecoico) que o rim, e os contornos do fundo se apagam.</li>
+  </ul><p class="leg">Imagem dos slides da aula.</p></div>
+</div>
+<p>Na tomografia, o que cai não é a onda, e sim a <b>densidade</b> do fígado, medida em unidades de Hounsfield. Quanto maior a unidade, mais claro o tecido; quanto menor, mais escuro. Fígado mais escuro, mais esteatose. No slide, uma diferença de mais de 10 unidades entre o baço e o fígado é muito sugestiva.</p>
+<div class="figure lado"><img src="fig-tc-esteatose.jpg" style="width:250pt" alt="Tomografia sem e com esteatose">
+  <div class="olhar"><div class="kick">O que olhar</div><ul>
+    <li><b>À esquerda, sem esteatose:</b> fígado claro, mais claro que o baço.</li>
+    <li><b>À direita, com esteatose:</b> fígado escuro, mais escuro que o baço; os vasos do fígado parecem brancos sobre ele.</li>
+  </ul><p class="leg">Imagem dos slides da aula. Tomografia sem contraste.</p></div>
+</div>
+
+<h3>Doença hepática esteatótica associada à disfunção metabólica</h3>
+<p>Antes chamada de esteato-hepatite não alcoólica, é a esteatose do paciente com síndrome metabólica: há gordura no fígado, pelo menos um fator de risco metabólico e nenhuma outra causa. Para a <b>síndrome metabólica</b>, são precisos 3 destes 5 critérios:</p>
+<div class="rows">
+  <div class="row"><div class="k">Obesidade central</div><div class="v">Cintura de 88 cm ou mais na mulher e acima de 102 cm no homem.</div></div>
+  <div class="row"><div class="k">Glicemia alterada</div><div class="v">110 mg/dL ou mais, ou diabetes.</div></div>
+  <div class="row"><div class="k">Pressão alterada</div><div class="v">130/85 mmHg ou mais, ou hipertensão.</div></div>
+  <div class="row"><div class="k">Lipídios</div><div class="v">Triglicerídeos de 150 mg/dL ou mais; HDL (o colesterol “bom”, lipoproteína de alta densidade) abaixo de 40 mg/dL no homem e de 50 mg/dL na mulher.</div></div>
+</div>
+<div class="reg"><b>No slide:</b> cintura do homem de 102 cm ou mais.</div>
+
+<h3>Como se faz o diagnóstico</h3>
+<p>Primeiro, esteatose num exame de imagem. Depois, um destes três caminhos fecha o diagnóstico:</p>
+<ol class="flow">
+  <li><b class="t">Sobrepeso ou obesidade.</b> Índice de massa corporal de 25 kg/m² ou mais (23 em asiáticos): já está classificado.</li>
+  <li><b class="t">Diabetes tipo 2.</b> Também já está classificado.</li>
+  <li><b class="t">Peso normal ou baixo.</b> Precisa confirmar três critérios da síndrome metabólica.</li>
+</ol>
+<div class="reg"><b>No slide:</b> no peso normal ou baixo, bastam dois ou mais critérios metabólicos (cintura, pressão, triglicerídeos, HDL, pré-diabetes, resistência à insulina ou proteína C reativa alta).</div>
+
+<h3>Sintomas e exames</h3>
+<p>Poucos sintomas: fadiga, mal-estar e desconforto no abdome superior direito. As transaminases podem subir um pouco (2 a 5 vezes o normal), a fosfatase alcalina também (2 a 3 vezes), e a ferritina pode estar elevada.</p>
+<div class="box red"><div class="kick"><span class="dot"></span>Pegadinha do professor</div><p>Ferritina alta não é marcador confiável de doença do fígado: a própria gordura, a obesidade e o consumo de carne vermelha a aumentam.</p></div>
+
+<h3>Evolução e tratamento</h3>
+<p>Fígado saudável com esteatose pode evoluir para esteato-hepatite (a gordura inflama os hepatócitos) e daí para cirrose, que não regride; o caminho segue até o hepatocarcinoma.</p>
+<div class="figure"><img src="evolucao.svg" alt="Evolução da esteatose até o hepatocarcinoma"></div>
+<div class="card wide"><span class="tag">Tratamento</span>
+<ul class="cols2">
+  <li>Parar o álcool.</li>
+  <li>Perder peso.</li>
+  <li>Atividade física.</li>
+  <li>As “canetinhas”: agonistas do GLP-1 (hormônio da saciedade) e tirzepatida.</li>
+  <li>Cirurgia bariátrica.</li>
+</ul></div>
+</section>
+
+<!-- ============================================================ 07 -->
+<section id="s07">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">07</span></div><div class="corpo"><div class="de">Etapa 4 · as causas</div><h2>Doença hepática alcoólica</h2></div></div>
+  <div class="aqui"><span class="feito">1 · Fígado normal</span><span class="feito">2 · Fibrose e cirrose</span><span class="feito">3 · Avaliar</span><span class="on">4 · Causas</span><span>5 · Exame físico</span><span>6 · Complicações</span><span>7 · Hepatocarcinoma</span><span>8 · Rastreio</span></div>
+  <div class="simples"><p>É o fígado que metaboliza o álcool. A gordura e a inflamação que a bebida causa somem em cerca de duas semanas sem beber; anos de excesso levam à cirrose, que não volta.</p></div>
+
+<h3>O caminho do álcool no corpo</h3>
+<p>O álcool atravessa as membranas com facilidade: é absorvido já na boca e também no estômago, no duodeno e no cólon. Vai pelo sangue para todos os tecidos com água (cérebro, fígado, coração, rim e músculo). É metabolizado no fígado pelas enzimas álcool desidrogenase e aldeído desidrogenase, que transformam o etanol em acetato, eliminado na urina. Além do fígado, lesa coração, cérebro, pulmão, boca, esôfago, intestino e pâncreas.</p>
+
+<h3 data-bm="Esteatose e esteato-hepatite alcoólicas regridem">Esteatose e esteato-hepatite alcoólicas regridem <span class="prova">PROVA</span></h3>
+<p>A evolução é a mesma da figura do capítulo 06: fígado saudável, esteatose, esteato-hepatite e, no fim, cirrose. O metabolismo do álcool atrapalha a queima de gordura; ácidos graxos e triglicerídeos se acumulam, e o hepatócito incha com grandes gotas de gordura. A esteatose pode surgir em 2 dias de consumo excessivo.</p>
+<p>A esteatose e a esteato-hepatite <b>se resolvem: parando de beber, em cerca de 2 semanas o fígado se renova</b>. Num estudo, pessoas com biópsia normal beberam 98 a 138 g de álcool por dia (cerca de seis long necks) durante 17 dias e ficaram com esteatose moderada a acentuada; duas semanas sem beber depois, a biópsia voltou ao normal. Só o cirrótico crônico não volta.</p>
+
+<h3>O que a lâmina mostra na esteato-hepatite</h3>
+<div class="card wide"><span class="tag">Esteato-hepatite alcoólica</span>
+<ul class="cols2">
+  <li>Citocinas inflamatórias e infiltração por polimorfonucleares.</li>
+  <li>Degeneração em balão: o hepatócito incha e perde a forma.</li>
+  <li>Corpos de Mallory: agregados eosinofílicos dentro do hepatócito.</li>
+  <li>Necrose dos hepatócitos.</li>
+  <li>Ativação das células estreladas.</li>
+  <li>Fibrose ao redor das células.</li>
+</ul></div>
+
+<h3 data-bm="Quanto álcool leva à cirrose">Quanto álcool leva à cirrose <span class="prova">PROVA</span></h3>
+<div class="ref">
+  <div class="txt"><div class="kick"><span class="dot"></span>Dose estimada para causar cirrose</div><p>Três garrafas de cerveja de 600 mL por dia, por 10 anos, já chegam lá.</p></div>
+  <div class="val">80 g por dia<small>por cerca de 10 anos</small></div>
+</div>
+<p>Para saber quantos gramas de álcool há numa bebida: <b>volume em mL × teor alcoólico (%) ÷ 100</b>. Uma garrafa de cerveja de 600 mL a 6% tem 28,8 g.</p>
+<div class="livros"><b>Complemento: fora da aula.</b> A conta só fecha multiplicando pela densidade do álcool, 0,8 g/mL: 600 × 6 ÷ 100 = 36 mL de álcool × 0,8 = 28,8 g.</div>
+<div class="cmp">
+  <div class="r h"><div class="k">Bebida</div><div class="c">Quantidade</div><div class="c">Álcool</div></div>
+  <div class="r"><div class="k">Cerveja (6%)</div><div class="c">Garrafa de 600 mL · lata de 350 mL</div><div class="c">28,8 g · 16,8 g</div></div>
+  <div class="r"><div class="k">Vinho de mesa (12%)</div><div class="c">Taça de 150 mL</div><div class="c">14,4 g</div></div>
+  <div class="r"><div class="k">Vinho do Porto e licores (21%)</div><div class="c">85 mL</div><div class="c">14,3 g</div></div>
+  <div class="r"><div class="k">Vodca, uísque, cachaça (45%)</div><div class="c">Dose de 40 mL</div><div class="c">14,4 g</div></div>
+</div>
+<p>Pelos slides, os 80 g diários equivalem a 5 doses de cachaça, 3 garrafas ou 5 latas de cerveja, ou 5 taças de vinho por dia. Quem bebe só no fim de semana chega à dose da cirrose com 560 g por semana por 10 anos: 12 doses ou 6 garrafas de cerveja na sexta, no sábado e no domingo.</p>
+<p>A conta não é tão simples: pesam a obesidade, a esteatose prévia e remédios hepatotóxicos. E a <b>mulher degrada menos álcool</b>: cerca de 20 g por dia, contra 30 g no homem, e por isso se afeta mais.</p>
+</section>
+
+<!-- ============================================================ 08 -->
+<section id="s08">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">08</span></div><div class="corpo"><div class="de">Etapa 4 · as causas</div><h2>Hepatite autoimune e esquistossomose</h2></div></div>
+  <div class="aqui"><span class="feito">1 · Fígado normal</span><span class="feito">2 · Fibrose e cirrose</span><span class="feito">3 · Avaliar</span><span class="on">4 · Causas</span><span>5 · Exame físico</span><span>6 · Complicações</span><span>7 · Hepatocarcinoma</span><span>8 · Rastreio</span></div>
+  <div class="simples"><p>Na hepatite autoimune, a defesa do corpo ataca o próprio fígado, quase sempre em mulheres jovens. Na esquistossomose, um verme trava a veia porta e faz hipertensão portal, mas o fígado continua funcionando.</p></div>
+
+<h3>Hepatite autoimune</h3>
+<p>É rara, de causa pouco conhecida, com predisposição genética. O sistema imune passa a reconhecer os hepatócitos como estranhos e os ataca: a inflamação crônica e progressiva estimula as células estreladas e leva à fibrose. Atinge sobretudo <b>mulheres jovens</b>.</p>
+<p>O início é silencioso, de semanas a meses. Metade dos pacientes não tem sintoma; a outra metade tem letargia, cansaço, icterícia, exames alterados (transaminases, gama-GT, fosfatase alcalina e bilirrubinas) e exame físico de hepatite, evoluindo para hepatopatia crônica ou cirrose. No diagnóstico, as transaminases ficam muito altas, cerca de 22 vezes (TGO) e 18 vezes (TGP) o limite normal, a gama-GT 4 vezes e a bilirrubina 8 vezes; a imunoglobulina G também fica bem aumentada.</p>
+<div class="reg"><b>No slide</b> (268 pacientes do Hospital das Clínicas da Universidade de São Paulo): gama-GT em média 4,95 vezes o limite; bilirrubinas em média 8,28 mg/dL, valor absoluto e não múltiplo do limite.</div>
+<p>Os autoanticorpos pesquisados são o fator antinúcleo, o antimúsculo liso, o antimicrossoma de fígado e rim tipo 1 (anti-LKM1), o anticitosol hepático (anti-LC1) e o antimitocôndria. Eles separam dois tipos, que ficam como curiosidade:</p>
+<div class="cmp">
+  <div class="r h"><div class="k"></div><div class="c">Tipo 1</div><div class="c">Tipo 2</div></div>
+  <div class="r"><div class="k">Frequência</div><div class="c">80% dos casos</div><div class="c">A minoria</div></div>
+  <div class="r"><div class="k">Marcadores</div><div class="c">Fator antinúcleo e antimúsculo liso</div><div class="c">Anti-LKM1 e anticitosol hepático</div></div>
+  <div class="r"><div class="k">Quem e como</div><div class="c">—</div><div class="c">Mais em crianças; mais grave, evolui mais para hepatite fulminante</div></div>
+</div>
+<div class="rows">
+  <div class="row"><div class="k">Induzir a remissão</div><div class="v">Prednisona ou prednisolona, para baixar a resposta inflamatória contra o fígado.</div></div>
+  <div class="row"><div class="k">Manter</div><div class="v">Azatioprina, um imunossupressor, junto com prednisona.</div></div>
+  <div class="row"><div class="k">Se falhar</div><div class="v">Micofenolato, ciclosporina, tacrolimo ou transplante.</div></div>
+</div>
+
+<h3>Esquistossomose: o verme e o caramujo</h3>
+<p>É causada pelo verme <i>Schistosoma</i>; no Brasil, o <i>Schistosoma mansoni</i>. Tem dois hospedeiros: o <b>ser humano</b>, onde o verme se reproduz (definitivo), e o <b>caramujo</b>, onde passa fases da reprodução (intermediário). O caramujo vive em córregos, lagoas e água parada. A incidência vem caindo no Brasil; a área endêmica vai da zona da mata do Rio Grande do Norte ao sul da Bahia e ao nordeste de Minas Gerais, com focos em São Paulo, Pará, Maranhão, Espírito Santo, Goiás e Paraná.</p>
+<ol class="flow">
+  <li><b class="t">Ovos na água.</b> Fezes contaminadas chegam à água, e os ovos viram miracídios.</li>
+  <li><b class="t">Caramujo.</b> O miracídio invade o caramujo, se multiplica e vira cercária.</li>
+  <li><b class="t">Pele.</b> A cercária sai do caramujo e penetra a pele de quem entra na água, em geral na perna ou no braço.</li>
+  <li><b class="t">Veias do intestino.</b> Vai para os vasos do intestino e do fígado, vira verme adulto e põe ovos, que saem nas fezes e fecham o ciclo.</li>
+</ol>
+
+<h3>As fases da doença</h3>
+<div class="rows">
+  <div class="row"><div class="k">Dermatite cercariana</div><div class="v">O “prurido do nadador”: onde a cercária entrou surge uma erupção maculopapular que coça, de 12 a 24 horas depois; pode durar até 1 semana.</div></div>
+  <div class="row"><div class="k">Síndrome de Katayama</div><div class="v">Infecção aguda: reação de hipersensibilidade aos antígenos do verme, de 3 a 8 semanas depois, com febre, calafrio, artrite, mialgia, artralgia e dor no corpo.</div></div>
+  <div class="row"><div class="k">Infecção crônica</div><div class="v">É a que leva à doença do fígado. A gravidade depende de quantos ovos ficam presos e de onde: o verme pode se acumular na veia porta, na esplênica ou nas mesentéricas, dilatando-as.</div></div>
+</div>
+<p>A <b>forma hepatoesplênica crônica</b> tem hipertensão portal, esplenomegalia, varizes do esôfago e do fundo gástrico, hiperesplenismo (anemia, leucopenia e plaquetopenia) e fígado aumentado, com crescimento do lobo esquerdo.</p>
+<div class="box red"><div class="kick"><span class="dot"></span>Pegadinha do professor</div><p>Na esquistossomose há hipertensão portal, mas o verme não agride diretamente os hepatócitos: a <b>função hepática fica preservada</b>, com TAP, RNI e bilirrubina normais.</p></div>
+
+<h3>Diagnóstico e tratamento</h3>
+<div class="rows">
+  <div class="row"><div class="k">Ovos nas fezes</div><div class="v">A partir de 40 dias da infecção (sensibilidade de 50%).</div></div>
+  <div class="row"><div class="k">Biópsia retal</div><div class="v">Os ovos se acumulam na mucosa do reto e aparecem como pontinhos (sensibilidade de 80%).</div></div>
+  <div class="row"><div class="k">Sorologia</div><div class="v">Positiva a partir do 25º dia: teste imunoenzimático (ELISA) e imunofluorescência.</div></div>
+</div>
+<div class="ref">
+  <div class="txt"><div class="kick"><span class="dot"></span>Tratamento (curiosidade)</div><p>Na fase aguda, a prednisolona vem antes do antiparasitário, até os sintomas melhorarem e por mais 48 horas (3 a 10 dias). O praziquantel entra 8 a 12 semanas depois da infecção, com prednisolona por 3 dias.</p></div>
+  <div class="vals"><div class="val"><small>Prednisolona</small>1 mg/kg/dia</div><div class="val"><small>Praziquantel</small>40 mg/kg, dose única</div></div>
+</div>
+</section>
+
+<!-- ============================================================ 09 -->
+<section id="s09">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">09</span></div><div class="corpo"><div class="de">Etapa 5 · os sinais</div><h2>O cirrótico no exame físico</h2></div></div>
+  <div class="aqui"><span class="feito">1 · Fígado normal</span><span class="feito">2 · Fibrose e cirrose</span><span class="feito">3 · Avaliar</span><span class="feito">4 · Causas</span><span class="on">5 · Exame físico</span><span>6 · Complicações</span><span>7 · Hepatocarcinoma</span><span>8 · Rastreio</span></div>
+  <div class="simples"><p>O fígado doente deixa marcas no corpo: sinais de estrógeno alto (palmas vermelhas, aranhas vasculares, mamas no homem), veias saltadas no abdome e o tremor das mãos da encefalopatia. Viu esses sinais, pense em cirrose.</p></div>
+<p>Os muitos sinais do cirrótico se explicam pelo começo da aula: o fígado fabrica proteínas, vitaminas e hormônios, e a pressão portal derruba as células do sangue (capítulo 02).</p>
+
+<h3>Estrógeno alto, andrógeno baixo</h3>
+<p>O fígado doente não degrada os hormônios: sobra estrogênio (hiperestrogenismo) e falta andrógeno (hipoandrogenismo). O estrogênio dilata os vasos e dá o <b>eritema palmar</b> e as <b>telangiectasias</b> (aranhas vasculares). A mesma alteração hormonal causa ginecomastia, rarefação dos pelos (pouco pelo na perna e no braço) e atrofia dos testículos.</p>
+<div class="quote"><p>“Se no exame físico você vê algum desses sinais, já pensar em cirrose.”</p><div class="who">Dr. Bonatto, sobre o eritema palmar e as telangiectasias</div></div>
+
+<h3>Cabeça de medusa</h3>
+<p>São varizes visíveis na parede do abdome. A veia umbilical, que estava fechada desde o nascimento, se reabre (recanaliza) com o aumento da pressão da porta, e as veias epigástricas também engrossam.</p>
+<div class="figure lado"><img src="fig-medusa.jpg" style="width:125pt" alt="Cabeça de medusa">
+  <div class="olhar"><div class="kick">O que olhar</div><ul>
+    <li><b>Veias grossas e tortuosas</b> que se espalham a partir do umbigo pela parede do abdome.</li>
+    <li><b>Lembram a cabeça da Medusa</b>, a figura da mitologia com serpentes no lugar dos cabelos.</li>
+  </ul><p class="leg">Imagem dos slides da aula.</p></div>
+</div>
+
+<h3 data-bm="Flapping (asterixis)">Flapping (asterixis) <span class="prova">PROVA</span></h3>
+<p>É o sinal clássico da <b>encefalopatia hepática</b>. Com o paciente de braços estendidos, faz-se a extensão do punho: o examinador empurra a mão dele para trás (dorsiflexão) e solta. Positivo: a mão fica tremendo, batendo como asas. No etilista de longa data que chega confuso, esse teste se faz sempre.</p>
+<div class="figure lado"><img src="fig-flapping.jpg" style="width:215pt" alt="Pesquisa do flapping">
+  <div class="olhar"><div class="kick">O que olhar</div><ul>
+    <li><b>Punhos estendidos</b>, dedos abertos, braços para a frente.</li>
+    <li><b>Batimento</b> irregular das mãos, para baixo e para cima.</li>
+  </ul><p class="leg">Imagem dos slides da aula.</p></div>
+</div>
+<p>Pelo slide, o flapping aparece a partir do grau II da encefalopatia e não é exclusivo dela: também surge na insuficiência renal e respiratória e na intoxicação por barbitúricos.</p>
+
+<h3>Outros sinais e sintomas</h3>
+<div class="card wide"><span class="tag">Do slide de sinais e sintomas da cirrose</span>
+<ul class="cols2">
+  <li>Perda de apetite e de peso, fraqueza, fadiga e cãibras.</li>
+  <li>Manchas roxas fáceis e tendência a sangrar.</li>
+  <li>Menstruação irregular ou ausente; impotência, infertilidade e menos libido.</li>
+  <li>Icterícia, urina escura “cor de coca-cola” e coceira.</li>
+  <li>Sangue no vômito ou nas fezes; barriga distendida; edema nas pernas.</li>
+  <li>Confusão e distúrbios do sono.</li>
+  <li>Fígado e baço aumentados, dedos em baqueta de tambor, contratura de Dupuytren, alterações das unhas e parótidas aumentadas.</li>
+  <li>Sopro de Cruveilhier-Baumgarten (zumbido venoso no abdome) e hálito característico (fetor hepático).</li>
+</ul></div>
+</section>
+
+<!-- ============================================================ 10 -->
+<section id="s10">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">10</span></div><div class="corpo"><div class="de">Etapa 6 · as complicações</div><h2>Ascite, paracentese e peritonite</h2></div></div>
+  <div class="aqui"><span class="feito">1 · Fígado normal</span><span class="feito">2 · Fibrose e cirrose</span><span class="feito">3 · Avaliar</span><span class="feito">4 · Causas</span><span class="feito">5 · Exame físico</span><span class="on">6 · Complicações</span><span>7 · Hepatocarcinoma</span><span>8 · Rastreio</span></div>
+  <div class="simples"><p>Ascite é líquido na barriga, a complicação mais comum da cirrose: pouco sal, diurético e, quando é muita, punção para esvaziar. Se o líquido infecciona, é peritonite, tratada com antibiótico.</p></div>
+<p>As complicações mais importantes da cirrose são a ascite, a peritonite bacteriana espontânea, o sangramento de varizes (hemorragia digestiva alta), a encefalopatia e o hepatocarcinoma; uma por capítulo, daqui até o 13.</p>
+
+<h3 data-bm="Quando a ascite aparece">Quando a ascite aparece <span class="prova">PROVA</span></h3>
+<p>A ascite é a <b>complicação mais comum da cirrose</b>, e a cirrose é a causa de cerca de 85% das ascites. Dez anos depois do diagnóstico de cirrose, mais da metade dos pacientes (58%) já tem ascite.</p>
+<div class="ref">
+  <div class="txt"><div class="kick"><span class="dot"></span>Pressão na veia porta</div><p>Acima dela surgem a ascite e o sangramento das varizes.</p></div>
+  <div class="val">&gt; 12 mmHg<small>pressão portal</small></div>
+</div>
+
+<h3>Transudato × exsudato</h3>
+<div class="cmp">
+  <div class="r h"><div class="k"></div><div class="c">Exsudato</div><div class="c">Transudato</div></div>
+  <div class="r"><div class="k">Mecanismo</div><div class="c">Inflamação abre o vaso: sai líquido com proteína</div><div class="c">Pressão alta no vaso: sai só o líquido</div></div>
+  <div class="r"><div class="k">Conteúdo</div><div class="c">Muita proteína e células</div><div class="c">Pouca proteína e poucas células</div></div>
+  <div class="r"><div class="k">Exemplos</div><div class="c">Câncer, carcinomatose, inflamação no abdome</div><div class="c destaque">Ascite da cirrose</div></div>
+</div>
+
+<h3 data-bm="Graus e tratamento da ascite">Graus e tratamento <span class="prova">PROVA</span></h3>
+<div class="cmp">
+  <div class="r h"><div class="k">Grau</div><div class="c">Como é</div><div class="c">Tratamento</div></div>
+  <div class="r"><div class="k">1</div><div class="c">Pequena, vista só no ultrassom</div><div class="c">Restrição de sal: 2 g por dia</div></div>
+  <div class="r"><div class="k">2</div><div class="c">Distensão simétrica e moderada do abdome</div><div class="c">Sal restrito + diurético</div></div>
+  <div class="r"><div class="k">3</div><div class="c">Volumosa, com distensão importante</div><div class="c">Sal restrito + diurético + paracentese de alívio, para o conforto do paciente</div></div>
+</div>
+<div class="ref">
+  <div class="txt"><div class="kick"><span class="dot"></span>Furosemida + espironolactona</div><p>Sobe um comprimido de cada vez, mantendo a proporção (80 + 200, 120 + 300), até 4 de cada.</p></div>
+  <div class="vals"><div class="val"><small>Início</small>40 mg + 100 mg</div><div class="val"><small>Máximo por dia</small>160 mg + 400 mg</div></div>
+</div>
+<div class="box"><div class="kick"><span class="dot"></span>Na prescrição</div><p>Deixe os diuréticos sempre de manhã, no máximo até depois do almoço; senão, o paciente passa a noite inteira urinando.</p></div>
+
+<h3 data-bm="Paracentese diagnóstica e gradiente de albumina">Paracentese diagnóstica e gradiente de albumina <span class="prova">PROVA</span></h3>
+<p>A punção diagnóstica se faz na ascite de causa ainda desconhecida e no paciente desconfortável com ascite grau 2 ou 3 (no slide: todo paciente internado com ascite nova grau 2 ou 3 ou com qualquer complicação da cirrose). O líquido vai para citometria com diferencial, proteína, albumina e cultura. Pede-se sempre, junto, a albumina do sangue, para calcular o gradiente.</p>
+<div class="ref">
+  <div class="txt"><div class="kick"><span class="dot"></span>Gradiente de albumina soro-ascite</div><p>Albumina do sangue menos a albumina do líquido ascítico (GASA).</p></div>
+  <div class="val">1,1 g/dL<small>o ponto de corte</small></div>
+</div>
+<div class="cmp">
+  <div class="r h"><div class="k"></div><div class="c">Gradiente &lt; 1,1</div><div class="c">Gradiente ≥ 1,1</div></div>
+  <div class="r"><div class="k">Significa</div><div class="c">Doença do próprio peritônio</div><div class="c">Pressão portal aumentada</div></div>
+  <div class="r"><div class="k">Exemplos</div><div class="c">Tuberculose peritoneal, câncer, carcinomatose</div><div class="c destaque">Cirrose (e, no slide, a ascite de causa cardíaca)</div></div>
+</div>
+
+<h3 data-bm="Antes de puncionar: RNI e plaquetas">Antes de puncionar: RNI e plaquetas <span class="prova">PROVA</span></h3>
+<p>A contraindicação absoluta é o abdome agudo que precisa de cirurgia de urgência. As relativas são <b>coagulopatia importante e plaquetas baixas</b>, cirurgia prévia (sobretudo na pelve; aí se punciona guiado por ultrassom), bexiga cheia e infecção da pele ou da parede do abdome no local.</p>
+<div class="box red"><div class="kick"><span class="dot"></span>Pegadinha do professor</div><p>Numa unidade de pronto atendimento, uma paciente com ascite grau 3 recebeu paracentese de alívio sem que ninguém olhasse o RNI alargado e as plaquetas baixas, sinais comuns da cirrose. Fez um hematoma gigante na parede abdominal, foi para a terapia intensiva e morreu em cerca de 4 dias. <b>Antes de qualquer paracentese, confira RNI e plaquetas.</b></p></div>
+
+<h3 data-bm="Técnica da paracentese">Técnica <span class="prova">PROVA</span></h3>
+<p>É um procedimento simples: não precisa ser cirurgião nem especialista.</p>
+<ol class="flow">
+  <li><b class="t">Local.</b> Trace uma linha do umbigo até a espinha ilíaca anterossuperior e escolha um ponto na parte distal dessa linha, longe do umbigo.</li>
+  <li><b class="t">Anestesia.</b> Injete o anestésico local.</li>
+  <li><b class="t">Puxe a pele para baixo.</b> Com a pele tracionada, introduza a agulha a 90 graus.</li>
+  <li><b class="t">Trajeto que fecha.</b> Ao soltar, a pele volta ao lugar e o trajeto deixa de ser reto; sem isso, a ascite fica vazando pela pele.</li>
+</ol>
+<div class="figure lado"><img src="fig-paracentese.jpg" style="width:255pt" alt="Local e técnica da paracentese">
+  <div class="olhar"><div class="kick">O que olhar</div><ul>
+    <li><b>Linha azul tracejada:</b> do umbigo à espinha ilíaca anterossuperior (anterior superior iliac spine); o X vermelho é o ponto da punção.</li>
+    <li><b>Linha vermelha vertical:</b> a artéria epigástrica inferior (inferior epigastric artery), que a punção evita.</li>
+    <li><b>À direita, A a C:</b> a pele é puxada para baixo antes da agulha (B); ao soltar, o trajeto fica desalinhado e se fecha (C).</li>
+  </ul><p class="leg">Imagem dos slides da aula.</p></div>
+</div>
+
+<h3 data-bm="Paracentese de alívio e albumina">Paracentese de alívio e albumina <span class="prova">PROVA</span></h3>
+<div class="ref">
+  <div class="txt"><div class="kick"><span class="dot"></span>Retirou mais de 5 litros</div><p>Albumina humana a 20%, para evitar a descompensação circulatória.</p></div>
+  <div class="val">8 g por litro<small>retirado</small></div>
+</div>
+<p>Sem a reposição, quem perde mais de 5 litros de ascite evolui com hipotensão e bradicardia.</p>
+<div class="quote"><p>“Eu, particularmente, sempre tiro no máximo 5 litros, para evitar essa descompensação. Se o paciente estiver muito desconfortável, aí tem que repor a albumina.”</p><div class="who">Dr. Bonatto, sobre a paracentese de alívio</div></div>
+
+<h3 data-bm="Peritonite bacteriana espontânea">Peritonite bacteriana espontânea <span class="prova">PROVA</span></h3>
+<p>É a infecção do líquido ascítico sem uma fonte no abdome que precise de cirurgia. O diagnóstico exige <b>polimorfonucleares (neutrófilos) acima de 250 por mm³</b> no líquido, cultura positiva e exclusão das outras causas de peritonite.</p>
+<div class="ref">
+  <div class="txt"><div class="kick"><span class="dot"></span>Antibiótico</div><p>Uma das duas, pela veia.</p></div>
+  <div class="vals"><div class="val"><small>Cefotaxima</small>2 g de 8 em 8 horas</div><div class="val"><small>Ceftriaxona</small>1 g de 12 em 12 horas</div></div>
+</div>
+<p>Os sintomas mais comuns, numa série de 489 pacientes do slide, são febre (69%), dor abdominal (59%), estado mental alterado (54%) e dor à palpação do abdome (49%); menos comuns, diarreia (32%), íleo paralítico (30%), hipotensão (21%) e hipotermia (17%).</p>
+<div class="box"><div class="kick"><span class="dot"></span>Na prática</div><p>Cirrótico com ascite, febre e dor abdominal: colha sempre o líquido ascítico para cultura e contagem de polimorfonucleares. No sistema do hospital, o pedido costuma estar pronto.</p></div>
+</section>
+
+<!-- ============================================================ 11 -->
+<section id="s11">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">11</span></div><div class="corpo"><div class="de">Etapa 6 · as complicações</div><h2>Sangramento de varizes</h2></div></div>
+  <div class="aqui"><span class="feito">1 · Fígado normal</span><span class="feito">2 · Fibrose e cirrose</span><span class="feito">3 · Avaliar</span><span class="feito">4 · Causas</span><span class="feito">5 · Exame físico</span><span class="on">6 · Complicações</span><span>7 · Hepatocarcinoma</span><span>8 · Rastreio</span></div>
+  <div class="simples"><p>Com a pressão alta na porta, as veias do esôfago e do estômago incham e podem estourar. É uma emergência que mata muito: estabilizar, dar remédio para baixar a pressão e antibiótico e, com o paciente estável, fechar a variz pela endoscopia.</p></div>
+
+<h3 data-bm="Por que é tão grave">Por que é tão grave <span class="prova">PROVA</span></h3>
+<p>Como a ascite, aparece com pressão portal acima de 12 mmHg. A mortalidade acompanha a disfunção do fígado: quanto pior o MELD, maior o risco de morrer no sangramento.</p>
+<div class="tiles">
+  <div class="tile"><div class="lab">Hemorragia digestiva alta</div><div class="n">70 a 80%</div><div class="s">dos casos são em pacientes com hipertensão portal</div></div>
+  <div class="tile"><div class="lab">Primeiro episódio</div><div class="n">30 a 40%</div><div class="s">de mortalidade</div></div>
+  <div class="tile"><div class="lab">No primeiro ano</div><div class="n">Cerca de 50%</div><div class="s">voltam a sangrar, com alto risco de morte</div></div>
+</div>
+<div class="quote"><p>“Eu cansei de ver paciente morrer por causa disso no plantão. Às vezes o paciente está até internado, estoura uma variz de madrugada, ele dormindo, ninguém vê, broncoaspira, está um pouco encefalopata...”</p><div class="who">Dr. Bonatto, sobre o sangramento de varizes</div></div>
+
+<h3>Conduta na urgência</h3>
+<p>Primeiro, estabilizar como no atendimento ao trauma: volume se necessário (hoje não é de rotina), oxigênio e proteção da via aérea, e sangue, plaquetas ou fatores de coagulação que faltarem ao cirrótico. Depois, uma <b>droga vasoativa</b>, que baixa a pressão nos vasos das varizes (octreotide; pelo slide, também terlipressina ou somatostatina), e <b>antibiótico</b>, para reduzir o risco de peritonite e de outras complicações (pelo slide, ceftriaxona, ciprofloxacino ou norfloxacino). Só com o paciente estável vem a endoscopia. O fluxograma do fim do capítulo junta os passos.</p>
+
+<h3>Endoscopia: ligadura e cola</h3>
+<p>Nas varizes do esôfago, o endoscopista faz a <b>ligadura elástica</b>: laça a variz com um anel de borracha, e ela seca. A escleroterapia é pouco usada. As varizes do fundo do estômago, menos comuns, recebem injeção de <b>cianoacrilato</b>, a mesma substância da cola de secagem rápida, que fecha a variz.</p>
+
+<h3 data-bm="Balão de Sengstaken-Blakemore">Balão de Sengstaken-Blakemore <span class="prova">PROVA</span></h3>
+<p>Para o paciente instável, na terapia intensiva. É medida de urgência, com mortalidade altíssima. O balão do esôfago é inflado sobre as varizes com pressão maior que os 12 mmHg da porta e as tampona; o balão do estômago é insuflado para segurar o conjunto no lugar, e um peso pendurado (em geral um frasco de soro) mantém a tração. O prazo é de <b>24 a 48 horas</b>: depois disso é preciso resolver o caso ou fazer a endoscopia.</p>
+<div class="figure lado"><img src="fig-balao.jpg" style="width:165pt" alt="Balão de Sengstaken-Blakemore">
+  <div class="olhar"><div class="kick">O que olhar</div><ul>
+    <li><b>Balão do esôfago</b> (esophageal balloon, vermelho): comprime as varizes.</li>
+    <li><b>Balão do estômago</b> (gastric balloon, amarelo): ancora a sonda abaixo da cárdia.</li>
+    <li><b>Tração com peso</b> de 250 a 500 g (tension with weight) e as vias para inflar cada balão e aspirar o estômago.</li>
+  </ul><p class="leg">Imagem dos slides da aula.</p></div>
+</div>
+<div class="box red"><div class="kick"><span class="dot"></span>Pegadinha do professor</div><p>Balão inflado além do prazo faz isquemia e <b>necrose da parede do esôfago</b>. Dos dois casos de balão que ele acompanhou, os dois morreram: sangramento muito ativo e coagulação toda descompensada.</p></div>
+
+<h3>Prevenir o próximo sangramento</h3>
+<p>Quem tem varizes comprovadas na endoscopia recebe <b>betabloqueador</b>: hoje o mais usado é o carvedilol, que bloqueia os receptores alfa-1, beta-1 e beta-2; o propranolol também serve. Ele baixa a pressão nas varizes e evita que rompam.</p>
+
+<h3>Derivação portossistêmica intra-hepática transjugular</h3>
+<p>Conhecida pela sigla em inglês TIPS, liga a veia porta à veia hepática (supra-hepática) por dentro do fígado: a pressão nas varizes cai, o sangramento para e a ascite diminui. Um cateter entra pela jugular, um fio-guia atravessa da veia hepática à porta, um balão abre o caminho e um stent o mantém aberto.</p>
+<div class="rows">
+  <div class="row"><div class="k">Sangramento</div><div class="v">Que falhou na terapia inicial, na endoscopia e no balão.</div></div>
+  <div class="row"><div class="k">Prevenção</div><div class="v">Sangramento já controlado com alto risco de voltar: Child B ou C e gradiente de pressão acima de 20 mmHg, 72 horas depois da endoscopia.</div></div>
+  <div class="row"><div class="k">Outros</div><div class="v">Ascite refratária e varizes fora do lugar habitual (ectópicas).</div></div>
+</div>
+<div class="reg"><b>No slide:</b> a prevenção vale para Child-Pugh C, com gradiente de 20 mmHg ou mais.</div>
+<p>É um procedimento raro: exige material especial e um médico ultraespecialista, e em Cascavel é difícil de acontecer.</p>
+<div class="box orange"><div class="kick"><span class="dot"></span>Parêntese do professor</div><p>O jogador Sócrates, do Corinthians e da Seleção Brasileira, era cirrótico por álcool, foi internado várias vezes e fez a derivação. Nunca deixou de beber e acabou morrendo.</p></div>
+
+<h3>O fluxograma da urgência</h3>
+<div class="figure"><img src="hda.svg" alt="Fluxograma do sangramento de varizes"></div>
+</section>
+
+<!-- ============================================================ 12 -->
+<section id="s12">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">12</span></div><div class="corpo"><div class="de">Etapa 6 · as complicações</div><h2>Encefalopatia hepática</h2></div></div>
+  <div class="aqui"><span class="feito">1 · Fígado normal</span><span class="feito">2 · Fibrose e cirrose</span><span class="feito">3 · Avaliar</span><span class="feito">4 · Causas</span><span class="feito">5 · Exame físico</span><span class="on">6 · Complicações</span><span>7 · Hepatocarcinoma</span><span>8 · Rastreio</span></div>
+  <div class="simples"><p>Sem a limpeza do fígado, a amônia do intestino chega ao cérebro: sonolência, confusão, coma. Procure o que desencadeou a crise e dê lactulose, um laxante que tira a amônia pelo intestino.</p></div>
+
+<h3>O que é</h3>
+<p>É a disfunção do cérebro causada pela insuficiência do fígado e pelos desvios (shunts) portossistêmicos. O sangue do intestino vem carregado de amônia, que o fígado normalmente transforma em ureia, e de outras toxinas, como mercaptanos e ácidos graxos de cadeia curta. Pelo desvio, tudo isso chega ao cérebro: causa edema cerebral, inibe a atividade elétrica depois da sinapse, estimula a produção de GABA (um neurotransmissor que inibe o cérebro) e gera estresse oxidativo e inflamação. O paciente fica lento e confuso e pode chegar ao coma. O risco no cirrótico é de 5 a 25% nos 5 anos depois do diagnóstico.</p>
+
+<h3>Graus de West Haven</h3>
+<div class="cmp">
+  <div class="r h"><div class="k">Grau</div><div class="c">O que se vê</div><div class="c">Outros sinais</div></div>
+  <div class="r"><div class="k">1</div><div class="c">Alteração do humor e do sono</div><div class="c">Fala arrastada, sonolência</div></div>
+  <div class="r"><div class="k">2</div><div class="c">Confusão mental e flapping</div><div class="c">Euforia ou depressão, falta de coordenação</div></div>
+  <div class="r"><div class="k">3</div><div class="c">Torpor</div><div class="c">Comportamento inadequado, nistagmo</div></div>
+  <div class="r"><div class="k">4</div><div class="c">Coma</div><div class="c">Terapia intensiva: proteger a via aérea e, muitas vezes, intubar</div></div>
+</div>
+
+<h3 data-bm="Sempre buscar o desencadeante">Sempre buscar o desencadeante <span class="prova">PROVA</span></h3>
+<p>Diante de encefalopatia, procure o que a desencadeou e descarte outras causas: é encefalopatia hepática pura ou há outro fator? Os mais lembrados são drogas (o <b>benzodiazepínico</b> é o mais comum), álcool, sangramento de varizes, vômito, desidratação e infecção.</p>
+<div class="card wide"><span class="tag">Precipitantes, pelo slide</span>
+<ul class="cols2">
+  <li>Drogas: benzodiazepínicos, outros hipnóticos (como o zolpidem), narcóticos e álcool.</li>
+  <li>Mais amônia: excesso de proteína na dieta, sangramento gastrointestinal, infecção, constipação.</li>
+  <li>Distúrbios eletrolíticos, como a hipocalemia, e alcalose metabólica.</li>
+  <li>Desidratação: vômito, diarreia, hemorragia, diuréticos, paracentese de grande volume.</li>
+  <li>Derivações portossistêmicas, feitas em procedimento ou espontâneas.</li>
+  <li>Trombose da veia hepática ou da veia porta, e hepatocarcinoma.</li>
+</ul></div>
+<p>No paciente com ascite, pesquise também a peritonite bacteriana espontânea.</p>
+
+<h3 data-bm="Lactulose">Lactulose <span class="prova">PROVA</span></h3>
+<p>O tratamento é a lactulose, o xarope usado na constipação. É um açúcar que o intestino não absorve: transforma a amônia (NH3) em íon amônio (NH4+), forma que não é absorvida; favorece bactérias que produzem menos amônia; e, como laxante, faz o paciente evacuar.</p>
+<div class="ref">
+  <div class="txt"><div class="kick"><span class="dot"></span>Lactulose</div><p>Até as fezes ficarem líquidas, geralmente de 6 em 6 horas; meta de 2 a 3 evacuações por dia.</p></div>
+  <div class="val">20 a 30 mL<small>dose inicial</small></div>
+</div>
+<div class="reg"><b>No slide:</b> 25 a 30 mL por hora até fezes líquidas; depois, 25 a 30 mL de 6 em 6 horas.</div>
+<p>Nos graus 3 e 4, cuidados intensivos e jejum, para evitar broncoaspiração.</p>
+<div class="quote"><p>“Você chega lá com o paciente em coma e fala para a família que só vai dar um remédio para fazer cocô. Passa um dia, dois dias, ele já está bem acordado.”</p><div class="who">Dr. Bonatto, sobre a lactulose</div></div>
+</section>
+
+<!-- ============================================================ 13 -->
+<section id="s13">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">13</span></div><div class="corpo"><div class="de">Etapas 7 e 8 · câncer, rastreio e transplante</div><h2>Hepatocarcinoma e transplante</h2></div></div>
+  <div class="aqui"><span class="feito">1 · Fígado normal</span><span class="feito">2 · Fibrose e cirrose</span><span class="feito">3 · Avaliar</span><span class="feito">4 · Causas</span><span class="feito">5 · Exame físico</span><span class="feito">6 · Complicações</span><span class="on">7 · Hepatocarcinoma</span><span class="on">8 · Rastreio</span></div>
+  <div class="simples"><p>O hepatocarcinoma é o câncer que nasce nas células do fígado, quase sempre num fígado cirrótico. Por isso todo cirrótico faz ultrassom a cada 6 meses. Achado cedo, pode ser operado ou levar ao transplante.</p></div>
+
+<h3>Quem tem risco</h3>
+<p>O carcinoma hepatocelular responde por 90% dos tumores que nascem no fígado. Aparece em geral na hepatopatia crônica, e a <b>cirrose é o principal fator de risco</b>: o cirrótico tem risco de 1 a 8% ao ano de desenvolvê-lo.</p>
+
+<h3>Diagnóstico pela imagem: LI-RADS</h3>
+<p>O hepatocarcinoma é diagnosticado sem biópsia, pela classificação radiológica LI-RADS (sigla em inglês do sistema de laudo das imagens do fígado), parecida com as que existem para a mama e a tireoide. <b>LI-RADS 5 é hepatocarcinoma definitivo.</b> Na tomografia, o tumor brilha na fase arterial (hiper-realce) e perde o contraste na fase venosa (washout, a “lavagem”); na ressonância, também há hiper-realce arterial e uma cápsula que realça na fase de equilíbrio.</p>
+<div class="figure"><img src="fig-chc-tc.jpg" alt="Tomografia de hepatocarcinoma em três fases">
+  <div class="olhar"><div class="kick">O que olhar</div><ul>
+    <li><b>A, sem contraste:</b> massa saindo do contorno do fígado (seta) e outra lesão mais escura (ponta de seta).</li>
+    <li><b>B, fase arterial:</b> as lesões brilham mais que o fígado (hiper-realce); as setas curtas mostram outras massas.</li>
+    <li><b>C, fase venosa portal:</b> a lesão da ponta de seta perdeu o contraste (washout) e fecha os critérios de hepatocarcinoma.</li>
+  </ul><p class="leg">Imagem dos slides da aula.</p></div>
+</div>
+<div class="cmp">
+  <div class="r h"><div class="k">LI-RADS</div><div class="c">O que significa</div><div class="c">O que fazer</div></div>
+  <div class="r"><div class="k">1 e 2</div><div class="c">Definitivamente ou provavelmente benigno</div><div class="c">Seguir a vigilância de rotina</div></div>
+  <div class="r"><div class="k">3</div><div class="c">Probabilidade intermediária</div><div class="c">Repetir tomografia ou ressonância em 3 a 6 meses</div></div>
+</div>
+<div class="cmp">
+  <div class="r"><div class="k">4</div><div class="c">Provavelmente hepatocarcinoma</div><div class="c">Reunião multidisciplinar (radiologista, hepatologista) decide se faz biópsia e o que fazer</div></div>
+  <div class="r"><div class="k">5</div><div class="c destaque">Hepatocarcinoma definitivo</div><div class="c">Tratar, sem biópsia</div></div>
+</div>
+
+<h3>Estadiamento</h3>
+<p>Como em todo câncer, as diretrizes norte-americanas olham tamanho, linfonodos e metástase, além da condição clínica: o paciente aguenta cirurgia? A classificação de Barcelona (Barcelona Clinic Liver Cancer) divide o hepatocarcinoma em inicial, intermediário, avançado e terminal, pelo número de nódulos, pela função do fígado e pela condição do paciente, e liga cada estágio a um tratamento.</p>
+<div class="figure"><img src="bclc.svg" alt="Estágios de Barcelona e tratamento"></div>
+
+<h3>Ressecção</h3>
+<p>A ressecção cirúrgica pode curar, mas só é indicada quando o paciente <b>não tem varizes do esôfago, isto é, não tem hipertensão portal</b>, pelo risco de sangramento. A sobrevida livre de doença passa de 40%, e a sobrevida em 5 anos chega a 90%. Infelizmente, a maioria tem hipertensão portal e não aguenta a ressecção.</p>
+
+<h3 data-bm="Critérios de Milão">Critérios de Milão <span class="prova">PROVA</span></h3>
+<p>O transplante também pode curar, desde que o paciente cirrótico esteja dentro dos critérios de Milão:</p>
+<div class="rows">
+  <div class="row"><div class="k">Nódulo único</div><div class="v">Menor que 5 cm.</div></div>
+  <div class="row"><div class="k">Ou até 3 nódulos</div><div class="v">Todos menores que 3 cm.</div></div>
+  <div class="row"><div class="k">Veia porta</div><div class="v">Sem trombose tumoral. Não é absoluto: se der para retirar a trombose e reconstruir a porta, o transplante ainda é indicado.</div></div>
+</div>
+
+<h3>Transplante: a fila e a cirurgia</h3>
+<p>A lista é estadual, por tipo sanguíneo e gravidade (o MELD); o Paraná tem a sua tabela. Algumas situações ganham pontuação especial, e o hepatocarcinoma é uma delas: o paciente entra com <b>MELD 20</b>, acima do cirrótico comum, que entra com 15. Sem fígado oferecido em 3 meses, o MELD é corrigido para 24; mais 3 meses, 28; e assim vai subindo. Também ganham pontuação especial, pelo slide, a encefalopatia, a colangite de repetição, a ascite refratária e a coceira que não cede.</p>
+<div class="reg"><b>No slide:</b> a nota do último degrau mostra “MELD corrigido = 29”.</div>
+<p>Na cirurgia, depois de colocar o fígado, reconstroem-se a artéria hepática, o colédoco e a veia porta; atrás, a veia cava do paciente é aberta e unida à do doador lado a lado (anastomose laterolateral).</p>
+
+<h3>Outros tratamentos</h3>
+<div class="rows">
+  <div class="row"><div class="k">Ablação térmica</div><div class="v">Radiofrequência, micro-ondas ou congelamento (crioablação) destroem o tumor. Para candidatos selecionados, com o tumor longe do colédoco, das artérias e das veias.</div></div>
+  <div class="row"><div class="k">Quimio&shy;embolização</div><div class="v">O radiologista intervencionista leva um cateter pela artéria até o nódulo e injeta quimioterápico.</div></div>
+</div>
+<div class="rows">
+  <div class="row"><div class="k">Tratamento sistêmico</div><div class="v">Quimioterapia, como o sorafenibe por via oral, no estágio avançado ou para quem não aguenta cirurgia.</div></div>
+  <div class="row"><div class="k">Terminal</div><div class="v">Só cuidados paliativos.</div></div>
+</div>
+
+<h3 data-bm="Rastreio do hepatocarcinoma">Rastreio do hepatocarcinoma <span class="prova">PROVA</span></h3>
+<p>É a mensagem final da aula: <b>todo cirrótico fica em rastreio</b>, porque o risco dele é muito maior que o da população.</p>
+<div class="ref">
+  <div class="txt"><div class="kick"><span class="dot"></span>Rastreio</div><p>Todo cirrótico. Portadores de hepatite B e de hemocromatose fazem o mesmo rastreio a partir dos 40 anos.</p></div>
+  <div class="vals"><div class="val"><small>Ultrassom</small>a cada 6 meses</div><div class="val"><small>E dosar</small>alfafetoproteína</div></div>
+</div>
+<p>A alfafetoproteína é um marcador tumoral, dosado no sangue.</p>
+
+<h3 data-bm="Quando encaminhar ao transplante">Quando encaminhar ao transplante <span class="prova">PROVA</span></h3>
+<ul>
+  <li><span class="medium">Buscar sempre a causa da cirrose</span> e tratá-la quando possível: muda o prognóstico e aumenta a sobrevida.</li>
+  <li><span class="medium">Cirrótico descompensado é paciente grave:</span> priorize o que é vital e encaminhe a um serviço com cuidados especiais. Compensado, ele vive muito mais, como mostra a curva de sobrevida do slide.</li>
+</ul>
+<div class="ref">
+  <div class="txt"><div class="kick"><span class="dot"></span>Encaminhar ao serviço de transplante</div><p>Ou qualquer descompensação da cirrose. Em Cascavel, o serviço de referência é a Uopeccan.</p></div>
+  <div class="val">Child B ou MELD &gt; 15<small>já encaminha</small></div>
+</div>
+<p>O transplante é o tratamento definitivo da cirrose descompensada, quando possível:</p>
+<div class="tiles">
+  <div class="tile"><div class="lab">Sobrevida em 1 ano</div><div class="n">90%</div><div class="s">depois do transplante</div></div>
+  <div class="tile"><div class="lab">Em 5 anos</div><div class="n">75%</div><div class="s">depois do transplante</div></div>
+  <div class="tile"><div class="lab">Em 10 anos</div><div class="n">55%</div><div class="s">depois do transplante</div></div>
+</div>
+</section>
+
+<!-- ============================================================ 14 -->
+<section id="s14">
+<div class="vesp">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">14</span></div><div class="corpo"><div class="de">Para a véspera</div><h2>O essencial da aula</h2></div></div>
+  <div class="aqui"><span class="feito">1 · Fígado normal</span><span class="feito">2 · Fibrose e cirrose</span><span class="feito">3 · Avaliar</span><span class="feito">4 · Causas</span><span class="feito">5 · Exame físico</span><span class="feito">6 · Complicações</span><span class="feito">7 · Hepatocarcinoma</span><span class="feito">8 · Rastreio</span></div>
+<h3>Página de véspera</h3>
+<div class="item"><span class="prova">PROVA</span><p><b>Cirrose:</b> estágio final da fibrose; crônica, progressiva e irreversível, com fibrose difusa e nódulos de regeneração.</p></div>
+<div class="item"><span class="prova">PROVA</span><p><b>Célula estrelada:</b> a vilã da fibrose; ativada, vira miofibroblasto e produz colágeno no espaço de Disse.</p></div>
+<div class="item"><span class="prova">PROVA</span><p><b>Função do fígado</b> é bilirrubina, albumina e TAP, não transaminases. Child-Pugh soma isso a ascite e encefalopatia: A 5 a 6, B 7 a 9, C 10 a 15 pontos.</p></div>
+<div class="item"><span class="prova">PROVA</span><p><b>MELD:</b> creatinina, bilirrubina, RNI e sódio; 15 ou mais indica transplante.</p></div>
+<div class="item"><span class="prova">PROVA</span><p><b>Hepatite B:</b> pergunte se houve transfusão e o ano (antes de 1993). O HBsAg dá o diagnóstico; crônica com 6 meses ou mais.</p></div>
+<div class="item"><span class="prova">PROVA</span><p><b>Hepatite C:</b> 70% cronificam (na B, 5 a 10% dos adultos); câncer 15 a 20 vezes mais, imagem a cada 6 meses no cirrótico; cura em mais de 95% com 8 a 12 semanas.</p></div>
+<div class="item"><span class="prova">PROVA</span><p><b>Álcool:</b> 80 g por dia por 10 anos levam à cirrose (3 garrafas de cerveja por dia). Esteatose e esteato-hepatite somem em cerca de 2 semanas sem beber.</p></div>
+<div class="item"><span class="prova">PROVA</span><p><b>Ascite</b> (e varizes) com pressão portal acima de 12 mmHg. Grau 1, sal 2 g por dia; grau 2, mais furosemida 40 mg e espironolactona 100 mg (até 160 + 400), de manhã; grau 3, mais paracentese de alívio.</p></div>
+<div class="item"><span class="prova">PROVA</span><p><b>Gradiente de albumina:</b> 1,1 ou mais é hipertensão portal (cirrose); abaixo de 1,1, doença do peritônio.</p></div>
+<div class="item"><span class="prova">PROVA</span><p><b>Paracentese:</b> antes, RNI e plaquetas; puxe a pele para baixo antes da agulha. Passou de 5 litros, 8 g de albumina a 20% por litro.</p></div>
+<div class="item"><span class="prova">PROVA</span><p><b>Peritonite bacteriana espontânea:</b> mais de 250 polimorfonucleares por mm³; cefotaxima ou ceftriaxona.</p></div>
+<div class="item"><span class="prova">PROVA</span><p><b>Varizes:</b> 30 a 40% morrem no primeiro episódio. Balão de Sengstaken-Blakemore só por 24 a 48 horas.</p></div>
+<div class="item"><span class="prova">PROVA</span><p><b>Encefalopatia:</b> o flapping é o sinal clássico. Procure o desencadeante (benzodiazepínico é o mais comum) e dê lactulose, 20 a 30 mL até fezes líquidas, para 2 a 3 evacuações por dia.</p></div>
+<div class="item"><span class="prova">PROVA</span><p><b>Milão:</b> nódulo único menor que 5 cm ou até 3 nódulos menores que 3 cm, sem trombose tumoral da porta.</p></div>
+<div class="item"><span class="prova">PROVA</span><p><b>Todo cirrótico:</b> ultrassom a cada 6 meses e alfafetoproteína. Encaminhar ao transplante com Child B, MELD acima de 15 ou qualquer descompensação.</p></div>
+</div>
+
+<h3>Outros números da aula</h3>
+<div class="tiles">
+  <div class="tile"><div class="lab">Veia porta</div><div class="n">70 a 80%</div><div class="s">do sangue que chega ao fígado</div></div>
+  <div class="tile"><div class="lab">Hepatite B no adulto</div><div class="n">90%</div><div class="s">curam a infecção aguda em até 6 meses</div></div>
+  <div class="tile"><div class="lab">Hepatocarcinoma</div><div class="n">1 a 8% ao ano</div><div class="s">de risco no cirrótico</div></div>
+</div>
+<div class="tiles">
+  <div class="tile"><div class="lab">Ascite em 10 anos</div><div class="n">58%</div><div class="s">dos cirróticos</div></div>
+  <div class="tile"><div class="lab">Encefalopatia em 5 anos</div><div class="n">5 a 25%</div><div class="s">dos cirróticos</div></div>
+  <div class="tile"><div class="lab">Hepatocarcinoma na fila</div><div class="n">MELD 20</div><div class="s">sobe para 24 e 28 a cada 3 meses</div></div>
+</div>
+
+<div class="box red"><div class="kick"><span class="dot"></span>Erros comuns</div><ul>
+  <li><span class="medium">Pedir transaminases para ver a função do fígado.</span> Função é bilirrubina, albumina e TAP.</li>
+  <li><span class="medium">Achar que a cirrose regride.</span> Regridem a esteatose e a esteato-hepatite; a cirrose, não.</li>
+  <li><span class="medium">Puncionar sem olhar RNI e plaquetas,</span> ou tirar mais de 5 litros sem albumina.</li>
+  <li><span class="medium">Esquecer o balão inflado</span> além de 48 horas.</li>
+</ul></div>
+
+<h3>Palavras da aula em linguagem simples</h3>
+<div class="rows terms">
+  <div class="row"><div class="k">Alfafetoproteína</div><div class="v">Marcador tumoral dosado no sangue; entra no rastreio do hepatocarcinoma.</div></div>
+  <div class="row"><div class="k">Anti-HCV</div><div class="v">Anticorpo contra o vírus da hepatite C: mostra que houve contato com o vírus.</div></div>
+</div>
+<div class="rows terms">
+  <div class="row"><div class="k">Asterixis</div><div class="v">O mesmo que flapping: as mãos estendidas batem como asas na encefalopatia.</div></div>
+  <div class="row"><div class="k">Cercária</div><div class="v">Forma do verme da esquistossomose que sai do caramujo e atravessa a pele.</div></div>
+</div>
+<div class="rows terms">
+  <div class="row"><div class="k">Cianoacrilato</div><div class="v">Cola injetada pela endoscopia para fechar varizes do fundo do estômago.</div></div>
+  <div class="row"><div class="k">Corpos de Mallory</div><div class="v">Agregados eosinofílicos dentro do hepatócito, típicos da esteato-hepatite alcoólica.</div></div>
+</div>
+<div class="rows terms">
+  <div class="row"><div class="k">Elastografia</div><div class="v">Ultrassom que mede a dureza do fígado pela velocidade da onda.</div></div>
+  <div class="row"><div class="k">Espaço de Disse</div><div class="v">Espaço entre o hepatócito e o sinusoide, onde fica a célula estrelada.</div></div>
+</div>
+<div class="rows terms">
+  <div class="row"><div class="k">GASA</div><div class="v">Gradiente de albumina soro-ascite: albumina do sangue menos a do líquido ascítico.</div></div>
+  <div class="row"><div class="k">HBsAg</div><div class="v">Antígeno de superfície do vírus da hepatite B; presente no sangue, dá o diagnóstico.</div></div>
+</div>
+<div class="rows terms">
+  <div class="row"><div class="k">Hiperesplenismo</div><div class="v">Baço grande que sequestra células do sangue: anemia, leucopenia e plaquetopenia.</div></div>
+  <div class="row"><div class="k">LI-RADS</div><div class="v">Classificação de 1 a 5 das lesões do fígado na tomografia e na ressonância; 5 é hepatocarcinoma.</div></div>
+</div>
+<div class="rows terms">
+  <div class="row"><div class="k">MELD</div><div class="v">Escore de gravidade da doença do fígado (creatinina, bilirrubina, RNI e sódio) que ordena a fila do transplante.</div></div>
+  <div class="row"><div class="k">METAVIR</div><div class="v">Classificação da fibrose (F0 a F4) e da inflamação (A0 a A3) na biópsia.</div></div>
+</div>
+<div class="rows terms">
+  <div class="row"><div class="k">Miracídio</div><div class="v">Forma do verme da esquistossomose que sai do ovo na água e invade o caramujo.</div></div>
+  <div class="row"><div class="k">Paracentese</div><div class="v">Punção do abdome para tirar líquido de ascite, para exame ou para alívio.</div></div>
+</div>
+<div class="rows terms">
+  <div class="row"><div class="k">RNI</div><div class="v">Razão normalizada internacional: o tempo de protrombina em forma padronizada.</div></div>
+  <div class="row"><div class="k">TAP</div><div class="v">Tempo de protrombina: mede a coagulação, que depende dos fatores feitos pelo fígado.</div></div>
+</div>
+<div class="rows terms">
+  <div class="row"><div class="k">Telangiectasia</div><div class="v">Aranha vascular: vasinhos dilatados na pele pelo excesso de estrogênio.</div></div>
+  <div class="row"><div class="k">TGO e TGP</div><div class="v">As transaminases, enzimas que sobem quando o hepatócito é lesado.</div></div>
+  <div class="row"><div class="k">Washout</div><div class="v">“Lavagem” do contraste: a lesão perde o brilho na fase venosa; com o hiper-realce arterial, sugere hepatocarcinoma.</div></div>
+</div>
+{{NOTAS}}
+</section>
+</body></html>
