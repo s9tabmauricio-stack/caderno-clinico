@@ -20,3 +20,4 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
+| Apostila da aula 6 de Gastro (doenças do fígado) | Claude | claude/nifty-hypatia-2mlz6j | gastro-a6 | 16/11/2026 |
