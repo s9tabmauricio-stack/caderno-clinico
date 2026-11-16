@@ -20,4 +20,3 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
-| Apostila da aula 6 de PASS | Codex | `codex/apostila-pass-a6` | `pass-a6` (fonte, apostila e publicação) | 15/11/2026 |

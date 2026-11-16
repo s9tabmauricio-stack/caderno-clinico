@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<title>PROEX V · Aula 6 · Como ler artigos científicos</title>
+<meta name="rodape" content="Mauricio Faria · PROEX V · Aula 6 — Artigos científicos">
+<link rel="stylesheet" href="apostila.css">
+<style>
+.sec-head { display:flex; align-items:stretch; padding:0; min-height:38pt; overflow:hidden; }
+.sec-head .num { position:static; display:flex; flex:0 0 44pt; width:44pt; align-items:center; justify-content:center; margin:0; padding:0; border-radius:12pt 0 0 12pt; background:linear-gradient(145deg,#0B5BD3,#6E3AA7); color:#fff; font-family:"Inter SemiBold"; font-size:21pt; line-height:1.5; opacity:1; visibility:visible; }
+.sec-head h2 { flex:1 1 auto; min-width:0; max-width:none; width:auto; margin:0; padding:6pt 11pt; font-size:16pt; line-height:1.5; }
+.simples { background:#fff; border:1px solid #C3D8F8; border-left:4pt solid #0B5BD3; border-radius:12pt; padding:9pt 14pt 10pt; margin:0 0 10pt; break-inside:avoid; }
+.simples p { font-size:10.2pt; line-height:1.5; color:#1F2933; margin:0; }
+.aqui { display:flex; margin:7pt 0 9pt; }
+.aqui span { flex:1; border-top:3pt solid #DCDCE2; padding-top:3pt; margin-right:3pt; font-family:"Inter Medium"; font-size:6pt; line-height:1.5; color:#6C6C70; }
+.aqui span.feito { border-top-color:#A9C4EE; }
+.aqui span.on { border-top-color:#0B5BD3; color:#0B5BD3; font-family:"Inter SemiBold"; }
+.figure img { display:block; width:100%; height:auto; }
+.figure .olhar { margin-top:8pt; }
+.figure .olhar p { font-size:9pt; line-height:1.5; margin:0; }
+.figure .leg { font-size:7.6pt; line-height:1.5; color:#6C6C70; margin:5pt 0 0; }
+.reg { font-size:8.5pt; line-height:1.5; color:#6C6C70; background:#F7F7FA; border:1px solid #E3E3E8; border-radius:9pt; padding:6pt 10pt; margin:7pt 0 10pt; break-inside:avoid; }
+.lesson-table { width:100%; border-collapse:collapse; margin:8pt 0 12pt; font-size:8.6pt; line-height:1.5; }
+.lesson-table th { color:#16315C; background:#E8F0FE; text-align:left; font-family:"Inter SemiBold"; font-weight:normal; }
+.lesson-table th,.lesson-table td { border:1px solid #DCE3ED; padding:6pt 7pt; vertical-align:top; }
+.lesson-table tbody tr { break-inside:avoid; }
+.lesson-table thead { display:table-header-group; }
+.lesson-table .n { white-space:nowrap; }
+.small-table { font-size:8pt; }
+#s07 { break-before:page; margin-top:0; }
+#s07 .lesson-table th, #s07 .lesson-table td { padding:4.6pt 7pt; }
+.fecho-meta { padding-top:6pt; }
+.cover .toc a { padding:3.6pt 0; }
+.cover .author b { font-size:12pt; }
+.cover .kicker { max-width:450pt; }
+.cover .kn .n { font-size:26pt; }
+.vesp { break-before:page; }
+.vesp .item { background:#fff; border:1px solid #E3E3E8; border-radius:10pt; padding:8pt 11pt; margin:0 0 6pt; break-inside:avoid; }
+.vesp .item p { margin:0; font-size:9.3pt; line-height:1.5; }
+.vesp .item b { color:#16315C; }
+.refs p { font-size:8pt; line-height:1.5; margin-bottom:6pt; }
+</style></head><body>
+<div class="cover">
+  <div class="kicker">PROEX: Programa de Aprendizagem Saúde e Sociedade V<br>PASS · Aula 6</div>
+  <h1>Como ler<br>artigos científicos</h1>
+  <p class="sub">Da estrutura do artigo à interpretação dos resultados, das metanálises e das diretrizes clínicas.</p>
+  <div class="author"><span class="av">F</span><div><b>Dr. Filipe Tomasi Keppen Sequeira de Almeida</b><span>Cirurgião cardiovascular</span></div></div>
+  <div class="keynums"><div class="kick">Três pontos para levar</div><div class="kn-grid">
+    <div class="kn"><div class="n">0,80</div><div class="l">efeito relativo no desfecho principal do ensaio</div></div>
+    <div class="kn"><div class="n">1</div><div class="l">linha de ausência de efeito nas medidas de razão</div></div>
+    <div class="kn"><div class="n">2 eixos</div><div class="l">classe de recomendação e nível de evidência</div></div>
+  </div></div>
+  <div class="toc"><div class="kick">Nesta apostila</div>
+    <a href="#s01"><span class="tn">01</span><span class="tt">O artigo e sua pergunta</span><span class="pg">{{s01}}</span></a>
+    <a href="#s02"><span class="tn">02</span><span class="tt">Métodos e participantes</span><span class="pg">{{s02}}</span></a>
+    <a href="#s03"><span class="tn">03</span><span class="tt">Desfechos e tamanho da amostra</span><span class="pg">{{s03}}</span></a>
+    <a href="#s04"><span class="tn">04</span><span class="tt">Como interpretar os resultados</span><span class="pg">{{s04}}</span></a>
+    <a href="#s05"><span class="tn">05</span><span class="tt">Discussão e leitura crítica</span><span class="pg">{{s05}}</span></a>
+    <a href="#s06"><span class="tn">06</span><span class="tt">Metanálise e gráfico de floresta</span><span class="pg">{{s06}}</span></a>
+    <a href="#s07"><span class="tn">07</span><span class="tt">Como ler uma diretriz</span><span class="pg">{{s07}}</span></a>
+    <a href="#s08"><span class="tn">08</span><span class="tt">Página de véspera</span><span class="pg">{{s08}}</span></a>
+    <a href="#s09"><span class="tn">09</span><span class="tt">Glossário e referências</span><span class="pg">{{s09}}</span></a>
+    <p class="note">Leia as figuras com as respectivas legendas. A chave de cores está na página seguinte.</p>
+  </div>
+</div>
+
+<div class="legend"><div class="kick">Como ler esta apostila</div><div class="lg-grid">
+  <div class="lg"><span class="sw blue"></span><div><b>Azul</b> conteúdo e raciocínio da aula</div></div>
+  <div class="lg"><span class="sw red"></span><div><b>Vermelho</b> alertas e armadilhas de interpretação</div></div>
+  <div class="lg"><span class="sw purple"></span><div><b>Roxo</b> complemento: fora da aula</div></div>
+  <div class="lg"><span class="sw blue"></span><div><b>Em palavras simples</b> a ideia central de cada capítulo</div></div>
+  <div class="lg"><span class="sw blue"></span><div><b>Você está aqui</b> sua posição na trilha da aula</div></div>
+  <div class="lg"><span class="sw red"></span><div><b>Pegadinha</b> o erro a evitar naquele ponto</div></div>
+</div></div>
+<div class="prof"><div class="kick">Sobre o professor · Dr. Filipe Almeida</div><div class="rows">
+  <div class="row"><div class="k">Especialidade</div><div class="v">Cirurgia cardiovascular.</div></div>
+  <div class="row"><div class="k">Formação</div><div class="v">Medicina pelo Centro Universitário Fundação Assis Gurgacz, entre 2015 e 2020, e Direito pela Pontifícia Universidade Católica do Paraná. Residência em cirurgia cardiovascular na Santa Casa de Londrina, entre 2021 e 2026. Mestrado em Gestão, Tecnologia e Inovação em Urgência e Emergência pela Universidade Estadual de Maringá.</div></div>
+  <div class="row"><div class="k">Atuação</div><div class="v">Professor do Centro Universitário Fundação Assis Gurgacz, em Cascavel. Atua no Instituto de Cirurgia Cardiovascular do Oeste do Paraná / Instituto Rui Almeida.</div></div>
+  <div class="row"><div class="k">Sociedade</div><div class="v">Membro da Sociedade Brasileira de Cirurgia Cardiovascular.</div></div>
+</div></div>
+<div class="figure"><div class="kick">Trilha da aula</div><img src="trilha.svg" alt="Sete etapas: estrutura, método, desfechos, resultados, crítica, metanálise e diretrizes."></div>
+
+<section id="s01">
+<div class="sec-head"><span class="num">01</span><h2>O artigo e sua pergunta</h2></div>
+<div class="aqui" aria-label="Você está aqui"><span class="on">1 · Estrutura</span><span class="">2 · Método</span><span class="">3 · Desfechos</span><span class="">4 · Resultados</span><span class="">5 · Crítica</span><span class="">6 · Metanálise</span><span class="">7 · Diretrizes</span></div>
+<div class="simples"><div class="kick">Em palavras simples</div><p>Um artigo conta como uma pergunta foi investigada. Para entendê-lo, descubra por que a pesquisa foi feita, como foi conduzida, o que encontrou e até onde sua conclusão pode ir.</p></div>
+<h3>A estrutura acompanha o raciocínio</h3>
+<p>A leitura começa com a identificação do trabalho: título, autores, revista, ano e tema. O resumo oferece uma visão rápida, mas a avaliação depende das seções completas.</p>
+<table class="lesson-table"><thead><tr><th>Parte</th><th>Pergunta que responde</th><th>O que procurar</th></tr></thead><tbody>
+<tr><td>Título, autoria e palavras-chave</td><td>Que trabalho é este?</td><td>Assunto, responsáveis e informações para localizar o artigo.</td></tr>
+<tr><td>Resumo</td><td>Qual é a visão geral?</td><td>Contexto, métodos, resultados principais e conclusão.</td></tr>
+<tr><td>Introdução</td><td>Por quê?</td><td>O que já se sabe, o que falta saber e qual pergunta será respondida.</td></tr>
+<tr><td>Métodos</td><td>Como?</td><td>Desenho, participantes, comparação, desfechos e análise.</td></tr>
+<tr><td>Resultados</td><td>O quê?</td><td>Dados observados, apresentados em texto, tabelas e figuras.</td></tr>
+<tr><td>Discussão e conclusão</td><td>E daí?</td><td>Significado dos achados, relação com outros estudos, limites e implicações.</td></tr>
+<tr><td>Referências</td><td>Em que se apoia?</td><td>Materiais citados que permitem rastrear os argumentos.</td></tr>
+</tbody></table>
+<h3>A introdução funciona como um funil</h3>
+<ol class="flow">
+<li><b class="t">Conhecido.</b> Apresenta o problema e o conhecimento disponível.</li>
+<li><b class="t">Lacuna.</b> Mostra o que ainda não foi esclarecido.</li>
+<li><b class="t">Objetivo ou hipótese.</b> Explica como e por que a pesquisa pretende preencher essa lacuna.</li>
+</ol>
+<p>Depois do método e dos resultados, a discussão amplia novamente o olhar: relaciona a resposta com o conhecimento existente e avalia o que ela significa para a prática.</p>
+<h3>O exemplo central: PARADIGM-HF</h3>
+<p>O artigo <i>Angiotensin–Neprilysin Inhibition versus Enalapril in Heart Failure</i>, de McMurray e colaboradores, foi publicado no <i>The New England Journal of Medicine</i>, em 2014. O nome PARADIGM-HF identifica o ensaio.</p>
+<div class="box"><div class="kick"><span class="dot"></span>A pergunta do estudo</div><p>Em pessoas com insuficiência cardíaca e fração de ejeção reduzida, sacubitril/valsartana seria superior ao enalapril para reduzir morte cardiovascular e hospitalização por insuficiência cardíaca?</p></div>
+<p>O resumo é estruturado em contexto, métodos, resultados e conclusão. Ele já revela os achados principais; a leitura crítica precisa voltar ao percurso que os produziu.</p>
+<h3>Como localizar o artigo exato</h3>
+<p>O <b>identificador digital do objeto</b>, conhecido pela expressão inglesa <i>Digital Object Identifier</i>, identifica a publicação. No exemplo: <a href="https://doi.org/10.1056/NEJMoa1409077">10.1056/NEJMoa1409077</a>. Ele ajuda a encontrar o mesmo trabalho mesmo quando o endereço da página muda.</p>
+<div class="box red"><div class="kick"><span class="dot"></span>Pegadinha · a conclusão não substitui o caminho</div><p>O título informa o tema; o resumo informa a síntese. Nenhum deles, sozinho, mostra todos os critérios de seleção, as perdas, os detalhes da análise e as limitações.</p></div>
+</section>
+
+<section id="s02">
+<div class="sec-head"><span class="num">02</span><h2>Métodos e participantes</h2></div>
+<div class="aqui" aria-label="Você está aqui"><span class="feito">1 · Estrutura</span><span class="on">2 · Método</span><span class="">3 · Desfechos</span><span class="">4 · Resultados</span><span class="">5 · Crítica</span><span class="">6 · Metanálise</span><span class="">7 · Diretrizes</span></div>
+<div class="simples"><div class="kick">Em palavras simples</div><p>Antes de perguntar se um tratamento funcionou, descubra quem pôde recebê-lo e como os grupos foram comparados. A seleção dos participantes ajuda a entender a quem o resultado se aplica.</p></div>
+<h3>Quem entrou no ensaio</h3>
+<p>Foram incluídos adultos com insuficiência cardíaca sintomática, nas classes funcionais II, III ou IV da Associação de Cardiologia de Nova York. A fração de ejeção exigida era de até 40%; uma alteração do protocolo passou a exigir até 35%.</p>
+<p>Também se exigiam peptídeos natriuréticos elevados e tratamento prévio estável. O texto descreve peptídeo natriurético tipo B de pelo menos 150 pg/mL, ou seu fragmento amino-terminal de pelo menos 600 pg/mL; com hospitalização recente por insuficiência cardíaca, os cortes eram 100 e 400 pg/mL, respectivamente.</p>
+<p>O desenho previa estabilidade por pelo menos quatro semanas de um betabloqueador e de um inibidor da enzima conversora de angiotensina ou bloqueador do receptor de angiotensina, em dose equivalente a pelo menos 10 mg diários de enalapril. A tolerabilidade e a função renal também faziam parte da seleção.</p>
+<h3>A fase anterior ao sorteio</h3>
+<p>Antes da comparação, os participantes passaram por uma <b>fase de tolerabilidade</b>, chamada <i>run-in</i>: receberam enalapril e, em seguida, sacubitril/valsartana. A finalidade era verificar se toleravam as doses-alvo dos dois tratamentos.</p>
+<div class="figure"><img src="fluxo-ensaio.svg" alt="Fluxo de seleção: 10.521 na fase inicial, 8.442 sorteados e 8.399 na análise; grupos com 4.187 e 4.212 participantes."><div class="olhar"><div class="kick">O que olhar</div><p>O número da análise é menor que o número sorteado. As exclusões de 43 participantes foram definidas antes do encerramento e decorreram de randomização inválida ou de falhas graves de boas práticas nos centros.</p></div><p class="leg">Esquema dos dados do fluxograma e do texto do ensaio apresentados na aula.</p></div>
+<p>Na etapa com enalapril, 1.102 pessoas interromperam a participação; na etapa com sacubitril/valsartana, 977. Os motivos incluíram eventos adversos, alterações de exames, retirada do consentimento, desvios do protocolo e mortes. Oito pessoas receberam somente sacubitril/valsartana na fase inicial, detalhe que explica a contagem entre as duas etapas.</p>
+<div class="box red"><div class="kick"><span class="dot"></span>Pegadinha · tolerar antes de comparar</div><p>O ensaio comparou pessoas que conseguiram atravessar essa fase. O resultado precisa ser aplicado considerando essa seleção; não demonstra tolerabilidade idêntica em todos os pacientes da prática.</p></div>
+<h3>Como os grupos foram formados</h3>
+<p>A alocação foi feita por sistema computadorizado, em proporção de um para um, com ocultação da atribuição. A fase comparativa foi <b>duplo-cega</b>: participantes e equipe não sabiam qual tratamento estava sendo administrado.</p>
+<table class="lesson-table"><thead><tr><th>Aspecto</th><th>Sacubitril/valsartana</th><th>Enalapril</th></tr></thead><tbody>
+<tr><td>Participantes na análise</td><td>4.187</td><td>4.212</td></tr>
+<tr><td>Tratamento do protocolo</td><td>200 mg, duas vezes ao dia, da formulação experimental chamada LCZ696</td><td>10 mg, duas vezes ao dia</td></tr>
+<tr><td>Tratamento adicional</td><td colspan="2">Terapias recomendadas para insuficiência cardíaca; ajuste da dose do estudo se houvesse intolerância.</td></tr>
+<tr><td>Acompanhamento</td><td colspan="2">Visitas a cada duas a oito semanas nos primeiros quatro meses; depois, a cada quatro meses.</td></tr>
+</tbody></table>
+<p class="reg">As doses acima identificam a intervenção pesquisada. A finalidade aqui é entender o protocolo e o comparador.</p>
+<h3>A tabela inicial descreve a população</h3>
+<p>As características de entrada permitem verificar quem foi estudado e se os grupos eram semelhantes. A tabela inclui idade, sexo, origem geográfica, pressão arterial, função renal, gravidade da insuficiência cardíaca, doenças associadas e tratamentos em uso.</p>
+<table class="lesson-table"><thead><tr><th>Característica</th><th>Sacubitril/valsartana</th><th>Enalapril</th></tr></thead><tbody>
+<tr><td>Fração de ejeção média</td><td>29,6%</td><td>29,4%</td></tr>
+<tr><td>Cardiopatia isquêmica</td><td>59,9%</td><td>60,1%</td></tr>
+<tr><td>Diabetes</td><td>34,7%</td><td>34,6%</td></tr>
+<tr><td>Uso de betabloqueador</td><td>93,1%</td><td>92,9%</td></tr>
+<tr><td>Antagonista do receptor de mineralocorticoide</td><td>54,2%</td><td>57,0%</td></tr>
+</tbody></table>
+<p>O conjunto era semelhante entre os grupos. A nota da tabela, porém, registra diferenças no uso de digitálicos e de antagonistas do receptor de mineralocorticoide; “semelhantes” não significa que todas as características fossem iguais.</p>
+<h3>Seguimento, perdas e interrupção</h3>
+<p>O acompanhamento mediano foi de 27 meses. Ao final, o estado vital era desconhecido para 11 participantes no grupo sacubitril/valsartana e nove no grupo enalapril; esses dados foram censurados no último contato.</p>
+<p>Havia análises intermediárias e regras de interrupção previamente definidas. O estudo foi encerrado antes do previsto após ultrapassar o limite de benefício estabelecido. A análise seguiu o grupo originalmente atribuído, segundo o princípio de intenção de tratar, no conjunto de participantes com randomização válida.</p>
+</section>
+
+<section id="s03">
+<div class="sec-head"><span class="num">03</span><h2>Desfechos e tamanho da amostra</h2></div>
+<div class="aqui" aria-label="Você está aqui"><span class="feito">1 · Estrutura</span><span class="feito">2 · Método</span><span class="on">3 · Desfechos</span><span class="">4 · Resultados</span><span class="">5 · Crítica</span><span class="">6 · Metanálise</span><span class="">7 · Diretrizes</span></div>
+<div class="simples"><div class="kick">Em palavras simples</div><p>Desfecho é aquilo que a pesquisa decide medir. Antes de olhar um resultado favorável, descubra se ele responde à pergunta principal ou a uma pergunta adicional.</p></div>
+<table class="lesson-table"><thead><tr><th>Tipo</th><th>O que significa</th><th>Como interpretar</th></tr></thead><tbody>
+<tr><td>Primário</td><td>Resultado principal que o estudo se propõe a avaliar.</td><td>Deve ser identificado e interpretado antes dos secundários; orienta o planejamento da pesquisa.</td></tr>
+<tr><td>Secundário</td><td>Resultado adicional que ajuda a compreender outros efeitos.</td><td>Requer mais cautela e leitura da estratégia de análise.</td></tr>
+<tr><td>Composto</td><td>Reúne dois ou mais eventos em um único desfecho.</td><td>Aumenta o número de eventos; exige examinar cada componente separadamente.</td></tr>
+</tbody></table>
+<h3>O desfecho primário do exemplo</h3>
+<div class="box"><div class="kick"><span class="dot"></span>Um desfecho, dois componentes</div><p>Morte por causa cardiovascular <b>ou primeira hospitalização por insuficiência cardíaca</b>. O evento composto não exige que a mesma pessoa tenha os dois acontecimentos.</p></div>
+<p>A análise dos componentes esclarece o significado do resultado conjunto. Uma redução de hospitalizações e uma redução de mortes são informações clínicas diferentes, mesmo quando entram no mesmo desfecho.</p>
+<h3>Os quatro desfechos secundários</h3>
+<div class="rows">
+<div class="row"><div class="k">Mortalidade geral</div><div class="v">Tempo até a morte por qualquer causa.</div></div>
+<div class="row"><div class="k">Estado de saúde</div><div class="v">Mudança do início até oito meses no escore clínico resumido do questionário de cardiomiopatia de Kansas City.</div></div>
+</div>
+<div class="rows">
+<div class="row"><div class="k">Arritmia</div><div class="v">Tempo até o surgimento de fibrilação atrial em quem não a tinha na entrada.</div></div>
+<div class="row"><div class="k">Função renal</div><div class="v">Tempo até a primeira ocorrência do declínio renal definido no protocolo.</div></div>
+</div>
+<p>O questionário de Kansas City usa escala de zero a 100. <b>Quanto maior o escore, menos sintomas e limitações físicas</b> associados à insuficiência cardíaca.</p>
+<h3>O que contava como declínio renal</h3>
+<p>O protocolo definiu esse desfecho pela ocorrência de uma das seguintes situações:</p>
+<ul>
+<li><b>Doença renal em estágio terminal.</b></li>
+<li><b>Redução de pelo menos 50%</b> da taxa de filtração glomerular estimada em relação ao valor na randomização.</li>
+<li><b>Queda superior a 30 mL/min/1,73 m²</b> desde a randomização, chegando a um valor inferior a 60 mL/min/1,73 m².</li>
+</ul>
+<p>Os eventos foram avaliados por um comitê de desfechos, de maneira cega e segundo critérios previamente definidos.</p>
+<h3>Qual resultado orientou a amostra?</h3>
+<p>Em geral, o desfecho primário orienta o cálculo amostral. Neste ensaio, o cálculo foi baseado especificamente na <b>morte cardiovascular</b>, um dos componentes do primário composto.</p>
+<p>O planejamento estimava cerca de 8.000 participantes, 34 meses de seguimento e 1.229 mortes cardiovasculares. Isso daria poder de 80% para detectar redução relativa de 15% na mortalidade cardiovascular, com nível de significância de 0,05. Para o primário composto, a projeção era de 2.410 eventos e poder de 97% para uma redução de 15%.</p>
+<div class="box red"><div class="kick"><span class="dot"></span>Pegadinha · principal não significa único</div><p>Um resultado secundário favorável não substitui a avaliação do primário. E o fato de o primário ser composto não autoriza concluir que todos os componentes melhoraram na mesma proporção.</p></div>
+</section>
+
+<section id="s04">
+<div class="sec-head"><span class="num">04</span><h2>Como interpretar os resultados</h2></div>
+<div class="aqui" aria-label="Você está aqui"><span class="feito">1 · Estrutura</span><span class="feito">2 · Método</span><span class="feito">3 · Desfechos</span><span class="on">4 · Resultados</span><span class="">5 · Crítica</span><span class="">6 · Metanálise</span><span class="">7 · Diretrizes</span></div>
+<div class="simples"><div class="kick">Em palavras simples</div><p>O resultado tem três partes: quanto aconteceu em cada grupo, qual foi o tamanho da diferença e quanta incerteza existe nessa estimativa. Leia as três juntas.</p></div>
+<h3>A medida precisa combinar com o desfecho</h3>
+<p>O ensaio avaliou o tempo até a ocorrência dos eventos com curvas de Kaplan–Meier e modelos de Cox. A medida relativa apresentada é a <b>razão de riscos instantâneos</b>, chamada <i>hazard ratio</i> nas figuras. Para o escore de sintomas, a tabela apresenta uma diferença entre os grupos.</p>
+<div class="box purple"><div class="kick"><span class="dot"></span>Complemento: fora da aula · medidas diferentes</div><p>A razão de riscos instantâneos compara a ocorrência do evento ao longo do seguimento. A razão de riscos compara proporções de pessoas com evento. Elas não são intercambiáveis; a divisão dos percentuais finais não reproduz necessariamente a razão de riscos instantâneos.</p></div>
+<h3>O desfecho primário foi favorável</h3>
+<p>O desfecho composto ocorreu em 914 participantes do grupo sacubitril/valsartana, ou 21,8%, e em 1.117 do grupo enalapril, ou 26,5%. A razão de riscos instantâneos foi <b>0,80, com intervalo de confiança de 95% de 0,73 a 0,87</b> e valor de p inferior a 0,001.</p>
+<p>A estimativa ficou abaixo de um e seu intervalo não incluiu um. Também houve resultados favoráveis para os dois componentes: morte cardiovascular e primeira hospitalização por insuficiência cardíaca.</p>
+<table class="lesson-table small-table"><thead><tr><th>Resultado</th><th>Sacubitril/<br>valsartana</th><th>Enalapril</th><th>Efeito e intervalo de confiança de 95%</th><th>Valor de p</th></tr></thead><tbody>
+<tr><td>Primário composto</td><td>914 (21,8%)</td><td>1.117 (26,5%)</td><td>0,80 (0,73–0,87)</td><td>&lt; 0,001</td></tr>
+<tr><td>Morte cardiovascular</td><td>558 (13,3%)</td><td>693 (16,5%)</td><td>0,80 (0,71–0,89)</td><td>&lt; 0,001</td></tr>
+<tr><td>Primeira hospitalização por insuficiência cardíaca</td><td>537 (12,8%)</td><td>658 (15,6%)</td><td>0,79 (0,71–0,89)</td><td>&lt; 0,001</td></tr>
+<tr><td>Morte por qualquer causa</td><td>711 (17,0%)</td><td>835 (19,8%)</td><td>0,84 (0,76–0,93)</td><td>&lt; 0,001</td></tr>
+<tr><td>Mudança no escore de Kansas City em oito meses</td><td>−2,99 ± 0,36</td><td>−4,63 ± 0,36</td><td>Diferença: 1,64 (0,63–2,65)</td><td>0,001</td></tr>
+<tr><td>Fibrilação atrial nova</td><td>84 (3,1%)</td><td>83 (3,1%)</td><td>0,97 (0,72–1,31)</td><td>0,83</td></tr>
+<tr><td>Declínio renal definido no protocolo</td><td>94 (2,2%)</td><td>108 (2,6%)</td><td>0,86 (0,65–1,13)</td><td>0,28</td></tr>
+</tbody></table>
+<p class="reg">Os efeitos de eventos são razões de riscos instantâneos. No escore, o efeito é a diferença média ajustada; os valores “±” são erros-padrão. A análise de fibrilação atrial considerou 2.670 e 2.638 pessoas sem essa arritmia na randomização, respectivamente.</p>
+<h3>Por que olhar os intervalos</h3>
+<div class="box purple"><div class="kick"><span class="dot"></span>Complemento: fora da aula · precisão e significância</div><p>Para medidas de razão, um é a ausência de diferença relativa. Um intervalo que atravessa um inclui essa possibilidade. Para diferenças, como a do escore, a referência é zero. O intervalo também mostra a precisão: faixas mais amplas indicam maior incerteza.</p></div>
+<p>No escore de Kansas City, ambos os grupos tiveram queda em relação ao início, porém a queda foi menor com sacubitril/valsartana. Por isso, a diferença entre os grupos favorece esse tratamento; “melhor” não significa necessariamente que o escore tenha aumentado desde o início.</p>
+<div class="box red"><div class="kick"><span class="dot"></span>Pegadinha · efeito principal não se espalha para todos os resultados</div><p>O ensaio não demonstrou diferença estatisticamente significativa na fibrilação atrial nova nem no desfecho renal formal. Os respectivos intervalos incluem um. Não descreva esses dois resultados como benefícios comprovados pelo simples fato de o primário ter sido favorável.</p></div>
+<h3>As curvas mostram o percurso dos eventos</h3>
+<p>Observe que essas curvas representam a probabilidade acumulada de eventos e sobem com o tempo. Não são curvas que mostrem a proporção de sobreviventes. As tabelas sob os painéis informam as pessoas ainda em risco em cada momento.</p>
+<div class="figure"><img src="curvas-ensaio-ab.png" alt="Curvas de eventos acumulados: A, desfecho primário; B, morte cardiovascular."><div class="olhar"><div class="kick">O que olhar</div><p>O eixo horizontal mostra dias desde a randomização; o vertical, a probabilidade acumulada de evento. Para esses acontecimentos desfavoráveis, a curva mais baixa indica menos eventos acumulados.</p></div><p class="leg">Imagem dos slides da aula. A: primário composto; B: morte cardiovascular.</p></div>
+<div class="figure"><img src="curvas-ensaio-cd.png" alt="Curvas de eventos acumulados: C, hospitalização por insuficiência cardíaca; D, morte por qualquer causa."><div class="olhar"><div class="kick">O que olhar</div><p>Confira qual tratamento corresponde a cada linha. A tabela sob os gráficos mostra quantas pessoas continuam em risco em cada momento; os dois painéis também favorecem sacubitril/valsartana.</p></div><p class="leg">Imagem dos slides da aula. C: hospitalização por insuficiência cardíaca; D: morte por qualquer causa.</p></div>
+<h3>Subgrupos: a pergunta é sobre interação</h3>
+<p>O estudo avaliou a consistência do efeito em 18 subgrupos previamente definidos, incluindo idade, sexo, função renal e diabetes. O gráfico mostra uma estimativa e um intervalo para cada estrato.</p>
+<p>No desfecho primário, os valores de p para interação são 0,47 para a divisão por idade em 65 anos e 0,63 para sexo. Na morte cardiovascular, são 0,70 e 0,92, respectivamente. As colunas se referem à comparação entre estratos, e não ao número de eventos de cada grupo.</p>
+<div class="figure"><img src="subgrupos.png" alt="Recorte do gráfico de subgrupos com estimativas de efeito e valores de p para interação."><div class="olhar"><div class="kick">O que olhar</div><p>A linha vertical em um marca a ausência de efeito relativo. As colunas “valor de p para interação” investigam se o efeito difere entre os estratos; não são o teste individual de benefício em cada linha.</p></div><p class="leg">Imagem dos slides da aula: recorte de idade, sexo e raça nos dois desfechos.</p></div>
+<div class="box purple"><div class="kick"><span class="dot"></span>Complemento: fora da aula · duas armadilhas estatísticas</div><p>Um subgrupo com resultado significativo e outro sem significância não demonstram, por si só, que os efeitos sejam diferentes: é necessário avaliar a interação. Da mesma forma, o valor de p não é a probabilidade de a hipótese nula ser verdadeira e não mede o tamanho do benefício.</p></div>
+</section>
+
+<section id="s05">
+<div class="sec-head"><span class="num">05</span><h2>Discussão e leitura crítica</h2></div>
+<div class="aqui" aria-label="Você está aqui"><span class="feito">1 · Estrutura</span><span class="feito">2 · Método</span><span class="feito">3 · Desfechos</span><span class="feito">4 · Resultados</span><span class="on">5 · Crítica</span><span class="">6 · Metanálise</span><span class="">7 · Diretrizes</span></div>
+<div class="simples"><div class="kick">Em palavras simples</div><p>A discussão explica o que os achados significam. Sua tarefa é conferir se a interpretação respeita os números, o tratamento usado como comparação e o perfil das pessoas estudadas.</p></div>
+<h3>Um comparador ativo muda a leitura</h3>
+<p>Sacubitril/valsartana foi comparada ao enalapril, um tratamento que já havia mostrado benefício de sobrevida. O resultado ocorreu em pessoas que, em grande parte, também recebiam betabloqueadores e antagonistas do receptor de mineralocorticoide.</p>
+<p>A discussão destaca a importância de comparar doses adequadas: a dose média diária de enalapril foi de 18,9 mg, semelhante ou superior à de ensaios anteriores que demonstraram redução de mortalidade. O achado foi, portanto, adicional a um tratamento ativo estabelecido.</p>
+<h3>Benefício e segurança precisam ser lidos juntos</h3>
+<p>O resumo e a discussão relatam mais hipotensão e angioedema não grave com sacubitril/valsartana, e menos tosse, hipercalemia e alterações de segurança relacionadas à função renal. A interrupção do medicamento por motivos diferentes de morte ocorreu em 17,8% e 19,8% dos participantes, respectivamente.</p>
+<p>Houve 19 casos de angioedema confirmados no grupo sacubitril/valsartana e dez no grupo enalapril, com valor de p de 0,13. Nenhum exigiu proteção mecânica da via aérea. A diferença numérica não equivale, isoladamente, à demonstração de aumento estatisticamente significativo desse evento.</p>
+<div class="box red"><div class="kick"><span class="dot"></span>Pegadinha · “resultado renal” pode nomear coisas diferentes</div><p>Alterações de creatinina e interrupções por eventos renais são indicadores de segurança. O desfecho renal secundário tinha critérios específicos. A melhora em um indicador não transforma automaticamente o outro em resultado significativo.</p></div>
+<h3>Quem financiou e quem avaliou?</h3>
+<p>O ensaio foi financiado pela Novartis. O texto descreve colaboração do patrocinador no manejo e na análise dos dados, plano estatístico predefinido, comitê independente de monitoramento e repetição das análises por estatístico acadêmico independente.</p>
+<p>A leitura inclui ainda aprovação ética, consentimento dos participantes, acesso dos autores aos dados e declaração de conflitos de interesse. Essas informações ajudam a avaliar a condução e a transparência do trabalho.</p>
+<h3>Até onde vai a conclusão</h3>
+<p>A conclusão sustenta a superioridade da combinação para os desfechos demonstrados em pacientes semelhantes aos incluídos. A fase de tolerabilidade, os critérios de função renal, os peptídeos natriuréticos e a fração de ejeção fazem parte desse contexto.</p>
+<p>As referências permitem localizar os estudos usados para defender a comparação, explicar o mecanismo e discutir os resultados. Leia a conclusão de volta para os métodos: a população e o desenho precisam comportar a afirmação.</p>
+</section>
+
+<section id="s06">
+<div class="sec-head"><span class="num">06</span><h2>Metanálise e gráfico de floresta</h2></div>
+<div class="aqui" aria-label="Você está aqui"><span class="feito">1 · Estrutura</span><span class="feito">2 · Método</span><span class="feito">3 · Desfechos</span><span class="feito">4 · Resultados</span><span class="feito">5 · Crítica</span><span class="on">6 · Metanálise</span><span class="">7 · Diretrizes</span></div>
+<div class="simples"><div class="kick">Em palavras simples</div><p>A metanálise combina resultados de estudos para estimar um efeito conjunto. A confiança nessa síntese depende da busca, da seleção, da qualidade dos estudos e da coerência entre seus resultados.</p></div>
+<h3>O resultado combinado é a última etapa</h3>
+<p>A pergunta define quem será estudado, o que será comparado e qual resultado interessa. Busca e triagem precisam corresponder a essa pergunta. A extração reúne os dados que alimentarão a combinação estatística.</p>
+<div class="figure"><img src="fluxo-metanalise.svg" alt="Oito etapas: pergunta, busca, triagem, extração, análise, heterogeneidade, gráfico e viés de publicação."><p class="leg">Fluxo de trabalho apresentado na aula, reorganizado em oito perguntas de leitura.</p></div>
+<h3>O exemplo cirúrgico: com ou sem circulação extracorpórea</h3>
+<p>A metanálise de Takagi e colaboradores investigou a mortalidade de longo prazo após cirurgia de revascularização do miocárdio sem circulação extracorpórea, chamada <i>off-pump</i>, comparada à técnica com circulação extracorpórea, chamada <i>on-pump</i>.</p>
+<p>Foram buscados ensaios randomizados com seguimento de <b>pelo menos cinco anos</b>, até julho de 2018, nas bases MEDLINE, EMBASE e no registro de ensaios controlados da Cochrane. A busca incluiu referências e outras fontes secundárias.</p>
+<table class="lesson-table"><thead><tr><th>Etapa de seleção</th><th>Quantidade</th><th>O que aconteceu em seguida</th></tr></thead><tbody>
+<tr><td>Registros examinados</td><td>906</td><td>403 excluídos pelo título ou resumo.</td></tr>
+<tr><td>Artigos completos avaliados</td><td>503</td><td>460 excluídos por desenho inelegível ou duplicação.</td></tr>
+<tr><td>Ensaios com dados de mortalidade</td><td>43</td><td>35 sem os dados de mortalidade de longo prazo exigidos.</td></tr>
+<tr><td>Ensaios incluídos</td><td>8</td><td>8.780 participantes na síntese.</td></tr>
+</tbody></table>
+<p>A tabela de características dos estudos descreve idade, proporção de mulheres, diabetes, mudança de técnica operatória, quantidade de enxertos, revascularização incompleta, novas revascularizações e mortalidade. Ela permite avaliar o que foi reunido antes de olhar o efeito final.</p>
+<h3>Como a combinação foi feita</h3>
+<p>Os autores usaram ponderação pelo inverso da variância e modelo de efeitos aleatórios. O artigo prioriza medidas que incorporam tempo até o evento; a figura com todos os ensaios também incluiu duas razões de riscos no lugar de razões de riscos instantâneos, como sua legenda declara.</p>
+<p>A tabela operatória também permite observar diferenças além da mortalidade. No CORONARY, o número de enxertos por pessoa foi de 3,0 sem circulação extracorpórea e 3,2 com circulação extracorpórea; no MASS III, de 2,49 e 2,97, respectivamente. São características da comparação que acompanham a leitura do resultado.</p>
+<div class="figure"><img src="metanalise-cirurgia.png" alt="Gráfico original da metanálise cirúrgica; efeito combinado 1,19, intervalo de 1,04 a 1,38, heterogeneidade 13%."><div class="olhar"><div class="kick">O que olhar</div><p>Os maiores pesos são do CORONARY, com 44,5%, e do ROOBY-FS, com 27,2%. O efeito conjunto, 1,19, está à direita de um; nesse gráfico, esse lado favorece a técnica com circulação extracorpórea.</p></div><p class="leg">Imagem dos slides da aula. A legenda original informa a inclusão de duas razões de riscos. Os nomes abreviados identificam os ensaios.</p></div>
+<p>A medida relativa combinada foi <b>1,19, com intervalo de confiança de 95% de 1,04 a 1,38</b>, valor de p de 0,01 e heterogeneidade de 13%. O conjunto favoreceu a técnica com circulação extracorpórea para mortalidade de longo prazo.</p>
+<p>Os autores também fizeram análises de sensibilidade: a síntese dos quatro estudos com razões de riscos instantâneos diretamente relatadas foi de 1,21, com valor de p de 0,02. Outras combinações de medidas mantiveram a direção do achado. Isso testa a estabilidade do resultado diante de escolhas de análise.</p>
+<div class="box red"><div class="kick"><span class="dot"></span>Pegadinha · resultado conjunto não é unanimidade</div><p>Vários estudos individuais têm intervalos que atravessam um. Ainda assim, o conjunto pode alcançar maior precisão e ficar inteiramente de um lado. Confira também a legenda: as medidas incluídas nesta figura não são todas idênticas.</p></div>
+<h3>Limites da metanálise cirúrgica</h3>
+<ul>
+<li><b>Representatividade.</b> Participantes de ensaios podem diferir dos pacientes encontrados na prática.</li>
+<li><b>Publicação.</b> A busca ampla reduz o risco de omissões, mas poucos estudos limitam a capacidade de detectar viés de publicação.</li>
+<li><b>Seguimento exigido.</b> Ensaios importantes ficaram de fora porque ainda não tinham resultados de pelo menos cinco anos.</li>
+<li><b>Tipo de dado.</b> A síntese usou dados das publicações, sem acesso completo aos dados individuais de todos os participantes.</li>
+</ul>
+<p>O texto também distingue mortalidade geral de mortalidade cardíaca. No exemplo ROOBY-FS, a mortalidade geral foi de 15,2% versus 11,9%, com diferença significativa; a mortalidade cardíaca, de 6,3% versus 5,2%, não mostrou diferença significativa. Não troque o desfecho ao resumir a conclusão.</p>
+<h3>Risco de viés: o painel não é uma nota única</h3>
+<p>O painel de risco de viés organiza a avaliação por estudo e por domínio: geração da sequência aleatória, ocultação da alocação, mascaramento dos participantes e da equipe, avaliação dos desfechos, dados incompletos, relato seletivo e outros vieses.</p>
+<div class="figure"><img src="vies-estudos.png" alt="Exemplo de painel de risco de viés: linhas por estudo, colunas por domínio e barras com as proporções das classificações."><div class="olhar"><div class="kick">O que olhar</div><p>Na matriz, acompanhe cada estudo ao longo dos domínios. Nas barras, veja a proporção classificada como baixo risco, risco incerto ou alto risco. As cores pertencem à legenda do gráfico original.</p></div><p class="leg">Imagem dos slides da aula. Este é outro exemplo de painel, com estudos diferentes dos oito ensaios da metanálise cirúrgica.</p></div>
+<h3>Como ler um gráfico de floresta</h3>
+<ol class="flow">
+<li><b class="t">Leia o desfecho e os lados.</b> Descubra o que foi medido e qual tratamento cada lado favorece.</li>
+<li><b class="t">Localize a referência.</b> Em razões de riscos, a linha de ausência de efeito é um.</li>
+<li><b class="t">Examine cada estudo.</b> O quadrado indica a estimativa; sua área representa o peso. A linha horizontal mostra o intervalo de confiança.</li>
+<li><b class="t">Leia o losango.</b> O centro indica a estimativa conjunta e a largura representa seu intervalo de confiança.</li>
+<li><b class="t">Confira a variação.</b> A heterogeneidade ajuda a avaliar quanto os resultados dos estudos diferem.</li>
+</ol>
+<div class="box purple"><div class="kick"><span class="dot"></span>Complemento: fora da aula · síntese não é média simples</div><p>Os estudos contribuem com pesos diferentes. Um modelo de efeitos aleatórios considera variação dos efeitos entre estudos. O índice de heterogeneidade não mede o benefício, a qualidade global nem a probabilidade de a conclusão estar correta.</p></div>
+<h3>Exemplo A · efeito combinado favorável</h3>
+<div class="figure"><img src="floresta-exemplo-a.png" alt="Exemplo A: seis estudos e risco relativo combinado de 0,78, intervalo de 0,68 a 0,89."><div class="olhar"><div class="kick">O que olhar</div><p>O losango está à esquerda de um e não o atravessa: o resultado apresentado favorece o tratamento. Estudos individuais podem atravessar a referência mesmo com uma síntese favorável.</p></div><p class="leg">Imagem dos slides da aula. Resultado mostrado: razão de riscos de 0,78 (0,68–0,89).</p></div>
+<div class="box red"><div class="kick"><span class="dot"></span>Pegadinha · peso não é tamanho do benefício</div><p>Os pesos são 12%, 18%, 15%, 20%, 10% e 25%: somam 100%. Eles indicam a contribuição de cada estudo para a síntese. Não representam a redução do risco de cada tratamento; para isso, leia a estimativa e o intervalo de confiança na mesma linha.</p></div>
+<p>Compare as linhas individuais: os estudos B, D e F têm intervalos inteiramente à esquerda de um. O estudo A, 0,82 (0,60–1,10), e o estudo C, 0,92 (0,68–1,24), atravessam a referência. O estudo E tem estimativa pontual acima de um, 1,08, mas seu intervalo de 0,78 a 1,50 também cruza a referência.</p>
+<p>A figura informa heterogeneidade de 28%. O maior peso é o do estudo F, 25%; o menor é o do estudo E, 10%. Essas informações se referem a aspectos diferentes: variação entre estudos e contribuição de cada estudo para a síntese.</p>
+<h3>Exemplo B · intervalo que atravessa um</h3>
+<div class="figure"><img src="floresta-exemplo-b.png" alt="Exemplo B: efeito combinado de 0,93, intervalo de 0,81 a 1,07, heterogeneidade de 41%."><div class="olhar"><div class="kick">O que olhar</div><p>O centro do losango é 0,93, mas o intervalo vai de 0,81 a 1,07 e atravessa um. O gráfico não demonstra diferença estatisticamente significativa. A heterogeneidade informada é de 41%.</p></div><p class="leg">Imagem dos slides da aula. Modelo de efeitos aleatórios.</p></div>
+<div class="box purple"><div class="kick"><span class="dot"></span>Complemento: fora da aula · não significativo não prova equivalência</div><p>Um intervalo que inclui um não demonstra que os tratamentos sejam iguais. Ele mostra que, com os dados e a análise apresentados, a diferença não foi estabelecida no nível de confiança usado.</p></div>
+<p>Todos os intervalos individuais deste exemplo incluem um. O estudo F fica visualmente à esquerda, mas seu limite superior é 1,01; o estudo B fica à direita, com intervalo de 0,95 a 1,56. A posição do quadrado, sozinha, não resolve a interpretação.</p>
+<p>Mesmo depois da combinação, a faixa de 0,81 a 1,07 ainda atravessa a referência. Leia o centro e as duas extremidades do losango, em vez de resumir apenas a estimativa de 0,93.</p>
+<p>Neste exemplo, os sete pesos somam 100%. O maior é 17,6%, do estudo A; o menor é 10,3%, do estudo F. O tamanho dos quadrados acompanha essa diferença de contribuição.</p>
+<h3>Exemplo C · confira quem está de cada lado</h3>
+<div class="figure"><img src="floresta-exemplo-c.png" alt="Exemplo C: comparação cirurgia versus stent; razão de riscos de 0,78, intervalo de 0,70 a 0,86 e heterogeneidade de 32%."><div class="olhar"><div class="kick">O que olhar</div><p>O efeito conjunto é 0,78 (0,70–0,86), sem cruzar um. Pela legenda, a esquerda favorece cirurgia; a direita, stent. A heterogeneidade informada é de 32%.</p></div><p class="leg">Imagem dos slides da aula. A leitura é do efeito representado; a figura não identifica um desfecho clínico específico.</p></div>
+<div class="box red"><div class="kick"><span class="dot"></span>Pegadinha · “à esquerda é melhor” não é regra universal</div><p>A direção depende do desfecho e da ordem da comparação. Leia as legendas antes de dizer que um lado representa benefício. Também é necessário saber se o evento é desejável ou indesejável.</p></div>
+<p>Os estudos C, com 0,88 (0,70–1,10), e G, com 0,91 (0,74–1,12), atravessam um. Os demais intervalos ficam à esquerda. O estudo D recebe o maior peso, 18%, e o G, o menor, 8%: os quadrados refletem contribuições diferentes.</p>
+<h3>Uma análise combinada de dois ensaios</h3>
+<p>O artigo de Solomon e colaboradores, publicado na <i>Circulation</i> em 2020, examinou sacubitril/valsartana ao longo do espectro de fração de ejeção. O gráfico compara resultados dos ensaios PARADIGM e PARAGON e apresenta a síntese dos dois.</p>
+<div class="figure"><img src="analise-combinada.png" alt="Análise combinada dos ensaios PARADIGM e PARAGON para mortalidade geral, total de hospitalizações e morte cardiovascular, e total de hospitalizações."><div class="olhar"><div class="kick">O que olhar</div><p>As estimativas de cada ensaio têm intervalos distintos. O resultado combinado não torna automaticamente significativo o resultado individual de um ensaio.</p></div><p class="leg">Imagem dos slides da aula. As três linhas de desfecho representam perguntas diferentes.</p></div>
+<table class="lesson-table small-table"><thead><tr><th>Desfecho</th><th>PARADIGM</th><th>PARAGON</th><th>Combinado</th></tr></thead><tbody>
+<tr><td>Morte por qualquer causa</td><td>0,84 (0,76–0,93)</td><td>0,97 (0,84–1,13)</td><td>0,88 (0,81–0,96)</td></tr>
+<tr><td>Total de hospitalizações por insuficiência cardíaca e morte cardiovascular</td><td>0,79 (0,71–0,87)</td><td>0,87 (0,75–1,01)</td><td>0,82 (0,75–0,89)</td></tr>
+<tr><td>Total de hospitalizações por insuficiência cardíaca</td><td>0,78 (0,68–0,90)</td><td>0,85 (0,72–1,00)</td><td>0,81 (0,73–0,90)</td></tr>
+</tbody></table>
+<p class="reg">Os parênteses mostram intervalos de confiança de 95%. “Total de hospitalizações” pode incluir eventos repetidos; não substitua esse rótulo por “primeira hospitalização”.</p>
+<p class="fecho-meta">Na mortalidade geral, o intervalo do PARADIGM vai de 0,76 a 0,93 e não inclui um; o do PARAGON vai de 0,84 a 1,13 e o inclui. A síntese de 0,88 (0,81–0,96) responde à análise conjunta. Preserve essas três leituras ao apresentar o gráfico. As sínteses de mortalidade e de hospitalizações respondem a perguntas diferentes.</p>
+</section>
+
+<section id="s07">
+<div class="sec-head"><span class="num">07</span><h2>Como ler uma diretriz</h2></div>
+<div class="aqui" aria-label="Você está aqui"><span class="feito">1 · Estrutura</span><span class="feito">2 · Método</span><span class="feito">3 · Desfechos</span><span class="feito">4 · Resultados</span><span class="feito">5 · Crítica</span><span class="feito">6 · Metanálise</span><span class="on">7 · Diretrizes</span></div>
+<div class="simples"><div class="kick">Em palavras simples</div><p>A diretriz organiza evidências em recomendações. Para ler uma orientação, separe a força com que ela é aconselhada do tipo de evidência que a sustenta.</p></div>
+<p>O exemplo é a diretriz da Sociedade Europeia de Cardiologia para diagnóstico e tratamento da insuficiência cardíaca aguda e crônica, publicada em 2021. Suas tabelas mostram dois eixos: <b>classe de recomendação e nível de evidência</b>.</p>
+<h3>Classe: o que a recomendação aconselha</h3>
+<table class="lesson-table"><thead><tr><th>Classe</th><th>Definição</th><th>Frase correspondente</th></tr></thead><tbody>
+<tr><td>I</td><td>Evidência ou consenso de benefício, utilidade e eficácia.</td><td>É recomendado ou está indicado.</td></tr>
+<tr><td>IIa</td><td>Há divergências, mas o conjunto favorece utilidade ou eficácia.</td><td>Deve ser considerado.</td></tr>
+<tr><td>IIb</td><td>Utilidade ou eficácia menos estabelecida.</td><td>Pode ser considerado.</td></tr>
+<tr><td>III</td><td>Não traz benefício, não é útil ou eficaz e, em alguns casos, pode ser prejudicial.</td><td>Não é recomendado.</td></tr>
+</tbody></table>
+<p>A classe II reúne situações de evidências conflitantes ou divergência de opinião. As subdivisões IIa e IIb distinguem o quanto o conjunto favorece a intervenção.</p>
+<h3>Nível: qual é a base da evidência</h3>
+<table class="lesson-table"><thead><tr><th>Nível</th><th>Origem dos dados</th></tr></thead><tbody>
+<tr><td>A</td><td>Múltiplos ensaios clínicos randomizados ou metanálises.</td></tr>
+<tr><td>B</td><td>Um único ensaio clínico randomizado ou grandes estudos não randomizados.</td></tr>
+<tr><td>C</td><td>Consenso de especialistas, pequenos estudos, estudos retrospectivos ou registros.</td></tr>
+</tbody></table>
+<p>A pirâmide apresentada coloca revisões sistemáticas e metanálises no topo, seguidas por ensaios clínicos randomizados, estudos de coorte, estudos de caso-controle, relatos ou séries de casos e opinião especializada ou estudos pré-clínicos. A classificação da tabela deve ser lida com a recomendação específica.</p>
+<div class="box red"><div class="kick"><span class="dot"></span>Pegadinha · classe I não significa nível A</div><p>A classe informa a recomendação; a letra informa a base de evidência. É possível haver classe I com nível C. Também é possível haver classe III com nível C: a letra não diz se a conduta é aconselhada.</p></div>
+<h3>Exemplos no tratamento agudo</h3>
+<p>As linhas abaixo reproduzem a lógica da tabela de 2021 usada como exemplo de leitura. Em cada uma, identifique a população, a condição para usar a intervenção, a classe e o nível.</p>
+<table class="lesson-table small-table"><thead><tr><th>Recomendação e condição descrita</th><th>Classe</th><th>Nível</th></tr></thead><tbody>
+<tr><td>Oxigênio para corrigir hipoxemia quando a saturação periférica é inferior a 90% ou a pressão arterial de oxigênio é inferior a 60 mmHg.</td><td>I</td><td>C</td></tr>
+<tr><td>Intubação se a insuficiência respiratória progride apesar de oxigênio ou ventilação não invasiva.</td><td>I</td><td>C</td></tr>
+<tr><td>Considerar ventilação não invasiva com pressão positiva em desconforto respiratório, frequência respiratória superior a 25 por minuto e saturação inferior a 90%.</td><td>IIa</td><td>B</td></tr>
+<tr><td>Diurético de alça intravenoso em insuficiência cardíaca aguda com sinais ou sintomas de sobrecarga de líquido.</td><td>I</td><td>C</td></tr>
+<tr><td>Considerar associação de diurético de alça com tiazídico no edema resistente ao aumento da dose do diurético de alça.</td><td>IIa</td><td>B</td></tr>
+</tbody></table>
+<table class="lesson-table small-table"><thead><tr><th>Recomendação e condição descrita</th><th>Classe</th><th>Nível</th></tr></thead><tbody>
+<tr><td>Pode-se considerar inotrópico com pressão sistólica inferior a 90 mmHg e hipoperfusão sem resposta ao tratamento padrão, incluindo avaliação da resposta a volume.</td><td>IIb</td><td>C</td></tr>
+<tr><td>Não usar inotrópicos rotineiramente; a tabela ressalva hipotensão sintomática com hipoperfusão.</td><td>III</td><td>C</td></tr>
+<tr><td>Pode-se considerar vasopressor, preferencialmente noradrenalina, no choque cardiogênico, para elevar pressão e perfusão dos órgãos.</td><td>IIb</td><td>B</td></tr>
+<tr><td>Profilaxia de tromboembolismo em quem não está anticoagulado e não apresenta contraindicação à anticoagulação.</td><td>I</td><td>A</td></tr>
+<tr><td>Não usar opioides rotineiramente; a tabela ressalva pessoas selecionadas com dor ou ansiedade intensas e resistentes.</td><td>III</td><td>C</td></tr>
+</tbody></table>
+<h3>Tratamento crônico: a mesma lógica de leitura</h3>
+<p>O texto da diretriz relaciona insuficiência cardíaca com fração de ejeção reduzida a sintomas ou sinais e fração de ejeção de até 40%, usualmente avaliada por ecocardiograma. Os objetivos farmacológicos apresentados são reduzir mortalidade e hospitalizações e melhorar estado clínico, capacidade funcional e qualidade de vida.</p>
+<p>Na tabela de tratamentos da insuficiência cardíaca sintomática com fração de ejeção reduzida, os seguintes grupos aparecem com classe I:</p>
+<table class="lesson-table"><thead><tr><th>Tratamento no exemplo de 2021</th><th>Classe</th><th>Nível</th></tr></thead><tbody>
+<tr><td>Inibidor da enzima conversora de angiotensina</td><td>I</td><td>A</td></tr>
+<tr><td>Betabloqueador em paciente estável</td><td>I</td><td>A</td></tr>
+<tr><td>Antagonista do receptor de mineralocorticoide</td><td>I</td><td>A</td></tr>
+<tr><td>Dapagliflozina ou empagliflozina</td><td>I</td><td>A</td></tr>
+<tr><td>Sacubitril/valsartana em substituição ao inibidor da enzima conversora de angiotensina</td><td>I</td><td>B</td></tr>
+</tbody></table>
+<p>O parágrafo correspondente cita o ensaio PARADIGM-HF, os critérios de seleção e os benefícios observados. Ele também informa maior frequência de hipotensão sintomática e descreve outros resultados de sintomas e segurança, acompanhados das respectivas referências.</p>
+<div class="box"><div class="kick"><span class="dot"></span>Do estudo à recomendação</div><p>Uma recomendação classe I, nível B, pode ser sustentada por um único ensaio randomizado. O exemplo de sacubitril/valsartana liga a tabela da diretriz ao estudo lido nos capítulos anteriores.</p></div>
+<h3>Como acompanhar um algoritmo</h3>
+<p>O fluxograma de antianginosos refere-se a pessoas com síndrome coronariana crônica e insuficiência cardíaca com fração de ejeção reduzida. Ele começa com betabloqueador, classe I, e segue conforme a persistência dos sintomas, a frequência cardíaca e o ritmo:</p>
+<ol class="flow">
+<li><b class="t">Sintomas persistem, ritmo sinusal e frequência de pelo menos 70 por minuto.</b> A figura apresenta ivabradina, classe IIa.</li>
+<li><b class="t">Frequência inferior a 70 por minuto ou fibrilação atrial.</b> A figura apresenta opções classe IIb: trimetazidina, ranolazina, nicorandil, nitratos, felodipino ou anlodipino.</li>
+<li><b class="t">Sem melhora com a etapa de ivabradina.</b> O fluxo também se dirige às alternativas classe IIb.</li>
+</ol>
+<div class="box red"><div class="kick"><span class="dot"></span>Alerta no algoritmo</div><p>Diltiazem e verapamil aparecem como classe III nesse contexto. A leitura do fluxograma depende de manter a população e as condições escritas em cada ramo.</p></div>
+<h3>O texto ao redor da tabela também importa</h3>
+<p>As tabelas resumem; os parágrafos delimitam a indicação. No exemplo da insuficiência cardíaca com fração de ejeção reduzida, a diretriz descreve o tratamento farmacológico como fundamento da abordagem, junto a medidas não farmacológicas e antes de considerar dispositivos.</p>
+<p>O texto apresenta a associação de um inibidor da enzima conversora de angiotensina ou sacubitril/valsartana, um betabloqueador e um antagonista do receptor de mineralocorticoide. As doses devem alcançar as usadas nos ensaios ou as máximas toleradas. Dapagliflozina ou empagliflozina aparecem independentemente da presença de diabetes, salvo contraindicação ou intolerância.</p>
+<p>Outro trecho discute investigação diagnóstica. Perceba como a mesma modalidade de exame pode aparecer em situações clínicas diferentes:</p>
+<table class="lesson-table"><thead><tr><th>Exame no texto da diretriz</th><th>Contexto que delimita a indicação</th></tr></thead><tbody>
+<tr><td>Cateterismo direito</td><td>Suspeita de pericardite constritiva, miocardiopatia restritiva, cardiopatia congênita ou insuficiência cardíaca de alto débito.</td></tr>
+<tr><td>Cateterismo direito</td><td>Hipertensão pulmonar provável ao ecocardiograma, para confirmação e avaliação da reversibilidade antes da correção de doença valvar ou estrutural.</td></tr>
+<tr><td>Cateterismo direito</td><td>Pacientes selecionados com suspeita de insuficiência cardíaca com fração de ejeção preservada, para confirmar o diagnóstico.</td></tr>
+<tr><td>Biópsia endomiocárdica</td><td>Insuficiência cardíaca rapidamente progressiva apesar do tratamento, quando há provável diagnóstico específico que depende de amostra do miocárdio.</td></tr>
+</tbody></table>
+<p>Ao terminar uma diretriz, deve ser possível responder: para quem é a recomendação, em que situação se aplica, qual sua classe, qual seu nível de evidência e quais estudos sustentam a orientação.</p>
+</section>
+
+<section id="s08" class="vesp">
+<div class="sec-head"><span class="num">08</span><h2>Página de véspera</h2></div>
+<p>Relembre os pontos na ordem do raciocínio.</p>
+<div class="item"><p><b>1 · Estrutura.</b> Introdução: por quê? Métodos: como? Resultados: o quê? Discussão: e daí? Localize o artigo pelo identificador digital e confira suas referências.</p></div>
+<div class="item"><p><b>2 · Método.</b> Fase de tolerabilidade antes do sorteio; 8.442 sorteados, 43 excluídos, 8.399 analisados: 4.187 e 4.212. Comparação duplo-cega, acompanhamento mediano de 27 meses.</p></div>
+<div class="item"><p><b>3 · Desfechos.</b> Primário: morte cardiovascular ou primeira hospitalização. Secundários: mortalidade geral, escore de Kansas City, fibrilação atrial nova e declínio renal. Escore: zero a 100; maior é melhor.</p></div>
+<div class="item"><p><b>Critério renal.</b> Doença renal terminal; queda de pelo menos 50% da filtração estimada; ou queda superior a 30 mL/min/1,73 m², chegando a menos de 60 mL/min/1,73 m².</p></div>
+<div class="item"><p><b>4 · Resultado central.</b> 21,8% versus 26,5%; razão de riscos instantâneos de 0,80 (0,73–0,87). Morte cardiovascular: 0,80; primeira hospitalização: 0,79; morte geral: 0,84. Fibrilação atrial e desfecho renal não demonstraram diferença significativa.</p></div>
+<div class="item"><p><b>5 · Raciocínio.</b> Leia população, comparador, perdas, tamanho do efeito, intervalo e segurança. Diferencie componente, desfecho composto, evento adverso e resultado secundário.</p></div>
+<div class="item"><p><b>6 · Metanálise cirúrgica.</b> Pelo menos cinco anos; 906 registros, 503 textos completos, 43 ensaios elegíveis na etapa intermediária, oito incluídos e 8.780 participantes. Efeito 1,19 (1,04–1,38); heterogeneidade de 13%; favorece cirurgia com circulação extracorpórea.</p></div>
+<div class="item"><p><b>7 · Gráfico de floresta.</b> Quadrado: estimativa; área: peso; linha: intervalo; losango: efeito combinado. Nas razões, referência em um. Exemplos: 0,78 (0,68–0,89), favorável; 0,93 (0,81–1,07), sem diferença demonstrada; 0,78 (0,70–0,86), favorece cirurgia na legenda apresentada.</p></div>
+<div class="item"><p><b>8 · Diretriz.</b> I: recomendado; IIa: deve ser considerado; IIb: pode ser considerado; III: não recomendado. A: múltiplos ensaios ou metanálises; B: um ensaio ou grandes estudos não randomizados; C: consenso e outros estudos de menor porte.</p></div>
+<div class="item"><p><b>9 · Dois eixos.</b> Na diretriz de 2021, oxigênio na hipoxemia: I C; profilaxia de tromboembolismo: I A; sacubitril/valsartana em substituição: I B. Classe e nível respondem a perguntas diferentes.</p></div>
+</section>
+
+<section id="s09">
+<div class="sec-head"><span class="num">09</span><h2>Glossário e referências</h2></div>
+<h3>Palavras da aula em linguagem simples</h3>
+<div class="rows terms">
+<div class="row"><div class="k">Adjudicação</div><div class="v">Avaliação de um possível evento por um comitê, segundo critérios definidos.</div></div>
+<div class="row"><div class="k">Censura</div><div class="v">Uso do tempo conhecido de acompanhamento quando não se observa o evento depois daquele ponto.</div></div>
+<div class="row"><div class="k">Cox</div><div class="v">Modelo estatístico empregado no estudo para analisar o tempo até os eventos e estimar razões de riscos instantâneos.</div></div>
+</div>
+<div class="rows terms">
+<div class="row"><div class="k">Intenção de tratar</div><div class="v">Análise segundo o grupo ao qual o participante foi originalmente alocado.</div></div>
+<div class="row"><div class="k">LCZ696</div><div class="v">Código da formulação experimental de sacubitril/valsartana no ensaio.</div></div>
+<div class="row"><div class="k">Ocultação da alocação</div><div class="v">Proteção da sequência de atribuição para evitar que o grupo seguinte seja conhecido durante a inclusão.</div></div>
+</div>
+<div class="rows terms">
+<div class="row"><div class="k">PARADIGM-HF</div><div class="v">Nome do ensaio de sacubitril/valsartana versus enalapril usado como exemplo central.</div></div>
+<div class="row"><div class="k">Poder estatístico</div><div class="v">Capacidade planejada de detectar um efeito de tamanho especificado, caso ele exista.</div></div>
+<div class="row"><div class="k">Viés de publicação</div><div class="v">Distorção da síntese quando os estudos disponíveis para leitura não representam todos os resultados produzidos.</div></div>
+</div>
+<h3>Publicações usadas como exemplos</h3>
+<div class="refs">
+<p>McMurray e colaboradores. <i>Angiotensin–Neprilysin Inhibition versus Enalapril in Heart Failure.</i> The New England Journal of Medicine, 2014. Identificador: <a href="https://doi.org/10.1056/NEJMoa1409077">10.1056/NEJMoa1409077</a>.</p>
+<p>Takagi e colaboradores. <i>A meta-analysis of ≥5-year mortality in randomized controlled trials of off-pump versus on-pump coronary artery bypass grafting.</i> Journal of Cardiac Surgery, 2018. Identificador: <a href="https://doi.org/10.1111/jocs.13828">10.1111/jocs.13828</a>.</p>
+<p>Solomon e colaboradores. <i>Sacubitril/Valsartan Across the Spectrum of Ejection Fraction in Heart Failure.</i> Circulation, 2020. Identificador: <a href="https://doi.org/10.1161/CIRCULATIONAHA.119.044586">10.1161/CIRCULATIONAHA.119.044586</a>.</p>
+<p>McDonagh e colaboradores. <i>2021 Guidelines for the diagnosis and treatment of acute and chronic heart failure.</i> Sociedade Europeia de Cardiologia; European Heart Journal, 2021. Identificador: <a href="https://doi.org/10.1093/eurheartj/ehab368">10.1093/eurheartj/ehab368</a>.</p>
+</div>
+{{NOTAS}}
+</section>
+</body></html>
