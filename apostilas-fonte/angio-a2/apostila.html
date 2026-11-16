@@ -1,0 +1,566 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<title>Angiologia · Aula 2 · Aneurismas viscerais e de aorta abdominal</title>
+<meta name="rodape" content="Mauricio Faria · Angiologia · Aula 2 — Aneurismas">
+<link rel="stylesheet" href="apostila.css">
+<style>
+/* ===== componentes do molde novo (em teste na pneumo-a5) ===== */
+.simples { background: #FFFFFF; border: 1px solid #C3D8F8; border-left: 4pt solid #0B5BD3; border-radius: 12pt; padding: 9pt 14pt 10pt; margin: 0 0 10pt; break-inside: avoid; }
+.simples p { font-size: 10.2pt; line-height: 1.5; color: #1F2933; margin: 0; }
+.aqui { display: flex; margin-top: 7pt; }
+.aqui span { flex: 1; border-top: 3pt solid #DCDCE2; padding-top: 2.5pt; margin-right: 2.5pt; font-family: "Inter Medium"; font-size: 6pt; line-height: 1.25; color: #8E8E93; }
+.aqui span:last-child { margin-right: 0; }
+.aqui span.feito { border-top-color: #A9C4EE; color: #6C6C70; }
+.aqui span.on { border-top-color: #0B5BD3; color: #0B5BD3; font-family: "Inter SemiBold"; }
+.aqui span.ramo { border-top-style: dashed; }
+.figure .olhar { margin-top: 8pt; }
+.figure .olhar .kick { margin-bottom: 3pt; }
+.figure .olhar ul { margin: 0; }
+.figure .olhar li { padding-left: 0; font-size: 8.7pt; line-height: 1.45; margin-bottom: 2pt; }
+.figure .olhar li::before { display: none; }
+.figure .olhar li b { color: #0B5BD3; }
+.figure .leg { font-size: 7.8pt; color: #8E8E93; margin: 5pt 0 0; }
+.reg { font-size: 8.3pt; line-height: 1.45; color: #6C6C70; background: #F7F7FA; border: 1px solid #E3E3E8; border-radius: 9pt; padding: 5pt 10pt; margin: 6pt 0 9pt; break-inside: avoid; }
+.reg b { font-family: "Inter SemiBold"; color: #4F5B70; }
+.livros { font-size: 8.3pt; line-height: 1.45; color: #6E3AA7; background: #F4EBFB; border: 1px solid #DEC7F1; border-radius: 9pt; padding: 5pt 10pt; margin: 6pt 0 9pt; break-inside: avoid; }
+.livros b { color: #6E3AA7; }
+.sw.simples-sw { background: #FFFFFF; border-color: #C3D8F8; border-left: 3pt solid #0B5BD3; }
+.sw.aqui-sw { background: linear-gradient(90deg, #A9C4EE 0, #A9C4EE 45%, #0B5BD3 45%, #0B5BD3 70%, #DCDCE2 70%); border: 0; height: 4pt; border-radius: 2pt; }
+.sw.exame-sw { background: #1F2933; border-color: #1F2933; }
+.cmp .destaque { font-family: "Inter SemiBold"; color: #0B5BD3; }
+.cmp.c4 .k { width: 62pt; }
+.cmp.c4 .c { font-size: 8.3pt; padding-right: 8pt; }
+.vesp { break-before: page; }
+.vesp .item { display: flex; align-items: baseline; background: #FFFFFF; border: 1px solid #E3E3E8; border-radius: 12pt; padding: 7pt 12pt; margin: 0 0 6pt; break-inside: avoid; }
+.vesp .item .prova { flex: none; margin: 0 9pt 0 0; }
+.vesp .item p { margin: 0; font-size: 9.2pt; }
+.tiles.t4 { margin: 6pt 0 8pt; }
+.figure.lado { display: flex; align-items: center; }
+.figure.lado > img { flex: none; }
+.figure.lado .olhar { flex: 1; margin: 0 0 0 12pt; }
+.cover .toc a { padding: 3.6pt 0; }
+/* ===== ajustes desta apostila ===== */
+.aqui { break-after: avoid; }
+ol.flow.inteira { break-inside: avoid; }
+</style>
+</head><body>
+
+<div class="cover">
+  <div class="kicker">Angiologia · Aula 2 · Aneurismas</div>
+  <h1>Aneurismas viscerais e de aorta abdominal</h1>
+  <p class="sub">Quando uma artéria dilatada deve ser tratada: a balança entre o risco de romper e o risco do procedimento, das artérias do abdome até a aorta.</p>
+  <div class="author"><span class="av">A</span><div><b>Dr. Américo</b><span>Cirurgião vascular · 21 de outubro de 2026</span></div></div>
+  <div class="keynums"><div class="kick">Três números para levar</div>
+    <div class="kn-grid">
+      <div class="kn"><div class="n">50%</div><div class="l">de dilatação localizada, ou mais, definem o aneurisma</div></div>
+      <div class="kn"><div class="n">5,5 cm</div><div class="l">na aorta do homem indicam cirurgia (na mulher, 5,0 cm)</div></div>
+      <div class="kn"><div class="n">0,5 cm</div><div class="l">de crescimento em 6 meses indicam cirurgia mesmo abaixo do corte</div></div>
+    </div></div>
+  <div class="toc"><div class="kick">Nesta apostila</div>
+    <a href="#s00"><span class="tn">00</span><span class="tt">Recados da disciplina</span><span class="pg">{{s00}}</span></a>
+    <a href="#s01"><span class="tn">01</span><span class="tt">O que é um aneurisma</span><span class="pg">{{s01}}</span></a>
+    <a href="#s02"><span class="tn">02</span><span class="tt">Aneurismas viscerais: quando tratar</span><span class="pg">{{s02}}</span></a>
+    <a href="#s03"><span class="tn">03</span><span class="tt">Aneurismas viscerais: como tratar</span><span class="pg">{{s03}}</span></a>
+    <a href="#s04"><span class="tn">04</span><span class="tt">Aorta abdominal: anatomia e quem tem aneurisma</span><span class="pg">{{s04}}</span></a>
+    <a href="#s05"><span class="tn">05</span><span class="tt">Diagnóstico do aneurisma de aorta</span><span class="pg">{{s05}}</span></a>
+    <a href="#s06"><span class="tn">06</span><span class="tt">Quando operar o aneurisma de aorta</span><span class="pg">{{s06}}</span></a>
+    <a href="#s07"><span class="tn">07</span><span class="tt">Como tratar o aneurisma de aorta</span><span class="pg">{{s07}}</span></a>
+    <a href="#s08"><span class="tn">08</span><span class="tt">O essencial da aula</span><span class="pg">{{s08}}</span></a>
+    <p class="note">Material de estudo da aula de 21 de outubro de 2026, organizado por temas e em linguagem simples. A legenda de cores está na página 2.</p>
+  </div>
+</div>
+
+<div class="legend"><div class="kick">Como ler esta apostila</div><div class="lg-grid">
+  <div class="lg"><span class="sw blue"></span><div><b>Azul</b> conteúdo da aula e raciocínio</div></div>
+  <div class="lg"><span class="sw green"></span><div><b>Verde</b> dose ou valor de referência</div></div>
+  <div class="lg"><span class="sw red"></span><div><b>Vermelho</b> alerta, erro comum ou pegadinha do professor</div></div>
+  <div class="lg"><span class="sw orange"></span><div><b>Laranja</b> fala ou parêntese do professor</div></div>
+  <div class="lg"><span class="sw purple"></span><div><b>Roxo</b> complemento que não foi dito em aula</div></div>
+  <div class="lg"><span class="prova">PROVA</span><div><b>Marca de prova</b> o ponto que cai na prova</div></div>
+  <div class="lg"><span class="sw simples-sw"></span><div><b>Em palavras simples</b> o capítulo em duas linhas</div></div>
+  <div class="lg"><span class="sw aqui-sw"></span><div><b>Você está aqui</b> a etapa da trilha da aula</div></div>
+</div></div>
+
+<div class="prof"><div class="kick">Sobre o professor · Dr. Américo</div>
+<div class="rows">
+  <div class="row"><div class="k">Especialidade</div><div class="v">Cirurgia vascular, com tratamento endovascular.</div></div>
+  <div class="row"><div class="k">Atuação</div><div class="v">Professor de Angiologia. Trata aneurismas e doença das carótidas por dentro do vaso. Antes, fez muitas cirurgias abertas de aorta em Marechal Cândido Rondon, quando a cidade ainda não tinha tratamento endovascular; também já deu plantão no Hospital Universitário.</div></div>
+  <div class="row"><div class="k">Congressos</div><div class="v">Frequenta o VEITHsymposium, congresso de cirurgia vascular em Nova York.</div></div>
+</div></div>
+
+<section id="s00">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">00</span></div><div class="corpo"><div class="de">Avisos</div><h2>Recados da disciplina</h2></div></div>
+  <div class="rows">
+    <div class="row"><div class="k">Arquivo da aula</div><div class="v">A apresentação fica salva na área de trabalho do computador da sala, com o nome “AAA 2”, para quem quiser copiar.</div></div>
+    <div class="row"><div class="k">Como estudar</div><div class="v">Ler o material antes da aula, sem compromisso, só para entender o que está escrito; na aula, ficar atento e tirar as dúvidas pequenas; em casa, ler de novo. Na prova, o que foi lido e relido três vezes flui.</div></div>
+  </div>
+  <div class="quote"><p>“Não vem para a cabeça aquilo que vocês não passaram ou repassaram.”</p><div class="who">Dr. Américo, sobre como estudar</div></div>
+</section>
+
+<div class="figure"><div class="kick">A trilha da aula</div><img src="trilha.svg" alt="Trilha da aula em sete etapas"></div>
+
+<!-- ============================== 01 ============================== -->
+<section id="s01">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">01</span></div><div class="corpo"><div class="de">Etapa 1 de 7</div><h2>O que é um aneurisma</h2><div class="aqui"><span class="on">O que é aneurisma</span><span>Viscerais: quando tratar</span><span>Viscerais: como tratar</span><span>Aorta: quem tem</span><span>Diagnóstico</span><span>Quando operar</span><span>Como tratar a aorta</span></div></div></div>
+  <div class="simples"><p>Aneurisma é um trecho de artéria que se alargou de vez e ficou pelo menos uma vez e meia mais largo do que deveria. A parede (inteira ou rompida) e o formato dizem quanto ele ameaça romper, e é isso que decide entre operar e acompanhar.</p></div>
+
+  <h3 data-bm="Definição">Definição <span class="prova">PROVA</span></h3>
+  <p>Aneurisma é uma <b>dilatação localizada e permanente</b> de uma artéria, que passa de pelo menos 50% do diâmetro normal do vaso: o trecho fica uma vez e meia ou mais do tamanho. É a primeira coisa a entender, e vale para todos os aneurismas, das pequenas artérias do abdome até a aorta.</p>
+  <div class="ref">
+    <div class="txt"><div class="kick"><span class="dot"></span>Para chamar de aneurisma</div><p>Dilatação localizada de pelo menos metade do diâmetro normal. Na aorta, diâmetro acima de 3 cm.</p></div>
+    <div class="val">50% ou mais<small>acima do diâmetro normal</small></div>
+  </div>
+
+  <h3>Aneurisma, ectasia e arteriomegalia</h3>
+  <div class="cmp c4">
+    <div class="r h"><div class="k"></div><div class="c">Aneurisma</div><div class="c">Ectasia</div><div class="c">Arteriomegalia</div></div>
+    <div class="r"><div class="k">O que dilata</div><div class="c">Um segmento</div><div class="c">Dilatação suave, que pode ser generalizada</div><div class="c">A artéria inteira, sem um segmento que destoe</div></div>
+    <div class="r"><div class="k">Tamanho</div><div class="c">50% ou mais; na aorta, acima de 3 cm</div><div class="c">Menos que isso; na aorta, abaixo de 3 cm</div><div class="c">Toda larga do começo ao fim</div></div>
+    <div class="r"><div class="k">Exemplo</div><div class="c">Aorta de 2 cm com um trecho de 4 cm</div><div class="c">Leve dilatação da aorta, abaixo de 3 cm</div><div class="c">Aorta toda com 4 cm; síndrome de Marfan</div></div>
+  </div>
+  <div class="box red"><div class="kick"><span class="dot"></span>Pegadinha do professor</div><p>Aorta toda com 4 cm, do começo ao fim, não é aneurisma: é arteriomegalia. Aneurisma é o trecho localizado que destoa do resto da artéria.</p></div>
+  <p>Na síndrome de Marfan, uma doença do colágeno, a aorta muitas vezes não tem um segmento dilatado: é gigante desde a válvula aórtica até embaixo. O paciente costuma operar a válvula aórtica antes dos 20 anos e receber um tubo na aorta, e o resto continua dilatando. Aos 26 anos, muitos já quase não têm o que fazer: seria preciso trocar a aorta inteira e reimplantar cada ramo, e outros vasos começam a dilatar.</p>
+  <div class="quote"><p>“Existem doenças que são incompatíveis com a vida. Infelizmente, muita coisa não tem o que mudar.”</p><div class="who">Dr. Américo, sobre a síndrome de Marfan</div></div>
+
+  <h3 data-bm="Verdadeiro ou falso: a parede">Verdadeiro ou falso: a parede <span class="prova">PROVA</span></h3>
+  <p>A parede da artéria tem três camadas: a íntima (o endotélio, por dentro), a média (muscular) e a adventícia (a mais externa). No aneurisma verdadeiro, as três dilatam juntas: a parede “laceou”. No <b>falso aneurisma, ou pseudoaneurisma</b>, a artéria já rompeu: o sangue vazou, empurrou a gordura ou o subcutâneo em volta e formou um hematoma que segura o sangue como uma capa falsa.</p>
+  <div class="cmp">
+    <div class="r h"><div class="k"></div><div class="c">Verdadeiro</div><div class="c">Falso (pseudoaneurisma)</div></div>
+    <div class="r"><div class="k">Parede</div><div class="c">As três camadas, dilatadas</div><div class="c">Sem as camadas da artéria: capa de coágulo</div></div>
+    <div class="r"><div class="k">Como surge</div><div class="c">A parede enfraquece e dilata</div><div class="c">A artéria rompe e o vazamento fica contido</div></div>
+    <div class="r"><div class="k">Comportamento</div><div class="c">Depende do local, do tamanho e do formato</div><div class="c">Muito mais agressivo: desestabiliza e volta a vazar</div></div>
+    <div class="r"><div class="k">Conduta</div><div class="c">Depende da artéria e do tamanho</div><div class="c destaque">Tratar sempre, em qualquer artéria</div></div>
+  </div>
+  <div class="quote"><p>“Se cair na prova que é pseudoaneurisma, eles não têm todas as camadas da artéria.”</p><div class="who">Dr. Américo</div></div>
+
+  <h3>O formato do aneurisma verdadeiro</h3>
+  <p>Quanto ao formato, o aneurisma verdadeiro pode ser fusiforme, sacular ou por dissecção. O formato muda a forma como a pressão empurra a parede.</p>
+  <div class="figure"><img src="formas.svg" alt="Vaso normal, aneurisma fusiforme, sacular, pseudoaneurisma e dissecção"></div>
+  <div class="rows">
+    <div class="row"><div class="k">Fusiforme</div><div class="v">Como um balão de São João: fino em cima, dilatado por igual no meio, fino de novo embaixo. A pressão se distribui igualmente para todos os lados.</div></div>
+    <div class="row"><div class="k">Sacular</div><div class="v">Parece um girino: uma bolota para um lado só, com a outra parede reta. Toda a pressão vai para a ponta mais dilatada, e o risco de romper é maior. Na aorta, por isso, a cirurgia já é considerada a partir de 3 cm (capítulo 06).</div></div>
+  </div>
+  <div class="rows">
+    <div class="row"><div class="k">Dissecção</div><div class="v">Começa por um rasgo da íntima e da média; sobra só a adventícia, fina, que distende e um dia rompe. O sangue entra entre as camadas, colapsa a luz verdadeira e forma uma luz falsa. Primeiro vem o rasgo; a dilatação é consequência.</div></div>
+  </div>
+
+  <h3>De onde vem o pseudoaneurisma</h3>
+  <div class="rows">
+    <div class="row"><div class="k">Acidente</div><div class="v">Espinho, faca ou qualquer objeto pontiagudo que fura o vaso.</div></div>
+    <div class="row"><div class="k">Procedimento</div><div class="v">Cateterismo em que o local da punção sangrou depois que o cateter saiu (iatrogenia). A cirurgia vascular é chamada com frequência para resolver pseudoaneurismas de procedimentos de outras áreas (cardiologia, neurointervenção, radiologia intervencionista), quando o caso já é de cirurgia aberta.</div></div>
+  </div>
+  <div class="rows">
+    <div class="row"><div class="k">Trauma</div><div class="v">O aneurisma traumático geralmente é um pseudoaneurisma.</div></div>
+    <div class="row"><div class="k">Sutura que solta</div><div class="v">A costura de uma ponte (a anastomose) se solta com o tempo, muitas vezes por infecção, sangra e forma o pseudoaneurisma anastomótico. É mais comum quando há prótese.</div></div>
+  </div>
+</section>
+
+<!-- ============================== 02 ============================== -->
+<section id="s02">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">02</span></div><div class="corpo"><div class="de">Etapa 2 de 7</div><h2>Aneurismas viscerais: quando tratar</h2><div class="aqui"><span class="feito">O que é aneurisma</span><span class="on">Viscerais: quando tratar</span><span>Viscerais: como tratar</span><span>Aorta: quem tem</span><span>Diagnóstico</span><span>Quando operar</span><span>Como tratar a aorta</span></div></div></div>
+  <div class="simples"><p>As artérias que saem da aorta para o intestino, o baço, o fígado e os rins também fazem aneurisma. Algumas rompem com qualquer tamanho e matam: são tratadas sempre. Outras quase nunca rompem enquanto pequenas, e operar cedo seria mais arriscado do que esperar.</p></div>
+
+  <p>O aneurisma cerebral fica com a neurologia e a neurocirurgia (o neurointervencionista) e não entra aqui. Os aneurismas viscerais parecem todos iguais, mas cada artéria tem seu comportamento, e as regras de quando tratar vieram de ciência, testes e observação.</p>
+  <div class="es">
+    <div class="kick">A balança de cada aneurisma</div>
+    <p class="lead">Dá para tratar aneurisma de qualquer tamanho em qualquer lugar, mas não é adequado tratar sem fundamento.</p>
+    <div class="cells">
+      <div class="cell"><div class="lab">Pesa mais o risco de romper</div><p>Opera, mesmo que a artéria seja tortuosa e difícil de alcançar.</p></div>
+      <div class="cell"><div class="lab">Pesa mais o risco do procedimento</div><p>Mantém sem operar e acompanha.</p></div>
+    </div>
+  </div>
+  <p>Foi assim que se chegou aos cortes de tamanho: na artéria esplênica, acima de 3 cm praticamente todos rompiam; abaixo disso, quase nunca. “Quase” não quer dizer que não rompe, mas abaixo do corte o procedimento é que pesa mais. O mesmo raciocínio deu os 2 cm do tronco celíaco e os 3 cm da artéria renal.</p>
+
+  <h3 data-bm="Quando tratar cada artéria">Quando tratar cada artéria <span class="prova">PROVA</span></h3>
+  <div class="cmp">
+    <div class="r h"><div class="k">Tratar sempre</div><div class="c">Por quê</div><div class="c">Quando</div></div>
+    <div class="r"><div class="k">Mesentérica superior</div><div class="c">Todos rompem, com qualquer tamanho</div><div class="c destaque">Assim que for visto: planejar e tratar</div></div>
+    <div class="r"><div class="k">Pancreato&shy;duodenal e gastro&shy;duodenal</div><div class="c">Rompem com muita facilidade e matam</div><div class="c destaque">Qualquer tamanho</div></div>
+    <div class="r"><div class="k">Cólica</div><div class="c">Rompem com muita facilidade e matam</div><div class="c destaque">Qualquer tamanho</div></div>
+    <div class="r"><div class="k">Gástricas e gastro&shy;epiploicas</div><div class="c">Entram no grupo tratado sempre, independentemente do tamanho</div><div class="c destaque">Qualquer tamanho</div></div>
+    <div class="r"><div class="k">Pseudo&shy;aneurisma</div><div class="c">Vai desestabilizar e vazar de novo</div><div class="c destaque">Qualquer artéria e tamanho</div></div>
+  </div>
+  <div class="cmp">
+    <div class="r h"><div class="k">Tratar a partir de</div><div class="c">Tamanho</div><div class="c">E também</div></div>
+    <div class="r"><div class="k">Esplênica</div><div class="c">Acima de 3 cm</div><div class="c">Mulher em idade fértil, com qualquer tamanho</div></div>
+    <div class="r"><div class="k">Tronco celíaco</div><div class="c">Acima de 2 cm: é mais frágil</div><div class="c">Todos os pseudoaneurismas</div></div>
+    <div class="r"><div class="k">Renal</div><div class="c">Acima de 3 cm</div><div class="c">Sintomático (pressão difícil de controlar); com estenose da renal; mulher em idade fértil, com qualquer tamanho</div></div>
+    <div class="r"><div class="k">Jejunais e ileais</div><div class="c">Acima de 2 cm</div><div class="c">Sintomático, depois de descartar outras causas</div></div>
+    <div class="r"><div class="k">Hepática</div><div class="c">Acima de 2 cm</div><div class="c">Crescimento de 0,5 cm ou mais por ano</div></div>
+  </div>
+  <p>Mesentérica superior, pancreatoduodenal, gastroduodenal e cólica são artérias de muito fluxo. Quando rompem, até se descobrir o que era, o abdome já inundou de sangue, e geralmente não há o que fazer.</p>
+  <div class="ref">
+    <div class="txt"><div class="kick"><span class="dot"></span>Hepática: crescimento rápido</div><p>Aneurisma visceral costuma crescer menos de 1 mm por ano. Crescer 5 mm ou mais por ano é muito rápido e indica tratar.</p></div>
+    <div class="val">0,5 cm<small>por ano, ou mais</small></div>
+  </div>
+  <div class="quote"><p>“Não se esqueçam dessa figura, porque algumas coisas são emblemáticas. A artéria esplênica é muito clássica (…). E a artéria mesentérica superior também, porque todos têm que ser tratados.”</p><div class="who">Dr. Américo, sobre o quadro dos aneurismas viscerais</div></div>
+
+  <h3 data-bm="Esplênica: a mulher em idade fértil">Esplênica: a mulher em idade fértil <span class="prova">PROVA</span></h3>
+  <p>A artéria esplênica quase nunca rompe, com uma exceção estranha: o aneurisma descompensa no trabalho de parto. Por isso, na mulher em idade fértil (que ainda menstrua e pode engravidar), o aneurisma de esplênica encontrado é tratado com <b>qualquer tamanho</b>, mesmo uma bolinha sacular de 0,5 cm. Já no homem com 2,5 cm, ainda não precisa operar; no idoso de 80 anos, homem ou mulher, também não.</p>
+  <div class="box orange"><div class="kick"><span class="dot"></span>Duas gestantes na mesma semana</div><p>Uma gestante chegou ao Hospital Universitário com dor abrupta e foi levada para a sala de parto. Não era trabalho de parto: era abdome agudo. Na cirurgia, a cavidade estava cheia de sangue, e o sangramento não vinha de baixo: era um aneurisma roto da artéria esplênica, numa mulher de uns 25 anos. A ginecologia chamou a cirurgia geral, que fez a esplenectomia e a hemostasia, e a mãe e o bebê sobreviveram. Na mesma semana chegou outra gestante com dor parecida, à esquerda, com peritonite e nada que lembrasse trabalho de parto. O ginecologista suspeitou na hora: era o mesmo quadro.</p></div>
+  <p>É raro, e coisas raras às vezes vêm em dupla. Como não é o dia a dia de ninguém, quem não pensa nessa possibilidade dificilmente faz o diagnóstico. E operar no meio da gestação é péssimo: por isso o aneurisma é tratado antes.</p>
+  <div class="quote"><p>“Se está na idade fértil, que vai entrar em trabalho de parto possivelmente no futuro, tem que operar.”</p><div class="who">Dr. Américo, sobre o aneurisma de artéria esplênica</div></div>
+
+  <h3>Renal: quando a pressão não controla</h3>
+  <p>Um dos sintomas do aneurisma de artéria renal é a hipertensão arterial refratária. Tudo o que reduz o fluxo para o rim e deixa o parênquima renal em isquemia acaba subindo a pressão:</p>
+  <ol class="flow">
+    <li><b class="t">Chega menos sangue ao rim.</b> Uma estenose ou um aneurisma da artéria renal reduzem o fluxo e a pressão dentro do parênquima.</li>
+    <li><b class="t">O rim pede mais.</b> Sinalizado por hormônios, ele aumenta a produção de renina.</li>
+    <li><b class="t">Cascata renina-angiotensina-aldosterona.</b> A pressão arterial do corpo sobe: é a hipertensão renovascular.</li>
+  </ol>
+  <div class="box orange"><div class="kick"><span class="dot"></span>O rim preso no quartinho</div><p>Imagine alguém preso num quartinho, sem comida. Ele grita na porta: “estou com fome!”, e alguém traz comida. Se a comida vem direito, ele grita menos; se começa a faltar, volta a gritar. O rim não sabe que a pressão do paciente já está alta: ele só sabe que falta sangue, e manda subir a pressão para que o sangue chegue.</p></div>
+  <p>A aterosclerose e a displasia fibromuscular (vistas mais adiante na disciplina) estreitam a artéria renal. A displasia fibromuscular, que é uma fibrose, faz estenoses e também aneurismas na renal; juntos, derrubam o fluxo, causam isquemia renal e sobem a pressão. Por isso, em homem ou mulher, trata-se o aneurisma renal com pressão difícil de controlar (dor na nuca, idas ao pronto-socorro com cefaleia), o acima de 3 cm e o que vem junto com estenose ou hipertensão. E, como na esplênica, o de qualquer tamanho na mulher em idade fértil, porque também rompe com mais facilidade no trabalho de parto.</p>
+
+  <h3>O que é “sintomático” num aneurisma visceral</h3>
+  <p>O critério “sintomático” é vago: aneurisma de artéria jejunal ou hepática não dá uma dor típica (“doutor, estou com dor no fígado” não é bem isso). O abdome é uma caixinha de surpresa: a dor pode ser menstrual, cólica renal, apendicite, pancreatite, gastrite, divertículo inflamado ou, o mais comum, intoxicação alimentar.</p>
+  <div class="box red"><div class="kick"><span class="dot"></span>Pegadinha do professor</div><p>“Sintomático” não é uma dor característica do aneurisma: é diagnóstico por exclusão. Investiga tudo; se descartou as outras causas e só sobrou o aneurisma, trata o aneurisma, mesmo que a clínica pareça não bater.</p></div>
+</section>
+
+<!-- ============================== 03 ============================== -->
+<section id="s03">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">03</span></div><div class="corpo"><div class="de">Etapa 3 de 7</div><h2>Aneurismas viscerais: como tratar</h2><div class="aqui"><span class="feito">O que é aneurisma</span><span class="feito">Viscerais: quando tratar</span><span class="on">Viscerais: como tratar</span><span>Aorta: quem tem</span><span>Diagnóstico</span><span>Quando operar</span><span>Como tratar a aorta</span></div></div></div>
+  <div class="simples"><p>Dá para tratar abrindo a barriga, amarrando a artéria ou fazendo uma ponte, ou por dentro do vaso, com um cateter que entra pela virilha e entope o aneurisma com molas ou forra a artéria com um stent. Hoje a preferência é por dentro, que agride muito menos.</p></div>
+
+  <h3>Cirurgia aberta ou endovascular</h3>
+  <div class="cmp">
+    <div class="r h"><div class="k"></div><div class="c">Cirurgia aberta</div><div class="c">Endovascular</div></div>
+    <div class="r"><div class="k">Acesso</div><div class="c">Laparotomia xifopúbica: o intestino é luxado para fora e descolado até chegar aos vasos</div><div class="c">Punção da artéria femoral; fio-guia e cateter sobem pela aorta até a artéria doente</div></div>
+    <div class="r"><div class="k">O que faz</div><div class="c">Amarra a artéria (ligadura) ou faz uma ponte</div><div class="c">Mola, balão ou stent recoberto, que faz um túnel por dentro e tira o fluxo do aneurisma</div></div>
+    <div class="r"><div class="k">Depois</div><div class="c">Terapia intensiva, sonda no nariz, muito tempo sem comer</div><div class="c">Menos morbidade, recuperação rápida</div></div>
+    <div class="r"><div class="k">Escolha</div><div class="c">Quando o endovascular não resolve</div><div class="c destaque">Preferido, desde que bem feito</div></div>
+  </div>
+  <p>A aorta é retroperitoneal: fica grudada atrás do estômago e do intestino. Por trás não dá para entrar, porque tem a coluna; pela frente, é preciso abrir o abdome como um livro, tirar o intestino para fora sem arrancar e ir soltando com delicadeza toda a sua vascularização até chegar ao vaso, como cavar do alto do coqueiro até a raiz. Às vezes o endovascular não basta: já foi preciso começar por dentro e terminar abrindo para ligar a artéria, porque não parava de sangrar.</p>
+  <div class="box red"><div class="kick"><span class="dot"></span>Antes de amarrar uma artéria</div><p>A ligadura sacrifica aquela artéria. É preciso ter certeza de que as colaterais naturais, como a arcada de Riolan, vão suprir o órgão, sem causar isquemia do intestino ou de outro órgão.</p></div>
+
+  <h3>Esplênica: entupir com molas</h3>
+  <p>No baço, muitas vezes o aneurisma não tem como ser reparado, e a artéria é entupida com molas do começo ao fim. O baço não morre: vasinhos da artéria frênica e ramos que saem direto da aorta formam colaterais que mantêm algum fluxo.</p>
+
+  <h3 data-bm="Aneurisma sacular: mola por dentro ou clipe por fora">Aneurisma sacular: mola por dentro ou clipe por fora <span class="prova">PROVA</span></h3>
+  <p>O aneurisma esplênico geralmente é sacular, igual ao aneurisma cerebral. Por dentro do vaso, o saco é empacotado com molas: sem fluxo dentro do aneurisma, o sangue passa só pela artéria principal, e ele está tratado. Por fora, coloca-se um clipe (um grampo) na base do saco, o colo, e esvazia-se o aneurisma. Nos dois casos, tratar o aneurisma em si é fácil; o problema é chegar até ele: no cerebral é preciso abrir o crânio, no esplênico, a barriga. Daí a vantagem dos procedimentos endovasculares.</p>
+  <div class="quote"><p>“Fácil? Dúvidas? Pode fechar isso na prova que vocês tiram 10.”</p><div class="who">Dr. Américo, sobre mola por dentro e clipe por fora</div></div>
+  <div class="box red"><div class="kick"><span class="dot"></span>Pegadinha do professor</div><p>Mola não serve para o aneurisma de aorta: ele não tem 0,5 ou 1 cm, tem de 3 a 5 cm ou mais. Seria preciso uma quantidade enorme de molas.</p></div>
+  <div class="rows">
+    <div class="row"><div class="k">Mola simples</div><div class="v">As mais baratas custam de R$ 1.500 a R$ 2.000 cada. Um aneurisma pequeno leva umas 10: de R$ 15.000 a R$ 20.000.</div></div>
+    <div class="row"><div class="k">Mola de destaque controlado</div><div class="v">Usada no aneurisma cerebral: dá para posicionar, puxar e reposicionar até ficar bom, e só então soltar. Custa de R$ 5.000 a R$ 7.000 cada. Quanto mais tecnologia, mais seguro e mais caro.</div></div>
+  </div>
+
+</section>
+
+<!-- ============================== 04 ============================== -->
+<section id="s04">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">04</span></div><div class="corpo"><div class="de">Etapa 4 de 7</div><h2>Aorta abdominal: anatomia e quem tem aneurisma</h2><div class="aqui"><span class="feito">O que é aneurisma</span><span class="feito">Viscerais: quando tratar</span><span class="feito">Viscerais: como tratar</span><span class="on">Aorta: quem tem</span><span>Diagnóstico</span><span>Quando operar</span><span>Como tratar a aorta</span></div></div></div>
+
+  <div class="simples"><p>A aorta abdominal desce do diafragma, dá os ramos do fígado, do baço, do intestino e dos rins e termina dividida nas duas ilíacas. O aneurisma aparece quase sempre no trecho abaixo das artérias renais, em idosos, mais em homens, e na maioria das vezes sem dar sintoma.</p></div>
+
+  <p>Entre os aneurismas periféricos, o de aorta abdominal é o mais prevalente e o que recebe mais atenção.</p>
+  <h3>O caminho da aorta abdominal</h3>
+  <p>Do diafragma para cima é a aorta torácica; para baixo, a abdominal. Os ramos, de cima para baixo:</p>
+  <div class="rows">
+    <div class="row"><div class="k">Tronco celíaco</div><div class="v">Colado no diafragma. Dá a esplênica (baço) e a hepática comum, que segue como hepática própria, direita e esquerda, e dá a gastroduodenal. Às vezes o ligamento do diafragma pinça o tronco celíaco e causa sintomas: é a síndrome de Dunbar.</div></div>
+    <div class="row"><div class="k">Mesentérica superior</div><div class="v">Logo abaixo da forquilha do tronco celíaco. Irriga boa parte do intestino delgado.</div></div>
+    <div class="row"><div class="k">Renais e mesentérica inferior</div><div class="v">As duas renais, direita e esquerda; abaixo delas, a mesentérica inferior.</div></div>
+  </div>
+  <div class="rows">
+    <div class="row"><div class="k">Lombares</div><div class="v">Vários vasinhos que saem por trás da aorta para a coluna: irrigam a medula e a musculatura das costas. Não aparecem nos desenhos.</div></div>
+    <div class="row"><div class="k">Ilíacas comuns</div><div class="v">No fim, a aorta se bifurca em ilíaca comum direita e esquerda.</div></div>
+  </div>
+  <div class="figure"><img src="aorta.svg" alt="Aorta abdominal com seus ramos e um aneurisma infrarrenal"><p class="leg">Esquema: o lado direito do paciente fica à esquerda do desenho.</p></div>
+
+  <h3>Onde o aneurisma aparece</h3>
+  <p>O aneurisma de aorta abdominal predomina <b>abaixo da saída das artérias renais</b> (aorta infrarrenal), entre as renais e a bifurcação das ilíacas. É a região menos fixa, sem ramos viscerais. Como esses pacientes vivem cada vez mais, com o tempo a dilatação pode avançar para outras partes da aorta, até as mais fixas.</p>
+  <div class="box red"><div class="kick"><span class="dot"></span>Fechar a aorta inteira de uma vez pode deixar paraplégico</div><p>Na cirurgia, as lombares costumam ser sacrificadas, porque a região é rica em colaterais. Mas se a doença vai do começo ao fim da aorta e tudo é fechado de uma vez, a medula fica sem sangue (isquemia medular) e o paciente fica paraplégico.</p></div>
+  <div class="ref">
+    <div class="txt"><div class="kick"><span class="dot"></span>Aneurisma em cima e embaixo: em etapas</div><p>Primeiro o segmento de cima; o de baixo depois, quando as colaterais já compensaram.</p></div>
+    <div class="val">60 a 90 dias<small>entre as duas etapas</small></div>
+  </div>
+
+  <h3>O calibre normal da aorta</h3>
+  <div class="tiles">
+    <div class="tile g"><div class="lab">Homem adulto</div><div class="n">cerca de 2 cm</div><div class="s">70 kg e 1,70 m; geralmente não passa de 2 cm</div></div>
+    <div class="tile g"><div class="lab">Mulher</div><div class="n">cerca de 1,5 cm</div><div class="s">mais delicada: aorta e vasos de calibre menor</div></div>
+    <div class="tile"><div class="lab">Aneurisma de aorta</div><div class="n">acima de 3 cm</div><div class="s">abaixo disso, leve ectasia</div></div>
+  </div>
+  <p>Essa diferença entre homem e mulher pesa muito na hora de decidir a cirurgia (capítulo 06).</p>
+
+  <h3>Quem tem aneurisma de aorta</h3>
+  <p>A Comissão Nacional de Incorporação de Tecnologias no Sistema Único de Saúde, sem conflito com a indústria (que tem interesse em vender próteses para qualquer aneurisma), revisou os estudos e publicou recomendações em 2016:</p>
+  <div class="tiles">
+    <div class="tile"><div class="lab">Idade</div><div class="n">95%</div><div class="s">dos aneurismas são em idosos acima de 60 anos</div></div>
+    <div class="tile"><div class="lab">De 60 a 70 anos</div><div class="n">2%</div><div class="s">têm aneurisma de aorta</div></div>
+    <div class="tile"><div class="lab">Acima de 70 anos</div><div class="n">5%</div><div class="s">têm aneurisma de aorta</div></div>
+  </div>
+  <p>É duas a três vezes mais comum no sexo masculino: não é exclusivo do homem, mas no homem é preciso ficar muito mais esperto. Muitas vezes não dá sintoma e é descoberto em exame de imagem. Atinge qualquer etnia e qualquer condição financeira.</p>
+  <div class="tiles">
+    <div class="tile r"><div class="lab">Estados Unidos, por ano</div><div class="n">15 mil</div><div class="s">mortes por ruptura entre os que chegam ao hospital</div></div>
+    <div class="tile r"><div class="lab">Estados Unidos, por ano</div><div class="n">mais de 45 mil</div><div class="s">mortes súbitas em casa, sem chegar ao hospital nem ter diagnóstico</div></div>
+    <div class="tile"><div class="lab">O risco</div><div class="n">romper e morrer</div><div class="s">no Brasil, a situação tende a ser pior</div></div>
+  </div>
+  <div class="box orange"><div class="kick"><span class="dot"></span>Parêntese do professor: atender é obrigação</div><p>Nos Estados Unidos, muitos hospitais nem atendem quem não tem plano de saúde. Aqui, quem chega morrendo à porta de um hospital, mesmo privado e sem plano, tem de ser atendido pelo médico e pelo hospital. Cobrar depois, judicialmente ou parcelado, é outra conversa; deixar morrer é errado.</p></div>
+
+  <h3>Causas</h3>
+  <p>Cerca de 90% dos aneurismas de aorta abdominal são ateroscleróticos.</p>
+  <div class="rows">
+    <div class="row"><div class="k">Aterosclerótico</div><div class="v">Idoso, fumante, hipertenso, diabético, com dislipidemia. A mesma doença que entope (infarto, amputação de perna) inflama e dilata em outros lugares: o paciente tem artéria entupida num ponto e dilatada em outro.</div></div>
+    <div class="row"><div class="k">Inflamatório</div><div class="v">Causa ainda desconhecida. Na tomografia com contraste, a parede da aorta é muito espessa, com inflamação em volta: “parece um sol”. O intestino e outras estruturas ficam grudados, e o sintoma pode nem ser do aneurisma: obstrução do ureter ou do intestino.</div></div>
+  </div>
+  <div class="rows">
+    <div class="row"><div class="k">Autoimune e genético</div><div class="v">Algumas doenças autoimunes se associam; alguns genes já foram ligados a tipos de aneurisma de aorta.</div></div>
+    <div class="row"><div class="k">Familiar</div><div class="v">Não é raro: o irmão e o filho também têm, o avô morreu de morte súbita (provavelmente rompeu).</div></div>
+  </div>
+  <div class="rows">
+    <div class="row"><div class="k">Infeccioso (micótico)</div><div class="v">Antigamente, o sifilítico. Hoje quase não se vê sífilis terciária: antibióticos tomados por outros motivos, como uma amigdalite, acabam tratando a sífilis também.</div></div>
+    <div class="row"><div class="k">Doença do colágeno</div><div class="v">Síndrome de Marfan: defeito da parede desde o nascimento, muito agressivo em alguns casos.</div></div>
+  </div>
+  <div class="rows">
+    <div class="row"><div class="k">Pós-estenótico</div><div class="v">Depois de uma compressão forte da artéria (estenose anatômica), o fluxo turbulento corrói a parede e forma o aneurisma logo à frente (a jusante).</div></div>
+    <div class="row"><div class="k">Traumático e anastomótico</div><div class="v">Geralmente são pseudoaneurismas (capítulo 01).</div></div>
+  </div>
+</section>
+
+<!-- ============================== 05 ============================== -->
+<section id="s05">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">05</span></div><div class="corpo"><div class="de">Etapa 5 de 7</div><h2>Diagnóstico do aneurisma de aorta</h2><div class="aqui"><span class="feito">O que é aneurisma</span><span class="feito">Viscerais: quando tratar</span><span class="feito">Viscerais: como tratar</span><span class="feito">Aorta: quem tem</span><span class="on">Diagnóstico</span><span>Quando operar</span><span>Como tratar a aorta</span></div></div></div>
+  <div class="simples"><p>Na maioria das pessoas dá para sentir o aneurisma com as duas mãos na barriga: uma massa que pulsa e afasta as mãos para os lados. Mesmo assim, quase todos são achados por acaso, num ultrassom ou numa tomografia pedidos por outro motivo, e cada exame mostra uma coisa e esconde outra.</p></div>
+
+  <h3>Dá para palpar?</h3>
+  <p>Depende do paciente. Numa pessoa de 180 kg com aneurisma de 3 cm, nem a aorta se palpa, por causa do panículo adiposo; num halterofilista de 100 kg com abdome trincado, os dedos não entram. Mas 80% a 90% da população não é nem uma coisa nem outra: dá para palpar e sentir uma massa pulsando. A aorta fácil de palpar já levanta a suspeita.</p>
+  <div class="tiles">
+    <div class="tile"><div class="lab">De 3 a 3,9 cm</div><div class="n">1 em 3</div><div class="s">é palpado por um bom examinador</div></div>
+    <div class="tile"><div class="lab">De 4 a 4,9 cm</div><div class="n">metade</div><div class="s">é palpada</div></div>
+    <div class="tile"><div class="lab">Acima de 5 cm</div><div class="n">a maioria</div><div class="s">é palpável: não deveria escapar nenhum</div></div>
+  </div>
+  <p>Mesmo assim, chegam pacientes com aneurismas de 8 ou 9 cm: escapou por anos porque ninguém palpou a barriga. O exame físico ajuda muito a diagnosticar.</p>
+
+  <div class="quote"><p>“Então, palpem! Porque em um paciente normal, de 1,70 m, 70 kg, (…) você consegue palpar esses aneurismas aqui que têm risco de ruptura.”</p><div class="who">Dr. Américo, sobre o exame físico</div></div>
+  <h3 data-bm="Palpação bimanual laterolateral">Palpação bimanual laterolateral <span class="prova">PROVA</span></h3>
+  <ol class="flow inteira">
+    <li><b class="t">Não aperte contra a coluna.</b> Comprimir a aorta para trás não mostra o aneurisma.</li>
+    <li><b class="t">Uma mão de cada lado.</b> Uma mão, em conchinha, traz a aorta para o meio; a outra empurra do lado oposto com a ponta dos dedos.</li>
+    <li><b class="t">Sinta as mãos se afastando.</b> O aneurisma pulsa e empurra as duas mãos em sentidos contrários. A distância entre elas dá uma ideia do tamanho: num paciente magro, “uns 4,5 cm, está grande”.</li>
+    <li><b class="t">Olhe também.</b> No paciente muito magro dá para pinçar com uma mão só, e a pele da barriga pulsa para fora, à vista.</li>
+  </ol>
+  <div class="box orange"><div class="kick"><span class="dot"></span>Exame físico também protege o médico</div><p>Médicos vão a julgamento porque o paciente piorou, não melhorou ou morreu, e a pergunta é por que o diagnóstico escapou. Quem registrou que palpou, que a palpação foi negativa e que ainda pediu um ultrassom, que também não mostrou nada, está protegido. “Dor abdominal, mandei para o ultrassom, deu negativo e acabou” não protege ninguém.</p></div>
+
+  <h3>O achado por acaso</h3>
+  <p>Hoje a tomografia é comum e barata, e por isso a maior parte dos aneurismas é achada por acaso: alguém com gases ou cólica faz um ultrassom ou uma tomografia, e aparece o aneurisma. Ele não causou os gases, mas, já que foi encontrado, vai para o especialista, que acompanha clinicamente se ainda for pequeno. A maioria é assintomática; diagnosticar só pela clínica é raro.</p>
+
+  <h3>Os exames de imagem</h3>
+  <div class="rows">
+    <div class="row"><div class="k">Radiografia</div><div class="v">O pior exame para o diagnóstico. Às vezes mostra uma linha de calcificação contornando a aorta; usando o corpo vertebral lombar (uns 3 cm) como régua, dá para ver aneurismas de mais de 10 cm.</div></div>
+    <div class="row"><div class="k">Ultrassom simples</div><div class="v">O que existe em qualquer pronto-socorro, sem cor. Com o transdutor convexo, mostra a aorta alargada, o trombo mural e a luz do vaso, às vezes bem pequena no meio do trombo.</div></div>
+  </div>
+  <div class="rows">
+    <div class="row"><div class="k">Doppler colorido</div><div class="v">Mostra o fluxo e o diâmetro certo. Muitas vezes aparece o sinal do yin-yang: vermelho e azul girando dentro do saco, por fluxo e refluxo turbulentos.</div></div>
+    <div class="row"><div class="k">Tomografia</div><div class="v">Mostra a calcificação e o diâmetro (por exemplo, uns 6 cm no ântero-posterior). É o exame de qualidade que se pede para planejar a cirurgia.</div></div>
+  </div>
+  <div class="rows">
+    <div class="row"><div class="k">Angio&shy;rressonância</div><div class="v">Mostra o colo (a parte de cima, junto às viscerais), a curva para o saco, outras saculações e aneurismas das ilíacas.</div></div>
+    <div class="row"><div class="k">Arteriografia</div><div class="v">Confirma o aneurisma, mas erra o diâmetro quando há trombo (abaixo).</div></div>
+  </div>
+
+  <h3 data-bm="Trombo mural: não é motivo para operar">Trombo mural: não é motivo para operar <span class="prova">PROVA</span></h3>
+  <p>O trombo mural nasce da turbulência. Num tubo de 2 cm que vira 6 cm e depois volta a 2 cm, o centro passa rápido e a periferia turbilhona; onde não há fluxo laminar, forma-se coágulo. O saco pode encher quase todo de trombo e, mesmo assim, continuar com fluxo, pressurizado e com risco de romper.</p>
+  <div class="box red"><div class="kick"><span class="dot"></span>Pegadinha do professor</div><p>Trombo dentro do aneurisma de aorta abdominal não indica cirurgia. No aneurisma de poplítea é o contrário: trombo indica operar. A poplítea entope e não rompe; a aorta rompe e não entope.</p></div>
+  <div class="quote"><p>“Guardem bem isso (…). Têm comportamentos completamente ao contrário. E cai na prova isso aí também.”</p><div class="who">Dr. Américo, sobre o trombo na aorta e na poplítea</div></div>
+
+  <h3 data-bm="Arteriografia: ela pode mentir">Arteriografia: ela pode mentir <span class="prova">PROVA</span></h3>
+  <p>A arteriografia (aortografia) é uma luminografia: só contrasta onde corre sangue, e o trombo mural não aparece. Num aneurisma sem trombo, o diâmetro que ela mostra é o verdadeiro; com trombo, que é o habitual nos grandes, a parte do trombo some e o tamanho real fica escondido. Por isso a arteriografia <b>não é o padrão-ouro</b> para o diagnóstico de aneurisma.</p>
+</section>
+
+<!-- ============================== 06 ============================== -->
+<section id="s06">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">06</span></div><div class="corpo"><div class="de">Etapa 6 de 7</div><h2>Quando operar o aneurisma de aorta</h2><div class="aqui"><span class="feito">O que é aneurisma</span><span class="feito">Viscerais: quando tratar</span><span class="feito">Viscerais: como tratar</span><span class="feito">Aorta: quem tem</span><span class="feito">Diagnóstico</span><span class="on">Quando operar</span><span>Como tratar a aorta</span></div></div></div>
+  <div class="simples"><p>Aneurisma de aorta pequeno e sem dor não se opera: trata-se a aterosclerose e mede-se com ultrassom de tempos em tempos. A cirurgia entra quando ele fica grande (5,5 cm no homem, 5 cm na mulher), cresce rápido, tem formato de saco, dói sem outra explicação ou rompe.</p></div>
+
+  <h3>Tamanho e acompanhamento</h3>
+  <p>O tamanho é medido no diâmetro transversal do aneurisma verdadeiro.</p>
+  <div class="cmp">
+    <div class="r h"><div class="k"></div><div class="c">Diâmetro</div><div class="c">Conduta</div></div>
+    <div class="r"><div class="k">Muito pequeno</div><div class="c">Abaixo de 4 cm</div><div class="c">Ultrassom da aorta abdominal a cada 1 ano</div></div>
+    <div class="r"><div class="k">Pequeno</div><div class="c">De 4 a 5,4 cm</div><div class="c">Ultrassom a cada 6 meses: de 5,4 para 5,5 cm é 1 milímetro</div></div>
+    <div class="r"><div class="k">Grande</div><div class="c">A partir de 5,5 cm</div><div class="c destaque">Cirurgia</div></div>
+  </div>
+
+  <h3 data-bm="Quando indicar a cirurgia">Quando indicar a cirurgia <span class="prova">PROVA</span></h3>
+  <p>Para o paciente sem sintoma e com menos de 5,5 cm, a recomendação é <b>contra a cirurgia</b>, aberta ou endovascular: tratamento clínico e acompanhamento a cada 6 meses. Acima de 5,5 cm, a recomendação de operar é forte, com ou sem sintomas. O caminho da decisão:</p>
+  <div class="figure"><img src="decisao.svg" alt="Fluxograma de quando operar o aneurisma de aorta abdominal"></div>
+  <div class="ref">
+    <div class="txt"><div class="kick"><span class="dot"></span>Crescimento rápido</div><p>Indica cirurgia mesmo abaixo do corte de tamanho.</p></div>
+    <div class="vals"><div class="val"><small>em 6 meses</small>0,5 cm</div><div class="val"><small>em 1 ano</small>1 cm</div></div>
+  </div>
+  <div class="box red"><div class="kick"><span class="dot"></span>Pegadinha do professor</div><p>Crescimento rápido só existe com comparação: é preciso ter um exame anterior para comparar com o atual e mostrar ao convênio que o paciente está em risco de romper.</p></div>
+
+  <h3 data-bm="Mulher: 5 cm">Mulher: 5 cm <span class="prova">PROVA</span></h3>
+  <p>O aneurisma é mais comum no homem, mas na mulher a taxa de ruptura é três a quatro vezes maior. A explicação é a proporção: uma aorta de 2 cm que vai a 4 cm dobrou; uma de 1,5 cm que vai a 4 cm quase triplicou. Um aneurisma “ainda pequeno” numa pessoa pequena já é gigante.</p>
+  <p>Pela conta, a mulher deveria operar antes, com 4 ou 4,5 cm. Não opera porque a artéria dela é fina: os materiais do tratamento endovascular não passam bem por artéria muito fina, e a mortalidade da cirurgia é maior. Operar enquanto o aneurisma é menor traria mais complicação do que sucesso. Puseram na balança, e as sociedades de cirurgia vascular e de cardiologia ficaram com 5,0 cm como o menos danoso para a mulher.</p>
+  <div class="quote"><p>“Primeiro, não fazer mal ao paciente. Você vai fazer o procedimento se for trazer benefícios. Se for duvidoso ou tiver mais desgraça do que sucesso, então é melhor não fazer.”</p><div class="who">Dr. Américo, sobre o princípio da ética médica primum non nocere</div></div>
+  <div class="cmp">
+    <div class="r h"><div class="k"></div><div class="c">Homem</div><div class="c">Mulher</div></div>
+    <div class="r"><div class="k">Aorta normal</div><div class="c">Cerca de 2 cm</div><div class="c">Cerca de 1,5 cm</div></div>
+    <div class="r"><div class="k">Aneurisma</div><div class="c">Duas a três vezes mais comum</div><div class="c">Menos comum, mas rompe três a quatro vezes mais</div></div>
+    <div class="r"><div class="k">Aneurisma de 5 cm</div><div class="c">Duas vezes e meia o normal</div><div class="c">Quase três vezes e meia o normal</div></div>
+    <div class="r"><div class="k">Cirurgia a partir de</div><div class="c destaque">5,5 cm</div><div class="c destaque">5,0 cm</div></div>
+  </div>
+
+  <h3>Sacular: a partir de 3 cm</h3>
+  <p>O aneurisma sacular da aorta, com a “barriguinha” para um lado só, concentra a força de ruptura na ponta. Não adianta esperar 5,5 cm se ele vai romper antes: por isso a cirurgia é considerada a partir de 3 cm, e os convênios costumam liberar por essa brecha.</p>
+
+  <h3>Sintomático: dor por exclusão</h3>
+  <p>O aneurisma que não rompeu, mas dói (sintomático), e que está apto para cirurgia eletiva pode ser tratado por cirurgia aberta ou endovascular, cada vez mais endovascular. O sintoma é uma dor abdominal estranha: descartadas apendicite, diverticulite, cólica renal, pedra no rim e anexite, se só sobrou o aneurisma, trata-se o aneurisma.</p>
+
+  <h3>Inoperável hoje, operável amanhã</h3>
+  <p>Quando as diretrizes foram montadas, eram contraindicações a doença renal crônica com creatinina alta (pelo contraste iodado), a doença valvar grave, a arritmia e a insuficiência cardíaca descompensada. Muito disso mudou:</p>
+  <div class="rows">
+    <div class="row"><div class="k">Doença renal</div><div class="v">Em qualquer procedimento abaixo do diafragma, o gás carbônico pode substituir o contraste iodado: o paciente deixa de ser inoperável por causa do rim.</div></div>
+  </div>
+  <div class="rows">
+    <div class="row"><div class="k">Doença valvar</div><div class="v">Um colega de uns 70 anos, com estenose aórtica e o dia a dia muito limitado, antes teria de abrir o peito para trocar a válvula. Fez o implante de válvula aórtica por cateter, com resultado semelhante ao da cirurgia aberta, e em menos de uma semana voltou a trabalhar. Quem era inoperável passou a poder operar.</div></div>
+  </div>
+  <div class="rows">
+    <div class="row"><div class="k">Coração fraco</div><div class="v">Um senhor diabético, com fração de ejeção de 20% e falta de ar deitado (ortopneia), teve um acidente vascular cerebral por doença da carótida. Compensado da parte cardíaca, fez angioplastia de carótida por via endovascular.</div></div>
+  </div>
+  <p>É preciso separar risco relativo de risco absoluto: há quem seja inoperável naquele momento e quem seja sempre inoperável.</p>
+
+  <h3>Convênio, idade e a vontade do paciente</h3>
+  <p>O convênio segue a diretriz ao pé da letra: com 5,49 cm não libera; com 5,50 cm, tem de liberar. Na mulher, libera com 5 cm; no homem, nega.</p>
+  <div class="box orange"><div class="kick"><span class="dot"></span>O professor de Toledo</div><p>Um professor universitário aposentado tinha um aneurisma de 5,4 cm, feio, lobulado, cheio de pequenos aneurismas saculares em volta. A cirurgia foi pedida e o convênio negou: só liberaria com 5,5 cm. Ele foi acompanhado a cada semestre: 5,4; 5,4; 5,4. Depois sumiu e voltou, encaminhado por outro médico, com 6 cm. Agora o convênio liberava, mas ele, já octogenário, não quis mais operar.</p></div>
+  <p>Aneurisma de 6, 7 ou 8 cm não aparece num rapaz de 30 anos sem doenças: aparece no idoso de 70 ou 80 anos, cheio de comorbidades. Isso precisa ser conversado com o paciente e com a família, e nem sempre o paciente aceita.</p>
+  <div class="quote"><p>“Você vai falar e argumentar que o correto é isso, que isso aqui é mais seguro, (…) e ele vai falar assim: escute o que eu tenho para falar, eu sou bem mais vivido.”</p><div class="who">Dr. Américo, sobre o paciente idoso que recusa o tratamento</div></div>
+
+  <h3>De onde vêm as regras</h3>
+  <p>Muitas definições foram fixadas em 1991 e seguem até hoje. As diretrizes das sociedades americana e europeia de cirurgia vascular são revistas em congressos, mas não mudam muita coisa.</p>
+  <div class="box orange"><div class="kick"><span class="dot"></span>Parêntese do professor: o VEITHsymposium</div><p>Em Nova York, uma semana inteira (5 dias) de salas simultâneas: aorta, doença venosa, carótida, varizes, tecnologias. Cada palestrante tem 5 minutos; quando o relógio zera, o microfone é cortado. Depois de dez apresentações, a mesa discute o que muda: se, por exemplo, estivessem rompendo muitos aneurismas de 4,5 cm em mulheres, a proposta de tratar com 4,5 cm iria para a comissão técnica. Ninguém dá aula de aneurisma lá: discute-se o novo, como cateteres de prótese tão grossos que machucam a femoral. Para quem for fazer cirurgia vascular, vale ir um dia.</p></div>
+</section>
+
+<!-- ============================== 07 ============================== -->
+<section id="s07">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">07</span></div><div class="corpo"><div class="de">Etapa 7 de 7</div><h2>Como tratar o aneurisma de aorta</h2><div class="aqui"><span class="feito">O que é aneurisma</span><span class="feito">Viscerais: quando tratar</span><span class="feito">Viscerais: como tratar</span><span class="feito">Aorta: quem tem</span><span class="feito">Diagnóstico</span><span class="feito">Quando operar</span><span class="on">Como tratar a aorta</span></div></div></div>
+  <div class="simples"><p>Todo paciente com aneurisma trata a aterosclerose para sempre: parar de fumar, controlar pressão, açúcar e colesterol, comer bem e se exercitar. Quando precisa operar, a preferência hoje é a prótese que entra pela virilha e forra a aorta por dentro, que recupera muito mais rápido do que a cirurgia de barriga aberta.</p></div>
+
+  <h3>Tratamento clínico: sempre</h3>
+  <p>Sem indicação de cirurgia, o tratamento é clínico, com observação. Com indicação, trata-se clinicamente, planeja-se e faz-se a cirurgia, e o tratamento clínico continua, porque o resto da mesma aorta pode dilatar com o tempo. Como 90% dos aneurismas são ateroscleróticos, o tratamento clínico é o da aterosclerose: fumo, idade, dislipidemia, hipertensão, diabetes, sedentarismo e alimentação ruim (fritura, gordura, açúcar).</p>
+  <div class="rows">
+    <div class="row"><div class="k">Hábitos</div><div class="v">Atividade física aeróbica e musculação, dieta saudável, dormir direito, não fumar.</div></div>
+    <div class="row"><div class="k">Check-up</div><div class="v">Ninguém sente o colesterol alto: é preciso fazer exames e, se necessário, tomar remédio.</div></div>
+    <div class="row"><div class="k">Pressão</div><div class="v">Uma aorta de 4 cm pressurizada por dentro pela hipertensão tende a crescer mais rápido. Controlar a pressão diminui a pressão interna do aneurisma.</div></div>
+  </div>
+  <p>Os alvos ficaram mais rigorosos com o conhecimento científico:</p>
+  <div class="cmp">
+    <div class="r h"><div class="k"></div><div class="c">Antes</div><div class="c">Hoje</div></div>
+    <div class="r"><div class="k">Glicemia</div><div class="c">Só tratava a partir de 150 mg/dL, com um comprimido e “pare com o doce”</div><div class="c">Passou de 100 mg/dL: comprimido e mudança de todos os hábitos</div></div>
+    <div class="r"><div class="k">Pressão</div><div class="c">150 por 100 mmHg era normal; depois, 140 por 90 mmHg passou a ser hipertensão</div><div class="c">120 por 80 mmHg já não é normal: quem fica nisso sem tratar tem, lá na frente, lesões que quem tem 110 por 70 não tem</div></div>
+  </div>
+  <div class="livros"><b>Nos livros:</b> glicemia de jejum de 100 a 125 mg/dL é pré-diabetes, tratada com mudança de hábitos; diabetes, a partir de 126 mg/dL. Pela Diretriz Brasileira de Hipertensão Arterial de 2025, de 120 a 139 por 80 a 89 mmHg é pré-hipertensão.</div>
+  <div class="box orange"><div class="kick"><span class="dot"></span>Parêntese do professor: hábitos de cada geração</div><p>A geração antiga comia de tudo e, ao adoecer, respondia “estou aposentado”: aposentava também da saúde, do remédio e do exercício, e só ia ao médico morrendo. A geração de hoje começa cedo no esporte, na academia e no nutricionista, mas vive cercada de comida industrializada, e o cigarro está voltando forte. Já houve tempo em que médico e paciente fumavam juntos no consultório, e ônibus e avião tinham cinzeiro em cada poltrona; hoje fumar é vergonhoso.</p></div>
+
+  <h3>Eletiva ou urgência</h3>
+  <p>Entre 2014 e 2015 foram 8.900 internações por aneurisma, 57% para cirurgia eletiva. A diferença é enorme: na eletiva há preparo cardiológico, controle das outras doenças, avaliação da função renal para receber contraste, tomografia de qualidade e a endoprótese separada para aquele paciente. Na urgência, o paciente vai para a mesa sem se saber nem se tem doença cardíaca.</p>
+  <div class="tiles">
+    <div class="tile"><div class="lab">Cirurgia eletiva</div><div class="n">acima de 3%</div><div class="s">de mortalidade</div></div>
+    <div class="tile r"><div class="lab">Cirurgia de emergência</div><div class="n">cerca de 50%</div><div class="s">de mortalidade</div></div>
+    <div class="tile r"><div class="lab">Na ruptura</div><div class="n">2 em 3</div><div class="s">nem chegam ao hospital: morrem em casa</div></div>
+  </div>
+
+  <h3>Ruptura: o que for mais rápido</h3>
+  <p>Na ruptura não tem jeito: tem que operar, pelo caminho mais rápido. Se deu para fazer a tomografia, o paciente está vivo o bastante para isso, e com ela escolhe-se a endoprótese, que se coloca mais rápido do que se disseca a aorta na cirurgia aberta. Hoje quase tudo é feito por via endovascular. O risco de morrer por ruptura aumenta com o diâmetro, e bastante acima de 5,5 cm.</p>
+  <div class="box orange"><div class="kick"><span class="dot"></span>A aorta de Einstein</div><p>Em 1949, Albert Einstein tinha um aneurisma de aorta abdominal e teve dor. Michael DeBakey, quase o papa da cirurgia de aorta, envolveu o colo de cima e o de baixo com papel celofane, sem mexer no saco, para que não crescesse mais. Durou uns 6 anos, até a dor voltar: o aneurisma tinha rompido. Já se sabia que o celofane não bastava, e o cirurgião costurou à máquina uma prótese bifurcada de poliéster (Dacron) e marcou a cirurgia para o dia seguinte. Einstein recusou: “Já vivi tudo o que tinha que viver, já vi tudo o que eu queria ver.” Morreu do sangramento.</p></div>
+  <div class="livros"><b>Nos livros:</b> o envoltório de celofane em Einstein foi feito por Rudolph Nissen, em 1948; Michael DeBakey desenvolveu as próteses de Dacron na década de 1950.</div>
+
+  <h3 data-bm="Aberta ou endovascular">Aberta ou endovascular <span class="prova">PROVA</span></h3>
+  <div class="cmp">
+    <div class="r h"><div class="k"></div><div class="c">Cirurgia aberta</div><div class="c">Endovascular</div></div>
+    <div class="r"><div class="k">Como</div><div class="c">Abre o abdome como um livro, luxa o intestino, disseca atrás dos vasos, clampeia em cima e embaixo (zero fluxo para as pernas e parte das vísceras), abre o aneurisma e costura uma prótese no lugar</div><div class="c">Punção das femorais; a prótese sobe por dentro e forra a aorta, tirando o fluxo do aneurisma. Só com sedação e anestesia local: dá para fazer com o paciente acordado</div></div>
+    <div class="r"><div class="k">Depois</div><div class="c">Íleo paralítico (dias sem peristaltismo), sonda nasogástrica, sem comer nem beber, às vezes muito tempo intubado</div><div class="c">Às vezes, meio dia de terapia intensiva; vai para o quarto comendo e andando</div></div>
+    <div class="r"><div class="k">Em 30 dias</div><div class="c">Mortalidade maior, principalmente por complicações pulmonares</div><div class="c destaque">Menor mortalidade</div></div>
+    <div class="r"><div class="k">Reintervenções</div><div class="c">Menos</div><div class="c">Mais, em geral pouco graves</div></div>
+  </div>
+  <p>Por isso, na maioria dos casos, a escolha é o reparo endovascular do aneurisma (em inglês, EVAR). O material melhorou muito, a mortalidade é bem mais baixa e a durabilidade é maior do que antes.</p>
+
+  <h3>Como se faz cada uma</h3>
+  <p>Na cirurgia aberta, durante o clampeamento as pernas ficam em isquemia, e é corrida contra o tempo: costura-se a prótese em cima e embaixo (ou nas duas ilíacas, se for bifurcada), solta-se o fluxo e o resto do saco do aneurisma é fechado por cima da prótese.</p>
+  <p>No reparo endovascular:</p>
+  <ol class="flow">
+    <li><b class="t">Corpo principal.</b> Punciona-se a femoral de um lado e sobe-se a prótese, que é liberada dentro da aorta.</li>
+    <li><b class="t">Segundo módulo.</b> O ramo curto da prótese fica aberto no meio do aneurisma; pela outra femoral, o cirurgião “pesca” essa abertura por dentro e coloca o ramo do outro lado.</li>
+    <li><b class="t">Fim.</b> Tiram-se os cateteres e dá-se um pontinho em cada punção.</li>
+  </ol>
+  <div class="figure"><img src="evar.svg" alt="Reparo endovascular em três passos: fios, corpo principal e segundo módulo"><p class="leg">Esquema do reparo endovascular com prótese bifurcada.</p></div>
+
+  <h3>Aneurisma inflamatório: por dentro</h3>
+  <p>No aneurisma inflamatório, tudo em volta da aorta está aderido, e a cirurgia aberta é péssima. O tratamento ainda não é bem definido, mas, quando é preciso tratar, o endovascular é o mais adequado. Os sintomas costumam ser de obstrução: alças intestinais aderidas (não evacua, distende) ou o ureter englobado onde cruza perto da artéria ilíaca (para de urinar, hidronefrose). É raro, ainda bem.</p>
+
+  <h3>Tratar não é o fim</h3>
+  <div class="box red"><div class="kick"><span class="dot"></span>Operar não encerra o caso</div><p>Aquele segmento foi tratado, mas o resto da aorta segue em acompanhamento, porque pode precisar de novos procedimentos, e o tratamento clínico continua.</p></div>
+  <p>As próteses estão cada vez mais resistentes, duradouras e fáceis de implantar.</p>
+  <div class="quote"><p>“Quando você trata, não é o fim, é o começo.”</p><div class="who">Dr. Américo, sobre o acompanhamento depois da cirurgia</div></div>
+  <div class="box orange"><div class="kick"><span class="dot"></span>Parêntese do professor: o especialista e a equipe</div><p>Com a hiperespecialização, funciona bem a clínica com especialistas de vários ramos que encaminham entre si, como na ortopedia: o cirurgião de joelho percebe que a dor é do pé e manda para o colega de pé, que manda para o de quadril o caso de quadril. É uma linha de montagem: cada um faz a sua parte e não falta paciente para ninguém, desde que a clínica seja bem montada e combinada. O médico que faz tudo (neurologia clínica, neurocirurgia, neurointervenção e neurofisiologia) sabe muito, mas os colegas ficam com receio de encaminhar, com medo de o paciente não voltar.</p></div>
+</section>
+
+<!-- ============================== 08 ============================== -->
+<section id="s08" class="vesp">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">08</span></div><div class="corpo"><div class="de">Para a véspera</div><h2>O essencial da aula</h2></div></div>
+  <div class="item"><span class="prova">PROVA</span><p><b>Aneurisma:</b> dilatação localizada de 50% ou mais; na aorta, acima de 3 cm. Toda dilatada é arteriomegalia.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p><b>Pseudoaneurisma</b> não tem todas as camadas da artéria (capa de coágulo): trata-se sempre.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p><b>Viscerais tratados sempre:</b> mesentérica superior, pancreatoduodenal, gastroduodenal, cólica, gástricas e gastroepiploicas. Por tamanho: esplênica e renal acima de 3 cm; tronco celíaco, jejunais, ileais e hepática acima de 2 cm (hepática também se crescer 0,5 cm por ano).</p></div>
+  <div class="item"><span class="prova">PROVA</span><p><b>Mulher em idade fértil:</b> esplênica e renal com qualquer tamanho (rompem no trabalho de parto).</p></div>
+  <div class="item"><span class="prova">PROVA</span><p><b>Aneurisma sacular visceral:</b> mola por dentro ou clipe no colo por fora. Aorta não se trata com molas.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p><b>Palpação bimanual laterolateral:</b> o aneurisma afasta as duas mãos; não comprimir contra a coluna.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p><b>Trombo mural:</b> na aorta não indica cirurgia (rompe, não entope); na poplítea, indica (entope, não rompe).</p></div>
+  <div class="item"><span class="prova">PROVA</span><p><b>Arteriografia</b> mostra só a luz: com trombo, erra o diâmetro. Não é o padrão-ouro.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p><b>Cirurgia da aorta:</b> 5,5 cm ou mais; crescimento de 0,5 cm em 6 meses ou 1 cm em 1 ano; sacular a partir de 3 cm; dor sem outra causa; ruptura. Sem sintoma e abaixo de 5,5 cm: contra operar.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p><b>Mulher: 5,0 cm.</b> Aorta de 1,5 cm e ruptura três a quatro vezes maior, mas artéria fina e cirurgia mais arriscada.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p><b>Endovascular é o preferido:</b> menor mortalidade em 30 dias, porém mais reintervenções.</p></div>
+  <h3>Números da aula</h3>
+  <div class="tiles">
+    <div class="tile"><div class="lab">Seguimento abaixo de 4 cm</div><div class="n">1 ano</div><div class="s">ultrassom anual</div></div>
+    <div class="tile"><div class="lab">Seguimento de 4 a 5,4 cm</div><div class="n">6 meses</div><div class="s">ultrassom semestral</div></div>
+    <div class="tile"><div class="lab">Aneurisma em duas etapas</div><div class="n">60 a 90 dias</div><div class="s">entre a de cima e a de baixo</div></div>
+  </div>
+  <div class="tiles">
+    <div class="tile"><div class="lab">Acima de 60 anos</div><div class="n">95%</div><div class="s">dos aneurismas de aorta</div></div>
+    <div class="tile"><div class="lab">Homens</div><div class="n">2 a 3 vezes</div><div class="s">mais aneurisma que mulheres</div></div>
+    <div class="tile"><div class="lab">Mortalidade da cirurgia</div><div class="n">3% e 50%</div><div class="s">eletiva e emergência</div></div>
+  </div>
+
+  <div class="box red"><div class="kick"><span class="dot"></span>Erros comuns</div><ul>
+    <li><span class="medium">Achar que esplênica pequena é sempre tranquila.</span> Na mulher em idade fértil, trata-se com qualquer tamanho.</li>
+    <li><span class="medium">Operar a aorta porque tem trombo.</span> Trombo indica cirurgia na poplítea, não na aorta.</li>
+    <li><span class="medium">Confiar no diâmetro da arteriografia.</span> Ela não mostra o trombo mural.</li>
+  </ul></div>
+
+  <h3>Palavras da aula em linguagem simples</h3>
+  <div class="rows terms">
+    <div class="row"><div class="k">Adventícia</div><div class="v">A camada mais externa da parede da artéria.</div></div>
+    <div class="row"><div class="k">Anastomose</div><div class="v">A costura que une dois vasos, ou um vaso a uma prótese.</div></div>
+  </div>
+  <div class="rows terms">
+    <div class="row"><div class="k">Arcada de Riolan</div><div class="v">Ligação natural entre as artérias do intestino, que pode suprir o órgão quando uma delas é fechada.</div></div>
+    <div class="row"><div class="k">Colo do aneurisma</div><div class="v">O trecho de artéria normal junto ao aneurisma, onde a prótese ou o clipe se apoiam.</div></div>
+  </div>
+  <div class="rows terms">
+    <div class="row"><div class="k">Deiscência</div><div class="v">Quando uma sutura se solta.</div></div>
+    <div class="row"><div class="k">Displasia fibromuscular</div><div class="v">Doença que faz fibrose na parede da artéria, com estenoses e dilatações; na renal, sobe a pressão.</div></div>
+  </div>
+  <div class="rows terms">
+    <div class="row"><div class="k">Embolização</div><div class="v">Entupir um vaso ou um aneurisma por dentro, por exemplo com molas.</div></div>
+    <div class="row"><div class="k">Endoprótese</div><div class="v">Prótese colocada por dentro da artéria, por cateter.</div></div>
+  </div>
+  <div class="rows terms">
+    <div class="row"><div class="k">Íleo paralítico</div><div class="v">Intestino parado, sem peristaltismo, depois de ser manipulado na cirurgia.</div></div>
+    <div class="row"><div class="k">Íntima</div><div class="v">A camada de dentro da parede da artéria, o endotélio.</div></div>
+  </div>
+  <div class="rows terms">
+    <div class="row"><div class="k">Luminografia</div><div class="v">Exame que mostra só a luz do vaso, onde corre o contraste, como a arteriografia.</div></div>
+    <div class="row"><div class="k">Primum non nocere</div><div class="v">“Primeiro, não fazer mal”: o princípio da ética médica.</div></div>
+  </div>
+  <div class="rows terms">
+    <div class="row"><div class="k">Reparo endovascular (EVAR)</div><div class="v">Tratamento do aneurisma de aorta com endoprótese pela femoral; EVAR é a sigla em inglês.</div></div>
+    <div class="row"><div class="k">Síndrome de Dunbar</div><div class="v">Compressão do tronco celíaco pelo ligamento do diafragma (ligamento arqueado mediano).</div></div>
+  </div>
+  <div class="rows terms">
+    <div class="row"><div class="k">Trombo mural</div><div class="v">Coágulo que forra a parede de dentro do aneurisma, formado pela turbulência.</div></div>
+  </div>
+  <div style="break-before: page">{{NOTAS}}</div>
+</section>
+
+</body></html>
