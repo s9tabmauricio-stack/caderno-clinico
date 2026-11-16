@@ -20,3 +20,4 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
+| Apostilas PASS aulas 4 e 7 (cannabis) | Claude | claude/pass-a4-a7 | pass-a4, pass-a7 | 16/11/2026 |
