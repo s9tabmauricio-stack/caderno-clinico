@@ -20,3 +20,4 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
+| Aula nova (Gastro 5, neoplasias pancreatobiliares) | Claude | `claude/busy-meitner-9v43hn` | `gastro-a5` | 16/11/2026 |
