@@ -20,4 +20,3 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
-| Conferir a apostila da gastro-a7 | Claude | claude/tender-heisenberg-b6vwlq | gastro-a7 (apostila) | 15/11/2026 |
