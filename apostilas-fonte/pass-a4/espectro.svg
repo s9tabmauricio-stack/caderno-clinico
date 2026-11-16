@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="478" height="150" viewBox="0 0 478 150" font-family="Inter">
+<rect x="20" y="30" width="438" height="10" rx="5" fill="#E8F0FE" stroke="#C3D8F8"/>
+<text x="20" y="21" font-size="8.5" fill="#6C6C70" text-anchor="start">Só canabidiol</text>
+<text x="458" y="21" font-size="8.5" fill="#6C6C70" text-anchor="end">Todos os canabinoides e terpenos</text>
+<circle cx="28" cy="35" r="7" fill="#0B5BD3" stroke="#fff" stroke-width="2"/>
+<polygon points="23,45 33,45 28,52" fill="#8AA9DF"/>
+<rect x="16.0" y="58" width="143.33333333333334" height="86" rx="10" fill="#FFFFFF" stroke="#C3D8F8"/>
+<text x="26.0" y="75" font-size="10" font-weight="600" fill="#16315C">Isolado</text>
+<text x="26.0" y="91.0" font-size="9" fill="#1F2933">Só o canabidiol. Todos os</text>
+<text x="26.0" y="103.5" font-size="9" fill="#1F2933">outros compostos da planta</text>
+<text x="26.0" y="116.0" font-size="9" fill="#1F2933">são removidos, inclusive</text>
+<text x="26.0" y="128.5" font-size="9" fill="#1F2933">terpenos e flavonoides.</text>
+<circle cx="239.0" cy="35" r="7" fill="#0B5BD3" stroke="#fff" stroke-width="2"/>
+<polygon points="234.0,45 244.0,45 239.0,52" fill="#8AA9DF"/>
+<rect x="167.33333333333334" y="58" width="143.33333333333334" height="86" rx="10" fill="#FFFFFF" stroke="#C3D8F8"/>
+<text x="177.33333333333334" y="75" font-size="10" font-weight="600" fill="#16315C">Amplo espectro</text>
+<text x="177.33333333333334" y="91.0" font-size="9" fill="#1F2933">Mistura do espectro</text>
+<text x="177.33333333333334" y="103.5" font-size="9" fill="#1F2933">completo com o canabidiol</text>
+<text x="177.33333333333334" y="116.0" font-size="9" fill="#1F2933">isolado: fica no meio do</text>
+<text x="177.33333333333334" y="128.5" font-size="9" fill="#1F2933">caminho.</text>
+<circle cx="450" cy="35" r="7" fill="#0B5BD3" stroke="#fff" stroke-width="2"/>
+<polygon points="445,45 455,45 450,52" fill="#8AA9DF"/>
+<rect x="318.6666666666667" y="58" width="143.33333333333334" height="86" rx="10" fill="#FFFFFF" stroke="#C3D8F8"/>
+<text x="328.6666666666667" y="75" font-size="10" font-weight="600" fill="#16315C">Espectro completo</text>
+<text x="328.6666666666667" y="91.0" font-size="9" fill="#1F2933">Todos os compostos da</text>
+<text x="328.6666666666667" y="103.5" font-size="9" fill="#1F2933">planta: canabinoides,</text>
+<text x="328.6666666666667" y="116.0" font-size="9" fill="#1F2933">terpenos, óleos essenciais e</text>
+<text x="328.6666666666667" y="128.5" font-size="9" fill="#1F2933">outros.</text>
+</svg>
