@@ -1,7 +1,7 @@
 'use client'
 
-import { useRef, useSyncExternalStore } from 'react'
-import { CHAVE_NOVIDADES, NOVIDADES } from '@/lib/novidades'
+import { useCallback, useRef, useSyncExternalStore } from 'react'
+import { CHAVE_NOVIDADES, dataNovidade, type Novidade } from '@/lib/novidades'
 
 // O que o aluno já viu fica guardado neste aparelho (lista de ids, em localStorage).
 const ouvintes = new Set<() => void>()
@@ -16,14 +16,10 @@ function vistas(): string[] {
     return []
   }
 }
-// Quantas novidades ainda não foram vistas (no servidor, nenhuma: a bolinha aparece só no aparelho)
-const naoVistas = () => {
-  const v = vistas()
-  return NOVIDADES.filter((n) => !v.includes(n.id)).length
-}
-function marcarVistas() {
+// Guarda os ids da lista atual (as apagadas saem da memória do aparelho)
+function marcarVistas(lista: Novidade[]) {
   try {
-    localStorage.setItem(CHAVE_NOVIDADES, JSON.stringify(NOVIDADES.map((n) => n.id)))
+    localStorage.setItem(CHAVE_NOVIDADES, JSON.stringify(lista.map((n) => n.id)))
   } catch {
     // aba anônima: a bolinha volta na próxima visita
   }
@@ -38,10 +34,15 @@ const sino = (
 )
 
 /** Sininho de Novidades ao lado da engrenagem; bolinha piscando até o aluno abrir. */
-export function Novidades() {
+export function Novidades({ lista }: { lista: Novidade[] }) {
+  // Quantas ainda não foram vistas (no servidor, nenhuma: a bolinha aparece só no aparelho)
+  const naoVistas = useCallback(() => {
+    const v = vistas()
+    return lista.filter((n) => !v.includes(n.id)).length
+  }, [lista])
   const novas = useSyncExternalStore(assinar, naoVistas, () => 0)
   const painel = useRef<HTMLDialogElement>(null)
-  if (NOVIDADES.length === 0) return null
+  if (lista.length === 0) return null
   return (
     <>
       <button
@@ -51,7 +52,7 @@ export function Novidades() {
         title="Novidades"
         onClick={() => {
           painel.current?.showModal()
-          marcarVistas()
+          marcarVistas(lista)
         }}
       >
         {sino}
@@ -66,9 +67,9 @@ export function Novidades() {
             </button>
           </div>
           <ul>
-            {NOVIDADES.map((n) => (
+            {lista.map((n) => (
               <li key={n.id}>
-                <span className="nov-data">{n.data}</span>
+                <span className="nov-data">{dataNovidade(n.criado_em)}</span>
                 <strong>{n.titulo}</strong>
                 <p>{n.texto}</p>
               </li>
