@@ -6,7 +6,7 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { Pagina, Voltar } from '@/components/Pagina'
 import { Icone } from '@/components/Icones'
-import { carregarProgresso, concluido, pendentes, sessao } from '@/lib/dados'
+import { carregarProgresso, pendentes, sessao } from '@/lib/dados'
 import { createClient } from '@/lib/supabase/server'
 import { fonteDaQuestao } from '@/lib/classificacao-questoes'
 
@@ -22,15 +22,16 @@ export default async function MateriaPage(props: PageProps<'/materia/[id]'>) {
   const { retorno } = await props.searchParams
   const origem = retornoDaMateria(retorno)
   const { supabase } = await sessao()
-  const [materia, aulas, progresso, materias, diaD, questoes] = await Promise.all([
+  const [materia, aulas, progresso, materias, diaD, questoes, progressoDiaD] = await Promise.all([
     supabase.from('materias').select('id, nome, descricao').eq('id', id).maybeSingle(),
     supabase.from('aulas').select('id, ordem, titulo, resumo, data_aula, professor').eq('materia_id', id).eq('publicada', true).order('ordem'),
     carregarProgresso(supabase),
     carregarMateriasPorProva(supabase),
     supabase.from('flashcards_dia_d').select('aula_id').like('aula_id', `${id}-a%`),
-    supabase.from('questoes_do_aluno').select('aula_id, prova, fonte').eq('materia_id', id).not('aula_id', 'is', null)
+    supabase.from('questoes_do_aluno').select('aula_id, prova, fonte, escolhida').eq('materia_id', id).not('aula_id', 'is', null)
       // só as que podem ser da FAG (com prova, ou material da turma); a conta exata é a do fonteDaQuestao
       .or('prova.not.is.null,fonte.ilike.*turma*,fonte.ilike.*guia de estudo*'),
+    supabase.from('progresso_dia_d').select('aula_id, fila, feitos').like('aula_id', `${id}-a%`),
   ])
   if (!materia.data) notFound()
   // Quantos flashcards Dia D cada aula tem (o botão só aparece nas aulas que têm)
@@ -38,8 +39,18 @@ export default async function MateriaPage(props: PageProps<'/materia/[id]'>) {
   for (const c of diaD.data ?? []) totalDiaD.set(c.aula_id, (totalDiaD.get(c.aula_id) ?? 0) + 1)
   // Quantas questões das Provas da FAG cada aula tem (o botão só aparece nas aulas que têm)
   const totalFag = new Map<string, number>()
+  const respondidasFag = new Map<string, number>()
   for (const q of questoes.data ?? [])
-    if (q.aula_id && fonteDaQuestao(q) === 'fag') totalFag.set(q.aula_id, (totalFag.get(q.aula_id) ?? 0) + 1)
+    if (q.aula_id && fonteDaQuestao(q) === 'fag') {
+      totalFag.set(q.aula_id, (totalFag.get(q.aula_id) ?? 0) + 1)
+      if (q.escolhida != null) respondidasFag.set(q.aula_id, (respondidasFag.get(q.aula_id) ?? 0) + 1)
+    }
+  // FastCardsGenius de cada aula: baralho fechado (fila vazia) conta tudo; senão, os marcados como "Sabia"
+  const feitosDiaD = new Map<string, number>()
+  for (const d of progressoDiaD.data ?? []) {
+    const total = totalDiaD.get(d.aula_id) ?? 0
+    feitosDiaD.set(d.aula_id, d.fila.length ? Math.min(d.feitos, total) : total)
+  }
 
   return (
     <Pagina larga pendentes={pendentes(progresso).hoje}>
@@ -59,6 +70,11 @@ export default async function MateriaPage(props: PageProps<'/materia/[id]'>) {
             const retornoMateria = `/materia/${id}${origem ? `?${new URLSearchParams({ retorno: origem })}` : ''}`
             const diaDAula = totalDiaD.get(a.id) ?? 0
             const fagAula = totalFag.get(a.id) ?? 0
+            // Porcentagem do Modo CRAZY (pedido do Mauricio, 17/11/2026): questões da FAG respondidas + FastCards feitos
+            const totalCrazy = fagAula + diaDAula
+            const pctCrazy = totalCrazy
+              ? Math.round((100 * ((respondidasFag.get(a.id) ?? 0) + (feitosDiaD.get(a.id) ?? 0))) / totalCrazy)
+              : 0
             const hrefAula = (aba: 'apostila' | 'questoes' | 'flashcards' | 'diad', extra: Record<string, string> = {}) =>
               `/aula/${a.id}?${new URLSearchParams({ aba, ...extra, retorno: retornoMateria })}`
             return (
@@ -77,7 +93,6 @@ export default async function MateriaPage(props: PageProps<'/materia/[id]'>) {
                     <span className="t">{a.titulo}</span>
                     {a.resumo && <span className="s">{a.resumo}</span>}
                   </span>
-                  <span className="pct">{p ? concluido([p]) : 0}%</span>
                   {Icone.seta}
                 </Link>
                 <nav
@@ -108,6 +123,7 @@ export default async function MateriaPage(props: PageProps<'/materia/[id]'>) {
                       <div className="materia-aula-faixa">
                         <span className="materia-aula-faixa-ponto" aria-hidden />
                         Modo CRAZY <span className="materia-aula-faixa-sub">· véspera da prova</span>
+                        <span className="materia-aula-faixa-pct" title="Questões da FAG respondidas e FastCards feitos">{pctCrazy}%</span>
                       </div>
                       <div className="materia-aula-acoes">
                         {fagAula > 0 && (
