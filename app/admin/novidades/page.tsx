@@ -5,7 +5,7 @@ import { AdminNovidades } from '@/components/AdminNovidades'
 import { chaveConfigurada, ehAdmin } from '@/lib/admin'
 import { sessao } from '@/lib/dados'
 import { dataNovidade, lerNovidades } from '@/lib/novidades'
-import { apagarNovidade } from './acoes'
+import { BotaoApagarNovidade } from '@/components/BotaoApagarNovidade'
 
 export const metadata: Metadata = { title: 'Novidades' }
 
@@ -42,12 +42,7 @@ export default async function AdminNovidadesPage() {
                         {dataNovidade(n.criado_em)} · {n.texto}
                       </span>
                     </span>
-                    <form action={apagarNovidade}>
-                      <input type="hidden" name="id" value={n.id} />
-                      <button className="pill" type="submit" aria-label={`Apagar a novidade ${n.titulo}`}>
-                        Apagar
-                      </button>
-                    </form>
+                    <BotaoApagarNovidade id={n.id} titulo={n.titulo} />
                   </div>
                 ))}
               </div>
