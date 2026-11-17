@@ -224,8 +224,8 @@ export function ApagarCardsDiaDaAula({ aulaId, total }: { aulaId: string; total:
     <Apagar
       acao={apagarCardsDiaDaAula}
       id={aulaId}
-      rotulo={total === 1 ? 'Apagar o card Dia D' : `Apagar os ${total} cards Dia D`}
-      aviso="Apaga todos os flashcards Dia D desta aula. Os flashcards normais e as questões ficam."
+      rotulo={total === 1 ? 'Apagar o card do FastCardsGenius' : `Apagar os ${total} cards do FastCardsGenius`}
+      aviso="Apaga todo o FastCardsGenius desta aula. Os flashcards normais e as questões ficam."
     />
   )
 }
