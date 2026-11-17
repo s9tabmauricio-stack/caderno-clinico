@@ -9,6 +9,7 @@ const destinos = [
   ['/admin', 'Alunos'],
   ['/admin/conteudo', 'Conteúdo'],
   ['/admin/agenda', 'Agenda da semana'],
+  ['/admin/novidades', 'Novidades'],
 ] as const
 
 export function NavegacaoAdmin() {

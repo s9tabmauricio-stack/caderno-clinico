@@ -7,6 +7,7 @@ import { Novidades } from './Novidades'
 import { RodapeLegal } from './RodapeLegal'
 import { carregarProgresso, pendentes as contarPendentes, sessao } from '@/lib/dados'
 import { ehAdmin } from '@/lib/admin'
+import { lerNovidades } from '@/lib/novidades'
 
 /** Recados da turma ainda não vistos (só conta para o administrador). */
 export async function recadosNovos() {
@@ -26,7 +27,12 @@ async function revisoesDeHoje() {
 // Sem `pendentes`, a própria moldura conta as revisões (as telas de administração não precisam calcular).
 // `larga`: telas de estudo, que no tablet deitado usam mais largura (o resto fica numa coluna só).
 export async function Pagina({ pendentes, larga, children }: { pendentes?: number; larga?: boolean; children: React.ReactNode }) {
-  const [novos, revisoes, { email }] = await Promise.all([recadosNovos(), pendentes ?? revisoesDeHoje(), sessao()])
+  const [novos, revisoes, { email }, novidades] = await Promise.all([
+    recadosNovos(),
+    pendentes ?? revisoesDeHoje(),
+    sessao(),
+    sessao().then(({ supabase }) => lerNovidades(supabase)),
+  ])
   return (
     <>
       <main className={`wrap${larga ? ' larga' : ''}`}>
@@ -40,7 +46,7 @@ export async function Pagina({ pendentes, larga, children }: { pendentes?: numbe
             </>
           )}
           <TemaRapido />
-          <Novidades />
+          <Novidades lista={novidades} />
           <Link className="avatar engrenagem" href="/perfil" aria-label="Configurações" title="Configurações">
             {Icone.engrenagem}
           </Link>

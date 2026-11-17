@@ -5,6 +5,7 @@
 -- Flashcards Dia D incluídos em 10/11/2026: migração 20261110010015_flashcards_dia_d.sql.
 -- Progresso do Dia D incluído em 10/11/2026: migração 20261110015525_progresso_dia_d.sql.
 -- Limite de aparelhos por conta incluído em 12/11/2026: migração 20261112120000_limite_aparelhos.sql.
+-- Novidades (sininho) incluídas em 17/11/2026: migração 20261117180000_novidades.sql.
 -- Suspensão individual aplicada em 03/11/2026: migração 20261103162543_suspensao_individual_flashcards.sql.
 --
 -- Para que serve: é a referência confiável de como o banco está montado
@@ -145,6 +146,16 @@ create table public.questoes (
   constraint questoes_aula_id_fkey FOREIGN KEY (aula_id) REFERENCES aulas(id) ON DELETE CASCADE,
   constraint questoes_materia_id_fkey FOREIGN KEY (materia_id) REFERENCES materias(id) ON DELETE CASCADE,
   constraint questoes_substituida_por_fkey FOREIGN KEY (substituida_por) REFERENCES questoes(id)
+);
+
+create table public.novidades (
+  id text default (gen_random_uuid())::text not null,
+  titulo text not null,
+  texto text not null,
+  criado_em timestamp with time zone default now() not null,
+  constraint novidades_pkey PRIMARY KEY (id),
+  constraint novidades_titulo_check CHECK (((char_length(btrim(titulo)) >= 1) AND (char_length(btrim(titulo)) <= 120))),
+  constraint novidades_texto_check CHECK (((char_length(btrim(texto)) >= 1) AND (char_length(btrim(texto)) <= 1000)))
 );
 
 create table public.recados (
@@ -310,6 +321,7 @@ CREATE INDEX historico_revisoes_aluno_idx ON public.historico_revisoes USING btr
 CREATE INDEX historico_revisoes_dia_idx ON public.historico_revisoes USING btree (revisada_em);
 CREATE INDEX questoes_aula_idx ON public.questoes USING btree (aula_id, ordem);
 CREATE INDEX questoes_materia_idx ON public.questoes USING btree (materia_id, tema);
+CREATE INDEX novidades_criado_idx ON public.novidades USING btree (criado_em DESC);
 CREATE INDEX recados_novos_idx ON public.recados USING btree (criado_em) WHERE (status = 'novo'::text);
 CREATE INDEX recados_questao_idx ON public.recados USING btree (questao_id, criado_em);
 CREATE INDEX recados_user_idx ON public.recados USING btree (user_id);
@@ -719,6 +731,7 @@ alter table public.flashcards enable row level security;
 alter table public.historico_respostas enable row level security;
 alter table public.historico_revisoes enable row level security;
 alter table public.materias enable row level security;
+alter table public.novidades enable row level security;
 alter table public.perfis enable row level security;
 alter table public.questoes enable row level security;
 alter table public.recados enable row level security;
@@ -734,6 +747,7 @@ create policy "Apagar o próprio histórico" on public.historico_respostas as pe
 create policy "Ver o próprio histórico" on public.historico_respostas as permissive for select to public using ((( SELECT auth.uid() AS uid) = user_id));
 create policy "Ver o próprio histórico de revisões" on public.historico_revisoes as permissive for select to public using ((( SELECT auth.uid() AS uid) = user_id));
 create policy "Alunos leem matérias" on public.materias as permissive for select to authenticated using (true);
+create policy "Turma lê as novidades" on public.novidades as permissive for select to authenticated using (true);
 create policy "Editar o próprio perfil" on public.perfis as permissive for update to authenticated using ((( SELECT auth.uid() AS uid) = id)) with check ((( SELECT auth.uid() AS uid) = id));
 create policy "Ver o próprio perfil" on public.perfis as permissive for select to authenticated using ((( SELECT auth.uid() AS uid) = id));
 create policy "Alunos leem questões" on public.questoes as permissive for select to authenticated using (true);
@@ -765,6 +779,9 @@ grant delete, insert, references, select, trigger, truncate, update on
   public.flashcards_do_aluno, public.progresso_aulas, public.progresso_materias,
   public.progresso_temas, public.progresso_tentativas, public.questoes_do_aluno
   to anon, authenticated;
+
+-- Exceção: novidades só para ler (quem escreve é a Administração, com a chave secreta).
+grant select on public.novidades to authenticated;
 
 -- Exceção: perfis sem update geral; o aluno só muda nome e grupo.
 grant delete, insert, references, select, trigger, truncate on public.perfis to anon, authenticated;
