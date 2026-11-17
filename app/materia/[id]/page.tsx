@@ -8,6 +8,7 @@ import { Pagina, Voltar } from '@/components/Pagina'
 import { Icone } from '@/components/Icones'
 import { carregarProgresso, concluido, pendentes, sessao } from '@/lib/dados'
 import { createClient } from '@/lib/supabase/server'
+import { fonteDaQuestao } from '@/lib/classificacao-questoes'
 
 export async function generateMetadata(props: PageProps<'/materia/[id]'>): Promise<Metadata> {
   const { id } = await props.params
@@ -21,17 +22,24 @@ export default async function MateriaPage(props: PageProps<'/materia/[id]'>) {
   const { retorno } = await props.searchParams
   const origem = retornoDaMateria(retorno)
   const { supabase } = await sessao()
-  const [materia, aulas, progresso, materias, diaD] = await Promise.all([
+  const [materia, aulas, progresso, materias, diaD, questoes] = await Promise.all([
     supabase.from('materias').select('id, nome, descricao').eq('id', id).maybeSingle(),
     supabase.from('aulas').select('id, ordem, titulo, resumo, data_aula, professor').eq('materia_id', id).eq('publicada', true).order('ordem'),
     carregarProgresso(supabase),
     carregarMateriasPorProva(supabase),
     supabase.from('flashcards_dia_d').select('aula_id').like('aula_id', `${id}-a%`),
+    supabase.from('questoes_do_aluno').select('aula_id, prova, fonte').eq('materia_id', id).not('aula_id', 'is', null)
+      // só as que podem ser da FAG (com prova, ou material da turma); a conta exata é a do fonteDaQuestao
+      .or('prova.not.is.null,fonte.ilike.*turma*,fonte.ilike.*guia de estudo*'),
   ])
   if (!materia.data) notFound()
   // Quantos flashcards Dia D cada aula tem (o botão só aparece nas aulas que têm)
   const totalDiaD = new Map<string, number>()
   for (const c of diaD.data ?? []) totalDiaD.set(c.aula_id, (totalDiaD.get(c.aula_id) ?? 0) + 1)
+  // Quantas questões das Provas da FAG cada aula tem (o botão só aparece nas aulas que têm)
+  const totalFag = new Map<string, number>()
+  for (const q of questoes.data ?? [])
+    if (q.aula_id && fonteDaQuestao(q) === 'fag') totalFag.set(q.aula_id, (totalFag.get(q.aula_id) ?? 0) + 1)
 
   return (
     <Pagina larga pendentes={pendentes(progresso).hoje}>
@@ -50,8 +58,9 @@ export default async function MateriaPage(props: PageProps<'/materia/[id]'>) {
             const vencidos = p ? pendentes([p]).vencidos : 0
             const retornoMateria = `/materia/${id}${origem ? `?${new URLSearchParams({ retorno: origem })}` : ''}`
             const diaDAula = totalDiaD.get(a.id) ?? 0
-            const hrefAula = (aba: 'apostila' | 'questoes' | 'flashcards' | 'diad') =>
-              `/aula/${a.id}?${new URLSearchParams({ aba, retorno: retornoMateria })}`
+            const fagAula = totalFag.get(a.id) ?? 0
+            const hrefAula = (aba: 'apostila' | 'questoes' | 'flashcards' | 'diad', extra: Record<string, string> = {}) =>
+              `/aula/${a.id}?${new URLSearchParams({ aba, ...extra, retorno: retornoMateria })}`
             return (
               <article key={a.id} className="materia-aula">
                 <Link className="row materia-aula-topo" href={hrefAula('apostila')}>
@@ -71,7 +80,7 @@ export default async function MateriaPage(props: PageProps<'/materia/[id]'>) {
                   <span className="pct">{p ? concluido([p]) : 0}%</span>
                   {Icone.seta}
                 </Link>
-                <nav className={`materia-aula-acoes${diaDAula ? ' com-dia-d' : ''}`} aria-label={`Materiais da aula ${a.ordem}: ${a.titulo}`}>
+                <nav className="materia-aula-acoes" aria-label={`Materiais da aula ${a.ordem}: ${a.titulo}`}>
                   <Link className="materia-aula-acao" href={hrefAula('apostila')}>
                     <span className="materia-aula-acao-rotulo">{Icone.estudar}<span>Apostila</span></span>
                   </Link>
@@ -82,6 +91,11 @@ export default async function MateriaPage(props: PageProps<'/materia/[id]'>) {
                     <span className="materia-aula-acao-rotulo">{Icone.cards}<span>Flashcards <span className="materia-aula-quantidade">· {p?.total_cards ?? 0}</span></span></span>
                     {vencidos > 0 && <span className="chip revisar">{vencidos} para revisar</span>}
                   </Link>
+                  {fagAula > 0 && (
+                    <Link className="materia-aula-acao" href={hrefAula('questoes', { fonte: 'fag' })}>
+                      <span className="materia-aula-acao-rotulo">{Icone.arquivo}<span>Provas da FAG <span className="materia-aula-quantidade">· {fagAula}</span></span></span>
+                    </Link>
+                  )}
                   {diaDAula > 0 && (
                     <Link className="materia-aula-acao" href={hrefAula('diad')}>
                       <span className="materia-aula-acao-rotulo">{Icone.agenda}<span>FastCards<wbr />Genius <span className="materia-aula-quantidade">· {diaDAula}</span></span></span>
