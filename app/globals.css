@@ -1427,3 +1427,27 @@ h1.big{background:var(--metal-titulo);-webkit-background-clip:text;background-cl
 .grades.grades-2{grid-template-columns:repeat(2,minmax(0,1fr))}
 .diad-ajuda{margin-top:12px;font-size:12.5px;font-weight:600;color:var(--muted)}
 .counts.counts-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+
+/* Novidades: sininho ao lado da engrenagem (components/Novidades.tsx, lista em lib/novidades.ts).
+   Com novidade não vista, selo azul com o número e um anel pulsando até o aluno abrir. */
+.atalhos-globais .novidades{position:relative;flex-shrink:0;padding:0}
+.novidades svg{width:21px;height:21px;fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.novidades .bd{position:absolute;top:-4px;right:-4px;min-width:20px;height:20px;padding:0 5px;border-radius:10px;font-size:11.5px;font-weight:800;display:grid;place-items:center;font-variant-numeric:tabular-nums}
+@media (prefers-reduced-motion:no-preference){
+  .novidades.tem .bd{animation:nov-pulsa 1.6s ease-out infinite}
+  .novidades.tem svg{animation:nov-balanca 2.4s ease-in-out infinite;transform-origin:50% 15%}
+}
+@keyframes nov-pulsa{0%{box-shadow:0 0 0 2px var(--bg),0 0 0 2px var(--accent)}70%{box-shadow:0 0 0 2px var(--bg),0 0 0 10px transparent}100%{box-shadow:0 0 0 2px var(--bg),0 0 0 10px transparent}}
+@keyframes nov-balanca{0%,60%,100%{transform:rotate(0)}65%{transform:rotate(14deg)}72%{transform:rotate(-12deg)}79%{transform:rotate(8deg)}86%{transform:rotate(-4deg)}}
+.nov-painel{border:0;padding:0;background:transparent;max-width:min(440px,calc(100vw - 32px));width:100%;color:var(--text)}
+.nov-painel::backdrop{background:rgba(0,0,0,.5);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.nov-caixa{background:var(--bg);background-image:linear-gradient(var(--vidro),var(--vidro));box-shadow:var(--vidro-sombra);border-radius:var(--r-lg,22px);padding:18px 18px 8px;max-height:80vh;overflow:auto}
+.nov-topo{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
+.nov-topo h2{margin:0;font-size:20px;font-weight:700}
+.nov-fechar{width:36px;height:36px;border:0;border-radius:50%;background:var(--field);color:var(--text);font-size:22px;line-height:1;cursor:pointer}
+.nov-painel ul{list-style:none;margin:0;padding:0}
+.nov-painel li{padding:12px 0;border-top:1px solid var(--line)}
+.nov-painel li:first-child{border-top:0}
+.nov-painel li strong{display:block;font-size:15.5px;margin:2px 0 4px}
+.nov-painel li p{margin:0;color:var(--muted);font-size:14px;line-height:1.45}
+.nov-data{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}

@@ -3,6 +3,7 @@ import { TabBar } from './TabBar'
 import { NavegacaoAdmin } from './NavegacaoAdmin'
 import { Icone } from './Icones'
 import { TemaRapido } from './TemaEscolha'
+import { Novidades } from './Novidades'
 import { RodapeLegal } from './RodapeLegal'
 import { carregarProgresso, pendentes as contarPendentes, sessao } from '@/lib/dados'
 import { ehAdmin } from '@/lib/admin'
@@ -21,7 +22,7 @@ async function revisoesDeHoje() {
   return contarPendentes(await carregarProgresso(supabase)).hoje
 }
 
-// Moldura comum das telas logadas: Auto | Dia | Noite e engrenagem do perfil no canto, conteúdo e barra de abas.
+// Moldura comum das telas logadas: Auto | Dia | Noite, sininho de Novidades e engrenagem do perfil no canto, conteúdo e barra de abas.
 // Sem `pendentes`, a própria moldura conta as revisões (as telas de administração não precisam calcular).
 // `larga`: telas de estudo, que no tablet deitado usam mais largura (o resto fica numa coluna só).
 export async function Pagina({ pendentes, larga, children }: { pendentes?: number; larga?: boolean; children: React.ReactNode }) {
@@ -39,6 +40,7 @@ export async function Pagina({ pendentes, larga, children }: { pendentes?: numbe
             </>
           )}
           <TemaRapido />
+          <Novidades />
           <Link className="avatar engrenagem" href="/perfil" aria-label="Configurações" title="Configurações">
             {Icone.engrenagem}
           </Link>
