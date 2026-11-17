@@ -80,26 +80,48 @@ export default async function MateriaPage(props: PageProps<'/materia/[id]'>) {
                   <span className="pct">{p ? concluido([p]) : 0}%</span>
                   {Icone.seta}
                 </Link>
-                <nav className="materia-aula-acoes" aria-label={`Materiais da aula ${a.ordem}: ${a.titulo}`}>
-                  <Link className="materia-aula-acao" href={hrefAula('apostila')}>
-                    <span className="materia-aula-acao-rotulo">{Icone.estudar}<span>Apostila</span></span>
-                  </Link>
-                  <Link className="materia-aula-acao" href={hrefAula('questoes')}>
-                    <span className="materia-aula-acao-rotulo">{Icone.questoes}<span>Questões <span className="materia-aula-quantidade">· {p?.total_questoes ?? 0}</span></span></span>
-                  </Link>
-                  <Link className="materia-aula-acao" href={hrefAula('flashcards')}>
-                    <span className="materia-aula-acao-rotulo">{Icone.cards}<span>Flashcards <span className="materia-aula-quantidade">· {p?.total_cards ?? 0}</span></span></span>
-                    {vencidos > 0 && <span className="chip revisar">{vencidos} para revisar</span>}
-                  </Link>
-                  {fagAula > 0 && (
-                    <Link className="materia-aula-acao" href={hrefAula('questoes', { fonte: 'fag' })}>
-                      <span className="materia-aula-acao-rotulo">{Icone.arquivo}<span>Provas da FAG <span className="materia-aula-quantidade">· {fagAula}</span></span></span>
-                    </Link>
-                  )}
-                  {diaDAula > 0 && (
-                    <Link className="materia-aula-acao" href={hrefAula('diad')}>
-                      <span className="materia-aula-acao-rotulo">{Icone.agenda}<span>FastCards<wbr />Genius <span className="materia-aula-quantidade">· {diaDAula}</span></span></span>
-                    </Link>
+                <nav
+                  className={`materia-aula-modos${fagAula || diaDAula ? ' com-crazy' : ''}`}
+                  aria-label={`Materiais da aula ${a.ordem}: ${a.titulo}`}
+                >
+                  {/* Estudo do dia a dia (faixa verde) e modo CRAZY, a véspera da prova (faixa vermelha): pedido do Mauricio, 17/11/2026 */}
+                  <div className="materia-aula-modo diario">
+                    <div className="materia-aula-faixa">
+                      <span className="materia-aula-faixa-ponto" aria-hidden />
+                      Estudo diário <span className="materia-aula-faixa-sub">· no ritmo das aulas</span>
+                    </div>
+                    <div className="materia-aula-acoes">
+                      <Link className="materia-aula-acao" href={hrefAula('apostila')}>
+                        <span className="materia-aula-acao-rotulo">{Icone.estudar}<span>Apostila</span></span>
+                      </Link>
+                      <Link className="materia-aula-acao" href={hrefAula('questoes')}>
+                        <span className="materia-aula-acao-rotulo">{Icone.questoes}<span>Questões <span className="materia-aula-quantidade">· {p?.total_questoes ?? 0}</span></span></span>
+                      </Link>
+                      <Link className="materia-aula-acao" href={hrefAula('flashcards')}>
+                        <span className="materia-aula-acao-rotulo">{Icone.cards}<span>Flashcards <span className="materia-aula-quantidade">· {p?.total_cards ?? 0}</span></span></span>
+                        {vencidos > 0 && <span className="chip revisar">{vencidos} para revisar</span>}
+                      </Link>
+                    </div>
+                  </div>
+                  {(fagAula > 0 || diaDAula > 0) && (
+                    <div className="materia-aula-modo crazy">
+                      <div className="materia-aula-faixa">
+                        <span className="materia-aula-faixa-ponto" aria-hidden />
+                        Modo CRAZY <span className="materia-aula-faixa-sub">· véspera da prova</span>
+                      </div>
+                      <div className="materia-aula-acoes">
+                        {fagAula > 0 && (
+                          <Link className="materia-aula-acao" href={hrefAula('questoes', { fonte: 'fag' })}>
+                            <span className="materia-aula-acao-rotulo">{Icone.arquivo}<span>Provas da FAG <span className="materia-aula-quantidade">· {fagAula}</span></span></span>
+                          </Link>
+                        )}
+                        {diaDAula > 0 && (
+                          <Link className="materia-aula-acao" href={hrefAula('diad')}>
+                            <span className="materia-aula-acao-rotulo">{Icone.agenda}<span>FastCards<wbr />Genius <span className="materia-aula-quantidade">· {diaDAula}</span></span></span>
+                          </Link>
+                        )}
+                      </div>
+                    </div>
                   )}
                 </nav>
               </article>

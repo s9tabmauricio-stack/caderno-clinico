@@ -69,7 +69,17 @@ button.row:hover{background:var(--card-2)}
 .materia-aula-numero{flex:none;display:flex;flex-direction:column;align-items:center;gap:4px;min-width:40px}
 .materia-aula-data{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}
 .materia-aula-professor{display:block;margin-bottom:2px;font-size:13px;font-weight:500;color:var(--accent)}
-.materia-aula-acoes{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);border-top:1px solid var(--line-2)}
+.materia-aula-modos{display:grid;grid-template-columns:minmax(0,1fr)}
+.materia-aula-modos.com-crazy{grid-template-columns:minmax(0,3fr) minmax(0,2fr)}
+.materia-aula-modo{display:flex;flex-direction:column;min-width:0}
+.materia-aula-faixa{display:flex;align-items:center;gap:7px;padding:6px 14px;font-size:11px;font-weight:800;letter-spacing:.09em;text-transform:uppercase}
+.materia-aula-faixa-sub{font-size:12px;font-weight:600;letter-spacing:0;text-transform:none;opacity:.85}
+.materia-aula-faixa-ponto{width:7px;height:7px;border-radius:50%;background:currentColor;box-shadow:0 0 8px currentColor}
+.materia-aula-modo.diario .materia-aula-faixa{background:var(--ok-soft);color:var(--ok);border-top:3px solid var(--ok)}
+.materia-aula-modo.crazy .materia-aula-faixa{background:var(--bad-soft);color:var(--bad-txt);border-top:3px solid var(--bad)}
+.materia-aula-modo.crazy{border-left:1px solid var(--line-2)}
+.materia-aula-modo.crazy .materia-aula-acao{color:var(--bad-txt)}
+.materia-aula-acoes{flex:1;display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr)}
 .materia-aula-acao{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;align-content:center;gap:4px 8px;min-width:0;min-height:48px;padding:9px 6px;color:var(--accent);font-size:14px;font-weight:600;text-align:center}
 .materia-aula-acao+.materia-aula-acao{border-left:1px solid var(--line-2)}
 .materia-aula-acao-rotulo{display:inline-flex;align-items:center;justify-content:center;gap:6px}
@@ -79,6 +89,9 @@ button.row:hover{background:var(--card-2)}
 .materia-aula-acao:hover .materia-aula-acao-rotulo{text-decoration:underline;text-underline-offset:3px}
 @media (max-width:599px){
   .materia-aula-topo{gap:10px;padding-inline:12px}
+  .materia-aula-modos.com-crazy{grid-template-columns:minmax(0,1fr)}
+  .materia-aula-modo.crazy{border-left:0}
+  .materia-aula-faixa-sub{display:none}
   .materia-aula-acao{font-size:12px;flex-direction:column;flex-wrap:nowrap}
   .materia-aula-acao-rotulo{flex-direction:column;gap:3px}
   .materia-aula-quantidade{display:block}
