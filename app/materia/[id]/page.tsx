@@ -84,7 +84,7 @@ export default async function MateriaPage(props: PageProps<'/materia/[id]'>) {
                   </Link>
                   {diaDAula > 0 && (
                     <Link className="materia-aula-acao" href={hrefAula('diad')}>
-                      <span className="materia-aula-acao-rotulo">{Icone.agenda}<span>Dia D <span className="materia-aula-quantidade">· {diaDAula}</span></span></span>
+                      <span className="materia-aula-acao-rotulo">{Icone.agenda}<span>FastCards<wbr />Genius <span className="materia-aula-quantidade">· {diaDAula}</span></span></span>
                     </Link>
                   )}
                 </nav>

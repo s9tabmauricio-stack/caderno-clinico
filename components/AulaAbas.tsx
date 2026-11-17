@@ -98,7 +98,7 @@ export function AulaAbas({
     ['questoes', 'Questões'],
     ['flashcards', 'Flashcards'],
   ]
-  if (cardsDiaD.length) abas.push(['diad', <>Flashcards <span className="nw">Dia D</span></>])
+  if (cardsDiaD.length) abas.push(['diad', <>FastCards<wbr />Genius</>])
   // Rótulo de cada questão da aula (ex.: "P2 · nº 10"), mostrado no card do Dia D que ajuda nela
   const rotulosQuestoes = Object.fromEntries(questoes.map((q) => [q.id, q.fonte ?? q.prova ?? '']))
 

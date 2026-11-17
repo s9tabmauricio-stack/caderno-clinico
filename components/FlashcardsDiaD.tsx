@@ -44,7 +44,7 @@ export function FlashcardsDiaD({ aulaId, userId, cards, progresso: inicial, rotu
       const { error } = await supabase
         .from('progresso_dia_d')
         .upsert({ user_id: userId, aula_id: aulaId, ...p, atualizado_em: new Date().toISOString() }, { onConflict: 'user_id,aula_id' })
-      setFalhaSalvar(error ? 'Não deu para guardar o seu progresso do Dia D. Confira sua internet; ele fica guardado na próxima resposta.' : '')
+      setFalhaSalvar(error ? 'Não deu para guardar o seu progresso do FastCardsGenius. Confira sua internet; ele fica guardado na próxima resposta.' : '')
     })
   }
 
@@ -85,7 +85,7 @@ export function FlashcardsDiaD({ aulaId, userId, cards, progresso: inicial, rotu
     return () => window.removeEventListener('keydown', tecla)
   })
 
-  if (!cards.length) return <p className="vazio">Esta aula ainda não tem flashcards do Dia D.</p>
+  if (!cards.length) return <p className="vazio">Esta aula ainda não tem FastCardsGenius.</p>
 
   const aviso = falhaSalvar && (
     <div className="erro-salvar" role="alert">
@@ -99,7 +99,7 @@ export function FlashcardsDiaD({ aulaId, userId, cards, progresso: inicial, rotu
     return (
       <div className="done">
         <div className="done-ic">{Icone.certo}</div>
-        <h2>Dia D fechado</h2>
+        <h2>FastCardsGenius fechado</h2>
         <p>
           Você passou pelos {sessao.feitos} {plural(sessao.feitos, 'card', 'cards')}
           {errados.length > 0
@@ -113,7 +113,7 @@ export function FlashcardsDiaD({ aulaId, userId, cards, progresso: inicial, rotu
             </button>
           )}
           <button className="btn ghost" onClick={() => setAberto(false)}>
-            Voltar ao Dia D
+            Voltar ao FastCardsGenius
           </button>
         </div>
         {irParaQuestoes && (
@@ -147,7 +147,7 @@ export function FlashcardsDiaD({ aulaId, userId, cards, progresso: inicial, rotu
             </button>
           </div>
         </div>
-        <div className="pbar" role="progressbar" aria-label="Progresso do Dia D" aria-valuenow={progresso} aria-valuemin={0} aria-valuemax={100}>
+        <div className="pbar" role="progressbar" aria-label="Progresso do FastCardsGenius" aria-valuenow={progresso} aria-valuemin={0} aria-valuemax={100}>
           <span style={{ width: `${progresso}%` }} />
         </div>
         <div
@@ -155,7 +155,7 @@ export function FlashcardsDiaD({ aulaId, userId, cards, progresso: inicial, rotu
           onClick={virado ? undefined : () => setVirado(true)}
           data-act={virado ? undefined : 'virar'}
         >
-          <div className="side">Dia D · Provas da FAG</div>
+          <div className="side">FastCardsGenius · Provas da FAG</div>
           <div className="front">{card.frente}</div>
           {virado ? (
             <>
@@ -218,7 +218,7 @@ export function FlashcardsDiaD({ aulaId, userId, cards, progresso: inicial, rotu
         ) : progresso ? (
           <>
             <button className="btn wide" onClick={abrir}>
-              Ver como fechei o Dia D
+              Ver como fechei o FastCardsGenius
             </button>
             <button className="btn ghost wide" onClick={() => comecar(cards.map((c) => c.id))}>
               Estudar os {cards.length} {plural(cards.length, 'card', 'cards')} de novo
@@ -226,12 +226,12 @@ export function FlashcardsDiaD({ aulaId, userId, cards, progresso: inicial, rotu
           </>
         ) : (
           <button className="btn wide" onClick={() => comecar(cards.map((c) => c.id))}>
-            Estudar os {cards.length} {plural(cards.length, 'card', 'cards')} do Dia D
+            Estudar os {cards.length} {plural(cards.length, 'card', 'cards')} do FastCardsGenius
           </button>
         )}
       </div>
       {aviso}
-      <div className="sec">Cards do Dia D</div>
+      <div className="sec">Cards do FastCardsGenius</div>
       <div className="group">
         {cards.map((c) => (
           <div key={c.id} className="row static">

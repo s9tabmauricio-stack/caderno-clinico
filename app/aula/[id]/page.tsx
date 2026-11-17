@@ -43,7 +43,7 @@ export default async function AulaPage(props: PageProps<'/aula/[id]'>) {
   if (!aula.data) notFound()
   if (questoes.error) throw new Error(`Não foi possível carregar as questões: ${questoes.error.message}`)
   if (cards.error) throw new Error(`Não foi possível carregar os flashcards: ${cards.error.message}`)
-  if (diaD.error) throw new Error(`Não foi possível carregar os flashcards do Dia D: ${diaD.error.message}`)
+  if (diaD.error) throw new Error(`Não foi possível carregar os cards do FastCardsGenius: ${diaD.error.message}`)
 
   // Link temporário (1 hora) para o PDF da apostila, se já tiver sido enviado
   let pdfUrl: string | null = null

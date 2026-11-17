@@ -53,7 +53,7 @@ export default async function EditarAulaPage(props: PageProps<'/admin/conteudo/a
         <p className="vazio">Esta aula ainda não tem flashcards.</p>
       )}
 
-      <div className="sec">Flashcards Dia D ({cardsDiaD?.length ?? 0})</div>
+      <div className="sec">FastCardsGenius ({cardsDiaD?.length ?? 0})</div>
       {cardsDiaD?.length ? (
         <div className="ed-lista">
           <div className="ed-bloco">
@@ -61,11 +61,11 @@ export default async function EditarAulaPage(props: PageProps<'/admin/conteudo/a
             <ApagarCardsDiaDaAula aulaId={aula.id} total={cardsDiaD.length} />
           </div>
           {cardsDiaD.map((c: { id: string; frente: string; verso: string }, i: number) => (
-            <EditorCard key={c.id} card={c} n={i + 1} aviso="Apaga este card do Dia D." />
+            <EditorCard key={c.id} card={c} n={i + 1} aviso="Apaga este card do FastCardsGenius." />
           ))}
         </div>
       ) : (
-        <p className="vazio">Esta aula ainda não tem flashcards Dia D.</p>
+        <p className="vazio">Esta aula ainda não tem FastCardsGenius.</p>
       )}
     </Pagina>
   )

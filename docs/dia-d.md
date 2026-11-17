@@ -1,4 +1,6 @@
-# Flashcards Dia D
+# FastCardsGenius (antes "Flashcards Dia D")
+
+Nome na tela desde 17/11/2026 (pedido do Mauricio): **FastCardsGenius**. No código, no banco e nos scripts o nome continua `dia_d` / `diad` / `dia-d` (não renomear: tabelas e progresso dos alunos dependem disso).
 
 Regra do Mauricio (10/11/2026): cada aula pode ter uma 4ª aba, **Flashcards Dia D**, ao lado de Apostila | Questões | Flashcards. É o baralho de véspera da prova: os cards ensinam o que é preciso para resolver **todas as questões das Provas da FAG** da aula (o grupo "Provas da FAG" da barra de fonte: P1, P2, P2 de outras turmas, exame e material da turma).
 
