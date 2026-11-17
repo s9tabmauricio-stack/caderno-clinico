@@ -22,3 +22,4 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 |---|---|---|---|---|
 | Flashcards da pass-a6 | Claude | claude/happy-darwin-07h2c3 | pass-a6 (flashcards) | 16/11/2026 |
 | Enunciado da questão ocupando a largura toda e justificado | Claude | claude/beautiful-brahmagupta-dxqt1c | app/globals.css (.qtext) | 17/11/2026 |
+| Novidades: quebra de linha e horário | Claude | claude/zealous-gates-eaqjaf | sininho (Novidades) | 17/11/2026 |
