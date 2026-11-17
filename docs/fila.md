@@ -21,5 +21,4 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
 | Flashcards da pass-a6 | Claude | claude/happy-darwin-07h2c3 | pass-a6 (flashcards) | 16/11/2026 |
-| Questões de prova (PDF Banco Gastro: neoplasias pancreatobiliares, cirrose, intestino) | Claude | claude/zealous-gates-eaqjaf | gastro-a5, gastro-a6, gastro-a7 (questões) | 17/11/2026 |
 | Enunciado da questão ocupando a largura toda e justificado | Claude | claude/beautiful-brahmagupta-dxqt1c | app/globals.css (.qtext) | 17/11/2026 |
