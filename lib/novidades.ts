@@ -13,5 +13,10 @@ export async function lerNovidades(supabase: SupabaseClient, limite = 15): Promi
   return data ?? []
 }
 
-export const dataNovidade = (iso: string) =>
-  new Intl.DateTimeFormat('pt-BR', { day: '2-digit', month: '2-digit', year: 'numeric', timeZone: 'America/Sao_Paulo' }).format(new Date(iso))
+/** Data e hora de Brasília: "17/11/2026 · 10:33". */
+export const dataNovidade = (iso: string) => {
+  const d = new Date(iso)
+  const dia = new Intl.DateTimeFormat('pt-BR', { day: '2-digit', month: '2-digit', year: 'numeric', timeZone: 'America/Sao_Paulo' }).format(d)
+  const hora = new Intl.DateTimeFormat('pt-BR', { hour: '2-digit', minute: '2-digit', timeZone: 'America/Sao_Paulo' }).format(d)
+  return `${dia} · ${hora}`
+}

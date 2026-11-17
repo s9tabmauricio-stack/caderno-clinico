@@ -1453,5 +1453,5 @@ h1.big{background:var(--metal-titulo);-webkit-background-clip:text;background-cl
 .nov-painel li{padding:12px 0;border-top:1px solid var(--line)}
 .nov-painel li:first-child{border-top:0}
 .nov-painel li strong{display:block;font-size:15.5px;margin:2px 0 4px}
-.nov-painel li p{margin:0;color:var(--muted);font-size:14px;line-height:1.45}
+.nov-painel li p{margin:0;color:var(--muted);font-size:14px;line-height:1.45;white-space:pre-line}
 .nov-data{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
