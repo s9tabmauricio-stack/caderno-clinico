@@ -1275,8 +1275,9 @@ h1.big{background:var(--metal-titulo);-webkit-background-clip:text;background-cl
 .lead,h1.big{overflow-wrap:anywhere}
 .row .t,.painel-a .t,.ed-q summary .t{line-height:1.5}
 .row .s,.row .s2{margin-top:4px;line-height:1.5}
-.qtext,.opt .ot,.oexp{text-align:left}
-.qtext{max-width:70ch;line-height:1.7}
+.opt .ot,.oexp{text-align:left}
+/* Enunciado na largura toda do cartão e justificado (pedido do Mauricio, 17/11/2026) */
+.qtext{line-height:1.7;text-align:justify;hyphens:auto;-webkit-hyphens:auto}
 .opt .ot{line-height:1.6}
 .flash{padding:var(--espaco-secao) var(--espaco-card)}
 .flash .verso{text-align:left;line-height:1.7}
