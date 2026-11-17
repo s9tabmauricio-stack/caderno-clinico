@@ -46,10 +46,12 @@ export async function Pagina({ pendentes, larga, children }: { pendentes?: numbe
             </>
           )}
           <TemaRapido />
-          <Novidades lista={novidades} />
-          <Link className="avatar engrenagem" href="/perfil" aria-label="Configurações" title="Configurações">
-            {Icone.engrenagem}
-          </Link>
+          <span className="atalhos-par">
+            <Novidades lista={novidades} />
+            <Link className="avatar engrenagem" href="/perfil" aria-label="Configurações" title="Configurações">
+              {Icone.engrenagem}
+            </Link>
+          </span>
         </nav>
         {ehAdmin(email) && <NavegacaoAdmin />}
         <div className="view">{children}</div>
