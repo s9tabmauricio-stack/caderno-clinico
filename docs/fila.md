@@ -22,3 +22,4 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 |---|---|---|---|---|
 | Flashcards da pass-a6 | Claude | claude/happy-darwin-07h2c3 | pass-a6 (flashcards) | 16/11/2026 |
 | Questões de prova (PDF Banco Gastro: neoplasias pancreatobiliares, cirrose, intestino) | Claude | claude/zealous-gates-eaqjaf | gastro-a5, gastro-a6, gastro-a7 (questões) | 17/11/2026 |
+| Novidades escritas pela Administração | Claude | claude/kind-euler-wf9ahn | `app/admin/novidades` (novo), `components/Novidades.tsx`, `components/Pagina.tsx`, `components/NavegacaoAdmin.tsx`, `lib/novidades.ts`, tabela `novidades` (nova) | 17/11/2026 |
