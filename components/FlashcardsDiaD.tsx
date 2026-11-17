@@ -159,7 +159,7 @@ export function FlashcardsDiaD({ aulaId, userId, cards, progresso: inicial, rotu
           <div className="front">{card.frente}</div>
           {virado ? (
             <>
-              <div className="verso">{card.verso}</div>
+              <div className="verso verso-centro">{card.verso}</div>
               {ajuda && <div className="diad-ajuda">Ajuda na questão {ajuda}</div>}
             </>
           ) : (

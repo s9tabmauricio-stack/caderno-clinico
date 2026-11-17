@@ -1279,6 +1279,7 @@ h1.big{background:var(--metal-titulo);-webkit-background-clip:text;background-cl
 .opt .ot{line-height:1.6}
 .flash{padding:var(--espaco-secao) var(--espaco-card)}
 .flash .verso{text-align:left;line-height:1.7}
+.flash .verso.verso-centro{text-align:center} /* FastCardsGenius: resposta centralizada (pedido do Mauricio, 17/11/2026) */
 .flash .verso,.flash .tap{max-width:65ch}
 .perf-h,.sess-top{flex-wrap:wrap;gap:8px 16px}
 .perf-h .t{min-width:0;overflow-wrap:anywhere}
