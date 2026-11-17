@@ -74,6 +74,7 @@ button.row:hover{background:var(--card-2)}
 .materia-aula-modo{display:flex;flex-direction:column;min-width:0}
 .materia-aula-faixa{display:flex;align-items:center;gap:7px;padding:6px 14px;font-size:11px;font-weight:800;letter-spacing:.09em;text-transform:uppercase}
 .materia-aula-faixa-sub{font-size:12px;font-weight:600;letter-spacing:0;text-transform:none;opacity:.85}
+.materia-aula-faixa-pct{margin-left:auto;font-size:13px;font-weight:800;letter-spacing:0;font-variant-numeric:tabular-nums}
 .materia-aula-faixa-ponto{width:7px;height:7px;border-radius:50%;background:currentColor;box-shadow:0 0 8px currentColor}
 .materia-aula-modo.diario .materia-aula-faixa{background:var(--ok-soft);color:var(--ok);border-top:3px solid var(--ok)}
 .materia-aula-modo.crazy .materia-aula-faixa{background:var(--bad-soft);color:var(--bad-txt);border-top:3px solid var(--bad)}
