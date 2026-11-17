@@ -1430,7 +1430,8 @@ h1.big{background:var(--metal-titulo);-webkit-background-clip:text;background-cl
 
 /* Novidades: sininho ao lado da engrenagem (components/Novidades.tsx, lista em lib/novidades.ts).
    Com novidade não vista, selo azul com o número e um anel pulsando até o aluno abrir. */
-.atalhos-globais .novidades{position:relative;flex-shrink:0;padding:0}
+.atalhos-par{display:flex;gap:8px;flex-shrink:0}
+.atalhos-globais .novidades{position:relative;top:auto;right:auto;flex-shrink:0;padding:0}
 .novidades svg{width:21px;height:21px;fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
 .novidades .bd{position:absolute;top:-4px;right:-4px;min-width:20px;height:20px;padding:0 5px;border-radius:10px;font-size:11.5px;font-weight:800;display:grid;place-items:center;font-variant-numeric:tabular-nums}
 @media (prefers-reduced-motion:no-preference){
