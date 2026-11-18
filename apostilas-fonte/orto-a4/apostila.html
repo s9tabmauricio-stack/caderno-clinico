@@ -1,0 +1,571 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<title>Ortopedia · Aula 4 · Seminário de questões de prova</title>
+<meta name="rodape" content="Mauricio Faria · Ortopedia · Aula 4 — Seminário de questões">
+<link rel="stylesheet" href="apostila.css">
+<style>
+/* ===== componentes do molde novo (em teste na pneumo-a5) ===== */
+.simples { background: #FFFFFF; border: 1px solid #C3D8F8; border-left: 4pt solid #0B5BD3; border-radius: 12pt; padding: 9pt 14pt 10pt; margin: 0 0 10pt; break-inside: avoid; }
+.simples p { font-size: 10.2pt; line-height: 1.5; color: #1F2933; margin: 0; }
+.aqui { display: flex; margin-top: 7pt; }
+.aqui span { flex: 1; border-top: 3pt solid #DCDCE2; padding-top: 2.5pt; margin-right: 2.5pt; font-family: "Inter Medium"; font-size: 6pt; line-height: 1.25; color: #8E8E93; }
+.aqui span:last-child { margin-right: 0; }
+.aqui span.feito { border-top-color: #A9C4EE; color: #6C6C70; }
+.aqui span.on { border-top-color: #0B5BD3; color: #0B5BD3; font-family: "Inter SemiBold"; }
+.aqui span.ramo { border-top-style: dashed; }
+.figure .olhar { margin-top: 8pt; }
+.figure .olhar .kick { margin-bottom: 3pt; }
+.figure .olhar ul { margin: 0; }
+.figure .olhar li { padding-left: 0; font-size: 8.7pt; line-height: 1.45; margin-bottom: 2pt; }
+.figure .olhar li::before { display: none; }
+.figure .olhar li b { color: #0B5BD3; }
+.figure .leg { font-size: 7.8pt; color: #8E8E93; margin: 5pt 0 0; }
+.reg { font-size: 8.3pt; line-height: 1.45; color: #6C6C70; background: #F7F7FA; border: 1px solid #E3E3E8; border-radius: 9pt; padding: 5pt 10pt; margin: 6pt 0 9pt; break-inside: avoid; }
+.reg b { font-family: "Inter SemiBold"; color: #4F5B70; }
+.livros { font-size: 8.3pt; line-height: 1.45; color: #6E3AA7; background: #F4EBFB; border: 1px solid #DEC7F1; border-radius: 9pt; padding: 5pt 10pt; margin: 6pt 0 9pt; break-inside: avoid; }
+.livros b { color: #6E3AA7; }
+.sw.simples-sw { background: #FFFFFF; border-color: #C3D8F8; border-left: 3pt solid #0B5BD3; }
+.sw.aqui-sw { background: linear-gradient(90deg, #A9C4EE 0, #A9C4EE 45%, #0B5BD3 45%, #0B5BD3 70%, #DCDCE2 70%); border: 0; height: 4pt; border-radius: 2pt; }
+.sw.exame-sw { background: #1F2933; border-color: #1F2933; }
+.cmp .destaque { font-family: "Inter SemiBold"; color: #0B5BD3; }
+.cmp.c4 .k { width: 62pt; }
+.cmp.c4 .c { font-size: 8.3pt; padding-right: 8pt; }
+.vesp { break-before: page; }
+.vesp .item { display: flex; align-items: baseline; background: #FFFFFF; border: 1px solid #E3E3E8; border-radius: 12pt; padding: 7pt 12pt; margin: 0 0 6pt; break-inside: avoid; }
+.vesp .item .prova { flex: none; margin: 0 9pt 0 0; }
+.vesp .item p { margin: 0; font-size: 9.2pt; }
+.tiles.t4 { margin: 6pt 0 8pt; }
+.figure.lado { display: flex; align-items: center; }
+.figure.lado > img { flex: none; }
+.figure.lado .olhar { flex: 1; margin: 0 0 0 12pt; }
+.cover .toc a { padding: 3.6pt 0; }
+
+/* ===== cartão da questão (orto-a4) ===== */
+.qz { background: #FFFFFF; border: 1px solid #E3E3E8; border-radius: 14pt; padding: 9pt 13pt 5pt; margin: 8pt 0 11pt; break-inside: avoid; }
+.qz .orig { font-family: "Inter SemiBold"; font-size: 7.2pt; letter-spacing: .07em; text-transform: uppercase; color: #6C6C70; margin: 0 0 4pt; }
+.qz .caso { font-size: 8.9pt; line-height: 1.5; color: #3A3A3C; margin: 0 0 5pt; }
+.qz .pq { font-family: "Inter SemiBold"; font-size: 9.2pt; line-height: 1.4; color: #16315C; margin: 0 0 4pt; }
+.qz .alt { display: flex; align-items: flex-start; border-top: 1px solid #EFEFF3; padding: 4.5pt 0; }
+.qz .alt .lt { flex: none; width: 13pt; font-family: "Inter SemiBold"; font-size: 8.6pt; line-height: 1.45; color: #8E8E93; }
+.qz .alt .tx { flex: 1; font-size: 8.6pt; line-height: 1.45; color: #6C6C70; }
+.qz .alt .tx b { font-family: "Inter SemiBold"; font-weight: normal; color: #3A3A3C; }
+.qz .alt .st { flex: none; margin: 1pt 0 0 8pt; font-family: "Inter SemiBold"; font-size: 6.6pt; letter-spacing: .05em; text-transform: uppercase; color: #8E8E93; border: 1px solid #D1D1D6; border-radius: 6pt; padding: 1.2pt 5pt; }
+.qz .alt.ok { background: #E8F0FE; border: 1px solid #C3D8F8; border-radius: 9pt; padding: 5pt 7pt; margin: 2pt -7pt 3pt; }
+.qz .alt.ok + .alt { border-top-color: #FFFFFF; }
+.qz .alt.ok .lt { color: #0B5BD3; }
+.qz .alt.ok .tx { color: #1F2933; }
+.qz .alt.ok .tx b { color: #0B5BD3; }
+.qz .alt.ok .st { background: #0B5BD3; border-color: #0B5BD3; color: #FFFFFF; }
+.qz .nota { font-size: 8.2pt; line-height: 1.45; color: #6C6C70; border-top: 1px solid #EFEFF3; padding: 4.5pt 0 3pt; margin: 0; }
+.sw.questao-sw { background: #FFFFFF; border-color: #D1D1D6; }
+.box .kick .prova { margin-left: 6pt; }
+.figure .kick { margin-bottom: 6pt; }
+</style>
+</head><body>
+
+<div class="cover">
+  <div class="kicker">Ortopedia · Aula 4 · Seminário de questões de prova</div>
+  <h1>Como matar uma questão de ortopedia</h1>
+  <p class="sub">Dez questões de prova resolvidas por eliminação e a ortopedia que cada uma cobra, do local do acidente à Unidade Básica de Saúde.</p>
+  <div class="author"><span class="av">A</span><div><b>Dr. André Muxfeldt Chagas</b><span>Ortopedista · 22 de outubro de 2026</span></div></div>
+  <div class="keynums"><div class="kick">Três números para levar</div>
+    <div class="kn-grid">
+      <div class="kn"><div class="n">até 50%</div><div class="l">de mortalidade no primeiro ano no idoso com fratura do colo do fêmur tratada sem cirurgia</div></div>
+      <div class="kn"><div class="n">6 a 8 semanas</div><div class="l">para o fêmur de uma criança de 3 anos consolidar: gesso, não tração</div></div>
+      <div class="kn"><div class="n">2,5 cm</div><div class="l">de abertura da sínfise púbica: acima disso, a pelve é fixada</div></div>
+    </div></div>
+  <div class="toc"><div class="kick">Nesta apostila</div>
+    <a href="#s00"><span class="tn">00</span><span class="tt">Recados da disciplina</span><span class="pg">{{s00}}</span></a>
+    <a href="#s01"><span class="tn">01</span><span class="tt">Como matar uma questão interpretativa</span><span class="pg">{{s01}}</span></a>
+    <a href="#s02"><span class="tn">02</span><span class="tt">Ferida e fratura exposta</span><span class="pg">{{s02}}</span></a>
+    <a href="#s03"><span class="tn">03</span><span class="tt">Pelve em livro aberto e choque</span><span class="pg">{{s03}}</span></a>
+    <a href="#s04"><span class="tn">04</span><span class="tt">Síndrome compartimental</span><span class="pg">{{s04}}</span></a>
+    <a href="#s05"><span class="tn">05</span><span class="tt">Fêmur da criança</span><span class="pg">{{s05}}</span></a>
+    <a href="#s06"><span class="tn">06</span><span class="tt">Fêmur do idoso: colo do fêmur</span><span class="pg">{{s06}}</span></a>
+    <a href="#s07"><span class="tn">07</span><span class="tt">Osteoporose</span><span class="pg">{{s07}}</span></a>
+    <a href="#s08"><span class="tn">08</span><span class="tt">Na Unidade Básica: lombalgia e fibromialgia</span><span class="pg">{{s08}}</span></a>
+    <a href="#s09"><span class="tn">09</span><span class="tt">O essencial da aula</span><span class="pg">{{s09}}</span></a>
+    <p class="note">Seminário de questões organizado por assunto: cada capítulo ensina o tema e mostra como a questão se resolve por eliminação. A legenda de cores está na página 2.</p>
+  </div>
+</div>
+
+<div class="legend"><div class="kick">Como ler esta apostila</div><div class="lg-grid">
+  <div class="lg"><span class="sw blue"></span><div><b>Azul</b> conteúdo da aula e raciocínio</div></div>
+  <div class="lg"><span class="sw green"></span><div><b>Verde</b> dose ou valor de referência</div></div>
+  <div class="lg"><span class="sw red"></span><div><b>Vermelho</b> alerta, erro comum ou armadilha</div></div>
+  <div class="lg"><span class="sw orange"></span><div><b>Laranja</b> fala ou parêntese do professor</div></div>
+  <div class="lg"><span class="sw purple"></span><div><b>Roxo</b> complemento que não foi dito em aula</div></div>
+  <div class="lg"><span class="prova">PROVA</span><div><b>Marca de prova</b> o ponto que cai na prova</div></div>
+  <div class="lg"><span class="sw simples-sw"></span><div><b>Em palavras simples</b> a abertura de cada capítulo</div></div>
+  <div class="lg"><span class="sw aqui-sw"></span><div><b>Você está aqui</b> a etapa da trilha da aula</div></div>
+  <div class="lg"><span class="sw red"></span><div><b>Pegadinha do professor</b> a armadilha onde ela acontece</div></div>
+  <div class="lg"><span class="sw questao-sw"></span><div><b>Cartão da questão</b> resposta em azul, alternativas cortadas em cinza</div></div>
+</div></div>
+
+<div class="prof"><div class="kick">Sobre o professor · Dr. André Chagas</div>
+<div class="rows">
+  <div class="row"><div class="k">Especialidade</div><div class="v">Ortopedista.</div></div>
+  <div class="row"><div class="k">Atuação</div><div class="v">Professor da disciplina de Ortopedia.</div></div>
+</div></div>
+
+<section id="s00">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">00</span></div><div class="corpo"><div class="de">Avisos da disciplina</div><h2>Recados da disciplina</h2></div></div>
+  <div class="rows">
+    <div class="row"><div class="k">Próxima prova</div><div class="v">É a última do semestre. Terá algumas questões interpretativas, no estilo das provas nacionais, mas com respostas claras: só uma certa.</div></div>
+    <div class="row"><div class="k">Estilo</div><div class="v">As provas não vão ser diretas, de decorar. O caso pede raciocínio, como no ENAMED (Exame Nacional de Avaliação da Formação Médica) e nas provas de residência.</div></div>
+    <div class="row"><div class="k">Este seminário</div><div class="v">Dez questões resolvidas em aula: do ENAMED de 2025 e de 2026, do Revalida 2025 (exame que revalida diplomas de Medicina obtidos no exterior) e questões curtas de treino, feitas com inteligência artificial no estilo dessas provas.</div></div>
+  </div>
+  <div class="quote"><p>“A gente aqui é para tentar ajudar vocês a passarem no futuro, entendendo o que é a Ortopedia, mas também a ideia não é sacanear ninguém aqui; a nossa prova tem que ser um método de avaliar vocês como alunos e passar de semestre.”</p><div class="who">Dr. André Chagas, sobre a prova da disciplina</div></div>
+</section>
+
+<div class="figure"><div class="kick">Trilha da aula</div><img src="trilha.svg" alt="Trilha da aula em oito etapas: método, ferida e fratura exposta, pelve e choque, síndrome compartimental, fêmur da criança, fêmur do idoso, osteoporose e Unidade Básica de Saúde."></div>
+
+<section id="s01">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">01</span></div><div class="corpo"><div class="de">Todas as questões</div><h2>Como matar uma questão interpretativa</h2><div class="aqui"><span class="on">Método</span><span>Ferida e fratura exposta</span><span>Pelve e choque</span><span>Compartimento</span><span>Fêmur da criança</span><span>Fêmur do idoso</span><span>Osteoporose</span><span>Unidade Básica</span></div></div></div>
+  <div class="simples"><p>As provas nacionais trazem um caso longo e quatro ou cinco saídas. Nem sempre você vai saber a resposta de cara: o que resolve é achar o dado que importa, cortar o que é absurdo e escolher, entre o que sobra, o que cuida primeiro do paciente.</p></div>
+
+  <h3 data-bm="O formato das provas nacionais">O formato das provas nacionais</h3>
+  <p>O ENAMED e as provas de residência trazem um enunciado grande, que é uma história clínica. Boa parte dele é contexto (como foi o acidente, quem levou o paciente) e uma ou duas frases carregam a questão: na fratura exposta, “ferimento na região da clavícula com exposição do fragmento”; no choque, “mantendo-se o quadro de hipotensão”.</p>
+  <p>As questões não saem iguais à aula: são interpretativas. E muitas, mesmo com um termo imperfeito, não serão anuladas. As questões curtas e diretas, do tipo que a turma prefere, servem para treinar, mas a prova nacional não deve ser assim.</p>
+  <div class="quote"><p>“Mas não adianta reclamar: ou tu se adapta à prova e aprende a fazer desse jeito, porque a instituição que tu vai fazer vai exigir isso.”</p><div class="who">Dr. André Chagas, lembrando quando os filhos começaram a fazer o Exame Nacional do Ensino Médio</div></div>
+
+  <h3 data-bm="O método, passo a passo">O método, passo a passo</h3>
+  <ol class="flow">
+    <li><b class="t">Leia a pergunta do fim.</b> Ela diz o que se quer: diagnóstico provável, conduta, próxima conduta, papel do médico.</li>
+    <li><b class="t">Ache o dado-chave do caso.</b> Ferida com osso exposto, bacia instável, hipotensão que não cede, dor ao esticar os dedos. O resto é contexto.</li>
+    <li><b class="t">Corte as absurdas.</b> Sepse sem febre nem hipotensão, observar um fêmur quebrado, tomografia num paciente instável.</li>
+    <li><b class="t">Derrube juntas as que dizem a mesma coisa.</b> Alinhar, tracionar e reduzir são a mesma ideia; placa e parafusos é cirurgia. Se uma está errada, a outra também está.</li>
+    <li><b class="t">Traduza a palavra pelo nome.</b> Pelvipodálico: da pelve ao pé. Esquelética: tem a ver com osso. Muitas vezes é exatamente isso.</li>
+    <li><b class="t">Entre as que sobram, fique com o que cuida primeiro do paciente.</b> Dor, conforto e infecção; no paciente instável, o que é rápido.</li>
+    <li><b class="t">Em prova de conduta, responda como médico.</b> O trabalho do médico é cuidar do paciente, não mandá-lo ao advogado nem esperar autorização.</li>
+  </ol>
+  <div class="quote"><p>“Nem sempre tu sabe a resposta, eu também não, mas a gente tem que captar a ideia da prova.”</p><div class="who">Dr. André Chagas, sobre as questões nacionais</div></div>
+
+  <div class="es big">
+    <div class="kick">A conta que muda a prova</div>
+    <p class="lead">Com quatro alternativas, cortar duas deixa a escolha entre duas: a chance de acertar passa de uma em quatro para uma em duas, mesmo sem saber tudo.</p>
+  </div>
+
+
+  <div class="box orange"><div class="kick"><span class="dot"></span>Parêntese do professor</div><p>“Nem sempre” é uma expressão ruim numa alternativa: deixa a frase sem certo nem errado. Uma questão da disciplina já foi anulada por causa dela, e ela está saindo do banco de questões do professor. Na prova de título de Ortopedia da Sociedade Brasileira de Ortopedia e Traumatologia, hoje sempre há uma prova prática de conduta: um caso clínico e a pergunta “o que você faria?”.</p></div>
+</section>
+
+<section id="s02">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">02</span></div><div class="corpo"><div class="de">Questões 1 e 2</div><h2>Ferida e fratura exposta</h2><div class="aqui"><span class="feito">Método</span><span class="on">Ferida e fratura exposta</span><span>Pelve e choque</span><span>Compartimento</span><span>Fêmur da criança</span><span>Fêmur do idoso</span><span>Osteoporose</span><span>Unidade Básica</span></div></div></div>
+  <div class="simples"><p>Quando o osso quebrado rompe a pele, a fratura é exposta, e o grande risco é a infecção. No local do acidente ninguém alinha nem puxa: cobre-se a ferida com algo limpo e imobiliza-se como está. No hospital, limpa-se a ferida, começa o antibiótico e pensa-se no tétano.</p></div>
+
+  <h3 data-bm="Os princípios da fratura exposta">Os princípios da fratura exposta <span class="prova">PROVA</span></h3>
+  <p>O primeiro princípio é deixar a ferida o mais limpa possível, para que a fratura exposta fique parecida com uma fratura fechada. O segundo é começar o antibiótico logo. O terceiro é pensar na prevenção do tétano: as provas gostam de saber se você lembrou dela.</p>
+  <div class="ref">
+    <div class="txt"><div class="kick"><span class="dot"></span>Vacina do tétano</div><p>Em ferimento contaminado, se a última dose tem mais de 5 anos, faz-se reforço; com menos de 5 anos, está em dia.</p></div>
+    <div class="vals"><div class="val"><small>Proteção</small>10 anos</div><div class="val"><small>Ferida suja: reforço se</small>mais de 5 anos</div></div>
+  </div>
+
+  <h3 data-bm="No local do acidente: imobilizar com curativo">No local do acidente: imobilizar com curativo <span class="prova">PROVA</span></h3>
+  <p>Na rua, o que importa é melhorar a dor e o conforto do paciente e evitar infecção. Toda alternativa ligada a isso tem mais chance de estar certa.</p>
+  <p>Imobilizar é tirar o movimento da fratura: a dor diminui, e a terra e a sujeira param de entrar na ferida. Serve até papelão. Na Europa e nos Estados Unidos, paramédicos e até o agricultor que mora na beira da estrada são treinados para isso; o Corpo de Bombeiros usa talas prontas, mas o papelão também funciona. O curativo é uma compressa limpa sobre a ferida, que reduz a chance de infecção.</p>
+  <div class="box red"><div class="kick"><span class="dot"></span>Pegadinha do professor</div><p><span class="medium">Alinhar, tracionar, reduzir.</span> Todo mundo quer puxar a perna e pôr a fratura no lugar, porque desalinhada “fica feia”. Na rua, imobiliza-se como está: as três dizem a mesma coisa e caem juntas. Nem antibiótico: no meio da rua, não se fala nele.</p></div>
+
+  <div class="qz">
+    <div class="orig">Questão 1 · ENAMED 2026, questão 48</div>
+    <p class="caso">Vítima de acidente, atendida no local, com ferimento na região da clavícula e exposição do fragmento ósseo. O resto do enunciado conta como foi o acidente.</p>
+    <p class="pq">Qual a conduta no atendimento pré-hospitalar?</p>
+    <div class="alt"><span class="lt"></span><div class="tx"><b>Alinhar com tala moldada.</b> Alinhar é reduzir a fratura e pôr uma tala; numa clavícula, nem dá para imaginar. Não é o mais importante.</div><span class="st">Cai</span></div>
+    <div class="alt"><span class="lt"></span><div class="tx"><b>Realizar tração.</b> Imobiliza-se da maneira que está; tração não é a regra.</div><span class="st">Cai</span></div>
+    <div class="alt"><span class="lt"></span><div class="tx"><b>Reduzir a fratura da clavícula.</b> É a mesma ideia de alinhar e tracionar: cai junto.</div><span class="st">Cai</span></div>
+    <div class="alt ok"><span class="lt">A</span><div class="tx"><b>Imobilizar com curativo.</b> Tira a dor e o movimento, impede a sujeira de entrar e reduz a chance de infecção.</div><span class="st">Resposta</span></div>
+  </div>
+
+  <h3 data-bm="Desbridamento e toxicidade do anestésico local">Desbridamento e toxicidade do anestésico local</h3>
+  <p>Desbridamento é a limpeza cirúrgica da ferida: tira-se a parte morta, o tecido que não está vivo. Em ferida localizada, pode ser feito com anestesia local. O anestésico em excesso intoxica: o quadro começa com formigamento nos lábios, gosto metálico na boca e zumbido, e pode evoluir para convulsão tônico-clônica durante o procedimento. É a toxicidade sistêmica do anestésico local.</p>
+  <div class="ref purple">
+    <div class="txt"><div class="kick"><span class="dot"></span>Complemento: dose máxima da lidocaína</div><p>Sem vasoconstritor, até 300 mg no total. A 2%, cada mL tem 20 mg: 20 mL somam 400 mg, acima do teto até para um adulto.</p></div>
+    <div class="val">4,5 mg/kg<small>sem vasoconstritor</small></div>
+  </div>
+
+  <div class="qz">
+    <div class="orig">Questão 2 · Tema que não foi dado em aula</div>
+    <p class="caso">Menino de 12 anos, ferido há 5 dias por um galho de árvore; os pais moram em região de difícil acesso. Ferimento cortocontuso de 12 cm, irregular, na face lateral da perna direita, com contaminação grosseira (terra). Histórico de atopias (alergias); vacinas da infância até os 5 anos. Desbridamento sob anestesia local com 20 mL de lidocaína a 2% sem vasoconstritor. Durante o procedimento: formigamento nos lábios, gosto metálico, zumbido e, em seguida, crise convulsiva tônico-clônica.</p>
+    <p class="pq">Qual o diagnóstico provável?</p>
+    <div class="alt"><span class="lt">A</span><div class="tx"><b>Reação anafilática grave.</b> Sem edema de glote nem falta de ar; o quadro é gosto metálico, zumbido e convulsão. Fica em dúvida até o fim, mas cai.</div><span class="st">Cai</span></div>
+    <div class="alt ok"><span class="lt">B</span><div class="tx"><b>Toxicidade pelo anestésico local.</b> Sinais clássicos, durante a anestesia. Mesmo sem saber a dose exata da lidocaína, dá para acertar.</div><span class="st">Resposta</span></div>
+    <div class="alt"><span class="lt">C</span><div class="tx"><b>Paroxismo tetânico.</b> Cinco dias é pouco, e o tétano não convulsiona logo depois da lidocaína.</div><span class="st">Cai</span></div>
+    <div class="alt"><span class="lt">D</span><div class="tx"><b>Sepse por infecção.</b> Sem febre nem hipotensão, e sepse não faz convulsão súbita no procedimento.</div><span class="st">Cai</span></div>
+  </div>
+  <div class="livros"><b>Nos livros:</b> a incubação do tétano costuma ficar entre 3 e 21 dias. O que afasta o tétano neste caso é o quadro surgir durante a anestesia, com gosto metálico e zumbido.</div>
+
+  <h3 data-bm="Por que não é anafilaxia, tétano ou sepse">Por que não é anafilaxia, tétano ou sepse</h3>
+  <div class="rows">
+    <div class="row"><div class="k">Anafilaxia</div><div class="v">Reação alérgica muito grave, que fecha a passagem do ar (edema de glote). O histórico de alergia puxa para ela, mas o quadro do caso é outro: gosto metálico, zumbido e convulsão.</div></div>
+    <div class="row"><div class="k">Tétano</div><div class="v">Não convulsiona logo depois da lidocaína: dá espasmos musculares, trismo e opistótono, quando já está avançado.</div></div>
+    <div class="row"><div class="k">Sepse</div><div class="v">Infecção grave que entrou na corrente sanguínea. Daria febre e hipotensão, não convulsão súbita no meio do procedimento. É a primeira a cortar.</div></div>
+  </div>
+
+</section>
+
+<section id="s03">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">03</span></div><div class="corpo"><div class="de">Questão 3</div><h2>Pelve em livro aberto e choque</h2><div class="aqui"><span class="feito">Método</span><span class="feito">Ferida e fratura exposta</span><span class="on">Pelve e choque</span><span>Compartimento</span><span>Fêmur da criança</span><span>Fêmur do idoso</span><span>Osteoporose</span><span>Unidade Básica</span></div></div></div>
+  <div class="simples"><p>Um trauma muito forte pode abrir o anel da bacia como um livro. Atrás dele passam veias que sangram muito, e o paciente entra em choque. O que para o sangramento é fechar e segurar a pelve: primeiro com a cinta, depois com um fixador externo.</p></div>
+
+  <h3 data-bm="Alta energia no jovem, baixa energia no idoso">Alta energia no jovem, baixa energia no idoso</h3>
+  <p>As fraturas graves têm dois picos de idade. O jovem de 22 anos quebra por trauma de alta energia: o acidente na volta da festa, o atropelamento. O idoso quebra por baixa energia, numa queda da própria altura.</p>
+
+  <h3 data-bm="Os sinais do caso">Os sinais do caso</h3>
+  <div class="cmp">
+    <div class="r h"><div class="k"></div><div class="c">No caso</div><div class="c">O que significa</div></div>
+    <div class="r"><div class="k">Pulso</div><div class="c">120 batimentos por minuto</div><div class="c">alto; o normal fica em torno de 80</div></div>
+    <div class="r"><div class="k">Respiração</div><div class="c">24 por minuto</div><div class="c">alta; o normal fica em torno de 16</div></div>
+    <div class="r"><div class="k">Pressão</div><div class="c">80 por 60 mmHg, descorado</div><div class="c">hipotensão: perdeu sangue</div></div>
+    <div class="r"><div class="k">Abdome</div><div class="c">dor no andar inferior, descompressão brusca negativa</div><div class="c">sem irritação do peritônio (sinal de Blumberg negativo)</div></div>
+    <div class="r"><div class="k">Bacia</div><div class="c">instável, “mole” ao exame</div><div class="c">anel pélvico rompido</div></div>
+    <div class="r"><div class="k">Escroto</div><div class="c">hematoma</div><div class="c">lesão da pelve</div></div>
+  </div>
+  <p>O hematoma no escroto (na mulher, nos grandes lábios) é patognomônico de fratura ou lesão da pelve. Tem nome, sinal de Destot, mas o nome não precisa ser decorado. O ultrassom FAST, um ultrassom rápido feito na sala de emergência para procurar sangue na barriga, veio negativo: não há líquido livre no abdome.</p>
+
+  <h3 data-bm="O que a radiografia mostra">O que a radiografia mostra</h3>
+  <p>A sínfise púbica está muito aberta, com desnível entre as duas metades: é a lesão em livro aberto. Para abrir assim, um atropelamento de altíssima energia arrebentou todos os ligamentos da frente. E, para abrir na frente, a pelve tem de quebrar ou abrir atrás: neste caso há fratura no sacro (os forames sacrais, redondinhos de um lado, estão bagunçados do outro), ou ao menos lesão do ligamento sacroilíaco.</p>
+  <p>Atrás fica o plexo venoso pré-sacral, que sangra bastante. Nas fraturas mais graves, que desmontam a parte de trás, pode romper a artéria glútea superior, na chanfradura isquiática: aí o problema é maior.</p>
+
+  <div class="qz">
+    <div class="orig">Questão 3 · ENAMED 2026</div>
+    <p class="caso">Homem de 22 anos, atropelado, chega com colar cervical e prancha rígida, com dor no andar inferior do abdome. Consciente e contactante, descorado, pulso 120, respiração 24 por minuto, pressão 80 por 60 mmHg. Abdome plano, doloroso embaixo, descompressão brusca negativa. Bacia instável e hematoma no escroto. FAST sem líquido livre no abdome; radiografia da pelve com lesão em livro aberto; cinta pélvica aplicada, com estabilização mecânica do anel pélvico.</p>
+    <p class="pq">Mantendo-se a hipotensão, qual a próxima conduta?</p>
+    <div class="alt"><span class="lt">A</span><div class="tx"><b>Angiografia com embolização.</b> É um tratamento, mas para quando nada mais dá certo: demora e exige hospital terciário.</div><span class="st">Cai</span></div>
+    <div class="alt"><span class="lt">B</span><div class="tx"><b>Laparotomia exploradora.</b> O FAST já mostrou que não há líquido livre na barriga.</div><span class="st">Cai</span></div>
+    <div class="alt ok"><span class="lt">C</span><div class="tx"><b>Estabilização cirúrgica do quadril.</b> O termo certo seria pelve, mas é a melhor: o fixador externo é rápido, fecha a pelve e o sangramento para.</div><span class="st">Resposta</span></div>
+    <div class="alt"><span class="lt">D</span><div class="tx"><b>Tomografia de abdome e pelve.</b> Paciente hipotenso não espera exame demorado.</div><span class="st">Cai</span></div>
+    <p class="nota">“Quadril” é a articulação do fêmur com o acetábulo; a fratura é do anel pélvico. Mesmo com o termo errado, a C é a certa, e dificilmente a questão seria anulada.</p>
+  </div>
+
+  <h3 data-bm="A conduta: estabilizar a pelve">A conduta: estabilizar a pelve <span class="prova">PROVA</span></h3>
+  <div class="figure"><img src="pelve.svg" alt="Fluxograma: atropelamento com bacia instável e hipotensão, FAST negativo, radiografia com livro aberto e cinta pélvica; se continua hipotenso, estabilização cirúrgica da pelve; se não parar, angiografia com embolização. Fora de hora: laparotomia, tomografia e angiografia imediata."></div>
+  <p>Com a cinta pélvica aplicada e a hipotensão mantida, a próxima conduta é a estabilização cirúrgica da pelve, em geral com fixador externo. É rápido: feito com sedação leve, se o paciente está bem, e até com anestesia local, no pronto-socorro, se ele está em coma e intubado. Fechar a pelve faz o plexo venoso parar de sangrar.</p>
+  <p>A angiografia com embolização também trata esse sangramento, mas é para quando nada mais deu certo. Exige um especialista (em geral o cirurgião vascular ou o radiologista intervencionista), um hospital terciário e a sala de hemodinâmica, com arco em C, para fechar a artéria ou a veia que sangra, em geral ramos da artéria ilíaca interna (glútea superior e inferior, pudenda). Isso leva tempo.</p>
+  <div class="box red"><div class="kick"><span class="dot"></span>Pegadinha do professor <span class="prova">PROVA</span></div><p><span class="medium">Fratura de acetábulo não causa choque.</span> As provas confundem acetábulo com pelve e apresentam a fratura de acetábulo como a causa do choque: não é. O choque clássico é o da fratura do anel pélvico, como o livro aberto; são essas que caem.</p></div>
+  <div class="box red"><div class="kick"><span class="dot"></span>Pegadinha do professor</div><p><span class="medium">Exame demorado no paciente instável.</span> Tomografia, como a angiografia, toma tempo que o paciente hipotenso não tem. Muita gente faz isso: na última prova da disciplina, apareceu muito pedido de ressonância num caso assim.</p></div>
+
+  <h3 data-bm="Depois do choque: fixar ou não a sínfise">Depois do choque: fixar ou não a sínfise</h3>
+  <p>Esta fratura é instável porque quebrou também atrás (há classificações para isso, como as de Tile e de Young-Burgess). Com o paciente estável, num segundo momento, a tomografia mostra se é preciso fixar atrás, na sacroilíaca, e na frente, com placa na sínfise púbica.</p>
+  <div class="ref">
+    <div class="txt"><div class="kick"><span class="dot"></span>Abertura da sínfise púbica</div><p>O critério fica entre 2 e 3 cm. Abaixo de 2,5 cm, às vezes não se fixa; acima, a fixação é indicada.</p></div>
+    <div class="val">acima de 2,5 cm<small>fixar</small></div>
+  </div>
+  <p>Sem fixar, se o paciente não teve hipotensão (o comum nas fraturas menores), ele fica bem: as sequelas da pelve costumam ser pequenas. Opera-se porque são pacientes politraumatizados: a fixação tira o paciente do leito logo e resolve a dor. Quando há instabilidade horizontal ou vertical, com a pelve solta, a fixação é necessária para a recuperação ser mais rápida.</p>
+  <div class="box orange"><div class="kick"><span class="dot"></span>Parêntese do professor</div><p>Uma cirurgia antiga, que já não se faz, retirava a sínfise púbica para alcançar toda a próstata no câncer de próstata, porque ela fica logo atrás. E as pessoas viviam daquele jeito.</p></div>
+</section>
+
+<section id="s04">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">04</span></div><div class="corpo"><div class="de">Questão 8</div><h2>Síndrome compartimental</h2><div class="aqui"><span class="feito">Método</span><span class="feito">Ferida e fratura exposta</span><span class="feito">Pelve e choque</span><span class="on">Compartimento</span><span>Fêmur da criança</span><span>Fêmur do idoso</span><span>Osteoporose</span><span>Unidade Básica</span></div></div></div>
+  <div class="simples"><p>Os músculos do antebraço ficam em compartimentos fechados por uma capa que não estica. Se incham demais depois da fratura, a pressão aperta os vasos e o músculo morre. O sinal é dor forte demais para o caso, pior quando se esticam os dedos do paciente.</p></div>
+
+  <h3 data-bm="O que é a síndrome compartimental">O que é a síndrome compartimental <span class="prova">PROVA</span></h3>
+  <p>O compartimento muscular é fechado pela fáscia, que não estica. Depois da fratura, ele incha e fica tenso; a pressão dentro dele sobe até comprometer a circulação dos capilares, e o músculo entra em isquemia e necrose. Os metabólitos da isquemia acumulados ali causam a dor intensa, desproporcional, e a dor ao estiramento passivo dos dedos.</p>
+  <p>Na fratura do antebraço ou do rádio distal, dor intensa, parestesia e dor ao estender os dedos formam o quadro clássico. A conduta é a fasciotomia descompressiva de urgência.</p>
+
+  <h3 data-bm="Anestesia, parestesia e hiperestesia">Anestesia, parestesia e hiperestesia</h3>
+  <div class="rows">
+    <div class="row"><div class="k">Anestesia</div><div class="v">Não sentir nada.</div></div>
+    <div class="row"><div class="k">Parestesia</div><div class="v">Formigamento, adormecimento: como a boca voltando da anestesia do dentista.</div></div>
+    <div class="row"><div class="k">Hiperestesia</div><div class="v">Sensibilidade exagerada: só passar o dedo já dói.</div></div>
+  </div>
+  <div class="box orange"><div class="kick"><span class="dot"></span>Parêntese do professor</div><p>Depois de um bloqueio de nervo ou de uma raquianestesia, a pessoa não sente dor e não se mexe. O primeiro a voltar é o movimento; a sensibilidade à dor volta sempre por último. Essa ordem ajuda bastante na analgesia depois da cirurgia.</p></div>
+
+  <h3 data-bm="Por que não é nervo, infecção ou trombose">Por que não é nervo, infecção ou trombose</h3>
+  <div class="rows">
+    <div class="row"><div class="k">Nervo radial</div><div class="v">No antebraço, o ramo interósseo posterior do radial é quase só motor (estende punho e dedos) e não dá a dor isquêmica desproporcional do compartimento flexor. A sensibilidade da palma e dos dedos é do nervo mediano, o principal, e do ulnar.</div></div>
+    <div class="row"><div class="k">Infecção</div><div class="v">A pele está fechada e a fratura acabou de acontecer: não há porta de entrada nem tempo. A infecção do osso chega por três vias: pelo sangue (hematogênica), por inoculação direta (fratura exposta ou cirurgia) e por contiguidade (infecção de partes moles ao lado).</div></div>
+    <div class="row"><div class="k">Trombose</div><div class="v">A trombose venosa profunda do membro superior é mais rara, e o quadro é outro: inchaço e empastamento, sem a dor lancinante ao esticar os dedos logo depois da fratura.</div></div>
+  </div>
+
+  <div class="qz">
+    <div class="orig">Questão 8 · Treino, tema da prova da disciplina</div>
+    <p class="caso">Paciente com dor intensa no antebraço, parestesia e dor à extensão dos dedos após fratura.</p>
+    <p class="pq">Qual o diagnóstico?</p>
+    <div class="alt"><span class="lt"></span><div class="tx"><b>Lesão tendínea.</b> Não explica a dor intensa com formigamento logo depois da fratura.</div><span class="st">Cai</span></div>
+    <div class="alt"><span class="lt"></span><div class="tx"><b>Lesão do nervo radial.</b> No antebraço, o radial é quase só motor; não dá dor isquêmica ao esticar os dedos.</div><span class="st">Cai</span></div>
+    <div class="alt ok"><span class="lt"></span><div class="tx"><b>Síndrome compartimental.</b> Dor desproporcional, parestesia e dor ao estiramento passivo dos dedos.</div><span class="st">Resposta</span></div>
+    <div class="alt"><span class="lt"></span><div class="tx"><b>Infecção.</b> Fratura fechada e recente: sem porta de entrada e sem tempo.</div><span class="st">Cai</span></div>
+    <div class="alt"><span class="lt"></span><div class="tx"><b>Trombose venosa profunda.</b> Rara no braço; dá inchaço e empastamento, não essa dor ao esticar os dedos.</div><span class="st">Cai</span></div>
+  </div>
+</section>
+
+<section id="s05">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">05</span></div><div class="corpo"><div class="de">Questão 6</div><h2>Fêmur da criança</h2><div class="aqui"><span class="feito">Método</span><span class="feito">Ferida e fratura exposta</span><span class="feito">Pelve e choque</span><span class="feito">Compartimento</span><span class="on">Fêmur da criança</span><span>Fêmur do idoso</span><span>Osteoporose</span><span>Unidade Básica</span></div></div></div>
+  <div class="simples"><p>Na criança pequena, o fêmur quebrado cola rápido, em cerca de dois meses. Por isso, o tratamento mais comum é um gesso que vai da bacia até o pé, e não cirurgia nem semanas de tração no hospital.</p></div>
+
+  <h3 data-bm="Gesso pelvipodálico: da pelve ao pé">Gesso pelvipodálico: da pelve ao pé <span class="prova">PROVA</span></h3>
+  <p>O nome diz tudo: pelvipodálico é o gesso que vai da pelve até o pé. Não é preciso pensar em nada diferente.</p>
+  <div class="ref">
+    <div class="txt"><div class="kick"><span class="dot"></span>Consolidação do fêmur aos 3 anos</div><p>Cerca de 2 meses: ninguém fica internado em tração por esse tempo.</p></div>
+    <div class="val">6 a 8 semanas</div>
+  </div>
+  <p>No passado, era comum fazer 2 a 3 semanas de tração, cutânea ou esquelética, e depois o gesso. Hoje, na faixa de 6 meses a 5 anos, o gesso pelvipodálico é colocado logo, de forma precoce. Tração esquelética é a que puxa o membro por um pino passado no osso.</p>
+  <div class="quote"><p>“Eu sei o que é porque sou ortopedista, mas vocês têm que pensar: esquelética tem a ver com osso, com puxar o membro.”</p><div class="who">Dr. André Chagas, sobre ler a alternativa pelo nome</div></div>
+  <div class="box red"><div class="kick"><span class="dot"></span>Pegadinha do professor</div><p><span class="medium">“Toda fratura em criança é cirúrgica.”</span> Uma alternativa da prova da disciplina dizia isso, alegando que a cirurgia dá o melhor resultado. Está errada.</p></div>
+
+  <div class="qz">
+    <div class="orig">Questão 6 · Treino feita com inteligência artificial</div>
+    <p class="caso">Fratura de fêmur em criança de 3 anos.</p>
+    <p class="pq">Qual a conduta mais comum?</p>
+    <div class="alt"><span class="lt">A</span><div class="tx"><b>Placa e parafusos.</b> Cirurgia não é a conduta mais comum nessa idade.</div><span class="st">Cai</span></div>
+    <div class="alt ok"><span class="lt">B</span><div class="tx"><b>Gesso pelvipodálico.</b> Da pelve ao pé; o fêmur consolida em 6 a 8 semanas.</div><span class="st">Resposta</span></div>
+    <div class="alt"><span class="lt">C</span><div class="tx"><b>Observação.</b> Não se deixa um fêmur quebrado só observando.</div><span class="st">Cai</span></div>
+    <div class="alt"><span class="lt">D</span><div class="tx"><b>Tração esquelética.</b> Fica entre as duas finais, mas ninguém fica 2 meses internado em tração.</div><span class="st">Cai</span></div>
+    <div class="alt"><span class="lt">E</span><div class="tx"><b>Cirurgia.</b> É a mesma coisa que a A: se a E está errada, a A também está.</div><span class="st">Cai</span></div>
+  </div>
+</section>
+
+<section id="s06">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">06</span></div><div class="corpo"><div class="de">Questões 7 e 9</div><h2>Fêmur do idoso: colo do fêmur</h2><div class="aqui"><span class="feito">Método</span><span class="feito">Ferida e fratura exposta</span><span class="feito">Pelve e choque</span><span class="feito">Compartimento</span><span class="feito">Fêmur da criança</span><span class="on">Fêmur do idoso</span><span>Osteoporose</span><span>Unidade Básica</span></div></div></div>
+  <div class="simples"><p>O idoso que cai e fica com a perna mais curta e virada para fora quase sempre quebrou a parte de cima do fêmur, o colo. Essa fratura se opera sempre: na cama, o idoso morre das complicações. O tipo de cirurgia depende de quão ativo ele é, não só da idade no documento.</p></div>
+
+  <h3 data-bm="Perna curta e rodada para fora: colo do fêmur">Perna curta e rodada para fora: colo do fêmur <span class="prova">PROVA</span></h3>
+  <p>Trauma, dor no quadril, membro inferior encurtado e em rotação externa: é a fratura do fêmur proximal, a fratura típica do idoso, e a resposta clássica é a fratura do colo do fêmur. É a cena do idoso na maca com um pé caído para fora e mais curto. As provas gostam dessa pergunta.</p>
+  <div class="rows">
+    <div class="row"><div class="k">Transtrocan­térica</div><div class="v">Também é do fêmur proximal, fora da cápsula. Na prática, dá encurtamento e rotação ainda mais grosseiros; mas, entre as opções da questão, a resposta é o colo.</div></div>
+    <div class="row"><div class="k">Luxação do quadril</div><div class="v">Deforma, mas de outro jeito: a posterior clássica deixa o membro em flexão, adução e rotação interna. É mais rara e vem de alta energia (o joelho batendo no painel do carro).</div></div>
+  </div>
+  <div class="rows">
+    <div class="row"><div class="k">Pelve</div><div class="v">Pode encurtar se a hemipelve subir, mas não é o frequente nem a resposta clássica.</div></div>
+    <div class="row"><div class="k">Acetábulo</div><div class="v">Normalmente não dá esse quadro.</div></div>
+  </div>
+
+  <div class="qz">
+    <div class="orig">Questão 7 · Treino</div>
+    <p class="caso">Paciente com trauma e dor no quadril, membro inferior encurtado e rodado externamente.</p>
+    <p class="pq">Qual o diagnóstico provável?</p>
+    <div class="alt"><span class="lt"></span><div class="tx"><b>Fratura de acetábulo.</b> Normalmente não dá esse quadro.</div><span class="st">Cai</span></div>
+    <div class="alt"><span class="lt"></span><div class="tx"><b>Fratura de pelve.</b> Só se a hemipelve subir; não é a resposta clássica.</div><span class="st">Cai</span></div>
+    <div class="alt ok"><span class="lt"></span><div class="tx"><b>Fratura do colo do fêmur.</b> A fratura clássica do idoso: encurtado e em rotação externa.</div><span class="st">Resposta</span></div>
+    <div class="alt"><span class="lt"></span><div class="tx"><b>Luxação anterior ou posterior do quadril.</b> Deforma de outro jeito e é mais rara.</div><span class="st">Cai</span></div>
+  </div>
+
+  <h3 data-bm="Quantos idosos vêm aí">Quantos idosos vêm aí</h3>
+  <p>Em 2030, os idosos serão de 15 a 20% da população, aqui e na China. Em Cascavel, com 300 e poucos mil habitantes, 15% são cerca de 45 mil idosos: muita fratura do fêmur proximal, a fratura do paciente osteoporótico.</p>
+  <div class="tiles">
+    <div class="tile"><div class="lab">Brasil</div><div class="n">60 anos</div><div class="s">idoso a partir de</div></div>
+    <div class="tile"><div class="lab">Portugal</div><div class="n">65 anos</div><div class="s">idoso a partir de</div></div>
+    <div class="tile"><div class="lab">Japão</div><div class="n">70 anos</div><div class="s">idoso a partir de</div></div>
+  </div>
+
+  <h3 data-bm="A fratura do colo é sempre cirúrgica">A fratura do colo é sempre cirúrgica <span class="prova">PROVA</span></h3>
+  <p>A família do idoso tem medo de que ele morra na cirurgia. Mas a comparação entre operar e não operar já foi feita: deixar uma pessoa de 85 anos com essa fratura na cama, sem operar, mata mais. Além disso, a fratura do colo, dentro da cápsula, consolida muito mal sem cirurgia e dói muito.</p>
+  <div class="box red"><div class="kick"><span class="dot"></span>Alerta: o idoso acamado complica</div>
+    <ul>
+      <li><span class="medium">Pneumonia,</span> hipostática ou por broncoaspiração.</li>
+      <li><span class="medium">Infecção urinária:</span> em geral é mulher, usa fralda e não consegue fazer a higiene direito.</li>
+      <li><span class="medium">Úlceras de pressão e tromboembolismo.</span> Sem cirurgia, a mortalidade chega a 50% no primeiro ano.</li>
+    </ul>
+  </div>
+  <div class="quote"><p>“Isso é uma fratura cirúrgica sempre! O grande objetivo do ortopedista é operar para tirar o idoso da cama o mais rápido possível.”</p><div class="who">Dr. André Chagas, sobre a fratura do colo do fêmur no idoso</div></div>
+
+  <h3 data-bm="Idade cronológica e idade biológica">Idade cronológica e idade biológica <span class="prova">PROVA</span></h3>
+  <p>Idade cronológica é a da certidão de nascimento. Idade biológica é a do corpo. Entre 22 e 25 anos quase nada muda, e até os 40 a biologia é parecida. Aos 60, 70 ou 80 anos, a diferença entre duas pessoas da mesma idade é enorme.</p>
+  <div class="cmp">
+    <div class="r h"><div class="k"></div><div class="c">Senhor A, 70 anos</div><div class="c">Senhor B, 70 anos</div></div>
+    <div class="r"><div class="k">Como vive</div><div class="c">fumou por 20 anos, etilista pesado, doença de Parkinson avançada</div><div class="c">ativo, trabalha, faz atividade física, não fuma, bebe socialmente</div></div>
+    <div class="r"><div class="k">Idade biológica</div><div class="c">mais velha</div><div class="c destaque">mais jovem</div></div>
+  </div>
+
+  <h3 data-bm="Qual cirurgia: prótese total, parcial ou parafusos">Qual cirurgia: prótese total, parcial ou parafusos</h3>
+  <p>A Sociedade Brasileira de Quadril tem um consenso baseado na condição biológica e funcional. O idoso pela certidão, mas ativo e lúcido, tende a receber a artroplastia total. O muito debilitado, de baixa demanda, que caminha pouco e só dentro de casa, recebe a hemiartroplastia: o objetivo é tirá-lo do leito e aliviar a dor com uma cirurgia mais rápida e com menos sangramento. Os parafusos canulados ficam para o paciente com menos de 60 anos, para a fratura sem desvio (Garden I e II) ou para o idoso de 60 a 65 anos muito hígido, como um corredor, com fratura não desviada.</p>
+  <div class="cmp">
+    <div class="r h"><div class="k"></div><div class="c">Hemiartroplastia</div><div class="c">Artroplastia total</div></div>
+    <div class="r"><div class="k">O que troca</div><div class="c">só a parte do fêmur; preserva o acetábulo</div><div class="c">cabeça do fêmur e acetábulo</div></div>
+    <div class="r"><div class="k">Para quem</div><div class="c">idoso frágil, de baixa demanda, em geral com mais de 80 anos</div><div class="c">idoso ativo, lúcido e independente</div></div>
+    <div class="r"><div class="k">A favor</div><div class="c">mais rápida, sangra menos, luxa menos no começo; feita pelo ortopedista geral no plantão</div><div class="c">funciona melhor a longo prazo no paciente ativo</div></div>
+  </div>
+  <div class="figure"><img src="colo.svg" alt="Fluxograma: fratura do colo do fêmur no idoso, operar sempre. Ativo e lúcido: artroplastia total. Frágil e de baixa demanda: hemiartroplastia. Menos de 60 anos ou fratura sem desvio: parafusos canulados. Tração cutânea e gesso pelvipodálico cortados."></div>
+  <p>No idoso com fratura desviada (Garden III e IV), só parafuso é um problema: a fratura rompe a circulação que chega à cabeça do fêmur, e vêm a necrose avascular e a pseudoartrose. Num paciente de 70 anos, isso significa operar de novo para pôr prótese. Por isso, com desvio, a prótese entra de primeira.</p>
+  <div class="box red"><div class="kick"><span class="dot"></span>Pegadinha do professor</div><p><span class="medium">Hemiartroplastia no idoso que anda muito.</span> A prótese parcial gasta a cartilagem do acetábulo (erosão acetabular, cotiloidite), vem a dor, e é preciso revisar a cirurgia para uma artroplastia total. Antigamente se trocava toda a prótese; hoje, as hastes modulares, com cabeças intercambiáveis (bipolares), permitem manter a haste do fêmur e fazer só o acetábulo.</p></div>
+
+  <div class="qz">
+    <div class="orig">Questão 9 · Treino feita com inteligência artificial</div>
+    <p class="caso">Fratura do colo do fêmur em idoso.</p>
+    <p class="pq">Qual a conduta mais adequada?</p>
+    <div class="alt"><span class="lt"></span><div class="tx"><b>Tração cutânea.</b> Tratamento conservador: cortada de cara.</div><span class="st">Cai</span></div>
+    <div class="alt"><span class="lt"></span><div class="tx"><b>Gesso pelvipodálico.</b> Conservador, e é de criança.</div><span class="st">Cai</span></div>
+    <div class="alt ok"><span class="lt"></span><div class="tx"><b>Hemiartroplastia.</b> Certa para o idoso frágil típico, com mais de 80 anos, como na literatura americana e europeia.</div><span class="st">Gabarito</span></div>
+    <p class="nota">Depende do perfil do idoso, e caberia recurso: se ele for ativo e independente, a artroplastia total é melhor. Se a prova trouxer as duas próteses, quem decide é a idade biológica.</p>
+  </div>
+  <div class="quote"><p>“Tem nuances, mas dá para matar eliminando as absurdas.”</p><div class="who">Dr. André Chagas, sobre a questão da fratura do colo no idoso</div></div>
+</section>
+
+<section id="s07">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">07</span></div><div class="corpo"><div class="de">Questão 4</div><h2>Osteoporose</h2><div class="aqui"><span class="feito">Método</span><span class="feito">Ferida e fratura exposta</span><span class="feito">Pelve e choque</span><span class="feito">Compartimento</span><span class="feito">Fêmur da criança</span><span class="feito">Fêmur do idoso</span><span class="on">Osteoporose</span><span>Unidade Básica</span></div></div></div>
+  <div class="simples"><p>Osteoporose é osso fraco. Quem quebra o fêmur numa queda da própria altura já tem o diagnóstico. No sistema público, o remédio de primeira linha é o bisfosfonato, mas o que mais muda o risco é o estilo de vida: cálcio, sol, exercício e proteína.</p></div>
+
+  <h3 data-bm="A fratura já faz o diagnóstico">A fratura já faz o diagnóstico</h3>
+  <p>O fêmur é um dos ossos mais resistentes do corpo. Quebrá-lo num trauma de baixa energia, como uma queda da própria altura, é fratura por fragilidade: diagnóstico clínico de osteoporose.</p>
+  <p>O passo seguinte é separar a primária da secundária. Na secundária há uma causa: quimioterapia ou remédios que tiram massa do osso, como corticoide, anticoagulantes (heparina) e anticonvulsivantes de uso crônico.</p>
+
+  <h3 data-bm="Bisfosfonato: a primeira linha do protocolo">Bisfosfonato: a primeira linha do protocolo <span class="prova">PROVA</span></h3>
+  <p>Pelo Protocolo Clínico e Diretrizes Terapêuticas nacional da osteoporose, a primeira linha é o bisfosfonato, como o alendronato de sódio: o comprimido de uma vez por semana (70 mg). Há também um de uma vez por mês, o ibandronato. O alendronato está na farmácia básica do Sistema Único de Saúde. Não é melhor nem pior que os outros: é o protocolo.</p>
+  <p>O bisfosfonato diminui a ação do osteoclasto, inibindo a reabsorção do osso, para que o osteoblasto fabrique osso e o metabolismo ósseo não se desequilibre tanto. O preço é um osso muito rígido, sem a remodelação normal. Daí vêm as complicações: osteonecrose de mandíbula e a fratura atípica do fêmur, que racha sem trauma nenhum.</p>
+  <div class="ref">
+    <div class="txt"><div class="kick"><span class="dot"></span>Tempo de uso do bisfosfonato</div><p>Depois, pausa, para o osso recuperar a ductilidade: a capacidade de torcer sem quebrar.</p></div>
+    <div class="val">cerca de 5 anos<small>depois, pausa</small></div>
+  </div>
+  <div class="box red"><div class="kick"><span class="dot"></span>Pegadinha do professor</div><p><span class="medium">“Toma esse, mal não faz.”</span> Era o que se dizia quando o bisfosfonato chegou para a osteoporose. Faz: deixa o osso rígido e quebradiço, com fratura atípica do fêmur e osteonecrose de mandíbula.</p></div>
+
+  <h3 data-bm="As outras opções e por que não são a primeira">As outras opções e por que não são a primeira</h3>
+  <div class="rows">
+    <div class="row"><div class="k">Estrogênio</div><div class="v">Reposição hormonal. Às vezes é contraindicado, principalmente com câncer de mama ou eventos tromboembólicos. Vai e volta de moda: agora está em alta de novo na perimenopausa.</div></div>
+    <div class="row"><div class="k">Teriparatida</div><div class="v">Análogo do paratormônio, o hormônio da paratireoide: forma osso. Para casos bem específicos (osteoporose muito grave, falha do tratamento), por no máximo 2 anos, com efeito rebote se não houver manutenção.</div></div>
+  </div>
+  <div class="rows">
+    <div class="row"><div class="k">Romosozu­mabe</div><div class="v">Anticorpo monoclonal contra a esclerostina, um biológico como os muito usados na reumatologia. Também para casos específicos.</div></div>
+  </div>
+
+  <h3 data-bm="Estilo de vida: o que mais muda o risco">Estilo de vida: o que mais muda o risco <span class="prova">PROVA</span></h3>
+  <p>Remédio sozinho não muda o risco de queda nem a qualidade do osso. A paciente da questão é saudável; o que mais indicar a ela é mudar o estilo de vida:</p>
+  <ol class="flow">
+    <li><b class="t">Alimentação rica em cálcio.</b> Laticínios e folhas verde-escuras; com ela, talvez nem precise de suplemento em comprimido.</li>
+    <li><b class="t">Sol.</b> Tomar um pouco de sol, para a vitamina D, em vez de ficar só dentro de casa.</li>
+    <li><b class="t">Atividade física.</b> Musculação e exercício resistido, para ter boa massa muscular e não ficar sarcopênico.</li>
+    <li><b class="t">Proteína na dieta.</b> Talvez ajude um pouco na matriz de colágeno do osso, mas serve sobretudo para ter músculo bom: equilíbrio, menos quedas e boa vascularização do osso, porque quem vasculariza o osso é o músculo.</li>
+  </ol>
+  <div class="quote"><p>“O mais importante, para mim, é mudar o estilo de vida. Se a gente não mudar o estilo de vida, não muda o risco de queda e a qualidade óssea.”</p><div class="who">Dr. André Chagas, sobre o tratamento da osteoporose</div></div>
+  <div class="box orange"><div class="kick"><span class="dot"></span>Parêntese do professor</div><p>No Brasil, sol não é um problema sério. Na Islândia é: são 3 meses de verão por ano, 6 meses em que o sol não aparece e os outros 3 mais ou menos.</p></div>
+
+  <div class="quote"><p>“Eu sempre imagino que o tratamento seja uma coisa que vocês possam pensar depois, quem se dedicar à área. Mas os caras da banca não pensam assim.”</p><div class="who">Dr. André Chagas, sobre a questão de tratamento da osteoporose</div></div>
+  <div class="qz">
+    <div class="orig">Questão 4 · ENAMED 2026</div>
+    <p class="caso">Mulher de 72 anos que, há 2 anos, caiu da própria altura e fraturou o fêmur. Sem quimioterapia e sem remédio que cause osteoporose. Já toma vitamina D e cálcio.</p>
+    <p class="pq">Com base no Protocolo Clínico e Diretrizes Terapêuticas nacional da osteoporose, qual o medicamento de primeira linha?</p>
+    <div class="alt"><span class="lt"></span><div class="tx"><b>Estrogênio.</b> Às vezes contraindicado (câncer de mama, tromboembolismo).</div><span class="st">Cai</span></div>
+    <div class="alt"><span class="lt"></span><div class="tx"><b>Teriparatida.</b> Para casos bem específicos, como a osteoporose muito grave.</div><span class="st">Cai</span></div>
+    <div class="alt"><span class="lt"></span><div class="tx"><b>Romosozumabe.</b> Biológico, também para casos específicos.</div><span class="st">Cai</span></div>
+    <div class="alt ok"><span class="lt"></span><div class="tx"><b>Bisfosfonato.</b> Alendronato: primeira linha do protocolo, na farmácia básica do Sistema Único de Saúde.</div><span class="st">Resposta</span></div>
+    <p class="nota">O remédio é o que menos importa no tratamento, mas é o que a questão pediu.</p>
+  </div>
+</section>
+
+<section id="s08">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">08</span></div><div class="corpo"><div class="de">Questões 10 e 5</div><h2>Na Unidade Básica: lombalgia e fibromialgia</h2><div class="aqui"><span class="feito">Método</span><span class="feito">Ferida e fratura exposta</span><span class="feito">Pelve e choque</span><span class="feito">Compartimento</span><span class="feito">Fêmur da criança</span><span class="feito">Fêmur do idoso</span><span class="feito">Osteoporose</span><span class="on">Unidade Básica</span></div></div></div>
+  <div class="simples"><p>Na Unidade Básica, duas situações típicas. A dor lombar de quem carrega peso, sem sinal de alarme, melhora com tratamento simples e não pede exame de imagem. E quem pede um remédio sem evidência nem previsão no sistema público precisa ser informado e orientado.</p></div>
+
+  <h3 data-bm="Lombalgia mecânica: sem exame de imagem">Lombalgia mecânica: sem exame de imagem <span class="prova">PROVA</span></h3>
+  <p>A dor lombar que depende do esforço físico (piora no fim do dia de trabalho, depois de carregar peso), com pouco tempo de evolução, sem sinal de alarme e sem déficit neurológico, é uma lombalgia mecânica comum. Nesse quadro, as diretrizes da atenção primária não pedem exame de imagem: nem radiografia, nem tomografia, nem ressonância. A conduta é tratamento clínico conservador, com orientação postural e mudança de hábitos.</p>
+  <div class="tiles">
+    <div class="tile"><div class="lab">Aguda</div><div class="n">até 4 a 6 semanas</div><div class="s">de evolução</div></div>
+    <div class="tile"><div class="lab">Subaguda</div><div class="n">6 a 12 semanas</div><div class="s">de evolução</div></div>
+    <div class="tile"><div class="lab">Crônica</div><div class="n">acima de 12 semanas</div><div class="s">mais de 3 meses</div></div>
+  </div>
+  <p>O exame neurológico normal afasta compressão de raiz nervosa ou da medula: força e sensibilidade normais, reflexos patelar (raiz L4) e aquileu (raiz S1) preservados. O sinal de Lasègue é a elevação da perna estendida, que procura irritação do nervo ciático (formado pelas raízes de L4 a S3); negativo, o nervo não está irritado.</p>
+
+  <h3 data-bm="O tratamento e o ciclo da dor">O tratamento e o ciclo da dor</h3>
+  <p>Analgésico, anti-inflamatório não esteroidal por pouco tempo, relaxante muscular e fisioterapia com orientação ergonômica. No começo, afasta-se um pouco o paciente do esforço pesado.</p>
+  <div class="es">
+    <div class="kick">Por que remédio no começo e fisioterapia depois</div>
+    <p class="lead">A dor causa contratura reflexa da musculatura paravertebral, que causa mais dor: um ciclo vicioso.</p>
+    <div class="cells">
+      <div class="cell"><div class="lab">Primeiro momento</div><p>Analgésico, anti-inflamatório e fisioterapia analgésica quebram o ciclo e relaxam a musculatura.</p></div>
+      <div class="cell"><div class="lab">Segundo momento</div><p>Fisioterapia de fortalecimento (cinesioterapia, tronco) prepara a musculatura para o trabalho.</p></div>
+    </div>
+  </div>
+  <div class="box red"><div class="kick"><span class="dot"></span>Alertas na dor lombar</div>
+    <ul>
+      <li><span class="medium">Sinais de alarme:</span> idade acima de 50 a 60 anos, perda de peso sem explicação, febre, dor noturna que não melhora no repouso, história de câncer. Pensar em tumor, metástase ou fratura patológica.</li>
+      <li><span class="medium">Anti-inflamatório por muito tempo:</span> não se usa a longo prazo, pelo risco para os rins e o estômago.</li>
+    </ul>
+  </div>
+
+  <div class="qz">
+    <div class="orig">Questão 10 · Revalida 2025</div>
+    <p class="caso">Homem de 45 anos, da construção civil, na Unidade Básica: dor lombar há 1 mês, piorando, irradiada para a face posterior da coxa direita, pior no fim do expediente, depois de carregar peso. Sem trauma, febre ou perda de peso. Dor à palpação paravertebral, flexão preservada; força, sensibilidade e reflexos normais; Lasègue negativo.</p>
+    <p class="pq">Qual a conduta adequada?</p>
+    <div class="alt"><span class="lt"></span><div class="tx"><b>Alternativas que pedem exame de imagem.</b> Sem sinal de alarme e sem déficit, nada de imagem agora.</div><span class="st">Cai</span></div>
+    <div class="alt ok"><span class="lt"></span><div class="tx"><b>Tratamento clínico conservador e orientação.</b> Postura e mudança de hábitos.</div><span class="st">Resposta</span></div>
+  </div>
+
+  <h3 data-bm="Fibromialgia e canabidiol: informar e orientar">Fibromialgia e canabidiol: informar e orientar <span class="prova">PROVA</span></h3>
+  <p>É uma prova de conduta: o diagnóstico de fibromialgia não está em discussão. A paciente, sem melhora com vários tratamentos, pede cannabis medicinal. O médico da Unidade Básica precisa saber que não há protocolo nem evidência científica robusta para a dispensação pelo Sistema Único de Saúde na fibromialgia, informar isso e orientar outras medidas, farmacológicas e não farmacológicas. A conversa não é fácil, e o ideal seria a própria instituição assumir essa orientação.</p>
+  <div class="quote"><p>“Isso não é trabalho de médico, né? Trabalho de médico é cuidar do paciente.”</p><div class="who">Dr. André Chagas, sobre mandar o paciente buscar a via judicial</div></div>
+
+  <div class="qz">
+    <div class="orig">Questão 5 · ENAMED 2025</div>
+    <p class="caso">Mulher de 48 anos na Unidade Básica de Saúde, com dor crônica generalizada e persistente. Outro médico deu o diagnóstico de fibromialgia; desde então, vários tratamentos, sem resultado. Ela pede a prescrição de cannabis medicinal.</p>
+    <p class="pq">Qual é o papel do médico da Unidade Básica?</p>
+    <div class="alt"><span class="lt">A</span><div class="tx"><b>Prescrevê-la, pois consta na Relação Nacional de Medicamentos Essenciais.</b> Não consta para a fibromialgia.</div><span class="st">Cai</span></div>
+    <div class="alt"><span class="lt">B</span><div class="tx"><b>Solicitar autorização do Conselho Regional de Medicina.</b> Demora; não atende a paciente na hora.</div><span class="st">Cai</span></div>
+    <div class="alt ok"><span class="lt">C</span><div class="tx"><b>Informar que faltam evidências científicas robustas para a fibromialgia e para a prescrição no Sistema Único.</b> E orientar outras medidas.</div><span class="st">Resposta</span></div>
+    <div class="alt"><span class="lt">D</span><div class="tx"><b>Comunicar que a prescrição no Sistema Único depende de autorização judicial.</b> Não é trabalho de médico.</div><span class="st">Cai</span></div>
+  </div>
+  <div class="box orange"><div class="kick"><span class="dot"></span>Parêntese do professor</div><p>O que está fora da lista de medicamentos do Sistema Único de Saúde é excepcional, fora do rol, e muitas vezes vai para a Justiça; na ortopedia, é a prótese importada, diferente da que o sistema paga. Quem paga somos todos: um dilema de saúde pública, comum na América Latina. Na Europa, onde o Estado paga na maioria dos países, quem quer prótese fora do padrão vai ao privado e paga tudo.</p></div>
+</section>
+
+<section id="s09" class="vesp">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">09</span></div><div class="corpo"><div class="de">Véspera da prova</div><h2>O essencial da aula</h2></div></div>
+  <h3 data-bm="Véspera da prova">Véspera da prova</h3>
+  <div class="item"><span class="prova">PROVA</span><p>Fratura exposta: limpar para ficar como fechada, antibiótico logo e prevenção do tétano. A vacina dura 10 anos; ferida contaminada com mais de 5 anos da última dose pede reforço.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p>No local do acidente: imobilizar com curativo (dor, conforto, infecção). Não alinhar, não tracionar, não reduzir.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p>Pelve em livro aberto com hipotensão, mesmo com cinta pélvica e FAST negativo: estabilização cirúrgica da pelve (fixador externo). Tomografia e angiografia demoram; laparotomia não, com FAST negativo.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p>Quem sangra é a pelve (plexo venoso pré-sacral); fratura de acetábulo não causa choque.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p>Síndrome compartimental: dor intensa e desproporcional, parestesia e dor ao esticar os dedos depois da fratura.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p>Fêmur aos 3 anos: gesso pelvipodálico, da pelve ao pé; consolida em 6 a 8 semanas.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p>Trauma com membro encurtado e rodado para fora: fratura do colo do fêmur, a fratura típica do idoso.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p>Colo do fêmur no idoso: cirurgia sempre; sem operar, a mortalidade chega a 50% no primeiro ano.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p>A idade biológica escolhe: ativo e lúcido, artroplastia total; frágil e de baixa demanda, hemiartroplastia; menos de 60 anos ou sem desvio, parafusos.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p>Osteoporose: primeira linha do protocolo nacional é o bisfosfonato (alendronato). Osso rígido: osteonecrose de mandíbula e fratura atípica do fêmur; cerca de 5 anos e pausa.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p>Estilo de vida pesa mais que o remédio: cálcio na comida, sol, atividade física e proteína.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p>Lombalgia mecânica sem sinal de alarme e sem déficit: nenhum exame de imagem; tratamento conservador e orientação.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p>Fibromialgia pedindo canabidiol: informar que falta evidência robusta e que não há previsão no Sistema Único; orientar outras medidas.</p></div>
+
+  <h3 data-bm="Números da aula">Números da aula</h3>
+  <div class="tiles">
+    <div class="tile"><div class="lab">Vacina do tétano</div><div class="n">10 anos</div><div class="s">ferida suja: reforço se mais de 5 anos</div></div>
+    <div class="tile"><div class="lab">Sínfise púbica</div><div class="n">2,5 cm</div><div class="s">acima disso, fixar</div></div>
+    <div class="tile"><div class="lab">Fêmur aos 3 anos</div><div class="n">6 a 8 semanas</div><div class="s">para consolidar</div></div>
+  </div>
+  <div class="tiles">
+    <div class="tile"><div class="lab">Colo do fêmur sem cirurgia</div><div class="n">até 50%</div><div class="s">de mortalidade no primeiro ano</div></div>
+    <div class="tile"><div class="lab">Bisfosfonato</div><div class="n">cerca de 5 anos</div><div class="s">de uso, depois pausa</div></div>
+    <div class="tile"><div class="lab">Lombalgia crônica</div><div class="n">12 semanas</div><div class="s">acima disso; aguda até 4 a 6</div></div>
+  </div>
+
+  <div class="box red"><div class="kick"><span class="dot"></span>Erros comuns</div>
+    <ul>
+      <li><span class="medium">Alinhar ou tracionar a fratura na rua.</span> Imobilize como está, com curativo.</li>
+      <li><span class="medium">Culpar o acetábulo pelo choque.</span> Quem sangra é o anel pélvico.</li>
+      <li><span class="medium">Mandar o paciente instável para a tomografia.</span> Estabilize a pelve primeiro.</li>
+      <li><span class="medium">Deixar o idoso com fratura do colo na cama.</span> Opere e tire-o do leito.</li>
+    </ul>
+  </div>
+
+  <h3 data-bm="Palavras da aula em linguagem simples">Palavras da aula em linguagem simples</h3>
+  <div class="rows terms">
+    <div class="row"><div class="k">Acetábulo</div><div class="v">A cavidade da pelve onde se encaixa a cabeça do fêmur.</div></div>
+    <div class="row"><div class="k">Alendronato</div><div class="v">O bisfosfonato do protocolo: comprimido tomado uma vez por semana.</div></div>
+    <div class="row"><div class="k">Anafilaxia</div><div class="v">Reação alérgica muito grave, que pode fechar a passagem do ar.</div></div>
+  </div>
+  <div class="rows terms">
+    <div class="row"><div class="k">Artroplastia</div><div class="v">Cirurgia que troca a articulação por uma prótese. Total: troca os dois lados. Hemiartroplastia: só a parte do fêmur.</div></div>
+    <div class="row"><div class="k">Cinta pélvica</div><div class="v">Faixa larga em volta do quadril que fecha o anel da pelve no atendimento inicial.</div></div>
+    <div class="row"><div class="k">Contactante</div><div class="v">Paciente acordado, que conversa.</div></div>
+  </div>
+  <div class="rows terms">
+    <div class="row"><div class="k">Desbridamento</div><div class="v">Limpeza cirúrgica da ferida, retirando o tecido morto.</div></div>
+    <div class="row"><div class="k">Diástase</div><div class="v">Afastamento de duas partes que deveriam estar juntas, como as metades da sínfise púbica.</div></div>
+    <div class="row"><div class="k">Ductilidade</div><div class="v">A capacidade do osso de torcer sem quebrar.</div></div>
+  </div>
+  <div class="rows terms">
+    <div class="row"><div class="k">ENAMED</div><div class="v">Exame Nacional de Avaliação da Formação Médica.</div></div>
+    <div class="row"><div class="k">Fasciotomia</div><div class="v">Corte da fáscia que fecha o compartimento, para aliviar a pressão.</div></div>
+    <div class="row"><div class="k">FAST</div><div class="v">Ultrassom rápido, feito na sala de emergência, para procurar sangue na barriga.</div></div>
+  </div>
+  <div class="rows terms">
+    <div class="row"><div class="k">Lasègue</div><div class="v">Teste da elevação da perna estendida, que procura irritação do nervo ciático.</div></div>
+    <div class="row"><div class="k">Osteoclasto</div><div class="v">A célula que reabsorve osso; o osteoblasto é a que fabrica.</div></div>
+    <div class="row"><div class="k">Pelvipodálico</div><div class="v">Gesso que vai da pelve até o pé.</div></div>
+  </div>
+  <div class="rows terms">
+    <div class="row"><div class="k">Plexo venoso pré-sacral</div><div class="v">Rede de veias à frente do sacro, dentro da pelve, que sangra muito nas fraturas.</div></div>
+    <div class="row"><div class="k">Pseudoartrose</div><div class="v">Fratura que não consolida.</div></div>
+    <div class="row"><div class="k">Sarcopenia</div><div class="v">Perda de massa e força muscular.</div></div>
+    <div class="row"><div class="k">Sínfise púbica</div><div class="v">A junta da frente da pelve, entre os dois ossos do púbis.</div></div>
+  </div>
+  {{NOTAS}}
+</section>
+
+</body></html>
