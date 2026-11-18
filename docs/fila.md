@@ -21,4 +21,4 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
 | Flashcards da pass-a6 | Claude | claude/happy-darwin-07h2c3 | pass-a6 (flashcards) | 16/11/2026 |
-| Aula nova: Patologias da Coluna | Claude | claude/wonderful-cray-844m3t | orto-a7 (Ortopedia) | 18/11/2026 |
+| Aula nova: Patologias da Coluna | Claude | claude/wonderful-cray-844m3t | orto-a5 (Ortopedia) | 18/11/2026 |
