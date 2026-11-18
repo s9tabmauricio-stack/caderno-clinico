@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="478pt" height="186pt" viewBox="0 0 478 186">
+<rect x="0.0" y="0.0" width="109.0" height="76.4" rx="7" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="1"/>
+<circle cx="15.0" cy="15.0" r="8" fill="#0B5BD3"/>
+<text x="15.0" y="18.2" font-family="Inter SemiBold" font-size="8.5" fill="#FFFFFF" text-anchor="middle">1</text>
+<text x="8.0" y="37.0" font-family="Inter SemiBold" font-size="8.6" fill="#16315C" text-anchor="start">Diagnóstico inicial</text>
+<text x="8.0" y="49.8" font-family="Inter" font-size="7.6" fill="#3A3A3C" text-anchor="start">o que aconteceu e onde</text>
+<text x="8.0" y="59.8" font-family="Inter" font-size="7.6" fill="#3A3A3C" text-anchor="start">dói</text>
+<polygon points="111.0,37.4 115.5,37.4 115.5,34.7 121.0,38.2 115.5,41.7 115.5,39.0 111.0,39.0" fill="#8AA9DF"/>
+<rect x="123.0" y="0.0" width="109.0" height="76.4" rx="7" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="1"/>
+<circle cx="138.0" cy="15.0" r="8" fill="#0B5BD3"/>
+<text x="138.0" y="18.2" font-family="Inter SemiBold" font-size="8.5" fill="#FFFFFF" text-anchor="middle">2</text>
+<text x="131.0" y="37.0" font-family="Inter SemiBold" font-size="8.6" fill="#16315C" text-anchor="start">Imobilizar</text>
+<text x="131.0" y="49.8" font-family="Inter" font-size="7.6" fill="#3A3A3C" text-anchor="start">proteger a lesão e aliviar</text>
+<polygon points="234.0,37.4 238.5,37.4 238.5,34.7 244.0,38.2 238.5,41.7 238.5,39.0 234.0,39.0" fill="#8AA9DF"/>
+<rect x="246.0" y="0.0" width="109.0" height="76.4" rx="7" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="1"/>
+<circle cx="261.0" cy="15.0" r="8" fill="#0B5BD3"/>
+<text x="261.0" y="18.2" font-family="Inter SemiBold" font-size="8.5" fill="#FFFFFF" text-anchor="middle">3</text>
+<text x="254.0" y="37.0" font-family="Inter SemiBold" font-size="8.6" fill="#16315C" text-anchor="start">Analgesia</text>
+<text x="254.0" y="49.8" font-family="Inter" font-size="7.6" fill="#3A3A3C" text-anchor="start">remédio, gelo</text>
+<polygon points="357.0,37.4 361.5,37.4 361.5,34.7 367.0,38.2 361.5,41.7 361.5,39.0 357.0,39.0" fill="#8AA9DF"/>
+<rect x="369.0" y="0.0" width="109.0" height="76.4" rx="7" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="1"/>
+<circle cx="384.0" cy="15.0" r="8" fill="#0B5BD3"/>
+<text x="384.0" y="18.2" font-family="Inter SemiBold" font-size="8.5" fill="#FFFFFF" text-anchor="middle">4</text>
+<text x="377.0" y="37.0" font-family="Inter SemiBold" font-size="8.6" fill="#16315C" text-anchor="start">Rever o diagnóstico</text>
+<text x="377.0" y="49.8" font-family="Inter" font-size="7.6" fill="#3A3A3C" text-anchor="start">exame mais apurado, se</text>
+<text x="377.0" y="59.8" font-family="Inter" font-size="7.6" fill="#3A3A3C" text-anchor="start">precisar</text>
+<polygon points="424.3,79.4 424.3,93.9 427.0,93.9 423.5,99.4 420.0,93.9 422.7,93.9 422.7,79.4" fill="#8AA9DF"/>
+<rect x="246.0" y="102.4" width="232.0" height="82" rx="7" fill="#FFFFFF" stroke="#C3D8F8"/>
+<circle cx="261.0" cy="117.4" r="8" fill="#0B5BD3"/>
+<text x="261.0" y="120.6" font-family="Inter SemiBold" font-size="8.5" fill="#FFFFFF" text-anchor="middle">5</text>
+<text x="275.0" y="120.4" font-family="Inter SemiBold" font-size="8.6" fill="#16315C" text-anchor="start">Tratamento definitivo</text>
+<rect x="254.0" y="130.4" width="103.0" height="46" rx="6" fill="#F5F8FF" stroke="#C3D8F8"/>
+<text x="305.5" y="144.4" font-family="Inter SemiBold" font-size="8" fill="#0B5BD3" text-anchor="middle">Conservador</text>
+<text x="305.5" y="156.4" font-family="Inter" font-size="7.2" fill="#3A3A3C" text-anchor="middle">tala, gesso, órtese</text>
+<rect x="367.0" y="130.4" width="103.0" height="46" rx="6" fill="#F5F8FF" stroke="#C3D8F8"/>
+<text x="418.5" y="144.4" font-family="Inter SemiBold" font-size="8" fill="#0B5BD3" text-anchor="middle">Cirúrgico</text>
+<text x="418.5" y="156.4" font-family="Inter" font-size="7.2" fill="#3A3A3C" text-anchor="middle">osteossíntese, prótese,</text>
+<text x="418.5" y="165.7" font-family="Inter" font-size="7.2" fill="#3A3A3C" text-anchor="middle">fixador</text>
+<polygon points="244.0,144.2 239.5,144.2 239.5,146.9 234.0,143.4 239.5,139.9 239.5,142.6 244.0,142.6" fill="#8AA9DF"/>
+<rect x="0" y="102.4" width="232.0" height="82" rx="7" fill="#FFFFFF" stroke="#0B5BD3"/>
+<text x="10.0" y="120.4" font-family="Inter SemiBold" font-size="8.6" fill="#16315C" text-anchor="start">Objetivo: reabilitação</text>
+<text x="10.0" y="135.4" font-family="Inter" font-size="7.8" fill="#3A3A3C" text-anchor="start">física, psicológica e laboral: voltar a trabalhar, ao</text>
+<text x="10.0" y="145.7" font-family="Inter" font-size="7.8" fill="#3A3A3C" text-anchor="start">esporte, ao que fazia antes</text>
+</svg>
