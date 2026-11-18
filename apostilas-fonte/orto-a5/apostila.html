@@ -1,0 +1,817 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<title>Ortopedia · Aula 5 · Patologias da coluna</title>
+<meta name="rodape" content="Mauricio Faria · Ortopedia · Aula 5 — Patologias da coluna">
+<link rel="stylesheet" href="apostila.css">
+<style>
+/* ===== componentes do molde novo (em teste na pneumo-a5) ===== */
+.simples { background: #FFFFFF; border: 1px solid #C3D8F8; border-left: 4pt solid #0B5BD3; border-radius: 12pt; padding: 9pt 14pt 10pt; margin: 0 0 10pt; break-inside: avoid; }
+.simples p { font-size: 10.2pt; line-height: 1.5; color: #1F2933; margin: 0; }
+.aqui { display: flex; margin-top: 7pt; }
+.aqui span { flex: 1; border-top: 3pt solid #DCDCE2; padding-top: 2.5pt; margin-right: 2.5pt; font-family: "Inter Medium"; font-size: 6pt; line-height: 1.25; color: #8E8E93; }
+.aqui span:last-child { margin-right: 0; }
+.aqui span.feito { border-top-color: #A9C4EE; color: #6C6C70; }
+.aqui span.on { border-top-color: #0B5BD3; color: #0B5BD3; font-family: "Inter SemiBold"; }
+.aqui span.ramo { border-top-style: dashed; }
+.figure .olhar { margin-top: 8pt; }
+.figure .olhar .kick { margin-bottom: 3pt; }
+.figure .olhar ul { margin: 0; }
+.figure .olhar li { padding-left: 0; font-size: 8.7pt; line-height: 1.45; margin-bottom: 2pt; }
+.figure .olhar li::before { display: none; }
+.figure .olhar li b { color: #0B5BD3; }
+.figure .leg { font-size: 7.8pt; color: #8E8E93; margin: 5pt 0 0; }
+.reg { font-size: 8.3pt; line-height: 1.45; color: #6C6C70; background: #F7F7FA; border: 1px solid #E3E3E8; border-radius: 9pt; padding: 5pt 10pt; margin: 6pt 0 9pt; break-inside: avoid; }
+.reg b { font-family: "Inter SemiBold"; color: #4F5B70; }
+.livros { font-size: 8.3pt; line-height: 1.45; color: #6E3AA7; background: #F4EBFB; border: 1px solid #DEC7F1; border-radius: 9pt; padding: 5pt 10pt; margin: 6pt 0 9pt; break-inside: avoid; }
+.livros b { color: #6E3AA7; }
+.sw.simples-sw { background: #FFFFFF; border-color: #C3D8F8; border-left: 3pt solid #0B5BD3; }
+.sw.aqui-sw { background: linear-gradient(90deg, #A9C4EE 0, #A9C4EE 45%, #0B5BD3 45%, #0B5BD3 70%, #DCDCE2 70%); border: 0; height: 4pt; border-radius: 2pt; }
+.sw.exame-sw { background: #1F2933; border-color: #1F2933; }
+.cmp .destaque { font-family: "Inter SemiBold"; color: #0B5BD3; }
+.cmp.c4 .k { width: 62pt; }
+.cmp.c4 .c { font-size: 8.3pt; padding-right: 8pt; }
+.vesp { break-before: page; }
+.vesp .item { display: flex; align-items: baseline; background: #FFFFFF; border: 1px solid #E3E3E8; border-radius: 12pt; padding: 7pt 12pt; margin: 0 0 6pt; break-inside: avoid; }
+.vesp .item .prova { flex: none; margin: 0 9pt 0 0; }
+.vesp .item p { margin: 0; font-size: 9.2pt; }
+.tiles.t4 { margin: 6pt 0 8pt; }
+.figure.lado { display: flex; align-items: center; }
+.figure.lado > img { flex: none; }
+.figure.lado .olhar { flex: 1; margin: 0 0 0 12pt; }
+.cover .toc a { padding: 3.6pt 0; }
+/* ===== ajustes desta apostila ===== */
+.aqui { break-after: avoid; }
+.simples { break-after: avoid; }
+.figure .kick { margin-bottom: 6pt; }
+.vesp { break-before: auto; }
+</style>
+</head><body>
+
+<div class="cover">
+  <div class="kicker">Ortopedia · Aula 5 · Patologias da coluna</div>
+  <h1>Patologias da coluna</h1>
+  <p class="sub">Do politraumatizado de colar à tuberculose vertebral: como achar o nível da lesão, separar a dor lombar comum da grave e reconhecer as urgências da coluna.</p>
+  <div class="author"><span class="av">C</span><div><b>Dr. Gustavo Alves Colombo</b><span>Ortopedista e traumatologista, especialista em cirurgia do quadril · 29 de outubro de 2026</span></div></div>
+  <div class="keynums"><div class="kick">Três números para levar</div>
+    <div class="kn-grid">
+      <div class="kn"><div class="n">L1</div><div class="l">a vértebra que mais quebra na fratura toracolombar</div></div>
+      <div class="kn"><div class="n">100%</div><div class="l">das ressonâncias lombares depois dos 50 anos têm alguma alteração</div></div>
+      <div class="kn"><div class="n">48 horas</div><div class="l">prazo ideal para descomprimir a síndrome da cauda equina</div></div>
+    </div></div>
+  <div class="toc"><div class="kick">Nesta apostila</div>
+    <a href="#s00"><span class="tn">00</span><span class="tt">Recados da disciplina</span><span class="pg">{{s00}}</span></a>
+    <a href="#s01"><span class="tn">01</span><span class="tt">A coluna por dentro</span><span class="pg">{{s01}}</span></a>
+    <a href="#s02"><span class="tn">02</span><span class="tt">Fraturas cervicais</span><span class="pg">{{s02}}</span></a>
+    <a href="#s03"><span class="tn">03</span><span class="tt">Fraturas toracolombares</span><span class="pg">{{s03}}</span></a>
+    <a href="#s04"><span class="tn">04</span><span class="tt">Nível da lesão e os dois choques</span><span class="pg">{{s04}}</span></a>
+    <a href="#s05"><span class="tn">05</span><span class="tt">Dor lombar: conceitos e avaliação</span><span class="pg">{{s05}}</span></a>
+    <a href="#s06"><span class="tn">06</span><span class="tt">Hérnia de disco lombar</span><span class="pg">{{s06}}</span></a>
+    <a href="#s07"><span class="tn">07</span><span class="tt">Tratamento da dor lombar</span><span class="pg">{{s07}}</span></a>
+    <a href="#s08"><span class="tn">08</span><span class="tt">Síndrome da cauda equina</span><span class="pg">{{s08}}</span></a>
+    <a href="#s09"><span class="tn">09</span><span class="tt">Infecção da coluna</span><span class="pg">{{s09}}</span></a>
+    <a href="#s10"><span class="tn">10</span><span class="tt">Tuberculose da coluna e mal de Pott</span><span class="pg">{{s10}}</span></a>
+    <a href="#s11"><span class="tn">11</span><span class="tt">Véspera da prova</span><span class="pg">{{s11}}</span></a>
+    <p class="note">Organizada a partir da aula e dos slides, com a linguagem ajustada para estudo. A legenda de cores está na página 2.</p>
+  </div>
+</div>
+
+<div class="legend"><div class="kick">Como ler esta apostila</div><div class="lg-grid">
+  <div class="lg"><span class="sw blue"></span><div><b>Azul</b> conteúdo da aula e raciocínio</div></div>
+  <div class="lg"><span class="sw green"></span><div><b>Verde</b> dose ou valor de referência</div></div>
+  <div class="lg"><span class="sw red"></span><div><b>Vermelho</b> alerta, erro comum ou armadilha</div></div>
+  <div class="lg"><span class="sw orange"></span><div><b>Laranja</b> fala ou parêntese do professor</div></div>
+  <div class="lg"><span class="sw purple"></span><div><b>Roxo</b> complemento que não foi dito em aula</div></div>
+  <div class="lg"><span class="prova">PROVA</span><div><b>Marca de prova</b> o ponto que cai na prova</div></div>
+  <div class="lg"><span class="sw simples-sw"></span><div><b>Em palavras simples</b> o capítulo em duas linhas</div></div>
+  <div class="lg"><span class="sw aqui-sw"></span><div><b>Você está aqui</b> a etapa da aula no caminho</div></div>
+  <div class="lg"><span class="sw red"></span><div><b>Pegadinha do professor</b> o erro no ponto onde ele acontece</div></div>
+  <div class="lg"><span class="sw exame-sw"></span><div><b>Imagem de exame</b> dos slides, com marcas nossas</div></div>
+</div></div>
+
+<div class="prof"><div class="kick">Sobre o professor · Dr. Gustavo Colombo</div>
+<div class="rows">
+  <div class="row"><div class="k">Especialidade</div><div class="v">Ortopedia e traumatologia, com especialização em cirurgia do quadril.</div></div>
+  <div class="row"><div class="k">Formação</div><div class="v">Medicina pelo Centro Universitário Fundação Assis Gurgacz. Residência em ortopedia e traumatologia no Hospital São Lucas de Cascavel. Subespecialização em cirurgia do quadril no Hospital Universitário Cajuru, em Curitiba.</div></div>
+  <div class="row"><div class="k">Atuação</div><div class="v">Centro Especializado em Ortopedia e Traumatologia, em Cascavel, no grupo de cirurgia do quadril.</div></div>
+  <div class="row"><div class="k">Sociedades</div><div class="v">Membro da Sociedade Brasileira de Ortopedia e Traumatologia e trainee da Sociedade Internacional de Preservação do Quadril (The Hip Preservation Society).</div></div>
+</div></div>
+
+<section id="s00">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">00</span></div><div class="corpo"><div class="de">Antes de começar</div><h2>Recados da disciplina</h2></div></div>
+  <div class="rows">
+    <div class="row"><div class="k">Na prova</div><div class="v">Uma questão de mal de Pott, avisada com todas as letras. Também anunciada: a relação entre o tamanho da hérnia de disco e a dor.</div></div>
+    <div class="row"><div class="k">Slides</div><div class="v">Vêm com estrelas nos pontos onde ele vai colocar as questões. A lista está abaixo, com o capítulo de cada uma.</div></div>
+  </div>
+  <div class="box"><div class="kick"><span class="dot"></span>As estrelas dos slides</div>
+    <ul class="cols2">
+      <li><span class="medium">Tomografia:</span> o exame mais sensível para fratura cervical (02).</li>
+      <li><span class="medium">Fratura toracolombar:</span> L1, T12, L2, T11 (03).</li>
+      <li><span class="medium">Choque medular</span> e <span class="medium">choque neurogênico:</span> quatro slides (04).</li>
+      <li><span class="medium">Exame físico lombar:</span> Lasègue (05).</li>
+      <li><span class="medium">Ressonância:</span> 100% alterada depois dos 50 anos (05).</li>
+      <li><span class="medium">Hérnia:</span> o tamanho não se correlaciona com a clínica (06).</li>
+      <li><span class="medium">Mal de Pott:</span> “Cadê o Pott?” (10).</li>
+    </ul>
+  </div>
+  <div class="quote"><p>“Eu nunca vi um na vida, mas vai cair. Então, para vocês não esquecerem, para vocês ficarem com raiva e nunca mais esquecerem, eu vou colocar uma questão de mal de Pott na prova. Já estou avisando.”</p><div class="who">Dr. Gustavo Colombo, sobre a tuberculose da coluna</div></div>
+</section>
+
+<div class="figure"><div class="kick">O caminho da aula</div><img src="trilha.svg" alt="Trilha da aula em oito etapas"></div>
+
+<section id="s01">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">01</span></div><div class="corpo"><div class="de">Etapa 1 de 8</div><h2>A coluna por dentro</h2><div class="aqui"><span class="on">Anatomia</span><span>Fratura cervical</span><span>Fratura toracolombar</span><span>Nível e choques</span><span>Dor lombar</span><span>Hérnia e tratamento</span><span>Cauda equina</span><span>Infecção e Pott</span></div></div></div>
+  <div class="simples"><p>A coluna é uma pilha de tijolos (as vértebras) com amortecedores entre eles (os discos). Ela sustenta o corpo, protege a medula e ainda se mexe. Saber as regiões e as peças ajuda a entender onde cada doença bate.</p></div>
+
+  <h3 data-bm="Regiões e números">Regiões e números</h3>
+  <p>São <b>33 vértebras</b>: 7 cervicais, 12 torácicas, 5 lombares, 5 sacrais e 3 a 5 no cóccix (geralmente 4, porque a fusão do cóccix varia de pessoa para pessoa). Para as fraturas, a coluna se divide em cinco regiões:</p>
+  <div class="rows">
+    <div class="row"><div class="k">C0 a C2</div><div class="v">Cervical axial: occipital, atlas e áxis.</div></div>
+    <div class="row"><div class="k">C3 a T1</div><div class="v">Cervical subaxial.</div></div>
+    <div class="row"><div class="k">T2 a T10</div><div class="v">Torácica.</div></div>
+  </div>
+  <div class="rows">
+    <div class="row"><div class="k">T11 a L2</div><div class="v">Toracolombar: a transição, a região que mais se mexe e mais quebra.</div></div>
+    <div class="row"><div class="k">L3 a S1</div><div class="v">Lombossacra.</div></div>
+  </div>
+
+  <h3 data-bm="Para que serve">Para que serve</h3>
+  <ul>
+    <li><span class="medium">Sustentação:</span> suporta o peso do corpo e o passa para a pelve e as pernas.</li>
+    <li><span class="medium">Proteção neurológica:</span> abriga a medula e as raízes nervosas.</li>
+    <li><span class="medium">Mobilidade:</span> flexão, extensão, inclinação e rotação; as vértebras são mais rígidas que outras articulações, mas se movem.</li>
+    <li><span class="medium">Distribuição de carga:</span> como um muro de tijolos empilhados, cada nível carrega a sua parte; discos e articulações absorvem as forças.</li>
+    <li><span class="medium">Equilíbrio postural:</span> as curvaturas distribuem a carga em pé e na marcha; é a coluna que nos deixa andar sobre duas pernas.</li>
+  </ul>
+
+  <h3 data-bm="As peças da vértebra">As peças da vértebra</h3>
+  <p>O <b>corpo vertebral</b> é a principal estrutura de carga e o local mais acometido. Atrás dele, o arco (pedículos e lâminas) fecha o forame vertebral; os forames empilhados formam o canal, com a medula, as meninges e os vasos. O processo espinhoso é ponto de inserção e a referência que se palpa; os transversos recebem músculos e, no tórax, se relacionam com as costelas; os processos articulares formam as articulações zigapofisárias (as facetas), que guiam e limitam o movimento. Doenças podem atingir a lâmina, a faceta, o canal ou o corpo.</p>
+  <p>A estabilidade não vem só do osso: ligamentos, músculos, cápsula, sinóvia e o próprio formato das peças contam, e cada um pode ser a origem de uma dor.</p>
+
+  <h3 data-bm="Ligamentos e curvaturas">Ligamentos e curvaturas</h3>
+  <div class="grid2">
+    <div class="card"><span class="tag">Ligamentos</span><ul><li>Longitudinal anterior</li><li>Longitudinal posterior</li><li>Interespinhoso e supraespinhoso</li><li>Amarelo (flavo)</li></ul></div>
+    <div class="card"><span class="tag">Curvaturas fisiológicas</span><ul><li>Lordose cervical: convexa para a frente</li><li>Cifose torácica: convexa para trás</li><li>Lordose lombar: convexa para a frente</li><li>Cifose sacrococcígea: convexa para trás</li></ul></div>
+  </div>
+  <div class="box orange"><div class="kick"><span class="dot"></span>Parêntese do professor</div><p>Quem for para a anestesia vai sentir esses ligamentos na ponta da agulha da raquianestesia: eles são “palpáveis com a agulha”. E qualquer alteração das curvaturas já configura uma doença.</p></div>
+
+  <h3 data-bm="O disco intervertebral">O disco intervertebral</h3>
+  <div class="cmp">
+    <div class="r h"><div class="k"></div><div class="c">Ânulo fibroso</div><div class="c">Núcleo pulposo</div></div>
+    <div class="r"><div class="k">Onde</div><div class="c">Periferia, em lamelas de fibrocartilagem</div><div class="c">Centro, uma matriz hidratada</div></div>
+    <div class="r"><div class="k">Colágeno</div><div class="c destaque">Tipo I: fibras longas e organizadas</div><div class="c destaque">Tipo II: mais frouxo</div></div>
+    <div class="r"><div class="k">Como age</div><div class="c">Parede resistente, quase uma fáscia; aguenta a tração</div><div class="c">Como uma bolacha: aperta e amassa; recebe e distribui a compressão</div></div>
+    <div class="r"><div class="k">Células</div><div class="c">Tipo fibroblastos</div><div class="c">Tipo condrócitos</div></div>
+  </div>
+  <p>As <b>placas terminais</b> cartilaginosas fazem a ligação com as vértebras e são a porta da nutrição. O disco do adulto é avascular: não entra artéria, ele se nutre por difusão pela placa terminal. Só 1% do volume é de células, e a influência genética pesa muito. Por isso o disco é tão difícil de tratar e não se regenera.</p>
+  <div class="reg"><b>Registro:</b> no começo da explicação, a resistência do ânulo foi descrita como resistência às forças de compressão; o slide e a explicação sobre a hérnia (capítulo 06) falam em tração.</div>
+  <div class="box"><div class="kick"><span class="dot"></span>Macete do colágeno</div><p>“1, 2”: na periferia (ânulo) é o tipo 1; dentro (núcleo) é o tipo 2.</p></div>
+</section>
+
+<section id="s02">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">02</span></div><div class="corpo"><div class="de">Etapa 2 de 8</div><h2>Fraturas cervicais</h2><div class="aqui"><span class="feito">Anatomia</span><span class="on">Fratura cervical</span><span>Fratura toracolombar</span><span>Nível e choques</span><span>Dor lombar</span><span>Hérnia e tratamento</span><span>Cauda equina</span><span>Infecção e Pott</span></div></div></div>
+  <div class="simples"><p>Quem sofre um trauma grave chega ao hospital de colar cervical. A pergunta do plantão é quando tirar esse colar e quando investigar. A resposta vem do exame físico, e a tomografia é o exame que mais acha fratura.</p></div>
+
+  <h3 data-bm="Quem fratura e onde">Quem fratura e onde</h3>
+  <p>A distribuição é <b>bimodal</b>: o jovem de 15 a 25 anos, em trauma de alta energia, ou o idoso, em que às vezes basta uma queda simples. A fratura é mais comum nas vértebras de cima, C1 e C2; ali o canal é largo, então mesmo com fragmento dentro do canal a lesão neurológica é menos frequente. A combinação de C1 com C2 pode acontecer. O que mais mata é a <b>dissociação occipitocervical</b>, a lesão entre o côndilo do occipital e C1.</p>
+  <p>Na cervical subaxial, <b>C6 e C7</b> concentram 40% das fraturas: são as vértebras mais móveis e menos protegidas, e a carga se transfere para elas. Ali o canal é mais estreito, e a lesão medular é mais frequente.</p>
+  <div class="reg"><b>No slide:</b> adolescentes e adultos jovens de 15 a 24 anos; meia-idade acima de 55 anos.</div>
+  <p>Mecanismos de trauma:</p>
+  <div class="rows">
+    <div class="row"><div class="k">31,8%</div><div class="v">Acidente automobilístico, a maioria.</div></div>
+    <div class="row"><div class="k">31,4%</div><div class="v">Queda de outro nível: cai de altura e bate a cabeça.</div></div>
+    <div class="row"><div class="k">10,2%</div><div class="v">Queda da própria altura, principalmente em idosos.</div></div>
+  </div>
+  <div class="rows">
+    <div class="row"><div class="k">9,4%</div><div class="v">Atropelamento.</div></div>
+    <div class="row"><div class="k">6,8%</div><div class="v">Mergulho em águas rasas: entra aqui a fratura do enforcado.</div></div>
+  </div>
+
+  <h3 data-bm="Conduta inicial: colar em todos até examinar">Conduta inicial: colar em todos até examinar <span class="prova">PROVA</span></h3>
+  <p><b>Todo politraumatizado deve ser considerado portador de lesão cervical.</b> Por isso ele chega do atendimento pré-hospitalar de colar, mesmo acordado. Para tirar: solte devagar, examine os membros superiores e inferiores, pergunte por dor, palpe e aperte. Apertou e não doeu, sem déficit? Pelo protocolo do ATLS (Suporte Avançado de Vida no Trauma), já pode tirar o colar e o colete.</p>
+  <div class="box red"><div class="kick"><span class="dot"></span>Pegadinha do professor</div><p><span class="medium">Prancha rígida não é lugar para esperar exame.</span> Sem dor lombar nem cervical, tire da prancha, com movimentação em bloco. Ficar uma ou duas horas num pedaço de madeira esperando a tomografia dói e não ajuda; e a prancha aparece no raio-X. A regra vale também para o colar: com suspeita real, mesmo sem dor, deixe; na dúvida, deixe. Mas o caso raramente é tão em cima do muro.</p></div>
+  <div class="figure"><img src="colar.svg" alt="Fluxograma de quando tirar o colar cervical"></div>
+  <div class="reg"><b>No slide:</b> Glasgow menor que 15 e tomografia normal: retirar o colar. Em aula: Glasgow 15 e tomografia normal, tira o colar mesmo com dor. O slide também traz, para a tomografia normal em paciente com sintoma, a volta com o colar em 2 semanas, “mais controverso ainda”.</div>
+
+  <h3 data-bm="O que procurar no exame">O que procurar no exame</h3>
+  <ul>
+    <li><span class="medium">História:</span> lesões prévias, natureza da lesão atual e dor; a dor cervical pode ser mascarada por outras lesões.</li>
+    <li><span class="medium">Palpação dos processos espinhosos:</span> dor, crepitação ou desnível.</li>
+    <li><span class="medium">Partes moles:</span> contusões, lacerações, edema; a frente do pescoço (hematoma), os anexos, o ombro.</li>
+    <li><span class="medium">Face:</span> trauma de face sugere o mecanismo; quem bateu o rosto tem boa chance de lesão cervical.</li>
+  </ul>
+
+  <h3 data-bm="Cada raiz, um músculo e uma pele">Cada raiz, um músculo e uma pele</h3>
+  <p>O exame da coluna é muito objetivo: cada raiz tem um músculo-chave, um reflexo e um pedaço de pele.</p>
+  <div class="cmp c4">
+    <div class="r h"><div class="k">Raiz</div><div class="c">Músculo-chave</div><div class="c">Reflexo</div><div class="c">Sensibilidade</div></div>
+    <div class="r"><div class="k">C5</div><div class="c">Flexores do cotovelo</div><div class="c">Bicipital</div><div class="c">Face lateral do braço</div></div>
+    <div class="r"><div class="k">C6</div><div class="c">Extensores do punho (faça um “6” com a mão)</div><div class="c">Braquiorradial</div><div class="c">Primeiro dedo</div></div>
+    <div class="r"><div class="k">C7</div><div class="c">Extensor do cotovelo, o tríceps (o “7” do cotovelo)</div><div class="c">Tricipital</div><div class="c">Terceiro dedo</div></div>
+    <div class="r"><div class="k">C8</div><div class="c">Flexor profundo do terceiro dedo</div><div class="c">Nenhum</div><div class="c">Quinto dedo</div></div>
+    <div class="r"><div class="k">T1</div><div class="c">Abdutor do quinto dedo</div><div class="c">Nenhum</div><div class="c">Face medial do cotovelo</div></div>
+  </div>
+  <div class="reg"><b>No quadro do slide:</b> para T1, “adutor do 5º quirodáctilo”; em aula, abdutor do quinto dedo.</div>
+  <div class="box red"><div class="kick"><span class="dot"></span>Pegadinha do professor</div><p><span class="medium">A dor aparece longe do problema.</span> “Doutor, é um formigamento só no dedão.” Pede-se ressonância da mão, e o problema era uma hérnia cervical. Outro caso: dor forte na face lateral da perna e uma tomografia da perna pedida pelo colega; era topografia de raiz lombar. A dor neurogênica nem sempre vem com dor na coluna. Examine a irradiação antes de pedir exame do lugar errado.</p></div>
+
+  <h3 data-bm="Radiografia: o que olhar">Radiografia: o que olhar</h3>
+  <div class="figure lado"><img src="exame-cervical.png" style="width:185pt" alt="Radiografia lateral da coluna cervical com as vértebras coloridas">
+    <div class="olhar"><div class="kick">O que olhar</div><ul>
+      <li><b>Linhas contínuas:</b> vertebral anterior, vertebral posterior e espinolaminar. Mesmo em algumas fraturas elas seguem sem degrau.</li>
+      <li><b>Espaços interespinhosos alargados:</b> lesão do complexo ligamentar posterior.</li>
+      <li><b>Cifose segmentar:</b> a fratura por impacção achata a vértebra e deixa o segmento torto.</li>
+      <li><b>1 · C2:</b> a primeira com corpo e processo espinhoso bem visíveis, grande e esquisita; dela se conta para baixo.</li>
+      <li><b>2 · C7:</b> o processo espinhoso mais proeminente, o mesmo que se palpa no pescoço. Às vezes o ombro o esconde.</li>
+    </ul><p class="leg">Imagem dos slides da aula.</p></div></div>
+  <p>Na degeneração e na hérnia de disco, o raio-X mais tardio mostra o contrário do alargamento: o espaço do disco afila, porque o disco perde altura.</p>
+
+  <h3 data-bm="Tomografia: o exame mais sensível">Tomografia: o exame mais sensível <span class="prova">PROVA</span></h3>
+  <p>A <b>tomografia é o exame mais sensível</b> para fratura suspeita ou confirmada e o melhor para ver desvio e padrão da fratura. A fratura nem sempre está no corpo: procure no pedículo, na faceta, na lâmina, no processo espinhoso, translações, luxações e o côndilo do occipital. Olhe tudo no exame.</p>
+
+  <h3 data-bm="Ressonância">Ressonância</h3>
+  <p>Indicada no déficit neurológico ou na dúvida sobre o complexo ligamentar posterior, que pesa na decisão de operar. Mostra também compressão e edema da medula, hematoma epidural, estruturas vasculares e a <b>hérnia de disco traumática</b>, aguda, rara, mas possível.</p>
+
+  <h3 data-bm="Fratura do enforcado">Fratura do enforcado</h3>
+  <p>É a fratura especial mais conhecida. Apesar do nome, quase não acontece em enforcados: o mecanismo é <b>hiperextensão com carga axial</b> (o slide cita também a flexão), como no mergulho em água rasa, na queda de cabeça ou no chicote do acidente de carro. A fratura não é no corpo: é nos elementos posteriores do áxis, através da <b>pars interarticular</b> de C2, o ponto de transição para a vértebra de baixo. Por isso também se chama <b>espondilolistese traumática de C2–C3</b>.</p>
+  <ul>
+    <li><span class="medium">Quem:</span> homens, trauma de alta energia, na maioria acidentes de trânsito.</li>
+    <li><span class="medium">Mortalidade alta,</span> só menor que a da dissociação atlanto-occipital, mas pela energia do trauma, não pela lesão neurológica: lá em cima o canal é largo e a própria fratura descomprime o canal. Nos sobreviventes, o envolvimento neurológico é incomum (6% a 10%).</li>
+    <li><span class="medium">Associações:</span> lesões craniofaciais, da artéria vertebral e de pares cranianos; 31% têm outra lesão cervical.</li>
+  </ul>
+
+  <h3 data-bm="Tratamento da fratura cervical">Tratamento</h3>
+  <div class="cmp">
+    <div class="r h"><div class="k"></div><div class="c">Conservador</div><div class="c">Cirúrgico</div></div>
+    <div class="r"><div class="k">Quando</div><div class="c">Fratura simples (acunhamento anterior), sem lesão posterior, sem luxação facetária nem translação, sem lesão neurológica, complexo ligamentar posterior íntegro</div><div class="c">Lesão do complexo ligamentar posterior: cifose acima de 11 graus ou acunhamento importante do corpo</div></div>
+    <div class="r"><div class="k">Como</div><div class="c">C3 a C6: colar cervical rígido. C7 a T1: órtese cervicotorácica, que vai até o tórax</div><div class="c">Artrodese por via anterior (placa e cage, a mais feita) ou posterior (até occipitocervical)</div></div>
+    <div class="r"><div class="k">Tempo</div><div class="c">3 meses de seguimento; depois, radiografias dinâmicas e retirada do colar</div><div class="c">Decisão do cirurgião de coluna</div></div>
+  </div>
+  <p>Quem decide é o especialista, mas vale saber: o complexo ligamentar posterior íntegro, visto na ressonância, mantém a estabilidade do conjunto.</p>
+</section>
+
+<section id="s03">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">03</span></div><div class="corpo"><div class="de">Etapa 3 de 8</div><h2>Fraturas toracolombares</h2><div class="aqui"><span class="feito">Anatomia</span><span class="feito">Fratura cervical</span><span class="on">Fratura toracolombar</span><span>Nível e choques</span><span>Dor lombar</span><span>Hérnia e tratamento</span><span>Cauda equina</span><span>Infecção e Pott</span></div></div></div>
+  <div class="simples"><p>É a fratura de coluna que mais aparece no plantão comum: o jovem do acidente e o idoso que escorrega e cai sentado. Passa despercebida com facilidade, então é preciso procurar ativamente.</p></div>
+
+  <h3 data-bm="Quem fratura">Quem fratura</h3>
+  <p>É a fratura de coluna mais comum e a que se vê na unidade básica e no plantão das cidades pequenas; a cervical costuma ser mais grave e vai direto para o hospital terciário. É <b>quatro vezes mais frequente em homens</b> e também bimodal. Sempre que ouvir “bimodal”, pense: jovem com alta energia ou idoso com baixa energia.</p>
+  <ul>
+    <li><span class="medium">Jovem:</span> homem com menos de 30 anos, alta energia. Mais de 50% por acidente automobilístico; 25% por queda de altura (1,8 a 2 metros já bastam). De 5% a 10% dos politraumatizados têm fratura de coluna.</li>
+    <li><span class="medium">Idoso osteoporótico:</span> baixa energia. Escorrega, cai sentado e fica com dor lombar. Quebra mesmo.</li>
+  </ul>
+  <div class="reg"><b>No slide:</b> abaixo de 60 anos, 13 casos por 100.000 pessoas por ano; acima de 70 anos, 50 por 100.000.</div>
+  <div class="box red"><div class="kick"><span class="dot"></span>Pegadinha do professor</div><p><span class="medium">O avô caiu sentado e está com dor nas costas?</span> Não fique empurrando com a barriga: leve para examinar, porque pode ser uma fratura toracolombar. O diagnóstico costuma ser tardio: no politraumatizado que não consegue falar (trauma cranioencefálico, intoxicação, confusão) e no idoso que não quer ir ao médico porque “só caiu no quintal”. No paciente que ficou dias na terapia intensiva, procure essas lesões antes de ele acordar; se não der, a anamnese depois já orienta.</p></div>
+  <div class="reg"><b>Nos slides:</b> no politraumatizado, 24% das fraturas passam despercebidas na avaliação inicial (em outro slide, 20%).</div>
+
+  <h3 data-bm="Onde quebra: L1, T12, L2, T11">Onde quebra: L1, T12, L2, T11 <span class="prova">PROVA</span></h3>
+  <div class="figure"><img src="barras.svg" alt="Frequência das fraturas toracolombares por vértebra"></div>
+  <p>Até 80% das fraturas toracolombares estão na transição <b>T11–L2</b>, o segmento que mais se mexe, e ali também é maior a chance de lesão medular. A ordem: <b>L1, T12, L2, T11</b>. Macete: comece em L1 e vá fazendo os “pulinhos”. Os números podem mudar conforme a população estudada, mas a sequência é essa e cai em prova de residência.</p>
+  <div class="reg"><b>No slide:</b> 65% a 80% das fraturas da coluna ficam nos segmentos torácico e lombar; a maioria, na transição toracolombar.</div>
+
+  <h3 data-bm="Mecanismos">Mecanismos</h3>
+  <p>Pode ser um ou mais vetores de força: <b>carga axial</b> (compressão), <b>distração</b> (lesão posterior), <b>flexão e rotação</b> (flexão torcional). O tipo de fratura depende de onde passa o eixo da força em relação à vértebra e da magnitude dela. Os padrões ficam para o especialista.</p>
+
+  <h3 data-bm="Fratura de Chance: a fratura do cinto">Fratura de Chance: a fratura do cinto <span class="prova">PROVA</span></h3>
+  <p>É comum e vocês vão atender. É a fratura do <b>cinto de segurança de dois pontos</b> (só abdominal): o cinto vira um ponto de apoio na frente do abdome, a inércia joga o tronco para a frente e a coluna dobra como um chicote, em <b>flexo-distração</b>. A lesão óssea vem do impacto indireto na vértebra.</p>
+  <ul>
+    <li><span class="medium">Associação:</span> lesão intra-abdominal (45% das fraturas de Chance), mas não lesão neurológica.</li>
+    <li><span class="medium">Tratamento:</span> só lesão óssea, conservador, que é a grande maioria. Com faceta ou pars interarticular acometidas, pode ser cirúrgica.</li>
+    <li><span class="medium">Pista no exame:</span> o sinal do cinto no abdome. Viu a marca, lembre de Chance.</li>
+  </ul>
+
+  <h3 data-bm="Lesões associadas e busca ativa">Lesões associadas e busca ativa</h3>
+  <p>No trauma de alta energia, metade tem lesões fora da coluna: 40% cardiopulmonares, 17% a 20% outras fraturas vertebrais não contíguas, além de lesão intra-abdominal, neurológica e contusão pulmonar. E grande parte das fraturas não é diagnosticada no atendimento inicial.</p>
+  <div class="quote"><p>“Você gasta 30 segundos para palpar tudo no cara: dói aqui? Dói aqui? O cara faz uma fratura exposta do antebraço, você acha que ele está ligando para uma dorzinha lombar? É aí que entra a busca ativa, é aí que vocês têm que colocar o diploma de médico de vocês para trabalhar.”</p><div class="who">Dr. Gustavo Colombo, sobre o exame do politraumatizado</div></div>
+  <p><b>Lesão neurológica:</b> até 20% têm déficit. Queda, ferimento por arma de fogo e ferimento por arma branca geram mais lesão neurológica. Na lombar, quando acontece, ela é um pouco mais frequente que na cervical. Pelo slide, a maioria das lesões cervicais é incompleta e a maioria das torácicas, completa.</p>
+  <div class="reg"><b>No slide:</b> as fraturas toracolombares têm menor probabilidade de lesão neurológica que as cervicais; causas de lesão medular em geral: carro, queda, arma de fogo.</div>
+
+  <h3 data-bm="Avaliação inicial">Avaliação inicial</h3>
+  <p>Cuidados pré-hospitalares e protocolo do ATLS. Dentro dele, pense em <b>choque neurogênico</b>: hipotensão com bradicardia, por falta da resposta simpática (capítulo 04). Na avaliação secundária, exame neurológico completo:</p>
+  <ul class="cols2">
+    <li><span class="medium">Inspeção</span> da parte de trás: edema, equimose, lacerações. Levante a camiseta.</li>
+    <li><span class="medium">Palpação</span> de toda a coluna: dor ou degrau posterior; mobilize braços e pernas.</li>
+    <li><span class="medium">Sensibilidade</span> e <span class="medium">reflexos,</span> incluindo o bulbocavernoso.</li>
+    <li><span class="medium">Força muscular:</span> escala de Frankel, de A a E.</li>
+  </ul>
+  <div class="box red"><div class="kick"><span class="dot"></span>Pegadinha do professor</div><p><span class="medium">Nem toda fratura é escancarada.</span> Às vezes a única pista é uma radiculopatia leve: formigamento no pé, formigamento na coxa. Acenda a luz e procure.</p></div>
+
+  <h3 data-bm="Imagem: comece pelo raio-X">Imagem: comece pelo raio-X</h3>
+  <p><b>Sempre, sempre, sempre comece pelo raio-X.</b> É rápido, barato, fácil, serve de triagem, e às vezes a fratura vem “como um tapa na cara” quando você já ia pedir transferência para tomografia. A sensibilidade é baixa (52% a 85%) e depende da qualidade da imagem.</p>
+  <p>Na dúvida, e até para definir o tratamento, quase sempre vai precisar da <b>tomografia</b>: melhor sensibilidade e especificidade para osso, com custo e radiação maiores.</p>
+  <div class="figure lado"><img src="exame-tomografia.png" style="width:160pt" alt="Tomografia sagital da coluna com uma vértebra fraturada">
+    <div class="olhar"><div class="kick">O que olhar</div><ul>
+      <li><b>1 · Corpo vertebral fraturado:</b> contorno irregular e perda de altura. Pelo raio-X, às vezes parece pouco amassado (40% a 50%).</li>
+      <li><b>2 · Fragmento posterior:</b> a parede de trás recua em direção ao canal. No raio-X não se avalia, e é um dos critérios para operar.</li>
+      <li>A redução do canal é medida na tomografia; por isso ela é pedida em quase toda fratura toracolombar.</li>
+    </ul><p class="leg">Imagem dos slides da aula.</p></div></div>
+  <p>A <b>ressonância</b> fica para o especialista. Melhor exame para medula, disco e ligamentos, é caro e pouco disponível. Principal indicação: <b>déficit neurológico não explicado pelas lesões</b>, e também o déficit que piora.</p>
+
+  <h3 data-bm="Tratamento: estabilidade">Tratamento: estabilidade</h3>
+  <p>Objetivos: estabilidade, corrigir ou evitar deformidade, recuperar o máximo da função neurológica e melhorar a dor. <b>Estabilidade mecânica</b> é a coluna aguentar as cargas do dia a dia sem dor nem deformidade; <b>estabilidade neurológica</b>, aguentar sem lesar nervo; <b>instabilidade</b> é perder uma das duas. Os parafusos servem para isso: a fratura deixa o segmento instável e se faz uma artrodese.</p>
+  <div class="cmp">
+    <div class="r h"><div class="k"></div><div class="c">Artrodese</div><div class="c">Anquilose</div></div>
+    <div class="r"><div class="k">O que é</div><div class="c">Fusão cirúrgica de uma articulação</div><div class="c">Fusão natural, evolução da artrose</div></div>
+    <div class="r"><div class="k">Exemplo</div><div class="c">Parafusos e hastes da coluna</div><div class="c">O quadril do idoso que se fundiu sozinho</div></div>
+  </div>
+
+  <h3 data-bm="Quando operar">Quando operar <span class="prova">PROVA</span></h3>
+  <p>É assunto do ortopedista, mas aluno daqui sai sabendo:</p>
+  <div class="ref"><div class="txt"><div class="kick"><span class="dot"></span>Deformidade</div><p>Ângulo e escorregamento do segmento.</p></div>
+    <div class="vals"><div class="val"><small>Cifose</small>acima de 30°</div><div class="val"><small>Translação</small>acima de 2,5 mm</div></div></div>
+  <div class="ref"><div class="txt"><div class="kick"><span class="dot"></span>Corpo e canal</div><p>O canal só se mede na tomografia.</p></div>
+    <div class="vals"><div class="val"><small>Perda de altura do corpo</small>acima de 50%</div><div class="val"><small>Redução do canal</small>acima de 30%</div></div></div>
+  <p>São também indicações: instabilidade do segmento, lesão neurológica, <b>piora progressiva da função neurológica</b> (indicação absoluta e urgente), redução de fraturas-luxações e descompressão medular. A fixação usa material de síntese: parafuso, haste e artrodese.</p>
+
+  <h3 data-bm="Complicações da cirurgia">Complicações da cirurgia</h3>
+  <ul class="cols2">
+    <li><span class="medium">Infecção:</span> 5,5% a 10%.</li>
+    <li><span class="medium">Falha do material:</span> 4,4% (parafuso solto, osteólise em volta).</li>
+    <li><span class="medium">Pseudoartrose.</span></li>
+    <li><span class="medium">Deformidade</span> e falha em recuperar o equilíbrio sagital.</li>
+    <li><span class="medium">Lesão neurológica iatrogênica:</span> parafuso pedicular, 1%.</li>
+    <li><span class="medium">Fístula liquórica:</span> 12%, a lesão iatrogênica mais comum, pela durotomia inadvertida; também pode ser traumática, por fratura da lâmina. Só 2,1% evoluem com pseudomeningocele sintomática e drenagem persistente.</li>
+    <li><span class="medium">Sangramento.</span></li>
+    <li><span class="medium">Eventos tromboembólicos:</span> 1% a 5%.</li>
+  </ul>
+
+  <h3 data-bm="Conservador: a órtese de cada nível">Conservador: a órtese de cada nível</h3>
+  <p>A grande maioria, ainda bem, é tratada sem cirurgia.</p>
+  <div class="cmp">
+    <div class="r h"><div class="k">Nível</div><div class="c">Órtese</div><div class="c">Como é</div></div>
+    <div class="r"><div class="k">L4 a S1</div><div class="c destaque">Colete de Putti baixo</div><div class="c">Uma cinta modeladora, só que rígida</div></div>
+    <div class="r"><div class="k">L1 a L4</div><div class="c destaque">Colete de Putti alto</div><div class="c">O mesmo colete, subindo mais</div></div>
+    <div class="r"><div class="k">T7 a T12</div><div class="c destaque">Colete de Jewett</div><div class="c">Quase um exoesqueleto; difícil de usar</div></div>
+    <div class="r"><div class="k">Acima de T7</div><div class="c destaque">Órtese cervicotorácica</div><div class="c">A mesma da fratura C7–T1; rara</div></div>
+  </div>
+  <div class="box orange"><div class="kick"><span class="dot"></span>Parêntese do professor</div><p>Essa tabela ele montou na residência, sentado com o chefe, para não ficar perdido quando chegasse às 4 da manhã alguém que caiu e quebrou a coluna. Vale guardar no celular.</p></div>
+</section>
+
+<section id="s04">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">04</span></div><div class="corpo"><div class="de">Etapa 4 de 8</div><h2>Nível da lesão e os dois choques</h2><div class="aqui"><span class="feito">Anatomia</span><span class="feito">Fratura cervical</span><span class="feito">Fratura toracolombar</span><span class="on">Nível e choques</span><span>Dor lombar</span><span>Hérnia e tratamento</span><span>Cauda equina</span><span>Infecção e Pott</span></div></div></div>
+  <div class="simples"><p>Diante de alguém paralisado depois de um trauma, dois mapas dizem a altura da lesão: a pele (dermátomos) e os músculos (miótomos). E há dois “choques” de nomes parecidos que nada têm a ver um com o outro: um é da medula, o outro é da circulação.</p></div>
+
+  <h3 data-bm="Dermátomos do tronco">Dermátomos do tronco <span class="prova">PROVA</span></h3>
+  <div class="figure"><img src="tronco.svg" alt="Marcos dos dermátomos no tronco: T4, T7, T10 e T12"></div>
+  <p>O paciente chega paraplégico. Sente o mamilo? Então a sensibilidade de T4 está preservada e a lesão está daí para baixo. Se sente nos mamilos mas não no apêndice xifoide, a lesão fica entre T4 e T7.</p>
+  <div class="quote"><p>“Eles escrevem um negócio enorme para tentar te confundir e dão uma informação-chave que é basicamente essas quatro linhas aqui. E você mata a questão por causa de um slide. Vai cair. Em algum lugar vai cair.”</p><div class="who">Dr. Gustavo Colombo, sobre os dermátomos</div></div>
+
+  <h3 data-bm="Miótomos do membro inferior">Miótomos do membro inferior <span class="prova">PROVA</span></h3>
+  <div class="rows">
+    <div class="row"><div class="k">L2</div><div class="v">Flexão do quadril.</div></div>
+    <div class="row"><div class="k">L3</div><div class="v">Extensão do joelho.</div></div>
+    <div class="row"><div class="k">L4</div><div class="v">Dorsiflexão do tornozelo.</div></div>
+  </div>
+  <div class="rows">
+    <div class="row"><div class="k">L5</div><div class="v">Extensão (dorsiflexão) do hálux.</div></div>
+    <div class="row"><div class="k">S1</div><div class="v">Flexão plantar: a panturrilha.</div></div>
+  </div>
+  <p>Para gravar: comece em L2 e desça a perna; cada movimento é a sequência do anterior.</p>
+  <div class="reg"><b>No quadro do slide:</b> quadril L2–L3 flexão e L4–L5 extensão; joelho L3–L4 extensão e L5–S1 flexão; tornozelo L4–L5 flexão dorsal e S1–S2 flexão plantar.</div>
+
+  <h3 data-bm="Choque medular × choque neurogênico">Choque medular × choque neurogênico <span class="prova">PROVA</span></h3>
+  <p>É clássico de questão de residência tentar misturar os dois. <b>Choque medular é problema neurológico; choque neurogênico é problema circulatório.</b> O neurogênico está na categoria dos choques, junto com o hipovolêmico e o anafilático, da disciplina de emergência.</p>
+  <div class="cmp c4">
+    <div class="r h"><div class="k"></div><div class="c">Choque medular</div><div class="c">Choque neurogênico</div><div class="c">Choque hipovolêmico</div></div>
+    <div class="r"><div class="k">Origem</div><div class="c">Contusão da medula: interrupção fisiológica</div><div class="c">Perda do tônus simpático (lesão cervical ou torácica alta)</div><div class="c">Perda de volume</div></div>
+    <div class="r"><div class="k">Pressão</div><div class="c">—</div><div class="c">Baixa</div><div class="c">Baixa</div></div>
+    <div class="r"><div class="k">Frequência</div><div class="c">—</div><div class="c destaque">Bradicardia</div><div class="c">Taquicardia</div></div>
+    <div class="r"><div class="k">Pele</div><div class="c">—</div><div class="c destaque">Extremidades quentes</div><div class="c">Extremidades frias, pegajosas</div></div>
+    <div class="r"><div class="k">Diurese</div><div class="c">—</div><div class="c destaque">Normal</div><div class="c">Diminuída</div></div>
+    <div class="r"><div class="k">Abaixo da lesão</div><div class="c destaque">Paralisia flácida, sem reflexos, sem sensibilidade, bexiga e intestino parados</div><div class="c">Reflexo bulbocavernoso presente</div><div class="c">—</div></div>
+    <div class="r"><div class="k">Duração</div><div class="c destaque">24 a 48 horas</div><div class="c">Dias a semanas</div><div class="c">—</div></div>
+  </div>
+  <p><b>Choque medular:</b> a energia do trauma despolariza de uma vez todos os axônios; os neurotransmissores se esgotam e, daquele segmento para baixo, nada dispara. Por isso a paralisia é flácida e sem reflexos. É temporário: em 24 a 48 horas as vesículas se reabastecem e os reflexos voltam, podendo surgir depois hiper-reflexia e espasticidade.</p>
+  <p><b>Choque neurogênico:</b> sem o simpático, a pressão cai, mas a frequência não sobe para compensar, porque há bloqueio neurológico. O paciente está com pressão de 9 por 6 e 50 batimentos por minuto, quente, corado, com diurese normal: parece bem, mas está morrendo. Pode haver hipotermia. <b>Tratamento: soro, soro, soro.</b></p>
+  <div class="box red"><div class="kick"><span class="dot"></span>Pegadinha do professor</div><p><span class="medium">A questão põe os dois juntos para confundir.</span> “Taquicárdico, extremidades frias, diurese baixa: é choque neurogênico?” Não: bradicardia, extremidade quente e diurese normal é que apontam o neurogênico. Os dois choques podem coexistir no politraumatizado, e diante de hipotensão após trauma o primeiro a excluir é o choque hemorrágico, de longe a causa mais comum.</p></div>
+  <div class="quote"><p>“Uma coisa é uma coisa, outra coisa é outra coisa. Choque medular não tem nada a ver com choque neurogênico, mas eles vão tentar embananar vocês.”</p><div class="who">Dr. Gustavo Colombo, citando um colega de residência</div></div>
+
+  <h3 data-bm="Reflexo bulbocavernoso: o fim do choque medular">Reflexo bulbocavernoso: o fim do choque medular <span class="prova">PROVA</span></h3>
+  <p>Aperta-se a glande ou o clitóris (ou se traciona a sonda vesical, se o paciente já está sondado) e o esfíncter anal contrai. É o divisor de águas do paciente paralisado da cintura para baixo.</p>
+  <div class="es">
+    <div class="kick">O que o reflexo diz</div>
+    <div class="cells">
+      <div class="cell"><div class="lab">Ausente</div><p>Ainda em choque medular. Ainda não dá para saber se a lesão é completa.</p></div>
+      <div class="cell"><div class="lab">Voltou</div><p>Acabou o choque medular. O déficit que sobrou é a lesão real.</p></div>
+      <div class="cell"><div class="lab">Choque neurogênico</div><p>Presente: o problema é a circulação, não o reflexo.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="s05">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">05</span></div><div class="corpo"><div class="de">Etapa 5 de 8</div><h2>Dor lombar: conceitos e avaliação</h2><div class="aqui"><span class="feito">Anatomia</span><span class="feito">Fratura cervical</span><span class="feito">Fratura toracolombar</span><span class="feito">Nível e choques</span><span class="on">Dor lombar</span><span>Hérnia e tratamento</span><span>Cauda equina</span><span>Infecção e Pott</span></div></div></div>
+  <div class="simples"><p>Dor nas costas é uma das queixas mais comuns da medicina e quase sempre melhora sozinha. O trabalho do médico é examinar antes de olhar exames, procurar os sinais de alerta e não transformar uma dor comum em doença para a vida toda.</p></div>
+
+  <h3 data-bm="Três nomes, três dores">Três nomes, três dores</h3>
+  <div class="rows">
+    <div class="row"><div class="k">Lombalgia</div><div class="v">Dor nas costas: entre o último arco costal e a prega glútea.</div></div>
+    <div class="row"><div class="k">Lombociatalgia</div><div class="v">Dor nas costas que irradia para um ou os dois membros inferiores, pelo trajeto do ciático: queimação e formigamento atrás da coxa.</div></div>
+    <div class="row"><div class="k">Ciatalgia</div><div class="v">Só a dor ciática, sem dor nas costas: começa na raiz da coxa e passa do joelho, com ou sem déficit sensitivo ou motor.</div></div>
+  </div>
+  <p>A <b>dor lombar baixa</b> fica entre T12 e a crista ilíaca e pode irradiar para o quadril e as faces lateral e anterior da coxa. Para separar o arroz do feijão: dói nas costas? Corre para a perna? Na frente ou atrás? Na frente, pense numa hérnia alta (lembre dos dermátomos). Atrás, é lombociatalgia: raízes do ciático lá em cima ou uma compressão baixa.</p>
+  <div class="box red"><div class="kick"><span class="dot"></span>Pegadinha do professor</div><p><span class="medium">Síndrome do piriforme.</span> O piriforme é um músculo pequeno (o tendão tem cerca de 1 centímetro) atrás do trocânter, e o ciático passa sob ele. Encurtamento, hipertrofia ou, muito raro, um tumor comprimem o nervo de fora da coluna e tudo formiga. A ressonância mostra um monte de coisa, opera-se uma hérnia lombar, e bastava fisioterapia de alongamento.</p></div>
+
+  <h3 data-bm="Por que importa">Por que importa</h3>
+  <div class="tiles">
+    <div class="tile"><div class="lab">Prevalência</div><div class="n">até 73%</div><div class="s">das pessoas terão dor nas costas</div></div>
+    <div class="tile"><div class="lab">Incidência</div><div class="n">1 em 10</div><div class="s">sente dor nas costas a cada ano</div></div>
+    <div class="tile"><div class="lab">Sem tratamento</div><div class="n">quase metade</div><div class="s">não faz tratamento nenhum (46,4%)</div></div>
+  </div>
+  <p>É a segunda causa de consulta ao generalista (só perde para os sintomas respiratórios) e a primeira ao ortopedista: no consultório de quadril dele, 20% a 30% dos pacientes vêm por dor lombar. É a principal síndrome dolorosa da coluna, seguida da cervicalgia, provavelmente porque andamos em pé há pouco tempo na evolução. É a segunda doença crônica mais prevalente no Brasil, atrás da hipertensão (18,5% dos adultos), e a maior causa de falta ao trabalho no mundo, com custos indiretos de 100 bilhões de dólares nos Estados Unidos. A recorrência em um ano é de 20% a 44%, e de 72% ao longo da vida.</p>
+  <div class="reg"><b>Registro:</b> em aula, a prevalência foi dita como 73% a 80% e a incidência anual como quase 10%; o slide traz incidência de 10% a 15%.</div>
+
+  <h3 data-bm="Fatores de risco e o que lesa o disco">Fatores de risco e o que lesa o disco</h3>
+  <p>Fatores de risco para dor lombar: obesidade (índice de massa corporal acima de 30), sedentarismo, tabagismo, trabalho braçal, insatisfação com o trabalho, nível educacional e econômico, ansiedade, depressão, estresse, fibromialgia e tendência à cronicidade.</p>
+  <div class="box"><div class="kick"><span class="dot"></span>Só duas coisas lesam o disco</div><p>“Trabalhei a vida inteira de pedreiro, carregando saco de cimento. Por isso tenho hérnia?” Carregar peso é fator de risco para dor. O que lesa o disco diretamente são só duas coisas: <b>genética</b> (“defeito de fábrica”) e <b>tabagismo</b>. E nem todo mundo com hérnia tem dor, nem toda dor lombar é por hérnia.</p></div>
+  <p>A primeira grande questão do paciente com dor lombar é o lado psíquico: muitos somatizam tudo, e com fibromialgia tudo dói. É difícil examinar e difícil achar a origem da dor, e é isso que torna o tratamento tão trabalhoso.</p>
+
+  <h3 data-bm="História natural">História natural</h3>
+  <p>Cerca de <b>85% melhoram sozinhos em uma semana</b>, sem fazer nada, e só 1% precisa de cirurgia: a cada 100 pacientes, um será operado, por sintoma que persiste ou por achado com correlação clínico-radiológica. O quadro costuma ser autolimitado, muitos nem procuram médico, e raramente incapacita para sempre; mas 40% voltam a ter dor em 6 meses, e vira um problema crônico com crises intermitentes.</p>
+  <div class="reg"><b>Nos slides:</b> 86% se resolvem em uma semana e 1% a 2% precisam de cirurgia; em outro, resolução em cerca de 1 mês (um terço em uma semana, dois terços em até 7 semanas).</div>
+
+  <h3 data-bm="Examine antes de olhar o exame">Examine antes de olhar o exame</h3>
+  <p>Hérnia em L1 com dor em L5 não é indicação de cirurgia: é <b>dissociação clínico-radiológica</b>, e provavelmente a dor não vem dali. A boa notícia é que o exame da coluna é objetivo: “Doutor, está queimando a minha coxa”? É L3 até que se prove o contrário. Os exames servem para o “cara-crachá” com a clínica.</p>
+  <div class="quote"><p>“Examina o paciente primeiro, faz a anamnese bonitinho e cria a tua própria hipótese. Aí você pega o exame e olha. Se você olhar o exame antes, você vai entrar na linha de raciocínio do outro e vai procurar o que o exame está te mostrando.”</p><div class="who">Dr. Gustavo Colombo, sobre o paciente que joga o laudo na mesa</div></div>
+
+  <h3 data-bm="Avaliação clínica">Avaliação clínica</h3>
+  <ul>
+    <li><span class="medium">Idade:</span> dor inespecífica é rara em crianças e acima dos 50 anos.</li>
+    <li><span class="medium">Localização, início e intensidade:</span> a dor mecânica não acorda à noite e piora com o movimento e sentado.</li>
+    <li><span class="medium">Sintomas neurológicos:</span> formigamento, anestesia, parestesia, fraqueza de um miótomo; sugerem causa secundária.</li>
+    <li><span class="medium">História pregressa:</span> câncer, infecção, osteoporose, fraturas. E excluir os sinais de alerta.</li>
+  </ul>
+
+  <h3 data-bm="Sinais de alerta">Sinais de alerta</h3>
+  <div class="box red"><div class="kick"><span class="dot"></span>Quando a dor lombar não pode ser normal</div>
+    <ul class="cols2">
+      <li>Idade abaixo de 20 ou acima de 55 anos</li>
+      <li>Dor que não é mecânica: noturna ou em repouso</li>
+      <li>Doença reumatológica</li>
+      <li>Câncer prévio, vírus da imunodeficiência humana</li>
+      <li>Corticoide ou imunossupressor</li>
+      <li>Drogas ou álcool</li>
+      <li>Osteoporose; trauma</li>
+      <li>Dor torácica</li>
+      <li>Febre, calafrios, sudorese noturna, fadiga, falta de apetite</li>
+      <li>Perda de peso</li>
+      <li>Infecções bacterianas recentes ou de repetição</li>
+      <li>Sintomas neurológicos</li>
+      <li>Deformidade estrutural</li>
+      <li>Falha do tratamento anterior</li>
+    </ul></div>
+  <p>Muito jovem com dor lombar incapacitante (não uma dorzinha): abra o olho. Cinquenta e poucos anos e a primeira dor nas costas da vida: estranho, faça pelo menos um raio-X. A coluna também tem tumor: o paciente com câncer de pulmão que nem sabia da doença vai ao médico pela primeira vez por uma dor nas costas, e o raio-X mostra a metástase.</p>
+
+  <h3 data-bm="Exame físico e Lasègue">Exame físico e Lasègue <span class="prova">PROVA</span></h3>
+  <p>Dermátomos, miótomos, movimentos e força. A dor muscular é comum, mas inespecífica, e geralmente não se reproduz no exame. A contratura paravertebral (os eretores da espinha) não sugere nenhuma doença específica, mas ajuda a acompanhar a fisioterapia.</p>
+  <p>O <b>teste de Lasègue</b> é talvez o principal exame físico para diferenciar lá no começo. Com o paciente deitado, eleve a perna estendida: isso estira o ciático passivamente. É <b>positivo quando aparece irradiação, choque ou formigamento a partir de 30 a 40 graus</b>. Não é dor: é sintoma neurológico de raiz estirada. O sinal cruzado (a dor aparece na perna doente quando se eleva a outra) é altamente específico.</p>
+  <div class="box red"><div class="kick"><span class="dot"></span>Pegadinha do professor</div><p><span class="medium">“Ai!” com a perna mal levantada não é Lasègue.</span> Faça no colega: atrás da coxa vai doer, porque todo mundo é encurtado. Positivo é a irradiação a partir de 30 a 40 graus, não a dor.</p></div>
+  <div class="reg"><b>No slide:</b> positivo com irradiação ou formigamento acima de 30 a 45 graus.</div>
+
+  <h3 data-bm="Diagnósticos diferenciais">Diagnósticos diferenciais</h3>
+  <p>O leque muda com o sexo e a idade. Nos <b>homens</b>, predominam as lombalgias mecânicas, o desgaste, as espondiloartrites e os tumores. Nas <b>mulheres</b>, osteoporose (que não dói, mas precede a fratura), doenças endócrinas e quadros musculares, como fibromialgia e dor miofascial, além do componente psicológico.</p>
+  <div class="rows">
+    <div class="row"><div class="k">Criança</div><div class="v">Rara, e deformidades não doem: se dói, investigue doença grave.</div></div>
+    <div class="row"><div class="k">Adolescente</div><div class="v">Espondilólise, hérnia de disco, trauma.</div></div>
+    <div class="row"><div class="k">Adulto</div><div class="v">Mecânica, espondiloartrites, tumores benignos, espondilolistese.</div></div>
+    <div class="row"><div class="k">Idoso</div><div class="v">Osteoporose, tumores malignos, infecção: maior chance de doença grave.</div></div>
+  </div>
+  <div class="grid3">
+    <div class="card"><span class="tag">Suspeita de tumor</span><p>Câncer prévio ou na família, idade acima de 55 ou abaixo de 20, perda de peso, dor por mais de 4 a 6 semanas, em repouso, noturna, que não melhora com analgesia nem com 1 mês de tratamento, tabagismo.</p></div>
+    <div class="card"><span class="tag">Suspeita de fratura</span><p>Trauma, queda sentado, corticoide (pela osteoporose), idade acima de 50 anos, osteoporose.</p></div>
+    <div class="card"><span class="tag">Suspeita de infecção</span><p>Discite, osteomielite, abscesso epidural. Febre, droga endovenosa, infecção respiratória, urinária ou de pele, imunossupressão, diabetes, tuberculose, dor em repouso.</p></div>
+  </div>
+  <p>A tabela do slide mostra o peso de cada grupo de causas:</p>
+  <div class="cmp c4">
+    <div class="r h"><div class="k"></div><div class="c">Mecânicas (97%)</div><div class="c">Não mecânicas (1%)</div><div class="c">Viscerais (2%)</div></div>
+    <div class="r"><div class="k">Causas</div><div class="c">Lombalgia inespecífica 80%; degeneração de discos e facetas 10%; hérnia de disco 4%; fratura osteoporótica 4%; estenose 3%; listese 2%; fratura traumática e deformidade congênita, menos de 1% cada; cifose e escoliose</div><div class="c">Neoplasia 0,7% (mieloma múltiplo, metástase, tumores retroperitoneais e vertebrais primários); artrites inflamatórias 0,3% (espondilite anquilosante, artrite psoriásica, síndrome de Reiter); infecção 0,01% (osteomielite, discite, abscesso epidural); doença de Scheuermann; doença de Paget</div><div class="c">Órgãos pélvicos (prostatite, endometriose), rins (cálculo, pielonefrite), aneurisma de aorta, aparelho digestivo (pancreatite, colecistite, úlcera gástrica)</div></div>
+  </div>
+
+  <h3 data-bm="Critérios de Waddell e ganho secundário">Critérios de Waddell e ganho secundário</h3>
+  <p>Os critérios de Waddell ajudam a reconhecer o paciente que, por exemplo, só quer um atestado. São sinais de doença não orgânica:</p>
+  <div class="rows">
+    <div class="row"><div class="k">Neuroanatomia</div><div class="v">Incompatível: a hérnia em L1 que dói em L5.</div></div>
+    <div class="row"><div class="k">Pele</div><div class="v">Sensibilidade superficial aumentada: encostou, “ai, dói muito”, quase uma alodínia.</div></div>
+  </div>
+  <div class="rows">
+    <div class="row"><div class="k">Simulação</div><div class="v">Mal encosta na perna para o Lasègue e já dói.</div></div>
+    <div class="row"><div class="k">Sobrerreação</div><div class="v">Reação exagerada ao exame.</div></div>
+  </div>
+  <p>Com <b>3 ou mais</b>, considere uma causa psicossocial; eles também preveem mau resultado de cirurgia. Por trás pode estar o <b>ganho secundário</b>: atestado, afastamento, aposentadoria. Quem não volta ao trabalho em 6 meses tem menos da metade de chance de voltar; depois de 1 ano afastado, menos de um quarto volta, e a vida vira laudo e benefício até a aposentadoria.</p>
+  <div class="reg"><b>No slide:</b> 6 meses afastado, 50% de chance de retornar; 1 ano afastado, só 25% retornam.</div>
+
+  <h3 data-bm="Exames: quando pedir">Exames: quando pedir</h3>
+  <p>O raio-X fica para a segunda consulta, quando não melhorou, ou para quem tem sinal de alerta: idade acima de 50, trauma significativo, déficit neurológico, perda de peso, drogas ou álcool, câncer, corticoide, febre, visita recente (menos de 1 mês) pelo mesmo problema sem melhora e paciente buscando compensação trabalhista. Por que não sempre? <b>73% das vezes está normal</b>, 46% dos achados alterados são incidentais e a correlação com os sintomas é baixa: não precisa irradiar todo mundo.</p>
+  <p>Ressonância e tomografia são equivalentes para hérnia de disco e estenose do canal. A <b>ressonância</b> é mais sensível para tumor, infecção e fratura, porque mostra o edema ósseo.</p>
+
+  <h3 data-bm="Ressonância lombar depois dos 50">Ressonância lombar depois dos 50: sempre alterada <span class="prova">PROVA</span></h3>
+  <p><b>Cem por cento das ressonâncias de coluna lombar depois dos 50 anos têm alguma alteração</b> (na cervical, 60% depois dos 60). É questão da prova de título de especialista em ortopedia. O laudo cheio de achados faz achar que o problema está ali, quando muitas vezes é uma lombalgia mecânica, um mau jeito, que resolveria com cinco dias de anti-inflamatório. Correlacione com a clínica: o uso sem critério leva a sobretratamento, cirurgias desnecessárias e a um paciente que passa a se ver como doente crônico e incurável.</p>
+</section>
+
+<section id="s06">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">06</span></div><div class="corpo"><div class="de">Etapa 6 de 8</div><h2>Hérnia de disco lombar</h2><div class="aqui"><span class="feito">Anatomia</span><span class="feito">Fratura cervical</span><span class="feito">Fratura toracolombar</span><span class="feito">Nível e choques</span><span class="feito">Dor lombar</span><span class="on">Hérnia e tratamento</span><span>Cauda equina</span><span>Infecção e Pott</span></div></div></div>
+  <div class="simples"><p>Na hérnia de disco, o miolo do disco escapa pela parede e aperta uma raiz nervosa. A dor costuma ser pior na perna do que nas costas, e o tamanho da hérnia na imagem não diz quanto o paciente sente.</p></div>
+
+  <h3 data-bm="Onde e como dói">Onde e como dói</h3>
+  <p><b>Mais de 95% das hérnias lombares estão em L4–L5 ou L5–S1</b>: lá embaixo ficam as zonas de transição mais móveis e o maior peso (L4–L5 carrega pelo menos três vértebras a mais que L1–L2). A dor lombar piora com a flexão, irradia para a perna abaixo do joelho e melhora com repouso. Muitas vezes a dor da perna é pior que a das costas: “Doutor, arranca a minha perna, que eu não aguento mais”. A dor está na raiz acometida, e a lombar é só um desconforto.</p>
+  <div class="figure lado"><img src="exame-hernia.png" style="width:230pt" alt="Ressonância axial com os locais possíveis da hérnia de disco">
+    <div class="olhar"><div class="kick">O que olhar</div><ul>
+      <li><b>Onde a hérnia pode ficar:</b> de fora para dentro, extraforaminal, foraminal, centrolateral e central; a extrusa e a sequestrada saem do disco.</li>
+      <li><b>O que isso diz da dor:</b> nada direto. Nem o local nem o tamanho da hérnia têm correlação direta com o sintoma.</li>
+    </ul><p class="leg">Imagem dos slides da aula (ressonância em corte axial).</p></div></div>
+
+  <h3 data-bm="Por que o disco hernia">Por que o disco hernia</h3>
+  <p>Genética e ambiente. Com a idade, o disco perde proteoglicanos (o gel) e água. As fibras do ânulo carregam carga de tração: são duras e rompem mais fácil, em microrrachaduras por compressões repetidas. O material do núcleo que chega ao canal provoca uma <b>resposta inflamatória importante</b>.</p>
+  <div class="box orange"><div class="kick"><span class="dot"></span>Parêntese do professor</div><p>É mais fácil destruir uma esponja apertando ou trincar um vidro? O vidro é mais resistente, mas quebra inteiro quando passa do limite. O osso é igual: o da criança é mais mole e enverga sem quebrar; o do adulto, como o vidro, passou da tensão máxima, quebra.</p></div>
+
+  <h3 data-bm="Passa do joelho? Passa do cotovelo?">Passa do joelho? Passa do cotovelo? <span class="prova">PROVA</span></h3>
+  <div class="es">
+    <div class="kick">A pergunta que separa dor de raiz de dor comum</div>
+    <p class="lead">Vale na cervical e na lombar: dói a coluna? Na frente? Atrás? Passa do joelho?</p>
+    <div class="cells">
+      <div class="cell"><div class="lab">Não passa</div><p>Dor inespecífica: manguito rotador ou contratura cervical no braço; quadril, artrose ou fratura na perna.</p></div>
+      <div class="cell"><div class="lab">Passa</div><p>Muito provavelmente sintoma neurológico: a dor radicular passa do cotovelo e do joelho.</p></div>
+    </div>
+  </div>
+
+  <h3 data-bm="Protrusa, extrusa, sequestrada">Protrusa, extrusa, sequestrada</h3>
+  <div class="figure"><img src="hernias.svg" alt="Disco normal e os três tipos de hérnia"></div>
+  <ul>
+    <li><span class="medium">Protrusa:</span> só um abaulamento, uma “barriguinha”, sem ruptura do ânulo e sem passar do ligamento longitudinal posterior. Quase todo mundo na sala tem alguma.</li>
+    <li><span class="medium">Extrusa:</span> o ânulo se rompe e o conteúdo sai, passando do ligamento. O corpo ainda pode reabsorver: ter uma extrusa não é, sozinho, motivo para operar.</li>
+    <li><span class="medium">Sequestrada:</span> um fragmento perde o contato com o disco e migra, para cima ou para baixo.</li>
+  </ul>
+
+  <h3 data-bm="Tamanho não é dor">Tamanho não é dor <span class="prova">PROVA</span></h3>
+  <div class="quote"><p>“Essa aqui eu vou pôr na prova, me lembrem depois.”</p><div class="who">Dr. Gustavo Colombo, sobre o tamanho da hérnia e a dor</div></div>
+  <p><b>Não há correlação entre o tamanho da hérnia e a clínica.</b> É uma questão de conteúdo e continente. Num auditório grande, cem pessoas ficam apertadas, mas cabem; mil não cabem. Numa salinha de 2 por 2 metros, uma pessoa só sobra espaço. Uma hérnia volumosa que só chega à primeira cadeira não atrapalha ninguém; uma que vai até a porta, sim.</p>
+  <p>Hérnia pequena pode dar dor intensa e incapacitante; hérnia grande pode não dar nada. E também não é regra: hérnia grande pode doer muito.</p>
+</section>
+
+<section id="s07">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">07</span></div><div class="corpo"><div class="de">Etapa 6 de 8</div><h2>Tratamento da dor lombar</h2><div class="aqui"><span class="feito">Anatomia</span><span class="feito">Fratura cervical</span><span class="feito">Fratura toracolombar</span><span class="feito">Nível e choques</span><span class="feito">Dor lombar</span><span class="on">Hérnia e tratamento</span><span>Cauda equina</span><span>Infecção e Pott</span></div></div></div>
+  <div class="simples"><p>A maioria melhora com remédio em ciclo curto, movimento cedo e uma conversa honesta sobre o que esperar. Procedimentos e cirurgia ficam para poucos, depois de meses sem resposta.</p></div>
+
+  <h3 data-bm="Remédio em ciclo, não se necessário">Remédio em ciclo, não “se necessário”</h3>
+  <p>Anti-inflamatório mais relaxante muscular, <b>de horário</b>, num ciclo de 3, 5 ou 7 dias. A inflamação tem tempo marcado: 7 a 10 dias de fase inflamatória, depois reparação e remodelamento. É nessa fase que o remédio atua. Atenção a efeitos colaterais e contraindicações, principalmente nos idosos, que “não têm rim”.</p>
+  <div class="box red"><div class="kick"><span class="dot"></span>Pegadinha do professor</div><p><span class="medium">“Tomar se precisar” não é tratamento.</span> Receite o ciclo completo. E não demonize o anti-inflamatório: 3 a 5 dias não fazem mal. Para o avô: “Não é para tomar 57 dias seguidos esse remédio. É 5, acabou!”</p></div>
+
+  <h3 data-bm="Movimento e retorno ao trabalho">Movimento e retorno ao trabalho</h3>
+  <ul>
+    <li><span class="medium">Repouso no leito curto:</span> 1 a 2 dias, no máximo. É preciso pôr o paciente para se mexer, senão ele entra no afastamento e não volta.</li>
+    <li><span class="medium">Retorno rápido ao trabalho</span> para a maioria, com explicação e educação do paciente.</li>
+    <li><span class="medium">Dor aguda</span> (menos de 12 semanas): exercício aeróbico leve nas duas primeiras semanas, como caminhar, pedalar ou nadar; evitar levantar peso, girar o tronco com esforço e vibração.</li>
+    <li><span class="medium">Fortalecimento lombar</span> previne a volta da dor e a cronificação, mas não funciona na fase aguda (nem o repouso no leito).</li>
+    <li><span class="medium">Manipulação e fisioterapia</span> têm eficácia limitada. “O osteopata pôs a vértebra no lugar”: se melhora, pode fazer, sem exagero; a eficácia comprovada é duvidosa.</li>
+  </ul>
+  <div class="reg"><b>No slide:</b> repouso de 1 a 3 dias.</div>
+
+  <h3 data-bm="Trabalhe a expectativa do paciente">Trabalhe a expectativa do paciente</h3>
+  <p>O paciente acha que três dias de remédio vão zerar a dor para sempre. Pergunte o que ele espera: resolver a dor? melhorar um pouco? O tratamento muitas vezes é multidisciplinar. Na cirurgia, nem se fala: mesmo operados, muitos melhoram 70% a 80% e ficam com uma dor residual; quem prometeu 100% ganha um paciente furioso, que voltou a andar e jogar mas “ainda sente uma dorzinha”.</p>
+  <div class="quote"><p>“Trabalhem a expectativa do paciente, apresentem riscos, apresentem benefícios e perguntem: o que você acha que vai acontecer se você operar? Você quer melhorar quanto?”</p><div class="who">Dr. Gustavo Colombo, repetindo um ensinamento do Dr. André</div></div>
+
+  <h3 data-bm="Escolha do analgésico">Escolha do analgésico</h3>
+  <p style="break-after: avoid">O fluxograma é para deixar na cabeceira da cama:</p>
+  <div class="ref"><div class="txt"><div class="kick"><span class="dot"></span>Dor leve</div><p>Analgésico simples, de horário.</p></div>
+    <div class="vals"><div class="val"><small>Paracetamol</small>500 a 1.000 mg a cada 6 h</div><div class="val"><small>Dipirona</small>500 a 1.000 mg a cada 6 h</div></div></div>
+  <div class="ref"><div class="txt"><div class="kick"><span class="dot"></span>Dor moderada</div><p>Anti-inflamatório, ou um seletivo da cicloxigenase 2 (etoricoxibe, celecoxibe).</p></div>
+    <div class="vals"><div class="val"><small>Cetoprofeno</small>100 mg a cada 12 h</div><div class="val"><small>Diclofenaco</small>50 mg a cada 8 h</div></div></div>
+  <div class="ref"><div class="txt"><div class="kick"><span class="dot"></span>Dor intensa</div><p>Anti-inflamatório mais um opioide fraco.</p></div>
+    <div class="vals"><div class="val"><small>Tramadol</small>50 a 100 mg a cada 12 h</div><div class="val"><small>Codeína</small>30 mg a cada 8 h</div></div></div>
+  <ul>
+    <li><span class="medium">Seletivo da cicloxigenase 2:</span> a opção preferida dele, porque exige receita e a caixa vem com 5 ou 7 comprimidos. Acabou, acabou.</li>
+    <li><span class="medium">Tramadol em gotas:</span> ótimo para o idoso, que resiste a comprimido; dá para começar com dose baixa. Gota e adesivo, o idoso adora.</li>
+    <li><span class="medium">Fibromialgia:</span> amitriptilina, com retorno em 60 a 90 dias; melhorou, mantém. Na dor crônica, pregabalina, gabapentina ou duloxetina (cerca de 90 dias para fazer efeito), de preferência com o especialista.</li>
+    <li><span class="medium">Anti-inflamatório na dor leve:</span> pode servir como analgésico em paciente selecionado, não no idoso.</li>
+  </ul>
+  <div class="box red"><div class="kick"><span class="dot"></span>Pacientes de risco</div><p>Evite anti-inflamatório em <b>idoso</b>, em quem tem história de <b>úlcera péptica</b>, <b>insuficiência renal crônica</b> ou usa <b>anticoagulante</b> (risco de sangramento).</p></div>
+
+  <h3 data-bm="O anti-inflamatório mais analgésico">O anti-inflamatório mais analgésico <span class="prova">PROVA</span></h3>
+  <p>Entre todos os anti-inflamatórios, o de maior potência analgésica é o <b>diclofenaco</b>, à frente do etoricoxibe e do celecoxibe.</p>
+
+  <h3 data-bm="Tratamento invasivo">Tratamento invasivo</h3>
+  <p>É exceção e pouco efetivo sem radiculopatia: infiltração das facetas, epidural ou de pontos-gatilho, injeção de agentes esclerosantes, ablação por radiofrequência da inervação das facetas. Deixe para o especialista, mas conheça.</p>
+  <ul>
+    <li><span class="medium">Bloqueio facetário:</span> para a dor que parece vir da faceta, diagnóstico e terapêutico. Aplica-se anestésico e anti-inflamatório na articulação (quando o objetivo é diagnóstico) ou nos ramos mediais acima e abaixo dela (quando é terapêutico). Sob raio-X, o contraste mostra que a agulha está no lugar certo.</li>
+    <li><span class="medium">Radiofrequência:</span> para quem teve resposta boa e duradoura ao bloqueio (mais de duas semanas sem dor) e não melhorou só com reabilitação. Acha-se a raiz com um estímulo e o impulso “queima” o nervo: uma dessensibilização térmica, pouco agressiva. Em casos bem escolhidos, o alívio dura de um a dois anos, porque o ramo medial se regenera aos poucos.</li>
+  </ul>
+  <div class="reg"><b>No slide de tratamento invasivo:</b> “resultado não dura mais que 4 semanas”, logo abaixo da ablação por radiofrequência.</div>
+
+  <h3 data-bm="A escada analgésica">A escada analgésica</h3>
+  <div class="figure"><img src="escada.svg" alt="Escada analgésica em quatro degraus"></div>
+  <p>Na dor crônica, sobe-se degrau por degrau; na dor aguda, começa-se pelo degrau da intensidade da dor e desce-se à medida que ela cede. Em todos os degraus cabem adjuvantes.</p>
+
+  <h3 data-bm="Cirurgia">Cirurgia</h3>
+  <p>Nada melhorou depois de 3 a 6 meses: cirurgia. Tira-se a hérnia, amplia-se o canal, corrige-se o que a doença deformou e fixa-se com artrodese. Para a artrodese por degeneração lombar, o slide pede cautela:</p>
+  <ul>
+    <li>Depois de 1 ano, não há diferença em relação ao tratamento conservador.</li>
+    <li>Escolha com cuidado: funciona melhor em jovens, com 1 ou 2 níveis e sem questões psicossociais.</li>
+    <li>Avise que a dor melhora só cerca de 50% e que outras formas de tratamento continuam depois da cirurgia.</li>
+  </ul>
+</section>
+
+<section id="s08">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">08</span></div><div class="corpo"><div class="de">Etapa 7 de 8</div><h2>Síndrome da cauda equina</h2><div class="aqui"><span class="feito">Anatomia</span><span class="feito">Fratura cervical</span><span class="feito">Fratura toracolombar</span><span class="feito">Nível e choques</span><span class="feito">Dor lombar</span><span class="feito">Hérnia e tratamento</span><span class="on">Cauda equina</span><span>Infecção e Pott</span></div></div></div>
+  <div class="simples"><p>No fim da medula, as raízes descem soltas como um rabo de cavalo. Se algo aperta várias de uma vez, o paciente perde a sensibilidade do períneo e o controle da bexiga e do intestino. É emergência: quanto antes descomprimir, menos sequela.</p></div>
+
+  <h3 data-bm="O que é">O que é</h3>
+  <p>É a compressão das raízes lombares, sacrais e coccígeas que formam a <b>cauda equina</b> (o nome vem do formato de rabo de cavalo). A medula termina em <b>L1–L2 no adulto</b>, no cone medular; abaixo dele, só raízes descem pelo canal. A crista ilíaca fica mais ou menos nessa altura, e por isso o anestesista a palpa e punciona logo abaixo: dali para baixo não há medula.</p>
+  <div class="rows">
+    <div class="row"><div class="k">L2 a L4</div><div class="v">Função motora das pernas: flexão do quadril, extensão do joelho.</div></div>
+    <div class="row"><div class="k">L4 a S1</div><div class="v">Movimentos do tornozelo e dos dedos, além de outras funções motoras e sensitivas.</div></div>
+    <div class="row"><div class="k">S2 a S4</div><div class="v">Bexiga, intestino, função sexual e sensibilidade do períneo.</div></div>
+  </div>
+  <p>É uma <b>emergência cirúrgica</b>: o atraso na descompressão deixa sequelas permanentes, como disfunção da bexiga, do intestino e sexual, alterações de sensibilidade e dor crônica.</p>
+
+  <h3 data-bm="Causas">Causas</h3>
+  <ul>
+    <li><span class="medium">Hérnia de disco lombar:</span> a causa mais frequente. Geralmente volumosa e central, em L4–L5 ou L5–S1, comprimindo várias raízes ao mesmo tempo.</li>
+    <li><span class="medium">Estenose do canal:</span> o canal vai estreitando (degeneração do disco, hipertrofia das facetas, espessamento do ligamento amarelo, constituição). Pode haver compressão aguda sobre uma estenose antiga. A estenose tende a dar sintomas dos dois lados; a hérnia costuma ser de um lado só.</li>
+    <li><span class="medium">Outras:</span> fraturas e luxações; hematoma epidural (depois de procedimentos ou em anticoagulados); tumores e metástases; abscesso epidural e outras infecções; complicações de cirurgia.</li>
+  </ul>
+
+  <h3 data-bm="Quadro clínico">Quadro clínico</h3>
+  <div class="grid3">
+    <div class="card"><span class="tag">Dor</span><p>Lombalgia aguda, em geral intensa, irradiada para uma ou as duas pernas; alterações motoras conforme as raízes.</p></div>
+    <div class="card"><span class="tag">Sensibilidade</span><p>Parestesia e hipoestesia nas pernas. <b>Anestesia em sela:</b> períneo, genitais e região perianal. Pode ser assimétrica.</p></div>
+    <div class="card"><span class="tag">Esfíncteres</span><p>Dificuldade para iniciar a micção, retenção ou perda do controle urinário e intestinal, disfunção sexual.</p></div>
+  </div>
+
+  <h3 data-bm="Escreva no prontuário, em todos">Escreva no prontuário, em todos <span class="prova">PROVA</span></h3>
+  <p>A cauda equina tem de ser <b>pesquisada ativamente e registrada em todo atendimento de dor lombar</b>. Deixe um modelo salvo e vá só alterando:</p>
+  <div class="box"><div class="kick"><span class="dot"></span>Modelo para o prontuário</div><p>“Lombalgia. Nega anestesia em sela. Nega alteração urinária e intestinal. Sem déficit geniturinário.” Pergunte: “Xixi e cocô estão normais? A sensibilidade aqui está normal?”</p></div>
+  <div class="quote"><p>“Escreve no prontuário! Escreve em todos, em todos! Porque se você esquecer em um, ele é o cara que tinha cauda equina e você não viu.”</p><div class="who">Dr. Gustavo Colombo, sobre a anamnese da dor lombar</div></div>
+  <div class="box orange"><div class="kick"><span class="dot"></span>Parêntese do professor</div><p>É uma das poucas situações que tiram o ortopedista de casa na hora: cauda equina e luxação do joelho (do joelho, não da patela). No resto, o ortopedista é o último a mexer no politraumatizado. E vale o mesmo cuidado de registro de outras queixas, como na entorse do tornozelo: anotar a base do quinto metatarso e a cabeça da fíbula.</p></div>
+
+  <h3 data-bm="Conduta">Conduta</h3>
+  <ol class="flow">
+    <li><b class="t">Atendimento de emergência.</b> Encaminhe na hora: serviço de atendimento móvel de urgência, central de leitos, hospital terciário. Documente os déficits neurológicos; ressonância urgente e contato precoce com a cirurgia de coluna ou a neurocirurgia.</li>
+    <li><b class="t">Descompressão cirúrgica.</b> Tirar a compressão das raízes, adaptando a técnica à causa (abscesso, hematoma, tumor, fratura). Quanto antes, melhor.</li>
+    <li><b class="t">Cuidados complementares.</b> Retenção urinária e cuidados com a bexiga, controle da dor, prevenção das complicações da imobilidade, fisioterapia, equipe multidisciplinar e acompanhamento urológico, intestinal e sexual conforme as sequelas.</li>
+  </ol>
+  <div class="ref"><div class="txt"><div class="kick"><span class="dot"></span>Prazo da descompressão</div><p>Cirurgia de coluna raramente é imediata, mas há esse tempo para agir.</p></div><div class="val">48 horas<small>idealmente, nas primeiras</small></div></div>
+</section>
+
+<section id="s09">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">09</span></div><div class="corpo"><div class="de">Etapa 8 de 8</div><h2>Infecção da coluna</h2><div class="aqui"><span class="feito">Anatomia</span><span class="feito">Fratura cervical</span><span class="feito">Fratura toracolombar</span><span class="feito">Nível e choques</span><span class="feito">Dor lombar</span><span class="feito">Hérnia e tratamento</span><span class="feito">Cauda equina</span><span class="on">Infecção e Pott</span></div></div></div>
+  <div class="simples"><p>A coluna também infecta, quase sempre por uma bactéria que chega pelo sangue a partir de outro foco. Os sintomas enganam, o raio-X demora a mostrar, e a ressonância é o melhor exame.</p></div>
+
+  <h3 data-bm="O que é e quem pega">O que é e quem pega</h3>
+  <p>A infecção da coluna é menosprezada e muitas vezes insidiosa. Não é só osteomielite: a <b>espondilodiscite</b> reúne a osteomielite vertebral, a espondilite e a discite (meningite e aracnoidite ficam com a neurologia). É a manifestação mais comum da <b>osteomielite hematogênica em adultos</b>: não é o tiro nas costas que infectou, é o paciente que teve endocardite, pneumonia ou tuberculose.</p>
+  <ul>
+    <li><span class="medium">Frequência:</span> 3% a 5% de todas as osteomielites, mas catastrófica quando acontece. Duas vezes mais em homens; picos abaixo dos 20 anos e entre 50 e 70.</li>
+    <li><span class="medium">Fatores de risco:</span> diabetes, droga endovenosa (heroína, não remédio de hospital), imunossupressão, idade avançada, neoplasias ou doenças reumatológicas, insuficiência renal e hepática.</li>
+    <li><span class="medium">Inoculação direta:</span> mais rara: ferimento por arma de fogo, cirurgias, infiltrações.</li>
+  </ul>
+
+  <h3 data-bm="Quadro clínico e diagnóstico">Quadro clínico e diagnóstico</h3>
+  <p>O quadro é inespecífico: lombalgia, febre (em metade dos casos), dificuldade para andar, sentar ou ficar em pé, dor abdominal (o processo se estende ao retroperitônio) e até sinais meníngeos.</p>
+  <ul>
+    <li><span class="medium">Raio-X:</span> costuma ser o primeiro, mas demora 2 a 8 semanas para alterar, e a infecção não espera.</li>
+    <li><span class="medium">Tomografia:</span> sensibilidade de 80% a 95%; se não houver ressonância.</li>
+    <li><span class="medium">Ressonância:</span> o padrão-ouro.</li>
+    <li><span class="medium">Sangue:</span> velocidade de hemossedimentação e proteína C reativa aumentadas.</li>
+    <li><span class="medium">PET</span> (tomografia por emissão de pósitrons): de valor duvidoso; capta mais no local da infecção.</li>
+    <li><span class="medium">Biópsia ou aspiração</span> do material, enviado para cultura.</li>
+  </ul>
+
+  <h3 data-bm="Proteína C reativa sobe e cai antes">Proteína C reativa sobe e cai antes <span class="prova">PROVA</span></h3>
+  <div class="figure"><img src="curvas.svg" alt="Curvas da proteína C reativa e da velocidade de hemossedimentação no tempo"></div>
+  <p>Na infecção que começou hoje, a proteína C reativa já pode estar alta e a hemossedimentação ainda normal; quando a infecção se resolve, a hemossedimentação ainda fica alta por um tempo. Também é pergunta de prova de residência.</p>
+
+  <h3 data-bm="Os germes e as associações de prova">Os germes e as associações de prova <span class="prova">PROVA</span></h3>
+  <div class="cmp">
+    <div class="r h"><div class="k"></div><div class="c">Germe</div><div class="c">Quando pensar</div></div>
+    <div class="r"><div class="k">50%</div><div class="c">Staphylococcus aureus, o mais comum</div><div class="c">O germe da pele</div></div>
+    <div class="r"><div class="k">33%</div><div class="c">Enterobactérias: Escherichia coli, Proteus, Klebsiella, Enterobacter</div><div class="c">Vêm do intestino, até por translocação num abdome obstrutivo</div></div>
+    <div class="r"><div class="k">5% a 16%</div><div class="c">Estafilococos coagulase-negativos</div><div class="c">—</div></div>
+    <div class="r"><div class="k">Rara</div><div class="c">Salmonella</div><div class="c destaque">Anemia falciforme</div></div>
+    <div class="r"><div class="k">Grupo especial</div><div class="c">Pseudomonas aeruginosa</div><div class="c destaque">Usuário de droga endovenosa</div></div>
+    <div class="r"><div class="k">Grupo especial</div><div class="c">Fungos: Candida, Aspergillus, Cryptococcus</div><div class="c destaque">Imunossupressão</div></div>
+  </div>
+  <p>Toda questão sobre infecção em paciente com <b>anemia falciforme</b> quer a resposta Salmonella; toda questão com <b>usuário de droga endovenosa</b> quer Pseudomonas. E o paciente com discite que só piora com meropeném, piperacilina com tazobactam ou ceftriaxona? Pesquise imunossupressão (às vezes é vírus da imunodeficiência humana sem diagnóstico): pode ser fungo.</p>
+  <div class="quote"><p>“Se escuta barulho de casco, você pensa em cavalo ou em zebra? Cavalo, mas pode ser zebra. Não inventem demais, mas saibam que pode acontecer. Nunca digam ‘nunca’ nem ‘sempre’ na medicina.”</p><div class="who">Dr. Gustavo Colombo, sobre os germes raros</div></div>
+
+  <h3 data-bm="Tratamento da espondilodiscite">Tratamento</h3>
+  <p>Objetivos: eliminar a infecção, restaurar e preservar a função da coluna e aliviar a dor. O tratamento conservador é antibiótico (por boca ou endovenoso) com fisioterapia e imobilização, em equipe: infectologista, fisioterapeuta, nutricionista, dentista. A cirurgia entra na compressão de estruturas nervosas, na instabilidade, na cifose grave, na falha do tratamento conservador e no abscesso epidural.</p>
+  <div class="box orange"><div class="kick"><span class="dot"></span>Parêntese do professor</div><p>Infecção de dente também se espalha pelo sangue. Os cirurgiões de quadril e de joelho têm medo do tratamento de canal: a bactéria pode sair do dente e parar na prótese recém-colocada. É raro, mas é uma causa possível.</p></div>
+</section>
+
+<section id="s10">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">10</span></div><div class="corpo"><div class="de">Etapa 8 de 8</div><h2>Tuberculose da coluna e mal de Pott</h2><div class="aqui"><span class="feito">Anatomia</span><span class="feito">Fratura cervical</span><span class="feito">Fratura toracolombar</span><span class="feito">Nível e choques</span><span class="feito">Dor lombar</span><span class="feito">Hérnia e tratamento</span><span class="feito">Cauda equina</span><span class="on">Infecção e Pott</span></div></div></div>
+  <div class="simples"><p>A tuberculose pode atacar a coluna: destrói as vértebras, mas poupa o disco, forma abscesso e pode deixar o paciente corcunda e paralisado. É a pergunta preferida das provas, e vai estar na desta disciplina.</p></div>
+
+  <h3 data-bm="Infecção ou síndrome">Infecção ou síndrome</h3>
+  <p>A tuberculose é a principal causa de espondilodiscite no mundo. De 1% a 3% dos infectados pelo Mycobacterium tuberculosis têm acometimento de ossos e articulações, e metade destes, na coluna. A rigor, <b>tuberculose da coluna é a infecção; mal de Pott é a síndrome</b>: todo mal de Pott é tuberculose na coluna, mas nem toda tuberculose na coluna chega a mal de Pott. Os dois nomes acabaram se misturando.</p>
+  <div class="box red"><div class="kick"><span class="dot"></span>Pegadinha do professor</div><p><span class="medium">Não brigue com a questão.</span> Quem escreveu a prova de residência nem sempre sabe a diferença. Falou em mal de Pott, trate como sinônimo de tuberculose na coluna.</p></div>
+
+  <h3 data-bm="Preserva o disco">Preserva o disco <span class="prova">PROVA</span></h3>
+  <p>A tuberculose da coluna <b>preserva o disco intervertebral</b>. Se a questão fala em acometimento do disco, não é tuberculose. É uma das principais características e cai em todas as provas de residência. O segmento mais comum é o <b>toracolombar</b>, de transição, e a incidência é igual em homens e mulheres.</p>
+
+  <h3 data-bm="Cadê o Pott? A tríade">Cadê o Pott? A tríade <span class="prova">PROVA</span></h3>
+  <div class="es big">
+    <div class="kick">Tríade de Pott: “Cadê o Pott?”</div>
+    <div class="cells">
+      <div class="cell"><div class="lab">C · Cifose</div><p>A coluna colapsa e encurva.</p></div>
+      <div class="cell"><div class="lab">A · Abscesso</div><p>Com o bacilo dentro.</p></div>
+      <div class="cell"><div class="lab">DE · Déficit neurológico</div><p>Pode chegar à paraplegia.</p></div>
+    </div>
+  </div>
+  <p>É o fim da linha da doença. Antigamente o diagnóstico demorava tanto que todos chegavam assim, e a definição ficou. Hoje se sabe que pode haver paraplegia secundária à tuberculose, tuberculose atípica, e que tuberculose não é igual a mal de Pott.</p>
+  <div class="quote"><p>“Não tem como ficar mais fácil que isso: cadê o Pott? Cifose, abscesso, déficit neurológico. Vai cair. Estou avisando.”</p><div class="who">Dr. Gustavo Colombo, sobre a tríade de Pott</div></div>
+
+  <h3 data-bm="Como aparece">Como aparece</h3>
+  <p>Sintomas <b>insidiosos e indolentes</b>, constitucionais e progressivos, dor inespecífica, febre noturna: tudo o que a tuberculose causa, e a coluna também acometida. O laboratório é de doença crônica: o slide traz hemossedimentação e proteína C reativa baixas e anemia sem explicação. A <b>cultura</b>, com o bacilo, dá o diagnóstico definitivo.</p>
+  <div class="figure lado"><img src="exame-pott.png" style="width:210pt" alt="Ressonância sagital da coluna com mal de Pott">
+    <div class="olhar"><div class="kick">O que olhar</div><ul>
+      <li><b>1 · Abscesso fusiforme:</b> a coleção alongada na frente dos corpos vertebrais, onde estão as pontas vermelhas.</li>
+      <li><b>2 · Vértebras destruídas:</b> o colapso que leva à cifose.</li>
+      <li><b>Atrás:</b> o canal e a medula, que sofrem com o colapso; daí o déficit neurológico.</li>
+    </ul><p class="leg">Imagem dos slides da aula (ressonância).</p></div></div>
+
+  <h3 data-bm="Tratamento do mal de Pott">Tratamento</h3>
+  <p>Em geral, <b>não cirúrgico</b>, com o esquema RIPE: rifampicina, isoniazida, pirazinamida e etambutol (o slide cita a estreptomicina ao lado do etambutol).</p>
+  <div class="ref"><div class="txt"><div class="kick"><span class="dot"></span>Duração do esquema RIPE</div><p>No imunocomprometido, até 2 anos.</p></div>
+    <div class="vals"><div class="val"><small>Em geral</small>6 a 9 meses</div><div class="val"><small>Imunocomprometido</small>18 a 24 meses</div></div></div>
+  <div class="reg"><b>No slide:</b> RIPE por 6 meses.</div>
+  <p><b>Cirurgia:</b> falha do tratamento com remédios; dor por instabilidade do segmento; mais de 4 níveis acometidos (o risco de colapso é maior); abscesso, porque antibiótico não trata abscesso, abscesso se drena; e o mal de Pott, a soma de todas as complicações.</p>
+</section>
+
+<section id="s11" class="vesp">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">11</span></div><div class="corpo"><div class="de">Para a véspera</div><h2>Véspera da prova</h2></div></div>
+  <p>Todos os pontos marcados com PROVA, na ordem da aula.</p>
+  <div class="item"><span class="prova">PROVA</span><p><b>Colar cervical:</b> todo politraumatizado tem lesão cervical até examinar. Acordado, sem dor e sem déficit: tira. Confuso: imagem com o colar. Dor ou sintoma: tomografia. Tomografia normal e Glasgow 15: tira, mesmo com dor.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p><b>Tomografia</b> é o exame mais sensível para fratura de coluna.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p><b>Toracolombar:</b> L1 (35%), T12 (18%), L2 (12%), T11 (10%); até 80% em T11–L2.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p><b>Chance:</b> cinto de dois pontos, flexo-distração; associa lesão abdominal (45%), não neurológica; só óssea, conservador.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p><b>Operar a toracolombar:</b> cifose acima de 30°, translação acima de 2,5 mm, perda de altura acima de 50%, canal reduzido acima de 30%; piora neurológica progressiva é absoluta e urgente.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p><b>Dermátomos:</b> T4 mamilos, T7 apêndice xifoide, T10 umbigo, T12 virilha.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p><b>Miótomos:</b> L2 flexão do quadril, L3 extensão do joelho, L4 dorsiflexão do tornozelo, L5 extensão do hálux, S1 flexão plantar.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p><b>Choque medular</b> é neurológico: paralisia flácida, sem reflexos, 24 a 48 horas. <b>Choque neurogênico</b> é circulatório: hipotensão com bradicardia, extremidades quentes, diurese normal; trata com soro.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p><b>Bulbocavernoso:</b> ausente no choque medular; a volta do reflexo marca o fim do choque medular.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p><b>Lasègue:</b> positivo com irradiação a partir de 30 a 40 graus; não é dor, é sintoma de raiz.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p><b>Ressonância lombar:</b> 100% têm alteração depois dos 50 anos. Correlacione com a clínica.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p><b>Dor que passa do joelho</b> (ou do cotovelo) é radicular até prova em contrário.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p><b>Tamanho da hérnia não se correlaciona com a dor:</b> conteúdo e continente.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p><b>Diclofenaco</b> é o anti-inflamatório de maior potência analgésica.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p><b>Cauda equina:</b> anestesia em sela e esfíncteres registrados em toda dor lombar; emergência cirúrgica, descompressão idealmente em 48 horas.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p><b>Germes:</b> Salmonella na anemia falciforme; Pseudomonas no usuário de droga endovenosa; Staphylococcus aureus é o mais comum.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p><b>Proteína C reativa:</b> primeira a subir e a cair. <b>Hemossedimentação:</b> última a subir e a cair.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p><b>Tuberculose da coluna preserva o disco.</b> Segmento toracolombar; homens e mulheres por igual.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p><b>Cadê o Pott:</b> cifose, abscesso, déficit neurológico. RIPE por 6 a 9 meses (18 a 24 no imunocomprometido).</p></div>
+
+  <h3 data-bm="Outros números da aula">Outros números da aula</h3>
+  <div class="rows">
+    <div class="row"><div class="k">40%</div><div class="v">Das fraturas da cervical subaxial ficam em C6–C7.</div></div>
+    <div class="row"><div class="k">Mais de 95%</div><div class="v">Das hérnias lombares em L4–L5 ou L5–S1.</div></div>
+    <div class="row"><div class="k">85% e 1%</div><div class="v">Da dor lombar melhoram sozinhos em uma semana; 1% vai para cirurgia.</div></div>
+  </div>
+  <div class="rows">
+    <div class="row"><div class="k">73%</div><div class="v">Dos raios-X de dor lombar são normais.</div></div>
+    <div class="row"><div class="k">3 ou mais</div><div class="v">Critérios de Waddell: pense em causa psicossocial.</div></div>
+    <div class="row"><div class="k">L1–L2</div><div class="v">Fim da medula no adulto (cone medular).</div></div>
+  </div>
+
+  <h3 data-bm="Erros comuns">Erros comuns</h3>
+  <div class="box red"><div class="kick"><span class="dot"></span>Não caia nestas</div><ul>
+    <li><span class="medium">Confundir choque medular com choque neurogênico.</span> Um é da medula, o outro é da circulação.</li>
+    <li><span class="medium">Olhar o laudo antes de examinar</span> e operar a imagem em vez do paciente.</li>
+    <li><span class="medium">Esquecer de registrar</span> anestesia em sela e esfíncteres no prontuário da dor lombar.</li>
+    <li><span class="medium">Achar que tuberculose acomete o disco.</span> Ela o preserva.</li>
+  </ul></div>
+
+  <h3 data-bm="Palavras da aula em linguagem simples">Palavras da aula em linguagem simples</h3>
+  <div class="rows terms">
+    <div class="row"><div class="k">Acunhamento</div><div class="v">A vértebra amassa mais na frente e fica em forma de cunha.</div></div>
+    <div class="row"><div class="k">Alodínia</div><div class="v">Dor com um estímulo que normalmente não dói, como um toque leve.</div></div>
+    <div class="row"><div class="k">Anquilose</div><div class="v">Fusão natural de uma articulação, como evolução da artrose.</div></div>
+    <div class="row"><div class="k">Artrodese</div><div class="v">Fusão de uma articulação feita em cirurgia, com parafusos e hastes.</div></div>
+  </div>
+  <div class="rows terms">
+    <div class="row"><div class="k">ATLS</div><div class="v">Suporte Avançado de Vida no Trauma: o protocolo de atendimento do politraumatizado.</div></div>
+    <div class="row"><div class="k">Complexo ligamentar posterior</div><div class="v">Os ligamentos de trás da coluna; íntegro, mantém a estabilidade.</div></div>
+    <div class="row"><div class="k">Cone medular</div><div class="v">A ponta final da medula, em L1–L2 no adulto.</div></div>
+    <div class="row"><div class="k">Dermátomo</div><div class="v">A faixa de pele que uma raiz nervosa inerva.</div></div>
+  </div>
+  <div class="rows terms">
+    <div class="row"><div class="k">Durotomia</div><div class="v">Abertura da dura-máter, a capa que envolve a medula; quando acidental na cirurgia, causa fístula.</div></div>
+    <div class="row"><div class="k">Espondilodiscite</div><div class="v">Infecção da vértebra e do disco.</div></div>
+    <div class="row"><div class="k">Espondilólise</div><div class="v">Falha na pars interarticular da vértebra; causa de dor no adolescente.</div></div>
+    <div class="row"><div class="k">Espondilolistese</div><div class="v">Uma vértebra escorrega sobre a de baixo.</div></div>
+  </div>
+  <div class="rows terms">
+    <div class="row"><div class="k">Fístula liquórica</div><div class="v">Vazamento do líquido que banha a medula.</div></div>
+    <div class="row"><div class="k">Ganho secundário</div><div class="v">Vantagem que o paciente tira da doença: atestado, afastamento, benefício.</div></div>
+    <div class="row"><div class="k">Miótomo</div><div class="v">O grupo de músculos que uma raiz nervosa comanda.</div></div>
+    <div class="row"><div class="k">Órtese</div><div class="v">Colete ou colar que imobiliza a coluna.</div></div>
+  </div>
+  <div class="rows terms">
+    <div class="row"><div class="k">Pars interarticular</div><div class="v">A ponte de osso entre as articulações de cima e de baixo da vértebra.</div></div>
+    <div class="row"><div class="k">PET</div><div class="v">Tomografia por emissão de pósitrons, que mostra onde o tecido capta mais.</div></div>
+    <div class="row"><div class="k">Pseudoartrose</div><div class="v">Fratura ou fusão que não consolida.</div></div>
+  </div>
+  <div class="rows terms">
+    <div class="row"><div class="k">Pseudomeningocele</div><div class="v">Bolsa de líquido da medula que se forma fora da dura-máter depois de uma fístula.</div></div>
+    <div class="row"><div class="k">Radiculopatia</div><div class="v">Sofrimento de uma raiz nervosa: dor, formigamento ou fraqueza no seu território.</div></div>
+    <div class="row"><div class="k">RIPE</div><div class="v">Esquema da tuberculose: rifampicina, isoniazida, pirazinamida e etambutol.</div></div>
+  </div>
+  {{NOTAS}}
+</section>
+</body></html>
