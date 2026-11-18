@@ -1,4 +1,4 @@
-# Fonte da aula · orto-a7
+# Fonte da aula · orto-a5
 
 Guardada com `scripts/fonte-aula.py` (última mudança em 18/11/2026). É o material da aula como veio, sem correção:
 os erros da transcrição automática ficam aqui e quem corrige é a apostila. A apostila, as questões, os flashcards
