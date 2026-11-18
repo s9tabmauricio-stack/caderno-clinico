@@ -36,6 +36,8 @@ export function FlashcardsDiaD({ aulaId, userId, cards, progresso: inicial, rotu
   // As gravações vão uma de cada vez, na ordem: a última resposta é sempre a que fica no banco.
   const gravacoes = useRef<Promise<void>>(Promise.resolve())
   const totalQuestoes = new Set(cards.flatMap((c) => c.questoes)).size
+  // Aula sem questões das Provas da FAG (pedido do Mauricio, 18/11/2026): o baralho sai das falas do professor
+  const semFag = totalQuestoes === 0
   const rotuloDe = (c: CardDiaD) => c.questoes.map((id) => rotulos[id]).filter(Boolean).join(' · ')
 
   function guardar(p: ProgressoDiaD) {
@@ -116,7 +118,7 @@ export function FlashcardsDiaD({ aulaId, userId, cards, progresso: inicial, rotu
             Voltar ao FastCardsGenius
           </button>
         </div>
-        {irParaQuestoes && (
+        {irParaQuestoes && !semFag && (
           <div className="next-steps">
             <button className="btn" onClick={irParaQuestoes}>
               Fazer as questões das Provas da FAG
@@ -155,7 +157,7 @@ export function FlashcardsDiaD({ aulaId, userId, cards, progresso: inicial, rotu
           onClick={virado ? undefined : () => setVirado(true)}
           data-act={virado ? undefined : 'virar'}
         >
-          <div className="side">FastCardsGenius · Provas da FAG</div>
+          <div className="side">FastCardsGenius · {semFag ? 'véspera da prova' : 'Provas da FAG'}</div>
           <div className="front">{card.frente}</div>
           {virado ? (
             <>
@@ -192,19 +194,24 @@ export function FlashcardsDiaD({ aulaId, userId, cards, progresso: inicial, rotu
   return (
     <>
       <p className="foot">
-        Baralho de véspera: cada card ensina o que cai nas Provas da FAG desta aula. Não entra na Revisão do dia; o card que você
+        {semFag
+          ? 'Baralho de véspera: esta aula ainda não tem questões das Provas da FAG, então os cards trazem o que o professor disse que cai na prova.'
+          : 'Baralho de véspera: cada card ensina o que cai nas Provas da FAG desta aula.'}{' '}
+        Não entra na Revisão do dia; o card que você
         não souber volta no fim, até fechar todos.
       </p>
       <div className="fc-sum">
-        <div className="counts counts-2">
+        <div className={`counts ${semFag ? 'counts-1' : 'counts-2'}`}>
           <div className="cp">
             <span className="n">{cards.length}</span>
             <span className="l">{plural(cards.length, 'Card', 'Cards')}</span>
           </div>
-          <div className="cp">
-            <span className="n">{totalQuestoes}</span>
-            <span className="l">{plural(totalQuestoes, 'Questão da FAG', 'Questões da FAG')}</span>
-          </div>
+          {!semFag && (
+            <div className="cp">
+              <span className="n">{totalQuestoes}</span>
+              <span className="l">{plural(totalQuestoes, 'Questão da FAG', 'Questões da FAG')}</span>
+            </div>
+          )}
         </div>
         {progresso?.fila.length ? (
           <>
