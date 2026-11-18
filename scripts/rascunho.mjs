@@ -272,8 +272,10 @@ export function ehQuestaoFag(q) {
  * ("**N.** frente" e "↳ verso", como nos flashcards). Um card que também resolve outra questão leva,
  * logo abaixo do verso, a linha "+ também: <id>, <id>".
  * Devolve [{ n, frente, verso, questoes: [ids] }].
+ * semFag (pedido do Mauricio, 18/11/2026): aula sem questões das Provas da FAG; o baralho sai das falas do
+ * professor, as seções são por tema ("## <Tema> · …") e os cards não citam questão (questoes = []).
  */
-export function lerFlashcardsDiaD(md) {
+export function lerFlashcardsDiaD(md, { semFag = false } = {}) {
   // Título da seção: "## <id da questão> · …". Ids antigos não seguem <aula>-qNN (ex.: pn-p2-10-v3).
   const secao = /^##\s+([a-z0-9]+(?:-[a-z0-9]+)+)\s+·/
   const questoesDoCard = new Map()
@@ -283,7 +285,7 @@ export function lerFlashcardsDiaD(md) {
   for (const linha of linhasUteis(md)) {
     const t = linha.trim()
     if (/^##\s/.test(t)) {
-      const m = secao.exec(t)
+      const m = semFag ? /^##\s+(.+?)\s+·/.exec(t) : secao.exec(t)
       atual = m ? m[1] : null
       sobra.push(linha)
       continue
@@ -291,14 +293,18 @@ export function lerFlashcardsDiaD(md) {
     const cab = /^\*\*(\d+)\.\*\*/.exec(t)
     if (cab) {
       ultimo = Number(cab[1])
-      if (!atual) throw new Error(`Card ${ultimo}: está fora de uma seção "## <id da questão> · …" (diga qual questão ele resolve).`)
-      questoesDoCard.set(ultimo, [atual])
+      if (!atual)
+        throw new Error(semFag
+          ? `Card ${ultimo}: está fora de uma seção "## <Tema> · …".`
+          : `Card ${ultimo}: está fora de uma seção "## <id da questão> · …" (diga qual questão ele resolve).`)
+      questoesDoCard.set(ultimo, semFag ? [] : [atual])
       sobra.push(linha)
       continue
     }
     const tambem = /^\+\s*também:\s*(.+)$/i.exec(t)
     if (tambem) {
       if (!ultimo) throw new Error('Linha "+ também:" antes do primeiro card.')
+      if (semFag) throw new Error(`Card ${ultimo}: "+ também:" não vale no baralho sem questões da FAG.`)
       for (const id of tambem[1].split(/[,\s]+/).filter(Boolean)) {
         const lista = questoesDoCard.get(ultimo)
         if (!lista.includes(id)) lista.push(id)

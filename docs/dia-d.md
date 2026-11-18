@@ -27,6 +27,10 @@ Tabela `flashcards_dia_d (id, aula_id, ordem, frente, verso, questoes text[])`: 
 2. **Revisão:** agente `revisor`, conferindo o rascunho contra a fonte e as questões.
 3. **Gravar** (programa, sem agente): `node scripts/dia-d.mjs gravar <aula-id>`. Ele confere que toda questão FAG tem card e que todo id citado é FAG da aula, e para se a aula já tiver cards Dia D. Sem acesso direto ao banco: `--sql --questoes id1,id2,…` escreve o SQL em `rascunhos/sql/` para rodar no conector. `--conferir` só confere.
 
+### Aula sem questões das Provas da FAG
+
+Pedido do Mauricio (18/11/2026): a aula que ainda não tem questões FAG pode ganhar o baralho mesmo assim, feito pelo que o professor disse que cai na prova (só a fonte da aula; ~35–50 cards de alto rendimento, sem repetir a aula inteira). No rascunho, as seções são por tema (`## <Tema> · <minuto>`), sem `+ também:`; grave com `node scripts/dia-d.mjs gravar <aula-id> --sem-fag` (com `--sql`, confira antes no conector que a aula não tem questões FAG). Na tela, o baralho diz "véspera da prova" no lugar de "Provas da FAG", não mostra a contagem de questões nem o botão para as questões da FAG, e o Modo CRAZY do cartão da aula aparece só com o botão FastCardsGenius. Quando chegarem as questões da FAG da aula, apague o baralho (Conteúdo) e refaça pelo caminho normal.
+
 ### Formato do rascunho
 
 Uma seção `##` por questão FAG, começando pelo id da questão como está no banco (ids antigos não seguem `<aula>-qNN`, ex.: `pn-p2-10-v3`), seguido de ` · `; os cards dela embaixo, numerados de 1 até o fim. Card que ajuda em mais de uma questão leva `+ também: <id>` abaixo do verso.

@@ -75,3 +75,12 @@ test('a regra de questão FAG do programa é a mesma da tela', () => {
   ]
   for (const q of casos) assert.equal(ehQuestaoFag(q), fonteDaQuestao(q) === 'fag', JSON.stringify(q))
 })
+
+test('Dia D sem questões FAG: seções por tema e cards sem questão', () => {
+  const md = '# FastCardsGenius\n\n## Hérnia de disco · 12:40\n\n**1.** Frente?\n↳ Verso.\n\n**2.** Outra?\n↳ Outro.\n'
+  const cards = lerFlashcardsDiaD(md, { semFag: true })
+  assert.equal(cards.length, 2)
+  assert.deepEqual(cards.map((c) => c.questoes), [[], []])
+  assert.throws(() => lerFlashcardsDiaD(md + '+ também: x-q01\n', { semFag: true }), /também/)
+  assert.match(sqlDiaD(linhasDiaD('orto-a5', cards)), /array\[\]::text\[\]/)
+})

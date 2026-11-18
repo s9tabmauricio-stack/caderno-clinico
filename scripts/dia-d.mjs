@@ -10,6 +10,8 @@
 //        lê rascunhos/flashcards-dia-d/<aula-id>.md, confere que toda questão FAG tem card e grava em
 //        flashcards_dia_d. --conferir só confere; --sql escreve o SQL em rascunhos/sql/ para o conector
 //        (sem a chave, a lista das questões FAG vem do arquivo exportado ou de --questoes id1,id2,…).
+//        --sem-fag (pedido do Mauricio, 18/11/2026): aula sem questões das Provas da FAG; o baralho sai das
+//        falas do professor, com seções por tema, e nenhum card cita questão.
 //
 // Sem acesso direto ao banco (ex.: Claude na nuvem, onde a rede só deixa passar o conector), o agente lê
 // as questões FAG pelo conector e a gravação vai por --sql. Consulta (mesma regra de ehQuestaoFag):
@@ -102,17 +104,24 @@ if (comando === 'exportar') {
 
 // ---------- gravar ----------
 if (!existsSync(arqCards)) parar(`não achei ${arqCards}.`)
+const semFag = tem('--sem-fag')
 let cards
-try { cards = lerFlashcardsDiaD(readFileSync(arqCards, 'utf8')) } catch (e) { parar(e.message) }
+try { cards = lerFlashcardsDiaD(readFileSync(arqCards, 'utf8'), { semFag }) } catch (e) { parar(e.message) }
 
 const semBanco = tem('--sql')
 const db = semBanco ? null : await banco()
-const idsFag = semBanco ? idsDoExportado() : (await questoesFag(db)).map((q) => q.id)
-const { semCard, desconhecidas } = coberturaDiaD(cards, idsFag)
-console.log(`Rascunho Dia D: ${cards.length} cards para ${idsFag.length} questões FAG.`)
-if (desconhecidas.length) parar(`o rascunho cita questões que não são FAG desta aula (ou não existem mais): ${desconhecidas.join(', ')}.`)
-if (semCard.length) parar(`estas questões FAG ficaram sem card: ${semCard.join(', ')}.`)
-console.log('Toda questão FAG da aula tem pelo menos um card.')
+if (semFag) {
+  // Sem a chave não dá para conferir aqui que a aula não tem questões FAG: quem roda confere no conector.
+  if (db && (await questoesFag(db)).length) parar(`a aula ${aulaId} tem questões das Provas da FAG: faça o baralho por elas, sem --sem-fag.`)
+  console.log(`Rascunho Dia D sem questões FAG: ${cards.length} cards.`)
+} else {
+  const idsFag = semBanco ? idsDoExportado() : (await questoesFag(db)).map((q) => q.id)
+  const { semCard, desconhecidas } = coberturaDiaD(cards, idsFag)
+  console.log(`Rascunho Dia D: ${cards.length} cards para ${idsFag.length} questões FAG.`)
+  if (desconhecidas.length) parar(`o rascunho cita questões que não são FAG desta aula (ou não existem mais): ${desconhecidas.join(', ')}.`)
+  if (semCard.length) parar(`estas questões FAG ficaram sem card: ${semCard.join(', ')}.`)
+  console.log('Toda questão FAG da aula tem pelo menos um card.')
+}
 if (tem('--conferir')) process.exit(0)
 
 const linhas = linhasDiaD(aulaId, cards)

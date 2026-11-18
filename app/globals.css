@@ -1428,6 +1428,7 @@ h1.big{background:var(--metal-titulo);-webkit-background-clip:text;background-cl
 .grades.grades-2{grid-template-columns:repeat(2,minmax(0,1fr))}
 .diad-ajuda{margin-top:12px;font-size:12.5px;font-weight:600;color:var(--muted)}
 .counts.counts-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.counts.counts-1{grid-template-columns:minmax(0,1fr)}
 
 /* Novidades: sininho ao lado da engrenagem (components/Novidades.tsx, lista em lib/novidades.ts).
    Com novidade não vista, selo vermelho com o número e um anel pulsando até o aluno abrir
