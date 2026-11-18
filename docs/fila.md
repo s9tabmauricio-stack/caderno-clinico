@@ -21,3 +21,4 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
 | Flashcards da pass-a6 | Claude | claude/happy-darwin-07h2c3 | pass-a6 (flashcards) | 16/11/2026 |
+| Questões da P2 T25 de Ortopedia | Claude | claude/stoic-hopper-jv1uw2 | orto-a1, orto-a3, orto-a6 (questões) e Banco de orto | 18/11/2026 |
