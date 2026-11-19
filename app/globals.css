@@ -1376,6 +1376,9 @@ h1.big{background:var(--metal-titulo);-webkit-background-clip:text;background-cl
 .qd-prioridade .placa-prioridade::after{top:auto;bottom:100%;height:7px;border-radius:2px 2px 0 0}
 .qd-prova{bottom:calc(100% + 7px);width:44px;padding:3px 2px 2px;border-radius:5px;border:1px solid #c38c00;border-top:4px solid transparent;background:repeating-linear-gradient(135deg,#141519 0 3px,#f5b301 3px 6px) top/100% 4px no-repeat,linear-gradient(#ffdf59,#f5b301);background-origin:border-box;color:#141519;font-size:9px;line-height:1;font-weight:800;letter-spacing:.02em;box-shadow:0 1px 2px #0002}
 .qd-prova::after{content:"";position:absolute;top:100%;left:calc(50% - 2px);width:4px;height:7px;background:#c38c00;border-radius:0 0 2px 2px}
+/* Placa vermelha: o professor disse que cai (professor_disse_que_cai; pedido do Mauricio, 19/11/2026) */
+.qd-prova--professor{border-color:transparent #9e1a12 #9e1a12;background:repeating-linear-gradient(135deg,#141519 0 3px,#e5322b 3px 6px) top/100% 4px no-repeat,linear-gradient(#ff6b5e,#d9261c);background-origin:border-box;color:#fff;text-shadow:0 1px 0 #0004}
+.qd-prova--professor::after{background:#9e1a12}
 /* Apostila em páginas: contador flutuante "Página X de Y" e tela cheia com zoom (components/Apostila.tsx) */
 .paginas img[role=button]{cursor:zoom-in}
 .ap-contador{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(92px + env(safe-area-inset-bottom,0px));z-index:6;display:flex;align-items:center;gap:2px;padding:4px;border-radius:999px;
@@ -1415,6 +1418,9 @@ h1.big{background:var(--metal-titulo);-webkit-background-clip:text;background-cl
   box-shadow:0 0 0 1px rgba(0,0,0,.25)}
 @media (max-width:599px){.fita-prova{--fita-lado:7px}.fita-prova .fita{height:26px}}
 :root[data-tema="dia"] .fita-prova{box-shadow:inset 0 0 0 1px rgba(0,0,0,.25),0 12px 26px rgba(30,35,50,.18)}
+/* Fita vermelha e preta: o professor disse que cai (mesma regra da placa vermelha) */
+.fita-prova--professor{--fita-a:#E5322B}
+.fita-prova--professor .fita span{color:#fff}
 
 /* Aula: barra de abas com a quarta aba Flashcards Dia D (regra do Mauricio, 10/11/2026) */
 .segm.segm-aula{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr)}

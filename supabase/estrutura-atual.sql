@@ -1,5 +1,5 @@
 -- Estrutura atual do banco do Med Genius (Supabase, projeto xtlpmtylifbalzxnfkib)
--- Copiada do próprio banco em 02/11/2026 (PostgreSQL 17.11); campo questoes.cai_na_prova incluído em 03/11/2026. Só a estrutura, sem dados.
+-- Copiada do próprio banco em 02/11/2026 (PostgreSQL 17.11); campo questoes.cai_na_prova incluído em 03/11/2026; questoes.professor_disse_que_cai em 19/11/2026. Só a estrutura, sem dados.
 -- Quarta classificação (complicado) incluída em 05/11/2026: migração 20261105224624_quarta_classificacao_questoes.sql.
 -- Classificação pessoal de questões incluída em 05/11/2026: migração 20261105214247_classificacao_individual_questoes.sql.
 -- Flashcards Dia D incluídos em 10/11/2026: migração 20261110010015_flashcards_dia_d.sql.
@@ -141,6 +141,7 @@ create table public.questoes (
   por_que_erradas text,
   substituida_por text,
   cai_na_prova boolean default false not null,
+  professor_disse_que_cai boolean default false not null,
   constraint questoes_pkey PRIMARY KEY (id),
   constraint questoes_alternativas_check CHECK ((jsonb_typeof(alternativas) = 'array'::text)),
   constraint questoes_correta_check CHECK ((correta >= 0)),
@@ -476,7 +477,7 @@ create or replace view public.questoes_do_aluno with (security_invoker=true) as
  select q.id, q.aula_id, q.ordem, q.enunciado, q.alternativas, q.correta, q.comentario,
     r.escolhida, r.correta as acertou, r.tentativas, r.respondida_em,
     q.materia_id, q.por_que_erradas, q.tema, q.prova, q.fonte, q.origem, q.cai_na_prova,
-    c.classificacao
+    c.classificacao, q.professor_disse_que_cai
  from public.questoes q
  left join public.aulas a on a.id = q.aula_id
  left join public.respostas r on r.questao_id = q.id and r.user_id = (select auth.uid())

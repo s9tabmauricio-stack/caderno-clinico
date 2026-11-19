@@ -48,6 +48,8 @@ export type QuestaoAluno = {
   origem: string | null
   // o professor disse ou deu a entender que o ponto cai na prova
   cai_na_prova: boolean
+  // o professor disse com todas as letras que cai (ou marcou o slide com estrela): faixa e placa vermelhas
+  professor_disse_que_cai: boolean
   classificacao: ClassificacaoQuestao | null
   resposta: { escolhida: number; acertou: boolean; tentativas: number } | null
 }
@@ -201,6 +203,7 @@ type LinhaQuestao = {
   fonte: string | null
   origem: string | null
   cai_na_prova: boolean | null
+  professor_disse_que_cai?: boolean | null
   classificacao: string | null
   escolhida: number | null
   acertou: boolean | null
@@ -222,6 +225,7 @@ export function paraQuestao(q: LinhaQuestao): QuestaoAluno {
     fonte: q.fonte,
     origem: q.origem,
     cai_na_prova: q.cai_na_prova ?? false,
+    professor_disse_que_cai: q.professor_disse_que_cai ?? false,
     classificacao: classificacaoValida(q.classificacao),
     resposta:
       q.escolhida !== null && q.acertou !== null

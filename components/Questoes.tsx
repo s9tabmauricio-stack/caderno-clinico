@@ -6,7 +6,7 @@ import { explicarFalha } from '@/lib/falhas'
 import { createClient } from '@/lib/supabase/client'
 import type { QuestaoAluno } from '@/lib/dados'
 import { plural } from '@/lib/formato'
-import { temFaixaProva } from '@/lib/faixa-prova'
+import { corFaixaProva } from '@/lib/faixa-prova'
 import { CLASSIFICACOES_QUESTAO, rotuloClassificacao, type ClassificacaoQuestao } from '@/lib/classificacao-questoes'
 import { Icone } from './Icones'
 import { ConversaTurma } from './ConversaTurma'
@@ -249,8 +249,8 @@ export function Questoes({ questoes, userId, ativo, mostrarTema = true, vazio, a
         {questoes.map((x, i) => {
           const r = respostas[x.id]
           const classificacao = classificacoes[x.id]
-          const prova = temFaixaProva(x)
-          const descricao = `Questão ${i + 1}${r ? (r.acertou ? ', acertou' : ', errou') : ''}${prova ? ', PROVA' : ''}${classificacao ? `, ${rotuloClassificacao(classificacao)}` : ''}`
+          const prova = corFaixaProva(x)
+          const descricao = `Questão ${i + 1}${r ? (r.acertou ? ', acertou' : ', errou') : ''}${prova === 'vermelha' ? ', PROVA (o professor disse que cai)' : prova ? ', PROVA' : ''}${classificacao ? `, ${rotuloClassificacao(classificacao)}` : ''}`
           return (
             <span className="qd-item" key={x.id}>
               <button
@@ -260,7 +260,11 @@ export function Questoes({ questoes, userId, ativo, mostrarTema = true, vazio, a
                 aria-current={i === idx ? 'step' : undefined}
                 title={descricao}
               >
-                {prova && <span className="qd-prova" aria-hidden="true">PROVA</span>}
+                {prova && (
+                  <span className={`qd-prova${prova === 'vermelha' ? ' qd-prova--professor' : ''}`} aria-hidden="true">
+                    PROVA
+                  </span>
+                )}
                 {i + 1}
                 {classificacao && <span className="qd-prioridade"><PlacaPrioridade valor={classificacao} /></span>}
               </button>
@@ -379,11 +383,12 @@ export function Questoes({ questoes, userId, ativo, mostrarTema = true, vazio, a
     )
   }
 
+  const corFaixa = corFaixaProva(q)
   return (
     <div>
       {cabecalho}
       {!avisoAqui && aviso}
-      <FaixaProva ligada={temFaixaProva(q)}>
+      <FaixaProva ligada={corFaixa !== null} vermelha={corFaixa === 'vermelha'}>
         <div className="qcard">
           <div className="qmeta">
             {q.fonte && <span className="fonte">{q.fonte}</span>}
