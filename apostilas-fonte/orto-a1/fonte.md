@@ -1,6 +1,6 @@
 # Fonte da aula · orto-a1
 
-Guardada com `scripts/fonte-aula.py` (última mudança em 18/11/2026). É o material da aula como veio, sem correção:
+Guardada com `scripts/fonte-aula.py` (última mudança em 19/11/2026). É o material da aula como veio, sem correção:
 os erros da transcrição automática ficam aqui e quem corrige é a apostila. A apostila, as questões, os flashcards
 e as conferências saem deste arquivo; onde ele e a apostila divergem, vale o que o professor falou (AGENTS.md).
 Não edite à mão: para juntar material novo, rode o programa com --acrescentar.
@@ -8,6 +8,7 @@ Não edite à mão: para juntar material novo, rode o programa com --acrescentar
 ## O que tem aqui
 
 - Transcrição 1: `36126386-Transcricao_Ortopedia_A1_Flavio.txt` (15.762 palavras, duração até 01:39:27).
+- Slides 1: `Benignos, malignos e metástases (Dr. Flávio).pdf` (179 páginas; só imagem, sem texto: 52, 57, 58, 69, 70, 84, 85, 86, 88, 95, 97, 112, 113, 116, 120, 122, 127, 137, 139, 144, 145, 150, 152, 157, 158, 159, 165, 167, 169, 170, 171, 173 (ver o original)).
 
 ## Transcrição 1 · 36126386-Transcricao_Ortopedia_A1_Flavio.txt
 <!-- parte transcricao 1 | arquivo=36126386-Transcricao_Ortopedia_A1_Flavio.txt | sha=d6e84c20f259 | palavras=15.762 | duracao=01:39:27 -->
@@ -513,3 +514,2302 @@ Duração Total     : 104:14 (01h44min14s)
 [103:23] Professor (Dr. Flávio): Tem uma imagem que é muito característica, pessoal, no crânio — imagem no crânio —, que é a imagem em "sal e pimenta", tá? Tudo isso que eu estou falando para vocês, depois eu vou pegar o slide da aula que eu fiz — é que nessa aula aqui não está o de mieloma múltiplo — e depois eu vou mandar para vocês o slide da aula, tá? Então tem uma característica que são várias lesões líticas no crânio, tá, que ele fica com uma característica de sal e pimenta. Então a lesão em sal e pimenta no crânio é um achado de imagem característico do mieloma múltiplo, beleza?
 
 [104:01] Professor (Dr. Flávio): E é isso aí, pessoal, a aula é essa! (risos e tosse) Tá? Assim, a imagem do mieloma múltiplo é isso aqui, ó, vou mostrar para vocês aqui (procura imagem no computador para projetar no slide). Ó, é isso aqui, ó: ele vai comprometendo todo o osso. Inclusive isso aqui é uma imagem de uma paciente que eu tratei que tinha mieloma múltiplo. Então isso aqui já não é metástase, isso aqui é mieloma múltiplo, quando chega nesse ponto aqui. É claro que isso aqui é o extremo, né? É o extremo do caso, mas ela começa com lesões líticas, né, espalhadas aí pelo esqueleto todo. Fechou? Vamos lá então, pessoal, terminou a aula então. Vamos tomar uma água, dar uma descansada, e depois vamos continuar. Depois eu vou providenciar de mandar os...
+
+## Slides 1 · Benignos, malignos e metástases (Dr. Flávio).pdf
+<!-- parte slides 1 | arquivo=Benignos, malignos e metástases (Dr. Flávio).pdf | sha=ed3d62851a65 | paginas=179 | so_imagem=52, 57, 58, 69, 70, 84, 85, 86, 88, 95, 97, 112, 113, 116, 120, 122, 127, 137, 139, 144, 145, 150, 152, 157, 158, 159, 165, 167, 169, 170, 171, 173 -->
+
+### Slide 1 de 179
+<!-- slide 1 -->
+TUMORES ÓSSEOS
+BENIGNOS
+MALIGNOS
+METÁSTASES
+DR FLAVIO FRANCO
+ORTOPEDIA E TRAUMATOLOGIA
+
+### Slide 2 de 179
+<!-- slide 2 -->
+BENIGNOS
+PRODUTORES DE TECIDO ÓSSEO
+• OSTEOMA
+• OSTEOMA OSTEÓIDE
+• OSTEOBLASTOMA
+
+### Slide 3 de 179
+<!-- slide 3 -->
+BENIGNOS
+PRODUTORES DE TECIDO CARTILAGINOSO
+• OSTEOCONDROMA
+• ENCONDROMA
+• CONDROBLASTOMA
+• FIBROMA CONDROMIXOIDE
+
+### Slide 4 de 179
+<!-- slide 4 -->
+TUMOR DE CÉLULAS GIGANTES
+BENIGNO AGRESSIVO
+
+### Slide 5 de 179
+<!-- slide 5 -->
+TUMORES FIBROISTIOCITARIOS
+• DEFEITO FIBROSO CORTICAL / FIBROMA NÃO
+OSSIFICANTE
+• DISPLASIA FIBROSA
+• OSTEOFIBRODISPLASIA
+• FIBROISTIOCITOMA BENIGNO
+
+### Slide 6 de 179
+<!-- slide 6 -->
+LESÕES OSSEAS PSEUDOTUMORAIS / CÍSTICAS
+• CISTO ÓSSEO SIMPLES
+• CISTO ÓSSEO ANEURISMÁTICO
+• GRANULOMA EUSINOFILICO
+• TUMOR MARROM DO HIPERPARATIREOIDISMO
+
+### Slide 7 de 179
+<!-- slide 7 -->
+BENIGNOS PRODUTORES DE TECIDO ÓSSEO
+OSTEOMA
+DEFINIÇÃO (OMS):
+•
+LESÃO BENIGNA CONSTITUÍDA POR TECIDO
+ÓSSEO MADURO E BEM DIFERENCIADO, COM
+ESTRUTURA PREDOMINANTEMENTE LAMINAR.
+CRESCIMENTO MUITO LENTO.
+EPIDEMIOLOGIA:
+-1,89% DOS TUMORES BENIGNOS
+- 0,85% DO TOTAL DOS TUMORES ÓSSEOS
+- HOMENS = MULHERES
+- TODAS AS FAIXAS ETÁRIAS
+- ACHADOS DE EXAME
+
+### Slide 8 de 179
+<!-- slide 8 -->
+BENIGNOS PRODUTORES DE TECIDO ÓSSEO
+OSTEOMA
+CLASSIFICAÇÃO E LOCALIZAÇÃO
+*CLÁSSICO – OSSO LAMELAR DENSO (CRÂNIO, SEIOS DA FACE,MAXILARES)
+*PAROSTAL – OSSO TRABECULADO (FÊMUR, ÚMERO, CLAVÍCULA)
+*MEDULAR – OSSO TRABECULADO,ENOSTOSE ( TIBIA, FÊMUR)
+
+### Slide 9 de 179
+<!-- slide 9 -->
+BENIGNOS PRODUTORES DE TECIDO ÓSSEO
+OSTEOMA
+QUADRO CLÍNICO
+ASSINTOMÁTICOS NA MAIORIA.
+NÓDULO INDOLOR E ENDURECIDO QUE CRESCE LENTAMENTE.
+SINTOMATOLOGIAASSOCIADAA COMPRESSÃO DE ESTRUTURAS (RARO).
+DIAGNÓSTICO DIFERENCIAL
+OSTEOSSARCOMA JUSTACORTICAL, OSTEOCONDROMA SÉSSIL,
+MIOSITE OSSIFICANTE,
+
+### Slide 10 de 179
+<!-- slide 10 -->
+BENIGNOS PRODUTORES DE TECIDO ÓSSEO
+OSTEOMA
+TRATAMENTO
+EXCISÃO CIRÚRGICA
+-SE LESÃO SE TORNAR
+SINTOMÁTICA.
+-FINS DIAGNÓSTICOS (DIFERENCIAL COM OSTEOSSARCOMA)
+-RAZÕES ESTÉTICAS
+
+### Slide 11 de 179
+<!-- slide 11 -->
+BENIGNOS PRODUTORES DE TECIDO ÓSSEO
+OSTEOMA
+
+### Slide 12 de 179
+<!-- slide 12 -->
+BENIGNOS PRODUTORES DE TECIDO ÓSSEO
+OSTEOMA OSTEÓIDE
+• NEOPLASIA BENIGNA PRODUTORA DE TECIDO ÓSSEOS
+• PEQUENO (< 1 CM) NÓDULO CORTICAL (MAIORIA DOS CASOS)
+• NICHO OU NIDUS
+• DOLOROSO
+• PODE ACOMETER QUAQUER OSSO, POREM TEM PREFERENCIA PELAS METAFISES DE
+OSSOS LONGOS
+• CRIANÇAS E ADULTOS JOVENS
+
+### Slide 13 de 179
+<!-- slide 13 -->
+BENIGNOS PRODUTORES DE TECIDO ÓSSEO
+OSTEOMA OSTEÓIDE
+DEFINIÇÃO (OMS):
+•
+LESÃO OSTEOBLÁSTICA BENIGNA, CARACTERIZADA
+POR SEU TAMANHO REDUZIDO (EM GERAL INFERIOR A
+1 CM).
+•
+CONTORNO CLARAMENTE DEMARCADO E
+FREQÜENTE PRESENÇA DE UMA ZONA DE FORMAÇÃO
+ÓSSEA REATIVA AO REDOR.
+•
+HISTOLOGICAMENTE, CONSISTE EM TECIDO CELULAR
+ALTAMENTE VASCULARIZADO, CONSTITUÍDO DE OSSO
+IMATURO E TECIDO OSTEÓIDE.
+
+### Slide 14 de 179
+<!-- slide 14 -->
+BENIGNOS PRODUTORES DE TECIDO ÓSSEO
+OSTEOMA OSTEÓIDE
+MANIFESTAÇÃO CLÍNICA
+• DOR CONSTANTE QUE PIORA A NOITE
+• AUMENTO DE VOLUME
+• COMPROMETE A FUNÇÃO – RESTRIÇÃO DA ADM /
+DESCARGA DE PESO
+• SINOVITE, REAÇÃO INFLAMATORIA ARTICULAR
+• ESCOLIOSE ANTALGICA (QUANDO PRESENTE NAS
+VERTEBRAS)
+• DOR MELHORA COM USO DE ASPIRINA
+• HOMENS > MULHERES 3:1
+• METAFISE PROXIMAL E DISTAL DO FEMUR, PROXIMAL DA
+TIBIA, DISTAL DO RADIO
+• LAMINA OU PEDICULO DA VERTEBRA
+
+### Slide 15 de 179
+<!-- slide 15 -->
+BENIGNOS PRODUTORES DE TECIDO ÓSSEO
+
+### Slide 16 de 179
+<!-- slide 16 -->
+BENIGNOS PRODUTORES DE TECIDO ÓSSEO
+OSTEOMA OSTEÓIDE
+ASPECTO RADIOGRÁFICO
+• IMAGEM DENOMINADA NICHO OU NIDUS
+• ESPESSAMENTO OSSEO, COM AS ADJACENCIAS
+ESCLEROTICAS COM NÚCLEO MENOS DENSO QUE O
+OSSO AO REDOR
+• RADIOGRAFIA – É FACIL DE VER O ESPESSAMENTO
+OSSEO, PORÉM NÃO É TÃO EVIDENTE O NICHO / NIDUS
+• TOMOGRAFIA – PADRÃO OURO – MELHOR EXAME PARA
+FECHAR O DIAGNÓSTICO POIS ELE EVIDENCIA
+CLARAMENTE O NIDUS – NÃO PRECISA DE BIOPSIA
+• CINTILOGRAFIA OSSEA – HIPERCAPTANTE
+
+### Slide 17 de 179
+<!-- slide 17 -->
+BENIGNOS PRODUTORES DE TECIDO ÓSSEO
+OSTEOMA OSTEÓIDE
+TRATAMENTO
+• ELIMINAÇÃO DO NIDUS
+• TRATAMENTO CIRURGICO
+• RETIRADA DO NIDUS COM BLOCO DE OSSO ADJACENTE
+– FRAGILIZA
+• CURETAGEM + ELETROCAUTERIZAÇÃO
+• ELETROCAUTERIZAÇÃO GUIADA POR TOMOGRAFIA
+• ENCAMINHA O MATERIAL DA RESSECÇÃO PARA
+ANATOMOPATOLOGICO
+
+### Slide 18 de 179
+<!-- slide 18 -->
+OSTEOMA OSTEÓIDE
+MASCULINO
+14 ANOS
+DOR EM FACE LATERAL DA COXA
+CONSTANTE, MAIS INTENSA A NOITE
+
+### Slide 19 de 179
+<!-- slide 19 -->
+OSTEOMA OSTEÓIDE
+FEMININA
+13 ANOS
+DOR EM QUADRIL DIREITO COM 6 MESES DE EVOLUÇÃO
+PROGRESSIVA
+LIMITAÇÃO DE ATIVIDADES FISICAS – ABANDONOU A
+PRATICA DE VOLEI
+CONSTANTE, MAIS INTENSA A NOITE
+CONSTRANGIMENTO POIS A PACIENTE PASSOU A
+CLAUDICAR
+
+### Slide 20 de 179
+<!-- slide 20 -->
+BENIGNOS PRODUTORES DE TECIDO ÓSSEO
+OSTEOBLASTOMA
+• TUMOR BENIGNO PRODUTOR DE TECIDO OSSEO RICO EM
+OSTEOBLASTOS
+• MUITO VASCULARIZADO
+• MAIS COMUM EM COLUNA VERTEBRAL E METACARPOS
+• ANATOMIA PATOLOGICA MUITO SEMELHANTE A DO OSTEOMA OSTEOIDE
+POREM O OSTEOBLASTOMA É MAIOR QUE 1 CM.
+
+### Slide 21 de 179
+<!-- slide 21 -->
+BENIGNOS PRODUTORES DE TECIDO ÓSSEO
+OSTEOBLASTOMA
+DEFINIÇÃO
+LESÃO DE CARACTERÍSTICAS
+HISTOLÓGICA SEMELHANTES
+AO DO OSTEOMA OSTEÓIDE,
+MAS DE CRESCIMENTO
+PROGRESSIVO, DE TAMANHO
+MAIOR, AS VEZES
+VOLUMOSA E SEM O TECIDO ÓSSEO REACIONAL
+PERIFOCAL.
+
+### Slide 22 de 179
+<!-- slide 22 -->
+Click to see larger picture
+BENIGNOS PRODUTORES DE TECIDO ÓSSEO
+OSTEOBLASTOMA
+EPIDEMIOLOGIA
+LESÃO ÓSSEA INCOMUM
+2,6% DOS TUMORES ÓSSEOS BENIGNOS
+1,2% DO TOTAL DOS TUMORES ÓSSEOS
+2 HOMEM/MULHER
+70 A 90%: MENOR DE 30 ANOS
+COLUNA VERTEBRAL (34%)
+OSSOS LONGOS (30%)
+OSSOS PÉS E MÃOS (13,5%)
+(HUVOS)
+
+### Slide 23 de 179
+<!-- slide 23 -->
+BENIGNOS PRODUTORES DE TECIDO ÓSSEO
+OSTEOBLASTOMA
+QUADRO CLÍNICO
+•
+DOR INCONSTANTE
+•
+EVOLUÇÃO MAIS RÁPIDA QUE O OSTEOMA OSTEÓIDE
+•
+TUMEFAÇÃO E INCAPACIDADE FUNCIONAL
+•
+ESCOLIOSE ANTÁLGICA
+•
+COMPRESSÃO NEUROLÓGICA
+
+### Slide 24 de 179
+<!-- slide 24 -->
+BENIGNOS PRODUTORES DE TECIDO ÓSSEO
+OSTEOBLASTOMA
+DIAGNÓSTICO DIFERENCIAL
+•
+ABSCESSO DE BRODIE
+•
+OSTEOSSARCOMA
+•
+CONDROSSARCOMA
+•
+CONDROBLASTOMA
+•
+OSTEOMA OSTEÓIDE
+•
+CISTO ÓSSEO ANEURISMÁTICO
+•
+HEMANGIOMA
+•
+TUMOR CÉLULAS GIGANTES
+
+### Slide 25 de 179
+<!-- slide 25 -->
+BENIGNOS PRODUTORES DE TECIDO ÓSSEO
+OSTEOBLASTOMA
+TRATAMENTO E PROGNÓSTICO
+CURETAGEM + ENXERTO
+RESSECÇÃO EM BLOCO
+RADIOTERAPIA NAS LESÕES IRRESSECÁVEIS
+OU PARCIALMENTE RESSECADAS
+(COLUNA) TRANSFORMAÇÃO
+SARCOMATOSA
+PODE COMPORTA-SE AGRESSIVAMENTE,
+ESPECIALMENTE APÓS TRATAMENTO
+INCORRETO
+- ALTAS TAXAS DE RECIDIVA COM A
+CURETAGEM
+
+### Slide 26 de 179
+<!-- slide 26 -->
+PRODUTORES DE TECIDO CARTILAGINOSO
+OSTEOCONDROMA
+Exostose Osteocartilaginosa.
+Definição: projeção óssea recoberta por cartilagem na superfície
+externa e medula óssea na parte central.
+
+### Slide 27 de 179
+<!-- slide 27 -->
+PRODUTORES DE TECIDO CARTILAGINOSO
+OSTEOCONDROMA
+
+### Slide 28 de 179
+<!-- slide 28 -->
+PRODUTORES DE TECIDO CARTILAGINOSO
+OSTEOCONDROMA
+•
+Tumor ósseo mais comum,
+•
+50% dos tumores ósseos benignos
+•
+Incidência: 74% dos casos estão
+entre os 11 e 30 anos de idade
+•
+Solitário : 35%
+•
+90% ocorrem na metáfise de ossos longos
+•
+séssil ou pediculado.
+
+### Slide 29 de 179
+<!-- slide 29 -->
+PRODUTORES DE TECIDO CARTILAGINOSO
+OSTEOCONDROMA
+
+### Slide 30 de 179
+<!-- slide 30 -->
+PRODUTORES DE TECIDO CARTILAGINOSO
+OSTEOCONDROMA
+
+### Slide 31 de 179
+<!-- slide 31 -->
+PRODUTORES DE TECIDO CARTILAGINOSO
+OSTEOCONDROMA
+MANIFESTAÇÃO CLINICA
+•
+ACHADO DE EXAMES
+•
+MAIORIA ASSINTOMÁTICA
+•
+AUMENTO DE VOLUME
+•
+INCOMODO (RARAMENTE CAUSA DOR)
+•
+MAIORIA ASSINTOMÁTICA
+•
+DOR QUANDO O TUMOR COMPRIME ALGUMA ESTRUTURA ADJACENTE
+•
+ESTÉTICA RUIM
+
+### Slide 32 de 179
+<!-- slide 32 -->
+PRODUTORES DE TECIDO CARTILAGINOSO
+OSTEOCONDROMA
+MANIFESTAÇÃO CLINICA
+•
+A EXOSTOSE CRESCE NO MESMO SENTIDO DA FISE DE CRESCIMENTO
+•
+APRESENTA O PICO DE AUMENTO DE TAMANHO NO ESTIRÃO DE CRESCIMENTO (11-14
+ANOS)
+•
+ENQUANTO A FISE ESTA CRESCENDO A LESAO CONTINUA CRESCENDO
+•
+QUANDO O ESQUELETO ATINGE A MATURIDADE (FISE FECHA), CESSA O CRESCIMENTO
+•
+SE CONTINUAR CRESCENDO – ATENÇÃO – COMPORTAMENTO ATIPICO
+
+### Slide 33 de 179
+<!-- slide 33 -->
+PRODUTORES DE TECIDO CARTILAGINOSO
+OSTEOCONDROMA
+TRATAMENTO
+•
+OBSERVAÇÃO
+•
+RX E TC PERIÓDICOS
+•
+CAPA CARTILAGINOSA (2CM) – RNM
+•
+1% DE MALIGNIZAÇÃO –
+CONDROSSARCOMA/OSTEOSSARCOMA
+
+### Slide 34 de 179
+<!-- slide 34 -->
+PRODUTORES DE TECIDO CARTILAGINOSO
+OSTEOCONDROMA
+RESSECÇÃO QUANDO DOR OU
+ESTÉTICA RUIM
+
+### Slide 35 de 179
+<!-- slide 35 -->
+PRODUTORES DE TECIDO CARTILAGINOSO
+OSTEOCONDROMATOSE MULTIPLA
+HEREDITARIA
+
+### Slide 36 de 179
+<!-- slide 36 -->
+PRODUTORES DE TECIDO CARTILAGINOSO
+ENCONDROMA
+•
+LESÃO LÍTICA COM
+MÚLTIPLOS PONTOS
+DE CALCIFICAÇÃO
+DENTRO DE UM OSSO
+LONGO
+•
+10 A 30 ANOS
+•
+MAIS COMUM NOS
+PÉS E MÃOS
+
+### Slide 37 de 179
+<!-- slide 37 -->
+PRODUTORES DE TECIDO CARTILAGINOSO
+ENCONDROMA
+CLÍNICA
+•
+ACHADO DE EXAME
+•
+MAIORIA ASSINTOMÁTICOS
+•
+DOR E FRATURA EM RAROS CASOS
+•
+DIFÍCIL DE DIFERENCIAR DO CONDROSSARCOMA
+DE BAIXO GRAU
+
+### Slide 38 de 179
+<!-- slide 38 -->
+PRODUTORES DE TECIDO CARTILAGINOSO
+ENCONDROMA
+DIAGNÓSTICO
+•
+RX LOCAL
+•
+RNM
+•
+TC
+•
+BIÓPSIA
+
+### Slide 39 de 179
+<!-- slide 39 -->
+PRODUTORES DE TECIDO CARTILAGINOSO
+ENCONDROMA
+TRATAMENTO
+•
+CURETAGEM + ENXERTO OU CIMENTO
+
+### Slide 40 de 179
+<!-- slide 40 -->
+PRODUTORES DE TECIDO CARTILAGINOSO
+ENCONDROMATOSE MULTIPLA
+•
+DOENÇA DE OLLIER
+•
+ENCONDROMAS
+MÚLTIPLOS
+•
+UM LADO DO CORPO É
+MAIS AFETADO
+•
+DEFORMIDADES ÓSSEAS
+•
+ASSOCIADO A
+HEMANGIOMAS DE PELE =
+MAFFUCCI
++ malignização + gliomas
+
+### Slide 41 de 179
+<!-- slide 41 -->
+PRODUTORES DE TECIDO CARTILAGINOSO
+ENCONDROMATOSE MULTIPLA
+TRATAMENTO
+•
+OBSERVAÇÃO FREQUENTE
+•
+CONTROLE RADIOGRÁFICO
+•
+50 % EVOLUEM PARA CÂNCER
+•
+25 % ANTES DOS 40 ANOS
+
+### Slide 42 de 179
+<!-- slide 42 -->
+PRODUTORES DE TECIDO CARTILAGINOSO
+CONDROBLASTOMA
+•
+TUMOR DE CODMAN
+•
+CORRESPONDE A MENOS DE 1% DOS TUMORES ÓSSEOS
+•
+PACIENTES ENTRE 10 E 25 ANOS
+•
+PREDOMINANTEMENTE NO SEXO MASCULINO
+•
+OCORRE NA EPÍFISE DOS OSSOS LONGOS NO ESQUELETO IMATURO
+•
+CRESCIMENTO PROGRESSIVO
+•
+DEVE SER OPERADO ASSIM QUE SE FECHA O DIAGNÓSTICO
+
+### Slide 43 de 179
+<!-- slide 43 -->
+PRODUTORES DE TECIDO CARTILAGINOSO
+CONDROBLASTOMA
+EPÍFISE E REGIÃO METAEPIFISÁRIA DO FÊMUR PROXIMAL E DISTAL, PROXIMAL DA TÍBIA E ÚMERO PROXIMAL
+OUTROS LOCAIS CLÁSSICOS, EMBORA INCOMUNS SÃO O TÁLUS, O CALCÂNEO E A PATELA
+MONOSTÓTICO
+TIPICAMENTE LESÕES LÍTICAS COM BORDAS ESCLERÓTICAS, OCUPANDO MENOS DA METADE DA EPÍFISE,
+CENTRAIS OU EXCÊNTRICAS
+PROVOCAM EDEMA ÓSSEO NA REGIÃO ADJACENTE À LESÃO
+
+### Slide 44 de 179
+<!-- slide 44 -->
+PRODUTORES DE TECIDO CARTILAGINOSO
+
+### Slide 45 de 179
+<!-- slide 45 -->
+PRODUTORES DE TECIDO CARTILAGINOSO
+CONDROBLASTOMA
+CLINICA
+•
+DOR LOCALIZADA
+•
+PODE PROVOCAR EDEMA E LIMITAÇÃO DO MOVIMENTO ARTICULAR, PRINCIPALMENTE
+QUANDO LOCALIZADO NO JOELHO
+
+### Slide 46 de 179
+<!-- slide 46 -->
+PRODUTORES DE TECIDO CARTILAGINOSO
+CONDROBLASTOMA
+DIAGNÓSTICO
+•
+RX
+•
+LESÃO CIRCUNSCRITA
+•
+HALO DE ESCLEROSE REACIONAL (+ OU - )
+•
+PODE APRESENTAR CALCIFICAÇÕES
+•
+NÃO RESPEITA FISE
+
+### Slide 47 de 179
+<!-- slide 47 -->
+PRODUTORES DE TECIDO CARTILAGINOSO
+
+### Slide 48 de 179
+<!-- slide 48 -->
+PRODUTORES DE TECIDO CARTILAGINOSO
+CONDROBLASTOMA
+HISTOLOGIA
+•
+CÉLULAS POLIGONAIS DE TAMANHO UNIFORME; CONDROBLASTOS; CÉLULAS GIGANTES DO
+TIPO ESTEOCLASTOS
+•
+PODE HAVER CALCIFICAÇÃO FINA CHAMADA DE “PADRÃO DE TELA DE GALINHEIRO”
+•
+IMUNOHISTOQUIMICA: PROTEÍNA S100 E VIMENTINA
+
+### Slide 49 de 179
+<!-- slide 49 -->
+PRODUTORES DE TECIDO CARTILAGINOSO
+CONDROBLASTOMA
+TELA DE GALINHEIRO
+
+### Slide 50 de 179
+<!-- slide 50 -->
+PRODUTORES DE TECIDO CARTILAGINOSO
+TRATAMENTO
+•
+CURETAGEM DA LESÃO E ENXERTIA
+•
+TAXA DE 14 A 18% DE RECIDIVA
+•
+RARAMENTE PODE PROVOCAR METÁSTASE PULMONAR
+
+### Slide 51 de 179
+<!-- slide 51 -->
+Jan 25
+A26.7
+06:50:25
+Mag
+=
+FL:
+ROT:
+450
+14
+:1/1 15.6kHz
+EEPA
+W:20x20
+0thk/1.0sp
+4/03:58
+
+### Slide 52 de 179
+<!-- slide 52 -->
+(só imagem, sem texto)
+
+### Slide 53 de 179
+<!-- slide 53 -->
+MASCULINO
+14 ANOS
+DOR EM JOELHO DIREITO
+LIMITAÇÃO FUNCIONAL
+
+### Slide 54 de 179
+<!-- slide 54 -->
+C # 2 8 S 1 D 2 C 0 4 T 8 I / D : / I 1 U 1 3 I 7 M 4 0 7 D 2 / A / 4 : 2 Y 3 2 1 0 5 0 4 4 0 0 0 1 6 5 2 7 / 9 1 . 0 2 8 M 0 0 . 2 1 8 4 8 Y E H D L U M A A A R G Ce D N n O E t T r F o O . D M P i . _ a g Z E . U S M I K S m R O E + a V C N F L g S 1 Z F P e K 1 m A S H I # C 2 8 1 S 2 C D 0 4 T 8 D / I I : / U 1 I 3 1 M 7 0 D 7 2 4 A / / : Y 2 3 4 2 0 1 0 4 5 0 5 1 0 1 6 5 2 7 / 9 0 1 , 2 8 M 0 0 . 2 1 8 4 8 Y E H D L U M A A A R G C D e N n O E t r F T o . O P D . M i a Z g E U . S K M I S O R m V E + a S N F C L g K 1 P Z F e 1 I H A S m # C 1 8 2 S 2 C D 0 4 T 8 I / : D I U / M 1 3 I 1 7 0 D 7 A 4 2 / / : Y 4 3 2 1 2 0 0 5 0 4 4 2 1 0 2 6 5 / 7 1 9 0 . 2 8 0 M 0 28 14 8 Y ED M U L M A A A R G C D N E O N E I F T . O O P M L . i Z a E g U S K M S I O R m + V E a F S L N C g K F P Z 1 I S H 1 A
+TÉCNICA: ARH ARH ARH
+s Re u a p l r i e z s a s d ã a o s de s e g q o u rd ê u n r c a i , a s c o m m u l u ti s p o l a d n e a r m e e s i , o F d S e E c , o nt p r o a n s d te e r p a a d r a a s m a e gn m é t T ic 1 o e e n d T o 2 v , e n s o e s m o. e com MF 1.00 5cm MF 1.00 5cm MF 1.00
+cm
+e
+A m L e n
+d
+e d á s
+e
+i l ã
+m
+a i o l
+a
+s , e
+ó
+o : c v
+s
+o a
+s
+l m
+e
+a
+o
+d a a
+r
+p
+e
+r d
+a
+o
+l
+e x
+ç
+i
+a
+m m
+d
+a a
+o
+r d
+p
+g a
+e
+e m
+l
+n e
+o
+s n
+c
+t
+o
+e e
+n
+s
+t
+2 c
+r
+l 4
+a
+e
+s
+r m
+t
+ó
+e
+m t
+,
+i c
+c
+n a o
+o
+s
+m
+m n a
+d
+a i
+e
+o
+r
+e r p
+r
+i
+a
+e f i
+m
+i x
+e
+s o e ,
+a r
+f d
+t
+i e
+i
+s
+c
+m
+u
+c o
+l
+r r
+a
+e
+r
+a t o l
+e
+d r
+d
+i e
+i
+s a
+s
+t l
+c
+a c
+r
+l e ,
+e t
+p
+a
+n e o
+s
+r
+i
+i
+n
+f c
+o
+é ô
+v
+r n
+i
+i d
+t
+c i
+e
+o l
+.
+o e e f x e t m e o n ra s l o P 1 0 9 2 3 1 . . 0 . 0 O 6 9 8 5 0 % 6 ) T T B T M C A E R A 1 : N W / F 2 0 2 D F 5 L 2 9 1 / S . : 4 5 0 N 4 0 0 5 . . O 0 0 RMFS5 5/FIL CONTRASTE Sag>Cor(2 F 8 ov SR S R 0 1 L 3 2 T ( 1 6 1 2 5 0 P 3 6 . 4 0 0 . . 9 0 7 5 6 s ) T A B T T C M t 1 A E : R N W s F / D 0 2 2 e L F 5 2 / 9 2 1 S . : d 4 5 N 0 1 0 4 0 O . . 5 R 0 0 8 W / F 1 S 5 5 0 _5/FIL CONTRASTE Sag>Cor(2 F 8 o 2 V S 22 PP 4 R S 0 8 1 2 L T 3 ( 6 1 1 0 2 1 P 3 4 P . 0 . 6 0 . 9 7 D 4 0 6 0 4 5 5 ) 6 T C A M B T T " : A 1 / t E R W F / s N 0 L 2 2 F e D 5 2 1 9 2 S / . : 5 4 d 0 N 4 0 0 1 5 O . . _ R 0 0 8 W / F 15 S 0 5_5/FIL CONTRASTE Sag Cor 28 SPR 6 T 1 4 H 7
+f C P i a e s r q á t r u i i e a l n ag o e n n s i v a e r l t i l c i u q l u a i r d e o s o s u e m h e a m n á o t r i m c a o l i n d a a d l e e s s ã e o v , i d s e e nt m e s s . inais de comprometimento da placa 1 / 0 2 4 1 7 1 5 6 . 0 M 8 . 02 1 8 4 8 Y EDUARDO F P. ZUK M O R V S C K 11 I # 1 S 7 2 4 C T I 8 : D / U 3 M I 7 4 D A 2 / : Y 2 3 3 2 0 2 4 / 0 1 5 7 0 , 8 M 0288 EDUARDO F P ZUK M O R V S C K 1 I 1 # 2 S 7 C 0 2 T I D / 8 U M / 1 I 7 0 D 2 A / / 3 Y 3 2 2 4 0 0 1 5 0 2 7 0 . 8 M 02 8 1 8 4Y EDUARDO FP ZUK M O R VSKI # 7 S C 1 2 D T 4 8 M I / 3 U A 7 2 4 D / 3 3 4 2 Y 4 0 / 2 1 0 5 1 7 0 0 6028 o 0 rt EDUARDO F.F ZUKOVSK
+Ligamentos cruzados e colaterais integros e sem anomalias de sinal.
+Meniscos medial e lateral apresentando morfologia, dimensões e intensidade de sinal
+conservados.
+RPH RPH
+Mecanismo extensor e estruturas cápsulo-ligamentares do joelho com intensidade de
+sinal normal.
+Gordura infrapatelar sem alterações. MF 1.20 6am MF 1.2
+C F o o n s c s l a u p s o ã p o li : tea sem alterações. RM/FSS S/FIL CONTRASTE Cor>Bagi-32. F 7 o V 2 S T 5 1 P ra 6 6 S ( 0 A - 3 T L * 5 90 2 3 1 6 P .2 . 0 6 . 0 0 6 6 0 3 ) % AC M B T T T 1 / R F W E A / N L # 2 2 0 D 2 1 7 S 3 / 3 : . 0 0 2 N 0 0 . 5 O . 0 0 RM/FS5 CONTRASTE Cor B-32 F 7 oV 2 B 1 6 P 8 8 B A 0 3 A L 5 T 2 1 11 3 0 P 8 . . 0 8 O 5 T B T M T T A E / R A W N 0 2 2 1 2 D 7 3 3 : . 0 / 0 2 0 0 N . 5 , 0 O 0 RM/F555 Cor>Sagl-32. FF 7 oo )> VV T S 2 r 1 5 P 1 a 6 6 6 ( A 0 - 0 - L 4 3 0 7 11 3 2 . . 68 0 0 5 1 0 ) % T B M A1 / A W R / N 2 0 F 1 D 2 3 S 3 : / 0 0 2 0 N 5 O 0 RMFSS SFI
+Lesão epifisária femoral distal (condroblastoma? abscesso ósseo?).
+Derrame articular reacional com sinovite. 2 0 1 0 0 4 7 2 5 . 7 8 M 0 0 1 8 4 8 Y ZU M K R OV C S P 1 K 1 H I 2 6 S 1 2 0 4 8 T C / : / D U 1 3 7 M I D 0 0 / A 2 / Y : 2 1 3 2 5 0 1 4 6 0 0 0 2 7 5 / , 0 2 M 8 0 0288 ARDOFP ZUKOVS S 2 6 1 0 4 T C / I : U 1 D M 3 0 D I A 0 / : 2 Y 1 2 5 3 0 1 4 1 4 2 / 5 1 2 0 0 80288 EDUARDO F P. ZUKOV F S F K S I # 2 S 0 C T / D 1 U I 0 A D 2 / 1 Y 3 20 2 4 1 2 5 / 1 0 2 8 0 0288 PH
+Umuarama, 21 de outubro de 2021
+RAH
+RAH
+MF 1.11
+DTR 3180.0 TR 31800
+TPОTE 40.0
+1300 FoW 1 TA 02:2 FoV 2 S 1 P 0 6 F 0 8 2 3 3 1 3 . 6 2 1 5 0 0 MB S NW A D / T 13 N / 0 O . E 0 R S MFS5 5/F W 1300
+
+### Slide 55 de 179
+<!-- slide 55 -->
+Patient Id: 30000000122170 Date & Time: 22/nov/2021
+NDnúcleo
+NO diagndstico Manufacturer Model: Xeleris 2.0551 Convénio: Unimed Maringá Data: 22/11/2021
+NUCLEO DIAGNOSTICO Conifiarça em Soude
+Dr() FLAVIO FRANCO Código: 30000000122170
+CRANIO LATERAL DIREITO CRANIO LATERAL ESQUERDO
+CINTILOGRAFIA ÓSSEA (CORPO TOTAL)
+TÉCNICA:
+TORAX LATERAL DIREITО TORAX LATERAL ESQUERDO Imagens de todo o esqueleto nas projeções anterior e posterior foram obtidas a partir de 03
+(trés) horas após a injeção venosa de MDP_99mTc. Dose administrada: 740 MBq.
+ACHADOS:
+Observa-se a presença de uma área focal com aumento da concentração radioisotópica,
+ovalada decontornos regulares limites bem definidos projetada porções mais laterais da
+e na
+QUADRIL VISTA ANTERIOR QUADRIL VISTA POSTERIOR epifisefemoraldistalà direita.
+Nota-se ainda, alta densidade radioativa ao longo das grandes articulações.
+CONCLUSÃO:
+1. Reação osteogênica a esclarecer no 1/3 distal do fêmur direito. Os achados cintilográficos,
+FEMURER HISTA ANTERIOR FEMURER VISTA POOTERIOR
+ainda que não específicos, não são sugestivos de lesões com alta taxa de atividade
+proliferativa. Caso exista suspeita clinica de abscesso, uma cintilografia óssea com fluxo
+sanguineo poderia auxiliar esclarecimento diagnóstico.
+no
+SCAN ANTERIOR SCAN POSTERIOR
+
+### Slide 56 de 179
+<!-- slide 56 -->
+Idade: 14 Ano(s) 4 Més(es) Sexo: M Convenio: Unimed
+Mäe: Coletado em:
+Médico: Dr.(a) Flavio Henrique do Lago Franco Recebido em: 01/12/2021
+Procedencia: UOPECCAN
+Liberado em: 10/12/2021
+Material: Biópsia de lesão fémur distal direta
+Dados Clinicos: Epifise do condilo med al.
+Diag. Clinico: Lesão suoestiva de condrablast oma.
+Histórico de Exames: Constam em nossos arquivos os seguintes exames com o nome igual ao deste paciente:
+IU-21-000437
+EXAME ANATOMOPATOLÓGICO
+Macroscopia
+O espécime foi recebido em formalina a 10% consiste de múltiplos fragm entos irregulares
+medindo em conjunto 4,5 x 4 x 0,5cm. São constituidos por tecido pardacento, esbranquiçado
+acastanhado, pétreo e homogêneo. O material foi submetido a agente descalcificador por um
+dia e totalmente incluído para análise. rm-2N.
+-Material enviado para processament
+-A) Partes moles:
+Oso.
+Microscopia
+q
+-
+u
+O
+e
+s c
+s
+o
+e
+r te
+a
+s
+s
+h
+s
+i
+e
+s
+m
+t o
+e
+l
+l
+ó
+h
+g
+a
+i
+m
+co s
+a
+r ev
+c
+e
+o
+l
+nd
+a
+r
+m
+o b
+f
+l
+r
+a
+a
+s
+g
+t
+m
+o
+e
+s
+n t
+e
+o
+x
+s
+i
+d
+bi
+e
+n d
+t
+o
+ec i
+f
+d
+o
+o
+r
+c
+m
+o
+at
+m
+o
+p os
+r
+t
+e
+o
+d o
+p
+n
+o
+d
+r
+o s
+c
+,
+é lu
+a
+la
+l
+s
+g u
+i
+m
+m
+a
+at
+s
+u ra
+c
+s
+o m e
+a
+a
+t
+s
+ip
+p
+i
+e
+c
+c
+a
+t
+s
+o
+,
+p f s e u ã r s o i i c f e o o l v r u a m l i e a s , r , . c h A o i m p c e e r c l l i u o l t b a o u r p l i l a d a d a s o d m s e a . é e o F a s o l i c t n a a o , f l i m c l e i o c n m o t e a f b i h g u u á n r d a a d s i n s m t c i e r t e ó e t t a i b c o a m r s a d , t a r f s i o z c c o el s c u o l d n a d e r r e o n s i e d b c e r e o m e s e d f e e o f c i n o n u i s m d a e d s r e ; o s c o a a s s l c n i c f ú é i l d c u e a l ç o a ã s s o
+gigantes do tipo osteoclastos.
+Conclusão
+Biõpsia de lesão em fêmur distal direito:
+ac
+-
+o
+N
+m
+e
+e
+o
+t
+p
+e
+l
+n
+a
+d
+s
+o
+ia
+t e
+m
+c
+e
+i
+s
+do
+e n
+ó
+q
+s
+u
+s
+i
+eo
+m
+.
+al com componente rico em células gigantes multinucleadas
+
+### Slide 57 de 179
+<!-- slide 57 -->
+(só imagem, sem texto)
+
+### Slide 58 de 179
+<!-- slide 58 -->
+D
+
+### Slide 59 de 179
+<!-- slide 59 -->
+PRODUTORES DE TECIDO CARTILAGINOSO
+CONDROBLASTOMA
+HISTOLOGIA
+•
+CÉLULAS POLIGONAIS DE TAMANHO UNIFORME; CONDROBLASTOS; CÉLULAS GIGANTES DO
+TIPO ESTEOCLASTOS
+•
+PODE HAVER CALCIFICAÇÃO FINA CHAMADA DE “PADRÃO DE TELA DE GALINHEIRO”
+•
+IMUNOHISTOQUIMICA: PROTEÍNA S100 E VIMENTINA
+
+### Slide 60 de 179
+<!-- slide 60 -->
+FIBROMA CONDROMIXOIDE
+•
+Neoplasia benigna caracterizada por células dendríticas e
+estreladas com abundante matriz intercelular mixóide ou
+condral
+•
+Rara: corresponde a menos de 1% dos tumores ósseos e menos
+de 2% dos tumores ósseos benignos
+•
+Predomina no sexo masculino
+•
+Mais frequente na segunda e terceira décadas de vida
+
+### Slide 61 de 179
+<!-- slide 61 -->
+FIBROMA CONDROMIXOIDE
+Definição
+•
+É uma lesão cartilaginosa, na qual o tecido cartilaginoso é
+entremeado com áreas de tecido mixóide e fibroso.
+•
+classificada como benigna ativa (B-2).
+•
+Faz diagnostico diferencial com condroblastoma,
+condrossarcoma e cisto ósseo aneurismático.
+
+### Slide 62 de 179
+<!-- slide 62 -->
+FIBROMA CONDROMIXOIDE
+Quadro Clínico
+A localização principal é o membro inferior, sendo a tíbia
+•
+acometida em aproximadamente metade dos pacientes, seguida
+pelo fêmur, metatarso e calcâneo.
+O paciente refere leve dor na região acometida, podendo às vezes
+•
+aparecer um discreto edema .
+Crescimento lento
+•
+
+### Slide 63 de 179
+<!-- slide 63 -->
+FIBROMA CONDROMIXOIDE
+Tratamento
+•
+Curetagem simples
+seguida de enxerto
+ósseo (recidiva chega
+a 25%)
+•
+Ressecção intra-
+lesional
+seguido de
+adjuvância
+local e preenchimento
+•
+Ressecção segmentar
+•
+Excisão ampla ou
+ressecção em bloco
+
+### Slide 64 de 179
+<!-- slide 64 -->
+TUMOR DE CÉLULAS GIGANTES
+64
+
+### Slide 65 de 179
+<!-- slide 65 -->
+TGC-Osteoclastoma,
+Tumor mieloplaxis
+Neoplasia mesenquimal
+de natureza
+-
+caracterizado por ploriferação de células
+gigantes
+Tumor de natureza incerta benígno
+- -
+agressivo
+
+### Slide 66 de 179
+<!-- slide 66 -->
+ASPECTOS CLÍNICOS
+- Mais comum entre 21 – 40 anos, 3ª
+década de vida
+- Simula processo inflamatório articular
+- Dor local, limitação funcional
+- Tempo de evolução de 6 – 12 meses
+- Mesma proporção entre homem e mulher
+
+### Slide 67 de 179
+<!-- slide 67 -->
+ESTADIAMENTO
+- RX Local.
+- CT Local.
+- RNM Local
+- Mapeamento ósseo.
+- RX Tórax. CT Tórax.
+SN
+- Biopsia
+
+### Slide 68 de 179
+<!-- slide 68 -->
+ASPECTOS RADIOGRÁFICOS
+- Lesão epifisária
+- Rarefação óssea, excêntrica que inicialmente
+respeita cortical e apresenta fina trabeculação
+– “BOLHA DE SABÃO”
+- Mais comum no joelho (fêmur distal e tíbia
+proximal), distal de rádio, proximal de fêmur...
+- Quando tumor agressivo – Ruptura de
+cortical e invasão de partes moles
+
+### Slide 69 de 179
+<!-- slide 69 -->
+RX
+
+### Slide 70 de 179
+<!-- slide 70 -->
+RX
+
+### Slide 71 de 179
+<!-- slide 71 -->
+TC RNM
+CORONAL T2
+
+### Slide 72 de 179
+<!-- slide 72 -->
+CINTILOGRAFIA ÓSSEA –
+LESÃO
+MONOSTÓTICA OU POLIOSTÓTICA ( Sd de
+GOLTZ)
+
+### Slide 73 de 179
+<!-- slide 73 -->
+RX DE TÓRAX E TC DE TÓRAX
+2% DE METÁSTASE PULMONAR
+
+### Slide 74 de 179
+<!-- slide 74 -->
+BIOPSIA –
+Agulha x Aberta
+
+### Slide 75 de 179
+<!-- slide 75 -->
+ANÁTOMO PATOLÓGICO
+
+### Slide 76 de 179
+<!-- slide 76 -->
+DIAGNÓSTICO DIFERENCIAL
+Tumor marrom do hiperparatireoidismo –
+principal.
+-- Cálcio iónico
+-- PTH elevado
+
+### Slide 77 de 179
+<!-- slide 77 -->
+DIAGNÓSTICO DIFERENCIAL
+Condroblastoma
+-- Tu epifisário
+-- Sexo Masculino
+-- Entre 10 – 20 anos
+
+### Slide 78 de 179
+<!-- slide 78 -->
+DIAGNÓSTICO DIFERENCIAL
+Cisto ósseo aneurismático
+- Lesão pseudotumoral
+- Metáfise de ossos longos
+
+### Slide 79 de 179
+<!-- slide 79 -->
+DIAGNÓSTICO DIFERENCIAL
+Fibrohistiocitoma malígno
+- Mesma faixa etária do TGC
+- Sem localização preferencial
+
+### Slide 80 de 179
+<!-- slide 80 -->
+TRATAMENTO
+- Ressecção intratumoral com cauterização do
+leito e substituição – cimento ou enxerto
+autólogo
+- Ressecção com margem oncológica:
++ Com presevação de membro
+(endoprótese ou artrodese)
++ Amputação
+- Radioterapia – embolização – Tu
+irressecável
+
+### Slide 81 de 179
+<!-- slide 81 -->
+RESSECÇÃO INTRATUMORAL + CIMENTO
+
+### Slide 82 de 179
+<!-- slide 82 -->
+RESSECÇÃO COM SUBSTITUIÇÃO - ENDOPRÓTESE
+
+### Slide 83 de 179
+<!-- slide 83 -->
+RESSECÇÃO COM ARTRODESE
+
+### Slide 84 de 179
+<!-- slide 84 -->
+AMPUTAÇÃO
+
+### Slide 85 de 179
+<!-- slide 85 -->
+(só imagem, sem texto)
+
+### Slide 86 de 179
+<!-- slide 86 -->
+(só imagem, sem texto)
+
+### Slide 87 de 179
+<!-- slide 87 -->
+D D H BE O A CS R AP R NIC E ET I RA 0DL 5E
+
+### Slide 88 de 179
+<!-- slide 88 -->
+ASCO 2008
+
+### Slide 89 de 179
+<!-- slide 89 -->
+CISTO OSSEO SIMPLES
+
+### Slide 90 de 179
+<!-- slide 90 -->
+CISTO OSSEO SIMPLES
+
+### Slide 91 de 179
+<!-- slide 91 -->
+D
+EFINIÇÃO
+“Cavidade unicameral, cheia de fluido claro ou
+•
+sangüíneo e revestida por membrana de espessura
+variável (tecido conjuntivo vascular frouxo),
+apresentando células gigantes osteoclásticas dispersas
+e, às vezes, áreas de hemorragia recente ou antiga ou
+fissuras de colesterol.”
+
+### Slide 92 de 179
+<!-- slide 92 -->
+E
+PIDEMIOLOGIA
+Comuns da infância
+•
+85% ocorrerem nas duas primeiras décadas
+•
+● Pico 4-10 anos
+2m: 1f
+•
++ comuns no úmero e fêmur proximais
+•
+● Normalmente curam espontaneamente na
+maturidade
+Assintomáticos
+•
+2/3 se apresentam com fx patol., que podem
+•
+estimular o cisto para curar
+● Raramente fraturam em ossos chatos
+
+### Slide 93 de 179
+<!-- slide 93 -->
+C
+ARACTERÍSTICAS E PATOGÊNESE
+Inicia como uma lesão metafisária próxima à fise; com o
+•
+tempo, parece se mover em direção à diáfise
+Patogênese desconhecida
+•
+● Mais aceito: defeito focal no remodelamento metafisário
+bloqueia a drenagem do fluido intersticial
+● Ocorre aumento da pressão, com necrose óssea focal e
+acúmulo de fluido
+
+### Slide 94 de 179
+<!-- slide 94 -->
+C
+ARACTERÍSTICAS E PATOGÊNESE
+• Conteúdo do cisto:
+• Prostaglandinas, radicais livres de oxigênio, interleucinas, citocinas e
+metaloproteinases
+• Macroscopicamente: fluido seroso amarelo claro (a menos que
+sangramento por fratura)
+● Membrana fibrosa com <1mm no revestimento, principalmente
+composta por fibroblastos
+
+### Slide 95 de 179
+<!-- slide 95 -->
+H
+ISTOLOGIA
+
+### Slide 96 de 179
+<!-- slide 96 -->
+R
+ADIOGRAFIA
+● Lesão puramente lítica
+● Metafisária central
+● Margem bem delimitada
+● Espículas ósseas na cortical interna podem dar aspecto multiloculado
+● Sem reação periosteal (a menos que fratura presente)
+● Sinal da trabécula/folha caída (20%) é patognomônico
+• Fratura de fragmento cortical caído na base da lesão
+
+### Slide 97 de 179
+<!-- slide 97 -->
+R
+ADIOGRAFIA
+
+### Slide 98 de 179
+<!-- slide 98 -->
+R – S
+ADIOGRAFIA INAL DA FOLHA CAÍDA
+
+### Slide 99 de 179
+<!-- slide 99 -->
+R M
+ESSONÂNCIA AGNÉTICA
+
+### Slide 100 de 179
+<!-- slide 100 -->
+D D
+IAGNÓSTICO IFERENCIAL
+Tumor Células Gigantes
+•
+Cisto Ósseo Aneurismático
+•
+Granuloma eosinofílico – coluna ( vertebra plana Calve)
+•
+Displasia fibrosa – vidro fosco
+•
+Tu. Marrom de hiperparatireoidismo
+•
+Lipoma intraósseo
+•
+
+### Slide 101 de 179
+<!-- slide 101 -->
+T
+RATAMENTO
+Objetivo: evitar fratura patológica (principalmente nos
+•
+MMII)
+Pequenas lesões assintomáticas no MMSS
+•
+Observação com radiografias seriadas
+●
+Lesões maiores (com risco de fratura patológica) e
+•
+sintomáticas, ou no MMII
+Curetagem ( +- enxerto ou fixação interna)
+●
+Aspiração e injeção ( CTC, aspirado de medula óssea)
+●
+
+### Slide 102 de 179
+<!-- slide 102 -->
+T
+RATAMENTO
+Fratura patológica nos MMSS
+•
+Podem ter tratamento conservador → estimula a
+●
+“cura” do cisto
+Fratura no fêmur proximal
+•
+Curetagem + enxerto + fixação interna
+●
+
+### Slide 103 de 179
+<!-- slide 103 -->
+T
+RATAMENTO
+Uso de corticóide (técnica de Scaglietti)
+•
+Diagnostico é confirmado com a saída de fluido com cor
+●
+de palha
+Injeção de 80-200mg de metilprednisolona
+●
+Efeito antiprostaglandina
+•
+Diminuição da pressão
+•
+90% de sucesso com a técnica
+●
+
+### Slide 104 de 179
+<!-- slide 104 -->
+C
+ISTO ÓSSEO ANEURISMÁTICO
+
+### Slide 105 de 179
+<!-- slide 105 -->
+D
+EFINIÇÃO
+“Lesão osteolítica expansiva que consiste em espaços
+•
+cheios de sangue, de tamanho variado, separados por
+tec. conjuntivo com trabéculas de tecido ósseo ou
+osteóide e cel. gigantes osteoclásticas”
+Lesões reativas do osso preenchidas de sangue e
+•
+localmente destrutivas
+
+### Slide 106 de 179
+<!-- slide 106 -->
+E
+PIDEMIOLOGIA
+Local mais comum → úmero proximal, fêmur distal, tibia
+•
+proximal e coluna
+Lesões vertebrais (15-20%) – nos elementos
+●
+posteriores, com frequente expansão para o corpo
+vertebral e níveis adjacentes
+Maioria em pacientes abaixo de 20 anos
+•
+Leve predominância no sexo feminino
+•
+
+### Slide 107 de 179
+<!-- slide 107 -->
+C
+LÍNICA
+Dor leve a moderada, presente por semanas / alguns
+•
+meses
+Pode ocorrer crescimento rápido, simulando
+•
+malignidade
+Lesões espinhais podem causar déficit neurológico ou
+•
+dor radicular
+
+### Slide 108 de 179
+<!-- slide 108 -->
+E
+XAMES DE IMAGEM
+Radiografia
+•
+Lesão lítica expansiva
+●
+Eleva o periósteo, mas se
+●
+mantém contida por uma fina
+camada de osso cortical
+Margens bem definidas ou
+●
+aparência permeativa que
+simula malignidade
+Região metafisária, excêntrica
+●
+
+### Slide 109 de 179
+<!-- slide 109 -->
+E
+XAMES DE IMAGEM
+RNM
+•
+Cavidades multiloculadas e nível fluido-fluido
+●
+Para diferenciar simples x aneurismático
+●
+Presença de nível fluido de dupla-densidade e septação
+•
+intralesionais → aneurismático
+Biópsia: geralmente se consegue apenas coágulos. Deve-se retirar
+•
+fragmentos das paredes internas da lesão
+
+### Slide 110 de 179
+<!-- slide 110 -->
+E
+XAMES DE IMAGEM
+
+### Slide 111 de 179
+<!-- slide 111 -->
+R
+10cr
+A B
+C
+FIGURE 25-21 A, Recurrent aneurysmal bone cyst of left superior pubic ramus in a 14-year-old boy. B, Axial MRI shows multiple fluid-
+fluid levels. C, Appearance 2 years after resection; the patient is doing well with no evidence of recurrence.
+
+### Slide 112 de 179
+<!-- slide 112 -->
+(só imagem, sem texto)
+
+### Slide 113 de 179
+<!-- slide 113 -->
+(só imagem, sem texto)
+
+### Slide 114 de 179
+<!-- slide 114 -->
+P
+ATOGÊNESE
+É resultado de um distúrbio circulatório local, com
+•
+aumento da pressão venosa e produção de hemorragia
+local
+Cavidade com espaços septados cheios de sangue,
+●
+envolta por uma fina camada óssea coberta por
+periósteo
+
+### Slide 115 de 179
+<!-- slide 115 -->
+T
+RATAMENTO
+Curetagem estendida + enxerto (ósseo ou substituto)
+•
+Coluna e pelve
+•
+Embolização arterial previamente para evitar sangramento
+●
+
+### Slide 116 de 179
+<!-- slide 116 -->
+T
+RATAMENTO
+
+### Slide 117 de 179
+<!-- slide 117 -->
+E F
+G H
+FIGURE 25-19, cont'd E, Intraoperative photograph of multiloculated blood-filled cavity. F, After removal of cyst lining with large
+curets, tumor cavity is enlarged with power bur. G, Tumor cavity is treated with argon beam coagulation. Cavity was packed with
+freeze-dried cancellous bone chips and demineralized bone matrix. H, Postoperative anteroposterior radiograph. I, Radiograph 1 year
+later shows complete remodeling with no evidence of recurrence.
+
+### Slide 118 de 179
+<!-- slide 118 -->
+T
+RATAMENTO
+Opções
+•
+Se curetagem extremamente difícil
+●
+Embolização arterial pode ser tratamento definitivo
+•
+Radioterapia
+●
+Método efetivo com baixa dose, levando a ossificação
+•
+rápida
+Não usada de rotina → risco de transformação maligna
+•
+
+### Slide 119 de 179
+<!-- slide 119 -->
+T
+UMOR DE CÉLULAS MARRONS DO
+HIPERPARATIREOIDISMO
+Queda do calcio sérico
+Aumento do paratormonio
+Estimulo de osteoclastos
+Fusão – celulas gigantes
+Reabsorção ossea descontrolada
+Aspecto macroscopico e histologico identico do tcg
+
+### Slide 120 de 179
+<!-- slide 120 -->
+ASCO 2008
+
+### Slide 121 de 179
+<!-- slide 121 -->
+D
+IAGNOSTICO
+Feito com a biopsia + historia clinica + cálcio e
+paratormônio
+A biopisa evidencia células gigantes
+Se PTH aumentado – fecha tu marrom
+Tto – tratar a causa do hiperparatiroidismo
+Primario
+Ins renal
+
+### Slide 122 de 179
+<!-- slide 122 -->
+ASCO 2008
+
+### Slide 123 de 179
+<!-- slide 123 -->
+FIBROMA NÃO OSSIFICANTE (>3CM)
+•
+Sinônimos
+–
+Defeito fibroso Metafisário
+–
+Defeito fibroso cortical (<3cm)
+•
+São anomalias de desenvolvimento comuns ocorrem em até 35%
+das crianças
+•
+Maioria assintomáticos
+–
+Achado de exame 🡪 Região metafisária ossos longos
+–
+Entre 2 a 20 anos
+
+### Slide 124 de 179
+<!-- slide 124 -->
+FIBROMA NÃO OSSIFICANTE
+•
+Femur distal
+•
+Tibia distal
+•
+Assintimatico
+•
+Se a lesão for extensa pode fragilizar o osso e fraturar
+•
+Na maioria dos casos é achado de exame
+
+### Slide 125 de 179
+<!-- slide 125 -->
+RADIOGRAFIA
+• Lesão lobulada
+• Multilocular
+• Bem delimitada
+• Excêntrica
+• Metafisária
+• Erosão cortical
+• Esclerose marginal
+
+### Slide 126 de 179
+<!-- slide 126 -->
+TRATAMENTO
+•
+Expectante
+•
+Se fratura – trata a fratura que vai induzir ao tratamento da lesão
+•
+Curetagem + enxerto
+
+### Slide 127 de 179
+<!-- slide 127 -->
+ASCO 2008
+
+### Slide 128 de 179
+<!-- slide 128 -->
+DISPLASIA FIBROSA
+• Lesão benigna ativa, pseudotumoral - osteofibrosa
+• Alteração da formação óssea
+– Monostótica ou Poliostótica
+• Substituição de osso normal e medula por tecido fibroso e pequenas e
+amolecidas espículas ósseas
+• Qualquer região do osso
+– Epífise, metáfise, diáfise
+• Associações
+– Puberdade precoce
+– Alteração pigmentação da pele (grandes manchas café-c/-leite)
+– Mixoma intramuscular
+– Endocrinopatias – GH e tireoide
+
+### Slide 129 de 179
+<!-- slide 129 -->
+DISPLASIA FIBROSA
+•
+McCune-Albright (forma + expressiva)
+– Displasia fibrosa poliostótica
+– Hiperpigmentação cutânea (manchas café com leite)
+– Alterações endócrinas – menarca precoce
+– Baixa estatura e deformidades
+
+### Slide 130 de 179
+<!-- slide 130 -->
+DISPLASIA FIBROSA
+•
+McCune-Albright (forma + expressiva)
+– Displasia fibrosa poliostótica
+– Hiperpigmentação cutânea (manchas café com leite)
+– Alterações endócrinas – menarca precoce
+– Baixa estatura e deformidades
+
+### Slide 131 de 179
+<!-- slide 131 -->
+Displasia Fibrosa
+•
+Síndrome de Mazabraud
+–
+Displasia fibrosa poliostótica
+–
+Mixoma intramuscular
+
+### Slide 132 de 179
+<!-- slide 132 -->
+DISPLASIA FIBROSA
+•
+Costuma manifestar-se na infância ou adolescência com dor
+–
+Deformidade progressiva ou fratura
+•
+Claudicação, discrepância
+–
+Locais: Fêmur, tíbia, ossos da face e costelas
+–
+Regressão é rara e malignização em torno de 2%
+
+### Slide 133 de 179
+<!-- slide 133 -->
+DISPLASIA FIBROSA
+•
+Ocasionalmente necessita biópsia para diagnóstico
+•
+Histologia
+–
+Espículas ósseas com estroma fibroso
+–
+Pequenas áreas de metaplasia cartilaginosa e cistos
+
+### Slide 134 de 179
+<!-- slide 134 -->
+RADIOGRAFIA
+• Área radiolucente
+• Aspecto de vidro fosco granulado
+• Margens escleroticas bem definidas
+• Cintilografia para ver real extensão da doença
+
+### Slide 135 de 179
+<!-- slide 135 -->
+RADIOGRAFIA
+Na evolução 🡪 Deformidade em varo em “cajado de pastor”
+
+### Slide 136 de 179
+<!-- slide 136 -->
+TRATAMENTO
+• Tratamento cirúrgico
+– Correção das deformidades quando necessário
+– Fixação profilática quando houver viabilidade
+– Tratamento da fratura caso essa tenha ocorrido
+• Bifosfonados
+• Diminui dor e melhora metabolismo ósseo
+– Não influencia nas deformidades
+
+### Slide 137 de 179
+<!-- slide 137 -->
+E
+
+### Slide 138 de 179
+<!-- slide 138 -->
+FEMININA
+7 ANOS
+FRATURA DE FEMUR
+ESQUERDO
+ENQUANTO
+BRINCAVA NA
+QUADRA DA
+ESCOLA POR QUEDA
+DE PRÓPRIA ALTURA
+ASCO 2008
+
+### Slide 139 de 179
+<!-- slide 139 -->
+10/C
+
+### Slide 140 de 179
+<!-- slide 140 -->
+TUMORES MALIGNOS
+METASTASES
+ASCO 2008
+
+### Slide 141 de 179
+<!-- slide 141 -->
+METÁSTASES:
+•
+Carcinoma metastático é a malignidade tratada mais comum;
+•
+50 a 80% dos pacientes com diagnóstico de carcinoma têm metástases
+ósseas no momento da morte;
+•
+Melhoria do tratamento do tumor primário tem aumentado a
+sobrevida destes pacientes.
+
+### Slide 142 de 179
+<!-- slide 142 -->
+METÁSTASES:
+•
+Paciente com histórico de carcinoma, com lesão óssea recém
+descoberta tem grande chance de ser carcinoma metastático;
+•
+Todo paciente acima de 40 anos, mesmo sem histórico de carcinoma,
+metástase e mieloma múltiplo são os principais diagnósticos a serem
+considerados.
+
+### Slide 143 de 179
+<!-- slide 143 -->
+METÁSTASES:
+•
+Câncer de mama e de próstata são as duas origens primárias mais
+comuns de metástases ósseas;
+•
+Na metástase de origem desconhecida as origens mais prováveis são
+câncer de pulmão e carcinoma de células claras do rim.
+
+### Slide 144 de 179
+<!-- slide 144 -->
+(só imagem, sem texto)
+
+### Slide 145 de 179
+<!-- slide 145 -->
+(só imagem, sem texto)
+
+### Slide 146 de 179
+<!-- slide 146 -->
+DISTRIBUIÇÃO DAS METÁSTASES NO ESQUELETO
+7%
+5%
+13%
+36%
+21%
+12%
+
+### Slide 147 de 179
+<!-- slide 147 -->
+•
+Masculino, 57 anos. Dor no quadril E há 2 meses
+
+### Slide 148 de 179
+<!-- slide 148 -->
+•
+Nega história de câncer
+•
+Discreta perda da acuidade visual nos últimos 2 meses
+•
+Tabagista 60 anos.maço
+•
+HMG: normal
+•
+Fosfatase Alcalina: aumentada
+•
+PSA: normal
+•
+Eletroforese de Proteínas: normal
+•
+Toque retal: próstata discretamente aumentada e com consistência fibroelástica
+
+### Slide 149 de 179
+<!-- slide 149 -->
+UNDACAO PIO XII Nasc: 28/09/1953
+MANOEL BENEDITO BARBOSA A.N: 5023703
+56Y M 672087 4280 X 3520
+28/01/2010 Se: 1/2
+10:34:17 Im: 1/1
+Cr: A 0 mm
+
+### Slide 150 de 179
+<!-- slide 150 -->
+(só imagem, sem texto)
+
+### Slide 151 de 179
+<!-- slide 151 -->
+CINTILOGRAFIA OSSEA
+ANTERIOR POSTERIOR
+
+### Slide 152 de 179
+<!-- slide 152 -->
+(só imagem, sem texto)
+
+### Slide 153 de 179
+<!-- slide 153 -->
+•
+Biópsia : Adenocarcinoma Metastático de Pulmão
+
+### Slide 154 de 179
+<!-- slide 154 -->
+METÁSTASES ÓSSEAS NAS AUTÓPSIAS
+%
+
+### Slide 155 de 179
+<!-- slide 155 -->
+•
+PPA, Masculino, 63a
+•
+CA Próstata em estadiamento
+•
+Lesão na escápula D
+•
+Assintomático
+
+### Slide 156 de 179
+<!-- slide 156 -->
+Workspace PAULO PASSOS DE ALMEIDA CINT OSSEA MILLENNIUM MG H.C. Fac. Med. - Botucatu -...
+60929 06/02/2014 11:07
+VARREDURA ANTERIOR
+VARREDURA POSTERIOR
+
+### Slide 157 de 179
+<!-- slide 157 -->
+1 2
+3 4
+
+### Slide 158 de 179
+<!-- slide 158 -->
+(só imagem, sem texto)
+
+### Slide 159 de 179
+<!-- slide 159 -->
+(só imagem, sem texto)
+
+### Slide 160 de 179
+<!-- slide 160 -->
+Estudo Imunoistoquimico BX n° 02005/2014
+-
+Nome: PAULO PASSOS DE ALMEIDA Registro: 60929
+Idade: 63a 1m 23d (15/01/1951)
+Sexo: Masculino Origem:AMBULATORIO
+Cor: Branca Clinica:
+Est.Civil: Data de entrada:10/03/2014-Segunda-feira
+Profissão: Médico solicitante:
+Resumo clínico:
+Paciente já diagnosticado com adneocarcinoma de próstata, apresenta lesão única à cintilografia e tomografi
+Material enviado:
+Biópsia por agulha de osso.
+Motivo do estudo:
+Sítio primário.
+
+### Slide 161 de 179
+<!-- slide 161 -->
+Resultado:
+Após desparanafização os cortes histológicos foram incubados com anticorpos monoclonais
+Anticorpos Resultado Observação
+AE1/AЕЗ Positivo
+Diagnóstico:
+Biópsia de lesão escapular à direita:
+
+### Slide 162 de 179
+<!-- slide 162 -->
+TRATAMENTO
+•
+Quimioterapia
+•
+Radioterapia
+•
+Hormonioterapia
+•
+Terapia com Iodo radioativo e outros radioisótopos
+•
+Imunoterapia
+
+### Slide 163 de 179
+<!-- slide 163 -->
+TRATAMENTO
+•
+Cirúrgico:
+•
+Fraturas patológicas
+•
+Risco iminente de fratura
+•
+Fixação estável para permitir carga precoce
+•
+Reconstrução deve ser durável
+
+### Slide 164 de 179
+<!-- slide 164 -->
+PREVENÇÃO DE FRATURAS
+
+### Slide 165 de 179
+<!-- slide 165 -->
+E
+LEITO
+
+### Slide 166 de 179
+<!-- slide 166 -->
+Nasc: t
+Nasc: 05;
+A.N:
+4 А.
+352C
+3:
+Cr:
+E
+LEITO
+
+### Slide 167 de 179
+<!-- slide 167 -->
+D
+D
+LEITO
+
+### Slide 168 de 179
+<!-- slide 168 -->
+Mirels = 11 Dor = 2
+Fixação Profilática se 8 ou +
+
+### Slide 169 de 179
+<!-- slide 169 -->
+D
+LEITO
+
+### Slide 170 de 179
+<!-- slide 170 -->
+(só imagem, sem texto)
+
+### Slide 171 de 179
+<!-- slide 171 -->
+D
+
+### Slide 172 de 179
+<!-- slide 172 -->
+•
+Tratamento Paliativo
+
+### Slide 173 de 179
+<!-- slide 173 -->
+E
+E
+
+### Slide 174 de 179
+<!-- slide 174 -->
+HOSPITAI
+Е
+BARRE CS
+
+### Slide 175 de 179
+<!-- slide 175 -->
+Ewing → 30% no
+dx!
+25% 11%
+11% 10% 8%
+σ
+5-25
+onos,
+baixa
++astenia pico 10-15
+4 leb: LDH↑, H Lo
+ORIGEM PCR e VHS
+RNM Sempre- extensão 12 2
+TAC eRX torax 30xI30 dx.
+t(11;
+peq. céts. translocação 22)
+azuis
+Cromossomo Filadelfia
+M
+tu. Nevroecto dermicos
+Dx dif: OM, !
+4
+histoquimica
+Linfoma:
+imuno
+CD99 = Ewing LCA = Linfoma
+Prognósticos
+Fatores
+Semelhante
+Ino dx20-25%
+à pus.
+II no dx 75-80%
+Ho Se ressecável: •Tamanho• Locolização . Alt. sistêmicas.
+HUVOS
+・4 idade Recorrencia
+60-70%
+ressecável:
+Não 20%-5anos
+sell 10%-5anos
+
+### Slide 176 de 179
+<!-- slide 176 -->
+Osteossarcoma
+(central)
+Pequenas células azuis (raro)
+>Convencional
+Semelhante
+ao
+Ewing
+İntra ósseo bem dif. ou Baixo Grau
+IA-IB, indolente, caract. Benignas no Rx
+Ro
+ta
+m
+r
+p
+d
+e io
+FO
+Adut + t ( o S s, . ( N r . a ) r o) Prog: melhor convencional
+Telangec
+taSsiiccoo II A-IB
+-Puramente litico, lembra <20%
+Cr r e á s p c i i d me o
+nto
+So P br r ev o id g a nó Π I st 9 ic 0 6 o 0 : % -75% Est → ad i 15 a % mento
+outro
+p P
+s
+i d I o O x r R ! ! ! !
+no
+(+importante)
+CTamanha (8cm)
+Mtx (-15% no dx) Sex
+Idade
+LLocalização
+Convencional 89% metáfise
+10x diáfise
+, 2° década 1% epifise
+Depois:
+ل د
+د
+Class Huvos: A
+OCE
+①Resposta mínima (<50%. necrose)
+Percial 50-90% necrose
+(>90%. necrose (Focos viaveis na lâmina)
+Sem Focos viáveis.
+Ho:
+Osteoblastico Gondroblástico Fbroblastico
+ou
+
+### Slide 177 de 179
+<!-- slide 177 -->
+Osteossarcoma
+(superficie)
+Raro
+Periosteal
+Entre Ie ⅡI
+velhos,
++ faixa etária ampla
+-lóbulos decartilagem
+Superficie de Al to Grau
+Π
+m
+C
+a
+o
+o
+m u dx -
+- Met
+m
+a
+e
+t
+n
+i
+o
+s
+s
+e
+c
+e
+o m
+di
+u u
+a
+m m
+fi
+!
+s e oss
+A
+o
+g
+s
+r e
+L
+s
+o
+si
+n
+v
+g
+o
+o
+!
+s
+!
+-Ho = convencional
+Secunolários I
+>50a.
+Paget
+Cagressivo, alta mali
+pos -10-15 anos
+Osteossarcomas:
+n
+i
+o r Osteoblastos malignos!
+osso e
+osteride neoplasico
+e
+t
+n
+u r A s p e io h r o u p v r e o r g , .
+m 4
+e
+F
+Peraosteal (Justacortical) I
+l B a a r s g e a, 3° e4° décadas 8
+adenido
+ão
+-lobulado,
++
+o ssificado
+no
+centro
+OSSO Erosão -Bom prog. Ppode ser desnecesário.
+e 3/4 casos
+
+### Slide 178 de 179
+<!-- slide 178 -->
+Condrossarcoma
+dor
+Crescente
+R
+A
+R
+O
+Faixa ampla, picos: 40-60 (primoio)
+25-45 (secunolanio)
+* Raro, é
+mes o +
+comum
+75%, qualquer lugar
+m as pega
+* Seandário
+Calaticeções Sugere
+1
+ou
+assosc:
+grau
+Ollier 25%
+Motucai
+9% Abundante matniz cartilaginosa
+lento, asteo
+anos...
+candpma
+binuclesdos, núcleos roliços.
+Ho
+IeI Пell ll céls avasculares,
+Fácil de
+implentar
+ou
+đé 10% recornência local
+90%
+10anos
+20-40% X só paliativo
+10cnos
+em
+Prognóstico: Tamanho grau Localização
++ +
+
+### Slide 179 de 179
+<!-- slide 179 -->
+Ewing
+ΠΠ
+30%
+no
+dx!
+25% 41%
+11% 10% 8%
+σ
+5-25
+anos,
+baixa
++astenia pico 10-15
+leo: LDH↑; нЬ
+ORIGEM PCR eVHS
+RNM Sempre- extensão 12 2
+TAC eRX torax 30xI30 dx.
+céts. t(11;22)
+peq. translocação
+azuis
+Cromossomo Filadelia
+MM
+tu.
+Neuroectoder micos
+OM,I
+Dx dif:
+4
+Linfoma: histoquimica
+imuno
+CD99 = Ewing LCA = Linfoma
+Prognósticos
+Fatores
+Semelhante
+Ino dx20-25%
+à pus.
+II no dx 75-80%
+Ho Se ressecável: •Tamanho• Locolização . Alt. sistêmicas.
+HUVOS
+・4 idade Recorrencia
+60-70%
+ressecável:
+Não 20%-5anos
+sell 10%-5anos
