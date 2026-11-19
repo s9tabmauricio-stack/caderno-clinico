@@ -30,7 +30,7 @@ Arquivos temporários (lotes de SQL, scripts): ponha o id da aula no nome (ex.: 
 
 1. **Ache a aula.** "Gastro 1" = `gastro-a1`. Matérias: `nefro`, `pneumo`, `gastro`, `orto`, `uro`, `pass`. Confira numa consulta só:
    `select a.id, a.titulo, m.nome, (select count(*) from public.flashcards f where f.aula_id = a.id) as cards from public.aulas a join public.materias m on m.id = a.materia_id where a.id = '<aula-id>';`
-   Se a aula já tiver cards, pare e diga quantos são, a menos que o pedido seja para refazer: aí prepare normalmente, sem ler nem completar os antigos. Antes da inclusão, o Mauricio apaga os antigos em Configurações → Conteúdo → a aula → "Apagar os N flashcards" (o conector não consegue apagar).
+   Se a aula já tiver cards, pare e diga quantos são, a menos que o pedido seja para refazer: aí prepare normalmente, sem ler nem completar os antigos. Antes da inclusão, o Mauricio apaga os antigos em Configurações → Conteúdo → a aula → "Apagar os N flashcards" (ou, se ele pedir, o assistente apaga pelo conector).
 2. **Leia a fonte**, uma vez: `apostilas-fonte/<aula-id>/fonte.md`. Conte as palavras (`| wc -w`) para calibrar o tamanho.
 3. **Monte os cards** com as regras abaixo, a partir da fonte, na ordem da aula, cobrindo a aula inteira.
 4. **Escreva o rascunho** em `rascunhos/flashcards/<aula-id>.md` (a pasta fica fora do Git), no formato abaixo.
@@ -88,4 +88,4 @@ Só quando pedirem para incluir um rascunho aprovado. **Não reescreva os cards 
 3. **Sem a chave**: `node scripts/gravar-rascunho.mjs <aula-id> --so-flashcards --sql` escreve os lotes prontos em `rascunhos/sql/`; rode cada arquivo no conector (`execute_sql`), em ordem, e confira com `select count(*), min(ordem), max(ordem) from public.flashcards where aula_id = '<aula-id>';`.
 4. Responda com o número de cards gravados. Não faça commit nem push.
 
-Pelo conector, apagar e reescrever textos longos é cancelado: não tente. Card errado depois de gravado o Mauricio corrige em Configurações → Conteúdo.
+Pelo conector, reescrever textos longos é cancelado: não tente. Card errado depois de gravado o Mauricio corrige em Configurações → Conteúdo; apagar card pelo conector funciona, mas só quando o Mauricio pedir.

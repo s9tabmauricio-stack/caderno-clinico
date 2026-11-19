@@ -92,4 +92,4 @@ O `PROVA ·` no título da questão vira `cai_na_prova = true` no banco (põe a 
 3. **Sem a chave**: rode no conector a consulta que o programa mostra, depois `node scripts/gravar-rascunho.mjs <aula-id> --so-questoes --sql --ultima-ordem <N> --ultimo-numero <N>`; ele escreve os lotes em `rascunhos/sql/`. Rode cada arquivo no conector, em ordem, e confira: `select count(*) from public.questoes where aula_id = '<aula-id>' and substituida_por is null;`.
 4. Responda com o número gravado. Não faça commit nem push.
 
-Pelo conector, apagar e reescrever textos longos é cancelado: não tente. Questão errada depois de gravada se corrige com uma versão nova (`<id>-v2`), como está no manual.
+Pelo conector, reescrever textos longos é cancelado: não tente; apagar funciona, mas só quando o Mauricio pedir. Questão errada depois de gravada se corrige com uma versão nova (`<id>-v2`), como está no manual.

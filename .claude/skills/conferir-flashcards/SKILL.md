@@ -61,7 +61,8 @@ O conferente:
 
 O card mantém o mesmo id, para não perder o progresso dos alunos na Revisão.
 - **Frente ou verso curto**: `update public.flashcards set verso = '<texto>' where id = '<id>';` (aspas simples dentro do texto viram duas). Alteração curta funciona pelo conector.
-- **Texto longo** (o conector cancela) e **tirar card** (o conector não apaga): vão numa lista para o Mauricio fazer em Configurações → Conteúdo → a aula. Não tente contornar.
+- **Texto longo** (o conector cancela): vai numa lista para o Mauricio fazer em Configurações → Conteúdo → a aula. Não tente contornar.
+- **Tirar card**: mostre a lista ao Mauricio; com o "pode" dele, apague pelo conector (`delete from flashcards where id in (…)`; regra dele, 19/11/2026).
 - **Card novo**: inclua no fim, com a próxima ordem livre: `insert into public.flashcards (id, aula_id, ordem, frente, verso) values ('<aula-id>-f<N>', '<aula-id>', <N>, '…', '…') on conflict (id) do nothing;` (id sem zeros à esquerda a partir do 100).
 - Confira no fim: `select count(*), max(ordem) from public.flashcards where aula_id = '<aula-id>';`
 - Apague os arquivos temporários e tire a linha da fila no PR.
