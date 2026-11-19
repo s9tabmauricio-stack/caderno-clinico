@@ -6,6 +6,7 @@
 -- Progresso do Dia D incluído em 10/11/2026: migração 20261110015525_progresso_dia_d.sql.
 -- Limite de aparelhos por conta incluído em 12/11/2026: migração 20261112120000_limite_aparelhos.sql.
 -- Novidades (sininho) incluídas em 17/11/2026: migração 20261117180000_novidades.sql.
+-- Mensagens para o administrador incluídas em 19/11/2026: migração 20261119030000_mensagens.sql.
 -- Suspensão individual aplicada em 03/11/2026: migração 20261103162543_suspensao_individual_flashcards.sql.
 --
 -- Para que serve: é a referência confiável de como o banco está montado
@@ -146,6 +147,19 @@ create table public.questoes (
   constraint questoes_aula_id_fkey FOREIGN KEY (aula_id) REFERENCES aulas(id) ON DELETE CASCADE,
   constraint questoes_materia_id_fkey FOREIGN KEY (materia_id) REFERENCES materias(id) ON DELETE CASCADE,
   constraint questoes_substituida_por_fkey FOREIGN KEY (substituida_por) REFERENCES questoes(id)
+);
+
+create table public.mensagens (
+  id uuid default gen_random_uuid() not null,
+  user_id uuid default auth.uid() not null,
+  autor text default 'Aluno'::text not null,
+  texto text not null,
+  status text default 'nova'::text not null,
+  criado_em timestamp with time zone default now() not null,
+  constraint mensagens_pkey PRIMARY KEY (id),
+  constraint mensagens_status_check CHECK ((status = ANY (ARRAY['nova'::text, 'lida'::text]))),
+  constraint mensagens_texto_check CHECK (((char_length(btrim(texto)) >= 1) AND (char_length(btrim(texto)) <= 2000))),
+  constraint mensagens_user_id_fkey FOREIGN KEY (user_id) REFERENCES auth.users(id) ON DELETE CASCADE
 );
 
 create table public.novidades (
@@ -321,6 +335,8 @@ CREATE INDEX historico_revisoes_aluno_idx ON public.historico_revisoes USING btr
 CREATE INDEX historico_revisoes_dia_idx ON public.historico_revisoes USING btree (revisada_em);
 CREATE INDEX questoes_aula_idx ON public.questoes USING btree (aula_id, ordem);
 CREATE INDEX questoes_materia_idx ON public.questoes USING btree (materia_id, tema);
+CREATE INDEX mensagens_novas_idx ON public.mensagens USING btree (criado_em) WHERE (status = 'nova'::text);
+CREATE INDEX mensagens_user_idx ON public.mensagens USING btree (user_id, criado_em DESC);
 CREATE INDEX novidades_criado_idx ON public.novidades USING btree (criado_em DESC);
 CREATE INDEX recados_novos_idx ON public.recados USING btree (criado_em) WHERE (status = 'novo'::text);
 CREATE INDEX recados_questao_idx ON public.recados USING btree (questao_id, criado_em);
@@ -551,6 +567,30 @@ end;
 $function$
 ;
 
+-- Mensagem nova para o administrador: autor (nome completo; sem nome, o login), dono, status e data saem daqui, não do aluno.
+CREATE OR REPLACE FUNCTION public.mensagens_preencher()
+ RETURNS trigger
+ LANGUAGE plpgsql
+ SECURITY DEFINER
+ SET search_path TO ''
+AS $function$
+begin
+  if auth.uid() is not null then
+    new.user_id := auth.uid();
+    new.status := 'nova';
+    new.criado_em := now();
+    new.autor := coalesce(
+      nullif(btrim((select p.nome from public.perfis p where p.id = auth.uid())), ''),
+      nullif(split_part((select u.email from auth.users u where u.id = auth.uid()), '@', 1), ''),
+      'Aluno'
+    );
+  end if;
+  new.texto := btrim(new.texto);
+  return new;
+end;
+$function$
+;
+
 -- Recado novo: autor (primeiro nome), dono, status e data saem daqui, não do aluno.
 CREATE OR REPLACE FUNCTION public.recados_preencher()
  RETURNS trigger
@@ -701,6 +741,7 @@ $function$
 -- Nenhuma função acima pode ser chamada por anon ou authenticated (exceto sessao_ativa, só authenticated).
 revoke execute on function public.central_resumo() from public, anon, authenticated;
 revoke execute on function public.criar_perfil() from public, anon, authenticated;
+revoke execute on function public.mensagens_preencher() from public, anon, authenticated;
 revoke execute on function public.recados_preencher() from public, anon, authenticated;
 revoke execute on function public.registrar_historico_resposta() from public, anon, authenticated;
 revoke execute on function public.registrar_historico_revisao() from public, anon, authenticated;
@@ -716,6 +757,7 @@ grant execute on function public.sessao_ativa() to authenticated;
 
 CREATE TRIGGER ao_criar_usuario AFTER INSERT ON auth.users FOR EACH ROW EXECUTE FUNCTION criar_perfil();
 CREATE TRIGGER limitar_aparelhos AFTER INSERT ON auth.sessions FOR EACH ROW EXECUTE FUNCTION limitar_aparelhos();
+CREATE TRIGGER mensagens_preencher BEFORE INSERT ON public.mensagens FOR EACH ROW EXECUTE FUNCTION mensagens_preencher();
 CREATE TRIGGER recados_preencher BEFORE INSERT ON public.recados FOR EACH ROW EXECUTE FUNCTION recados_preencher();
 CREATE TRIGGER respostas_historico AFTER INSERT OR UPDATE ON public.respostas FOR EACH ROW EXECUTE FUNCTION registrar_historico_resposta();
 CREATE TRIGGER revisoes_historico AFTER INSERT OR DELETE OR UPDATE ON public.revisoes FOR EACH ROW EXECUTE FUNCTION registrar_historico_revisao();
@@ -731,6 +773,7 @@ alter table public.flashcards enable row level security;
 alter table public.historico_respostas enable row level security;
 alter table public.historico_revisoes enable row level security;
 alter table public.materias enable row level security;
+alter table public.mensagens enable row level security;
 alter table public.novidades enable row level security;
 alter table public.perfis enable row level security;
 alter table public.questoes enable row level security;
@@ -747,6 +790,8 @@ create policy "Apagar o próprio histórico" on public.historico_respostas as pe
 create policy "Ver o próprio histórico" on public.historico_respostas as permissive for select to public using ((( SELECT auth.uid() AS uid) = user_id));
 create policy "Ver o próprio histórico de revisões" on public.historico_revisoes as permissive for select to public using ((( SELECT auth.uid() AS uid) = user_id));
 create policy "Alunos leem matérias" on public.materias as permissive for select to authenticated using (true);
+create policy "Aluno escreve a própria mensagem" on public.mensagens as permissive for insert to authenticated with check ((( SELECT auth.uid() AS uid) = user_id));
+create policy "Aluno vê as próprias mensagens" on public.mensagens as permissive for select to authenticated using ((( SELECT auth.uid() AS uid) = user_id));
 create policy "Turma lê as novidades" on public.novidades as permissive for select to authenticated using (true);
 create policy "Editar o próprio perfil" on public.perfis as permissive for update to authenticated using ((( SELECT auth.uid() AS uid) = id)) with check ((( SELECT auth.uid() AS uid) = id));
 create policy "Ver o próprio perfil" on public.perfis as permissive for select to authenticated using ((( SELECT auth.uid() AS uid) = id));
@@ -769,7 +814,7 @@ create policy "Ver as próprias revisões" on public.revisoes as permissive for 
 -- ============================================================
 -- Permissões das tabelas e visões
 -- O padrão do Supabase dá tudo a anon e authenticated; quem barra é a RLS acima.
--- As exceções (perfis, recados, recados_uteis) estão marcadas.
+-- As exceções (mensagens, novidades, perfis, recados, recados_uteis) estão marcadas.
 -- ============================================================
 
 grant delete, insert, references, select, trigger, truncate, update on
@@ -779,6 +824,9 @@ grant delete, insert, references, select, trigger, truncate, update on
   public.flashcards_do_aluno, public.progresso_aulas, public.progresso_materias,
   public.progresso_temas, public.progresso_tentativas, public.questoes_do_aluno
   to anon, authenticated;
+
+-- Exceção: mensagens só escrever e ler as próprias (o status muda e apaga só o admin, com a chave secreta).
+grant insert, select on public.mensagens to authenticated;
 
 -- Exceção: novidades só para ler (quem escreve é a Administração, com a chave secreta).
 grant select on public.novidades to authenticated;
