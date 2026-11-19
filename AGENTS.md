@@ -87,9 +87,10 @@ Este manual tem só as regras de sempre. Os detalhes ficam onde são usados; lei
 
 ### Limite do conector do Supabase (importante)
 
-Pelo conector, **incluir dados e alterações curtas funcionam**; **apagar e reescrever textos longos são cancelados** (trava de confirmação que a sessão não consegue mostrar). Não tente contornar.
+Pelo conector, **incluir dados, alterações curtas e apagar funcionam** (apagar funcionou em 19/11/2026); **reescrever textos longos é cancelado** (trava de confirmação que a sessão não consegue mostrar). Não tente contornar.
 - Corrigir uma questão: inclua uma versão nova (`<id>-v2`, mesma ordem) e marque a antiga com `update ... set substituida_por = '<id>-v2'`. Leve os recados junto: `update public.recados set questao_id = '<id>-v2' where questao_id = '<id>'`. Depois a versão antiga é limpa: o Mauricio pelo botão em Administração → Conteúdo → Limpeza, ou o assistente com `node scripts/limpar-versoes.mjs --apagar` quando ele pedir (a limpeza move os recados que sobrarem para a versão nova e apaga as respostas dadas na antiga).
-- Apagar ou ajustar texto: o Mauricio faz em Conteúdo. Única exceção: limpar versões antigas de questões pelo `scripts/limpar-versoes.mjs` (regra do Mauricio, 08/11/2026).
+- Apagar card ou questão: o assistente apaga pelo conector **quando o Mauricio pedir** (regra dele, 19/11/2026); mostre antes o que vai sair. O progresso dos alunos naquele card sai junto. Limpar versões antigas de questões continua pelo `scripts/limpar-versoes.mjs` (regra do Mauricio, 08/11/2026).
+- Ajustar texto longo: o Mauricio faz em Conteúdo.
 - Autorização (regra do Mauricio, 05/11/2026): o `.claude/settings.json` libera o `execute_sql`, o `apply_migration` (estrutura do banco) e as consultas do conector (listar tabelas, registros, avisos) sem perguntar, em toda conversa do Claude neste projeto, com todos os nomes que o conector já teve (nuvem, PC, plugin); também liberados os programas `node scripts/…` que gravam no banco (menos `limpar-versoes.mjs --apagar`). Criar, pausar ou apagar projeto, ramo e função continuam pedindo autorização.
 
 ## Conteúdo (apostilas, questões, flashcards)
