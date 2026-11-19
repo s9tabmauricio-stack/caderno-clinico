@@ -1,6 +1,6 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
-import { temFaixaProva, cardDeProva } from '../lib/faixa-prova.ts'
+import { temFaixaProva, corFaixaProva, cardDeProva } from '../lib/faixa-prova.ts'
 
 test('faixa PROVA: o professor deu a entender que cai', () => {
   assert.equal(temFaixaProva({ cai_na_prova: true, prova: null }), true)
@@ -17,4 +17,12 @@ test('faixa PROVA no flashcard: só em Pneumo, tirando o "PROVA · " da frente',
   assert.deepEqual(cardDeProva({ materia_id: 'pneumo', frente: 'O que é pneumonia comunitária?' }), { faixa: false, frente: 'O que é pneumonia comunitária?' })
   assert.deepEqual(cardDeProva({ materia_id: 'pneumo', frente: 'Fora da aula: qual a prova de função?' }), { faixa: false, frente: 'Fora da aula: qual a prova de função?' })
   assert.deepEqual(cardDeProva({ materia_id: 'gastro', frente: 'PROVA · Regra de Goodsall?' }), { faixa: false, frente: 'PROVA · Regra de Goodsall?' })
+})
+
+test('faixa PROVA vermelha: o professor disse que cai, mesmo em questão de prova antiga', () => {
+  assert.equal(corFaixaProva({ cai_na_prova: true, prova: null, professor_disse_que_cai: true }), 'vermelha')
+  assert.equal(corFaixaProva({ cai_na_prova: false, prova: 'p2-t28', professor_disse_que_cai: true }), 'vermelha')
+  assert.equal(corFaixaProva({ cai_na_prova: true, prova: null, professor_disse_que_cai: false }), 'ambar')
+  assert.equal(corFaixaProva({ cai_na_prova: false, prova: 'p2', professor_disse_que_cai: null }), 'ambar')
+  assert.equal(corFaixaProva({ cai_na_prova: false, prova: 'Revalida' }), null)
 })

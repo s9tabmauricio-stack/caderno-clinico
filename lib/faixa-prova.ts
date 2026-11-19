@@ -8,6 +8,21 @@ export function temFaixaProva(q: { cai_na_prova: boolean; prova: string | null }
   return q.cai_na_prova || PROVA_DO_CURSO.test(q.prova?.trim() ?? '')
 }
 
+// Cor da faixa e da placa PROVA (pedido do Mauricio, 19/11/2026):
+// - vermelha: o professor disse com todas as letras que o ponto cai na prova, ou marcou o slide com estrela
+//   (professor_disse_que_cai); vale mesmo que a questão também tenha vindo de prova antiga;
+// - âmbar: os outros casos da faixa (deu a entender que cai, ou prova antiga do curso).
+export type CorFaixaProva = 'vermelha' | 'ambar'
+
+export function corFaixaProva(q: {
+  cai_na_prova: boolean
+  prova: string | null
+  professor_disse_que_cai?: boolean | null
+}): CorFaixaProva | null {
+  if (q.professor_disse_que_cai) return 'vermelha'
+  return temFaixaProva(q) ? 'ambar' : null
+}
+
 // Flashcards: a marca é o "PROVA · " no começo da frente (o professor disse ou deu a entender que cai).
 // Por enquanto a faixa só aparece em Pneumo, a matéria em que a marca já foi conferida aula por aula.
 const MARCA_CARD = /^\s*PROVA\s*·\s*/

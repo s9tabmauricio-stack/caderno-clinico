@@ -171,7 +171,17 @@ export function linhasQuestoes(aulaId, questoes, { ultimaOrdem, ultimoNumero, an
     fonte: x.fonte ?? `Montada (aula ${ano})`,
     origem: x.origem ?? 'montada',
     cai_na_prova: x.prova,
+    professor_disse_que_cai: professorDisseQueCai(x.fonte),
   }))
+}
+
+/**
+ * Placa PROVA vermelha (pedido do Mauricio, 19/11/2026): a questão vem marcada quando a fonte diz que o
+ * professor falou que cai, frisou ou enfatizou o ponto, ou marcou o slide com estrela
+ * ("Material da turma · Dr. Flávio disse que cai", "… frisou na aula", "… marcou com estrela (slide 14)").
+ */
+export function professorDisseQueCai(fonte) {
+  return /(disse que cai|frisou na aula|enfatizou na aula|marcou com estrela)/i.test(fonte ?? '')
 }
 
 /** Maior número de questão já usado na aula ("-q07", "-q07-v2" → 7). */
@@ -212,9 +222,9 @@ export function sqlQuestoes(linhas) {
     sqlTexto(l.id), sqlTexto(l.materia_id), sqlTexto(l.aula_id), l.ordem,
     sqlMultilinha(l.enunciado), sqlTexto(JSON.stringify(l.alternativas)) + '::jsonb', l.correta,
     sqlMultilinha(l.comentario), sqlMultilinha(l.por_que_erradas), sqlTexto(l.tema),
-    sqlTexto(l.prova), sqlTexto(l.fonte), sqlTexto(l.origem), l.cai_na_prova,
+    sqlTexto(l.prova), sqlTexto(l.fonte), sqlTexto(l.origem), l.cai_na_prova, l.professor_disse_que_cai ?? false,
   ].join(', ') + ')')
-  return `insert into public.questoes (id, materia_id, aula_id, ordem, enunciado, alternativas, correta, comentario, por_que_erradas, tema, prova, fonte, origem, cai_na_prova) values\n${valores.join(',\n')}\non conflict (id) do nothing returning id;\n`
+  return `insert into public.questoes (id, materia_id, aula_id, ordem, enunciado, alternativas, correta, comentario, por_que_erradas, tema, prova, fonte, origem, cai_na_prova, professor_disse_que_cai) values\n${valores.join(',\n')}\non conflict (id) do nothing returning id;\n`
 }
 
 /** Divide em lotes de até n itens. */
@@ -235,7 +245,7 @@ export function idNovaVersao(id) {
 /**
  * SQL para trocar questões do banco pelas do rascunho (título com "substitui: <id>"),
  * como manda o manual: inclui a versão nova copiando da antiga ordem, tema, fonte, origem,
- * prova e cai_na_prova; marca a antiga com substituida_por e leva os recados junto.
+ * prova, cai_na_prova e professor_disse_que_cai; marca a antiga com substituida_por e leva os recados junto.
  * Só age se a antiga ainda estiver ativa e for montada (questão de prova real não se reescreve),
  * então rodar duas vezes não duplica nada.
  */
@@ -244,8 +254,8 @@ export function sqlSubstituicoes(questoes) {
     if (!q.substitui) throw new Error(`Questão ${q.n}: falta o "substitui: <id>" no título.`)
     const velho = sqlTexto(q.substitui)
     const novo = sqlTexto(idNovaVersao(q.substitui))
-    return `insert into public.questoes (id, materia_id, aula_id, ordem, enunciado, alternativas, correta, comentario, por_que_erradas, tema, prova, fonte, origem, cai_na_prova)
-select ${novo}, materia_id, aula_id, ordem, ${sqlMultilinha(q.enunciado)}, ${sqlTexto(JSON.stringify(q.alternativas))}::jsonb, ${q.correta}, ${sqlMultilinha(q.comentario)}, ${sqlMultilinha(q.por_que_erradas)}, tema, prova, fonte, origem, cai_na_prova
+    return `insert into public.questoes (id, materia_id, aula_id, ordem, enunciado, alternativas, correta, comentario, por_que_erradas, tema, prova, fonte, origem, cai_na_prova, professor_disse_que_cai)
+select ${novo}, materia_id, aula_id, ordem, ${sqlMultilinha(q.enunciado)}, ${sqlTexto(JSON.stringify(q.alternativas))}::jsonb, ${q.correta}, ${sqlMultilinha(q.comentario)}, ${sqlMultilinha(q.por_que_erradas)}, tema, prova, fonte, origem, cai_na_prova, professor_disse_que_cai
 from public.questoes where id = ${velho} and substituida_por is null and origem = 'montada'
 on conflict (id) do nothing;
 update public.questoes set substituida_por = ${novo} where id = ${velho} and substituida_por is null and exists (select 1 from public.questoes where id = ${novo});

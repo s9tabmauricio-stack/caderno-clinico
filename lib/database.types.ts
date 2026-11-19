@@ -297,6 +297,7 @@ export type Database = {
           ordem: number
           origem: string | null
           por_que_erradas: string | null
+          professor_disse_que_cai: boolean
           prova: string | null
           substituida_por: string | null
           tema: string | null
@@ -314,6 +315,7 @@ export type Database = {
           ordem?: number
           origem?: string | null
           por_que_erradas?: string | null
+          professor_disse_que_cai?: boolean
           prova?: string | null
           substituida_por?: string | null
           tema?: string | null
@@ -322,6 +324,7 @@ export type Database = {
           alternativas?: Json
           aula_id?: string | null
           cai_na_prova?: boolean
+          professor_disse_que_cai?: boolean
           comentario?: string | null
           correta?: number
           enunciado?: string
@@ -495,6 +498,7 @@ export type Database = {
           ordem: number | null
           origem: string | null
           por_que_erradas: string | null
+          professor_disse_que_cai: boolean | null
           prova: string | null
           respondida_em: string | null
           tema: string | null

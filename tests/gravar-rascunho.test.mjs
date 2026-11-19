@@ -2,7 +2,7 @@ import test from 'node:test'
 import assert from 'node:assert/strict'
 import {
   lerFlashcards, lerQuestoes, linhasFlashcards, linhasQuestoes, materiaDaAula, numeroId,
-  sqlFlashcards, sqlQuestoes, ultimoNumeroDosIds,
+  sqlFlashcards, sqlQuestoes, ultimoNumeroDosIds, professorDisseQueCai,
 } from '../scripts/rascunho.mjs'
 
 const CARDS = `# Flashcards · Gastroenterologia 1 — Reto e ânus
@@ -104,6 +104,7 @@ test('questões continuam a ordem da matéria e a numeração da aula', () => {
   assert.equal(linhas[0].origem, 'montada')
   assert.equal(linhas[0].prova, null)
   assert.equal(linhas[0].cai_na_prova, true)
+  assert.equal(linhas[0].professor_disse_que_cai, false)
   assert.equal(ultimoNumeroDosIds(['x-q07', 'x-q12-v2', 'x-q03']), 12)
 })
 
@@ -153,4 +154,11 @@ test('questão de prova: lê Prova, Fonte e Origem e grava no lugar de "montada"
   assert.throws(() => lerQuestoes(md.replace('**Origem:** adaptada', '**Origem:** oficial')), /Questão 2: origem "oficial"/)
   assert.throws(() => lerQuestoes(md.replace('**Prova:** p2-t28', '**Prova:** PROVA')), /nunca "PROVA"/)
   assert.throws(() => lerQuestoes(md.replace('**Fonte:** P2 T28 · Dr. Cássio\n', '')), /precisa do \*\*Fonte/)
+})
+
+test('placa vermelha: a fonte diz que o professor falou que cai', () => {
+  for (const f of ['Material da turma · Dr. Flávio disse que cai', 'Material da turma · Dr. André frisou na aula',
+    'Material da turma · Dr. Gustavo Colombo marcou com estrela (slide 14)', 'P2 · o professor enfatizou na aula que cai (Mal de Pott)'])
+    assert.equal(professorDisseQueCai(f), true, f)
+  for (const f of ['Montada (aula 2026)', 'P2 T28 · nº 7', null]) assert.equal(professorDisseQueCai(f), false, String(f))
 })
