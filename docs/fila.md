@@ -21,3 +21,4 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
 | Flashcards da pass-a6 | Claude | claude/happy-darwin-07h2c3 | pass-a6 (flashcards) | 16/11/2026 |
+| FastCardsGenius da orto-a1 (alinhar à prova: falas e vermelho dos slides) | Claude | claude/inspiring-mayer-1tbwvz | orto-a1 (flashcards_dia_d) | 19/11/2026 |
