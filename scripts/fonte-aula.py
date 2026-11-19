@@ -12,6 +12,9 @@ Guardar (a transcrição e os slides que o Mauricio mandou):
   .srt, .vtt, .docx ou .pdf. Slides: .pdf ou .pptx. Texto colado na conversa:
   salve num .txt antes. Se a aula já tem fonte, use --acrescentar para juntar o
   que chegou depois (ex.: os slides); material igual ao que já está é pulado.
+  --estrelas 2,12,14: páginas dos slides em que o professor marcou o que vai focar
+  (ex.: estrela verde desenhada). Cada uma ganha uma linha ★ no texto do slide,
+  que conta como "cai na prova" para questões e flashcards.
 
 Ler um pedaço (para a conferência em blocos não ler a aula inteira):
   python3 -I scripts/fonte-aula.py trecho <aula-id> [--minutos 10-35] [--parte 1] [--slides 4-9,12]
@@ -34,6 +37,7 @@ PASTA = RAIZ / 'apostilas-fonte'
 MARCA_PARTE = re.compile(r'^<!-- parte (transcricao|slides) (\d+) \| (.*) -->$')
 MARCA_SLIDE = re.compile(r'^<!-- slide (\d+) -->$')
 TITULO_PARTE = re.compile(r'^## (Transcrição|Slides) \d+ · ')
+ESTRELA = '★ MARCADO PELO PROFESSOR (estrela no slide): ele avisou que vai focar neste slide; conta como cai na prova.'
 TEMPO = re.compile(r'^\s*[\[(]?((?:\d{1,2}:)?\d{1,2}:\d{2})(?:[.,]\d+)?[\])]?')
 
 
@@ -178,6 +182,8 @@ def escrever(aula, partes, destino):
         else:
             so_img = m.get('so_imagem', '')
             aviso = f'; só imagem, sem texto: {so_img} (ver o original)' if so_img else ''
+            if m.get('estrelas'):
+                aviso += f"; ★ marcados pelo professor como foco da prova: {m['estrelas']}"
             cab.append(f"- Slides {p['n']}: `{m.get('arquivo', '?')}` ({m.get('paginas', '?')} páginas{aviso}).")
     corpo = []
     for p in partes:
@@ -193,6 +199,9 @@ def guardar(a):
         parar(f'id de aula fora do padrão: {a.aula} (ex.: pneumo-a7)')
     if not a.transcricao and not a.slides:
         parar('nada para guardar: passe --transcricao e/ou --slides')
+    estrelas = sorted(faixa_paginas(a.estrelas)) if a.estrelas else []
+    if estrelas and not a.slides:
+        parar('--estrelas vale para os slides: passe --slides junto')
     destino = PASTA / a.aula / 'fonte.md'
     partes = []
     if destino.exists():
@@ -230,9 +239,17 @@ def guardar(a):
                 meta['paginas'] = str(len(paginas))
                 if vazias:
                     meta['so_imagem'] = ', '.join(vazias)
+                fora = [e for e in estrelas if e > len(paginas)]
+                if fora:
+                    parar(f'--estrelas: {caminho.name} só tem {len(paginas)} páginas (pedido: {fora})')
+                if estrelas:
+                    meta['estrelas'] = ', '.join(map(str, estrelas))
                 blocos = []
                 for i, p in enumerate(paginas, 1):
-                    blocos += [f'### Slide {i} de {len(paginas)}', f'<!-- slide {i} -->', p.strip() or '(só imagem, sem texto)', '']
+                    blocos += [f'### Slide {i} de {len(paginas)}', f'<!-- slide {i} -->']
+                    if i in estrelas:
+                        blocos.append(ESTRELA)
+                    blocos += [p.strip() or '(só imagem, sem texto)', '']
                 corpo = '\n'.join(blocos).strip('\n')
             parte = {'tipo': tipo, 'n': n, 'meta': meta, 'corpo': corpo}
             partes.append(parte)
@@ -247,7 +264,7 @@ def guardar(a):
         if p['tipo'] == 'transcricao':
             print(f"  transcrição {p['n']}: {m['arquivo']}, {m['palavras']} palavras" + (f", até {m['duracao']}" if m.get('duracao') else ', sem marcação de tempo'))
         else:
-            print(f"  slides {p['n']}: {m['arquivo']}, {m['paginas']} páginas" + (f"; só imagem: {m['so_imagem']}" if m.get('so_imagem') else ''))
+            print(f"  slides {p['n']}: {m['arquivo']}, {m['paginas']} páginas" + (f"; só imagem: {m['so_imagem']}" if m.get('so_imagem') else '') + (f"; ★ {m['estrelas']}" if m.get('estrelas') else ''))
 
 
 def faixa_paginas(texto):
@@ -318,6 +335,7 @@ def main():
     g.add_argument('--transcricao', action='append', default=[])
     g.add_argument('--slides', action='append', default=[])
     g.add_argument('--acrescentar', action='store_true')
+    g.add_argument('--estrelas', help='páginas dos slides marcadas pelo professor como foco da prova (ex.: 2,12,14)')
     t = sub.add_parser('trecho')
     t.add_argument('aula')
     t.add_argument('--minutos')
