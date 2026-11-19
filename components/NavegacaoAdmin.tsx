@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation'
 const destinos = [
   ['/admin/central', 'Central'],
   ['/admin/recados', 'Recados da turma'],
+  ['/admin/mensagens', 'Mensagens'],
   ['/admin', 'Alunos'],
   ['/admin/conteudo', 'Conteúdo'],
   ['/admin/agenda', 'Agenda da semana'],

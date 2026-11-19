@@ -4,9 +4,10 @@ import { NavegacaoAdmin } from './NavegacaoAdmin'
 import { Icone } from './Icones'
 import { TemaRapido } from './TemaEscolha'
 import { Novidades } from './Novidades'
+import { Mensagem, MensagensAdmin } from './Mensagem'
 import { RodapeLegal } from './RodapeLegal'
 import { carregarProgresso, pendentes as contarPendentes, sessao } from '@/lib/dados'
-import { ehAdmin } from '@/lib/admin'
+import { chaveConfigurada, clienteServico, ehAdmin } from '@/lib/admin'
 import { lerNovidades } from '@/lib/novidades'
 
 /** Recados da turma ainda não vistos (só conta para o administrador). */
@@ -17,21 +18,30 @@ export async function recadosNovos() {
   return count ?? 0
 }
 
+/** Mensagens dos alunos ainda não lidas (só conta para o administrador; a turma não lê as dos outros). */
+async function mensagensNovas() {
+  const { email } = await sessao()
+  if (!ehAdmin(email) || !chaveConfigurada()) return 0
+  const { count } = await clienteServico().from('mensagens').select('id', { count: 'exact', head: true }).eq('status', 'nova')
+  return count ?? 0
+}
+
 /** Flashcards para revisar hoje (o número do selo da aba Revisão). */
 async function revisoesDeHoje() {
   const { supabase } = await sessao()
   return contarPendentes(await carregarProgresso(supabase)).hoje
 }
 
-// Moldura comum das telas logadas: Auto | Dia | Noite, sininho de Novidades e engrenagem do perfil no canto, conteúdo e barra de abas.
+// Moldura comum das telas logadas: Auto | Dia | Noite, balão de mensagem, sininho de Novidades e engrenagem do perfil no canto, conteúdo e barra de abas.
 // Sem `pendentes`, a própria moldura conta as revisões (as telas de administração não precisam calcular).
 // `larga`: telas de estudo, que no tablet deitado usam mais largura (o resto fica numa coluna só).
 export async function Pagina({ pendentes, larga, children }: { pendentes?: number; larga?: boolean; children: React.ReactNode }) {
-  const [novos, revisoes, { email }, novidades] = await Promise.all([
+  const [novos, revisoes, { email }, novidades, mensagens] = await Promise.all([
     recadosNovos(),
     pendentes ?? revisoesDeHoje(),
     sessao(),
     sessao().then(({ supabase }) => lerNovidades(supabase)),
+    mensagensNovas(),
   ])
   return (
     <>
@@ -47,6 +57,7 @@ export async function Pagina({ pendentes, larga, children }: { pendentes?: numbe
           )}
           <TemaRapido />
           <span className="atalhos-par">
+            {ehAdmin(email) ? <MensagensAdmin novas={mensagens} /> : <Mensagem />}
             <Novidades lista={novidades} />
             <Link className="avatar engrenagem" href="/perfil" aria-label="Configurações" title="Configurações">
               {Icone.engrenagem}

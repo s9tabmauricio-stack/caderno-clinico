@@ -265,6 +265,12 @@ export type Database = {
         Update: { admin?: boolean; criado_em?: string; id?: string; nome?: string | null; grupo?: number | null; max_aparelhos?: number | null }
         Relationships: []
       }
+      mensagens: {
+        Row: { id: string; user_id: string; autor: string; texto: string; status: string; criado_em: string }
+        Insert: { id?: string; user_id?: string; autor?: string; texto: string; status?: string; criado_em?: string }
+        Update: { id?: string; user_id?: string; autor?: string; texto?: string; status?: string; criado_em?: string }
+        Relationships: []
+      }
       recados: {
         Row: { id: string; questao_id: string; user_id: string; autor: string; tipo: string; texto: string; status: string; criado_em: string }
         Insert: { id?: string; questao_id: string; user_id?: string; autor?: string; tipo: string; texto: string; status?: string; criado_em?: string }
