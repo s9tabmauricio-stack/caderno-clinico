@@ -1,6 +1,6 @@
 # Fonte da aula · orto-a5
 
-Guardada com `scripts/fonte-aula.py` (última mudança em 18/11/2026). É o material da aula como veio, sem correção:
+Guardada com `scripts/fonte-aula.py` (última mudança em 19/11/2026). É o material da aula como veio, sem correção:
 os erros da transcrição automática ficam aqui e quem corrige é a apostila. A apostila, as questões, os flashcards
 e as conferências saem deste arquivo; onde ele e a apostila divergem, vale o que o professor falou (AGENTS.md).
 Não edite à mão: para juntar material novo, rode o programa com --acrescentar.
@@ -8,7 +8,7 @@ Não edite à mão: para juntar material novo, rode o programa com --acrescentar
 ## O que tem aqui
 
 - Transcrição 1: `transcricao.txt` (13.200 palavras, duração até 01:26:14).
-- Slides 1: `slides.pptx` (105 páginas; só imagem, sem texto: 18, 81 (ver o original)).
+- Slides 1: `slides.pptx` (105 páginas; só imagem, sem texto: 18, 81 (ver o original); ★ marcados pelo professor como foco da prova: 20, 28, 36, 37, 38, 39, 58, 61, 72, 101).
 
 ## Transcrição 1 · transcricao.txt
 <!-- parte transcricao 1 | arquivo=transcricao.txt | sha=69f4cbc69357 | palavras=13.200 | duracao=01:26:14 -->
@@ -577,7 +577,7 @@ Esse é o Mal de Pott. Esse é o Mal de Pott. Todo paciente que tiver com uma in
 [86:14] Beleza? Vamos embora? Alguém tem alguma dúvida? (ruídos de alunos arrumando os materiais e encerramento da aula)
 
 ## Slides 1 · slides.pptx
-<!-- parte slides 1 | arquivo=slides.pptx | sha=b6f5ad486ae1 | paginas=105 | so_imagem=18, 81 -->
+<!-- parte slides 1 | arquivo=slides.pptx | sha=b6f5ad486ae1 | paginas=105 | so_imagem=18, 81 | estrelas=20, 28, 36, 37, 38, 39, 58, 61, 72, 101 -->
 
 ### Slide 1 de 105
 <!-- slide 1 -->
@@ -741,6 +741,7 @@ Cifose segmentar
 
 ### Slide 20 de 105
 <!-- slide 20 -->
+★ MARCADO PELO PROFESSOR (estrela no slide): ele avisou que vai focar neste slide; conta como cai na prova.
 TOMOGRAFIA
 Mais sensível
 Avaliação de fratura suspeita ou confirmada
@@ -814,6 +815,7 @@ Homem < 30 anos  Trauma de alta energia
 
 ### Slide 28 de 105
 <!-- slide 28 -->
+★ MARCADO PELO PROFESSOR (estrela no slide): ele avisou que vai focar neste slide; conta como cai na prova.
 EPIDEMIOLOGIA
 Diagnóstico tardio
 Politraumatizado – 24% fxs passam despercebidas na avaliação inicial
@@ -905,6 +907,7 @@ T12: virilha
 
 ### Slide 36 de 105
 <!-- slide 36 -->
+★ MARCADO PELO PROFESSOR (estrela no slide): ele avisou que vai focar neste slide; conta como cai na prova.
 CHOQUE MEDULAR
 É uma alteração neurológica transitória que ocorre após uma lesão aguda da medula espinhal.
 Mecanismo: perda temporária da atividade reflexa e da função neurológica abaixo do nível da lesão.
@@ -917,6 +920,7 @@ Evolução: os reflexos retornam progressivamente, podendo surgir hiperreflexia 
 
 ### Slide 37 de 105
 <!-- slide 37 -->
+★ MARCADO PELO PROFESSOR (estrela no slide): ele avisou que vai focar neste slide; conta como cai na prova.
 CHOQUE NEUROGENICO
 É uma condição hemodinâmica potencialmente grave, causada pela interrupção da atividade simpática após uma lesão medular, principalmente cervical ou torácica alta 
 Mecanismo: perda do tônus simpático, com predomínio parassimpático.
@@ -929,6 +933,7 @@ Evolução: pode persistir por dias ou semanas, exigindo suporte hemodinâmico.
 
 ### Slide 38 de 105
 <!-- slide 38 -->
+★ MARCADO PELO PROFESSOR (estrela no slide): ele avisou que vai focar neste slide; conta como cai na prova.
 CHOQUE MEDULAR X NEUROGENICO
 REFLEXO BULBOCAVERNOSO = Ausente no choque medular  
 Estimulação do pênis ou clitóris, provocando contração do esfíncter anal 
@@ -940,6 +945,7 @@ CHOQUE NEUROGÊNICO = problema circulatório
 
 ### Slide 39 de 105
 <!-- slide 39 -->
+★ MARCADO PELO PROFESSOR (estrela no slide): ele avisou que vai focar neste slide; conta como cai na prova.
 CHOQUE MEDULAR X NEUROGENICO
 Choque Neurogênico
 Interrupção traumática 
@@ -1155,6 +1161,7 @@ SINAIS DE ALERTA
 
 ### Slide 58 de 105
 <!-- slide 58 -->
+★ MARCADO PELO PROFESSOR (estrela no slide): ele avisou que vai focar neste slide; conta como cai na prova.
 EXAME FÍSICO
 DOR MUSCULAR É COMUM, PORÉM NÃO TEM ESPECIFICIDADE
 GERALMENTE NÃO PODE SER REPRODUZIDA DURANTE O EXAME
@@ -1184,6 +1191,7 @@ MATERIAL DO NÚCLEO NO CANAL → RESPOSTA INFLAMATÓRIA SIGNIFICATIVA
 
 ### Slide 61 de 105
 <!-- slide 61 -->
+★ MARCADO PELO PROFESSOR (estrela no slide): ele avisou que vai focar neste slide; conta como cai na prova.
 HERNIA DE DISCO
 - PROTRUSA: NÃO HÁ PENETRAÇÃO PARA LLP. SEM RUPTURA DA PAREDE ANULAR. 
 - EXTRUSA: COM RUPTURA PEQUENA DA PAREDE ANULAR E PRESSÃO ALÉM DO LLP.O ORGANISMO AINDA É CAPAZ DE REABSORVER 
@@ -1302,6 +1310,7 @@ EXISTE BAIXA CORRELAÇÃO DOS ACHADOS DE EXAME COM OS SINTOMAS
 
 ### Slide 72 de 105
 <!-- slide 72 -->
+★ MARCADO PELO PROFESSOR (estrela no slide): ele avisou que vai focar neste slide; conta como cai na prova.
 EXAMES COMPLEMENTARES
 RNM E TC SÃO EQUIVALENTES NA DETECÇÃO DE HÉRNIA DISCAL E ESTENOSE CANAL 
 
@@ -1577,6 +1586,7 @@ TB não é igual mal de Pott
 
 ### Slide 101 de 105
 <!-- slide 101 -->
+★ MARCADO PELO PROFESSOR (estrela no slide): ele avisou que vai focar neste slide; conta como cai na prova.
 TUBERCULOSE (MAL DE POTT)
 
 ### Slide 102 de 105
