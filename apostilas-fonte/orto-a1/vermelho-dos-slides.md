@@ -20,3 +20,20 @@ Tirada da cor do texto do PDF dos slides em 19/11/2026 (números de slide iguais
 Fora do texto: o slide 117 (só imagem, cisto ósseo aneurismático) tem um quadro vermelho na legenda de livro em inglês,
 em volta de "argon beam coagulation"; o professor não falou disso na aula. Metástase e mieloma não têm vermelho
 (o mieloma nem está nestes slides: o professor disse que mandaria o slide depois).
+
+## Triângulos vermelhos de atenção (⚠)
+
+Achados em 19/11/2026, olhando as páginas do PDF como imagem (não aparecem na leitura da cor do texto).
+Quatro slides, todos de cisto ósseo e num visual diferente do resto (parecem vir de outra apresentação), têm um triângulo vermelho
+de atenção no canto. O professor não fala do triângulo na aula (o aviso dele é só "o que está em vermelho cai na prova"),
+então não dá para dizer que o triângulo marca o que cai; fica anotado como destaque.
+
+| Slide | Assunto | O que o slide traz |
+|---|---|---|
+| 92 | Cisto ósseo simples, epidemiologia | comum na infância (85% nas duas primeiras décadas, pico 4–10 anos), 2m:1f, + comum no úmero e fêmur proximais, cura espontânea na maturidade, assintomático, 2/3 aparecem com fratura patológica, raramente em ossos chatos |
+| 101 | Cisto ósseo simples, tratamento | objetivo: evitar fratura patológica (principalmente MMII); pequenas lesões assintomáticas no MMSS: observação com radiografias seriadas; lesões maiores, sintomáticas ou no MMII: curetagem (± enxerto ou fixação interna), aspiração e injeção (CTC, aspirado de medula óssea) |
+| 112 | Cisto ósseo aneurismático, imagem | só imagens (radiografias e ressonância) |
+| 115 | Cisto ósseo aneurismático, tratamento | curetagem estendida + enxerto (ósseo ou substituto); coluna e pelve: embolização arterial antes, para evitar sangramento |
+
+O resto do vermelho nas páginas é das próprias imagens (fotos de cirurgia, histologia, setas em radiografia, logo do hospital,
+desenhos de resumo dos slides 175 a 179), não marcação.
