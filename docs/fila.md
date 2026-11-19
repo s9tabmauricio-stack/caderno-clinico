@@ -21,3 +21,4 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
 | Flashcards da pass-a6 | Claude | claude/happy-darwin-07h2c3 | pass-a6 (flashcards) | 16/11/2026 |
+| Placa PROVA vermelha (o professor disse que cai) nas questões | Claude | claude/adoring-faraday-9o3u88 | Questões (`components/Questoes.tsx`, `lib/faixa-prova.ts`), campo novo em `questoes` | 19/11/2026 |
