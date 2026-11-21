@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<title>Angiologia · Aula 7 · Linfangite, erisipela e celulite</title>
+<meta name="rodape" content="Mauricio Faria · Angiologia · Aula 7 — Linfangite, erisipela e celulite">
+<link rel="stylesheet" href="apostila.css">
+<style>
+/* ===== componentes do molde novo (em teste na pneumo-a5) ===== */
+.simples { background: #FFFFFF; border: 1px solid #C3D8F8; border-left: 4pt solid #0B5BD3; border-radius: 12pt; padding: 9pt 14pt 10pt; margin: 0 0 10pt; break-inside: avoid; }
+.simples p { font-size: 10.2pt; line-height: 1.5; color: #1F2933; margin: 0; }
+.aqui { display: flex; margin-top: 7pt; }
+.aqui span { flex: 1; border-top: 3pt solid #DCDCE2; padding-top: 2.5pt; margin-right: 2.5pt; font-family: "Inter Medium"; font-size: 6pt; line-height: 1.25; color: #8E8E93; }
+.aqui span:last-child { margin-right: 0; }
+.aqui span.feito { border-top-color: #A9C4EE; color: #6C6C70; }
+.aqui span.on { border-top-color: #0B5BD3; color: #0B5BD3; font-family: "Inter SemiBold"; }
+.aqui span.ramo { border-top-style: dashed; }
+.figure .olhar { margin-top: 8pt; }
+.figure .olhar .kick { margin-bottom: 3pt; }
+.figure .olhar ul { margin: 0; }
+.figure .olhar li { padding-left: 0; font-size: 8.7pt; line-height: 1.45; margin-bottom: 2pt; }
+.figure .olhar li::before { display: none; }
+.figure .olhar li b { color: #0B5BD3; }
+.figure .leg { font-size: 7.8pt; color: #8E8E93; margin: 5pt 0 0; }
+.reg { font-size: 8.3pt; line-height: 1.45; color: #6C6C70; background: #F7F7FA; border: 1px solid #E3E3E8; border-radius: 9pt; padding: 5pt 10pt; margin: 6pt 0 9pt; break-inside: avoid; }
+.reg b { font-family: "Inter SemiBold"; color: #4F5B70; }
+.livros { font-size: 8.3pt; line-height: 1.45; color: #6E3AA7; background: #F4EBFB; border: 1px solid #DEC7F1; border-radius: 9pt; padding: 5pt 10pt; margin: 6pt 0 9pt; break-inside: avoid; }
+.livros b { color: #6E3AA7; }
+.sw.simples-sw { background: #FFFFFF; border-color: #C3D8F8; border-left: 3pt solid #0B5BD3; }
+.sw.aqui-sw { background: linear-gradient(90deg, #A9C4EE 0, #A9C4EE 45%, #0B5BD3 45%, #0B5BD3 70%, #DCDCE2 70%); border: 0; height: 4pt; border-radius: 2pt; }
+.sw.exame-sw { background: #1F2933; border-color: #1F2933; }
+.cmp .destaque { font-family: "Inter SemiBold"; color: #0B5BD3; }
+.cmp.c4 .k { width: 62pt; }
+.cmp.c4 .c { font-size: 8.3pt; padding-right: 8pt; }
+.vesp { break-before: page; }
+.vesp .item { display: flex; align-items: baseline; background: #FFFFFF; border: 1px solid #E3E3E8; border-radius: 12pt; padding: 7pt 12pt; margin: 0 0 6pt; break-inside: avoid; }
+.vesp .item .prova { flex: none; margin: 0 9pt 0 0; }
+.vesp .item p { margin: 0; font-size: 9.2pt; }
+.tiles.t4 { margin: 6pt 0 8pt; }
+.figure.lado { display: flex; align-items: center; }
+.figure.lado > img { flex: none; }
+.figure.lado .olhar { flex: 1; margin: 0 0 0 12pt; }
+.cover .toc a { padding: 3.6pt 0; }
+/* ===== ajustes desta aula ===== */
+.aqui { break-after: avoid; }
+.dialogo p { margin: 0 0 2.5pt; }
+.inteiro { break-inside: avoid; }
+.dialogo p .q { font-family: "Inter SemiBold"; color: #9A5B00; }
+</style>
+</head><body>
+
+<div class="cover">
+  <div class="kicker">Angiologia · Aula 7 · Linfangite, erisipela e celulite</div>
+  <h1>Linfangite, erisipela e celulite</h1>
+  <p class="sub">Como reconhecer a erisipela pela perna vermelha e pelo gânglio da virilha, separá-la da tromboflebite, tratar do caso leve ao grave e agir antes que ela vire fasciíte necrotizante.</p>
+  <div class="author"><span class="av">T</span><div><b>Dr. Jeferson Freitas Toregeani</b><span>Professor de Angiologia · 14 de outubro de 2026</span></div></div>
+  <div class="keynums"><div class="kick">Três números para levar</div>
+    <div class="kn-grid">
+      <div class="kn"><div class="n">90%</div><div class="l">das erisipelas ficam nos membros inferiores</div></div>
+      <div class="kn"><div class="n">2 a 3 dias</div><div class="l">da "gripe" até a perna ficar vermelha</div></div>
+      <div class="kn"><div class="n">2 a 4 milhões</div><div class="l">de unidades de penicilina cristalina, de 4 em 4 horas</div></div>
+    </div></div>
+  <div class="toc"><div class="kick">Nesta apostila</div>
+    <a href="#s01"><span class="tn">01</span><span class="tt">Por que respeitar a infecção de pele</span><span class="pg">{{s01}}</span></a>
+    <a href="#s02"><span class="tn">02</span><span class="tt">Linfangite, erisipela e celulite</span><span class="pg">{{s02}}</span></a>
+    <a href="#s03"><span class="tn">03</span><span class="tt">O germe: estreptococo do grupo A</span><span class="pg">{{s03}}</span></a>
+    <a href="#s04"><span class="tn">04</span><span class="tt">A cilada do atendimento</span><span class="pg">{{s04}}</span></a>
+    <a href="#s05"><span class="tn">05</span><span class="tt">O exame e o diagnóstico</span><span class="pg">{{s05}}</span></a>
+    <a href="#s06"><span class="tn">06</span><span class="tt">Quando piora: necrose, fasciíte e sepse</span><span class="pg">{{s06}}</span></a>
+    <a href="#s07"><span class="tn">07</span><span class="tt">Tratamento</span><span class="pg">{{s07}}</span></a>
+    <a href="#s08"><span class="tn">08</span><span class="tt">Prevenção: fechar as portas de entrada</span><span class="pg">{{s08}}</span></a>
+    <a href="#s09"><span class="tn">09</span><span class="tt">Para a véspera</span><span class="pg">{{s09}}</span></a>
+    <p class="note">Material de estudo da aula de 14 de outubro de 2026, segunda aula do dia, depois de linfedema e lipedema. A legenda de cores está na página 2.</p>
+  </div>
+</div>
+
+<div class="legend"><div class="kick">Como ler esta apostila</div><div class="lg-grid">
+  <div class="lg"><span class="sw blue"></span><div><b>Azul</b> conteúdo da aula e raciocínio</div></div>
+  <div class="lg"><span class="sw green"></span><div><b>Verde</b> dose ou valor de referência</div></div>
+  <div class="lg"><span class="sw red"></span><div><b>Vermelho</b> alerta, erro comum ou armadilha</div></div>
+  <div class="lg"><span class="sw orange"></span><div><b>Laranja</b> fala ou parêntese do professor</div></div>
+  <div class="lg"><span class="sw purple"></span><div><b>Roxo</b> complemento que não foi dito em aula</div></div>
+  <div class="lg"><span class="prova">PROVA</span><div><b>Marca de prova</b> o ponto que cai na prova</div></div>
+  <div class="lg"><span class="sw simples-sw"></span><div><b>Em palavras simples</b> a abertura de cada capítulo</div></div>
+  <div class="lg"><span class="sw red"></span><div><b>Pegadinha do professor</b> o erro, no ponto onde ele acontece</div></div>
+  <div class="lg"><span class="sw aqui-sw"></span><div><b>Você está aqui</b> a etapa da trilha da aula</div></div>
+</div></div>
+
+<div class="prof"><div class="kick">Sobre o professor · Dr. Toregeani</div>
+<div class="rows">
+  <div class="row"><div class="k">Atuação</div><div class="v">Professor de Angiologia. Opera em Cascavel há 23 anos, com cirurgias eletivas como a de varizes.</div></div>
+  <div class="row"><div class="k">Na aula</div><div class="v">Contou que a erisipela necrotizante de uma paciente neste ano foi a infecção mais grave que já teve numa cirurgia eletiva; a anterior, em 2015, tinha sido um hematoma infectado.</div></div>
+</div></div>
+
+<div class="figure"><div class="kick">A trilha da aula</div>
+  <img src="trilha.svg" alt="Oito etapas da aula: os casos, os três nomes, o germe, a cilada, o exame, complicações, tratamento e prevenção.">
+  <p class="leg">O caminho do raciocínio, da perna vermelha à prevenção. O cabeçalho de cada capítulo mostra a etapa em que você está.</p>
+</div>
+
+<!-- ============================================================ 01 -->
+<section id="s01">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">01</span></div><div class="corpo"><div class="de">Etapa 1 de 8</div><h2>Por que respeitar a infecção de pele</h2>
+    <div class="aqui"><span class="on">Os casos</span><span>Os três nomes</span><span>O germe</span><span>A cilada</span><span>O exame</span><span>Complicações</span><span>Tratamento</span><span>Prevenção</span></div></div></div>
+  <div class="simples"><p><b>Em palavras simples.</b> Infecção de pele parece coisa banal, que qualquer antibiótico resolve. Neste ano, ela mutilou uma jovem saudável e complicou uma cirurgia simples. O motivo principal: germes cada vez mais resistentes.</p></div>
+
+  <h3>Dois casos deste ano</h3>
+  <div class="grid2">
+    <div class="card"><span class="tag">Infecção da comunidade</span><h4>Jovem de 20 anos, saudável</h4><p>Fez uma fasciíte pelo estreptococo. Quando abriram a perna, o músculo estava liquefeito; em 24 a 48 horas, estava em sepse. Sobreviveu, mas perdeu toda a musculatura do compartimento anterior da perna e a chance de caminhar normalmente. Segue em fisioterapia.</p></div>
+    <div class="card"><span class="tag">Cirurgia eletiva</span><h4>Paciente com diabetes</h4><p>Sem outra doença importante, fez uma erisipela necrotizante depois de uma cirurgia eletiva, que em tese não deveria complicar. Os antibióticos habituais falharam; com o antibiótico certo, a infecção parou na perna. Ficou com uma mancha escura na pele.</p></div>
+  </div>
+  <p>Nos dois casos, foi preciso antibiótico forte: os comuns "não fizeram nem cócegas" numa bactéria que, em tese, é das mais simples, o estreptococo beta-hemolítico do grupo A. Uma moça de 20 anos com fasciíte é o que se espera de um alcoólatra, de um idoso ou de um diabético, não de um jovem.</p>
+
+  <h3>Por que essas coisas acontecem</h3>
+  <div class="rows">
+    <div class="row"><div class="k">Porta de entrada</div><div class="v">A lesão por onde a bactéria entra; na paciente operada, possivelmente agravada pela cirurgia.</div></div>
+    <div class="row"><div class="k">Doença de base</div><div class="v">A diabetes da paciente pesou.</div></div>
+    <div class="row"><div class="k">Germe resistente</div><div class="v"><b>O fator principal.</b> A comunidade tem produzido germes mais resistentes, pelo antibiótico usado sem controle.</div></div>
+  </div>
+  <p>Mesmo com a exigência de receita, ainda se compra antibiótico sem ela: na falta da receita, o balcão "tem uma guardada na gaveta". É o jeitinho brasileiro; a intenção é ajudar, mas o resultado é um problema muito grave.</p>
+  <div class="quote"><p>“O médico picareta, quando complica, foge do paciente; o médico bom abraça ele e vai até o fim. Como dizem, só não têm complicação os mentirosos e os que não fazem. Sempre que um médico cantar muita lorota para vocês, fujam dele: esse é o perigoso.”</p><div class="who">Dr. Toregeani, sobre as complicações</div></div>
+</section>
+
+<!-- ============================================================ 02 -->
+<section id="s02">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">02</span></div><div class="corpo"><div class="de">Etapa 2 de 8</div><h2>Linfangite, erisipela e celulite</h2>
+    <div class="aqui"><span class="feito">Os casos</span><span class="on">Os três nomes</span><span>O germe</span><span>A cilada</span><span>O exame</span><span>Complicações</span><span>Tratamento</span><span>Prevenção</span></div></div></div>
+  <div class="simples"><p><b>Em palavras simples.</b> São três infecções parecidas, com tratamento parecido; o que muda é o ponto onde a infecção acontece e como ela aparece na pele. Quase todas surgem na perna, porque o pé é a porta de entrada mais comum.</p></div>
+
+  <h3>Como cada uma aparece</h3>
+  <div class="cmp c4">
+    <div class="r h"><div class="k"></div><div class="c">Linfangite</div><div class="c">Erisipela</div><div class="c">Celulite</div></div>
+    <div class="r"><div class="k">O que se vê</div><div class="c">Um cordão avermelhado</div><div class="c">Pele bem vermelha e muito inchada, em casca de laranja</div><div class="c">Vermelhidão menos intensa</div></div>
+    <div class="r"><div class="k">O que marca</div><div class="c">Inflamação que sobe pelos linfáticos</div><div class="c">Muito sintomática, com sinais evidentes de infecção</div><div class="c">Dor muito grande, que queima</div></div>
+  </div>
+  <p>As três são muito parecidas e o tratamento também, com pequenas diferenças. Às vezes, celulite e erisipela são tão semelhantes que só uma análise mais profunda do tecido as separa. Na prática, o que importa é reconhecer que há uma infecção.</p>
+  <div class="livros"><b>Nos livros:</b> a erisipela fica na derme superficial e nos linfáticos, com borda elevada e bem delimitada; a celulite vai mais fundo, na derme profunda e no tecido subcutâneo, com borda mal definida.</div>
+  <div class="quote"><p>“Não sabe diferenciar celulite de erisipela? Às vezes nem eu. O que importa é diferenciar a infecção, porque senão você vai adiar o tratamento, e para esse paciente vai ser ruim.”</p><div class="who">Dr. Toregeani, sobre o diagnóstico</div></div>
+
+  <h3 data-bm="Onde aparece: 90% nas pernas">Onde aparece: 90% nas pernas <span class="prova">PROVA</span></h3>
+  <p>Qualquer parte do corpo pode ter erisipela, mas cerca de <b>90% delas ficam nos membros inferiores</b>. O pé acumula bactérias e fungos e vira a porta de entrada mais comum.</p>
+  <p>No membro superior, a erisipela é rara: aparece quase sempre na mulher que fez mastectomia, ou em quem passou por cirurgia nas mamas ou por radioterapia.</p>
+
+  <div class="box orange"><div class="kick"><span class="dot"></span>Parêntese do professor: a fita vermelha</div><p>Antes dos antibióticos, até a Segunda Guerra Mundial, amarrava-se uma fita vermelha na perna com erisipela. Talvez houvesse algum fundamento: a fita poderia segurar a linfa e, com ela, a infecção abaixo do laço. Com a penicilina, a evolução natural desses pacientes mudou.</p></div>
+</section>
+
+<!-- ============================================================ 03 -->
+<section id="s03">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">03</span></div><div class="corpo"><div class="de">Etapa 3 de 8</div><h2>O germe: estreptococo do grupo A</h2>
+    <div class="aqui"><span class="feito">Os casos</span><span class="feito">Os três nomes</span><span class="on">O germe</span><span>A cilada</span><span>O exame</span><span>Complicações</span><span>Tratamento</span><span>Prevenção</span></div></div></div>
+  <div class="simples"><p><b>Em palavras simples.</b> Muita coisa pode inflamar o vaso linfático, mas quem mais causa problema são as bactérias. Na erisipela clássica, o culpado é o estreptococo do grupo A, que parecia inofensivo e hoje exige respeito.</p></div>
+
+  <h3>Quem pode inflamar o linfático</h3>
+  <div class="rows">
+    <div class="row"><div class="k">Líquidos e remédios</div><div class="v">Líquido que extravasou de uma punção, um antibiótico, um contraste.</div></div>
+    <div class="row"><div class="k">Vírus e fungos</div><div class="v">Há fungos que inflamam o linfático, como o da paracoccidioidomicose.</div></div>
+    <div class="row"><div class="k">Bactérias</div><div class="v">De longe, as que mais causam problema.</div></div>
+  </div>
+
+  <h3 data-bm="Erisipela clássica: estreptococo beta-hemolítico do grupo A">Erisipela clássica: estreptococo beta-hemolítico do grupo A <span class="prova">PROVA</span></h3>
+  <p>É o germe mais envolvido na erisipela. Tem fama de "bactéria devoradora de carne": pode causar fasciíte e liquefazer o músculo, como aconteceu com a jovem de 20 anos. Os antibióticos habituais não fizeram efeito nos dois casos do ano.</p>
+
+  <h3>Outros germes, outros tecidos</h3>
+  <p>Outras bactérias também causam o problema, e cada uma tem predileção por um tecido:</p>
+  <div class="rows">
+    <div class="row"><div class="k">Gangrena gasosa</div><div class="v">Germes anaeróbios.</div></div>
+    <div class="row"><div class="k">Fasciítes</div><div class="v">Pseudomonas e Clostridium, entre outros.</div></div>
+    <div class="row"><div class="k">Erisipela clássica</div><div class="v">Estreptococo.</div></div>
+  </div>
+  <div class="quote"><p>“Eu não dava muita bola para as infecções bacterianas de pele. Já vi pacientes morrerem, mas sempre tinha um motivo: alcoólatra, desnutrido, renal crônico, hepatopata. Nunca tinha visto pessoas saudáveis com infecções tão graves como vi esse ano. Passei a respeitar um pouco mais.”</p><div class="who">Dr. Toregeani, sobre o estreptococo</div></div>
+</section>
+
+<!-- ============================================================ 04 -->
+<section id="s04">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">04</span></div><div class="corpo"><div class="de">Etapa 4 de 8</div><h2>A cilada do atendimento</h2>
+    <div class="aqui"><span class="feito">Os casos</span><span class="feito">Os três nomes</span><span class="feito">O germe</span><span class="on">A cilada</span><span>O exame</span><span>Complicações</span><span>Tratamento</span><span>Prevenção</span></div></div></div>
+  <div class="simples"><p><b>Em palavras simples.</b> A erisipela começa como uma gripe: mal-estar, febre, calafrio. A perna só fica vermelha dois a três dias depois. Quem não examina as pernas dá paracetamol, manda para casa e perde o tempo do tratamento.</p></div>
+
+  <h3>Como o quadro avança</h3>
+  <ol class="flow">
+    <li><b class="t">Começa como gripe.</b> Mal-estar, febre, calafrio; às vezes, dor nas costas.</li>
+    <li><b class="t">Ninguém olha as pernas.</b> No posto de saúde, com 60 consultas para fazer, o diagnóstico é gripe: paracetamol e alta.</li>
+    <li><b class="t">Dois a três dias depois, a perna fica vermelha.</b> Só então o paciente conta: "a minha perna ficou vermelha".</li>
+    <li><b class="t">A vermelhidão cresce e sobe.</b> Pode seguir pelos linfáticos, perna acima.</li>
+    <li><b class="t">Sem controle, aprofunda ou se espalha.</b> Vira fasciíte, se atinge tecidos profundos, ou sepse, se chega à circulação.</li>
+  </ol>
+
+  <h3 data-bm="Febre sem foco: examine as pernas">Febre sem foco: examine as pernas <span class="prova">PROVA</span></h3>
+  <p>Quase ninguém examina as pernas. Ninguém corta a unha direito, poucos limpam bem atrás do maléolo, quase todo mundo tem frieira, e o médico raramente pede para tirar o sapato e a calça.</p>
+  <div class="box red"><div class="kick"><span class="dot"></span>Pegadinha do professor</div><p><b>Liberar o paciente com infecção sem foco.</b> Se você não achou a fonte da infecção, não libere sem confirmação: examine garganta e pernas e peça para ele voltar no dia seguinte para reexame, ou colha um exame para ver amanhã. Quem sai com "gripe" e volta dois dias depois com erisipela necrotizante já taxou você de erro médico.</p></div>
+  <div class="box orange dialogo"><div class="kick"><span class="dot"></span>Cena da aula: a pergunta que falta</div>
+    <p><span class="q">Paciente:</span> Estou com mal-estar, febre.</p>
+    <p><span class="q">Médico:</span> Alguma coisa na garganta? Tosse? Barriga?</p>
+    <p><span class="q">Paciente:</span> Nada disso.</p>
+    <p><span class="q">Médico:</span> E nas pernas?</p>
+    <p><span class="q">Paciente:</span> Fui picado por um borrachudo, está meio vermelhinho.</p>
+    <p><span class="q">Médico:</span> Opa, deixa eu dar uma olhada nisso.</p>
+  </div>
+</section>
+
+<!-- ============================================================ 05 -->
+<section id="s05">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">05</span></div><div class="corpo"><div class="de">Etapa 5 de 8</div><h2>O exame e o diagnóstico</h2>
+    <div class="aqui"><span class="feito">Os casos</span><span class="feito">Os três nomes</span><span class="feito">O germe</span><span class="feito">A cilada</span><span class="on">O exame</span><span>Complicações</span><span>Tratamento</span><span>Prevenção</span></div></div></div>
+  <div class="simples"><p><b>Em palavras simples.</b> Perna vermelha com febre e uma íngua dolorosa na virilha indicam infecção; depois, procure por onde a bactéria entrou. Exames simples confirmam. A grande confusão é com a tromboflebite, que se trata de outro jeito.</p></div>
+
+  <h3>Começa nos linfáticos e na derme</h3>
+  <p>O estreptococo inflama os linfáticos e a derme. O quadro pode ficar só como um vermelhão na perna ou subir pelos linfáticos, numa inflamação ascendente que muitas vezes é confundida com tromboflebite. Como em todo processo infeccioso, e na erisipela especialmente, os sinais de infecção são exuberantes.</p>
+
+  <h3 data-bm="O gânglio de Chomel">O gânglio de Chomel <span class="prova">PROVA</span></h3>
+  <p>Além da vermelhidão, o exame mostra linfonodomegalia inguinal: um linfonodo da virilha aumentado e dolorido, o chamado gânglio de Chomel. O linfonodo normal da virilha é um carocinho de feijão; o da erisipela é uma azeitona, e dói.</p>
+  <div class="inteiro"><div class="ref">
+    <div class="txt"><div class="kick"><span class="dot"></span>Gânglio de Chomel</div><p>Linfonodo inguinal na infecção linfática importante: palpável e doloroso. Pode ainda não ter crescido no primeiro dia.</p></div>
+    <div class="val">2 a 3 cm<small>uma azeitona na virilha</small></div>
+  </div></div>
+  <p>Ele só falta quando os linfonodos daquela região foram retirados, como na mulher mastectomizada. Achou o linfonodo? Há chance de haver uma porta de entrada ou uma infecção.</p>
+
+  <h3>Ache a porta de entrada</h3>
+  <p>Com a infecção reconhecida, procure por onde a bactéria entrou: frieira, unha danificada, picada de mosquito ou de borrachudo.</p>
+
+  <h3 data-bm="Erisipela ou tromboflebite?">Erisipela ou tromboflebite? <span class="prova">PROVA</span></h3>
+  <p>De todos os diagnósticos diferenciais, o mais importante é a tromboflebite. Vista de longe, uma linfangite ascendente pode ser igualzinha a ela; o que separa as duas é a palpação e a virilha.</p>
+  <div class="cmp">
+    <div class="r h"><div class="k"></div><div class="c">Erisipela ou linfangite ascendente</div><div class="c">Tromboflebite</div></div>
+    <div class="r"><div class="k">O que é</div><div class="c">Infecção</div><div class="c">Inflamação causada por um trombo; não é infecção</div></div>
+    <div class="r"><div class="k">Febre</div><div class="c">Presente, com sinais exuberantes de infecção</div><div class="c">Às vezes não existe; se existe, é baixa</div></div>
+    <div class="r"><div class="k">À palpação</div><div class="c">Sem cordão duro: a safena não está endurecida</div><div class="c">Cordão bem duro, bem vermelho e muito sensível ao toque</div></div>
+    <div class="r"><div class="k">Virilha</div><div class="c"><span class="destaque">Linfonodo aumentado e doloroso</span> (gânglio de Chomel)</div><div class="c">Geralmente sem linfonodo aumentado</div></div>
+    <div class="r"><div class="k">Tratamento</div><div class="c">Antibiótico</div><div class="c">Heparina ou outro anticoagulante</div></div>
+  </div>
+  <div class="box red"><div class="kick"><span class="dot"></span>Pegadinha do professor</div><p><b>O mesmo tratamento para as duas.</b> O erro mais comum de quem não conhece: antibiótico e heparina para a tromboflebite, antibiótico e heparina para a erisipela. A tromboflebite pede anticoagulante; a erisipela, antibiótico.</p></div>
+
+  <h3>Diagnóstico: clínico, com exames simples</h3>
+  <p>Na maioria das vezes, o diagnóstico é clínico. Os exames pedidos são poucos:</p>
+  <div class="rows">
+    <div class="row"><div class="k">Infecção</div><div class="v">Hemograma e provas de atividade inflamatória. Com a infecção controlada, eles começam a melhorar.</div></div>
+    <div class="row"><div class="k">Germe</div><div class="v">Antiestreptolisina O: confirma se é mesmo o estreptococo ou outro germe. Se vier alta, é erisipela pelo estreptococo: não precisa nem de cultura, basta direcionar o antibiótico certo.</div></div>
+  </div>
+</section>
+
+<!-- ============================================================ 06 -->
+<section id="s06">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">06</span></div><div class="corpo"><div class="de">Etapa 6 de 8</div><h2>Quando piora: necrose, fasciíte e sepse</h2>
+    <div class="aqui"><span class="feito">Os casos</span><span class="feito">Os três nomes</span><span class="feito">O germe</span><span class="feito">A cilada</span><span class="feito">O exame</span><span class="on">Complicações</span><span>Tratamento</span><span>Prevenção</span></div></div></div>
+  <div class="simples"><p><b>Em palavras simples.</b> A maioria melhora com um antibiótico simples. Se ele não acerta logo, a infecção desce pelas camadas: necrosa a pele, chega à fáscia e cai na circulação. Quem escapa pode ficar com a perna inchada e com erisipelas que voltam.</p></div>
+
+  <h3>Quase sempre melhora, mas não sempre</h3>
+  <p>A maior parte das erisipelas se resolve com um antibiótico nem sempre muito potente, como uma cefalosporina de primeira geração. Raramente evolui para uma complicação grave, mas a chance não é pequena: cerca de 4% ficam com sequela, como a mancha escura da paciente operada ou a perda muscular da jovem.</p>
+
+  <h3 data-bm="Necrotizante ou fasciíte: é o plano">Necrotizante ou fasciíte: é o plano <span class="prova">PROVA</span></h3>
+  <p>Sem o antibiótico certo desde o início, a erisipela necrosa a pele: é a <b>erisipela necrotizante</b>. Se a infecção se aprofunda e chega à fáscia, vira fasciíte necrotizante. A diferença é o plano: uma é mais superficial, a outra, mais profunda.</p>
+  <div class="figure">
+    <img src="planos.svg" alt="Corte da pele ao músculo: erisipela na derme e nos linfáticos, fasciíte necrotizante na fáscia, músculo liquefeito e, por fim, sepse na circulação.">
+    <p class="leg">Quanto mais fundo o plano atingido, mais grave o quadro.</p>
+  </div>
+
+  <h3>Por que a fasciíte foge do controle</h3>
+  <p>A infecção danifica os capilares, que inflamam e trombosam. Sem circulação, o tecido vira comida para a bactéria, e não se consegue combater a infecção. Por isso a pele apodrece, a fáscia se liquefaz e, ao corte, não sai sangue.</p>
+
+  <h3 data-bm="Fasciíte: sepse em horas">Fasciíte: sepse em horas <span class="prova">PROVA</span></h3>
+  <p>Conforme a imunidade do paciente, a fasciíte necrotizante evolui para sepse muito rápido: na jovem de 20 anos, em 24, talvez 48 horas. Na paciente operada, a troca para o antibiótico certo, assim que ela começou a piorar, fez a infecção parar na perna.</p>
+  <div class="quote"><p>“Paciente que tem fasciíte necrotizante evolui para sepse muito rápido: se você dormir no ponto, você perde o paciente. Então, erisipela é uma coisa séria. Sempre, sempre, sempre, especialmente nos pacientes que têm algum tipo de imunodepressão, você tem que ser mais agressivo.”</p><div class="who">Dr. Toregeani, sobre a fasciíte</div></div>
+
+  <h3>Três casos de fasciíte necrotizante</h3>
+  <div class="grid2">
+    <div class="card"><span class="tag">Diagnóstico errado</span><h4>"Sepse por broncopneumonia"</h4><p>Veio de outra cidade com pedido de vaga de terapia intensiva. O intensivista suspeitou de oclusão arterial na perna, mas havia pulso pedioso: era fasciíte. Na cirurgia, o bisturi não fez sangrar e a fáscia estava liquefeita. Foi amputado e morreu duas horas depois. Provavelmente, ninguém tinha examinado a perna.</p></div>
+    <div class="card"><span class="tag">Picada de cobra</span><h4>Jararaca</h4><p>A picada da jararaca inocula muitas bactérias Gram-negativas. Ao abrir, vaza um material liquefeito. A conduta é abrir, dar antibiótico de largo espectro e debridar tudo. Depois de controlar a infecção, pode-se usar a câmara hiperbárica, conforme o germe (Gram-negativo, anaeróbio).</p></div>
+  </div>
+  <div class="card wide"><span class="tag">Picada de aranha, provável</span><h4>Da manchinha roxa ao óbito</h4><p>Internou com uma mancha roxa na coxa e recebeu antibiótico; no dia seguinte, já precisava de cirurgia. No debridamento extenso, o campo não ficou vermelho: não havia sangue, estava tudo apodrecido. Talvez uma desarticulação mudasse o desfecho, mas naquele estágio a infecção já fugia do controle. Morreu pouco tempo depois.</p></div>
+
+  <h3>Quem escapa: linfedema e erisipela de repetição</h3>
+  <p>Quem escapa da fasciíte e da sepse pode evoluir, a longo prazo, para linfedema. A erisipela de repetição deixa dano linfático permanente e a perna inchada; e, cada vez que a pessoa se expõe, uma nova erisipela acontece.</p>
+</section>
+
+<!-- ============================================================ 07 -->
+<section id="s07">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">07</span></div><div class="corpo"><div class="de">Etapa 7 de 8</div><h2>Tratamento</h2>
+    <div class="aqui"><span class="feito">Os casos</span><span class="feito">Os três nomes</span><span class="feito">O germe</span><span class="feito">A cilada</span><span class="feito">O exame</span><span class="feito">Complicações</span><span class="on">Tratamento</span><span>Prevenção</span></div></div></div>
+  <div class="simples"><p><b>Em palavras simples.</b> A penicilina ainda é a base. O caso leve trata em casa; o moderado interna; o grave pede antibiótico de espectro mais largo. Controlada a infecção, entram o corticoide para a inflamação que sobra e o remédio da micose.</p></div>
+
+  <h3 data-bm="Do leve ao grave">Do leve ao grave <span class="prova">PROVA</span></h3>
+  <p>As penicilinas ainda são o carro-chefe na erisipela não complicada. O paciente "não está tão mal assim"? Pode tratar em casa. Está pior? Interna na unidade de pronto atendimento e começa a penicilina.</p>
+  <div class="figure">
+    <img src="tratamento.svg" alt="Fluxograma do tratamento: leve em casa com amoxicilina com clavulanato ou cefalexina; moderado internado com penicilina cristalina ou oxacilina; grave com ampliação do espectro até piperacilina com tazobactam; depois, corticoide e fluconazol.">
+  </div>
+  <div class="inteiro"><div class="ref">
+    <div class="txt"><div class="kick"><span class="dot"></span>Penicilina cristalina</div><p>Paciente internado, na erisipela não complicada.</p></div>
+    <div class="val">2 a 4 milhões<small>de unidades, de 4 em 4 horas</small></div>
+  </div></div>
+  <p>Os pacientes graves mais recentes seguiram caminhos parecidos até o mesmo fim. Um começou com oxacilina, piorou, passou para ceftriaxona com clindamicina e, sem melhora, para piperacilina com tazobactam. Outro começou com ciprofloxacino e clindamicina e só respondeu à piperacilina com tazobactam. Nas infecções graves, ela tem sido a opção; acima dela sobram a vancomicina e antibióticos mais recentes, como a linezolida.</p>
+
+  <h3 data-bm="Corticoide só com a infecção controlada">Corticoide só com a infecção controlada <span class="prova">PROVA</span></h3>
+  <ol class="flow">
+    <li><b class="t">A infecção está sob controle.</b> Os exames laboratoriais melhoram, mas a perna continua vermelha, inchada e dolorida: é a inflamação que persiste.</li>
+    <li><b class="t">Corticoide tópico.</b> Diminui essa reação inflamatória. Se o sintoma é muito intenso, pode ser injetável.</li>
+    <li><b class="t">Depois, proteger a perna.</b> Tratar a frieira e a micose; se há muita micose nas unhas ou frieira, fluconazol.</li>
+  </ol>
+  <div class="box red"><div class="kick"><span class="dot"></span>Pegadinha do professor</div><p><b>Corticoide sozinho com a infecção ainda ativa.</b> Se há dúvida de que a infecção está controlada, não use só o corticoide tópico: há pomadas que associam um antibiótico tópico ao corticoide.</p></div>
+  <p>Depois de uma erisipela necrotizante tratada, com a necrose já debridada, a perna ainda fica vermelha e inchada: é ali que o corticoide entra.</p>
+</section>
+
+<!-- ============================================================ 08 -->
+<section id="s08">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">08</span></div><div class="corpo"><div class="de">Etapa 8 de 8</div><h2>Prevenção: fechar as portas de entrada</h2>
+    <div class="aqui"><span class="feito">Os casos</span><span class="feito">Os três nomes</span><span class="feito">O germe</span><span class="feito">A cilada</span><span class="feito">O exame</span><span class="feito">Complicações</span><span class="feito">Tratamento</span><span class="on">Prevenção</span></div></div></div>
+  <div class="simples"><p><b>Em palavras simples.</b> Quem já teve erisipela ou tem doença linfática vive com a porta aberta: unha danificada, frieira, picada de borrachudo. Cuidar dos pés e dos sapatos evita a próxima infecção.</p></div>
+
+  <h3>As portas de entrada</h3>
+  <p>Quase todo mundo tem uma, se olhar os pés: unha danificada, picada de borrachudo, frieira. Uma pescaria de fim de tarde é um bom exemplo. Para quem tem disfunção linfática, cada uma é um risco.</p>
+
+  <h3>O que fazer</h3>
+  <div class="grid2">
+    <div class="card"><span class="tag">Micose</span><h4>Tratar unha e frieira</h4><p>Fluconazol semanal até melhorar o aspecto das unhas.</p></div>
+    <div class="card"><span class="tag">Picadas</span><h4>Repelente</h4><p>Sem dúvida, para quem vai a área rural ou a lugares com borrachudo.</p></div>
+  </div>
+  <div class="card wide"><span class="tag">Sapatos</span><h4>Sol, vinagre ou spray</h4><p>Tênis a semana toda, com pouco sol, faz os fungos proliferarem à vontade. O certo é deixar os calçados tomarem sol pelo menos uma vez por semana; também ajudam um spray desinfetante (como o Lysoform) ou vinagre passado dentro do calçado.</p></div>
+  <div class="quote"><p>“Precisa de lâmpada ultravioleta no sapato? Para uma pessoa normal, não: sol e vinagre são suficientes. Mas, se você tem uma sequela e tem uma tendência, você tem que ser muito, muito cuidadoso com as portas de entrada.”</p><div class="who">Dr. Toregeani, sobre os sapatos</div></div>
+  <div class="box orange"><div class="kick"><span class="dot"></span>Parênteses do professor</div><p><b>Complexo B contra borrachudo:</b> uma regra leiga diz que a vitamina do complexo B, eliminada no suor, deixa um cheiro de que os mosquitos não gostam. Não se sabe se procede; o repelente, sim. <b>Lâmpada ultravioleta:</b> uma lâmpada esterilizadora, ligada por uma hora com o ar desumidificando, controlou o mofo do estúdio do professor; funciona também para o sapato.</p></div>
+  <div class="box"><div class="kick"><span class="dot"></span>Quem tem erisipela de repetição</div><p>Costuma ser o mesmo perfil: obeso, displicente, não usa meia e gosta de viajar para lugares com muito borrachudo.</p></div>
+</section>
+
+<!-- ============================================================ 09 -->
+<section id="s09" class="vesp">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">09</span></div><div class="corpo"><div class="de">Revisão final</div><h2>Para a véspera</h2>
+    <div class="aqui"><span class="feito">Os casos</span><span class="feito">Os três nomes</span><span class="feito">O germe</span><span class="feito">A cilada</span><span class="feito">O exame</span><span class="feito">Complicações</span><span class="feito">Tratamento</span><span class="feito">Prevenção</span></div></div></div>
+
+  <h3>Os pontos de prova, na ordem da aula</h3>
+  <div class="item"><span class="prova">PROVA</span><p>Cerca de <b>90% das erisipelas</b> estão nos membros inferiores: o pé é a porta de entrada. No braço, quase só depois de mastectomia.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p>Erisipela clássica: <b>estreptococo beta-hemolítico do grupo A</b>, a "bactéria devoradora de carne".</p></div>
+  <div class="item"><span class="prova">PROVA</span><p>Começa como gripe; a perna fica vermelha <b>2 a 3 dias depois</b>. Febre sem foco: examine as pernas e não libere sem confirmação.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p><b>Gânglio de Chomel</b>: linfonodo inguinal de 2 a 3 cm, doloroso, uma azeitona na virilha.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p><b>Tromboflebite</b>: febre baixa ou ausente, cordão duro e sensível, sem linfonodo; trata-se com anticoagulante. Erisipela, com antibiótico. Não dê o mesmo tratamento para as duas.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p>Necrose da pele é <b>erisipela necrotizante</b>; chegou à fáscia, é fasciíte necrotizante. A diferença é o plano.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p>Fasciíte necrotizante vira <b>sepse em horas</b> (24 a 48 na jovem): seja mais agressivo, sobretudo no imunodeprimido.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p>Leve: casa, com amoxicilina com clavulanato ou cefalexina. Moderado: internar, com <b>penicilina cristalina</b> ou oxacilina. Grave: ampliar o espectro, até piperacilina com tazobactam.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p><b>Corticoide só com a infecção controlada</b>; na dúvida, pomada de antibiótico com corticoide. Depois, fluconazol para a micose.</p></div>
+
+  <h3>Os números da aula</h3>
+  <div class="tiles">
+    <div class="tile"><div class="lab">Membros inferiores</div><div class="n">90%</div><div class="s">das erisipelas</div></div>
+    <div class="tile"><div class="lab">Até a perna avermelhar</div><div class="n">2 a 3 dias</div><div class="s">depois da "gripe"</div></div>
+    <div class="tile r"><div class="lab">Gânglio de Chomel</div><div class="n">2 a 3 cm</div><div class="s">doloroso, na virilha</div></div>
+  </div>
+  <div class="tiles">
+    <div class="tile"><div class="lab">Sequela</div><div class="n">4%</div><div class="s">das erisipelas</div></div>
+    <div class="tile r"><div class="lab">Fasciíte até a sepse</div><div class="n">24 a 48 h</div><div class="s">no caso da jovem</div></div>
+    <div class="tile g"><div class="lab">Penicilina cristalina</div><div class="n">2 a 4 milhões</div><div class="s">de unidades, de 4 em 4 horas</div></div>
+  </div>
+
+  <div class="box red"><div class="kick"><span class="dot"></span>Erros comuns</div><ul>
+    <li><span class="medium">Dar paracetamol para "gripe" sem olhar as pernas.</span> Febre sem foco pede exame das pernas e reavaliação no dia seguinte.</li>
+    <li><span class="medium">Tratar erisipela e tromboflebite do mesmo jeito.</span> Uma é antibiótico; a outra, anticoagulante.</li>
+    <li><span class="medium">Esperar na fasciíte.</span> Abrir, antibiótico de largo espectro e debridar tudo, logo.</li>
+  </ul></div>
+
+  <h3>Palavras da aula em linguagem simples</h3>
+  <div class="rows terms">
+    <div class="row"><div class="k">Antiestreptolisina O</div><div class="v">Exame de sangue que mostra a reação do corpo ao estreptococo; alta, confirma o germe.</div></div>
+    <div class="row"><div class="k">Câmara hiperbárica</div><div class="v">Tratamento em que o paciente respira oxigênio sob pressão; usado depois de controlar a infecção.</div></div>
+    <div class="row"><div class="k">Debridamento</div><div class="v">Retirada cirúrgica do tecido morto ou infectado.</div></div>
+    <div class="row"><div class="k">Desarticulação</div><div class="v">Amputação feita na altura de uma articulação.</div></div>
+  </div>
+  <div class="rows terms">
+    <div class="row"><div class="k">Fáscia</div><div class="v">Membrana firme que envolve os músculos, abaixo do tecido subcutâneo.</div></div>
+    <div class="row"><div class="k">Gangrena gasosa</div><div class="v">Morte do tecido com formação de gás, causada por germes anaeróbios.</div></div>
+    <div class="row"><div class="k">Hipercrômica</div><div class="v">Mais escura que a pele ao redor.</div></div>
+    <div class="row"><div class="k">Imunodepressão</div><div class="v">Defesa do organismo enfraquecida.</div></div>
+  </div>
+  <div class="rows terms">
+    <div class="row"><div class="k">Linfonodomegalia</div><div class="v">Linfonodo (gânglio, íngua) aumentado.</div></div>
+    <div class="row"><div class="k">Maléolo</div><div class="v">Cada saliência óssea do tornozelo.</div></div>
+    <div class="row"><div class="k">Mastectomia</div><div class="v">Retirada cirúrgica da mama.</div></div>
+    <div class="row"><div class="k">Paracoccidioidomicose</div><div class="v">Infecção por um fungo, que pode inflamar os linfáticos.</div></div>
+  </div>
+  <div class="rows terms">
+    <div class="row"><div class="k">Provas de atividade inflamatória</div><div class="v">Exames de sangue que medem a inflamação do corpo.</div></div>
+    <div class="row"><div class="k">Pulso pedioso</div><div class="v">Pulso sentido no dorso do pé.</div></div>
+    <div class="row"><div class="k">Sepse</div><div class="v">Reação grave do corpo a uma infecção que chegou à circulação.</div></div>
+    <div class="row"><div class="k">Tromboflebite</div><div class="v">Inflamação de uma veia superficial por causa de um trombo.</div></div>
+  </div>
+  {{NOTAS}}
+</section>
+</body></html>
