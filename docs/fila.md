@@ -21,4 +21,3 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
 | Flashcards da pass-a6 | Claude | claude/happy-darwin-07h2c3 | pass-a6 (flashcards) | 16/11/2026 |
-| Apostila da angio-a5 (Trauma vascular) | Claude | claude/happy-brown-rywp0c | angio-a5 (apostila) | 21/11/2026 |
