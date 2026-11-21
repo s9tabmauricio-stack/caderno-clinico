@@ -1,0 +1,483 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<title>Angiologia · Aula 6 · Linfedema e lipedema</title>
+<meta name="rodape" content="Mauricio Faria · Angiologia · Aula 6 — Linfedema e lipedema">
+<link rel="stylesheet" href="apostila.css">
+<style>
+/* ===== componentes do molde novo (em teste na pneumo-a5) ===== */
+.simples { background: #FFFFFF; border: 1px solid #C3D8F8; border-left: 4pt solid #0B5BD3; border-radius: 12pt; padding: 9pt 14pt 10pt; margin: 0 0 10pt; break-inside: avoid; }
+.simples p { font-size: 10.2pt; line-height: 1.5; color: #1F2933; margin: 0; }
+.aqui { display: flex; margin-top: 7pt; }
+.aqui span { flex: 1; border-top: 3pt solid #DCDCE2; padding-top: 2.5pt; margin-right: 2.5pt; font-family: "Inter Medium"; font-size: 6pt; line-height: 1.25; color: #8E8E93; }
+.aqui span:last-child { margin-right: 0; }
+.aqui span.feito { border-top-color: #A9C4EE; color: #6C6C70; }
+.aqui span.on { border-top-color: #0B5BD3; color: #0B5BD3; font-family: "Inter SemiBold"; }
+.aqui span.ramo { border-top-style: dashed; }
+.figure .olhar { margin-top: 8pt; }
+.figure .olhar .kick { margin-bottom: 3pt; }
+.figure .olhar ul { margin: 0; }
+.figure .olhar li { padding-left: 0; font-size: 8.7pt; line-height: 1.45; margin-bottom: 2pt; }
+.figure .olhar li::before { display: none; }
+.figure .olhar li b { color: #0B5BD3; }
+.figure .leg { font-size: 7.8pt; color: #8E8E93; margin: 5pt 0 0; }
+.reg { font-size: 8.3pt; line-height: 1.45; color: #6C6C70; background: #F7F7FA; border: 1px solid #E3E3E8; border-radius: 9pt; padding: 5pt 10pt; margin: 6pt 0 9pt; break-inside: avoid; }
+.reg b { font-family: "Inter SemiBold"; color: #4F5B70; }
+.livros { font-size: 8.3pt; line-height: 1.45; color: #6E3AA7; background: #F4EBFB; border: 1px solid #DEC7F1; border-radius: 9pt; padding: 5pt 10pt; margin: 6pt 0 9pt; break-inside: avoid; }
+.livros b { color: #6E3AA7; }
+.sw.simples-sw { background: #FFFFFF; border-color: #C3D8F8; border-left: 3pt solid #0B5BD3; }
+.sw.aqui-sw { background: linear-gradient(90deg, #A9C4EE 0, #A9C4EE 45%, #0B5BD3 45%, #0B5BD3 70%, #DCDCE2 70%); border: 0; height: 4pt; border-radius: 2pt; }
+.sw.exame-sw { background: #1F2933; border-color: #1F2933; }
+.cmp .destaque { font-family: "Inter SemiBold"; color: #0B5BD3; }
+.cmp.c4 .k { width: 62pt; }
+.cmp.c4 .c { font-size: 8.3pt; padding-right: 8pt; }
+.vesp { break-before: page; }
+.vesp .item { display: flex; align-items: baseline; background: #FFFFFF; border: 1px solid #E3E3E8; border-radius: 12pt; padding: 7pt 12pt; margin: 0 0 6pt; break-inside: avoid; }
+.vesp .item .prova { flex: none; margin: 0 9pt 0 0; }
+.vesp .item p { margin: 0; font-size: 9.2pt; }
+.tiles.t4 { margin: 6pt 0 8pt; }
+.figure.lado { display: flex; align-items: center; }
+.figure.lado > img { flex: none; }
+.figure.lado .olhar { flex: 1; margin: 0 0 0 12pt; }
+.cover .toc a { padding: 3.6pt 0; }
+/* ===== ajustes desta apostila ===== */
+.aqui { break-after: avoid; }
+.simples { break-after: avoid; }
+.vesp .item { display: block; position: relative; padding: 6pt 12pt 6pt 58pt; margin: 0 0 5pt; }
+.vesp .item .prova { position: absolute; left: 12pt; top: 7.5pt; margin: 0; }
+</style>
+</head><body>
+
+<div class="cover">
+  <div class="kicker">Angiologia · Aula 6 · Linfedema e lipedema</div>
+  <h1>Linfedema e lipedema</h1>
+  <p class="sub">Como a linfa drena, por que o linfedema endurece e infecciona, como separá-lo do lipedema e por que o tratamento é quase sempre clínico e combinado.</p>
+  <div class="author"><span class="av">J</span><div><b>Dr. Jeferson Freitas Toregeani</b><span>Professor de Angiologia · 14 de outubro de 2026</span></div></div>
+  <div class="keynums"><div class="kick">Três números para levar</div>
+    <div class="kn-grid">
+      <div class="kn"><div class="n">35 anos</div><div class="l">separam o linfedema primário precoce do tardio</div></div>
+      <div class="kn"><div class="n">10 vezes</div><div class="l">é quanto o linfático aumenta a capacidade antes de falhar</div></div>
+      <div class="kn"><div class="n">Abaixo de 25</div><div class="l">de índice de massa corporal: se a coxa não emagrece, pense em lipedema</div></div>
+    </div></div>
+  <div class="toc"><div class="kick">Nesta apostila</div>
+    <a href="#s00"><span class="tn">00</span><span class="tt">Recados da disciplina</span><span class="pg">{{s00}}</span></a>
+    <a href="#s01"><span class="tn">01</span><span class="tt">A linfa e a microcirculação</span><span class="pg">{{s01}}</span></a>
+    <a href="#s02"><span class="tn">02</span><span class="tt">Quando a drenagem falha</span><span class="pg">{{s02}}</span></a>
+    <a href="#s03"><span class="tn">03</span><span class="tt">Linfedema primário e secundário</span><span class="pg">{{s03}}</span></a>
+    <a href="#s04"><span class="tn">04</span><span class="tt">Quadro clínico e o que não é linfedema</span><span class="pg">{{s04}}</span></a>
+    <a href="#s05"><span class="tn">05</span><span class="tt">Lipedema</span><span class="pg">{{s05}}</span></a>
+    <a href="#s06"><span class="tn">06</span><span class="tt">Diagnóstico</span><span class="pg">{{s06}}</span></a>
+    <a href="#s07"><span class="tn">07</span><span class="tt">Tratamento clínico</span><span class="pg">{{s07}}</span></a>
+    <a href="#s08"><span class="tn">08</span><span class="tt">Cirurgia e neoplasias</span><span class="pg">{{s08}}</span></a>
+    <a href="#s09"><span class="tn">09</span><span class="tt">O essencial da aula</span><span class="pg">{{s09}}</span></a>
+    <p class="note">Organizada a partir da aula, com a linguagem ajustada para leitura autônoma. A legenda de cores está na página 2.</p>
+  </div>
+</div>
+
+<div class="legend"><div class="kick">Como ler esta apostila</div><div class="lg-grid">
+  <div class="lg"><span class="sw blue"></span><div><b>Azul</b> conteúdo da aula e raciocínio</div></div>
+  <div class="lg"><span class="sw green"></span><div><b>Verde</b> dose ou valor de referência</div></div>
+  <div class="lg"><span class="sw red"></span><div><b>Vermelho</b> alerta, erro comum ou pegadinha do professor</div></div>
+  <div class="lg"><span class="sw orange"></span><div><b>Laranja</b> fala ou parêntese do professor</div></div>
+  <div class="lg"><span class="sw purple"></span><div><b>Roxo</b> complemento que não foi dito em aula</div></div>
+  <div class="lg"><span class="prova">PROVA</span><div><b>Marca de prova</b> o ponto que cai na prova</div></div>
+  <div class="lg"><span class="sw simples-sw"></span><div><b>Em palavras simples</b> a ideia do capítulo em linguagem de conversa</div></div>
+  <div class="lg"><span class="sw aqui-sw"></span><div><b>Você está aqui</b> a etapa da trilha da aula em cada capítulo</div></div>
+</div></div>
+
+<div class="prof"><div class="kick">Sobre o professor · Dr. Toregeani</div>
+<div class="rows">
+  <div class="row"><div class="k">Atuação</div><div class="v">Angiologia. No consultório, atende pacientes com linfedema, lipedema e outros inchaços crônicos, que costumam procurar o cirurgião vascular.</div></div>
+  <div class="row"><div class="k">Congressos</div><div class="v">Ajudou a organizar o Congresso Brasileiro da especialidade de 2026, na Bahia, com quase 3.000 participantes. Convidado para palestrar num congresso interuniversitário em Misiones, na Argentina, e participante do VEITHsymposium, nos Estados Unidos.</div></div>
+  <div class="row"><div class="k">Liga acadêmica</div><div class="v">Acompanha a produção científica dos ligantes: a Liga levou 20 trabalhos ao Congresso Brasileiro, a maioria de alunos do Centro Universitário Fundação Assis Gurgacz.</div></div>
+</div></div>
+
+<section id="s00">
+  <div class="sec-head"><div class="lado"><span class="k">Seção</span><span class="num">00</span></div><div class="corpo"><div class="de">Avisos da aula</div><h2>Recados da disciplina</h2></div></div>
+  <div class="rows">
+    <div class="row"><div class="k">4 a 6 de novembro</div><div class="v">Dr. Toregeani em congresso interuniversitário em Misiones, na Argentina. A aula teórica do dia 4 já era da Dra. Mary: nada muda.</div></div>
+    <div class="row"><div class="k">Prática de 6 de novembro</div><div class="v">Precisa ser remarcada. Duas saídas, combinadas com a representante da turma: abrir um dia extra para essa turma ou distribuí-la nas cinco aulas práticas seguintes.</div></div>
+  </div>
+  <div class="rows">
+    <div class="row"><div class="k">14 a 22 de novembro</div><div class="v">Dr. Toregeani no VEITHsymposium, nos Estados Unidos. As aulas práticas já devem ter terminado e a aula teórica da semana também é da Dra. Mary: o cronograma segue.</div></div>
+    <div class="row"><div class="k">Prova</div><div class="v">Prevista para a semana seguinte a essa viagem, sem data fechada na aula.</div></div>
+  </div>
+  <div class="box orange"><div class="kick"><span class="dot"></span>Parêntese do professor: congressos</div><p>A Liga levou 20 trabalhos ao Congresso Brasileiro, na Bahia, e uma acadêmica do quinto ano da região ficou em segundo lugar na plenária, competindo com as capitais. Quando houver um congresso brasileiro da especialidade de que você gosta, e for perto, faça o esforço de ir: é ali que você conhece professores e serviços para a residência e começa o seu networking.</p></div>
+  <div class="quote"><p>“Não tem nada ainda comparado a você conversar com olho no olho.”</p><div class="who">Dr. Toregeani, sobre o valor dos congressos</div></div>
+</section>
+
+<div class="figure"><div class="kick">Trilha da aula</div><img src="trilha.svg" alt="Trilha da aula em oito etapas"></div>
+
+<section id="s01">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">01</span></div><div class="corpo"><div class="de">Fisiologia</div><h2>A linfa e a microcirculação</h2></div></div>
+  <div class="aqui"><span class="on">A linfa</span><span>A drenagem falha</span><span>Os tipos</span><span>Quadro clínico</span><span class="ramo">Lipedema</span><span>Diagnóstico</span><span>Tratamento</span><span>Cirurgia</span></div>
+  <div class="simples"><p>Todo dia sai um pouco de líquido do sangue para o meio das células. A veia recolhe quase tudo, e os vasos linfáticos recolhem o resto, sempre um pouco a mais. Esse “aspirador” mantém o tecido firme; quando ele falha, o membro incha, e o inchaço só piora.</p></div>
+
+  <h3>Uma desordem da drenagem</h3>
+  <p>O linfedema é uma desordem do sistema linfático que <b>dificulta a drenagem da linfa</b>. É uma doença crônica e meio relegada ao segundo plano: muitos fisioterapeutas que tratavam doenças linfáticas migraram para a área estética. Uma perna com linfedema avançado pesa como um botijão de gás amarrado ao membro; imagine caminhar assim.</p>
+  <p>Há os linfedemas primários, em que é difícil determinar a causa, e os secundários. No Brasil, com o aumento do câncer, crescem os secundários, em especial ao câncer de mama: mastectomia, retirada dos linfonodos axilares e radioterapia.</p>
+
+  <h3>Filtra, reabsorve, e o linfático tira o excesso</h3>
+  <p>A drenagem acontece todos os dias e varia de pessoa para pessoa. Quando o sangue chega ao membro, a pressão do lado arterial faz o líquido sair dos capilares para o espaço intersticial; o lado venoso reabsorve a maior parte, e o sistema linfático reabsorve o excesso.</p>
+  <p>Como o linfático recolhe sempre um pouco mais do que sobrou, cria-se uma <b>pressão negativa no interstício</b>, e é ela que mantém a forma do corpo. Pense no pacote de café embalado a vácuo: é um tijolinho firme; tirou o vácuo, ele se desmancha. Um murro no olho mostra o contrário: o olho incha porque o tecido perde a pressão negativa e se deforma.</p>
+  <div class="figure"><img src="micro.svg" alt="Capilar arterial filtra, capilar venoso reabsorve e o linfático recolhe o excesso"></div>
+
+  <h3 data-bm="O caminho da linfa">O caminho da linfa <span class="prova">PROVA</span></h3>
+  <p>Os linfáticos têm válvulas, como as veias, e bombeiam a linfa por conta própria. A unidade funcional que se contrai é o <b>linfângio</b>: a cada contração, a válvula distal se fecha, a proximal se abre e a linfa avança. O bombeamento vai sempre de distal para proximal e de lateral para medial.</p>
+  <div class="figure"><img src="trajeto.svg" alt="Caminho da linfa do membro inferior até a veia subclávia esquerda"></div>
+  <p>O nome “cisterna do quilo” vem do aspecto: a gordura absorvida do intestino deixa a linfa leitosa, quilosa. Dali ela sobe pelo ducto torácico até a <b>veia subclávia esquerda</b>, que recebe um fluxo de linfa com proteínas e gorduras. O ducto linfático direito drena uma área menor.</p>
+  <div class="cmp">
+    <div class="r h"><div class="k"></div><div class="c">Linfa dos membros</div><div class="c">Linfa da cisterna do quilo</div></div>
+    <div class="r"><div class="k">Aspecto</div><div class="c">Amarelinha</div><div class="c">Leitosa (quilosa)</div></div>
+    <div class="r"><div class="k">Por quê</div><div class="c">Vem do líquido que sobra no tecido</div><div class="c">Carrega a gordura absorvida do intestino</div></div>
+  </div>
+
+  <h3>Quando o ducto torácico é lesado</h3>
+  <p>Lesar o ducto torácico prejudica a drenagem do hemitórax esquerdo, do braço esquerdo, da hemiface esquerda, do abdome e dos membros inferiores. Exemplo: numa cirurgia cervical, o ducto é lesado e a linfa passa a vazar pela região do pescoço todos os dias. Com ela vão gorduras e proteínas, e a pessoa fica <b>desnutrida</b>.</p>
+
+  <h3>O linfático também defende</h3>
+  <p>O sistema linfático aspira os corpos estranhos do tecido e os leva aos linfonodos. O linfonodo funciona como um filtro: reconhece os antígenos e os apresenta aos linfócitos, que montam a defesa. É a segunda linha; a primeira acontece no próprio local.</p>
+
+  <h3 data-bm="O que aumenta a produção de linfa">O que aumenta a produção de linfa <span class="prova">PROVA</span></h3>
+  <p>Todo mundo produz e aspira linfa diariamente, e qualquer pessoa pode sofrer interferências que aumentam a produção:</p>
+  <ul>
+    <li><span class="medium">Vasodilatador.</span> Quem usa vasodilatador para controlar a pressão alta produz mais linfa.</li>
+    <li><span class="medium">Varizes.</span> Aumentam a pressão hidrostática do lado venoso: a veia reabsorve menos, sobra mais líquido no interstício e surge o edema.</li>
+    <li><span class="medium">Dano no linfático,</span> em qualquer ponto do trajeto: a drenagem fica difícil.</li>
+  </ul>
+  <p>Os linfáticos existem em grande quantidade e trabalham sempre acima do necessário para manter a pressão negativa. Se a produção de linfa sobe muito, eles conseguem aumentar a capacidade; passado o limite, começam os problemas que levam ao linfedema.</p>
+  <div class="ref">
+    <div class="txt"><div class="kick"><span class="dot"></span>Reserva do linfático</div><p>Quanto a capacidade de drenagem consegue crescer antes de falhar.</p></div>
+    <div class="val">até 10 vezes<small>a capacidade de rotina</small></div>
+  </div>
+</section>
+
+<section id="s02">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">02</span></div><div class="corpo"><div class="de">Fisiopatologia</div><h2>Quando a drenagem falha</h2></div></div>
+  <div class="aqui"><span class="feito">A linfa</span><span class="on">A drenagem falha</span><span>Os tipos</span><span>Quadro clínico</span><span class="ramo">Lipedema</span><span>Diagnóstico</span><span>Tratamento</span><span>Cirurgia</span></div>
+  <div class="simples"><p>Quando o linfático não dá conta, o líquido e as proteínas ficam parados no tecido. A pele inflama e endurece, infecciona com facilidade, e cada infecção estraga mais o linfático. Por isso o linfedema avançado é tão difícil de reverter.</p></div>
+
+  <h3>Sem pressão negativa, o tecido desaba</h3>
+  <p>Os tomatinhos embalados a vácuo ficam arrumados numa bandeja quadrada; tirou o vácuo, caem todos para o fundo. Com o linfático funcionando, as células ficam coesas e o líquido fica no lugar certo. Quando há dano no sistema de drenagem, a pressão negativa se perde, o tecido se desorganiza e surgem <b>edemas progressivos</b>.</p>
+  <p>É próprio da doença linfática: as proteínas vão se depositando aos poucos e o subcutâneo inflama. Quanto mais avançado o quadro, mais difícil o tratamento.</p>
+  <div class="quote"><p>“Uma vez que chegou nessa fase crônica, é muito difícil de você conseguir reverter.”</p><div class="who">Dr. Toregeani, sobre o linfedema avançado</div></div>
+  <p>No início, todos têm a mesma queixa: um inchaço que piora no fim do dia, muito parecido com o da doença venosa. Com o tempo, a inflamação do próprio linfedema deixa o edema cada vez mais duro.</p>
+
+  <h3 data-bm="Erisipela e o ciclo vicioso">Erisipela e o ciclo vicioso <span class="prova">PROVA</span></h3>
+  <p>Com o sistema linfático comprometido, as infecções ficam mais fáceis. A infecção mais comum em quem tem problema linfático é a <b>erisipela</b>.</p>
+  <div class="figure"><img src="ciclo.svg" alt="Ciclo vicioso entre linfático danificado e erisipela de repetição"></div>
+  <p>A infecção destrói o linfático e, com o linfático ruim, vem mais infecção. A inflamação crônica que resulta disso deixa a pele dura, cheia de verrucosidades e cronicamente inflamada.</p>
+</section>
+
+<section id="s03">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">03</span></div><div class="corpo"><div class="de">Classificação e causas</div><h2>Linfedema primário e secundário</h2></div></div>
+  <div class="aqui"><span class="feito">A linfa</span><span class="feito">A drenagem falha</span><span class="on">Os tipos</span><span>Quadro clínico</span><span class="ramo">Lipedema</span><span>Diagnóstico</span><span>Tratamento</span><span>Cirurgia</span></div>
+  <div class="simples"><p>Ou o sistema linfático já tem um defeito de origem (primário), ou algo o estragou depois (secundário): um parasita, infecções de repetição, câncer, cirurgia, radioterapia ou trauma.</p></div>
+
+  <h3 data-bm="Primário: a idade de início">Primário: a idade de início <span class="prova">PROVA</span></h3>
+  <p>Vêm de defeitos no próprio sistema de drenagem e se classificam pela fase da vida em que aparecem:</p>
+  <div class="rows">
+    <div class="row"><div class="k">Congênito</div><div class="v">A pessoa já nasce com ele. É o menos visto no consultório; aparece mais na pediatria, em doenças como a síndrome de Turner e a síndrome de Klippel-Trénaunay.</div></div>
+    <div class="row"><div class="k">Precoce</div><div class="v">Começa antes dos 35 anos.</div></div>
+    <div class="row"><div class="k">Tardio</div><div class="v">Começa depois dos 35 anos. É o mais frequente no consultório.</div></div>
+  </div>
+  <p>O caso típico do tardio é a mulher que, depois da primeira ou da segunda gravidez, conta: “a minha perna esquerda sempre foi maior; o sapato não servia, eu tinha de comprar um número maior, e depois da gestação piorou”. Ela liga o problema à gravidez, mas era um linfedema que já existia e <b>descompensou com a carga de líquido</b> da gestação.</p>
+  <div class="ref">
+    <div class="txt"><div class="kick"><span class="dot"></span>Corte de idade do primário</div><p>Antes: precoce. Depois: tardio, o mais comum.</p></div>
+    <div class="val">35 anos<small>idade de início</small></div>
+  </div>
+  <p>O quadro abaixo junta os primários e os secundários, que vêm a seguir.</p>
+  <div class="figure"><img src="tipos.svg" alt="Classificação do linfedema em primário e secundário"></div>
+
+  <h3 data-bm="Secundário inflamatório: filariose">Secundário inflamatório: filariose <span class="prova">PROVA</span></h3>
+  <p>O Brasil é um país tropical, com doenças endêmicas, e uma delas é a filariose, uma infecção parasitária. Depois da picada do mosquito infectado, as larvas migram para o sistema linfático para depositar seus ovos e criam uma infestação crônica. O parasita é a <b>Wuchereria bancrofti</b>, e a doença é conhecida popularmente como elefantíase.</p>
+
+  <h3 data-bm="Pós-infeccioso: a porta de entrada nos pés">Pós-infeccioso: a porta de entrada nos pés <span class="prova">PROVA</span></h3>
+  <p>Os linfedemas pós-infecciosos também são bem comuns: erisipelas de repetição vão destruindo o linfático. A porta de entrada costuma ser o pé, um dos piores lugares do corpo em higiene. Por isso o homem, que cuida menos dos pés (raramente vai à pedicure e corta mal as unhas), tem mais erisipela.</p>
+  <div class="rows">
+    <div class="row"><div class="k">Unha e frieira</div><div class="v">Onicomicose (micose da unha) e frieira (tinea pedis) abrem a porta de entrada. Contra a frieira, um cuidado simples: secar bem o pé depois do banho.</div></div>
+    <div class="row"><div class="k">Calçados</div><div class="v">São meio de cultura para germes: descontaminar o tênis, não usar sempre o mesmo e trocar o que ficou velho (para o tênis de uso diário, fala-se em cerca de seis meses). Vale para a chuteira.</div></div>
+  </div>
+  <div class="rows">
+    <div class="row"><div class="k">Lavar o pé todo</div><div class="v">Quase ninguém lava atrás do maléolo lateral, porque no chuveiro, em pé, é difícil.</div></div>
+    <div class="row"><div class="k">Médicos</div><div class="v">Têm mais problemas nos pés pelas longas horas de calçado fechado. No hospital e no centro cirúrgico, calçado aberto é proibido: um bisturi que cai de ponta machuca.</div></div>
+    <div class="row"><div class="k">Mato e pescaria</div><div class="v">Quem gosta de mato e de pescar costuma voltar com erisipela: picadas de borrachudo e de outros insetos servem de porta de entrada.</div></div>
+  </div>
+  <p>Onde falta dinheiro para trocar de calçado, ou onde ainda se trabalha descalço na roça, tudo isso é ainda mais comum.</p>
+  <div class="quote"><p>“Então hoje no banho vocês vão lembrar como que é difícil cuidar do pé.”</p><div class="who">Dr. Toregeani, sobre os cuidados com os pés</div></div>
+
+  <h3>Secundário não inflamatório</h3>
+  <div class="rows">
+    <div class="row"><div class="k">Tumoral</div><div class="v">Não é tão frequente; em geral, são pacientes já em fase terminal do câncer.</div></div>
+    <div class="row"><div class="k">Pós-cirúrgico</div><div class="v">O mais visto no consultório: o paciente trata o câncer e depois vem tratar a sequela.</div></div>
+    <div class="row"><div class="k">Trauma</div><div class="v">Também muito comum.</div></div>
+  </div>
+  <div class="box orange"><div class="kick"><span class="dot"></span>Parêntese do professor: patinetes</div><p>Em Cascavel, as notícias são quase só de acidentes, e as vítimas da vez são os jovens de patinete elétrico, que calculam mal a velocidade para passar no sinal. Conselho para quem dirige: andar pelas preferenciais e tomar cuidado com os patinetes.</p></div>
+
+  <h3 data-bm="Pós-cirúrgico: a mastectomia">Pós-cirúrgico: a mastectomia <span class="prova">PROVA</span></h3>
+  <p>Hoje, a cirurgia que mais danifica o linfático é a <b>mastectomia</b>, porque parte dela é a retirada dos linfonodos axilares, que drenam a mama. A radioterapia piora a situação: a radiação ionizante é aplicada em várias sessões para matar a célula cancerosa, mas não é tão específica e também fibrosa o linfático.</p>
+
+  <h3>Três casos</h3>
+  <div class="rows">
+    <div class="row"><div class="k">Perna esquerda</div><div class="v">Linfedema do membro inferior esquerdo, já em fase avançada.</div></div>
+    <div class="row"><div class="k">Quadrantec&shy;tomia</div><div class="v">Mulher que fez mastectomia parcial: manteve a mama, mas retirou os linfonodos axilares e ainda recebeu radioterapia em toda a região.</div></div>
+    <div class="row"><div class="k">Braquiterapia</div><div class="v">Uma das piores pacientes já atendidas pelo Dr. Toregeani. Tratou um câncer de colo de útero com braquiterapia, uma placa de material radioativo colocada no colo do útero. Um cálculo inadequado fez a placa queimar mais do que devia e destruir os linfáticos do membro inferior direito: a perna pesava quase dois botijões de gás.</div></div>
+  </div>
+</section>
+
+<section id="s04">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">04</span></div><div class="corpo"><div class="de">Exame físico e diagnóstico diferencial</div><h2>Quadro clínico e o que não é linfedema</h2></div></div>
+  <div class="aqui"><span class="feito">A linfa</span><span class="feito">A drenagem falha</span><span class="feito">Os tipos</span><span class="on">Quadro clínico</span><span class="ramo">Lipedema</span><span>Diagnóstico</span><span>Tratamento</span><span>Cirurgia</span></div>
+  <div class="simples"><p>O linfedema começa discreto, com o tornozelo inchado no fim do dia, e quase não dói. Com o tempo, a perna fica dura, cilíndrica e fria, e o inchaço não desce mais à noite. Nem todo inchaço é linfedema: obesidade, remédios e doenças do coração, do rim, do fígado e da tireoide também incham.</p></div>
+
+  <h3>Uma doença silenciosa</h3>
+  <p>No estágio inicial, a pessoa quase não percebe: acha normal chegar em casa com a perna marcada. Com história de trauma ou de cirurgia, fica mais evidente. Nos primários, começa no tornozelo; a pessoa nota que o pé está um pouco maior e, um dia, que o inchaço não diminui mais depois de dormir. No início parece um inchaço venoso e até responde um pouco à elevação; com o tempo, o tornozelo perde o contorno e o quadro evolui.</p>
+
+  <h3 data-bm="Como reconhecer o linfedema">Como reconhecer o linfedema <span class="prova">PROVA</span></h3>
+  <div class="rows">
+    <div class="row"><div class="k">Pigmentação</div><div class="v">Dificilmente tem. É uma forma de diferenciar da doença venosa, que cursa com dermatite ocre.</div></div>
+    <div class="row"><div class="k">Úlcera</div><div class="v">Dificilmente ulcera.</div></div>
+    <div class="row"><div class="k">Formato</div><div class="v">Perna meio cilíndrica.</div></div>
+    <div class="row"><div class="k">Cor</div><div class="v">Avermelhada quando há história de erisipela, por processo inflamatório residual.</div></div>
+  </div>
+  <div class="rows">
+    <div class="row"><div class="k">Sinal de Stemmer</div><div class="v">O edema é difícil de preguear. Tenta-se pinçar a pele do dorso na base do segundo dedo do pé; no linfedema não se consegue, e o sinal é positivo.</div></div>
+    <div class="row"><div class="k">Temperatura</div><div class="v">Inchaço frio; os inchaços venosos costumam ser mais quentes.</div></div>
+    <div class="row"><div class="k">Dor</div><div class="v">Pouca, o que o diferencia do lipedema.</div></div>
+  </div>
+  <div class="box red"><div class="kick"><span class="dot"></span>Pegadinha do professor</div><p><span class="medium">Úlcera numa perna linfática.</span> A doença linfática quase não ulcera. Se ulcerou, pense em neoplasia: não é comum, mas pode ser (capítulo 08).</p></div>
+
+  <h3>Nem todo inchaço é linfedema</h3>
+  <p>Antes era a obesidade que chegava ao consultório como “inchaço”; agora é a moda do lipedema. Muita gente chega dizendo ter lipedema quando, na verdade, está acima do peso, e é preciso dizer isso com delicadeza. Outras causas de inchaço:</p>
+  <div class="rows">
+    <div class="row"><div class="k">Hormonal</div><div class="v">Disfunção da tireoide.</div></div>
+    <div class="row"><div class="k">Rim</div><div class="v">Síndrome nefrótica, com ganho de líquido.</div></div>
+    <div class="row"><div class="k">Medicamentos</div><div class="v">Uso crônico de corticoide, com ganho de peso excessivo.</div></div>
+  </div>
+  <div class="rows">
+    <div class="row"><div class="k">Obesidade</div><div class="v">Alimentação desenfreada, muitas vezes sem a pessoa perceber.</div></div>
+    <div class="row"><div class="k">Outras sistêmicas</div><div class="v">Insuficiência cardíaca e cirrose, entre outras.</div></div>
+  </div>
+  <h3>Linfedema ou doença venosa</h3>
+  <div class="cmp">
+    <div class="r h"><div class="k"></div><div class="c">Linfedema</div><div class="c">Doença venosa</div></div>
+    <div class="r"><div class="k">Começo</div><div class="c">Inchaço pior no fim do dia</div><div class="c">Igual: por isso confunde</div></div>
+    <div class="r"><div class="k">Pigmentação</div><div class="c">Dificilmente</div><div class="c">Dermatite ocre</div></div>
+    <div class="r"><div class="k">Temperatura</div><div class="c">Frio</div><div class="c">Costuma ser mais quente</div></div>
+    <div class="r"><div class="k">Elevar a perna</div><div class="c">Funciona só no começo</div><div class="c">Funciona muito bem</div></div>
+    <div class="r"><div class="k">Compressão</div><div class="c">Inclui os dedos do pé</div><div class="c">Normalmente não precisa dos dedos</div></div>
+  </div>
+
+</section>
+
+<section id="s05">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">05</span></div><div class="corpo"><div class="de">O diagnóstico diferencial da moda</div><h2>Lipedema</h2></div></div>
+  <div class="aqui"><span class="feito">A linfa</span><span class="feito">A drenagem falha</span><span class="feito">Os tipos</span><span class="feito">Quadro clínico</span><span class="on ramo">Lipedema</span><span>Diagnóstico</span><span>Tratamento</span><span>Cirurgia</span></div>
+  <div class="simples"><p>Lipedema é gordura doente: acumula sobretudo no quadril e nas coxas, dói ao toque e não sai quando a pessoa emagrece, enquanto os pés continuam finos. Não é um problema do vaso; é do tecido adiposo.</p></div>
+
+  <h3>Uma doença do tecido adiposo</h3>
+  <p>O lipedema é a doença da moda e sempre ganha uma mesa nos congressos vasculares. A parte mais difícil é separar quem tem obesidade de quem tem uma disfunção do tecido adiposo. Na opinião do Dr. Toregeani, não é doença vascular, e sim do tecido adiposo; faria mais sentido ser tratado pelo cirurgião plástico, que já faz lipoaspiração e lipoescultura. Como muitos pacientes têm inchaço e dor, acabam procurando o cirurgião vascular.</p>
+
+  <h3 data-bm="Dor ao toque">Dor ao toque <span class="prova">PROVA</span></h3>
+  <p>Quem tem lipedema costuma reclamar que é difícil tocar na perna: a pele é mais sensível de verdade, e até uma brincadeira vira “não encosta em mim, me dói”.</p>
+  <div class="quote"><p>“Às vezes você tem a impressão de que a pessoa é fresca, mas na verdade ela tem uma disfunção, realmente é uma área mais sensível.”</p><div class="who">Dr. Toregeani, sobre o paciente com lipedema</div></div>
+  <div class="es">
+    <div class="kick">A sensibilidade separa os dois</div>
+    <div class="cells">
+      <div class="cell"><div class="lab">Muita sensibilidade</div><p>No inchaço que dói ao toque, a probabilidade de lipedema é maior.</p></div>
+      <div class="cell"><div class="lab">Pouca sensibilidade</div><p>No inchaço que quase não dói, a probabilidade de linfedema é maior.</p></div>
+    </div>
+  </div>
+
+  <h3 data-bm="Emagreceu e a coxa ficou">Emagreceu e a coxa ficou <span class="prova">PROVA</span></h3>
+  <p>O teste prático é o peso. A pessoa obesa precisa baixar o índice de massa corporal para menos de 25, o padrão normal. Depois de emagrecer:</p>
+  <div class="cmp">
+    <div class="r h"><div class="k"></div><div class="c">Obesidade simples</div><div class="c">Lipedema</div></div>
+    <div class="r"><div class="k">O que afina</div><div class="c">Braço, perna, bumbum e mama</div><div class="c">Braço e peito; quadril e coxa, principalmente, continuam iguais</div></div>
+    <div class="r"><div class="k">Proporção</div><div class="c">Perde por igual</div><div class="c">Não perde na mesma proporção e poupa os pés</div></div>
+  </div>
+  <p>Se a pessoa chegou à faixa de peso normal e continua desproporcional, poupando os pés, a probabilidade de lipedema é maior.</p>
+  <div class="ref">
+    <div class="txt"><div class="kick"><span class="dot"></span>Meta de peso antes de concluir</div><p>Só depois de chegar ao peso normal a desproporção diz alguma coisa.</p></div>
+    <div class="val">abaixo de 25<small>índice de massa corporal</small></div>
+  </div>
+
+  <h3>Comida inflamatória piora</h3>
+  <p>Muito glúten, muita lactose e alimentação inflamatória pioram os sintomas. O pior dia de quem tem lipedema é o rodízio de pizza com cerveja: no outro dia acorda inchada, com a perna dolorida. Exige mudar a dieta e reduzir a alimentação inflamatória, com orientação da nutricionista.</p>
+
+  <h3>Tratamento por estágio</h3>
+  <p>A maioria dos pacientes chega nos estágios 1 e 2, em que o tratamento é clínico:</p>
+  <ol class="flow">
+    <li><b class="t">Perder peso.</b></li>
+    <li><b class="t">Ajustar a dieta,</b> cortando a alimentação inflamatória.</li>
+    <li><b class="t">Fazer drenagem.</b></li>
+    <li><b class="t">Usar medicamento,</b> eventualmente, para diminuir o inchaço.</li>
+  </ol>
+  <p>Nos estágios 3 e 4, o acúmulo de tecido e a desordem são tão intensos que o tratamento clínico rende pouco; aí é melhor indicar cirurgia, como lipoaspiração ou lipoescultura.</p>
+
+  <h3 data-bm="Linfedema é vaso; lipedema é tecido">Linfedema é vaso; lipedema é tecido <span class="prova">PROVA</span></h3>
+  <div class="es big">
+    <div class="kick">A diferença que fecha o assunto</div>
+    <div class="cells">
+      <div class="cell"><div class="lab">Linfedema</div><p>Doença de um vaso: o sistema linfático. Inchaço frio, duro, quase sem dor, que pega o pé (sinal de Stemmer).</p></div>
+      <div class="cell"><div class="lab">Lipedema</div><p>Doença de um tecido: o tecido adiposo. Dói ao toque, poupa os pés e não sai com o emagrecimento.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="s06">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">06</span></div><div class="corpo"><div class="de">Exames</div><h2>Diagnóstico</h2></div></div>
+  <div class="aqui"><span class="feito">A linfa</span><span class="feito">A drenagem falha</span><span class="feito">Os tipos</span><span class="feito">Quadro clínico</span><span class="feito ramo">Lipedema</span><span class="on">Diagnóstico</span><span>Tratamento</span><span>Cirurgia</span></div>
+  <div class="simples"><p>Na maioria das vezes, a história já sugere o linfedema. Para confirmar, o exame é a linfocintilografia: injeta-se no pé uma substância radioativa e observa-se se ela sobe pela perna até a virilha.</p></div>
+  <p>A história do linfedema primário costuma ser branda e com poucos sintomas, em especial a do tardio, que é o da maioria: a mulher que começa depois de uma ou duas gestações. Depois da história, vêm os exames.</p>
+
+  <h3>Três exames, um para o diagnóstico</h3>
+  <div class="rows">
+    <div class="row"><div class="k">Linfocromia</div><div class="v">Azul patente ou azul de metileno. Usada na prática cirúrgica, para localizar um linfonodo.</div></div>
+    <div class="row"><div class="k">Linfografia direta</div><div class="v">Não é mais feita; era usada antigamente.</div></div>
+    <div class="row"><div class="k">Linfocinti&shy;lografia</div><div class="v">O exame que confirma o linfedema.</div></div>
+  </div>
+  <p>Na cirurgia do câncer de mama, a linfocromia acha o <b>linfonodo sentinela</b>, o primeiro que recebe a drenagem da mama, na axila. Injeta-se o azul de metileno na mama e segue-se o caminho do corante até ele. O linfonodo é retirado para biópsia: se tiver célula cancerígena, a mulher pode já ter metástase.</p>
+
+  <h3 data-bm="Linfocintilografia">Linfocintilografia <span class="prova">PROVA</span></h3>
+  <ol class="flow">
+    <li><b class="t">Injeção nos dois pés.</b> Um contraste radioativo, em geral albumina marcada, vai nos espaços entre os dedos.</li>
+    <li><b class="t">Subida do contraste.</b> Acompanha-se a subida, que tem um tempo normal para acontecer nos dois lados.</li>
+    <li><b class="t">Comparação.</b> O lado em que o contraste não sobe é o lado doente.</li>
+  </ol>
+  <p>Exemplo: no pé esquerdo, o contraste subiu e começou a se concentrar na região inguinal e no abdome; no direito, não subiu nada. A pessoa provavelmente tem linfedema no membro inferior direito.</p>
+</section>
+
+<section id="s07">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">07</span></div><div class="corpo"><div class="de">Conduta</div><h2>Tratamento clínico</h2></div></div>
+  <div class="aqui"><span class="feito">A linfa</span><span class="feito">A drenagem falha</span><span class="feito">Os tipos</span><span class="feito">Quadro clínico</span><span class="feito ramo">Lipedema</span><span class="feito">Diagnóstico</span><span class="on">Tratamento</span><span>Cirurgia</span></div>
+  <div class="simples"><p>Quase sempre se trata sem cirurgia, e nenhuma medida resolve sozinha. Somam-se a drenagem feita do jeito certo (do centro para a periferia), a compressão forte que inclua os dedos, o remédio de apoio e o cuidado com a pele e os pés para evitar a erisipela.</p></div>
+  <p>O tratamento do linfedema é clínico na maioria das vezes; raramente se opera, porque as cirurgias têm resultado muito pobre.</p>
+
+  <h3 data-bm="Elevar a perna: só no começo">Elevar a perna: só no começo <span class="prova">PROVA</span></h3>
+  <p>Para qualquer inchaço em quem não tem doença arterial, o tratamento é elevar o membro. No linfedema, funciona por um tempo. Quando a inflamação já acumulou proteínas no interstício, elas seguram a água ali (aumenta a pressão coloidosmótica do interstício). Mesmo com horas de perna para cima, a água não desce, ao contrário da doença venosa, em que elevar funciona muito bem.</p>
+  <div class="box red"><div class="kick"><span class="dot"></span>Pegadinha do professor</div><p><span class="medium">Tratar o linfedema como varizes.</span> Só elevar a perna não resolve o linfedema avançado. A elevação entra depois de uma boa drenagem e de um bom enfaixamento compressivo.</p></div>
+
+  <h3>Drenagem e compressão</h3>
+  <p>Diferente da doença venosa, na doença linfática é preciso tratar também os dedos. A compressão pode ser manual ou com bomba; a drenagem manual é melhor, mas faltam profissionais.</p>
+  <div class="rows">
+    <div class="row"><div class="k">Drenagem manual</div><div class="v">A melhor opção, desde que seja a terapia física complexa (adiante). Quase não há quem faça: em Cascavel, sobrou uma clínica de drenagem linfática para doença.</div></div>
+    <div class="row"><div class="k">Bomba</div><div class="v">Compressão pneumática intermitente. É o que sobra: não tem o mesmo efeito, mas é melhor do que nada, e o Dr. Toregeani orienta pacientes com inchaço crônico ou linfedema a comprar uma.</div></div>
+  </div>
+  <div class="rows">
+    <div class="row"><div class="k">Meia</div><div class="v">De alta compressão e com divisão dos dedos do pé, a maior diferença em relação à meia da doença venosa. É difícil de achar: para cada 1.000 meias de doença venosa, vende-se uma para linfedema.</div></div>
+    <div class="row"><div class="k">Wraps</div><div class="v">Dispositivos de velcro, de baixa elasticidade, com a compressão ajustada pela tensão das amarras (o modelo mostrado foi o CircAid). Têm evidência maior e mantêm a forma do membro, mas só depois da drenagem: com a perna inchada, não adianta.</div></div>
+    <div class="row"><div class="k">Taping</div><div class="v">Fita adesiva elástica colada na perna: ao andar, obrigaria o linfático a trabalhar, como uma sanfona. É controverso; parece um adjuvante, sem dados científicos que comprovem.</div></div>
+  </div>
+  <div class="quote"><p>“Como é uma doença de difícil tratamento, como se diz, todo santo ajuda.”</p><div class="who">Dr. Toregeani, sobre o taping</div></div>
+  <div class="box orange"><div class="kick"><span class="dot"></span>Parêntese do professor: por que faltam fisioterapeutas</div><p>Nos anos 90, um fisioterapeuta ganhava quase como um médico clínico, e havia fila para os cursos de terapia física complexa. Com o mercado inundado por novas faculdades, a profissão se rendeu aos planos de saúde: uma sessão chegou a valer R$ 7,00, enquanto o eletricista cobrava R$ 200,00 a visita. A maioria migrou para a estética, o Pilates, a reeducação postural global e a osteopatia; o mesmo ainda vai acontecer com a medicina.</p></div>
+
+  <h3 data-bm="Terapia física complexa: do centro para a periferia">Terapia física complexa: do centro para a periferia <span class="prova">PROVA</span></h3>
+  <p>A “drenagem linfática” da clínica de estética é uma massagem: começa pela perna e empurra o líquido para cima. É gostosa, mas não trata a doença. A terapia física complexa raciocina ao contrário. Imagine uma rodovia com manifestantes bloqueando o pedágio: não adianta, lá do trevo, empurrar os carros para a frente, porque o caminho está fechado.</p>
+  <div class="figure"><img src="tfc.svg" alt="Drenagem estética empurra da periferia e para no bloqueio; terapia física complexa abre o centro primeiro"></div>
+  <p>Por isso ela começa <b>desobstruindo os canais proximais</b>, os linfonodos e os coletores do centro, e só depois traz o fluxo da periferia para ocupar esse espaço. Com menos inchaço, a nutrição do tecido melhora e caem as chances de infecções e de feridas.</p>
+
+  <h3>Medicamentos: efeito pequeno</h3>
+  <p>Os remédios têm pouco efeito no linfedema, mas a maioria dos pacientes usa um flebotônico e linfocinético:</p>
+  <ul>
+    <li><span class="medium">Diosmina com hesperidina:</span> o carro-chefe hoje para a doença linfática.</li>
+    <li><span class="medium">Troxerrutina,</span> sozinha ou com cumarina.</li>
+  </ul>
+
+  <h3 data-bm="Os quatro juntos">Os quatro juntos <span class="prova">PROVA</span></h3>
+  <div class="es">
+    <div class="kick">Tratamento do linfedema: sempre combinado</div>
+    <p class="lead">Cada medida rende pouco sozinha; juntas, controlam o inchaço.</p>
+    <div class="cells">
+      <div class="cell"><div class="lab">Remédio</div><p>Flebotônico e linfocinético: diosmina com hesperidina.</p></div>
+      <div class="cell"><div class="lab">Drenagem</div><p>Terapia física complexa, do centro para a periferia.</p></div>
+      <div class="cell"><div class="lab">Compressão</div><p>Meia de alta compressão com dedos, ou wraps.</p></div>
+      <div class="cell"><div class="lab">Higiene</div><p>Cuidar dos pés para evitar as infecções de repetição.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="s08">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">08</span></div><div class="corpo"><div class="de">Cirurgia e complicações</div><h2>Cirurgia e neoplasias</h2></div></div>
+  <div class="aqui"><span class="feito">A linfa</span><span class="feito">A drenagem falha</span><span class="feito">Os tipos</span><span class="feito">Quadro clínico</span><span class="feito ramo">Lipedema</span><span class="feito">Diagnóstico</span><span class="feito">Tratamento</span><span class="on">Cirurgia</span></div>
+  <div class="simples"><p>As cirurgias que tentam religar o linfático a uma veia quase não funcionam. As que dão algum resultado retiram o excesso de tecido: são mutilantes, mas tiram o peso. Raramente, uma perna linfática de longa data vira câncer.</p></div>
+
+  <h3 data-bm="Religar ou retirar">Religar ou retirar <span class="prova">PROVA</span></h3>
+  <p>Restaurar um linfático é difícil. Toda a linfa do membro inferior vai para a cisterna do quilo e o ducto torácico e desemboca na veia subclávia, que fica acima do coração: o coração “chupa” o sangue dela, e a pressão lá dentro é baixa, muitas vezes negativa, quando estamos em pé.</p>
+  <div class="cmp">
+    <div class="r h"><div class="k"></div><div class="c">Derivação</div><div class="c">Redução</div></div>
+    <div class="r"><div class="k">O que faz</div><div class="c">Anastomose linfovenosa: liga um linfonodo ou vaso linfático da virilha à veia safena</div><div class="c">Linfangiectomia: retira o tecido fibrótico e edemaciado do braço ou da perna</div></div>
+    <div class="r"><div class="k">O problema</div><div class="c">Em pé, a pressão na safena é alta e vence a da linfa; talvez drene só à noite, deitado</div><div class="c">É mutilante</div></div>
+    <div class="r"><div class="k">Resultado</div><div class="c">Muito pouco efetiva</div><div class="c destaque">Algum resultado: tira o efeito massa e melhora a qualidade de vida</div></div>
+  </div>
+  <p>Para entender o efeito massa: a queixa mais comum de quem faz mamoplastia redutora é dor nas costas. Se uma mama, que não tem um tamanho exorbitante, já cria esse problema postural, imagine um braço com 15 a 20 kg a mais pesando na coluna.</p>
+  <div class="ref">
+    <div class="txt"><div class="kick"><span class="dot"></span>Peso a mais num braço com linfedema</div><p>É o efeito massa que justifica a cirurgia redutora.</p></div>
+    <div class="val">15 a 20 kg<small>a mais</small></div>
+  </div>
+
+  <h3>Neoplasias na perna linfática</h3>
+  <p>São raras, mas estão descritas:</p>
+  <div class="rows">
+    <div class="row"><div class="k">Carcinoma escamo&shy;celular</div><div class="v">O mais comum nesses pacientes. Surge na perna cheia de problemas, verrucosa e cronicamente inflamada.</div></div>
+    <div class="row"><div class="k">Linfangios&shy;sarcoma</div><div class="v">Síndrome de Stewart-Treves: o câncer linfático, raro. É uma degeneração sarcomatosa de uma doença linfática crônica de longa data.</div></div>
+  </div>
+  <p>Ligue com o capítulo 04: úlcera em doença linfática faz pensar em neoplasia.</p>
+</section>
+
+<section id="s09">
+  <div class="vesp">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">09</span></div><div class="corpo"><div class="de">Página de véspera</div><h2>O essencial da aula</h2></div></div>
+  <div class="item"><span class="prova">PROVA</span><p>O caminho da linfa: de distal para proximal, de lateral para medial; linfonodos inguinais, cisterna do quilo (leitosa pela gordura do intestino), ducto torácico, veia subclávia esquerda.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p>Aumentam a linfa: vasodilatador, varizes e dano no linfático. A reserva do linfático chega a 10 vezes a capacidade.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p>A infecção mais comum no linfedema é a erisipela; infecção e dano linfático formam um ciclo vicioso.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p>Primário: congênito, precoce (antes dos 35 anos) e tardio (depois dos 35, o mais comum: a mulher após uma ou duas gestações).</p></div>
+  <div class="item"><span class="prova">PROVA</span><p>Filariose: Wuchereria bancrofti, a elefantíase.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p>A porta de entrada da erisipela é o pé: onicomicose, frieira, calçado velho, atrás do maléolo lateral.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p>A cirurgia que mais lesa o linfático hoje é a mastectomia com retirada dos linfonodos axilares; a radioterapia fibrosa o linfático.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p>Linfedema: sem pigmentação, quase não ulcera, cilíndrico, frio, pouca dor, sinal de Stemmer positivo. Úlcera: pense em neoplasia.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p>Dor ao toque sugere lipedema; pouca dor, linfedema.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p>Lipedema: com índice de massa corporal abaixo de 25, quadril e coxa continuam desproporcionais, poupando os pés.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p>Linfedema é doença de um vaso; lipedema, de um tecido.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p>Diagnóstico: linfocintilografia, com albumina marcada entre os dedos dos pés; o lado que não sobe é o doente.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p>Elevar a perna só funciona no começo: as proteínas do interstício seguram a água.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p>Terapia física complexa: desobstrui o centro primeiro e depois traz a periferia.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p>Tratamento sempre combinado: remédio (diosmina com hesperidina), drenagem, compressão com dedos e higiene dos pés.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p>Cirurgia: a derivação linfovenosa quase não funciona; a redutora tira o efeito massa (um braço pode ter 15 a 20 kg a mais), mas é mutilante.</p></div>
+  </div>
+
+  <div class="box red"><div class="kick"><span class="dot"></span>Erros comuns</div><ul>
+    <li><span class="medium">Achar que todo inchaço é linfedema, ou que todo excesso de peso é lipedema.</span> Primeiro, peso normal; depois, conclusão.</li>
+    <li><span class="medium">Tratar o linfedema só com elevação.</span> Funciona na doença venosa, não no linfedema avançado.</li>
+    <li><span class="medium">Drenar de baixo para cima.</span> Isso é massagem estética; a terapia física complexa abre o centro primeiro.</li>
+  </ul></div>
+
+  <h3>Palavras da aula em linguagem simples</h3>
+  <div class="rows terms">
+    <div class="row"><div class="k">Anastomose linfovenosa</div><div class="v">Cirurgia que liga um vaso linfático, ou um linfonodo, a uma veia.</div></div>
+    <div class="row"><div class="k">Braquiterapia</div><div class="v">Radioterapia feita com material radioativo colocado junto do tumor.</div></div>
+    <div class="row"><div class="k">Cisterna do quilo</div><div class="v">Ponto do abdome onde chega a linfa das pernas e do intestino, antes do ducto torácico.</div></div>
+  </div>
+  <div class="rows terms">
+    <div class="row"><div class="k">Dermatite ocre</div><div class="v">Manchas escuras na pele da perna com doença venosa.</div></div>
+    <div class="row"><div class="k">Ducto torácico</div><div class="v">Principal canal linfático do corpo; leva a linfa até a veia subclávia esquerda.</div></div>
+    <div class="row"><div class="k">Flebotônico e linfocinético</div><div class="v">Remédio que ajuda o retorno do sangue e da linfa, como a diosmina com hesperidina.</div></div>
+  </div>
+  <div class="rows terms">
+    <div class="row"><div class="k">Linfângio</div><div class="v">Trecho do vaso linfático entre duas válvulas, que se contrai e bombeia a linfa.</div></div>
+    <div class="row"><div class="k">Linfangiectomia</div><div class="v">Cirurgia redutora que retira o tecido fibrótico e inchado do membro.</div></div>
+    <div class="row"><div class="k">Linfonodo sentinela</div><div class="v">Primeiro linfonodo que recebe a drenagem de um órgão; na mama, o primeiro da axila.</div></div>
+  </div>
+  <div class="rows terms">
+    <div class="row"><div class="k">Onicomicose</div><div class="v">Micose da unha.</div></div>
+    <div class="row"><div class="k">Pressão coloidosmótica</div><div class="v">Força com que as proteínas puxam e seguram a água perto delas.</div></div>
+    <div class="row"><div class="k">Quadrantectomia</div><div class="v">Mastectomia parcial: retira só uma parte da mama.</div></div>
+  </div>
+  <div class="rows terms">
+    <div class="row"><div class="k">Sinal de Stemmer</div><div class="v">Não conseguir pinçar a pele do dorso na base do segundo dedo do pé; positivo no linfedema.</div></div>
+    <div class="row"><div class="k">Tinea pedis</div><div class="v">Frieira: micose entre os dedos do pé.</div></div>
+    <div class="row"><div class="k">Wuchereria bancrofti</div><div class="v">Verme da filariose, que se instala nos linfáticos.</div></div>
+  </div>
+  {{NOTAS}}
+</section>
+
+</body></html>
