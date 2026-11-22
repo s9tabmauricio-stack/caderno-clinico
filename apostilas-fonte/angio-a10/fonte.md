@@ -8,6 +8,7 @@ Não edite à mão: para juntar material novo, rode o programa com --acrescentar
 ## O que tem aqui
 
 - Transcrição 1: `transcricao.txt` (13.249 palavras, duração até 00:57:42).
+- Transcrição 2: `correcao-p2-t28-angio-a10.txt` (1.160 palavras, duração até 00:24:46).
 
 ## Transcrição 1 · transcricao.txt
 <!-- parte transcricao 1 | arquivo=transcricao.txt | sha=5f0ab97d7503 | palavras=13.249 | duracao=00:57:42 -->
@@ -554,3 +555,69 @@ Transcrição Completa da Aula — Hipertensão Renovascular e Isquemia Intestin
 [57:40] Professor: Pode deixar.
 
 [57:42] Aluno(a): Oi, a aula tá aqui na área de trabalho...
+
+## Transcrição 2 · correcao-p2-t28-angio-a10.txt
+<!-- parte transcricao 2 | arquivo=correcao-p2-t28-angio-a10.txt | sha=9d81cffca047 | palavras=1.160 | duracao=00:24:46 -->
+
+CORREÇÃO DA P2 T28 DE ANGIOLOGIA (CIRURGIA VASCULAR) — TRECHOS DAS QUESTÕES 3, 14, 16, 17, 24
+Fala do Prof. Dr. Américo corrigindo a prova em sala (arquivo de origem: p2-28.mp4; transcrição inteira em apostilas-fonte/provas/angio-p2-t28-correcao.txt).
+
+=== [03:18 - 03:49] QUESTÃO 3 — CUIDADO PÓS-OPERATÓRIO EM ANGIOPLASTIA COM STENT (DUPLA ANTIAGREGAÇÃO E ESTATINA) ===
+
+[03:18] Professor: Questão 3: Em relação ao cuidado pós-operatório nas angioplastias com stent: botou stent, ganha o quê?
+
+[03:25] Alunos: Dupla antiagregação...
+
+[03:26] Professor: Dupla antiagregação plaquetária e estatina. Só tem uma alternativa que tinha isso. Então essa eu espero que todos tenham acertado — vi que bastante gente acertou: a terapia ideal é dupla antiagregação com AAS e clopidogrel (com dose de ataque após o procedimento), associada à estatina na dose máxima permitida (aceitável/tolerada), né? Questão 3: Letra E.
+
+=== [14:07 - 15:02] QUESTÃO 14 — ISQUEMIA MESENTÉRICA AGUDA (OCLUSÃO DA ARTÉRIA MESENTÉRICA SUPERIOR) ===
+
+[14:07] Professor: Questão 14: Paciente de 80 anos com dor abdominal súbita. Na angiotomografia, observamos oclusão aguda da artéria mesentérica superior (ocluiu um ramo visceral agudo, né).
+- "Tratamento clínico observacional?" Observacional? Você está esperando o cara morrer, né!
+- "Internar na UTI e deixar apenas em antibioticoterapia e anticoagulante isolados?" Não resolve a oclusão aguda grave sozinho.
+- Letra C: "O manejo endovascular com tromboaspiração e/ou fibrinólise precoce é a melhor opção em pacientes sem sinais de necrose intestinal (sem peritonite)?" É uma excelente opção hoje, sim! Letra C é a correta (Questão 14: Letra C).
+- "O manejo preconizado é sempre laparotomia imediata e trombectomia cirúrgica?" Olha, depende de onde você está; pode ser feito, mas não é sempre — vai depender da disponibilidade endovascular e da ausência de necrose.
+- "90% da isquemia mesentérica aguda é de origem vasculítica?" Não! É por êmbolo (ex.: fibrilação atrial) ou trombose aterosclerótica, né? Então, Questão 14: Letra C.
+
+=== [15:03 - 15:47] QUESTÕES 15 E 16 — SINAIS MAIORES (HARD SIGNS) DE TRAUMA ARTERIAL E PADRÃO-OURO NA HIPERTENSÃO RENOVASCULAR ===
+
+[15:03] Professor: Questão 15: Quais são os sinais maiores (hard signs) de lesão arterial em trauma que indicam exploração cirúrgica de urgência? Dali das alternativas só tem um que é sinal maior: ausência de pulsos distais associada a sinais de isquemia aguda. Então, Questão 15: Letra A. Todas as outras alternativas listavam apenas sinais menores (soft signs), né?
+
+[15:20] Professor: Questão 16: Um paciente jovem com hipertensão arterial resistente e sopro abdominal. Qual é o exame padrão-ouro (gold standard) para o diagnóstico definitivo da hipertensão renovascular?
+
+[15:32] Alunos: Angiografia.
+
+[15:33] Professor: Angiografia com subtração digital (arteriografia renal)! Ainda é o padrão-ouro para a maioria das doenças arteriais, inclusive. Então, sempre que perguntarem o padrão-ouro e tiver essa opção, lembrem de marcá-la. Questão 16: Letra D é a correta. Essa aqui a maioria acertou.
+
+=== [15:48 - 17:27] QUESTÃO 17 — ISQUEMIA MESENTÉRICA CRÔNICA (CLAUDICAÇÃO INTESTINAL) E ESCLARECIMENTO DA ALTERNATIVA E ===
+
+[15:48] Professor: Questão 17: Paciente com dor abdominal pós-prandial e emagrecimento (medo de comer), dislipidemia mista, hipertensão arterial de longa data e fumante de 3 maços por dia. Então existe um quadro clássico chamado claudicação intestinal (ou angina mesentérica).
+- "Dói no jejum e melhora com a alimentação?" Não, é o inverso, né! Dói após comer (pós-prandial) e melhora no jejum.
+- "Em caso de dor pós-prandial, uma endoscopia digestiva alta normal descarta isquemia?" Não tem nada a ver; a endoscopia só descarta úlcera péptica/gastrite.
+- "O melhor exame para confirmar isquemia intestinal crônica é a colangiopancreatografia/colecistografia endoscópica?" Não vai identificar nada de isquemia arterial.
+- Letra D: "Embora a angiografia com subtração digital seja o padrão-ouro, o exame inicial mais útil nesse caso é a angiotomografia?" Sim! Por quê? Porque, além de fazer o diagnóstico vascular da estenose mesentérica/tronco celíaco, ela já diferencia outras causas abdominais que podem causar dor e emagrecimento — como câncer de pâncreas, neoplasias retroperitoneais, etc. Então, Questão 17: Letra D é a correta.
+
+[16:54] Aluna: Professor, você vai explicar por que está errada a Letra E na 17?
+
+[16:58] Professor: Na Letra E: "Paciente com estenose significativa somente em um dos vasos viscerais não pode ter sintomas de isquemia." Como "não pode"?! Se eu tenho uma estenose crítica de 90% na artéria mesentérica superior, eu não posso ter sintoma só porque é um vaso só? É por isso que ela está errada: pode ter, sim! Não é o mais comum — geralmente precisa ter dois ou mais vasos viscerais comprometidos (tronco celíaco, mesentérica superior, mesentérica inferior) por conta da rica circulação colateral —, mas existem casos (especialmente quando o vaso acometido é a artéria mesentérica superior isolada ou há colaterais insuficientes) em que uma única artéria comprometida dá sintomas. Na medicina, afirmar que "não pode" torna a alternativa incorreta. Então a Questão 17 é a Letra D.
+
+=== [23:44 - 25:25] QUESTÃO 24 — HIPERTENSÃO RENOVASCULAR EM PACIENTE JOVEM: DISPLASIA FIBROMUSCULAR E ANGIOPLASTIA COM BALÃO ===
+
+[23:44] Professor: Questão 24: Paciente de 26 anos com pressão arterial de 160x100 mmHg, tomando um monte de remédios para hipertensão — ó: 1, 2, 3, 4, 5 anti-hipertensivos! É uma hipertensão controlada? Claro que não, ainda está 160x100 mmHg! Foi identificado um sopro abdominal, sendo suspeito de hipertensão renovascular. Em um paciente jovem de 26 anos (especialmente mulher jovem), o que vocês pensariam como principal diagnóstico etiológico?
+- "Aterosclerose?" Não (aterosclerose é a causa mais comum em idosos).
+- Qual é a causa mais comum em jovens?
+
+[24:12] Alunos: Fibrodisplasia.
+
+[24:13] Professor: Displasia fibromuscular (fibrodisplasia)! Ou uma vasculite (como arterite de Takayasu), que também se poderia pensar, mas não tinha opção de vasculite aqui — tinha fibrodisplasia. E qual é o tratamento de escolha para a estenose de artéria renal por displasia fibromuscular? Angioplastia renal transluminal percutânea com balão (sem stent)! Então, fibrodisplasia e angioplastia com balão sem stent é a conduta mais correta: Questão 24: Letra B.
+
+[24:41] Aluna: Professor, mas por que na 24 não pode ser hipertensão primária (essencial)?
+
+[24:46] Professor: Então: primeiro, porque o paciente tem 26 anos e já está tomando nifedipino, losartana, hidroclorotiazida, atenolol... toma 5 remédios anti-hipertensivos e ainda está com a pressão 160x100 mmHg (hipertensão resistente/refratária). Segundo, olha o que o enunciado falou: "foi identificado um sopro abdominal, sendo suspeita de hipertensão renovascular". Um paciente jovem, de 26 anos, com sopro abdominal e hipertensão resistente a 5 fármacos — são todos os dados clínicos clássicos que exigem investigar e tratar hipertensão secundária renovascular por fibrodisplasia, e não hipertensão primária, sempre!
+
+Gabarito oficial destas questões:
+03: E | Pós-operatório de angioplastia com stent — Dupla antiagregação (AAS + clopidogrel) + estatina em dose máxima tolerada
+14: C | Isquemia mesentérica aguda sem necrose intestinal — Manejo endovascular precoce (tromboaspiração/fibrinólise)
+16: D | Hipertensão renovascular — Exame padrão-ouro (gold standard): Angiografia com subtração digital
+17: D | Isquemia mesentérica crônica — Angiotomografia como exame inicial mais útil (avalia vasos e diagnósticos diferenciais)
+24: B | Hipertensão renovascular resistente em jovem (26 anos) com sopro abdominal — Fibrodisplasia e angioplastia com balão

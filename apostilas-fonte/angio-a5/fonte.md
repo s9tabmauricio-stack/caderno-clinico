@@ -1,6 +1,6 @@
 # Fonte da aula · angio-a5
 
-Guardada com `scripts/fonte-aula.py` (última mudança em 21/11/2026). É o material da aula como veio, sem correção:
+Guardada com `scripts/fonte-aula.py` (última mudança em 22/11/2026). É o material da aula como veio, sem correção:
 os erros da transcrição automática ficam aqui e quem corrige é a apostila. A apostila, as questões, os flashcards
 e as conferências saem deste arquivo; onde ele e a apostila divergem, vale o que o professor falou (AGENTS.md).
 Não edite à mão: para juntar material novo, rode o programa com --acrescentar.
@@ -8,6 +8,7 @@ Não edite à mão: para juntar material novo, rode o programa com --acrescentar
 ## O que tem aqui
 
 - Transcrição 1: `transcricao.txt` (18.619 palavras, duração até 01:39:40).
+- Transcrição 2: `correcao-p2-t28-angio-a5.txt` (1.148 palavras, duração até 00:20:26).
 
 ## Transcrição 1 · transcricao.txt
 <!-- parte transcricao 1 | arquivo=transcricao.txt | sha=c01fc9294e5f | palavras=18.619 | duracao=01:39:40 -->
@@ -730,3 +731,68 @@ Estilo            : Clean verbatim com revisão técnica médica
 ================================================================================
 FIM DA TRANSCRIÇÃO
 ================================================================================
+
+## Transcrição 2 · correcao-p2-t28-angio-a5.txt
+<!-- parte transcricao 2 | arquivo=correcao-p2-t28-angio-a5.txt | sha=edacbfbb0a1c | palavras=1.148 | duracao=00:20:26 -->
+
+CORREÇÃO DA P2 T28 DE ANGIOLOGIA (CIRURGIA VASCULAR) — TRECHOS DAS QUESTÕES 7, 15, 18
+Fala do Prof. Dr. Américo corrigindo a prova em sala (arquivo de origem: p2-28.mp4; transcrição inteira em apostilas-fonte/provas/angio-p2-t28-correcao.txt).
+
+=== [06:21 - 07:46] QUESTÃO 7 — TRAUMA VASCULAR POR ARMA DE FOGO (FAF): ENXERTO AUTÓLOGO DE SAFENA CONTRALATERAL VS. PRÓTESE SINTÉTICA ===
+
+[06:21] Professor: Questão 7: Um paciente de 25 anos foi vítima de um ferimento por arma de fogo (FAF). Essa aqui exigia um pouco mais de raciocínio. (risos) Porque nessa, o que acontece? Tinha duas alternativas plausíveis. Mas você tem um trauma em uma das pernas, o cara está sangrando e você precisa tirar um remendo (patch) ou enxerto venoso.
+
+[06:39] Professor: Pensa na lógica: você pega a veia de uma perna que já foi agredida pelo trauma ou você vai tirar esse remendo da outra perna, que está sã?
+
+[06:45] Alunos: Da outra perna.
+
+[06:46] Professor: Era a única coisa que você precisava raciocinar: da outra perna, é claro, né? Você não vai estragar a drenagem venosa da perna que já está toda danificada.
+
+[06:53] Professor: Então a Questão 7 é a Letra E: explorar cirurgicamente a região, visto que o exame físico é fortemente sugestivo de trauma vascular, e colocar um remendo/enxerto de veia safena retirada da outra perna (membro contralateral). Sempre, sempre que possível, tire o remendo ou enxerto da perna que não foi afetada pelo trauma. Por quê? Porque a perna traumatizada já sofreu trauma suficiente e pode ter lesão venosa profunda associada, né?
+
+[07:16] Professor: "Ah, e as outras alternativas?" A Letra A dizia para tirar a safena da mesma perna — não é o ideal ("Ah, não tem a outra perna", aí tudo bem). "Ah, eu não podia usar um PTFE, Dacron ou pericárdio bovino?"
+
+[07:32] Aluna: Porque está infectado/contaminado, né?
+
+[07:33] Professor: Então, por que não? Porque é vítima de ferimento por arma de fogo! O projétil contamina a ferida — isso mesmo! Contaminou, fuja de tudo que é material sintético ou heterólogo; dê preferência absoluta ao tecido autólogo. Essa é a regra da questão. Questão 7: Letra E.
+
+=== [15:03 - 15:47] QUESTÕES 15 E 16 — SINAIS MAIORES (HARD SIGNS) DE TRAUMA ARTERIAL E PADRÃO-OURO NA HIPERTENSÃO RENOVASCULAR ===
+
+[15:03] Professor: Questão 15: Quais são os sinais maiores (hard signs) de lesão arterial em trauma que indicam exploração cirúrgica de urgência? Dali das alternativas só tem um que é sinal maior: ausência de pulsos distais associada a sinais de isquemia aguda. Então, Questão 15: Letra A. Todas as outras alternativas listavam apenas sinais menores (soft signs), né?
+
+[15:20] Professor: Questão 16: Um paciente jovem com hipertensão arterial resistente e sopro abdominal. Qual é o exame padrão-ouro (gold standard) para o diagnóstico definitivo da hipertensão renovascular?
+
+[15:32] Alunos: Angiografia.
+
+[15:33] Professor: Angiografia com subtração digital (arteriografia renal)! Ainda é o padrão-ouro para a maioria das doenças arteriais, inclusive. Então, sempre que perguntarem o padrão-ouro e tiver essa opção, lembrem de marcá-la. Questão 16: Letra D é a correta. Essa aqui a maioria acertou.
+
+=== [17:28 - 18:19] QUESTÃO 18 — ATENDIMENTO INICIAL NO TRAUMA ARTERIAL DE MEMBRO SUPERIOR (LESÃO DE ARTÉRIA RADIAL POR ARMA BRANCA) ===
+
+[17:28] Professor: Questão 18: Paciente com acidente por faca de churrasco e sangramento ativo na artéria radial — esse aqui foi um caso que eu peguei do Dr. Vítor no semestre passado. Qual é a melhor combinação de medidas imediatas no pronto-atendimento?
+- "Clampear os cotos às cegas?" Não! A gente não agride o coto arterial nem pinça às cegas pelo risco de lesar nervos adjacentes e destruir a parede arterial.
+- "Realizar enfaixamento do membro superior com faixa de Esmarch para esvaziamento venoso e arterial desde a mão até o cotovelo?" Olha, não é o que a gente costuma fazer na emergência — até porque não tem faixa de Esmarch na maioria dos prontos-socorros, só no centro cirúrgico.
+- "Compressão da artéria subclávia, torniquete na artéria braquial distal e deixar o paciente sentado com o membro abaixado?" Não! Nunca abaixe o membro de quem está sangrando, né?
+- "Torniquete para controle do sangramento e cauterização da lesão arterial?" Cauterizar a artéria radial também não!
+- Letra E: "Compressão proximal da artéria braquial, seguida de compressão direta da ferida sangrante e elevação do membro?" Sim! Geralmente só comprimir diretamente a ferida com gaze limpa e elevar o membro já é o suficiente para controlar o sangramento até o reparo cirúrgico definitivo. Então, na Questão 18, a alternativa correta é a Letra E.
+
+=== [19:09 - 20:45] QUESTÃO 20 — DIAGNÓSTICO DIFERENCIAL DOS EDEMAS DE MEMBROS INFERIORES E DÚVIDA SOBRE A QUESTÃO 18 ===
+
+[19:09] Professor: Questão 20: Quanto ao edema dos membros inferiores, essa aqui era bem fácil, a maioria acertou também:
+1. Edema de membro inferior súbito, unilateral e com cianose: qual é? TVP (Trombose Venosa Profunda)!
+2. Edema cilíndrico de membro inferior (a perna fica igual a um cilindro, acometendo dorso do pé, sinal de Stemmer positivo): Linfedema!
+3. Edema bilateral com acúmulo adiposo não uniforme em pontos específicos (poupando os pés, doloroso à palpação): Lipedema!
+4. Edema bilateral mole, com cacifo muito intenso, indolor: Edema sistêmico (insuficiência cardíaca, renal ou hipoproteinemia/hepático)!
+5. Edema uni ou bilateral que piora ao longo do dia (vespertino) e melhora com o repouso/elevação: Insuficiência venosa crônica / Varizes!
+
+[19:51] Professor: A alternativa que preenchia essa sequência corretamente era a Letra C, de casa. Questão 20: Letra C.
+
+[19:56] Aluna: Doutor, na Questão 18... ali na Letra E é a correta, né? Ali falava sobre compressão da artéria braquial...
+
+[20:12] Professor: É, a alternativa falou em comprimir a artéria braquial proximalmente junto com a compressão direta da ferida e elevação do membro. Não está errado! Não precisa obrigatoriamente comprimir a braquial se você comprimir bem a lesão radial diretamente, mas não está errado fazer a compressão indireta da artéria nutridora enquanto prepara o curativo compressivo direto. É que as outras alternativas falavam em colocar torniquete com membro abaixado, cauterizar a artéria ou clampear o coto.
+
+[20:26] Professor: E torniquete é um pepino, né? Se você puser errado... qual é o maior erro do torniquete na prática? A pessoa vai colocar o torniquete e não aperta o suficiente para ocluir a artéria. Aí ele bloqueia o retorno do sangue venoso e não bloqueia o influxo arterial: o sangue continua entrando no membro pela artéria, não consegue sair pela veia e a ferida sangra mais ainda! Já vi isso acontecer muitas vezes na emergência, né?
+
+Gabarito oficial destas questões:
+07: E | Trauma vascular por FAF — Exploração cirúrgica e reparo com enxerto/remendo autólogo de veia safena da outra perna
+15: A | Sinais maiores (hard signs) no trauma vascular — Ausência de pulsos distais associada a sinais de isquemia
+18: E | Trauma de artéria radial por faca — Compressão da artéria braquial + compressão direta da ferida + elevação do membro

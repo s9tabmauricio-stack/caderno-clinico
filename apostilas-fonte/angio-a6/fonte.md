@@ -1,6 +1,6 @@
 # Fonte da aula · angio-a6
 
-Guardada com `scripts/fonte-aula.py` (última mudança em 21/11/2026). É o material da aula como veio, sem correção:
+Guardada com `scripts/fonte-aula.py` (última mudança em 22/11/2026). É o material da aula como veio, sem correção:
 os erros da transcrição automática ficam aqui e quem corrige é a apostila. A apostila, as questões, os flashcards
 e as conferências saem deste arquivo; onde ele e a apostila divergem, vale o que o professor falou (AGENTS.md).
 Não edite à mão: para juntar material novo, rode o programa com --acrescentar.
@@ -8,6 +8,7 @@ Não edite à mão: para juntar material novo, rode o programa com --acrescentar
 ## O que tem aqui
 
 - Transcrição 1: `transcricao.txt` (7.955 palavras, duração até 00:52:02).
+- Transcrição 2: `correcao-p2-t28-angio-a6.txt` (380 palavras, duração até 00:20:26).
 
 ## Transcrição 1 · transcricao.txt
 <!-- parte transcricao 1 | arquivo=transcricao.txt | sha=dee206a09294 | palavras=7.955 | duracao=00:52:02 -->
@@ -288,3 +289,29 @@ Mas o efeito isolado é baixo. Como é uma terapia que responde pouco, geralment
 
 [52:02] Professor: Muito bem, dúvidas? Então tivemos uma breve visão sobre uma doença linfática crônica, também uma breve informação sobre o lipedema e o linfedema. Alguém tem alguma dúvida? Muito bem. Agora nós vamos ver uma situação que nós já comentamos e que é, sim, talvez uma das mais importantes para vocês... (Fim da gravação aos 52:36)
 ================================================================================
+
+## Transcrição 2 · correcao-p2-t28-angio-a6.txt
+<!-- parte transcricao 2 | arquivo=correcao-p2-t28-angio-a6.txt | sha=42bacba23b43 | palavras=380 | duracao=00:20:26 -->
+
+CORREÇÃO DA P2 T28 DE ANGIOLOGIA (CIRURGIA VASCULAR) — TRECHOS DAS QUESTÕES 20
+Fala do Prof. Dr. Américo corrigindo a prova em sala (arquivo de origem: p2-28.mp4; transcrição inteira em apostilas-fonte/provas/angio-p2-t28-correcao.txt).
+
+=== [19:09 - 20:45] QUESTÃO 20 — DIAGNÓSTICO DIFERENCIAL DOS EDEMAS DE MEMBROS INFERIORES E DÚVIDA SOBRE A QUESTÃO 18 ===
+
+[19:09] Professor: Questão 20: Quanto ao edema dos membros inferiores, essa aqui era bem fácil, a maioria acertou também:
+1. Edema de membro inferior súbito, unilateral e com cianose: qual é? TVP (Trombose Venosa Profunda)!
+2. Edema cilíndrico de membro inferior (a perna fica igual a um cilindro, acometendo dorso do pé, sinal de Stemmer positivo): Linfedema!
+3. Edema bilateral com acúmulo adiposo não uniforme em pontos específicos (poupando os pés, doloroso à palpação): Lipedema!
+4. Edema bilateral mole, com cacifo muito intenso, indolor: Edema sistêmico (insuficiência cardíaca, renal ou hipoproteinemia/hepático)!
+5. Edema uni ou bilateral que piora ao longo do dia (vespertino) e melhora com o repouso/elevação: Insuficiência venosa crônica / Varizes!
+
+[19:51] Professor: A alternativa que preenchia essa sequência corretamente era a Letra C, de casa. Questão 20: Letra C.
+
+[19:56] Aluna: Doutor, na Questão 18... ali na Letra E é a correta, né? Ali falava sobre compressão da artéria braquial...
+
+[20:12] Professor: É, a alternativa falou em comprimir a artéria braquial proximalmente junto com a compressão direta da ferida e elevação do membro. Não está errado! Não precisa obrigatoriamente comprimir a braquial se você comprimir bem a lesão radial diretamente, mas não está errado fazer a compressão indireta da artéria nutridora enquanto prepara o curativo compressivo direto. É que as outras alternativas falavam em colocar torniquete com membro abaixado, cauterizar a artéria ou clampear o coto.
+
+[20:26] Professor: E torniquete é um pepino, né? Se você puser errado... qual é o maior erro do torniquete na prática? A pessoa vai colocar o torniquete e não aperta o suficiente para ocluir a artéria. Aí ele bloqueia o retorno do sangue venoso e não bloqueia o influxo arterial: o sangue continua entrando no membro pela artéria, não consegue sair pela veia e a ferida sangra mais ainda! Já vi isso acontecer muitas vezes na emergência, né?
+
+Gabarito oficial destas questões:
+20: C | Diagnóstico diferencial dos edemas de MMII — TVP, Linfedema, Lipedema, Edema sistêmico e Varizes

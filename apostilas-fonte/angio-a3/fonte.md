@@ -1,6 +1,6 @@
 # Fonte da aula · angio-a3
 
-Guardada com `scripts/fonte-aula.py` (última mudança em 21/11/2026). É o material da aula como veio, sem correção:
+Guardada com `scripts/fonte-aula.py` (última mudança em 22/11/2026). É o material da aula como veio, sem correção:
 os erros da transcrição automática ficam aqui e quem corrige é a apostila. A apostila, as questões, os flashcards
 e as conferências saem deste arquivo; onde ele e a apostila divergem, vale o que o professor falou (AGENTS.md).
 Não edite à mão: para juntar material novo, rode o programa com --acrescentar.
@@ -9,6 +9,7 @@ Não edite à mão: para juntar material novo, rode o programa com --acrescentar
 
 - Transcrição 1: `transcricao.txt` (10.637 palavras, duração até 01:08:07).
 - Transcrição 2: `transcricao-revisao.txt` (427 palavras, duração até 00:01:57).
+- Transcrição 3: `correcao-p2-t28-angio-a3.txt` (534 palavras, duração até 00:18:50).
 
 ## Transcrição 1 · transcricao.txt
 <!-- parte transcricao 1 | arquivo=transcricao.txt | sha=5d617235b050 | palavras=10.637 | duracao=01:08:07 -->
@@ -381,3 +382,51 @@ Duração total: 02:17
 [01:57] Professor: E, no final das contas, o que sobra é você, o seu trabalho, a sua família e os seus amigos — sempre isso. Então, não desanimem, independente se vocês tiveram os pleitos de vocês atendidos ou não, isso faz parte. É igual aqui decidir a formatura, né? Eu tinha essa ideia também quando eu era aluno, de ter um controle remoto com um botão... (gravação encerrada abruptamente)
 
 ====================================================================
+
+## Transcrição 3 · correcao-p2-t28-angio-a3.txt
+<!-- parte transcricao 3 | arquivo=correcao-p2-t28-angio-a3.txt | sha=7711629f887d | palavras=534 | duracao=00:18:50 -->
+
+CORREÇÃO DA P2 T28 DE ANGIOLOGIA (CIRURGIA VASCULAR) — TRECHOS DAS QUESTÕES 1, 19
+Fala do Prof. Dr. Américo corrigindo a prova em sala (arquivo de origem: p2-28.mp4; transcrição inteira em apostilas-fonte/provas/angio-p2-t28-correcao.txt).
+
+=== [00:00 - 01:29] ABERTURA E QUESTÃO 1 — DOENÇA ARTERIAL OBSTRUTIVA PERIFÉRICA (DAOP) E TRATAMENTO CLÍNICO OTIMIZADO ===
+
+[00:00] Professor: ...descobrir se vai poder assistir à Copa nos Estados Unidos ou aqui, né? (risos da turma)
+
+[00:06] Aluna: (comentário ao fundo) Eu não sei nem se eu passei...
+
+[00:07] Professor: Avisei: não compre a passagem antes do resultado da prova. (risos) Então vamos lá!
+
+[00:12] Professor: Questão 1: Mulher de 70 anos, claudicante para 400 metros há meses nessa perna, fumante e hipertensa. Ao exame físico, ela não tem os pulsos distais — nem tibial posterior, nem tibial anterior. Então, a gente está diante de uma... qual é o problema dela? Uma insuficiência arterial crônica, né?
+
+[00:36] Professor: E claudicando para 400 metros: é leve, moderada ou grave? Hã?
+
+[00:42] Alunos: Leve.
+
+[00:43] Professor: Leve a moderada, né? Grave não, né? Então, é uma paciente que precisa internar e fazer uma ponte (bypass)?
+
+[00:50] Alunos: Não.
+
+[00:51] Professor: Não. É angiografia para programar revascularização? Cara, não penso em operar essa paciente por enquanto, né? Internação e anticoagulação sistêmica? Também não, né?
+
+[01:02] Professor: Rosuvastatina, antiagregante plaquetário e deambulação supervisionada? Esse é um bom tratamento clínico. Inicialmente, é o que a gente sempre vai fazer nas DAOPs (Doenças Arteriais Obstrutivas Periféricas), especialmente nas leves e moderadas, e eventualmente nas graves. Não melhorou — "Doutor do céu, faz 6 meses que eu estou tomando esses remédios e nada está melhor" —, aí a gente começa a pensar em intervenção, né? Amputação? Não. Então, Questão 1: Letra D.
+
+=== [18:20 - 19:08] QUESTÃO 19 — CLASSIFICAÇÃO DE RUTHERFORD NA DAOP (CLAUDICAÇÃO LIMITANTE AOS 15 METROS) ===
+
+[18:20] Professor: Questão 19: Um homem de 65 anos, há 40 anos tabagista, refere dor na panturrilha após caminhar 15 metros. É dor em repouso?
+
+[18:30] Alunos: Não.
+
+[18:31] Professor: Não! É uma claudicação intermitente limitante — é uma claudicação grave. É uma claudicação em que a gente já começa a pensar em tratar de maneira mais agressiva. Então, na Classificação de Rutherford:
+- Se a claudicação leve é Rutherford 1;
+- A claudicação moderada é Rutherford 2;
+- A claudicação grave/incapacitante (15 metros) é Rutherford 3!
+- O Rutherford 4 é dor isquêmica em repouso;
+- O Rutherford 5 é lesão trófica menor (úlcera/necrose focal);
+- E o Rutherford 6 é lesão trófica maior / gangrena extensa.
+
+[18:50] Professor: Quem teve aula prática comigo viu que eu sempre frisei isso: "Olha, a classificação CEAP (venosa) e a de Rutherford (arterial) vão de 0 a 6: o 0 não tem sintoma nenhum, o 6 tem o quadro mais grave, e no meio do caminho você divide a claudicação em 1, 2 e 3 e a isquemia crítica em 4, 5 e 6." Então, Questão 19: Letra B (Rutherford 3).
+
+Gabarito oficial destas questões:
+01: D | DAOP claudicante (400 m) — Tratamento clínico otimizado (rosuvastatina, antiagregante e deambulação supervisionada)
+19: B | DAOP com claudicação limitante aos 15 metros (sem dor em repouso) — Classificação de Rutherford 3

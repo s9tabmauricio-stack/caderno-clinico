@@ -1,6 +1,6 @@
 # Fonte da aula · angio-a2
 
-Guardada com `scripts/fonte-aula.py` (última mudança em 16/11/2026). É o material da aula como veio, sem correção:
+Guardada com `scripts/fonte-aula.py` (última mudança em 22/11/2026). É o material da aula como veio, sem correção:
 os erros da transcrição automática ficam aqui e quem corrige é a apostila. A apostila, as questões, os flashcards
 e as conferências saem deste arquivo; onde ele e a apostila divergem, vale o que o professor falou (AGENTS.md).
 Não edite à mão: para juntar material novo, rode o programa com --acrescentar.
@@ -8,6 +8,7 @@ Não edite à mão: para juntar material novo, rode o programa com --acrescentar
 ## O que tem aqui
 
 - Transcrição 1: `transcricao.txt` (12.964 palavras, duração até 01:29:45).
+- Transcrição 2: `correcao-p2-t28-angio-a2.txt` (1.024 palavras, duração até 00:26:30).
 
 ## Transcrição 1 · transcricao.txt
 <!-- parte transcricao 1 | arquivo=transcricao.txt | sha=a9881fb245cc | palavras=12.964 | duracao=01:29:45 -->
@@ -462,3 +463,70 @@ A deiscência de sutura também pode dar um pseudoaneurisma: você tem uma ponte
 
 [89:45] Professor: Essa aula aqui está gravada na área de trabalho desse computador: AAA 2, tá? Para quem quiser, depois é só pegar ou repassar.
 ================================================================================
+
+## Transcrição 2 · correcao-p2-t28-angio-a2.txt
+<!-- parte transcricao 2 | arquivo=correcao-p2-t28-angio-a2.txt | sha=c89dc3dba756 | palavras=1.024 | duracao=00:26:30 -->
+
+CORREÇÃO DA P2 T28 DE ANGIOLOGIA (CIRURGIA VASCULAR) — TRECHOS DAS QUESTÕES 12, 21, 25
+Fala do Prof. Dr. Américo corrigindo a prova em sala (arquivo de origem: p2-28.mp4; transcrição inteira em apostilas-fonte/provas/angio-p2-t28-correcao.txt).
+
+=== [11:47 - 13:38] QUESTÃO 12 — INDICAÇÕES E CONTRAINDICAÇÕES CIRÚRGICAS NOS ANEURISMAS ARTERIAIS ===
+
+[11:47] Professor: Questão 12: Qual destes pacientes NÃO deve ser operado?
+- "Eu não opero um aneurisma sacular da aorta abdominal de 4,8 cm?" Eu opero! A gente falou que o formato sacular é uma exceção àquela medida clássica de 5,5 cm, pelo maior risco de rotura, né?
+- "Eu não opero um aneurisma de artéria poplítea de 3,0 cm com trombos recentes?" Opero! Trombo em aneurisma de poplítea (> 2,0 cm) é indicação de cirurgia pelo alto risco de embolização distal e trombose aguda. É diferente da aorta, né?
+
+[12:10] Professor: E aconteceu um caso ontem daquilo que eu falei para vocês: um cardiologista atendeu uma paciente com uma ectasia/aneurisma de aorta de 2,8 cm e iniciou anticoagulante porque no laudo veio escrito "trombos murais". E eu liguei para ele e ele não sabia me justificar por que fez aquilo! (risos) Então, aquilo que a gente viu na aula acontece no mundo real.
+
+[12:29] Professor: Continuando:
+- Letra C: "Eu NÃO opero um paciente com aneurisma de aorta de 5,5 cm e câncer metastático avançado?"
+
+[12:34] Alunos: Não opera.
+
+[12:36] Professor: Deixa o cara viver em paz, né, aproveitar os últimos meses de vida! Exatamente, então a Letra C é a correta: eu não opero esse paciente. A expectativa de vida dele é curta; para que eu vou arriscar a vida dele numa cirurgia grande? Deixa ele aproveitar o resto que tem. Se ele morrer do aneurisma (rotura súbita), vai morrer até com mais dignidade e menos sofrimento prolongado, né? Se alguém já acompanhou um câncer terminal aí, vai entender o que eu estou falando.
+
+[12:55] Professor: E as outras duas:
+- "Aneurisma de aorta com sinais de embolização distal (síndrome do dedo azul): eu não opero?" Opero! Está embolizando; se eu deixar ali, vai entupir as artérias da perna.
+- "Um aneurisma de 10 cm em paciente com abdome hostil: eu não opero?" Opero! Coloco uma endoprótese (EVAR) por via endovascular e resolvo o problema sem abrir o abdome, né? Então, Questão 12: Letra C é a correta.
+
+[13:16] Aluno: (comentário ao fundo) Nossa, estou gostando dessa prova...
+
+[13:20] Professor: Mas sabe o que é interessante? Na primeira leva de provas que eu corrigi, só teve uma nota abaixo de 7,0. Teve 9,6; 9,2; 9,4; 8,8... Então, assim: tem gente que entendeu o recado; infelizmente tem gente que não. Mas eu fiquei feliz de ver que, apesar de a prova estar exigindo um pouco mais de raciocínio clínico, bastante gente foi bem.
+
+=== [20:46 - 21:34] QUESTÃO 21 — INDICAÇÃO DE CORREÇÃO ELETIVA DO ANEURISMA DE AORTA ABDOMINAL INFRARRENAL (DIÂMETRO >= 5,5 CM) ===
+
+[20:46] Professor: Questão 21: Homem de 74 anos, tabagista, realiza ultrassom que demonstra aneurisma infrarrenal da aorta medindo 5,8 cm. O paciente é assintomático. A principal indicação para a correção cirúrgica eletiva desse caso qual é? Fácil demais, né? Essa aqui era para ninguém errar! Qual é a principal indicação no homem?
+
+[21:12] Alunos: Tamanho maior que 5,5 cm.
+
+[21:13] Professor: Diâmetro maior que 5,5 cm! Passou de 5,5 cm no homem (ou 5,0 cm na mulher), está indicado operar eletivamente, né?
+- "Idade superior a 70 anos é a indicação?" Não.
+- "Presença de hipertensão arterial?" Também não é a indicação cirúrgica isolada.
+- "Tabagismo?" Não é a indicação.
+- "Sexo masculino?" Não muda o critério para operar abaixo de 5,5 cm (pelo contrário, na mulher opera antes).
+A única indicação cirúrgica correta ali é que o diâmetro do aneurisma ultrapassou 5,5 cm. Questão 21: Letra B de bola.
+
+=== [25:26 - 26:45] QUESTÃO 25 — MANEJO CONSERVADOR DO ANEURISMA DE ARTÉRIA ESPLÊNICA PEQUENO (1 CM) E ENCERRAMENTO DO SEMESTRE ===
+
+[25:26] Professor: Questão 25: Qual é o melhor manejo para um aneurisma da artéria esplênica pequeno, de 1,0 cm, em uma mulher menopausada e sem comorbidades?
+
+[25:38] Alunos: Só acompanhar.
+
+[25:39] Professor: Só acompanhar (tratamento conservador e seguimento por imagem), né? Ninguém operaria um aneurisma esplênico de 1 cm numa mulher menopausada. Qual é o limite de diâmetro para indicar tratamento invasivo no aneurisma de artéria esplênica verdadeiro assintomático?
+
+[25:43] Alunos: 3 centímetros.
+
+[25:44] Professor: 3,0 centímetros (ou > 2,0 a 3,0 cm segundo as diretrizes atuais), né? Ou em qualquer diâmetro se for mulher em idade fértil / gestante, pelo alto risco de rotura na gestação. Essa paciente aqui, menopausada, acho que não engravida mais — só se for a Cláudia Raia! (risos da turma) Se for a Cláudia Raia no enunciado, aí muda a questão! (risos)
+
+[25:56] Professor: Então: controle da pressão arterial, controle dos fatores de risco e acompanhamento periódico com exame de imagem. Questão 25: Letra B. Também vi que a maioria acertou essa daqui.
+
+[26:03] Professor: Tinha algumas questões que eram mais difíceis, outras eram muito boas. Eu gostei de ver: teve bastante 9,6; 9,4; 9,2... Não vi nenhum 10 na primeira pilha — mas teve algum 10 aí na turma ou não? (alguém levanta a mão na sala) Opa!
+
+[26:17] Professor: Vou dizer a primeira letra do nome de quem tirou 10: começa com N, hein! E a primeira letra do sobrenome: M! Pronto, vou deixar vocês no suspense. Parabéns! (aplausos e comentários da turma)
+
+[26:30] Professor: É isso aí! Bom, pessoal, foi um prazer estar com vocês. Quem passou de ano, né, siga em frente aí. Lá fora, na vida médica real, é muito mais difícil do que essa prova — eu posso garantir para vocês: é muito mais difícil, muito! Mas desejo... (fim da gravação)
+
+Gabarito oficial destas questões:
+12: C | Contraindicação cirúrgica de AAA — Aneurisma de 5,5 cm em paciente com câncer metastático avançado (tratamento paliativo)
+21: B | Aneurisma de aorta abdominal infrarrenal (5,8 cm) em homem assintomático — Indicação cirúrgica pelo diâmetro > 5,5 cm
+25: B | Aneurisma de artéria esplênica de 1,0 cm em mulher menopausada — Controle pressórico/fatores de risco e seguimento
