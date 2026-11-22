@@ -9,6 +9,7 @@ Não edite à mão: para juntar material novo, rode o programa com --acrescentar
 
 - Transcrição 1: `transcricao.txt` (3.589 palavras, duração até 00:22:48).
 - Slides 1: `slides.pdf` (21 páginas; só imagem, sem texto: 21 (ver o original)).
+- Transcrição 2: `correcao-p2-t28-angio-a9.txt` (267 palavras, duração até 00:08:29).
 
 ## Transcrição 1 · transcricao.txt
 <!-- parte transcricao 1 | arquivo=transcricao.txt | sha=30e74f0c9398 | palavras=3.589 | duracao=00:22:48 -->
@@ -467,3 +468,26 @@ Tratamento:
 ### Slide 21 de 21
 <!-- slide 21 -->
 (só imagem, sem texto)
+
+## Transcrição 2 · correcao-p2-t28-angio-a9.txt
+<!-- parte transcricao 2 | arquivo=correcao-p2-t28-angio-a9.txt | sha=9d329c6e7b75 | palavras=267 | duracao=00:08:29 -->
+
+CORREÇÃO DA P2 T28 DE ANGIOLOGIA (CIRURGIA VASCULAR) — TRECHOS DAS QUESTÕES 8
+Fala do Prof. Dr. Américo corrigindo a prova em sala (arquivo de origem: p2-28.mp4; transcrição inteira em apostilas-fonte/provas/angio-p2-t28-correcao.txt).
+
+=== [07:47 - 08:47] QUESTÃO 8 — DIAGNÓSTICO DIFERENCIAL DE ÚLCERAS DE MEMBRO INFERIOR: ÚLCERA MISTA (VENOSA + ARTERIAL) ===
+
+[07:47] Professor: Questão 8: Um paciente de 64 anos apresenta úlcera de membro inferior direito localizada na borda medial da perna (maléolo medial). Opa! Borda medial lembra o quê?
+
+[07:57] Alunos: Venosa.
+
+[07:58] Professor: Venosa. Tem cerca de 1 mês de evolução. Beleza. VHS e PCR normais — então não é vasculite. Pressão arterial de 130x80 mmHg — bom, então não é hipertensiva grave, já elimina úlcera de Martorell (falei Marjolin, mas é Martorell, aliás, né?). Um mês de evolução também elimina úlcera de Marjolin — não é câncer (transformação maligna crônica).
+
+[08:16] Professor: Tem dermatite ocre e edema visível: tem componente venoso. Mas... pulso distal ausente! Puta merda! Índice tornozelo-braquial (ITB) de 0,3! Putz, que azar! Pode uma pessoa ter os dois problemas ao mesmo tempo?
+
+[08:28] Alunos: Pode.
+
+[08:29] Professor: Pode! Então a Questão 8 é a Letra D: é uma úlcera mista! Tem componente venoso e componente arterial. E é o tipo mais difícil de tratar de úlcera, porque se eu elevar a perna ou comprimir demais para tratar a parte venosa, piora a isquemia arterial, né? Letra D. Nessa aqui você ia até por exclusão, né?
+
+Gabarito oficial destas questões:
+08: D | Úlcera de membro inferior — Úlcera mista (estigmas venosos em maléolo medial + ausência de pulsos e ITB 0,3)

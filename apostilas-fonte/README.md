@@ -32,7 +32,7 @@ python3 -I scripts/fonte-aula.py trecho <aula-id> --minutos 10-35 --slides 4-9
 - **Divergência:** vale a fonte, o que o professor falou (a fala manda sobre o slide). A apostila entra na lista do que corrigir; a questão ou o card segue a fonte.
 - **Aula sem fonte** (as feitas antes de 09/11/2026): segue tudo pela apostila, como antes. Chegou a transcrição de uma aula antiga? Guarde do mesmo jeito.
 
-**Correção de prova** (`provas/<materia>-<prova>-correcao.txt`, ex.: `provas/angio-p2-t28-correcao.txt`): a transcrição do professor corrigindo uma prova em sala, como veio. É a base do gabarito oficial e dos comentários das questões daquela prova (que vão para o banco com `prova` preenchido); não é fonte de aula nenhuma.
+**Correção de prova** (`provas/<materia>-<prova>-correcao.txt`, ex.: `provas/angio-p2-t28-correcao.txt`): a transcrição do professor corrigindo uma prova em sala, como veio. É a base do gabarito oficial e dos comentários das questões daquela prova (que vão para o banco com `prova` preenchido). É fala do próprio professor e vale como fonte (Mauricio, 22/11/2026): o trecho das questões de cada aula entra no `fonte.md` dela com `--acrescentar` (arquivo `correcao-<prova>-<aula-id>.txt`, cortado sem reescrever), como foi feito com a P2 T28 de Angio.
 
 ## HTML da apostila
 

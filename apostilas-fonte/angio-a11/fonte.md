@@ -9,6 +9,7 @@ Não edite à mão: para juntar material novo, rode o programa com --acrescentar
 
 - Transcrição 1: `transcricao.txt` (7.174 palavras, duração até 00:43:43).
 - Slides 1: `slides.pdf` (22 páginas).
+- Transcrição 2: `correcao-p2-t28-angio-a11.txt` (649 palavras, duração até 00:06:08).
 
 ## Transcrição 1 · transcricao.txt
 <!-- parte transcricao 1 | arquivo=transcricao.txt | sha=ef094400c0b3 | palavras=7.174 | duracao=00:43:43 -->
@@ -677,3 +678,50 @@ Lembrem-se: o tratamento
 deve ser adequado ao paciente
 e não ser um capricho do médico
 22
+
+## Transcrição 2 · correcao-p2-t28-angio-a11.txt
+<!-- parte transcricao 2 | arquivo=correcao-p2-t28-angio-a11.txt | sha=8e9b7978c527 | palavras=649 | duracao=00:06:08 -->
+
+CORREÇÃO DA P2 T28 DE ANGIOLOGIA (CIRURGIA VASCULAR) — TRECHOS DAS QUESTÕES 4, 5, 6
+Fala do Prof. Dr. Américo corrigindo a prova em sala (arquivo de origem: p2-28.mp4; transcrição inteira em apostilas-fonte/provas/angio-p2-t28-correcao.txt).
+
+=== [03:50 - 04:45] QUESTÃO 4 — ESTENOSE CAROTÍDEA SINTOMÁTICA, CRITÉRIOS VELOCIMÉTRICOS AO ECO-DOPPLER E PESCOÇO HOSTIL ===
+
+[03:50] Professor: Questão 4: Um paciente com pescoço hostil — fez irradiação (radioterapia cervical), então o pescoço dele está todo duro, fibrótico, né? É encaminhado para tratamento de estenose carotídea por apresentar uma placa indicando estenose e sintomas de amaurose fugaz recente. Então é um paciente sintomático, com estenose carotídea e com pescoço hostil.
+
+[04:09] Professor: Ao avaliar o caso, você faz o eco-Doppler. E aqui era muito fácil, né? Para quem prestou atenção tanto na aula prática quanto na teórica, tinha a tabelinha em que você fazia a divisão de uma velocidade pela outra (razão VCI/VCC): se desse maior que 4, era estenose maior que 70%, lembra? A gente frisou várias vezes: "Ó, essa linha aqui que vocês têm que gravar: VPS > 240 cm/s, VDF > 120 cm/s e razão > 4."
+
+[04:30] Professor: E qual é a resposta, então? É uma lesão maior que 70%, e, como ele tem um pescoço hostil, eu vou abrir esse pescoço (endarterectomia)?
+
+[04:38] Alunos: Não.
+
+[04:39] Professor: Não! É uma indicação clássica para fazer angioplastia com stent, né? Então, Questão 4: Letra D.
+
+=== [04:45 - 05:21] QUESTÃO 5 — MEDIDA DA ESTENOSE CAROTÍDEA PELO MÉTODO EUROPEU (ECST) VS. NORTE-AMERICANO (NASCET) ===
+
+[04:45] Professor: Questão 5: Para a medida da estenose carotídea pelo método europeu (ECST), também vimos isso tanto na prática quanto na teórica:
+- O método europeu (ECST) mede a estenose comparando com o diâmetro estimado no mesmo ponto (ao nível do bulbo/placa);
+- O método norte-americano (NASCET) mede comparando o lúmen residual com o diâmetro da carótida interna no ponto distal;
+- O método da área mede analisando um corte transverso;
+- E o método do Doppler mede as velocidades de fluxo.
+
+[05:06] Professor: O método europeu, então, é a Letra A a correta: relação entre o lúmen residual da estenose e o diâmetro estimado da carótida no bulbo ou carótida interna no mesmo nível. Tá? Isso aí a gente viu várias vezes. Está vendo como quem prestou atenção nas aulas foi bem?
+
+=== [05:22 - 06:20] QUESTÃO 6 — ESTENOSE CAROTÍDEA ASSINTOMÁTICA DE 60% EM PACIENTE IDOSO COM ANATOMIA DESFAVORÁVEL ===
+
+[05:22] Professor: Questão 6: Um paciente de 90 anos, masculino, tabagista, apresenta uma placa de 60% de obstrução na artéria carótida, assintomático. Ao exame de imagem, tem um arco bovino, muita ateromatose no arco aórtico e na origem dos troncos supra-aórticos. Esse cara está parecendo que é ruim para tudo: é ruim para cirurgia aberta e é ruim para stent, né? E além do mais é assintomático. O que será que eu faço com ele?
+
+[05:46] Alunos: Tratamento clínico.
+
+[05:47] Professor: Vou segurar, né? Vou operar o velhinho de 90 anos? Então: placa de 60%, assintomático, num caso anatomicamente e clinicamente desfavorável — eu não vou mexer nisso aí nunca! Deixa o velhinho viver em paz, né? Então: Best Medical Therapy (tratamento clínico otimizado) sempre!
+
+[06:03] Professor: E vai ser o quê? AAS e estatina. Tem stent ali dentro?
+
+[06:07] Alunos: Não.
+
+[06:08] Professor: Preciso de clopidogrel? Também não. Então é por isso que é diferente da questão anterior. AAS, estatina (rosuvastatina), dieta, exercício e suspender o tabaco. Questão 6: Letra E. Beleza?
+
+Gabarito oficial destas questões:
+04: D | Estenose carotídea sintomática (> 70%, razão > 4 ao Doppler) com pescoço hostil (irradiação) — Angioplastia com stent
+05: A | Medida da estenose carotídea pelo método europeu (ECST) — Lúmen residual vs. diâmetro estimado do bulbo no mesmo nível
+06: E | Estenose carotídea assintomática de 60% em idoso (90 anos) com arco hostil — Best Medical Therapy (AAS + estatina + MEV)

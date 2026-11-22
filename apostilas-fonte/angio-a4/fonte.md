@@ -1,6 +1,6 @@
 # Fonte da aula · angio-a4
 
-Guardada com `scripts/fonte-aula.py` (última mudança em 21/11/2026). É o material da aula como veio, sem correção:
+Guardada com `scripts/fonte-aula.py` (última mudança em 22/11/2026). É o material da aula como veio, sem correção:
 os erros da transcrição automática ficam aqui e quem corrige é a apostila. A apostila, as questões, os flashcards
 e as conferências saem deste arquivo; onde ele e a apostila divergem, vale o que o professor falou (AGENTS.md).
 Não edite à mão: para juntar material novo, rode o programa com --acrescentar.
@@ -8,6 +8,7 @@ Não edite à mão: para juntar material novo, rode o programa com --acrescentar
 ## O que tem aqui
 
 - Transcrição 1: `transcricao.txt` (5.121 palavras, duração até 00:29:59).
+- Transcrição 2: `correcao-p2-t28-angio-a4.txt` (890 palavras, duração até 00:22:03).
 
 ## Transcrição 1 · transcricao.txt
 <!-- parte transcricao 1 | arquivo=transcricao.txt | sha=317726525c3b | palavras=5.121 | duracao=00:29:59 -->
@@ -181,3 +182,62 @@ Então tudo isso pode colocar o nosso paciente em uma situação que vai demanda
 ================================================================================
 FIM DA TRANSCRIÇÃO
 ================================================================================
+
+## Transcrição 2 · correcao-p2-t28-angio-a4.txt
+<!-- parte transcricao 2 | arquivo=correcao-p2-t28-angio-a4.txt | sha=7f8b550d7c6d | palavras=890 | duracao=00:22:03 -->
+
+CORREÇÃO DA P2 T28 DE ANGIOLOGIA (CIRURGIA VASCULAR) — TRECHOS DAS QUESTÕES 2, 11, 22
+Fala do Prof. Dr. Américo corrigindo a prova em sala (arquivo de origem: p2-28.mp4; transcrição inteira em apostilas-fonte/provas/angio-p2-t28-correcao.txt).
+
+=== [01:29 - 03:17] QUESTÃO 2 — OCLUSÃO ARTERIAL AGUDA (OAA) DE ETIOLOGIA TROMBÓTICA E CLASSIFICAÇÃO DE RUTHERFORD ===
+
+[01:29] Professor: Questão 2: Mulher de 78 anos apresenta dor intensa no membro inferior esquerdo há 6 horas. Nós estamos diante de uma...
+
+[01:37] Alunos: Insuficiência arterial aguda.
+
+[01:38] Professor: Insuficiência arterial aguda agora. Frialdade, mudança de cor do pé, pulsos ausentes distais, motricidade e sensibilidade preservadas. Opa! Então é uma isquemia, mas é uma isquemia que tem boa chance ainda de a gente salvar essa perna, né? Enchimento capilar presente. Então está isquêmico, mas está naquele nível inicial, o grau I (Rutherford I), né? Seria isso, né, o Rutherford: motricidade e sensibilidade preservadas.
+
+[02:07] Professor: Apresenta história de claudicação e ausência de pulsos pododáctilos no outro pé, no pé direito. Opa! Acho que eu vou me estrepar se eu for lá só com um cateterzinho de Fogarty, né? Porque o que provavelmente tem ali dentro?
+
+[02:22] Alunos: Ateroma.
+
+[02:23] Professor: Ateroma, né? Isso aí, ó, vocês estão craques! No exame físico, então, a perna isquêmica está cianótica e não tem pulso nem poplíteo e nem distal. O provável diagnóstico, a etiologia, a classificação clínica e o tratamento são, respectivamente — isso a gente ensinou na aula, né, como fazer, né?
+
+[02:41] Professor: Então, ela tem uma insuficiência arterial aguda ou oclusão arterial aguda (OAA), tá? Esse é o diagnóstico. O Rutherford é I, né, porque o membro está viável, está com motricidade e sensibilidade preservadas. A etiologia é embólica ou trombótica?
+
+[03:00] Alunos: Trombótica.
+
+[03:01] Professor: Trombótica, porque o outro lado já mostra isso: é uma paciente que já vinha sofrendo de doença arterial crônica, né? E o que a gente tenta? Dá para tentar tromboembolectomia? Dá, mas provavelmente vai terminar em ponte (bypass), né? Então a Letra D é a alternativa correta. Questão 2: Letra D.
+
+=== [10:44 - 11:46] QUESTÃO 11 — SÍNDROME COMPARTIMENTAL DOS MEMBROS INFERIORES E FISIOPATOLOGIA DA PRESSÃO TISSULAR ===
+
+[10:44] Professor: Questão 11: A respeito da síndrome compartimental dos membros inferiores, assinale a correta:
+- Letra A: "Pode ser causada por isquemia e reperfusão com mais de 6 horas?" Sim, pode, né!
+- "A síndrome na coxa é sempre menos grave que na perna?" Não sei, depende, né.
+- "O diagnóstico de síndrome compartimental deve ser sempre confirmado pela dosagem de CPK e medição da pressão intracompartimental antes da fasciotomia?" Meu amigo, se você ficar esperando exame laboratorial, na hora que você fizer a fasciotomia já foi a perna, né! O diagnóstico é eminentemente clínico.
+- "Fasciotomias com incisões grandes são sempre preteridas?" Se puder evitar incisões gigantes, melhor, mas na síndrome compartimental clássica a descompressão ampla dos quatro compartimentos é necessária.
+- "Se o pulso pedioso estiver presente, não tem síndrome compartimental?"
+
+[11:24] Alunos: Não!
+
+[11:25] Professor: Pelo contrário, né! Para o pulso pedioso sumir, a pressão dentro do compartimento tem que ultrapassar a pressão arterial sistólica (100 a 120 mmHg) — e isso raramente acontece no início. Quando a pressão intracompartimental sobe acima de 30 a 50 mmHg, você ainda tem pulso arterial distal, o pé ainda está quentinho, mas o músculo já está necrosando/morrendo porque os capilares colabam e não têm mais perfusão nutricional. Então, Questão 11: Letra A.
+
+=== [21:35 - 22:44] QUESTÃO 22 — SÍNDROME DE REPERFUSÃO E SÍNDROME COMPARTIMENTAL PÓS-TROMBOEMBOLECTOMIA COM CATETER DE FOGARTY ===
+
+[21:35] Professor: Questão 22: Homem de 60 anos com obstrução arterial femoral aguda é submetido a tromboembolectomia com cateter de Fogarty. Após a recanalização, o membro recupera a perfusão (está perfundido), mas evolui com inchaço (edema tenso) e parestesia. Falou em dor desproporcional, edema tenso e parestesia pós-reperfusão, o que você pensa?
+
+[21:53] Alunos: Síndrome compartimental.
+
+[21:54] Professor: Puta merda, começou a formigar (parestesia) com panturrilha tensa pós-reperfusão: não pensa duas vezes, não fica pedindo exame, não faz nada — checa a panturrilha, viu que está com síndrome compartimental, vai lá e já abre (fasciotomia)! Vai salvar a perna!
+
+[22:03] Professor: Vamos ver as alternativas:
+- "Checar os pulsos e fazer bolo de heparina?" Checar os pulsos até faz parte do exame, mas fazer mais heparina em quem recém-operou e está com síndrome compartimental não resolve a hipertensão do compartimento.
+- Letra B: "Realizar fasciotomia descompressiva para lidar com a síndrome compartimental?" Seria uma conduta excelente e salvadora de membro nesse caso! Letra B é a correta.
+- "Iniciar anticoagulação oral imediata?" Também não! Vai que tem um hematoma sangrando lá nessa perna recém-operada, né? Pode acontecer! Já tive que reoperar paciente com o mesmo quadro e, quando fui ver, tinha sangrado na anastomose. Por isso que a primeira e essa estão muito erradas.
+- "Prescrever repouso absoluto e elevar o membro?" Aí vai piorar de vez a pressão de perfusão capilar se já está tendo síndrome compartimental!
+Então, Questão 22: Letra B.
+
+Gabarito oficial destas questões:
+02: D | Oclusão Arterial Aguda (OAA) — Rutherford I, etiologia trombótica (DAOP prévia bilateral), revascularização / ponte
+11: A | Síndrome compartimental — Pode decorrer de isquemia e reperfusão > 6 horas (pulso pedioso costuma estar presente)
+22: B | Edema tenso e parestesia pós-embolectomia por Fogarty — Síndrome compartimental pós-reperfusão (Fasciotomia)
