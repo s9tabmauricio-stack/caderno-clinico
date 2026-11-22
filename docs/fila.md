@@ -23,4 +23,4 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 | Slides da angio-a11: apostila, cards e questões | Claude | claude/amazing-carson-iem3n7 | angio-a11 | 22/11/2026 |
 | Flashcards da pass-a6 | Claude | claude/happy-darwin-07h2c3 | pass-a6 (flashcards) | 16/11/2026 |
 | Apostila da angio-a8 (Vasculites, 30/09, verdadeira aula 1) | Claude | claude/vigilant-babbage-7ewlcz | angio-a8 e ordem das aulas de angio | 22/11/2026 |
-| Questões da P2 T27 de Angio (menos angio-a1 e angio-a11) | Claude | claude/sweet-gates-na1hmn | questões de angio-a2, a3, a4, a5, a6, a7, a10 | 22/11/2026 |
+| Questões da P2 T27 de Angio | Claude | claude/sweet-gates-na1hmn | questões de angio-a1, a2, a3, a4, a5, a6, a7, a10, a11 | 22/11/2026 |
