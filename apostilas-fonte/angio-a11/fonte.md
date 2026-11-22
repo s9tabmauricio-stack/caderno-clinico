@@ -683,7 +683,7 @@ e não ser um capricho do médico
 <!-- parte transcricao 2 | arquivo=correcao-p2-t28-angio-a11.txt | sha=8e9b7978c527 | palavras=649 | duracao=00:06:08 -->
 
 CORREÇÃO DA P2 T28 DE ANGIOLOGIA (CIRURGIA VASCULAR) — TRECHOS DAS QUESTÕES 4, 5, 6
-Fala do Prof. Dr. Américo corrigindo a prova em sala (arquivo de origem: p2-28.mp4; transcrição inteira em apostilas-fonte/provas/angio-p2-t28-correcao.txt).
+Fala do Prof. Dr. Jeferson Freitas Toregeani (chefe da cadeira) corrigindo a prova em sala (arquivo de origem: p2-28.mp4; transcrição inteira em apostilas-fonte/provas/angio-p2-t28-correcao.txt).
 
 === [03:50 - 04:45] QUESTÃO 4 — ESTENOSE CAROTÍDEA SINTOMÁTICA, CRITÉRIOS VELOCIMÉTRICOS AO ECO-DOPPLER E PESCOÇO HOSTIL ===
 

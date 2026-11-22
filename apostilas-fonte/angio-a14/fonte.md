@@ -13,7 +13,7 @@ Não edite à mão: para juntar material novo, rode o programa com --acrescentar
 <!-- parte transcricao 1 | arquivo=correcao-p2-t28-angio-a14.txt | sha=c0cb8bd1e44e | palavras=683 | duracao=00:23:26 -->
 
 CORREÇÃO DA P2 T28 DE ANGIOLOGIA (CIRURGIA VASCULAR) — TRECHOS DAS QUESTÕES 9, 10, 23
-Fala do Prof. Dr. Américo corrigindo a prova em sala (arquivo de origem: p2-28.mp4; transcrição inteira em apostilas-fonte/provas/angio-p2-t28-correcao.txt).
+Fala do Prof. Dr. Jeferson Freitas Toregeani (chefe da cadeira) corrigindo a prova em sala (arquivo de origem: p2-28.mp4; transcrição inteira em apostilas-fonte/provas/angio-p2-t28-correcao.txt).
 
 === [08:48 - 10:43] QUESTÕES 9 E 10 — FLEGMASIA CERÚLEA DOLENS E MANEJO COM TROMBECTOMIA MECÂNICA (ANGIOJET) POR CONTRAINDICAÇÃO À TROMBÓLISE ===
 

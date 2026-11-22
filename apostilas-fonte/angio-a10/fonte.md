@@ -560,7 +560,7 @@ Transcrição Completa da Aula — Hipertensão Renovascular e Isquemia Intestin
 <!-- parte transcricao 2 | arquivo=correcao-p2-t28-angio-a10.txt | sha=9d81cffca047 | palavras=1.160 | duracao=00:24:46 -->
 
 CORREÇÃO DA P2 T28 DE ANGIOLOGIA (CIRURGIA VASCULAR) — TRECHOS DAS QUESTÕES 3, 14, 16, 17, 24
-Fala do Prof. Dr. Américo corrigindo a prova em sala (arquivo de origem: p2-28.mp4; transcrição inteira em apostilas-fonte/provas/angio-p2-t28-correcao.txt).
+Fala do Prof. Dr. Jeferson Freitas Toregeani (chefe da cadeira) corrigindo a prova em sala (arquivo de origem: p2-28.mp4; transcrição inteira em apostilas-fonte/provas/angio-p2-t28-correcao.txt).
 
 === [03:18 - 03:49] QUESTÃO 3 — CUIDADO PÓS-OPERATÓRIO EM ANGIOPLASTIA COM STENT (DUPLA ANTIAGREGAÇÃO E ESTATINA) ===
 

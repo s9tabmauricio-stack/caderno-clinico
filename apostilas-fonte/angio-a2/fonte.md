@@ -468,7 +468,7 @@ A deiscência de sutura também pode dar um pseudoaneurisma: você tem uma ponte
 <!-- parte transcricao 2 | arquivo=correcao-p2-t28-angio-a2.txt | sha=c89dc3dba756 | palavras=1.024 | duracao=00:26:30 -->
 
 CORREÇÃO DA P2 T28 DE ANGIOLOGIA (CIRURGIA VASCULAR) — TRECHOS DAS QUESTÕES 12, 21, 25
-Fala do Prof. Dr. Américo corrigindo a prova em sala (arquivo de origem: p2-28.mp4; transcrição inteira em apostilas-fonte/provas/angio-p2-t28-correcao.txt).
+Fala do Prof. Dr. Jeferson Freitas Toregeani (chefe da cadeira) corrigindo a prova em sala (arquivo de origem: p2-28.mp4; transcrição inteira em apostilas-fonte/provas/angio-p2-t28-correcao.txt).
 
 === [11:47 - 13:38] QUESTÃO 12 — INDICAÇÕES E CONTRAINDICAÇÕES CIRÚRGICAS NOS ANEURISMAS ARTERIAIS ===
 
