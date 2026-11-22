@@ -34,6 +34,8 @@ python3 -I scripts/fonte-aula.py trecho <aula-id> --minutos 10-35 --slides 4-9
 
 **Correção de prova** (`provas/<materia>-<prova>-correcao.txt`, ex.: `provas/angio-p2-t28-correcao.txt`): a transcrição do professor corrigindo uma prova em sala, como veio. É a base do gabarito oficial e dos comentários das questões daquela prova (que vão para o banco com `prova` preenchido). É fala do próprio professor e vale como fonte (Mauricio, 22/11/2026): o trecho das questões de cada aula entra no `fonte.md` dela com `--acrescentar` (arquivo `correcao-<prova>-<aula-id>.txt`, cortado sem reescrever), como foi feito com a P2 T28 de Angio.
 
+**Transcrição de prova** (`provas/<materia>-<prova>-transcricao.txt`, ex.: `provas/angio-p2-t26-transcricao.txt`): anotação de um aluno enquanto o professor lia a prova, com enunciado resumido, alternativas incompletas e a resposta que ele deu. Não é fala do professor: serve para montar as questões daquela prova, com o gabarito conferido na fonte da aula; não entra no `fonte.md`.
+
 ## HTML da apostila
 
 **Para que serve:** sem isto, mudar o visual de uma apostila obriga a remontá-la
