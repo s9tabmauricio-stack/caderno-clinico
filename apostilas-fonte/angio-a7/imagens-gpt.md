@@ -1,6 +1,7 @@
 # Ilustrações que valeriam a pena · angio-a7
 
-A apostila saiu sem ilustrações do GPT (aula nova automática). Se o Mauricio quiser, estas duas ensinam melhor que um SVG.
+A apostila saiu sem ilustrações do GPT (aula nova automática). Desde a versão 2 (slides incorporados), ela usa duas fotos dos slides: erisipela necrotizante (cap. 06) e linfedema (cap. 06), com selos numerados nossos (`recortes.py`).
+A foto da tromboflebite do slide (página 4) ficou de fora: baixa resolução e setas do slide por cima. Por isso a ilustração 1 continua sendo a que mais ensina. A 2 é opcional.
 
 ## 1. Erisipela × tromboflebite na perna (capítulo 05, ao lado da tabela)
 
