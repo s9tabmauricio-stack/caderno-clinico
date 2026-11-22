@@ -20,5 +20,6 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 
 | Assunto | Quem | Ramo | Onde | Desde |
 |---|---|---|---|---|
+| Slides da angio-a11: apostila, cards e questões | Claude | claude/amazing-carson-iem3n7 | angio-a11 | 22/11/2026 |
 | Flashcards da pass-a6 | Claude | claude/happy-darwin-07h2c3 | pass-a6 (flashcards) | 16/11/2026 |
 | Apostila da angio-a8 (Vasculites, 30/09, verdadeira aula 1) | Claude | claude/vigilant-babbage-7ewlcz | angio-a8 e ordem das aulas de angio | 22/11/2026 |
