@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="478pt" height="212pt" viewBox="0 0 478 212">
+<text x="25.0" y="11.0" font-family="Inter SemiBold" font-weight="400" font-size="6.6" fill="#0B5BD3" text-anchor="middle">ARCO</text>
+<text x="105.0" y="11.0" font-family="Inter SemiBold" font-weight="400" font-size="6.6" fill="#0B5BD3" text-anchor="middle">TRONCOS</text>
+<text x="202.0" y="11.0" font-family="Inter SemiBold" font-weight="400" font-size="6.6" fill="#0B5BD3" text-anchor="middle">RAMOS</text>
+<text x="304.0" y="11.0" font-family="Inter SemiBold" font-weight="400" font-size="6.6" fill="#0B5BD3" text-anchor="middle">NO PESCOÇO</text>
+<text x="421.0" y="11.0" font-family="Inter SemiBold" font-weight="400" font-size="6.6" fill="#0B5BD3" text-anchor="middle">NA BASE DO CÉREBRO</text>
+<rect x="0.0" y="22.0" width="50.0" height="184.0" rx="7" fill="#F5F8FF" stroke="#C3D8F8" stroke-width="1"/>
+<text x="25.0" y="110.0" font-family="Inter SemiBold" font-weight="400" font-size="8.4" fill="#16315C" text-anchor="middle">Arco da</text>
+<text x="25.0" y="120.5" font-family="Inter SemiBold" font-weight="400" font-size="8.4" fill="#16315C" text-anchor="middle">aorta</text>
+<rect x="63.0" y="22.0" width="84.0" height="88.0" rx="7" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="1"/>
+<text x="105.0" y="48.0" font-family="Inter SemiBold" font-weight="400" font-size="8.4" fill="#16315C" text-anchor="middle">Tronco</text>
+<text x="105.0" y="58.5" font-family="Inter SemiBold" font-weight="400" font-size="8.4" fill="#16315C" text-anchor="middle">braquiocefálico</text>
+<text x="105.0" y="70.0" font-family="Inter" font-weight="400" font-size="7.4" fill="#6C6C70" text-anchor="middle">só do lado direito;</text>
+<text x="105.0" y="79.7" font-family="Inter" font-weight="400" font-size="7.4" fill="#6C6C70" text-anchor="middle">abre-se em dois,</text>
+<text x="105.0" y="89.3" font-family="Inter" font-weight="400" font-size="7.4" fill="#6C6C70" text-anchor="middle">como um L</text>
+<rect x="63.0" y="118.0" width="181.0" height="40.0" rx="7" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="1"/>
+<text x="153.5" y="134.9" font-family="Inter SemiBold" font-weight="400" font-size="8.4" fill="#16315C" text-anchor="middle">Carótida comum esquerda</text>
+<text x="153.5" y="146.4" font-family="Inter" font-weight="400" font-size="7.4" fill="#6C6C70" text-anchor="middle">sai direto do arco</text>
+<rect x="63.0" y="166.0" width="181.0" height="40.0" rx="7" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="1"/>
+<text x="153.5" y="182.9" font-family="Inter SemiBold" font-weight="400" font-size="8.4" fill="#16315C" text-anchor="middle">Subclávia esquerda</text>
+<text x="153.5" y="194.4" font-family="Inter" font-weight="400" font-size="7.4" fill="#6C6C70" text-anchor="middle">manda para baixo a torácica interna</text>
+<rect x="160.0" y="22.0" width="84.0" height="40.0" rx="7" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="1"/>
+<text x="202.0" y="44.7" font-family="Inter SemiBold" font-weight="400" font-size="8.4" fill="#16315C" text-anchor="middle">Subclávia direita</text>
+<rect x="160.0" y="70.0" width="84.0" height="40.0" rx="7" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="1"/>
+<text x="202.0" y="87.5" font-family="Inter SemiBold" font-weight="400" font-size="8.4" fill="#16315C" text-anchor="middle">Carótida comum</text>
+<text x="202.0" y="98.0" font-family="Inter SemiBold" font-weight="400" font-size="8.4" fill="#16315C" text-anchor="middle">direita</text>
+<rect x="257.0" y="22.0" width="94.0" height="40.0" rx="7" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="1"/>
+<text x="304.0" y="34.1" font-family="Inter SemiBold" font-weight="400" font-size="8.4" fill="#16315C" text-anchor="middle">Vertebral direita</text>
+<text x="304.0" y="45.6" font-family="Inter" font-weight="400" font-size="7.4" fill="#6C6C70" text-anchor="middle">dentro dos processos</text>
+<text x="304.0" y="55.2" font-family="Inter" font-weight="400" font-size="7.4" fill="#6C6C70" text-anchor="middle">transversos</text>
+<rect x="257.0" y="70.0" width="94.0" height="40.0" rx="7" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="1"/>
+<text x="304.0" y="81.7" font-family="Inter SemiBold" font-weight="400" font-size="8.4" fill="#16315C" text-anchor="middle">Carótida interna</text>
+<text x="304.0" y="92.2" font-family="Inter SemiBold" font-weight="400" font-size="8.4" fill="#16315C" text-anchor="middle">direita</text>
+<text x="304.0" y="103.7" font-family="Inter" font-weight="400" font-size="7.4" fill="#6C6C70" text-anchor="middle">depois da bifurcação</text>
+<rect x="257.0" y="118.0" width="94.0" height="40.0" rx="7" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="1"/>
+<text x="304.0" y="129.7" font-family="Inter SemiBold" font-weight="400" font-size="8.4" fill="#16315C" text-anchor="middle">Carótida interna</text>
+<text x="304.0" y="140.2" font-family="Inter SemiBold" font-weight="400" font-size="8.4" fill="#16315C" text-anchor="middle">esquerda</text>
+<text x="304.0" y="151.7" font-family="Inter" font-weight="400" font-size="7.4" fill="#6C6C70" text-anchor="middle">depois da bifurcação</text>
+<rect x="257.0" y="166.0" width="94.0" height="40.0" rx="7" fill="#FFFFFF" stroke="#C3D8F8" stroke-width="1"/>
+<text x="304.0" y="178.1" font-family="Inter SemiBold" font-weight="400" font-size="8.4" fill="#16315C" text-anchor="middle">Vertebral esquerda</text>
+<text x="304.0" y="189.6" font-family="Inter" font-weight="400" font-size="7.4" fill="#6C6C70" text-anchor="middle">dentro dos processos</text>
+<text x="304.0" y="199.2" font-family="Inter" font-weight="400" font-size="7.4" fill="#6C6C70" text-anchor="middle">transversos</text>
+<rect x="364.0" y="22.0" width="114.0" height="184.0" rx="7" fill="#F5F8FF" stroke="#C3D8F8" stroke-width="1"/>
+<text x="372.0" y="37.0" font-family="Inter SemiBold" font-weight="400" font-size="8.6" fill="#16315C" text-anchor="start">Polígono de Willis</text>
+<text x="372.0" y="52.0" font-family="Inter SemiBold" font-weight="400" font-size="7.6" fill="#0B5BD3" text-anchor="start">Carótidas internas</text>
+<text x="372.0" y="62.0" font-family="Inter" font-weight="400" font-size="7.2" fill="#1F2933" text-anchor="start">terminam nas cerebrais</text>
+<text x="372.0" y="71.4" font-family="Inter" font-weight="400" font-size="7.2" fill="#1F2933" text-anchor="start">médias e dão as cerebrais</text>
+<text x="372.0" y="80.7" font-family="Inter" font-weight="400" font-size="7.2" fill="#1F2933" text-anchor="start">anteriores</text>
+<text x="372.0" y="99.1" font-family="Inter SemiBold" font-weight="400" font-size="7.6" fill="#0B5BD3" text-anchor="start">Comunicantes</text>
+<text x="372.0" y="109.1" font-family="Inter" font-weight="400" font-size="7.2" fill="#1F2933" text-anchor="start">uma anterior e duas</text>
+<text x="372.0" y="118.4" font-family="Inter" font-weight="400" font-size="7.2" fill="#1F2933" text-anchor="start">posteriores fecham o anel</text>
+<text x="372.0" y="136.8" font-family="Inter SemiBold" font-weight="400" font-size="7.6" fill="#0B5BD3" text-anchor="start">Vertebrais</text>
+<text x="372.0" y="146.8" font-family="Inter" font-weight="400" font-size="7.2" fill="#1F2933" text-anchor="start">juntam-se na basilar, que</text>
+<text x="372.0" y="156.2" font-family="Inter" font-weight="400" font-size="7.2" fill="#1F2933" text-anchor="start">forma as cerebrais</text>
+<text x="372.0" y="165.5" font-family="Inter" font-weight="400" font-size="7.2" fill="#1F2933" text-anchor="start">posteriores</text>
+<line x1="51.0" y1="66.0" x2="57.0" y2="66.0" stroke="#8AA9DF" stroke-width="1.6"/><polygon points="62.0,66.0 57.0,62.2 57.0,69.8" fill="#8AA9DF"/>
+<line x1="51.0" y1="138.0" x2="57.0" y2="138.0" stroke="#8AA9DF" stroke-width="1.6"/><polygon points="62.0,138.0 57.0,134.2 57.0,141.8" fill="#8AA9DF"/>
+<line x1="51.0" y1="186.0" x2="57.0" y2="186.0" stroke="#8AA9DF" stroke-width="1.6"/><polygon points="62.0,186.0 57.0,182.2 57.0,189.8" fill="#8AA9DF"/>
+<line x1="148.0" y1="42.0" x2="154.0" y2="42.0" stroke="#8AA9DF" stroke-width="1.6"/><polygon points="159.0,42.0 154.0,38.2 154.0,45.8" fill="#8AA9DF"/>
+<line x1="148.0" y1="90.0" x2="154.0" y2="90.0" stroke="#8AA9DF" stroke-width="1.6"/><polygon points="159.0,90.0 154.0,86.2 154.0,93.8" fill="#8AA9DF"/>
+<line x1="245.0" y1="42.0" x2="251.0" y2="42.0" stroke="#8AA9DF" stroke-width="1.6"/><polygon points="256.0,42.0 251.0,38.2 251.0,45.8" fill="#8AA9DF"/>
+<line x1="352.0" y1="42.0" x2="358.0" y2="42.0" stroke="#8AA9DF" stroke-width="1.6"/><polygon points="363.0,42.0 358.0,38.2 358.0,45.8" fill="#8AA9DF"/>
+<line x1="245.0" y1="90.0" x2="251.0" y2="90.0" stroke="#8AA9DF" stroke-width="1.6"/><polygon points="256.0,90.0 251.0,86.2 251.0,93.8" fill="#8AA9DF"/>
+<line x1="352.0" y1="90.0" x2="358.0" y2="90.0" stroke="#8AA9DF" stroke-width="1.6"/><polygon points="363.0,90.0 358.0,86.2 358.0,93.8" fill="#8AA9DF"/>
+<line x1="245.0" y1="138.0" x2="251.0" y2="138.0" stroke="#8AA9DF" stroke-width="1.6"/><polygon points="256.0,138.0 251.0,134.2 251.0,141.8" fill="#8AA9DF"/>
+<line x1="352.0" y1="138.0" x2="358.0" y2="138.0" stroke="#8AA9DF" stroke-width="1.6"/><polygon points="363.0,138.0 358.0,134.2 358.0,141.8" fill="#8AA9DF"/>
+<line x1="245.0" y1="186.0" x2="251.0" y2="186.0" stroke="#8AA9DF" stroke-width="1.6"/><polygon points="256.0,186.0 251.0,182.2 251.0,189.8" fill="#8AA9DF"/>
+<line x1="352.0" y1="186.0" x2="358.0" y2="186.0" stroke="#8AA9DF" stroke-width="1.6"/><polygon points="363.0,186.0 358.0,182.2 358.0,189.8" fill="#8AA9DF"/>
+</svg>

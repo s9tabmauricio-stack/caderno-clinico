@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<title>Angiologia · Aula 11 · Doença carotídea</title>
+<meta name="rodape" content="Mauricio Faria · Angiologia · Aula 11 — Doença carotídea">
+<link rel="stylesheet" href="apostila.css">
+<style>
+/* ===== componentes do molde novo (em teste na pneumo-a5) ===== */
+.simples { background: #FFFFFF; border: 1px solid #C3D8F8; border-left: 4pt solid #0B5BD3; border-radius: 12pt; padding: 9pt 14pt 10pt; margin: 0 0 10pt; break-inside: avoid; }
+.simples p { font-size: 10.2pt; line-height: 1.5; color: #1F2933; margin: 0; }
+.aqui { display: flex; margin-top: 7pt; }
+.aqui span { flex: 1; border-top: 3pt solid #DCDCE2; padding-top: 2.5pt; margin-right: 2.5pt; font-family: "Inter Medium"; font-size: 6pt; line-height: 1.25; color: #8E8E93; }
+.aqui span:last-child { margin-right: 0; }
+.aqui span.feito { border-top-color: #A9C4EE; color: #6C6C70; }
+.aqui span.on { border-top-color: #0B5BD3; color: #0B5BD3; font-family: "Inter SemiBold"; }
+.aqui span.ramo { border-top-style: dashed; }
+.figure .olhar { margin-top: 8pt; }
+.figure .olhar .kick { margin-bottom: 3pt; }
+.figure .olhar ul { margin: 0; }
+.figure .olhar li { padding-left: 0; font-size: 8.7pt; line-height: 1.45; margin-bottom: 2pt; }
+.figure .olhar li::before { display: none; }
+.figure .olhar li b { color: #0B5BD3; }
+.figure .leg { font-size: 7.8pt; color: #8E8E93; margin: 5pt 0 0; }
+.reg { font-size: 8.3pt; line-height: 1.45; color: #6C6C70; background: #F7F7FA; border: 1px solid #E3E3E8; border-radius: 9pt; padding: 5pt 10pt; margin: 6pt 0 9pt; break-inside: avoid; }
+.reg b { font-family: "Inter SemiBold"; color: #4F5B70; }
+.livros { font-size: 8.3pt; line-height: 1.45; color: #6E3AA7; background: #F4EBFB; border: 1px solid #DEC7F1; border-radius: 9pt; padding: 5pt 10pt; margin: 6pt 0 9pt; break-inside: avoid; }
+.livros b { color: #6E3AA7; }
+.sw.simples-sw { background: #FFFFFF; border-color: #C3D8F8; border-left: 3pt solid #0B5BD3; }
+.sw.aqui-sw { background: linear-gradient(90deg, #A9C4EE 0, #A9C4EE 45%, #0B5BD3 45%, #0B5BD3 70%, #DCDCE2 70%); border: 0; height: 4pt; border-radius: 2pt; }
+.sw.exame-sw { background: #1F2933; border-color: #1F2933; }
+.cmp .destaque { font-family: "Inter SemiBold"; color: #0B5BD3; }
+.cmp.c4 .k { width: 62pt; }
+.cmp.c4 .c { font-size: 8.3pt; padding-right: 8pt; }
+.vesp { break-before: page; }
+.vesp .item { display: flex; align-items: baseline; background: #FFFFFF; border: 1px solid #E3E3E8; border-radius: 12pt; padding: 7pt 12pt; margin: 0 0 6pt; break-inside: avoid; }
+.vesp .item { display: grid; grid-template-columns: 50pt 1fr; padding: 5pt 11pt; margin: 0 0 4.5pt; }
+.vesp .item .prova, .vesp .item .nb { justify-self: start; }
+.vesp .item .prova { flex: none; margin: 0 9pt 0 0; }
+.vesp .item p { margin: 0; font-size: 9.2pt; }
+.tiles.t4 { margin: 6pt 0 8pt; }
+.figure.lado { display: flex; align-items: center; }
+.figure.lado > img { flex: none; }
+.figure.lado .olhar { flex: 1; margin: 0 0 0 12pt; }
+.cover .toc a { padding: 3.6pt 0; }
+/* ===== desta aula ===== */
+.vesp .item .nb { flex: none; margin: 0 9pt 0 0; font-family: "Inter SemiBold"; font-size: 6.4pt; letter-spacing: .08em; color: #0B5BD3; background: #E8F0FE; border: 1px solid #C3D8F8; border-radius: 5pt; padding: 1.5pt 5pt; }
+.figure .kick { margin-bottom: 6pt; }
+</style>
+</head><body>
+
+<div class="cover">
+  <div class="kicker">Angiologia · Aula 11 · Doença carotídea</div>
+  <h1>Doença carotídea e acidente vascular cerebral isquêmico</h1>
+  <p class="sub">Da placa na bifurcação da carótida ao Doppler, aos grandes estudos e à escolha entre tratamento clínico, endarterectomia e stent.</p>
+  <div class="author"><span class="av">J</span><div><b>Dr. Jeferson Freitas Toregeani</b><span>Professor de Angiologia · 11 de novembro de 2026</span></div></div>
+  <div class="keynums"><div class="kick">Três números para levar</div>
+    <div class="kn-grid">
+      <div class="kn"><div class="n">70%</div><div class="l">de estenose com sintoma: operar, em qualquer serviço</div></div>
+      <div class="kn"><div class="n">Maior que 4</div><div class="l">relação de velocidade entre carótida interna e comum: estenose de 70% ou mais</div></div>
+      <div class="kn"><div class="n">3%</div><div class="l">teto de acidente vascular do serviço para operar quem não tem sintoma</div></div>
+    </div></div>
+  <div class="toc"><div class="kick">Nesta apostila</div>
+    <a href="#s01"><span class="tn">01</span><span class="tt">Os quatro vasos do cérebro</span><span class="pg">{{s01}}</span></a>
+    <a href="#s02"><span class="tn">02</span><span class="tt">Da placa ao acidente vascular</span><span class="pg">{{s02}}</span></a>
+    <a href="#s03"><span class="tn">03</span><span class="tt">Sintomas e rastreamento</span><span class="pg">{{s03}}</span></a>
+    <a href="#s04"><span class="tn">04</span><span class="tt">O Doppler de carótida</span><span class="pg">{{s04}}</span></a>
+    <a href="#s05"><span class="tn">05</span><span class="tt">Quem opera: o risco do serviço e os grandes estudos</span><span class="pg">{{s05}}</span></a>
+    <a href="#s06"><span class="tn">06</span><span class="tt">O stent e a curva de aprendizado</span><span class="pg">{{s06}}</span></a>
+    <a href="#s07"><span class="tn">07</span><span class="tt">O guideline e o tratamento clínico</span><span class="pg">{{s07}}</span></a>
+    <a href="#s08"><span class="tn">08</span><span class="tt">Endarterectomia, angioplastia e complicações</span><span class="pg">{{s08}}</span></a>
+    <a href="#s09"><span class="tn">09</span><span class="tt">O essencial da aula</span><span class="pg">{{s09}}</span></a>
+    <p class="note">Material de estudo da aula, com a linguagem ajustada para leitura autônoma. A legenda de cores está na página 2.</p>
+  </div>
+</div>
+
+<div class="legend"><div class="kick">Como ler esta apostila</div><div class="lg-grid">
+  <div class="lg"><span class="sw blue"></span><div><b>Azul</b> conteúdo da aula e raciocínio</div></div>
+  <div class="lg"><span class="sw green"></span><div><b>Verde</b> dose ou valor de referência</div></div>
+  <div class="lg"><span class="sw red"></span><div><b>Vermelho</b> alerta, erro comum ou armadilha</div></div>
+  <div class="lg"><span class="sw orange"></span><div><b>Laranja</b> fala ou parêntese do professor</div></div>
+  <div class="lg"><span class="sw purple"></span><div><b>Roxo</b> complemento que não foi dito em aula</div></div>
+  <div class="lg"><span class="prova">PROVA</span><div><b>Marca de prova</b> o ponto que cai na prova</div></div>
+  <div class="lg"><span class="sw simples-sw"></span><div><b>Em palavras simples</b> a ideia do capítulo, em conversa</div></div>
+  <div class="lg"><span class="sw red"></span><div><b>Pegadinha do professor</b> o erro, no ponto onde acontece</div></div>
+  <div class="lg"><span class="sw aqui-sw"></span><div><b>Você está aqui</b> a etapa da trilha da aula</div></div>
+</div></div>
+
+<div class="prof"><div class="kick">Sobre o professor · Dr. Jeferson</div>
+<div class="rows">
+  <div class="row"><div class="k">Atuação</div><div class="v">Angiologia. Opera a carótida desde que saiu da residência, por cirurgia aberta e, ao lado de um colega, por via endovascular.</div></div>
+  <div class="row"><div class="k">Experiência</div><div class="v">Participou de 215 endarterectomias de carótida nos três anos de residência e de cerca de 100 depois de formado. Formação mais forte na cirurgia aberta.</div></div>
+  <div class="row"><div class="k">Graduação</div><div class="v">No segundo e no terceiro anos já atendia no pronto-socorro, fazia suturas, reimplantava dedos e entrava em cirurgias.</div></div>
+</div></div>
+
+<div class="figure"><div class="kick">A trilha da aula</div><img src="trilha.svg" alt="Trilha da aula em oito etapas"></div>
+
+<!-- ======================================================= 01 -->
+<section id="s01">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">01</span></div><div class="corpo"><div class="de">Etapa 1 de 8 da trilha</div><h2>Os quatro vasos do cérebro</h2><div class="aqui"><span class="on">Vasos</span><span>Placa</span><span>Sintomas</span><span>Doppler</span><span>Quem opera</span><span>Stent</span><span>Clínico</span><span>Cirurgia</span></div></div></div>
+  <div class="simples"><p><b>Em palavras simples.</b> O cérebro recebe sangue por quatro artérias: as duas carótidas, na frente do pescoço, e as duas vertebrais, por dentro da coluna. Lá em cima elas se ligam num anel, o polígono de Willis; se uma fecha, as outras podem manter o fluxo.</p></div>
+
+  <p>Qualquer situação que diminua o sangue que chega ao cérebro pode interromper o fluxo de forma crônica, mais rara, ou aguda, que é o acidente vascular cerebral. Para se proteger, o cérebro tem uma circulação muito bem montada: quatro vasos chegam até ele.</p>
+
+  <h3>Do arco da aorta ao pescoço</h3>
+  <p>Do arco da aorta saem os <b>troncos supra-aórticos</b>, nesta ordem: o tronco braquiocefálico, à direita; a artéria carótida comum esquerda; e a artéria subclávia esquerda. O tronco braquiocefálico se divide em dois, como um L: a subclávia direita vai para o lado e a carótida comum direita sobe. De cada subclávia sai a artéria vertebral, para cima; a subclávia esquerda manda também, para baixo, a artéria torácica interna.</p>
+  <p>A artéria vertebral tem um trajeto curioso: passa por dentro dos ossos, pelos processos transversos das vértebras do pescoço. A carótida, não.</p>
+  <div class="figure"><img src="anatomia.svg" alt="Esquema dos troncos supra-aórticos até o polígono de Willis"><p class="leg">Esquema dos vasos que levam sangue ao cérebro, da esquerda (arco da aorta) para a direita (base do cérebro). A placa costuma se instalar na bifurcação da carótida comum.</p></div>
+
+  <h3>Lá em cima: o polígono de Willis</h3>
+  <p>As carótidas internas terminam como artérias cerebrais médias e dão as cerebrais anteriores, unidas pela comunicante anterior. As comunicantes posteriores ligam esse sistema à artéria basilar, que vem das vertebrais e forma as cerebrais posteriores. O conjunto parece um pentágono e é uma circulação colateral presente em quase todos: se um vaso se perde, os outros mantêm o fluxo.</p>
+  <p>Como a cerebral média continua a carótida interna, boa parte dos acidentes vasculares prejudica o movimento ou a sensibilidade do membro do lado oposto.</p>
+  <div class="box orange"><div class="kick"><span class="dot"></span>Parêntese do professor</div><p>Já houve paciente com uma só carótida aberta e todos os outros vasos fechados, ou só com as duas vertebrais abertas, vivo e quase normal, graças a essa rede. Provavelmente com as funções cognitivas um pouco prejudicadas.</p></div>
+
+  <h3>Estruturas nobres do pescoço</h3>
+  <p>Ao abrir o pescoço para tirar uma placa da carótida, há muito tecido nobre por perto: a veia jugular, o nervo hipoglosso, que controla a língua e é um dos mais lesados nessa cirurgia, e o nervo laríngeo recorrente, que controla a voz. Uma lesão deles traz problemas para o paciente (lista completa no capítulo 08).</p>
+  <div class="quote"><p>“Para você tratar carótida, tem que ser bom de anatomia.”</p><div class="who">Dr. Jeferson, sobre a cirurgia no pescoço</div></div>
+</section>
+
+<!-- ======================================================= 02 -->
+<section id="s02">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">02</span></div><div class="corpo"><div class="de">Etapa 2 de 8 da trilha</div><h2>Da placa ao acidente vascular</h2><div class="aqui"><span class="feito">Vasos</span><span class="on">Placa</span><span>Sintomas</span><span>Doppler</span><span>Quem opera</span><span>Stent</span><span>Clínico</span><span>Cirurgia</span></div></div></div>
+  <div class="simples"><p><b>Em palavras simples.</b> A placa de gordura que cresce na bifurcação da carótida pode inflamar, abrir e soltar pedaços que entopem artérias do cérebro. Como o cérebro gasta muita energia, pouco tempo sem sangue já o apaga; o resultado vai de uma sequela localizada até a morte.</p></div>
+
+  <h3>Por que o cérebro sofre tão rápido</h3>
+  <p>O cérebro é um órgão de alto consumo: com um pouco menos de sangue, ele já apaga. Comprimir as duas carótidas por cerca de 10 segundos escurece a vista, como ao levantar com a pressão baixa (brincadeira perigosa, que não se deve fazer).</p>
+  <ol class="flow">
+    <li><b class="t">O fluxo cai muito.</b> O cérebro entra em falência energética e as bombas das células param.</li>
+    <li><b class="t">O sódio se acumula nas células.</b> Elas incham, e o cérebro está confinado numa caixa de osso.</li>
+    <li><b class="t">Edema cerebral.</b> O inchaço cerebral, se for extenso, leva à morte.</li>
+    <li><b class="t">Herniação do tronco cerebral.</b> É o caminho do inchaço até a morte encefálica.</li>
+  </ol>
+  <p>Assim, o acidente vascular pode deixar uma sequela focal, em que a pessoa perde a fala ou o movimento, ou um dano extenso, até a morte. Na anatomia patológica, aparecem o infarto cerebral extenso e a carótida ocluída por placa e trombo, ao lado da carótida pérvia.</p>
+
+  <h3>Um pouco de história</h3>
+  <p>Até os anos 50, o tratamento da doença carotídea era um desastre: as pinças e os clampes eram grosseiros, e a heparina só chegou depois da Segunda Guerra Mundial, então o vaso clampeado trombosava. A partir dos anos 50 os resultados melhoraram, mas a cirurgia era indicada para quase todo mundo com placa, sem a pergunta que os estudos responderiam depois: operar todos ajuda todos?</p>
+  <div class="quote"><p>“O acidente vascular quase sempre não mata e deixa a pessoa incapacitada: alguém que não trabalha, precisa de cuidador, de fralda. Quem já teve um avô, uma avó, a mãe ou o pai assim em casa sabe como é triste. Eu não gostaria para mim.”</p><div class="who">Dr. Jeferson, sobre o acidente vascular que não mata</div></div>
+
+  <h3>Tipos e origens do acidente vascular isquêmico</h3>
+  <p>Há vários níveis: o <b>ataque isquêmico transitório</b>, que se recupera em até 24 horas, os acidentes menores e os maiores. O acidente vascular hemorrágico não entra nesta aula, que trata só do isquêmico. E os êmbolos que causam o isquêmico podem vir de vários pontos:</p>
+  <div class="rows">
+    <div class="row"><div class="k">Carótida</div><div class="v">Cerca de 30% das fontes de êmbolos que sobem para o cérebro.</div></div>
+    <div class="row"><div class="k">Coração</div><div class="v">A maior parte do restante: coração com arritmia, com valva doente ou com forame oval patente.</div></div>
+    <div class="row"><div class="k">Outros vasos</div><div class="v">Completam as fontes.</div></div>
+  </div>
+  <p>Quando o coágulo chega ao cérebro, começa a hora de ouro: se a pessoa chega a tempo a um hospital preparado e recebe o trombolítico, pode se recuperar e até ficar curada. Fora desse prazo, a sequela tende a ficar.</p>
+
+  <h3>Por que rastrear a carótida</h3>
+  <p>A doença carotídea é uma das causas de acidente vascular mais passíveis de prevenção. A maior parte das placas fica na bifurcação da carótida, fácil de examinar com ultrassom, um exame barato e sem incômodo para o paciente.</p>
+
+  <h3 data-bm="Placa estável e placa instável">Placa estável e placa instável <span class="prova">PROVA</span></h3>
+  <p>Com o tempo, a placa inflama e complica. A estável raramente dá problema. O perigo é a placa que cresce e fica instável: rica em lipídios, ela pode ulcerar ou romper, expor o seu conteúdo e soltar êmbolos para o cérebro.</p>
+  <div class="cmp">
+    <div class="r h"><div class="k"></div><div class="c">Placa estável</div><div class="c">Placa instável</div></div>
+    <div class="r"><div class="k">Conteúdo</div><div class="c">Homogênea</div><div class="c">Rica em lipídios, mole</div></div>
+    <div class="r"><div class="k">Superfície</div><div class="c">Regular, com a borda bem visível</div><div class="c">Irregular, ulcerada ou rota, às vezes já com coágulo</div></div>
+    <div class="r"><div class="k">No ultrassom</div><div class="c">Aspecto uniforme</div><div class="c">Áreas escuras por dentro; a úlcera aparece com diferença de cor</div></div>
+    <div class="r"><div class="k">Risco</div><div class="c">Raramente dá problema</div><div class="c">Ulcera e emboliza</div></div>
+    <div class="r"><div class="k">Conduta</div><div class="c">Dá para esperar até o limite dela</div><div class="c">Pode-se agir mais cedo</div></div>
+  </div>
+  <p>Os fatores de risco são o tabagismo, o diabetes, a hipertensão e, principalmente, a dislipidemia. São os mesmos de outras doenças das artérias, como o aneurisma da aorta; por isso a mesma família pode ter as duas, com um componente genético difícil de explicar.</p>
+</section>
+
+<!-- ======================================================= 03 -->
+<section id="s03">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">03</span></div><div class="corpo"><div class="de">Etapa 3 de 8 da trilha</div><h2>Sintomas e rastreamento</h2><div class="aqui"><span class="feito">Vasos</span><span class="feito">Placa</span><span class="on">Sintomas</span><span>Doppler</span><span>Quem opera</span><span>Stent</span><span>Clínico</span><span>Cirurgia</span></div></div></div>
+  <div class="simples"><p><b>Em palavras simples.</b> Perder a visão, a força de um lado do corpo, a simetria da boca ou a coordenação são sinais de alarme. Mesmo sem nenhuma queixa, quem tem mais de 55 anos e dois fatores de risco já pode fazer o ultrassom das carótidas.</p></div>
+
+  <h3>Os sintomas que mudam a conduta</h3>
+  <p>Quando a placa começa a dar sintomas, a ideia de tratá-la ganha força. Por isso o médico fica de olho nos sinais neurológicos.</p>
+  <div class="grid2">
+    <div class="card"><span class="tag">Território das carótidas</span><h4>Circulação anterior</h4><p>Perda da visão, plegia (paralisia) de um membro, desvio da rima labial (a boca torta).</p></div>
+    <div class="card"><span class="tag">Território das vertebrais</span><h4>Circulação posterior</h4><p>Dificuldade de coordenação, como no acidente vascular do cerebelo.</p></div>
+  </div>
+  <div class="box orange"><div class="kick"><span class="dot"></span>Parêntese do professor</div><p>A mãe do Dr. Jeferson, aos 92 anos e com a cabeça muito boa, teve um acidente vascular do cerebelo. O estrago impressiona: perdeu a coordenação, sobretudo da mão direita, a dominante, e não consegue fazer as próprias tarefas.</p></div>
+
+  <h3>Rastreamento: quem faz o ultrassom</h3>
+  <div class="ref">
+    <div class="txt"><div class="kick"><span class="dot"></span>Rastreamento da carótida</div><p>Ultrassom autorizado mesmo sem sopro e sem sintomas. Com sopro no pescoço, a indicação é maior.</p></div>
+    <div class="val">Mais de 55 anos<small>e pelo menos dois fatores de risco</small></div>
+  </div>
+
+  <h3>Sem sintomas: operar ou acompanhar?</h3>
+  <p>Com sintoma e placa acima de 70%, não há discussão: opera-se (capítulo 05). A dúvida é a placa importante em quem não tem sintoma: uma corrente de médicos só acompanha e espera o sintoma; outra opera. A maioria das pessoas preferiria eliminar a placa, mas a cirurgia não é isenta de risco. Depois de centenas de endarterectomias sem nenhum acidente vascular, o Dr. Jeferson viu o primeiro numa angioplastia: “Doutor, minha mão não está mexendo”. O braço ficou plégico; o quadro reverteu sozinho e a paciente se recuperou bem.</p>
+  <div class="quote"><p>“Só não tem complicação os mentirosos que não fazem. A cirurgia não é isenta de risco: você vai trocar uma possibilidade por uma certeza.”</p><div class="who">Dr. Jeferson, sobre operar quem não tem sintoma</div></div>
+</section>
+
+<!-- ======================================================= 04 -->
+<section id="s04">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">04</span></div><div class="corpo"><div class="de">Etapa 4 de 8 da trilha</div><h2>O Doppler de carótida</h2><div class="aqui"><span class="feito">Vasos</span><span class="feito">Placa</span><span class="feito">Sintomas</span><span class="on">Doppler</span><span>Quem opera</span><span>Stent</span><span>Clínico</span><span>Cirurgia</span></div></div></div>
+  <div class="simples"><p><b>Em palavras simples.</b> O ultrassom com Doppler mostra a placa, mede quanto ela fecha a artéria, diz se ela é perigosa e mede a velocidade do sangue no aperto. Se ainda houver dúvida, ou se o tratamento for pelo stent, faz-se um exame com contraste.</p></div>
+
+  <h3>Como se faz o exame</h3>
+  <p>Com o transdutor linear, examina-se toda a carótida que se consegue ver, da clavícula até o ângulo da mandíbula. Se há placa, ela é medida.</p>
+  <p>Mede-se também o <b>espessamento médio-intimal</b>, a espessura das camadas íntima e média da parede. Quanto mais espessa, maior a chance de problemas cardiovasculares: é um marcador de doença cardiovascular e mostra se o paciente segue o tratamento, toma os remédios e mantém o colesterol controlado.</p>
+
+  <h3 data-bm="Dois jeitos de medir a estenose">Dois jeitos de medir a estenose <span class="prova">PROVA</span></h3>
+  <p>Os dois métodos levam o nome de grandes estudos, e o mesmo exame dá números diferentes em cada um. O <b>norte-americano (NASCET)</b> compara a luz que sobra na placa com o diâmetro da carótida interna sadia, livre de doença: dá o número menor, subestima. O <b>europeu (ECST)</b> compara a luz que sobra com o diâmetro máximo do vaso no ponto da placa: dá o número maior, superestima.</p>
+  <div class="figure"><img src="nascet-ecst.svg" alt="Como os métodos norte-americano e europeu medem a estenose"></div>
+  <div class="box purple"><div class="kick"><span class="dot"></span>Complemento: fora da aula</div><p>Exemplo com números: luz que sobra de 2 mm, carótida interna sadia de 4 mm e vaso de 8 mm no ponto da placa. Pelo método norte-americano, sobram 2 de 4: estenose de 50%. Pelo europeu, sobram 2 de 8: estenose de 75%.</p></div>
+  <div class="box red"><div class="kick"><span class="dot"></span>Pegadinha do professor</div><p>Achar que tanto faz o método. Dependendo de quem faz a avaliação, o número muda: o europeu sempre dá mais que o norte-americano para a mesma placa.</p></div>
+
+  <h3>Não só o grau: o aspecto da placa</h3>
+  <p>No começo, só se media a estenose; depois, passaram a contar as características da placa. A úlcera aumenta o risco de embolização e aparece com diferença de cor. Áreas escuras por dentro indicam placa mais lipídica, mole, com mais chance de ulcerar e embolizar. Já a placa homogênea e regular, de borda bem visível, permite esperar até o limite com tranquilidade; na placa com úlcera ou área mole, pode-se ser mais agressivo mais cedo (tabela no capítulo 02).</p>
+
+  <h3 data-bm="A velocidade do sangue: os três critérios">A velocidade do sangue: os três critérios <span class="prova">PROVA</span></h3>
+  <p>O fluxo confirma a imagem: não adianta a imagem mostrar estenose se o fluxo não acompanha. A velocidade é medida no ponto mais apertado da placa, onde há mais turbilhonamento, e comparada com uma tabela. No exame mostrado em aula, a carótida interna tinha 288 cm/s na sístole e 38 cm/s na diástole. A linha de corte é a estenose de 70% ou mais, definida por três critérios.</p>
+  <div class="tiles">
+    <div class="tile g"><div class="lab">1. Sistólica na interna</div><div class="n">Acima de 230 cm/s</div><div class="s">sugere placa significativa</div></div>
+    <div class="tile g"><div class="lab">2. Diastólica</div><div class="n">Acima de 100 cm/s</div><div class="s">segundo critério</div></div>
+    <div class="tile g"><div class="lab">3. Interna ÷ comum</div><div class="n">Maior que 4</div><div class="s">o mais importante: teste sempre</div></div>
+  </div>
+  <p>A relação é a velocidade sistólica da carótida interna dividida pela da carótida comum. Exemplo: 400 cm/s na interna e 100 cm/s na comum dá 4, placa de 70%.</p>
+  <div class="box red"><div class="kick"><span class="dot"></span>Pegadinha do professor</div><p>Confiar só na imagem. A estenose vista na imagem precisa ser confirmada pelo fluxo, e a relação entre a interna e a comum deve ser testada sempre.</p></div>
+
+  <h3 data-bm="Exames com contraste">Exames com contraste <span class="prova">PROVA</span></h3>
+  <p>Quando o Doppler deixa dúvida, passa-se aos exames contrastados. Eles são fundamentais antes do tratamento endovascular: o stent chega à placa navegando desde a virilha, e é preciso conhecer o caminho até a bifurcação, o tipo de arco da aorta e as tortuosidades. A endarterectomia pode ser feita só com o ultrassom; a angioplastia, raramente.</p>
+  <div class="rows">
+    <div class="row"><div class="k">Angiotomografia</div><div class="v">O exame contrastado mais usado.</div></div>
+    <div class="row"><div class="k">Angiografia com subtração digital</div><div class="v">O padrão-ouro: mostra o contraste dentro do vaso e a falha de enchimento, o que permite medir e confirmar a estenose.</div></div>
+  </div>
+</section>
+
+<!-- ======================================================= 05 -->
+<section id="s05">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">05</span></div><div class="corpo"><div class="de">Etapa 5 de 8 da trilha</div><h2>Quem opera: o risco do serviço e os grandes estudos</h2><div class="aqui"><span class="feito">Vasos</span><span class="feito">Placa</span><span class="feito">Sintomas</span><span class="feito">Doppler</span><span class="on">Quem opera</span><span>Stent</span><span>Clínico</span><span>Cirurgia</span></div></div></div>
+  <div class="simples"><p><b>Em palavras simples.</b> Operar só vale a pena se o risco de acidente vascular da própria cirurgia for menor que o de deixar a placa. Para quem tem sintoma e estenose de 70% ou mais, operar sempre ganha; para quem não tem sintoma, depende de o serviço operar muito bem.</p></div>
+
+  <h3>Os critérios de seleção</h3>
+  <p>Achada a placa, o paciente vai para o tratamento clínico ou para o cirúrgico. Os dois critérios principais são ter ou não sintomas e o grau de estenose. Por trás deles está o risco de acidente vascular: a cirurgia tem o seu risco, e o risco de acidente com a placa precisa ser maior para a operação compensar.</p>
+  <div class="rows">
+    <div class="row"><div class="k">Estenose acima de 70%</div><div class="v">Qualquer serviço está autorizado a operar.</div></div>
+    <div class="row"><div class="k">Placa menor, sem sintomas</div><div class="v">Só um serviço de ponta.</div></div>
+  </div>
+  <div class="ref">
+    <div class="txt"><div class="kick"><span class="dot"></span>Serviço de ponta</div><p>Exigência para operar placa menor em quem não tem sintoma.</p></div>
+    <div class="val">Menos de 3%<small>de acidente vascular a cada 100 operados</small></div>
+  </div>
+  <p>É difícil chegar lá. A taxa do Dr. Jeferson está em 1%: mais um caso a leva a 2%, e um acidente silencioso que tenha passado sem ser percebido a deixaria maior. Além disso, a maioria dos serviços que operam carótida são de residência, ainda na curva de aprendizado, quando o acidente vascular é mais frequente. E a doença é comum: até 8% da população idosa pode ter placa na carótida.</p>
+
+  <h3>Os grandes estudos</h3>
+  <p>A partir dos anos 50 se operava muito; nos anos 80 surgiu a pergunta: operar está fazendo bem ou mal? Três estudos responderam. O ACAS e o ACST estudaram pacientes sem sintomas; o NASCET, pacientes com sintomas.</p>
+  <div class="cmp c4">
+    <div class="r h"><div class="k"></div><div class="c">ACAS</div><div class="c">ACST</div><div class="c">NASCET</div></div>
+    <div class="r"><div class="k">Período</div><div class="c">1987 a 1993</div><div class="c">1993 a 2004</div><div class="c">—</div></div>
+    <div class="r"><div class="k">Pacientes</div><div class="c">Doença aterosclerótica carotídea sem sintomas</div><div class="c">Sem sintomas</div><div class="c">Com sintomas</div></div>
+    <div class="r"><div class="k">Resultado</div><div class="c">Acidente vascular em 5 anos: 11% no grupo clínico e 5,1% no cirúrgico (2,3% da própria cirurgia)</div><div class="c">Morbimortalidade em torno de 3%; grupo clínico com mais acidente vascular em 5 anos</div><div class="c">Cirurgia reduz o acidente vascular em 65%</div></div>
+    <div class="r"><div class="k">Lição</div><div class="c destaque">Acima de 60% sem sintoma: operar, se o serviço tiver morbimortalidade bem baixa</div><div class="c destaque">Confirma o ACAS, com a mesma condição</div><div class="c destaque">Com sintoma e acima de 70%: operar, em qualquer serviço</div></div>
+  </div>
+
+  <h3 data-bm="Com sintoma e estenose de 70% ou mais: operar">Com sintoma e estenose de 70% ou mais: operar <span class="prova">PROVA</span></h3>
+  <p>Essa é a grande diferença do NASCET: com sintoma e estenose acima de 70%, a cirurgia reduz o acidente vascular em 65%, e não importa se o serviço é bom. Pode ser qualquer um: tirar essa placa traz benefício, independentemente do risco do serviço.</p>
+  <div class="quote"><p>“Tem que operar todo mundo que é sintomático e que tem estenose acima de 70%. Acabou a discussão.”</p><div class="who">Dr. Jeferson, sobre o NASCET</div></div>
+
+  <h3 data-bm="Sem sintomas: só em serviço de baixo risco">Sem sintomas: só em serviço de baixo risco <span class="prova">PROVA</span></h3>
+  <p>Nos dois estudos de pacientes sem sintomas, a cirurgia só venceu porque os serviços eram de ponta, com morbimortalidade em torno de 3%. Serviço bom, ali, era o que fazia duas ou três endarterectomias por dia, como nos Estados Unidos; no Brasil, nem os serviços de ponta chegaram a isso.</p>
+  <div class="box red"><div class="kick"><span class="dot"></span>Pegadinha do professor</div><p>Ler o ACAS como “todo paciente sem sintoma com placa acima de 60% deve operar”. A conclusão tem uma condição: o serviço precisa ter morbimortalidade bem baixa. Sem ela, o risco da cirurgia apaga o benefício.</p></div>
+</section>
+
+<!-- ======================================================= 06 -->
+<section id="s06">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">06</span></div><div class="corpo"><div class="de">Etapa 6 de 8 da trilha</div><h2>O stent e a curva de aprendizado</h2><div class="aqui"><span class="feito">Vasos</span><span class="feito">Placa</span><span class="feito">Sintomas</span><span class="feito">Doppler</span><span class="feito">Quem opera</span><span class="on">Stent</span><span>Clínico</span><span>Cirurgia</span></div></div></div>
+  <div class="simples"><p><b>Em palavras simples.</b> O stent trata a placa por dentro da artéria, sem abrir o pescoço. O primeiro estudo o mostrou parecido com a cirurgia, mas havia truque nos números; ele ficou reservado ao pescoço difícil de operar, até o filtro de proteção melhorar os resultados.</p></div>
+
+  <h3>A chegada do stent</h3>
+  <p>A cirurgia aberta gasta pouco material (um shunt e um remendo de pericárdio) e muito trabalho humano; o stent custava, na época, cerca de R$ 20 mil. Com esse valor agregado, a pressão da indústria para usá-lo cresceu. Um estudo dos anos 2000 mostrou angioplastia e endarterectomia com morbimortalidade parecida.</p>
+
+  <h3>A crítica ao estudo</h3>
+  <p>Duas coisas chamam a atenção. Primeiro, o número de pacientes: cerca de 300, contra uns 3.000 dos estudos anteriores. Segundo, a morbimortalidade da endarterectomia ficou acima dos 3% dos estudos dos anos 80 e 90, o que fez a angioplastia parecer aceitável.</p>
+  <div class="quote"><p>“Estatística: a arte de maquiar os dados. Qual é a maior crítica desse estudo que está tentando enganar vocês?”</p><div class="who">Dr. Jeferson, sobre ler estudos com olho crítico</div></div>
+  <p>O lado bom: o estudo mostrou que a angioplastia é factível na doença carotídea, embora com risco maior. Por isso, ela passou a ser usada só para alguns pacientes.</p>
+
+  <h3 data-bm="Pescoço hostil: o paciente do stent">Pescoço hostil: o paciente do stent <span class="prova">PROVA</span></h3>
+  <p>Por muito tempo, a indicação da angioplastia foi o <b>pescoço hostil</b>, difícil de operar. Quem já fez cirurgia de câncer no pescoço e radioterapia, por exemplo, ganha um stent.</p>
+  <div class="card wide"><span class="tag">Pescoço hostil</span><ul class="cols2">
+    <li>Cirurgia prévia no pescoço, como a de câncer</li>
+    <li>Radioterapia no pescoço</li>
+    <li>Pescoço curto</li>
+    <li>Obesidade importante</li>
+    <li>Placa alta</li>
+  </ul></div>
+
+  <h3>O filtro de proteção cerebral</h3>
+  <p>Com dispositivos melhores, surgiu o filtro de proteção cerebral, uma espécie de cesta colocada antes da angioplastia, e os resultados melhoraram muito. Há quem ainda ache os dados maquiados, mas o risco visto nesse estudo, em torno de 4%, não está tão longe dos 3% do passado. E esse aumento tem explicação.</p>
+
+  <h3>A curva de aprendizado</h3>
+  <p>Por que o risco teria aumentado? Uma explicação é a formação. Antes, quem fazia Medicina gostava de “sangue na cara”, e havia poucos alunos, que entravam em estágio desde o primeiro ano. Hoje, só cerca de 15% da turma já entrou numa cirurgia. E, quanto mais angioplastias se fazem, menos endarterectomias o residente aprende.</p>
+  <div class="quote"><p>“Se eu sou residente e faço 20 angioplastias e uma endarterectomia, cadê minha curva de aprendizado?”</p><div class="who">Dr. Jeferson, sobre a formação do cirurgião</div></div>
+</section>
+
+<!-- ======================================================= 07 -->
+<section id="s07">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">07</span></div><div class="corpo"><div class="de">Etapa 7 de 8 da trilha</div><h2>O guideline e o tratamento clínico</h2><div class="aqui"><span class="feito">Vasos</span><span class="feito">Placa</span><span class="feito">Sintomas</span><span class="feito">Doppler</span><span class="feito">Quem opera</span><span class="feito">Stent</span><span class="on">Clínico</span><span>Cirurgia</span></div></div></div>
+  <div class="simples"><p><b>Em palavras simples.</b> Quase todo paciente com placa recebe o mesmo tripé: mudar os hábitos, tomar ácido acetilsalicílico e uma estatina forte, com o colesterol bem baixo. Ele repete o ultrassom a cada seis meses e só vai para a cirurgia se a placa crescer ou der sintoma.</p></div>
+
+  <p>Quem vai fazer medicina séria precisa lidar com as diretrizes, os <i>guidelines</i>: elas existem para tomar a melhor decisão para o paciente.</p>
+
+  <h3 data-bm="O que o guideline manda">O que o guideline manda <span class="prova">PROVA</span></h3>
+  <p>O algoritmo da diretriz deve ser seguido na prática diária. Onde ele é claro, não há discussão: com sintoma e estenose de 70%, operar, e a endarterectomia ainda é o melhor para o paciente, embora o stent tenha evidência de segurança; sem sintoma e com menos de 60%, ou com a artéria ocluída, tratamento clínico. Sem sintoma e com lesão importante, decidem três perguntas.</p>
+  <div class="figure"><img src="decisao.svg" alt="Fluxograma do guideline da doença carotídea"></div>
+  <div class="box red"><div class="kick"><span class="dot"></span>Pegadinha do professor</div><p>Achar que a artéria ocluída precisa de cirurgia. “Se ocluiu e não aconteceu nada, ele vai tomar remédio; não vai mexer naquilo que está quieto.”</p></div>
+
+  <h3 data-bm="O tripé do tratamento clínico">O tripé do tratamento clínico <span class="prova">PROVA</span></h3>
+  <p>O tratamento clínico, a <i>best medical therapy</i> (melhor terapia clínica), se apoia em três pernas: mudança do estilo de vida, ácido acetilsalicílico e estatina.</p>
+  <div class="grid3">
+    <div class="card"><span class="tag">Perna 1</span><h4>Estilo de vida</h4><p>Parar de fumar, atividade física, alimentação e peso; controlar diabetes e pressão.</p></div>
+    <div class="card"><span class="tag">Perna 2</span><h4>Antiagregante</h4><p>Ácido acetilsalicílico; em caso de alergia, clopidogrel.</p></div>
+    <div class="card"><span class="tag">Perna 3</span><h4>Estatina</h4><p>De alta potência: atorvastatina ou rosuvastatina.</p></div>
+  </div>
+  <div class="ref">
+    <div class="txt"><div class="kick"><span class="dot"></span>Ácido acetilsalicílico</div><p>Uso discutível, mas a maioria usa: o infantil, um comprimido por dia.</p></div>
+    <div class="vals"><div class="val"><small>Faixa</small>75 a 150 mg</div><div class="val"><small>Na prática</small>80 a 100 mg/dia</div></div>
+  </div>
+  <div class="ref">
+    <div class="txt"><div class="kick"><span class="dot"></span>Hemoglobina glicada no diabético</div><p>Um controle glicêmico rigoroso seria até melhor.</p></div>
+    <div class="val">Abaixo de 6%</div>
+  </div>
+  <div class="livros"><b>Nos livros:</b> para a maioria dos adultos com diabetes, a meta habitual de hemoglobina glicada é abaixo de 7%.</div>
+  <p>Os novos remédios para emagrecer, como o Mounjaro (tirzepatida), talvez tragam benefício nos próximos anos, porque as pessoas emagrecem e o colesterol cai. A pressão também precisa ficar controlada.</p>
+
+  <h3>O calcanhar de Aquiles: o colesterol</h3>
+  <p>O ponto mais difícil do tratamento clínico é manter os lipídios baixos. A meta é dada pelo LDL (lipoproteína de baixa densidade) e depende do risco do paciente:</p>
+  <div class="cmp">
+    <div class="r h"><div class="k"></div><div class="c">Quem é</div><div class="c">Meta de LDL</div></div>
+    <div class="r"><div class="k">Alto risco</div><div class="c">Estenose de 50%, hipertenso, dislipidêmico: a maioria dos vasculopatas, como os da doença arterial obstrutiva periférica e das estenoses carotídeas</div><div class="c destaque">Abaixo de 70 mg/dL</div></div>
+    <div class="r"><div class="k">Muito alto risco</div><div class="c">O paciente vascular: diabético, hipertenso, com estenose crítica da carótida</div><div class="c destaque">Abaixo de 50 mg/dL no Brasil; 55 mg/dL fora</div></div>
+    <div class="r"><div class="k">Evento recente</div><div class="c">Já teve acidente vascular ou outro evento recente</div><div class="c destaque">Até 40 mg/dL</div></div>
+  </div>
+
+  <h3 data-bm="Estatina de alta potência">Estatina de alta potência <span class="prova">PROVA</span></h3>
+  <p>No paciente de alto risco, a estatina precisa ser de alta potência. As duas mais usadas são a atorvastatina e a rosuvastatina.</p>
+  <div class="box red"><div class="kick"><span class="dot"></span>Pegadinha do professor</div><p>Responder sinvastatina. Ela não é de alta potência: é muito usada no Brasil porque está amplamente disponível no Sistema Único de Saúde. Como tem pouca potência, usa-se dose alta, 40 mg, com muito efeito colateral.</p></div>
+
+  <h3 data-bm="A escada do colesterol">A escada do colesterol <span class="prova">PROVA</span></h3>
+  <ol class="flow">
+    <li><b class="t">Primeiro, sempre a estatina.</b> O efeito colateral mais comum é a dor muscular; em alguns casos, rabdomiólise.</li>
+    <li><b class="t">Não baixou: somar a ezetimiba.</b> Junto com a estatina, uma vez por dia.</li>
+    <li><b class="t">Ainda não baixou: injeção.</b> Anticorpos monoclonais que bloqueiam a PCSK9, peça do controle do colesterol pelo organismo: evolocumabe e alirocumabe. São caríssimos: duas injeções por mês, cerca de R$ 1.600 por mês.</li>
+  </ol>
+  <div class="ref">
+    <div class="txt"><div class="kick"><span class="dot"></span>Doses citadas</div><p>Sinvastatina em dose alta; ezetimiba associada.</p></div>
+    <div class="vals"><div class="val"><small>Sinvastatina</small>40 mg</div><div class="val"><small>Ezetimiba</small>10 mg/dia</div></div>
+  </div>
+
+  <h3>O seguimento</h3>
+  <div class="ref">
+    <div class="txt"><div class="kick"><span class="dot"></span>Ultrassom de controle</div><p>Se a placa cresceu ou apareceu sintoma, a história muda: o paciente sai do conforto do tratamento clínico e vai para a cirurgia, endarterectomia ou angioplastia.</p></div>
+    <div class="val">A cada 6 meses</div>
+  </div>
+</section>
+
+<!-- ======================================================= 08 -->
+<section id="s08">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">08</span></div><div class="corpo"><div class="de">Etapa 8 de 8 da trilha</div><h2>Endarterectomia, angioplastia e complicações</h2><div class="aqui"><span class="feito">Vasos</span><span class="feito">Placa</span><span class="feito">Sintomas</span><span class="feito">Doppler</span><span class="feito">Quem opera</span><span class="feito">Stent</span><span class="feito">Clínico</span><span class="on">Cirurgia</span></div></div></div>
+  <div class="simples"><p><b>Em palavras simples.</b> Na endarterectomia, o cirurgião abre o pescoço e tira a placa; na angioplastia, a placa é amassada por um stent levado pela virilha, com um filtro que segura os pedaços. A longo prazo, as duas dão o mesmo resultado; a escolha depende do pescoço, da aorta e da idade.</p></div>
+
+  <h3>A endarterectomia, passo a passo</h3>
+  <ol class="flow">
+    <li><b class="t">Acesso.</b> Incisão na borda do músculo esternocleidomastóideo.</li>
+    <li><b class="t">Heparina e clampe.</b> O paciente é heparinizado e só então a carótida é clampeada.</li>
+    <li><b class="t">Shunt.</b> Um tubinho colocado dentro da carótida mantém o fluxo para o cérebro enquanto a placa sai. Atrapalha bastante: é afastado de um lado para o outro e retirado nos momentos finais do remendo.</li>
+    <li><b class="t">Retirada da placa.</b> O descolamento é feito na camada média: sai a íntima com um pedaço da média; ficam no vaso parte da média e a adventícia.</li>
+    <li><b class="t">Remendo (patch).</b> A artéria é fechada com um remendo que aumenta o seu diâmetro, uma plastia arterial. O mais usado é o pericárdio bovino; há também o de Dacron.</li>
+    <li><b class="t">Reverter a heparina.</b> Só depois de uns 10 minutos.</li>
+  </ol>
+
+  <h3 data-bm="Por que a cirurgia depende da heparina">Por que a cirurgia depende da heparina <span class="prova">PROVA</span></h3>
+  <p>Ao retirar a placa, fica uma superfície desnuda, sem endotélio, com o colágeno da média exposto. O sangue que encosta ali coagula. Por isso a endarterectomia só é factível graças à heparina: sem ela, a cascata da coagulação segue, forma-se fibrina e depois o trombo, justamente o que causa o acidente vascular.</p>
+  <ol class="flow">
+    <li><b class="t">Colágeno exposto.</b> As plaquetas aderem à parede sem endotélio e se ativam.</li>
+    <li><b class="t">Com heparina.</b> As plaquetas degranulam, mas a cascata da coagulação não segue: elas formam um tapete fino.</li>
+    <li><b class="t">Plaqueta sem grânulos.</b> Depois de degranular, ela não consegue produzir mais grânulos, e a parede fica segura.</li>
+    <li><b class="t">Só então reverter.</b> Por isso se esperam uns 10 minutos antes de reverter a heparina, para o paciente não ter acidente vascular.</li>
+  </ol>
+  <p>E por que o remendo? A área operada sofre uma reação inflamatória intensa; se o vaso fosse só suturado, estenosaria no pós-operatório. O remendo já aumenta o diâmetro.</p>
+
+  <h3 data-bm="Estruturas que podem ser lesadas">Estruturas que podem ser lesadas <span class="prova">PROVA</span></h3>
+  <div class="rows">
+    <div class="row"><div class="k">Nervo hipoglosso</div><div class="v">Controla a língua; um dos mais lesados na cirurgia de carótida. Também a alça do hipoglosso.</div></div>
+    <div class="row"><div class="k">Laríngeo recorrente</div><div class="v">Controla a voz.</div></div>
+    <div class="row"><div class="k">Veias</div><div class="v">Jugular e facial.</div></div>
+  </div>
+
+  <h3>A angioplastia com stent e filtro</h3>
+  <p>Parece mais simples, mas hoje só é factível por causa do filtro de proteção cerebral.</p>
+  <ol class="flow">
+    <li><b class="t">Filtro primeiro.</b> Uma cestinha porosa, que deixa o sangue passar e segura os pedaços de placa, é colocada antes do procedimento. A partir daí, o procedimento está protegido.</li>
+    <li><b class="t">Balão e stent.</b> Eles amassam a placa, como quem amassa batata, e pedaços dela se soltam.</li>
+    <li><b class="t">Fragmentos no filtro.</b> Os pedaços ficam presos na cesta; antes do filtro, iam todos para o cérebro.</li>
+    <li><b class="t">Stent no lugar.</b> Mantém a conformação da artéria.</li>
+  </ol>
+
+  <h3>As duas técnicas lado a lado</h3>
+  <div class="cmp">
+    <div class="r h"><div class="k"></div><div class="c">Endarterectomia</div><div class="c">Angioplastia com stent</div></div>
+    <div class="r"><div class="k">Acesso</div><div class="c">Corte no pescoço</div><div class="c">Pela virilha, até a bifurcação</div></div>
+    <div class="r"><div class="k">Exame antes</div><div class="c">Pode bastar o ultrassom</div><div class="c">Contrastado é fundamental</div></div>
+    <div class="r"><div class="k">Protege o cérebro</div><div class="c">Shunt mantém o fluxo</div><div class="c">Filtro segura os fragmentos</div></div>
+    <div class="r"><div class="k">Material</div><div class="c">Pouco: shunt e remendo</div><div class="c">Stent caro (R$ 20 mil na época)</div></div>
+    <div class="r"><div class="k">Cuidado-chave</div><div class="c">Heparina; reverter após 10 minutos</div><div class="c">Navegar na placa emboliza</div></div>
+    <div class="r"><div class="k">Risco próprio</div><div class="c">Lesão de nervos do pescoço</div><div class="c">Fragmentos soltos da placa</div></div>
+  </div>
+
+  <h3 data-bm="Aberta ou endovascular?">Aberta ou endovascular? <span class="prova">PROVA</span></h3>
+  <p>A longo prazo, as duas têm o mesmo resultado. A decisão tem duas etapas: primeiro, separar quem vai para a cirurgia; depois, escolher entre a aberta e a endovascular.</p>
+  <div class="cmp">
+    <div class="r h"><div class="k"></div><div class="c">Favorece a endarterectomia</div><div class="c">Favorece a angioplastia</div></div>
+    <div class="r"><div class="k">Pescoço</div><div class="c">Longo e fino, paciente magro</div><div class="c">Hostil: curto, obesidade, radioterapia, cirurgia prévia, placa alta</div></div>
+    <div class="r"><div class="k">Arco da aorta</div><div class="c">Modelo de arco ruim para navegar</div><div class="c">Arco bom para navegar</div></div>
+    <div class="r"><div class="k">Idade</div><div class="c">Idoso: as artérias cheias de placa embolizam quando se navega por dentro delas</div><div class="c">Mais jovem</div></div>
+  </div>
+  <p>Pesa também a formação do médico: há quem só faça a técnica endovascular porque só treinou nela. O ideal é escolher a melhor indicação e, se a técnica não for o forte do cirurgião, chamar um colega que a faça bem.</p>
+  <div class="quote"><p>“Essa é a melhor decisão: a que agrada mais o paciente, não o médico.”</p><div class="who">Dr. Jeferson, sobre escolher a técnica</div></div>
+  <p>Hoje a escolha vai muito do bom senso: os critérios clássicos perderam força e, com stents e filtros, as duas técnicas têm a mesma qualidade de resultado. O que continua valendo cabe numa frase:</p>
+  <div class="quote"><p>“Tem um pescoço hostil? A endovascular é uma boa opção. Tem um pescoço anatomicamente favorável? A endarterectomia pode ser uma melhor opção.”</p><div class="who">Dr. Jeferson, sobre aberta ou endovascular</div></div>
+
+  <h3>Complicações</h3>
+  <div class="rows">
+    <div class="row"><div class="k">Isquemia cerebral</div><div class="v">A mais frequente, sobretudo por embolização de pedaços da placa.</div></div>
+    <div class="row"><div class="k">Síndrome de hiperperfusão</div><div class="v">Com o fluxo restaurado, o cérebro desacostumado recebe uma enxurrada de sangue e incha: o paciente fica confuso e agitado, parece acidente vascular, mas o exame não mostra nenhum.</div></div>
+  </div>
+
+  <h3>Território vertebral</h3>
+  <p>Aqui não há muito consenso. A maioria das placas fica na origem da artéria vertebral. A cirurgia aberta é péssima nesse território, por isso o tratamento costuma ser endovascular, e a conduta tende a ser mais conservadora.</p>
+  <div class="box orange"><div class="kick"><span class="dot"></span>Parêntese do professor</div><p>A aula começou com um caso real: uma paciente já operada, com estenose crítica nas duas vertebrais, à espera do parecer sobre ir ou não para a cirurgia.</p></div>
+</section>
+
+<!-- ======================================================= 09 -->
+<section id="s09" class="vesp">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">09</span></div><div class="corpo"><div class="de">Página de véspera</div><h2>O essencial da aula</h2></div></div>
+  <p>Os pontos de prova e os números da aula, na ordem da trilha.</p>
+  <div class="item"><span class="prova">PROVA</span><p>Placa instável (lipídica, mole, ulcerada) emboliza; a estável, homogênea e regular, raramente dá problema e pode esperar.</p></div>
+  <div class="item"><span class="nb">NÚMERO</span><p>Ataque isquêmico transitório recupera em até 24 horas; a carótida dá cerca de 30% dos êmbolos (o resto, sobretudo o coração). Rastreamento: mais de 55 anos e dois fatores de risco, mesmo sem sopro.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p>Método norte-americano (NASCET) subestima; europeu (ECST) superestima. Estenose de 70% ou mais: sistólica acima de 230 cm/s, diastólica acima de 100 cm/s e relação interna ÷ comum maior que 4, a mais importante.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p>Exame contrastado é fundamental antes do stent. Angiotomografia é a mais usada; angiografia com subtração digital é o padrão-ouro.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p>Com sintoma e estenose de 70% ou mais: operar, em qualquer serviço (NASCET: 65% menos acidente vascular).</p></div>
+  <div class="item"><span class="prova">PROVA</span><p>Sem sintoma: cirurgia só em serviço com morbimortalidade baixa, menos de 3% (ACAS: 11% contra 5,1% em 5 anos; o ACST confirma).</p></div>
+  <div class="item"><span class="prova">PROVA</span><p>Pescoço hostil (curto, obeso, radioterapia, cirurgia prévia, placa alta): indicação clássica do stent. O filtro de proteção cerebral melhorou muito a angioplastia.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p>Menos de 60% sem sintoma, ou artéria ocluída: tratamento clínico.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p>Tripé: estilo de vida, ácido acetilsalicílico (80 a 100 mg/dia) e estatina de alta potência, atorvastatina ou rosuvastatina; sinvastatina não é de alta potência.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p>Escada: estatina, depois ezetimiba 10 mg/dia, depois anticorpo anti-PCSK9. Efeito colateral mais comum da estatina: dor muscular.</p></div>
+  <div class="item"><span class="nb">NÚMERO</span><p>LDL: alto risco abaixo de 70; muito alto risco abaixo de 50 (55 fora do Brasil); evento recente, até 40 mg/dL. Ultrassom de controle a cada 6 meses.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p>A endarterectomia só é factível graças à heparina (esperar uns 10 minutos para revertê-la). Nervos lesados: hipoglosso (língua, um dos mais lesados) e laríngeo recorrente (voz).</p></div>
+  <div class="item"><span class="prova">PROVA</span><p>Aberta: pescoço longo e fino, arco ruim, idoso. Endovascular: pescoço hostil. A longo prazo, o mesmo resultado.</p></div>
+  <div class="item"><span class="nb">NÚMERO</span><p>Complicação mais frequente: isquemia por embolização. Vertebral: placa na origem, tratamento endovascular e conduta conservadora.</p></div>
+
+  <h3>Erros comuns</h3>
+  <div class="box red"><div class="kick"><span class="dot"></span>Erros comuns</div><ul>
+    <li><span class="medium">Operar a artéria ocluída sem sintoma.</span> Fica no tratamento clínico.</li>
+    <li><span class="medium">Chamar a sinvastatina de alta potência.</span> As de alta potência são atorvastatina e rosuvastatina.</li>
+    <li><span class="medium">Indicar cirurgia sem sintoma esquecendo o serviço.</span> Só compensa com morbimortalidade baixa.</li>
+    <li><span class="medium">Trocar os métodos.</span> O europeu dá o número maior.</li>
+  </ul></div>
+
+  <h3>Palavras da aula em linguagem simples</h3>
+  <div class="rows terms">
+    <div class="row"><div class="k">ACAS</div><div class="v">Estudo de doença aterosclerótica carotídea sem sintomas (1987 a 1993).</div></div>
+    <div class="row"><div class="k">ACST</div><div class="v">Estudo de cirurgia de carótida em pacientes sem sintomas (1993 a 2004).</div></div>
+    <div class="row"><div class="k">Adventícia</div><div class="v">Camada mais externa da parede da artéria; fica no vaso na endarterectomia.</div></div>
+  </div>
+  <div class="rows terms">
+    <div class="row"><div class="k">Angiografia com subtração digital</div><div class="v">Exame com contraste injetado na artéria; padrão-ouro para medir a estenose.</div></div>
+    <div class="row"><div class="k">Ataque isquêmico transitório</div><div class="v">Falta de sangue no cérebro com sintomas que somem em até 24 horas.</div></div>
+    <div class="row"><div class="k">ECST</div><div class="v">Estudo europeu de cirurgia de carótida; dá nome ao método europeu de medir a estenose.</div></div>
+  </div>
+  <div class="rows terms">
+    <div class="row"><div class="k">Espessamento médio-intimal</div><div class="v">Espessura das camadas íntima e média da carótida no ultrassom; marcador de doença cardiovascular.</div></div>
+    <div class="row"><div class="k">Ezetimiba</div><div class="v">Remédio que se soma à estatina quando o colesterol não baixa.</div></div>
+    <div class="row"><div class="k">Forame oval patente</div><div class="v">Passagem entre os átrios do coração que não se fechou; pode ser fonte de êmbolos.</div></div>
+  </div>
+  <div class="rows terms">
+    <div class="row"><div class="k">LDL</div><div class="v">Lipoproteína de baixa densidade, o exame que guia a meta de colesterol.</div></div>
+    <div class="row"><div class="k">NASCET</div><div class="v">Estudo norte-americano de endarterectomia em pacientes com sintomas; dá nome ao método norte-americano de medir a estenose.</div></div>
+    <div class="row"><div class="k">PCSK9</div><div class="v">Proteína do controle do colesterol; bloqueada por anticorpos injetáveis.</div></div>
+  </div>
+  <div class="rows terms">
+    <div class="row"><div class="k">Pescoço hostil</div><div class="v">Pescoço difícil de operar: curto, obeso, irradiado, já operado ou com placa alta.</div></div>
+    <div class="row"><div class="k">Plegia</div><div class="v">Paralisia de um membro.</div></div>
+    <div class="row"><div class="k">Rabdomiólise</div><div class="v">Destruição de músculo; pode ocorrer com a estatina em alguns casos.</div></div>
+  </div>
+  <div class="rows terms">
+    <div class="row"><div class="k">Rima labial</div><div class="v">A linha da boca; o desvio é a boca torta.</div></div>
+    <div class="row"><div class="k">Shunt</div><div class="v">Tubinho que mantém o sangue indo ao cérebro durante a endarterectomia.</div></div>
+    <div class="row"><div class="k">Síndrome de hiperperfusão</div><div class="v">Inchaço do cérebro quando o fluxo volta de uma vez depois da cirurgia.</div></div>
+  </div>
+  <div class="rows terms">
+    <div class="row"><div class="k">Trombolítico</div><div class="v">Remédio que dissolve o coágulo; usado na hora de ouro do acidente vascular.</div></div>
+    <div class="row"><div class="k">Troncos supra-aórticos</div><div class="v">As artérias que saem do arco da aorta em direção à cabeça e aos braços.</div></div>
+  </div>
+  {{NOTAS}}
+</section>
+
+</body></html>
