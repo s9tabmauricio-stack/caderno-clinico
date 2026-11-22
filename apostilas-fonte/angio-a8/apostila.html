@@ -1,0 +1,486 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<title>Angiologia · Aula 1 · Arterites e vasculites</title>
+<meta name="rodape" content="Mauricio Faria · Angiologia · Aula 1 — Arterites e vasculites">
+<link rel="stylesheet" href="apostila.css">
+<style>
+/* ===== componentes do molde novo (aprovado na pneumo-a5) ===== */
+.simples { background: #FFFFFF; border: 1px solid #C3D8F8; border-left: 4pt solid #0B5BD3; border-radius: 12pt; padding: 9pt 14pt 10pt; margin: 0 0 10pt; break-inside: avoid; }
+.simples p { font-size: 10.2pt; line-height: 1.5; color: #1F2933; margin: 0; }
+.aqui { display: flex; margin-top: 7pt; }
+.aqui span { flex: 1; border-top: 3pt solid #DCDCE2; padding-top: 2.5pt; margin-right: 2.5pt; font-family: "Inter Medium"; font-size: 6pt; line-height: 1.25; color: #8E8E93; }
+.aqui span:last-child { margin-right: 0; }
+.aqui span.feito { border-top-color: #A9C4EE; color: #6C6C70; }
+.aqui span.on { border-top-color: #0B5BD3; color: #0B5BD3; font-family: "Inter SemiBold"; }
+.aqui span.ramo { border-top-style: dashed; }
+.figure .olhar { margin-top: 8pt; }
+.figure .olhar .kick { margin-bottom: 3pt; }
+.figure .olhar ul { margin: 0; }
+.figure .olhar li { padding-left: 0; font-size: 8.7pt; line-height: 1.45; margin-bottom: 2pt; }
+.figure .olhar li::before { display: none; }
+.figure .olhar li b { color: #0B5BD3; }
+.figure .leg { font-size: 7.8pt; color: #8E8E93; margin: 5pt 0 0; }
+.reg { font-size: 8.3pt; line-height: 1.45; color: #6C6C70; background: #F7F7FA; border: 1px solid #E3E3E8; border-radius: 9pt; padding: 5pt 10pt; margin: 6pt 0 9pt; break-inside: avoid; }
+.reg b { font-family: "Inter SemiBold"; color: #4F5B70; }
+.livros { font-size: 8.3pt; line-height: 1.45; color: #6E3AA7; background: #F4EBFB; border: 1px solid #DEC7F1; border-radius: 9pt; padding: 5pt 10pt; margin: 6pt 0 9pt; break-inside: avoid; }
+.livros b { color: #6E3AA7; }
+.sw.simples-sw { background: #FFFFFF; border-color: #C3D8F8; border-left: 3pt solid #0B5BD3; }
+.sw.aqui-sw { background: linear-gradient(90deg, #A9C4EE 0, #A9C4EE 45%, #0B5BD3 45%, #0B5BD3 70%, #DCDCE2 70%); border: 0; height: 4pt; border-radius: 2pt; }
+.sw.exame-sw { background: #1F2933; border-color: #1F2933; }
+.cmp .destaque { font-family: "Inter SemiBold"; color: #0B5BD3; }
+.cmp.c4 .k { width: 62pt; }
+.cmp.c4 .c { font-size: 8.3pt; padding-right: 8pt; }
+.vesp { break-before: page; }
+.vesp .item { display: flex; align-items: baseline; background: #FFFFFF; border: 1px solid #E3E3E8; border-radius: 12pt; padding: 7pt 12pt; margin: 0 0 6pt; break-inside: avoid; }
+.vesp .item .prova { flex: none; margin: 0 9pt 0 0; }
+.vesp .item p { margin: 0; font-size: 9.2pt; }
+.tiles.t4 { margin: 6pt 0 8pt; }
+.figure.lado { display: flex; align-items: center; }
+.figure.lado > img { flex: none; }
+.figure.lado .olhar { flex: 1; margin: 0 0 0 12pt; }
+.cover .toc a { padding: 3.6pt 0; }
+/* ===== ajustes desta apostila ===== */
+.figure > img.cheia { width: 100%; }
+.cmp.resumo .k { width: 104pt; }
+</style>
+</head><body>
+
+<div class="cover">
+  <div class="kicker">Angiologia · Aula 1 · Arterites e vasculites</div>
+  <h1>Arterites e vasculites</h1>
+  <p class="sub">Como suspeitar de uma vasculite, separá-la pelo calibre do vaso e lembrar quais não se tratam com corticoide.</p>
+  <div class="author"><span class="av">J</span><div><b>Dr. Jeferson F. Toregeani</b><span>Cirurgião vascular · 30 de setembro de 2026</span></div></div>
+  <div class="keynums"><div class="kick">Três números para levar</div>
+    <div class="kn-grid">
+      <div class="kn"><div class="n">60 mg</div><div class="l">de corticoide por dia, no mínimo, no ataque da arterite temporal</div></div>
+      <div class="kn"><div class="n">1 a 2 anos</div><div class="l">de tratamento da arterite temporal com corticoide</div></div>
+      <div class="kn"><div class="n">2 exceções</div><div class="l">ao corticoide: doença de Kawasaki e tromboangeíte obliterante</div></div>
+    </div></div>
+  <div class="toc"><div class="kick">Nesta apostila</div>
+    <a href="#s01"><span class="tn">01</span><span class="tt">Vasculite: o vaso inflamado</span><span class="pg">{{s01}}</span></a>
+    <a href="#s02"><span class="tn">02</span><span class="tt">Quando pensar em vasculite</span><span class="pg">{{s02}}</span></a>
+    <a href="#s03"><span class="tn">03</span><span class="tt">Grande calibre: arterite temporal e Takayasu</span><span class="pg">{{s03}}</span></a>
+    <a href="#s04"><span class="tn">04</span><span class="tt">Médio calibre: Buerger, poliarterite e Kawasaki</span><span class="pg">{{s04}}</span></a>
+    <a href="#s05"><span class="tn">05</span><span class="tt">Pequeno calibre: Behçet e Wegener</span><span class="pg">{{s05}}</span></a>
+    <a href="#s06"><span class="tn">06</span><span class="tt">Além das clássicas</span><span class="pg">{{s06}}</span></a>
+    <a href="#s07"><span class="tn">07</span><span class="tt">Tratar: o corticoide e as duas exceções</span><span class="pg">{{s07}}</span></a>
+    <a href="#s08"><span class="tn">08</span><span class="tt">O essencial da aula</span><span class="pg">{{s08}}</span></a>
+    <p class="note">Organizada a partir da aula e dos slides, em linguagem simples. A legenda de cores está na página 2.</p>
+  </div>
+</div>
+
+<div class="legend"><div class="kick">Como ler esta apostila</div><div class="lg-grid">
+  <div class="lg"><span class="sw blue"></span><div><b>Azul</b> conteúdo da aula e raciocínio</div></div>
+  <div class="lg"><span class="sw green"></span><div><b>Verde</b> dose ou valor de referência</div></div>
+  <div class="lg"><span class="sw red"></span><div><b>Vermelho</b> alerta, erro comum ou armadilha</div></div>
+  <div class="lg"><span class="sw orange"></span><div><b>Laranja</b> fala ou parêntese do professor</div></div>
+  <div class="lg"><span class="sw purple"></span><div><b>Roxo</b> complemento que não foi dito em aula</div></div>
+  <div class="lg"><span class="prova">PROVA</span><div><b>Marca de prova</b> o ponto que cai na prova</div></div>
+  <div class="lg"><span class="sw simples-sw"></span><div><b>Em palavras simples</b> o capítulo em duas ou três linhas</div></div>
+  <div class="lg"><span class="sw aqui-sw"></span><div><b>Você está aqui</b> a etapa da aula em cada capítulo</div></div>
+  <div class="lg"><span class="sw red"></span><div><b>Pegadinha do professor</b> o erro no ponto onde acontece</div></div>
+  <div class="lg"><span class="sw exame-sw"></span><div><b>O que olhar</b> como ler a imagem dos slides</div></div>
+</div></div>
+
+<div class="prof"><div class="kick">Sobre o professor · Dr. Jeferson</div>
+<div class="rows">
+  <div class="row"><div class="k">Especialidade</div><div class="v">Cirurgia vascular.</div></div>
+  <div class="row"><div class="k">Atuação</div><div class="v">Professor de Angiologia. No consultório, a vasculite que mais atende é a leucocitoclástica; nos tempos de plantão, viu casos de vasculite por meningococo.</div></div>
+  <div class="row"><div class="k">Experiência</div><div class="v">Muitos casos de arterite de Takayasu, de arterite temporal e, sobretudo, de tromboangeíte obliterante, que também operou; um ou dois casos de poliarterite nodosa e um de doença de Kawasaki em toda a carreira.</div></div>
+</div></div>
+
+<div class="figure"><div class="kick">A trilha da aula</div><img class="cheia" src="trilha.svg" alt="Trilha da aula em sete etapas"></div>
+
+<!-- ======================================================= 01 -->
+<section id="s01">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">01</span></div><div class="corpo"><h2>Vasculite: o vaso inflamado</h2>
+    <div class="aqui"><span class="on">Vaso inflamado</span><span>Suspeitar</span><span>Grande calibre</span><span>Médio calibre</span><span>Pequeno calibre</span><span class="ramo">Além das clássicas</span><span>Tratar</span></div></div></div>
+  <div class="simples"><p><b>Em palavras simples.</b> Vasculite é a parede de um vaso sanguíneo inflamada. O vaso inflamado pode estreitar, entupir ou romper, e o pedaço do corpo que ele alimenta sofre. Como existem dezenas de vasculites, o jeito mais simples de organizá-las é pelo tamanho do vaso que cada uma ataca.</p></div>
+
+  <p>Qualquer doença que inflame a parede de um vaso se chama <b>vasculite</b>. O nome arterite (inflamação da artéria) ainda é muito usado, mas é incompleto: vasculite é mais genérico, vale para artérias e veias, e por isso é o termo preferido.</p>
+  <p>A inflamação pode atingir qualquer tipo de vaso, em qualquer órgão, e por isso a doença se mostra de muitos jeitos. No microscópio, a parede normal, fina e organizada, fica tomada por células inflamatórias. A lesão pode ser aguda, crônica, granulomatosa, com ou sem necrose, e a consequência são hemorragias e infartos do tecido. Em alguns casos, doenças diferentes deixam o mesmo desenho no microscópio.</p>
+  <div class="quote"><p>“Doença reumática é mais ou menos isso aí: você vê um negócio muito ruim acontecendo e você não sabe de onde ele vem.”</p><div class="who">Dr. Jeferson, abrindo a aula</div></div>
+
+  <h3>Doença do vaso ou parte de outra doença</h3>
+  <p>A vasculite pode ser uma doença do próprio vaso (primária) ou fazer parte de uma doença do corpo todo. Entram nesse segundo grupo as doenças do tecido conjuntivo, como o lúpus eritematoso sistêmico e a artrite reumatoide, as neoplasias malignas (geralmente as linfoproliferativas), a crioglobulinemia mista e a púrpura de Henoch-Schönlein.</p>
+
+  <h3>Muitos nomes</h3>
+  <p>Antigamente, quem descrevia um conjunto de sinais e sintomas dava o próprio nome à doença: é o epônimo. Daí vêm a púrpura de Henoch-Schönlein e as doenças de Takayasu, de Buerger, de Horton, de Behçet e de Kawasaki. Decorar todos os nomes é difícil e rende pouco; a aula fica nos pontos mais úteis.</p>
+
+  <h3>Três jeitos de classificar</h3>
+  <div class="rows">
+    <div class="row"><div class="k">Pelo agente causal</div><div class="v">Algumas vasculites são consequência de uma infecção. Na vasculite meningocócica, a meningite por meningococo leva a bactéria ao sangue, a bacteremia inflama os vasos da periferia e as mãos e os pés necrosam.</div></div>
+    <div class="row"><div class="k">Pela histologia</div><div class="v">Pelo tipo de lesão no microscópio. É a divisão mais difícil, e a aula não a usa.</div></div>
+    <div class="row"><div class="k">Pelo calibre do vaso</div><div class="v">Grande, médio e pequeno calibre. É a mais simples, a que a maioria das faculdades usa e a que organiza esta apostila.</div></div>
+  </div>
+  <p>Pela origem, a vasculite pode vir de uma inflamação mediada pelo sistema imune, da invasão direta do vaso por um micro-organismo ou das duas coisas juntas. Saber qual é o caso importa porque muda o tratamento. A tabela dos slides separa assim:</p>
+  <div class="rows">
+    <div class="row"><div class="k">Infecção direta</div><div class="v">Bactérias, fungos e vírus.</div></div>
+    <div class="row"><div class="k">Complexos imunes</div><div class="v">A mais comum: infecções (vírus das hepatites B e C), púrpura de Henoch-Schönlein, artrite reumatoide, lúpus, remédios, crioglobulinemia e doença do soro.</div></div>
+    <div class="row"><div class="k">Anticorpo contra o neutrófilo</div><div class="v">Granulomatose de Wegener, poliangeíte microscópica e síndrome de Churg-Strauss.</div></div>
+  </div>
+  <div class="rows">
+    <div class="row"><div class="k">Ataque direto de anticorpos</div><div class="v">Síndrome de Goodpasture e doença de Kawasaki.</div></div>
+    <div class="row"><div class="k">Mediada por células</div><div class="v">Rejeição de órgãos, doença inflamatória do intestino e vasculite paraneoplásica.</div></div>
+    <div class="row"><div class="k">Desconhecida</div><div class="v">Arterite temporal de células gigantes, arterite de Takayasu e poliarterite nodosa clássica.</div></div>
+  </div>
+
+  <h3 data-bm="Pelo calibre do vaso">Pelo calibre do vaso <span class="prova">PROVA</span></h3>
+  <p>Quem trata vasculite todo dia precisa de mais detalhe, mas para estudar a divisão pelo calibre resolve. As de pequeno calibre são as mais difíceis de identificar e de diagnosticar.</p>
+  <div class="figure"><img class="cheia" src="calibre.svg" alt="Vasculites de grande, médio e pequeno calibre">
+    <p class="leg">A divisão da aula, que é também a dos slides (classificação de Chapel Hill, 1994). O anel mostra o tamanho relativo do vaso.</p></div>
+
+  <h3>Os marcadores de laboratório</h3>
+  <p>O que separa uma vasculite da outra, muitas vezes, é um marcador no sangue. O principal é o anticorpo anticitoplasma de neutrófilo (ANCA), que pode ser do tipo C (<span style="white-space:nowrap">c-ANCA</span>) ou do tipo P (<span style="white-space:nowrap">p-ANCA</span>). As que não têm esse anticorpo têm outros marcadores, como as crioglobulinas.</p>
+  <div class="rows">
+    <div class="row"><div class="k"><span style="white-space:nowrap">c-ANCA</span></div><div class="v">Granulomatose de Wegener.</div></div>
+    <div class="row"><div class="k"><span style="white-space:nowrap">p-ANCA</span></div><div class="v">Poliarterite nodosa.</div></div>
+    <div class="row"><div class="k">Hepatite B</div><div class="v">Sorologia alterada na poliarterite nodosa, em boa parte dos casos (30% nos slides).</div></div>
+    <div class="row"><div class="k">Crioglobulinas</div><div class="v">Crioglobulinemia.</div></div>
+  </div>
+  <p class="reg"><b>Nos slides:</b> o <span style="white-space:nowrap">c-ANCA</span> da granulomatose de Wegener é dirigido contra a proteinase 3; o <span style="white-space:nowrap">p-ANCA</span> aparece na síndrome de Churg-Strauss e na poliangeíte microscópica (contra a mieloperoxidase), e a tabela não liga a poliarterite nodosa a nenhum ANCA.</p>
+  <p class="livros"><b>Nos livros:</b> a poliarterite nodosa clássica costuma ser ANCA negativa; o <span style="white-space:nowrap">p-ANCA</span> é mais ligado à poliangeíte microscópica e à síndrome de Churg-Strauss.</p>
+</section>
+
+<!-- ======================================================= 02 -->
+<section id="s02">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">02</span></div><div class="corpo"><h2>Quando pensar em vasculite</h2>
+    <div class="aqui"><span class="feito">Vaso inflamado</span><span class="on">Suspeitar</span><span>Grande calibre</span><span>Médio calibre</span><span>Pequeno calibre</span><span class="ramo">Além das clássicas</span><span>Tratar</span></div></div></div>
+  <div class="simples"><p><b>Em palavras simples.</b> A vasculite quase nunca chega com cara de doença vascular. Chega como cansaço, emagrecimento e uma ferida que não tem explicação. Quem pensa nela pede os exames básicos e chama o reumatologista cedo, sem largar o paciente.</p></div>
+
+  <h3>A ferida sem história clássica</h3>
+  <p>O dia a dia do cirurgião vascular tem histórias que se repetem. Quando a ferida foge delas, acenda o alerta.</p>
+  <div class="cmp">
+    <div class="r h"><div class="k"></div><div class="c">O comum do dia a dia</div><div class="c">Pense em vasculite</div></div>
+    <div class="r"><div class="k">A queixa</div><div class="c">“Tenho dor na perna, a perna incha.” “Tinha dor para caminhar e agora dói de noite.”</div><div class="c">Ferida que não se encaixa em nenhuma história clínica clássica.</div></div>
+    <div class="r"><div class="k">A história</div><div class="c">Trombose antiga: com o tempo a perna escureceu e abriu ferida. Ou dor ao caminhar que virou dor em repouso e ferida no pé.</div><div class="c">Mal-estar, emagrecimento e perda de peso, que lembram câncer ou infecção crônica, como a tuberculose.</div></div>
+  </div>
+  <div class="quote"><p>“Quando aparece uma ferida que não tem uma história clínica clássica, a chance de ser uma vasculite aumenta muito.”</p><div class="who">Dr. Jeferson, sobre o paciente que foge do comum</div></div>
+  <p>Investigando, não se acha câncer nem infecção: a pesquisa inicial vem normal, menos as provas de atividade inflamatória, muitas vezes elevadas. Daí em diante é preciso imaginar a vasculite e saber que exames pedir, um mundo difícil para a maioria dos médicos. Os slides resumem a clínica: variada (febre, dor muscular, dor nas articulações e mal-estar), conforme a doença associada e os órgãos afetados.</p>
+
+  <div class="box orange"><div class="kick"><span class="dot"></span>Parêntese do professor: a sepse que levou mãos e pés</div><p>O caso mais conhecido no Brasil foi o de uma modelo, no Espírito Santo. Ela teve infecção urinária, foi ao posto e recebeu um remédio; não melhorou, voltou e ouviu que devia tomar mais água; piorou, foi internada e evoluiu para sepse. Quando entrou o antibiótico mais potente, já era tarde: as mãos e os pés necrosaram e foram amputados. No jornal, a história virou manchete de erro médico grave.</p></div>
+
+  <h3 data-bm="Suspeitar, pedir o básico e chamar o reumatologista">Suspeitar, pedir o básico e chamar o reumatologista <span class="prova">PROVA</span></h3>
+  <ol class="flow">
+    <li><b class="t">Suspeitar.</b> Ferida sem história clássica, sintomas gerais e provas de atividade inflamatória altas.</li>
+    <li><b class="t">Sorologias.</b> Hepatite, sobretudo a hepatite B, que tem relação com algumas vasculites; e vírus da imunodeficiência humana, que hoje preocupa menos, mas continua por aí.</li>
+    <li><b class="t">Doenças do tecido conjuntivo.</b> Outras provas de atividade inflamatória, porque essas doenças têm muita relação com as vasculites.</li>
+    <li><b class="t">Chamar o reumatologista.</b> As pesquisas específicas (fator antinuclear, anti-Sm, anti-DNA e outras) são caras e difíceis de interpretar: ele ajuda a pedir o exame certo.</li>
+  </ol>
+  <div class="box red"><div class="kick"><span class="dot"></span>Pegadinha do professor</div><p><span class="medium">Pedir sozinho a bateria inteira de exames reumatológicos.</span> Custa caro, nem sempre responde a pergunta, e um resultado no limite abre um mundo de hipóteses. O certo é suspeitar e chamar o reumatologista para pedir o exame certo.</p></div>
+  <div class="box orange"><div class="kick"><span class="dot"></span>Parêntese do professor: o fator antinuclear e o pirulito</div><p>O laudo vem com “padrão nuclear pontilhado, titulação 1 para 32”, e a referência do laboratório diz que acima de 1 para 31 pode sugerir doença. E agora? Ao telefone, o reumatologista pergunta: “A senhora chupou pirulito ontem, da marca tal? Então pode ser isso: ele dá falso positivo.”</p></div>
+  <div class="quote"><p>“Na maioria das vezes, quando a pessoa tem uma vasculite, a maioria tira o corpo fora, deixa o paciente à míngua, porque é um abacaxizão a ser descascado.”</p><div class="who">Dr. Jeferson, sobre não abandonar o paciente</div></div>
+</section>
+
+<!-- ======================================================= 03 -->
+<section id="s03">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">03</span></div><div class="corpo"><h2>Grande calibre: arterite temporal e Takayasu</h2>
+    <div class="aqui"><span class="feito">Vaso inflamado</span><span class="feito">Suspeitar</span><span class="on">Grande calibre</span><span>Médio calibre</span><span>Pequeno calibre</span><span class="ramo">Além das clássicas</span><span>Tratar</span></div></div></div>
+  <div class="simples"><p><b>Em palavras simples.</b> As duas atacam a aorta e os seus grandes ramos, e as duas são de mulheres; o que separa é a idade. A temporal é da mulher idosa e se confirma com biópsia; a de Takayasu é da mulher jovem e se confirma com angiotomografia. As duas são tratadas com corticoide.</p></div>
+
+  <h3>Arterite temporal: quem e por quê</h3>
+  <p>A arterite temporal também se chama arterite de células gigantes ou arterite de Horton. Ataca geralmente <b>mulheres idosas, acima dos 60 anos</b>. Por que aparece, ninguém sabe: não há fator desencadeante conhecido. Os slides falam em resposta imune mediada por linfócitos T e por substâncias inflamatórias, como o fator de necrose tumoral.</p>
+  <p class="reg"><b>Nos slides:</b> doença de idosos, rara antes dos 50 anos.</p>
+
+  <h3>Os sintomas</h3>
+  <p>A queixa mais comum é a cefaleia. Pode haver perda visual e dor para mastigar, além de mal-estar, perda de peso e calafrio à noite. Algumas pacientes contam que a lateral da cabeça fica tensa e dolorida. Os slides acrescentam que a doença atinge as artérias da cabeça, inclusive as vertebrais e as oftálmicas, e pode levar à cegueira: é uma emergência médica.</p>
+  <div class="figure lado"><img src="img-temporal.jpg" style="width:150pt" alt="Artéria temporal espessada">
+    <div class="olhar"><div class="kick">O que olhar</div><ul>
+      <li><b>Seta e marcador:</b> o trajeto da artéria temporal, espessado e saltado sob a pele, logo à frente do couro cabeludo.</li>
+      <li><b>Ao toque, na fase ativa:</b> a artéria fica emborrachada e dói. A maioria das pessoas já consegue palpar a própria artéria temporal.</li>
+    </ul><p class="leg">Imagem dos slides da aula.</p></div></div>
+  <div class="box red"><div class="kick"><span class="dot"></span>Pegadinha do professor</div><p><span class="medium">O nome engana.</span> A arterite “temporal” é uma vasculite de vaso de grande calibre, e a artéria temporal não é um vaso grande. Ela é só o lugar onde a doença se mostra; a doença ataca também outros vasos.</p></div>
+
+  <h3>Como confirmar</h3>
+  <ol class="flow">
+    <li><b class="t">Laboratório.</b> Nos casos ativos: anemia leve, velocidade de hemossedimentação e proteína C-reativa elevadas, interleucina-6 aumentada.</li>
+    <li><b class="t">Ultrassom.</b> Com transdutor de alta frequência sobre a artéria temporal: um halo em volta da artéria, com a parede mais espessa que o normal.</li>
+    <li><b class="t">Biópsia, a confirmação.</b> Incisão no pé do cabelo, com anestesia local; retira-se um pedacinho da artéria temporal, que não faz falta. O exame anatomopatológico mostra a parede inflamada e os gigantócitos, as células gigantes que dão nome à doença. Nos slides, a íntima aparece espessada, estreitando a luz, e a lâmina elástica interna, destruída.</li>
+  </ol>
+
+  <h3>Tratamento: corticoide</h3>
+  <p>O corticoide é o carro-chefe do tratamento da maior parte das arterites, e a arterite temporal é o primeiro exemplo. A dose de ataque é alta e cai aos poucos até a manutenção.</p>
+  <div class="ref">
+    <div class="txt"><div class="kick"><span class="dot"></span>Corticoide na arterite temporal</div><p>Dose alta no ataque, redução lenta, por 1 a 2 anos.</p></div>
+    <div class="vals"><div class="val"><small>Ataque</small>60 mg/dia ou mais</div><div class="val"><small>Manutenção</small>10 a 20 mg/dia</div></div>
+  </div>
+  <p>A maioria usa 1 mg/kg/dia no ataque. Assim como vem, a doença vai embora: sem sequela importante, a paciente fica em remissão.</p>
+  <div class="quote"><p>“Curada a gente nunca pode dizer, porque ninguém sabe como, por que apareceu.”</p><div class="who">Dr. Jeferson, sobre a remissão das vasculites</div></div>
+
+  <h3>Arterite de Takayasu: quem e onde</h3>
+  <p>É parecida com a temporal no quadro e no microscópio; muda o público: mulheres mais jovens, geralmente <b>até os 35 anos</b>, com predileção pela população asiática (as pacientes com Takayasu que o Dr. Jeferson atendeu eram asiáticas). Pode haver relação com a fase hormonal dessas mulheres, talvez com o excesso de estrógeno criando a inflamação.</p>
+  <p>Ela gosta da aorta e dos seus principais ramos: troncos supra-aórticos, artérias renais e, nos casos mais graves, artérias pulmonares. São quatro grandes grupos, e o tipo IV é o mais grave, porque atinge a artéria pulmonar: cria hipertensão pulmonar e dificulta a passagem do sangue pelo pulmão para ser oxigenado.</p>
+  <p>Os slides completam: a artéria pulmonar é atingida em 50% dos casos; toda a espessura da parede da aorta engrossa e fibrosa; a luz dos grandes vasos estreita e os pulsos dos braços enfraquecem (por isso o apelido “doença sem pulso”). No microscópio, há inflamação granulomatosa com células gigantes e necrose em focos da camada média.</p>
+  <p class="livros"><b>Nos livros:</b> os quatro tipos seguem a classificação de Lupi-Herrera. Tipo I, arco da aorta e seus ramos; tipo II, aorta torácica descendente e abdominal; tipo III, os dois territórios; tipo IV, qualquer um deles com a artéria pulmonar.</p>
+
+  <h3>Os sintomas da Takayasu</h3>
+  <p>Como a maioria das vasculites, começa com cara de infecção: febre, emagrecimento, mal-estar, perda de peso e fraqueza. Às vezes a descoberta é no consultório: a pressão é diferente nos dois braços, 5 por 2 de um lado e 12 por 8 do outro. Nas fases críticas, a inflamação leva à isquemia: do braço, do cérebro e do rim, que aparece como hipertensão. A <b>hipertensão no jovem</b> é uma das apresentações mais comuns: investigando, a artéria renal está estenosada.</p>
+
+  <h3 data-bm="Takayasu: a imagem sela o diagnóstico">Takayasu: a imagem sela o diagnóstico <span class="prova">PROVA</span></h3>
+  <p>Não há exame de laboratório específico; as provas de atividade inflamatória vêm elevadas. Quem fecha o diagnóstico é a imagem, porque ela é muito característica. O exame de escolha é a <b>angiotomografia</b>, que dá um panorama de tudo o que acontece dentro do tórax e mostra os pontos de estenose seguidos de dilatação pós-estenótica: o vaso inflama, estreita e, logo depois, dilata.</p>
+  <div class="figure"><img class="cheia" src="img-takayasu.jpg" alt="Arteriografia do arco da aorta na arterite de Takayasu">
+    <div class="olhar"><div class="kick">O que olhar</div><ul>
+      <li><b>Arco da aorta:</b> a curva larga, cheia de contraste, embaixo.</li>
+      <li><b>Setas brancas:</b> os ramos que saem do arco, estreitados e irregulares; é o padrão de estenose da doença.</li>
+    </ul><p class="leg">Arteriografia do arco da aorta. Imagem dos slides da aula.</p></div></div>
+  <div class="box red"><div class="kick"><span class="dot"></span>Pegadinha do professor</div><p><span class="medium">Padrão-ouro não é o exame mais pedido.</span> A angiografia é o padrão-ouro, mas exige injetar contraste vaso por vaso; a angiotomografia bem feita avalia tudo de uma vez e é o exame principal. A vantagem da angiografia é tratar na hora: achou uma artéria renal estenosada, já passa o balão e faz a angioplastia. Qualquer exame contrastado dá a informação necessária.</p></div>
+
+  <h3>Tratamento da Takayasu</h3>
+  <p>Mesma base: corticoide, geralmente 1 mg/kg. Nos casos graves entram outras classes de imunossupressores, fora da alçada do cirurgião vascular. Quando há isquemia, como na hipertensão do jovem com artéria renal estenosada, o tratamento endovascular tem sido muito usado: fio-guia dentro da artéria renal, dilatação com balão, stent e, depois, o cuidado de qualquer angioplastia, com antiagregante.</p>
+
+  <h3 data-bm="Lado a lado">Lado a lado <span class="prova">PROVA</span></h3>
+  <div class="cmp">
+    <div class="r h"><div class="k"></div><div class="c">Arterite temporal</div><div class="c">Arterite de Takayasu</div></div>
+    <div class="r"><div class="k">Quem</div><div class="c">Mulher idosa, acima dos 60 anos</div><div class="c">Mulher jovem, até os 35 anos; mais em asiáticas</div></div>
+    <div class="r"><div class="k">Onde</div><div class="c">Vasos grandes; aparece na artéria temporal</div><div class="c">Aorta e ramos: troncos supra-aórticos, renais e pulmonares</div></div>
+    <div class="r"><div class="k">Pista</div><div class="c">Cefaleia, perda visual, dor para mastigar</div><div class="c">Pressão diferente nos braços; hipertensão no jovem</div></div>
+    <div class="r"><div class="k">Confirma</div><div class="c destaque">Biópsia da artéria temporal</div><div class="c destaque">Angiotomografia</div></div>
+    <div class="r"><div class="k">Trata</div><div class="c">Corticoide, por 1 a 2 anos</div><div class="c">Corticoide; balão e stent se houver estenose</div></div>
+  </div>
+</section>
+
+<!-- ======================================================= 04 -->
+<section id="s04">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">04</span></div><div class="corpo"><h2>Médio calibre: Buerger, poliarterite e Kawasaki</h2>
+    <div class="aqui"><span class="feito">Vaso inflamado</span><span class="feito">Suspeitar</span><span class="feito">Grande calibre</span><span class="on">Médio calibre</span><span>Pequeno calibre</span><span class="ramo">Além das clássicas</span><span>Tratar</span></div></div></div>
+  <div class="simples"><p><b>Em palavras simples.</b> Três doenças de artérias médias, cada uma com o seu paciente típico: a tromboangeíte é do homem jovem que fuma, a poliarterite nodosa anda com a hepatite B e ataca as vísceras, e a doença de Kawasaki é da criança e ataca as coronárias. Duas delas fogem do corticoide.</p></div>
+
+  <h3>Tromboangeíte obliterante: o cigarro</h3>
+  <p>Também chamada doença de Buerger, é uma das vasculites mais conhecidas, e é especial porque tem uma causa provável: o <b>tabagismo</b>. Acredita-se que alguma substância da fumaça, agredindo os vasos por anos, cause a inflamação e a obstrução; os slides falam em toxicidade do tabaco para as células do endotélio ou em resposta imune. Atinge vasos médios, sobretudo as artérias femorais e tibiais (nos slides, também as de pequeno calibre, como a tibial e a radial). O paciente é geralmente homem, até os 50 anos.</p>
+  <p class="reg"><b>Nos slides:</b> principalmente em grandes tabagistas, antes dos 35 anos.</p>
+
+  <h3 data-bm="Chega direto na ferida">Chega direto na ferida <span class="prova">PROVA</span></h3>
+  <p>O paciente chega com isquemia avançada. Ele não passa pelas fases da doença arterial obstrutiva periférica: primeiro dor para caminhar, depois dor em repouso, por fim a lesão trófica. Chega dizendo: “Com 20 dias de evolução apareceu essa ferida no pé e me dói dia e noite.” Já entra nos graus mais avançados da classificação de Rutherford, 5 e 6.</p>
+  <div class="figure"><img class="cheia" src="daop.svg" alt="Fases da doença arterial obstrutiva periférica e o salto da tromboangeíte"></div>
+  <p>Pode ter outras inflamações: fenômeno de Raynaud e tromboflebite em outros pontos. Os slides citam flebite nodular superficial, sensibilidade ao frio nas mãos, dor no pé, úlceras crônicas nos dedos dos pés e das mãos e gangrena.</p>
+
+  <h3>O sinal de Martorell</h3>
+  <p>É uma das marcas da tromboangeíte na arteriografia. A artéria poplítea, que deveria descer e se dividir em tibial anterior e tronco tibiofibular, “morre” na altura da linha articular do joelho e forma uma raiz, como a de uma planta tirada da terra. As artérias principais ocluem, e a circulação colateral que se forma não basta para manter a perna viva: muitas vezes o caminho é a amputação.</p>
+  <div class="figure"><img class="cheia" src="martorell.svg" alt="Artéria poplítea normal e sinal de Martorell"><p class="leg">Desenho esquemático da arteriografia.</p></div>
+
+  <div class="box orange"><div class="kick"><span class="dot"></span>Parêntese do professor: o pus que não é infecção</div><p>A inflamação forma verdadeiros abscessos dentro do vaso. “Já tive paciente de tromboangeíte que eu operei e, na hora que eu abri o vaso, saiu pus.” Parece infecção por bactéria, mas o pus colhido é estéril: é pus de reação inflamatória. Nos slides, o trombo aparece com microabscessos de neutrófilos cercados por inflamação granulomatosa.</p></div>
+
+  <h3>Tratamento: parar de fumar</h3>
+  <p>É a primeira vasculite da aula que não usa corticoide como base. Quando o paciente para de fumar, na maioria das vezes a inflamação cessa. O resto é apoio: analgésico, às vezes vasodilatador e, se a obstrução tiver tratamento cirúrgico, uma ponte (derivação), como a ponte fêmoro-distal. Quem não consegue parar de fumar continua piorando.</p>
+  <div class="box orange"><div class="kick"><span class="dot"></span>Parêntese do professor: o Brasil que fumava</div><p>Até os anos 1990 se fumava muito no Brasil: os carros com que Ayrton Senna foi campeão levavam marcas de cigarro, havia cinzeiro no ônibus de viagem e gente fumando na churrascaria, no restaurante e na balada. Nos últimos 30 anos isso mudou radicalmente. Era a época em que a tromboangeíte mais aparecia: jovens com vício muito intenso, que acabavam na amputação.</p></div>
+
+  <h3>Poliarterite nodosa</h3>
+  <p>É difícil de diagnosticar: em toda a carreira, o Dr. Jeferson viu um ou dois casos, e um deles tinha, além das feridas, hepatite ativa. O paciente tem um processo inflamatório difuso, com feridas, perda de peso e emagrecimento.</p>
+  <h3 data-bm="As pistas da poliarterite">As pistas da poliarterite <span class="prova">PROVA</span></h3>
+  <p>Investigando, aparecem três pistas: <b>sorologia de hepatite alterada</b> em boa parte dos casos, o anticorpo anticitoplasma de neutrófilo do tipo P (<span style="white-space:nowrap">p-ANCA</span>) e dilatações aneurismáticas nas vísceras, que podem trombosar ou romper e matar o paciente.</p>
+  <div class="quote"><p>“Se você oclui um vaso que vai para um dedo, o dedo necrosa, a pessoa não morre. Mas se você ocluir um vaso que vai para uma alça intestinal, essa alça apodrece, perfura e a pessoa morre.”</p><div class="who">Dr. Jeferson, sobre a poliarterite nas vísceras (a morte vem da sepse por translocação bacteriana)</div></div>
+  <p>O corticoide volta a ser o carro-chefe (é a terceira vasculite da aula com corticoide), com imunossupressão mais intensa. Estabilizada, a doença entra em remissão, mas as complicações dos pequenos aneurismas continuam a aparecer.</p>
+  <div class="rows">
+    <div class="row"><div class="k">Vasos (slides)</div><div class="v">Artérias musculares de pequeno e médio calibre, sem chegar às arteríolas, aos capilares e às vênulas. Prefere os vasos dos rins e das vísceras (coração, fígado, intestino) e poupa os pulmonares. Lesões em todos os estágios convivem em vasos diferentes.</div></div>
+    <div class="row"><div class="k">Causa (slides)</div><div class="v">Mediada por complexos imunes; 30% dos pacientes têm hepatite B.</div></div>
+  </div>
+  <div class="rows">
+    <div class="row"><div class="k">Clínica (slides)</div><div class="v">Adultos jovens, crianças e idosos; evolução aguda ou crônica, em surtos. Mal-estar, febre, perda de peso, hipertensão (pelo rim) e melena (pelas lesões do intestino). Pode ser fatal, sobretudo pelo rim.</div></div>
+    <div class="row"><div class="k">Tratamento (slides)</div><div class="v">Corticoide e ciclofosfamida.</div></div>
+  </div>
+
+  <h3>Doença de Kawasaki</h3>
+  <p>Outra arterite estranha, e esta gosta de criança. A criança tem febre, mal-estar e vermelhidão no corpo; costuma ser tratada como sarampo ou virose, mas a febre continua e não melhora com remédio nenhum. Investigando, as provas de atividade inflamatória vêm altas, e o vaso atacado é a <b>coronária</b>: a criança passa a ter sinais de isquemia do miocárdio, e algumas chegam a infartar.</p>
+  <p>Os slides acrescentam: é a principal causa de doença do coração adquirida na infância; é febril, aguda e autolimitada, de lactentes e crianças (80% abaixo dos 4 anos); atinge vasos de grande e médio calibre e até pequenos; nas coronárias formam-se aneurismas que rompem ou trombosam e causam infarto. A inflamação pode desaparecer, mas 20% ficam com sequelas cardiovasculares, e a doença pode ser fatal.</p>
+  <div class="figure lado"><img src="img-kawasaki.jpg" style="width:205pt" alt="Criança com doença de Kawasaki">
+    <div class="olhar"><div class="kick">O que olhar</div><ul>
+      <li><b>Olhos:</b> vermelhos nos dois lados, sem pus.</li>
+      <li><b>Lábios:</b> vermelhos e secos.</li>
+      <li><b>Bochechas:</b> vermelhidão da pele.</li>
+    </ul><p class="leg">Imagem dos slides da aula.</p></div></div>
+  <p>O quadro dos slides traz os critérios do diagnóstico e quanto cada um aparece:</p>
+  <div class="rows">
+    <div class="row"><div class="k">Febre (100%)</div><div class="v">Por 5 dias ou mais.</div></div>
+    <div class="row"><div class="k">Conjuntivite (85%)</div><div class="v">Nos dois olhos, sem pus.</div></div>
+    <div class="row"><div class="k">Lábios e boca (90%)</div><div class="v">Lábios vermelhos, secos e com fissuras, língua em framboesa e garganta difusamente vermelha.</div></div>
+  </div>
+  <div class="rows">
+    <div class="row"><div class="k">Pele (80%)</div><div class="v">Manchas de vários tipos, sem bolhas.</div></div>
+    <div class="row"><div class="k">Linfonodo (70%)</div><div class="v">No pescoço, de surgimento agudo, sem pus, maior que 1,5 cm.</div></div>
+    <div class="row"><div class="k">Mãos e pés (70%)</div><div class="v">Palmas e plantas vermelhas, inchaço duro das mãos ou dos pés e, depois, descamação dos dedos.</div></div>
+  </div>
+
+  <h3 data-bm="Kawasaki: o tratamento de base">Kawasaki: o tratamento de base <span class="prova">PROVA</span></h3>
+  <p>A linha de base é um anti-inflamatório não esteroidal: o <b>ácido acetilsalicílico</b>. Por causa do vaso atingido, a criança fica sob vigilância de perto. No único caso que o Dr. Jeferson viu, o filho de um médico que fez o diagnóstico, o tratamento chegou a usar até interferon. Nos slides, o tratamento é imunoglobulina e aspirina.</p>
+  <div class="box"><div class="kick"><span class="dot"></span>O placar até aqui</div><p>Das cinco vasculites vistas até aqui, três usam corticoide (temporal, Takayasu e poliarterite nodosa), uma pede parar de fumar (tromboangeíte) e a outra, ácido acetilsalicílico (Kawasaki).</p></div>
+</section>
+
+<!-- ======================================================= 05 -->
+<section id="s05">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">05</span></div><div class="corpo"><h2>Pequeno calibre: Behçet e Wegener</h2>
+    <div class="aqui"><span class="feito">Vaso inflamado</span><span class="feito">Suspeitar</span><span class="feito">Grande calibre</span><span class="feito">Médio calibre</span><span class="on">Pequeno calibre</span><span class="ramo">Além das clássicas</span><span>Tratar</span></div></div></div>
+  <div class="simples"><p><b>Em palavras simples.</b> As vasculites de vasos pequenos gostam de mucosa: fazem feridas na boca e pelo corpo e inflamam o olho. Se, além disso, o pulmão adoece, pense em granulomatose de Wegener; se não, em doença de Behçet. As duas pedem o reumatologista.</p></div>
+
+  <p>Neste grupo, a aula se concentra em duas: a doença de Behçet e a granulomatose de Wegener. Quando o olho é atingido, aumenta a chance de vasculite de pequeno calibre, como na aluna com doença de Behçet que teve uveíte.</p>
+
+  <h3>Doença de Behçet</h3>
+  <p>Faz úlceras pelo corpo, geralmente nas mucosas, e inflamação no olho: a uveíte. A úvea tem uma parte anterior e uma posterior, e a inflamação pode chegar a formar uma coleção de pus, uma linha de pus dentro do olho, entre a córnea e o cristalino. Pode atingir também o sistema nervoso central. O tratamento exige imunossupressão: o corticoide pode ser usado, mas a maioria usa anti-inflamatório não esteroidal e imunossupressores de outras classes.</p>
+  <p class="livros"><b>Nos livros:</b> essa linha de pus na frente do olho se chama hipópio.</p>
+
+  <h3>Granulomatose de Wegener</h3>
+  <p>Parecida com a doença de Behçet; a diferença é que também pega o <b>pulmão</b>. Sintomas pulmonares que lembram tuberculose, com úlceras pelo corpo, emagrecimento, sudorese e mal-estar, fazem lembrar dela. A investigação mostra provas de atividade inflamatória muito altas e o anticorpo anticitoplasma de neutrófilo do tipo C (<span style="white-space:nowrap">c-ANCA</span>).</p>
+  <p>O pulmão fica parecido com o de uma gripe A ou de covid, mas a doença é arrastada, e muitas vezes o paciente é tratado como se tivesse câncer. A inflamação fica nos alvéolos. Nas mucosas, a inflamação faz úlceras, como as da garganta, e a pessoa não consegue engolir nem comer.</p>
+  <div class="rows">
+    <div class="row"><div class="k">Tríade (slides)</div><div class="v">Granulomas necrosantes das vias aéreas superiores e inferiores; vasculite necrosante ou granulomatosa de vasos pequenos a médios; doença renal com glomerulonefrite.</div></div>
+    <div class="row"><div class="k">Origem (slides)</div><div class="v">Reação de hipersensibilidade por linfócitos T, com granulomas de necrose central; <span style="white-space:nowrap">c-ANCA</span> dirigido contra a proteinase 3.</div></div>
+  </div>
+  <div class="rows">
+    <div class="row"><div class="k">Paciente (slides)</div><div class="v">Homem, por volta dos 40 anos: pneumonite persistente com nódulos e cavidades nos dois pulmões, sinusite crônica, úlcera no nariz e na faringe, doença renal. Rapidamente fatal.</div></div>
+    <div class="row"><div class="k">Tratamento (slides)</div><div class="v">Corticoide e imunossupressores.</div></div>
+  </div>
+  <div class="figure lado"><img src="img-pulmao.jpg" style="width:200pt" alt="Pulmão com vasculite e necrose">
+    <div class="olhar"><div class="kick">O que olhar</div><ul>
+      <li><b>Nódulo com cavidade:</b> a necrose esvaziou o centro.</li>
+      <li><b>Áreas brancas:</b> outros focos de necrose no pulmão.</li>
+    </ul><p class="leg">Pulmão com vasculite e necrose. Imagem dos slides da aula.</p></div></div>
+
+  <h3 data-bm="Behçet ou Wegener">Behçet ou Wegener? <span class="prova">PROVA</span></h3>
+  <div class="cmp">
+    <div class="r h"><div class="k"></div><div class="c">Doença de Behçet</div><div class="c">Granulomatose de Wegener</div></div>
+    <div class="r"><div class="k">Mucosas</div><div class="c">Úlceras</div><div class="c">Úlceras; dor para engolir e comer</div></div>
+    <div class="r"><div class="k">Pele e olho</div><div class="c">Sim; uveíte, às vezes com pus</div><div class="c">Sim</div></div>
+    <div class="r"><div class="k">Pulmão</div><div class="c">Não é o típico</div><div class="c destaque">Sim: lembra tuberculose; <span style="white-space:nowrap">c-ANCA</span> no sangue</div></div>
+    <div class="r"><div class="k">Tratamento</div><div class="c">Anti-inflamatório e imunossupressores; corticoide pode entrar</div><div class="c">Corticoide, o carro-chefe</div></div>
+  </div>
+  <div class="quote"><p>“Por isso que ninguém gosta de mexer com isso, porque é difícil mesmo fazer o diagnóstico; por isso tem que desconfiar e encaminhar para o reumato.”</p><div class="who">Dr. Jeferson, sobre as vasculites de pequeno calibre</div></div>
+
+  <h3>As outras de vaso pequeno</h3>
+  <p>Os slides trazem mais duas, que a aula só cita pelo nome:</p>
+  <div class="card"><span class="tag"><span style="white-space:nowrap">p-ANCA</span></span><h4>Poliangeíte microscópica</h4><p>Vasculite necrosante de capilares, arteríolas e vênulas, vasos menores que os da poliarterite nodosa, com lesões todas da mesma idade. Atinge pele, mucosas, pulmão, cérebro, coração, intestino, rins e músculos; em 90% há inflamação necrosante dos glomérulos e dos capilares do pulmão. Pode ser desencadeada por remédios, como a penicilina, ou por micro-organismos, como o estreptococo. Dá tosse com sangue, sangue e proteína na urina, sangramento intestinal, fraqueza muscular e púrpura palpável. Tratamento: imunossupressor.</p></div>
+  <div class="card"><span class="tag"><span style="white-space:nowrap">p-ANCA</span></span><h4>Síndrome de Churg-Strauss</h4><p>Vasculite necrosante de pequenos vasos em quem tem asma, rinite alérgica e infiltrados no pulmão. As lesões dos vasos lembram as da poliarterite e da poliangeíte; o que diferencia são os granulomas e o excesso de eosinófilos no sangue. Dá púrpura palpável, sangramento intestinal, doença renal e infiltrados no coração. A causa é uma resposta exagerada a um estímulo alérgico.</p></div>
+</section>
+
+<!-- ======================================================= 06 -->
+<section id="s06">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">06</span></div><div class="corpo"><h2>Além das clássicas</h2>
+    <div class="aqui"><span class="feito">Vaso inflamado</span><span class="feito">Suspeitar</span><span class="feito">Grande calibre</span><span class="feito">Médio calibre</span><span class="feito">Pequeno calibre</span><span class="on ramo">Além das clássicas</span><span>Tratar</span></div></div></div>
+  <div class="simples"><p><b>Em palavras simples.</b> Algumas vasculites aparecem como sinal de outro problema no corpo ou como uma ferida que não fecha. O eritema nodoso só melhora quando se trata a causa; a vasculite leucocitoclástica, a que mais aparece no consultório, precisa de corticoide para cicatrizar.</p></div>
+
+  <h3 data-bm="Eritema nodoso: procure a causa">Eritema nodoso: procure a causa <span class="prova">PROVA</span></h3>
+  <p>É uma vasculite, mas consequência de outro problema. Uma reação inflamatória da gordura embaixo da pele, a paniculite, deixa a gordura emborrachada: ao toque, o nódulo é muito doloroso, vermelho e quente. Quase sempre tem a ver com alguma outra coisa acontecendo no corpo.</p>
+  <div class="box orange"><div class="kick"><span class="dot"></span>Caso do professor: a “erisipela” que vinha do rim</div><p>Uma aluna foi à dermatologista, que achou que era celulite, parecida com erisipela, e a mandou ao vascular, quem tem mais prática com infecção de pele. Ela não tinha febre nem linfonodo aumentado na virilha, e o nódulo era muito endurecido. Saudável, contou só que tinha tido infecção urinária. O exame de urina veio com leucócitos, e o ultrassom mostrou um abscesso no rim. Tratado o abscesso, ela ficou bem.</p></div>
+  <div class="box red"><div class="kick"><span class="dot"></span>Pegadinha do professor</div><p><span class="medium">Tratar eritema nodoso como erisipela.</span> Sem febre, sem linfonodo na virilha e com nódulo endurecido e doloroso, pense em eritema nodoso e procure a doença que está por trás.</p></div>
+  <p>O tratamento é o da causa de base. Para diminuir a inflamação, usa-se indometacina ou iodeto de potássio; eventualmente, corticoide.</p>
+
+  <h3>Púrpura de Henoch-Schönlein</h3>
+  <p>É uma alteração que vai aparecer na prática. Tem muito a ver com o uso de anti-inflamatórios não esteroidais e com inflamação e irritação do intestino. Nos slides, aparece entre as vasculites de pequenos vasos mediadas por complexos imunes e entre as que fazem parte de doenças do corpo todo. Além dela, as doenças do tecido conjuntivo também podem dar vasculite.</p>
+  <p class="livros"><b>Nos livros:</b> a púrpura de Henoch-Schönlein é a vasculite por imunoglobulina A, mais comum em crianças e muitas vezes depois de uma infecção das vias aéreas; dá manchas roxas em relevo nas pernas e nas nádegas, dor abdominal, dor nas articulações e pode atingir o rim.</p>
+
+  <h3>Vasculite leucocitoclástica: a do consultório</h3>
+  <p>É a que mais aparece no consultório. Não tem causa conhecida: a pessoa tem uma úlcera que não melhora, faz curativos, e a ferida vai se prolongando. Há um processo inflamatório por trás, e é preciso associar corticoide para combater a vasculite e, depois, ajudar a cicatrização. No microscópio, os neutrófilos invadem as pequenas vênulas e se fragmentam: daí o nome leucocitoclástica. Na pele, as lesões ficam vermelhas pela inflamação e pelo sangue que escapa da parede lesada.</p>
+  <div class="figure"><img src="img-leuco.jpg" style="display:block;width:400pt;margin:0 auto" alt="Pernas com vasculite leucocitoclástica">
+    <div class="olhar"><div class="kick">O que olhar</div><ul>
+      <li><b>Nas duas pernas:</b> manchas arroxeadas, muitas com pequenas úlceras e crostas, concentradas na metade de baixo.</li>
+    </ul><p class="leg">Imagem dos slides da aula.</p></div></div>
+
+  <h3 data-bm="Corticoide numa ferida">Corticoide numa ferida? <span class="prova">PROVA</span></h3>
+  <div class="es">
+    <div class="kick">A pergunta da aula</div>
+    <p class="lead">“Doutor, não é um contrassenso dar corticoide para quem tem uma ferida? O corticoide acelera ou atrasa a cicatrização?”</p>
+    <div class="cells">
+      <div class="cell"><div class="lab">Pessoa sem vasculite</div><p>O corticoide atrasa: a cicatrização fica mais lenta.</p></div>
+      <div class="cell"><div class="lab">Pessoa com vasculite</div><p>A inflamação é a causa da ferida: o corticoide é fundamental para fechá-la, ainda que demore mais que o normal.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================= 07 -->
+<section id="s07">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">07</span></div><div class="corpo"><h2>Tratar: o corticoide e as duas exceções</h2>
+    <div class="aqui"><span class="feito">Vaso inflamado</span><span class="feito">Suspeitar</span><span class="feito">Grande calibre</span><span class="feito">Médio calibre</span><span class="feito">Pequeno calibre</span><span class="feito ramo">Além das clássicas</span><span class="on">Tratar</span></div></div></div>
+  <div class="simples"><p><b>Em palavras simples.</b> Na dúvida, o corticoide é o tratamento de base de quase todas as vasculites. Só duas fogem da regra: a doença de Kawasaki, tratada com ácido acetilsalicílico, e a tromboangeíte obliterante, que só para quando o paciente para de fumar.</p></div>
+
+  <h3 data-bm="A regra do tratamento">A regra do tratamento <span class="prova">PROVA</span></h3>
+  <div class="figure"><img class="cheia" src="tratamento.svg" alt="Corticoide para quase todas; exceções Kawasaki e tromboangeíte"></div>
+  <div class="quote"><p>“Se você vai arriscar um tratamento para alguma delas, o corticoide é o carro-chefe para boa parte.”</p><div class="who">Dr. Jeferson, fechando as vasculites</div></div>
+
+  <h3>O resumão</h3>
+  <p>Uma linha por vasculite, para lembrar o que cada uma tem de diferente.</p>
+  <div class="cmp resumo">
+    <div class="r h"><div class="k"></div><div class="c">Quem e pista</div><div class="c">Tratamento</div></div>
+    <div class="r"><div class="k">Arterite temporal</div><div class="c">Mulher idosa; cefaleia; biópsia confirma</div><div class="c">Corticoide</div></div>
+    <div class="r"><div class="k">Arterite de Takayasu</div><div class="c">Mulher jovem; pressão diferente nos braços; angiotomografia</div><div class="c">Corticoide</div></div>
+  </div>
+  <div class="cmp resumo">
+    <div class="r"><div class="k">Tromboangeíte obliterante</div><div class="c">Homem que fuma; ferida sem as fases; sinal de Martorell</div><div class="c destaque">Parar de fumar</div></div>
+    <div class="r"><div class="k">Poliarterite nodosa</div><div class="c">Hepatite; <span style="white-space:nowrap">p-ANCA</span>; aneurismas nas vísceras</div><div class="c">Corticoide e imunossupressão mais intensa</div></div>
+  </div>
+  <div class="cmp resumo">
+    <div class="r"><div class="k">Doença de Kawasaki</div><div class="c">Criança; febre que não cede; coronárias</div><div class="c destaque">Ácido acetilsalicílico</div></div>
+    <div class="r"><div class="k">Doença de Behçet</div><div class="c">Mucosa, pele e olho</div><div class="c">Anti-inflamatório e imunossupressores</div></div>
+  </div>
+  <div class="cmp resumo">
+    <div class="r"><div class="k">Granulomatose de Wegener</div><div class="c">O mesmo, mais pulmão; <span style="white-space:nowrap">c-ANCA</span></div><div class="c">Corticoide</div></div>
+    <div class="r"><div class="k">Eritema nodoso</div><div class="c">Nódulo doloroso; há uma causa por trás</div><div class="c">Tratar a causa</div></div>
+    <div class="r"><div class="k">Vasculite leucocitoclástica</div><div class="c">Ferida que não fecha</div><div class="c">Corticoide</div></div>
+  </div>
+
+  <div class="box orange"><div class="kick"><span class="dot"></span>Parêntese do professor: angiologia e cirurgia vascular</div><p>Esta aula é superficial: é um décimo do que existe sobre vasculite; quem gostar do tema faz clínica médica e depois reumatologia. A angiologia também trata vasculites: o angiologista é um clínico da circulação, que não opera, só faz consultas e tratamentos clínicos. Há um centro que os forma no Brasil, no Rio de Janeiro, e eles são raros: o contrário da cardiologia, com poucos cirurgiões cardíacos para milhares de cardiologistas. O brasileiro não vai ao angiologista; vai ao vascular para tratar varizes.</p></div>
+</section>
+
+<!-- ======================================================= 08 -->
+<section id="s08">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">08</span></div><div class="corpo"><h2>O essencial da aula</h2>
+    <div class="aqui"><span class="feito">Vaso inflamado</span><span class="feito">Suspeitar</span><span class="feito">Grande calibre</span><span class="feito">Médio calibre</span><span class="feito">Pequeno calibre</span><span class="feito ramo">Além das clássicas</span><span class="feito">Tratar</span></div></div></div>
+  <h3>Números da aula</h3>
+  <div class="tiles"><div class="tile"><div class="lab">Arterite temporal</div><div class="n">Acima de 60</div><div class="s">anos; mulher idosa</div></div><div class="tile"><div class="lab">Takayasu</div><div class="n">Até 35</div><div class="s">anos; mulher jovem</div></div><div class="tile"><div class="lab">Tromboangeíte</div><div class="n">Até 50</div><div class="s">anos; homem que fuma</div></div></div>
+  <div class="tiles"><div class="tile g"><div class="lab">Corticoide, ataque</div><div class="n">60 mg/dia</div><div class="s">no mínimo, na arterite temporal</div></div><div class="tile g"><div class="lab">Corticoide, ataque</div><div class="n">1 mg/kg/dia</div><div class="s">o que a maioria usa; também na Takayasu</div></div><div class="tile g"><div class="lab">Manutenção</div><div class="n">10 a 20 mg/dia</div><div class="s">por 1 a 2 anos, na temporal</div></div></div>
+
+  <div class="tiles"><div class="tile"><div class="lab">Tromboangeíte</div><div class="n">Rutherford 5 e 6</div><div class="s">já chega no grau mais avançado</div></div><div class="tile"><div class="lab">Takayasu</div><div class="n">Tipo IV</div><div class="s">o mais grave: artéria pulmonar</div></div><div class="tile"><div class="lab">Poliarterite nodosa</div><div class="n">30%</div><div class="s">com hepatite B (slides)</div></div></div>
+  <div class="tiles"><div class="tile"><div class="lab">Kawasaki</div><div class="n">80%</div><div class="s">abaixo dos 4 anos (slides)</div></div><div class="tile"><div class="lab">Kawasaki</div><div class="n">20%</div><div class="s">com sequela no coração (slides)</div></div><div class="tile"><div class="lab">Kawasaki</div><div class="n">5 dias</div><div class="s">de febre, ou mais (slides)</div></div></div>
+  <div class="box red"><div class="kick"><span class="dot"></span>Erros comuns</div><ul>
+    <li><span class="medium">Achar que a arterite temporal é de vaso pequeno.</span> É de grande calibre; a artéria temporal é só o lugar onde ela se mostra.</li>
+    <li><span class="medium">Pedir angiografia primeiro na Takayasu.</span> O exame de escolha é a angiotomografia.</li>
+    <li><span class="medium">Dar corticoide como base na tromboangeíte.</span> O tratamento é parar de fumar.</li>
+    <li><span class="medium">Evitar corticoide na ferida da vasculite.</span> Ele atrasa a cicatrização de quem não tem vasculite, mas é o que fecha a ferida da vasculite.</li>
+  </ul></div>
+
+<div class="vesp">
+  <h3>Página de véspera</h3>
+  <div class="item"><span class="prova">PROVA</span><p><b>Pelo calibre.</b> Grande: Takayasu e temporal. Médio: tromboangeíte, poliarterite nodosa e Kawasaki. Pequeno: Wegener, Churg-Strauss, poliangeíte, vasculite por imunoglobulina A, crioglobulinemia, leucocitoclástica e Behçet.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p><b>Suspeitar.</b> Ferida sem história clássica, mal-estar e emagrecimento, provas de atividade inflamatória altas: pedir sorologias (hepatite B, vírus da imunodeficiência humana) e chamar o reumatologista.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p><b>Temporal × Takayasu.</b> Temporal: mulher acima dos 60, cefaleia, perda visual, dor para mastigar; confirma com biópsia. Takayasu: mulher até os 35, pressão diferente nos braços, hipertensão no jovem. Corticoide nas duas.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p><b>Takayasu.</b> A imagem sela o diagnóstico: angiotomografia é o exame de escolha (estenose com dilatação pós-estenótica); a angiografia é o padrão-ouro, mas não a mais pedida.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p><b>Tromboangeíte.</b> Homem até os 50 que fuma; pula as fases e chega com ferida e dor dia e noite (Rutherford 5 e 6); sinal de Martorell.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p><b>Poliarterite nodosa.</b> Hepatite (B), <span style="white-space:nowrap">p-ANCA</span> e aneurismas nas vísceras que trombosam ou rompem; corticoide e imunossupressão.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p><b>Kawasaki.</b> Criança com febre que não cede e isquemia do miocárdio pelas coronárias; base: ácido acetilsalicílico.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p><b>Behçet × Wegener.</b> Mucosa, pele e olho nas duas; com pulmão e <span style="white-space:nowrap">c-ANCA</span>, é Wegener.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p><b>Eritema nodoso.</b> Nódulo doloroso, vermelho e quente por inflamação da gordura; é secundário: procure e trate a causa.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p><b>Leucocitoclástica.</b> Ferida que não fecha; o corticoide atrasa a cicatrização de quem não tem vasculite, mas é fundamental para fechar a ferida da vasculite.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p><b>Tratamento.</b> Corticoide é o carro-chefe; exceções: Kawasaki (ácido acetilsalicílico) e tromboangeíte obliterante (parar de fumar).</p></div>
+</div>
+
+
+  <h3>Palavras da aula em linguagem simples</h3>
+  <div class="rows terms">
+    <div class="row"><div class="k">Anatomopatológico</div><div class="v">Exame de um pedaço de tecido ao microscópio, feito pelo patologista.</div></div>
+    <div class="row"><div class="k">ANCA</div><div class="v">Anticorpo anticitoplasma de neutrófilo, marcador de algumas vasculites; <span style="white-space:nowrap">c-ANCA</span> e <span style="white-space:nowrap">p-ANCA</span> são dois tipos.</div></div>
+    <div class="row"><div class="k">Angioplastia</div><div class="v">Abrir por dentro uma artéria estreitada, com balão e, às vezes, stent.</div></div>
+    <div class="row"><div class="k">Angiotomografia</div><div class="v">Tomografia com contraste na veia que mostra as artérias por dentro.</div></div>
+  </div>
+  <div class="rows terms">
+    <div class="row"><div class="k">Circulação colateral</div><div class="v">Vasos finos que se formam para desviar o sangue de uma artéria entupida.</div></div>
+    <div class="row"><div class="k">Crioglobulinas</div><div class="v">Proteínas do sangue que se juntam no frio; marcam a crioglobulinemia.</div></div>
+    <div class="row"><div class="k">Dilatação pós-estenótica</div><div class="v">Alargamento da artéria logo depois de um trecho estreitado.</div></div>
+    <div class="row"><div class="k">Estenose</div><div class="v">Estreitamento da luz do vaso.</div></div>
+  </div>
+  <div class="rows terms">
+    <div class="row"><div class="k">Fenômeno de Raynaud</div><div class="v">Dedos que ficam brancos e roxos no frio, por espasmo das artérias.</div></div>
+    <div class="row"><div class="k">Isquemia</div><div class="v">Falta de sangue num tecido.</div></div>
+    <div class="row"><div class="k">Lesão trófica</div><div class="v">Ferida ou necrose causada pela falta de sangue.</div></div>
+    <div class="row"><div class="k">Paniculite</div><div class="v">Inflamação da gordura embaixo da pele.</div></div>
+  </div>
+  <div class="rows terms">
+    <div class="row"><div class="k">Provas de atividade inflamatória</div><div class="v">Exames que sobem na inflamação: velocidade de hemossedimentação, proteína C-reativa.</div></div>
+    <div class="row"><div class="k">Remissão</div><div class="v">Doença controlada, sem atividade, mas que não se pode chamar de curada.</div></div>
+    <div class="row"><div class="k">Rutherford</div><div class="v">Classificação da doença arterial obstrutiva periférica; 5 e 6 são os graus com perda de tecido.</div></div>
+    <div class="row"><div class="k">Stent</div><div class="v">Tubo de malha metálica deixado dentro da artéria para mantê-la aberta.</div></div>
+  </div>
+  <div class="rows terms">
+    <div class="row"><div class="k">Translocação bacteriana</div><div class="v">Passagem de bactérias do intestino lesado para o sangue.</div></div>
+    <div class="row"><div class="k">Tromboflebite</div><div class="v">Inflamação de uma veia, com coágulo dentro.</div></div>
+    <div class="row"><div class="k">Uveíte</div><div class="v">Inflamação da úvea, a camada do meio do olho.</div></div>
+  </div>
+{{NOTAS}}
+</section>
+</body></html>
