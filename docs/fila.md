@@ -23,3 +23,4 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 | Flashcards da pass-a6 | Claude | claude/happy-darwin-07h2c3 | pass-a6 (flashcards) | 16/11/2026 |
 | Apostila da angio-a8 (Vasculites, 30/09, verdadeira aula 1) | Claude | claude/vigilant-babbage-7ewlcz | angio-a8 e ordem das aulas de angio | 22/11/2026 |
 | Apostila da angio-a10 (Aneurisma de poplítea e hipertensão renovascular, 04/11, Dr. Américo) | Claude | claude/great-bardeen-l538ag | angio-a10 e ordem das aulas de angio | 22/11/2026 |
+| Aula nova angio-a11 (Doença carotídea e AVC, 11/11, Dr. Jeferson) | Claude | claude/amazing-carson-iem3n7 | angio-a11 | 22/11/2026 |
