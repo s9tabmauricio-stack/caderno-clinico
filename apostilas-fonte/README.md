@@ -36,6 +36,8 @@ python3 -I scripts/fonte-aula.py trecho <aula-id> --minutos 10-35 --slides 4-9
 
 **Transcrição de prova** (`provas/<materia>-<prova>-transcricao.txt`, ex.: `provas/angio-p2-t26-transcricao.txt`): anotação de um aluno enquanto o professor lia a prova, com enunciado resumido, alternativas incompletas e a resposta que ele deu. Não é fala do professor: serve para montar as questões daquela prova, com o gabarito conferido na fonte da aula; não entra no `fonte.md`.
 
+**Compilado de provas** (`provas/<materia>-compilado-<assunto>-transcricao.txt`, ex.: `provas/angio-compilado-vasculites-transcricao.txt`): caderno da turma com questões de várias provas antigas de um assunto e o gabarito que a turma anotou. Vale como a transcrição de prova: base das questões (gabarito conferido na fonte da aula), não entra no `fonte.md`.
+
 ## HTML da apostila
 
 **Para que serve:** sem isto, mudar o visual de uma apostila obriga a remontá-la
