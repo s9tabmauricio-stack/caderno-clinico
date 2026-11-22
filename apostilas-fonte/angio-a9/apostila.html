@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<title>Angiologia · Aula 9 · Arteriopatias funcionais</title>
+<meta name="rodape" content="Mauricio Faria · Angiologia · Aula 9 — Arteriopatias funcionais">
+<link rel="stylesheet" href="apostila.css">
+<style>
+/* ===== componentes do molde novo (em teste na pneumo-a5) ===== */
+.simples { background: #FFFFFF; border: 1px solid #C3D8F8; border-left: 4pt solid #0B5BD3; border-radius: 12pt; padding: 9pt 14pt 10pt; margin: 0 0 10pt; break-inside: avoid; }
+.simples p { font-size: 10.2pt; line-height: 1.5; color: #1F2933; margin: 0; }
+.aqui { display: flex; margin-top: 7pt; }
+.aqui span { flex: 1; border-top: 3pt solid #DCDCE2; padding-top: 2.5pt; margin-right: 2.5pt; font-family: "Inter Medium"; font-size: 6pt; line-height: 1.25; color: #8E8E93; }
+.aqui span:last-child { margin-right: 0; }
+.aqui span.feito { border-top-color: #A9C4EE; color: #6C6C70; }
+.aqui span.on { border-top-color: #0B5BD3; color: #0B5BD3; font-family: "Inter SemiBold"; }
+.aqui span.ramo { border-top-style: dashed; }
+.figure .olhar { margin-top: 8pt; }
+.figure .olhar .kick { margin-bottom: 3pt; }
+.figure .olhar ul { margin: 0; }
+.figure .olhar li { padding-left: 0; font-size: 8.7pt; line-height: 1.45; margin-bottom: 2pt; }
+.figure .olhar li::before { display: none; }
+.figure .olhar li b { color: #0B5BD3; }
+.figure .leg { font-size: 7.8pt; color: #8E8E93; margin: 5pt 0 0; }
+.reg { font-size: 8.3pt; line-height: 1.45; color: #6C6C70; background: #F7F7FA; border: 1px solid #E3E3E8; border-radius: 9pt; padding: 5pt 10pt; margin: 6pt 0 9pt; break-inside: avoid; }
+.reg b { font-family: "Inter SemiBold"; color: #4F5B70; }
+.livros { font-size: 8.3pt; line-height: 1.45; color: #6E3AA7; background: #F4EBFB; border: 1px solid #DEC7F1; border-radius: 9pt; padding: 5pt 10pt; margin: 6pt 0 9pt; break-inside: avoid; }
+.livros b { color: #6E3AA7; }
+.sw.simples-sw { background: #FFFFFF; border-color: #C3D8F8; border-left: 3pt solid #0B5BD3; }
+.sw.aqui-sw { background: linear-gradient(90deg, #A9C4EE 0, #A9C4EE 45%, #0B5BD3 45%, #0B5BD3 70%, #DCDCE2 70%); border: 0; height: 4pt; border-radius: 2pt; }
+.sw.exame-sw { background: #1F2933; border-color: #1F2933; }
+.cmp .destaque { font-family: "Inter SemiBold"; color: #0B5BD3; }
+.cmp.c4 .k { width: 62pt; }
+.cmp.c4 .c { font-size: 8.3pt; padding-right: 8pt; }
+.vesp { break-before: page; }
+.vesp .item { display: flex; align-items: baseline; background: #FFFFFF; border: 1px solid #E3E3E8; border-radius: 12pt; padding: 7pt 12pt; margin: 0 0 6pt; break-inside: avoid; }
+.vesp .item .prova { flex: none; margin: 0 9pt 0 0; }
+.vesp .item p { margin: 0; font-size: 9.2pt; }
+.tiles.t4 { margin: 6pt 0 8pt; }
+.figure.lado { display: flex; align-items: center; }
+.figure.lado > img { flex: none; }
+.figure.lado .olhar { flex: 1; margin: 0 0 0 12pt; }
+.cover .toc a { padding: 3.6pt 0; }
+/* ===== desta aula ===== */
+.figure .duas { display: flex; }
+.figure .duas img { flex: 1; min-width: 0; width: 50%; border-radius: 8pt; }
+.figure .duas img + img { margin-left: 8pt; }
+.figure.lado > img { border-radius: 8pt; }
+.figure.lado > .duas { flex: none; width: 318pt; align-items: center; }
+</style>
+</head><body>
+
+<div class="cover">
+  <div class="kicker">Angiologia · Aula 9 · Arteriopatias funcionais e úlceras</div>
+  <h1>Arteriopatias funcionais</h1>
+  <p class="sub">Mão e pé frios, pálidos ou roxos com as artérias abertas: Raynaud, acrocianose, livedo, distrofia simpático-reflexa e ergotismo, e o lugar da ferida que separa a úlcera venosa, a arterial e a vasculítica.</p>
+  <div class="author"><span class="av">J</span><div><b>Dr. Jeferson</b><span>Professor de Angiologia · 30 de setembro de 2026</span></div></div>
+  <div class="keynums"><div class="kick">Três números para levar</div>
+    <div class="kn-grid">
+      <div class="kn"><div class="n">5 a 10 mg</div><div class="l">de nifedipina de 12 em 12 horas no Raynaud</div></div>
+      <div class="kn"><div class="n">L2 a L4</div><div class="l">gânglios retirados na simpatectomia lombar da distrofia</div></div>
+      <div class="kn"><div class="n">80%</div><div class="l">das feridas do consultório vascular são venosas</div></div>
+    </div></div>
+  <div class="toc"><div class="kick">Nesta apostila</div>
+    <a href="#s01"><span class="tn">01</span><span class="tt">O que são as arteriopatias funcionais</span><span class="pg">{{s01}}</span></a>
+    <a href="#s02"><span class="tn">02</span><span class="tt">Fenômeno de Raynaud</span><span class="pg">{{s02}}</span></a>
+    <a href="#s03"><span class="tn">03</span><span class="tt">Tratamento do Raynaud</span><span class="pg">{{s03}}</span></a>
+    <a href="#s04"><span class="tn">04</span><span class="tt">Acrocianose</span><span class="pg">{{s04}}</span></a>
+    <a href="#s05"><span class="tn">05</span><span class="tt">Livedo reticular e eritromelalgia</span><span class="pg">{{s05}}</span></a>
+    <a href="#s06"><span class="tn">06</span><span class="tt">Distrofia simpático-reflexa</span><span class="pg">{{s06}}</span></a>
+    <a href="#s07"><span class="tn">07</span><span class="tt">Ergotismo</span><span class="pg">{{s07}}</span></a>
+    <a href="#s08"><span class="tn">08</span><span class="tt">Úlceras: o lugar da ferida</span><span class="pg">{{s08}}</span></a>
+    <a href="#s09"><span class="tn">09</span><span class="tt">O essencial da aula</span><span class="pg">{{s09}}</span></a>
+    <p class="note">Organizada a partir da aula e dos slides, com os termos médicos conferidos e a linguagem ajustada para estudo. A legenda de cores está na página 2.</p>
+  </div>
+</div>
+
+<div class="legend"><div class="kick">Como ler esta apostila</div><div class="lg-grid">
+  <div class="lg"><span class="sw blue"></span><div><b>Azul</b> conteúdo da aula e raciocínio</div></div>
+  <div class="lg"><span class="sw green"></span><div><b>Verde</b> dose ou valor de referência</div></div>
+  <div class="lg"><span class="sw red"></span><div><b>Vermelho</b> alerta, erro comum ou armadilha</div></div>
+  <div class="lg"><span class="sw orange"></span><div><b>Laranja</b> fala, caso ou parêntese do professor</div></div>
+  <div class="lg"><span class="sw purple"></span><div><b>Roxo</b> complemento que não foi dito em aula</div></div>
+  <div class="lg"><span class="prova">PROVA</span><div><b>Marca de prova</b> o ponto que cai na prova</div></div>
+  <div class="lg"><span class="sw simples-sw"></span><div><b>Em palavras simples</b> a abertura de cada capítulo</div></div>
+  <div class="lg"><span class="sw red"></span><div><b>Pegadinha do professor</b> onde o erro acontece</div></div>
+  <div class="lg"><span class="sw aqui-sw"></span><div><b>Você está aqui</b> a etapa da trilha da aula</div></div>
+  <div class="lg"><span class="sw exame-sw"></span><div><b>O que olhar</b> imagens dos slides com rótulos</div></div>
+</div></div>
+
+<div class="prof"><div class="kick">Sobre o professor · Dr. Jeferson</div>
+<div class="rows">
+  <div class="row"><div class="k">Docência</div><div class="v">Disciplina de Angiologia e Cirurgia Vascular do curso de Medicina.</div></div>
+  <div class="row"><div class="k">Atuação</div><div class="v">Consultório vascular em Cascavel, onde a maior parte dos pacientes chega por causa de feridas; nos casos de vasculite, trabalha junto com a reumatologia.</div></div>
+</div></div>
+
+<div class="reg"><b>Recado:</b> próxima aula na sexta-feira, 2 de outubro de 2026, às 10 horas.</div>
+
+<div class="figure"><div class="kick">Trilha da aula</div><img src="trilha.svg" alt="Trilha da aula em oito etapas"></div>
+
+<!-- ======================================================= 01 -->
+<section id="s01">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">01</span></div><div class="corpo"><h2>O que são as arteriopatias funcionais</h2>
+      <div class="aqui"><span class="on">Funcionais</span><span>Raynaud</span><span>Tratamento</span><span>Acrocianose</span><span>Livedo</span><span>Distrofia</span><span>Ergotismo</span><span class="ramo">Úlceras</span></div></div></div>
+  
+  <div class="simples"><p>A artéria está sã, sem placa e sem trombo: o problema é o comando do vaso, que se fecha ou se abre demais, quase sempre por exagero do sistema nervoso simpático. Frio e emoção disparam as crises, e a mão ou o pé ficam frios, pálidos ou roxos.</p></div>
+
+  <h3 data-bm="Definição">Definição</h3>
+  <div class="rows">
+    <div class="row"><div class="k">O que muda</div><div class="v">Alterações vasomotoras: o vaso contrai ou dilata fora de hora.</div></div>
+    <div class="row"><div class="k">O que não tem</div><div class="v">Lesão orgânica na parede do vaso.</div></div>
+    <div class="row"><div class="k">O que dispara</div><div class="v">Frio, emoções ou os dois juntos.</div></div>
+  </div>
+
+  <h3 data-bm="As formas clínicas">As formas clínicas</h3>
+  <div class="card wide"><ul class="cols2">
+    <li><span class="medium">Síndrome de Raynaud</span> (forma secundária)</li>
+    <li><span class="medium">Doença de Raynaud</span> (forma primária)</li>
+    <li><span class="medium">Acrocianose</span></li>
+    <li><span class="medium">Livedo reticular</span></li>
+    <li><span class="medium">Eritromelalgia</span></li>
+    <li><span class="medium">Distrofia simpático-reflexa</span> (causalgia)</li>
+    <li><span class="medium">Ergotismo</span></li>
+  </ul></div>
+
+  <div class="box"><div class="kick"><span class="dot"></span>Quem chega ao consultório</div>
+  <p>A queixa mais comum é <b>mão e pé frios e roxos</b>, e aqui, ao contrário das vasculites, o próprio paciente procura o vascular por causa disso. A maioria é gente jovem, muito estressada, com ansiedade acima da média. Na maior parte das vezes, mudar o comportamento e o padrão de vida e fazer um pouco mais de exercício já resolve; nos outros casos, investiga-se a doença que está por trás.</p></div>
+</section>
+
+<!-- ======================================================= 02 -->
+<section id="s02">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">02</span></div><div class="corpo"><h2>Fenômeno de Raynaud</h2>
+      <div class="aqui"><span class="feito">Funcionais</span><span class="on">Raynaud</span><span>Tratamento</span><span>Acrocianose</span><span>Livedo</span><span>Distrofia</span><span>Ergotismo</span><span class="ramo">Úlceras</span></div></div></div>
+  
+  <div class="simples"><p>No frio ou numa emoção forte, as pequenas artérias dos dedos se fecham num espasmo: o dedo fica branco, depois roxo e depois vermelho. Quase sempre é só um exagero do simpático (primário); quando há uma doença por trás, como a esclerodermia, é secundário e pode ser bem mais grave.</p></div>
+
+  <h3 data-bm="As três cores da crise">As três cores da crise</h3>
+  <p>Exposto ao frio, o paciente faz um espasmo intenso das pequenas artérias e arteríolas dos dedos: primeiro vem a <b>palidez</b>; depois do espasmo, uma cianose intensa (o dedo fica roxo); depois da cianose, uma vermelhidão intensa (hiperemia), com ou sem dor. Na fase pálida podem aparecer sensibilidade aumentada, formigamento (parestesia) e dor.</p>
+  <p>Os gatilhos são o frio e a emoção intensa; o mais comum é lavar a mão na água fria da torneira. Fatores psicológicos pesam muito: estresse favorece as crises. Por trás está uma resposta exagerada do simpático, resumida em três pontos: resposta simpática aumentada, alterações do endotélio (às vezes por mudança dos receptores na parede do vaso) e alterações das plaquetas. Nos casos graves, a crise pode evoluir até a necrose e deixar complicações a longo prazo.</p>
+  <div class="figure lado">
+    <div class="duas"><img src="sl04-cores.jpg" alt="Esquema das três fases do fenômeno de Raynaud"><img src="sl10-maos.jpg" alt="Mãos com as pontas dos dedos pálidas"></div>
+    <div class="olhar"><div class="kick">O que olhar</div><ul>
+      <li><b>Esquema:</b> palidez, cianose e vermelhidão, sempre nessa ordem.</li>
+      <li><b>Foto:</b> pontas dos dedos brancas nas duas mãos, no meio da crise; o resto da mão avermelhado.</li>
+    </ul><p class="leg">Imagens dos slides da aula.</p></div>
+  </div>
+
+  <div class="box red"><div class="kick"><span class="dot"></span>Pegadinha do professor <span class="prova">PROVA</span></div>
+  <p>Raynaud grave pode imitar uma <b>oclusão arterial aguda</b>. O pé fica frio, pálido e depois roxo, e todos pensam em trombo. No exame, as artérias principais estão pérvias (abertas), sem trombo nenhum: é espasmo.</p></div>
+
+  <div class="box orange"><div class="kick"><span class="dot"></span>Caso do professor</div>
+  <p>Num dia de inverno, uma moça de Ubiratã fez as unhas e voltou de chinelo, pilotando a moto, para não estragar o esmalte. Em casa, notou o pé pálido, cobriu e foi dormir. De madrugada, acordou com o pé queimando, muito frio e muito pálido; bolsa de água quente não adiantou. De manhã, o médico pensou em oclusão arterial e a mandou para Cascavel, onde chegou com o pé todo cianótico. As artérias principais estavam pérvias. À noite veio a vermelhidão, e os dedos se encheram de bolhas: um ciclo de quase 24 horas de isquemia.</p></div>
+
+  <h3 data-bm="Primário ou secundário">Primário ou secundário <span class="prova">PROVA</span></h3>
+  <div class="cmp">
+    <div class="r h"><div class="k"></div><div class="c">Primário (doença de Raynaud)</div><div class="c">Secundário (síndrome de Raynaud)</div></div>
+    <div class="r"><div class="k">Por trás</div><div class="c">Só o exagero da resposta simpática; sem outra causa (idiopático)</div><div class="c">Uma doença de base, em geral do tecido conjuntivo (esclerodermia avançada); até uma neoplasia</div></div>
+    <div class="r"><div class="k">Como aparece</div><div class="c">Bilateral, disparado pelo frio</div><div class="c">Manifestação mais agressiva</div></div>
+    <div class="r"><div class="k">Provas de atividade inflamatória</div><div class="c">Normais: nenhum exame de laboratório detecta</div><div class="c">Alteradas, junto com os exames da doença de base</div></div>
+    <div class="r"><div class="k">Capilaroscopia</div><div class="c">Normal</div><div class="c">Alterada</div></div>
+    <div class="r"><div class="k">Gravidade</div><div class="c">Gangrena rara</div><div class="c">Pode ser muito mais grave, porque a doença de base é grave</div></div>
+  </div>
+
+  <h3 data-bm="Capilaroscopia">Capilaroscopia</h3>
+  <p>Um tipo de microscópio examina o leito da unha (leito ungueal). No normal, os capilares aparecem finos e regulares. No Raynaud secundário, a imagem é estranha: vasos dilatados, como se uma reação inflamatória importante estivesse acontecendo ali.</p>
+
+  <h3 data-bm="Doença de Raynaud: a forma primária">Doença de Raynaud: a forma primária</h3>
+  <p>Descrita em 1862 por Maurice Raynaud como “asfixia local e gangrena simétrica das extremidades”. Pesam a hereditariedade, o frio e as emoções, a idade abaixo de 30 anos e o sexo feminino.</p>
+  <div class="rows">
+    <div class="row"><div class="k">Allen e Brown (1932)</div><div class="v">Critérios da doença de Raynaud: provocada pelo frio e/ou emoções; bilateral; idiopática; gangrenas raras; evolução maior que 2 anos.</div></div>
+  </div>
+
+  <h3 data-bm="Síndrome de Raynaud: as causas">Síndrome de Raynaud: de onde vem a forma secundária</h3>
+  <div class="rows">
+    <div class="row"><div class="k">Local ou regional</div><div class="v">Traumas, arterites regionais, fístulas arteriovenosas das mãos e dos pés, síndrome do túnel do carpo.</div></div>
+    <div class="row"><div class="k">Sistêmica</div><div class="v">Doença do tecido conjuntivo: o Raynaud aparece em 90% dos pacientes com esclerodermia e em 10 a 45% dos com lúpus eritematoso sistêmico. Também poliglobulias, intoxicação por metais pesados, doenças vasculares, neurológicas e endócrinas, e neoplasias.</div></div>
+  </div>
+
+  <h3 data-bm="Diagnóstico">Diagnóstico</h3>
+  <p>O diagnóstico é <b>clínico</b>. No primário, nenhum exame de laboratório confirma; no secundário, entram as provas de atividade inflamatória, os exames da doença do tecido conjuntivo e a capilaroscopia. Podem ajudar o ultrassom dúplex (duplex scan) e a angiografia digital. O diagnóstico diferencial inclui colagenoses, acrocianose, aterosclerose obliterante e arterites.</p>
+</section>
+
+<!-- ======================================================= 03 -->
+<section id="s03">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">03</span></div><div class="corpo"><h2>Tratamento do Raynaud</h2>
+      <div class="aqui"><span class="feito">Funcionais</span><span class="feito">Raynaud</span><span class="on">Tratamento</span><span>Acrocianose</span><span>Livedo</span><span>Distrofia</span><span>Ergotismo</span><span class="ramo">Úlceras</span></div></div></div>
+  
+  <div class="simples"><p>Primeiro, fugir do frio. Se não bastar, um remédio que abre o vaso, que costuma dar dor de cabeça. Para quem não melhora com nada, uma cirurgia desliga o nervo simpático que fecha as artérias da mão.</p></div>
+
+  <h3 data-bm="A escada do tratamento">A escada do tratamento</h3>
+  <ol class="flow">
+    <li><b class="t">Evitar o frio.</b> É a primeira linha. Quem pode muda para um lugar quente, e isso é uma recomendação médica válida. Quem não pode põe torneira de água quente na pia, usa luva para tudo e evita lavar louça e mexer com roupa molhada no inverno. Somam-se proteção contra traumas e ansiolíticos.</li>
+    <li><b class="t">Manobra de McIntyre.</b> É a manobra do arremessador de beisebol: girar o braço rápido empurra o sangue para a ponta da mão e desfaz o vasoespasmo. Funciona um pouco.</li>
+    <li><b class="t">Vasodilatador.</b> Nifedipina, cilostazol; o preço é a dor de cabeça (abaixo).</li>
+    <li><b class="t">Simpatectomia.</b> Para quem não melhora com remédio nem com mudança no estilo de vida.</li>
+  </ol>
+  <div class="quote"><p>“Se a pessoa tem oportunidade, muda de Cascavel, vai morar na Bahia. Vai acabar o problema. Pode dar uma recomendação médica: indicar um ambiente mais propício para a pessoa viver.”</p><div class="who">Dr. Jeferson, sobre a primeira linha do tratamento</div></div>
+
+  <h3 data-bm="Vasodilatador: a dor de cabeça">Vasodilatador: a dor de cabeça <span class="prova">PROVA</span></h3>
+  <p>A maioria dos pacientes com Raynaud é mulher jovem. Nela, o vasodilatador dá como queixa mais importante a <b>cefaleia</b>: uma dor de cabeça muito intensa, como a pior enxaqueca que ela já teve. Menos comum, mas presente, vem a hipotensão postural: a pessoa não consegue ficar em pé e assiste aula quase desmaiando. Vale para todos os vasodilatadores.</p>
+  <div class="ref">
+    <div class="txt"><div class="kick"><span class="dot"></span>Nifedipina</div><p>O vasodilatador usado no Raynaud.</p></div>
+    <div class="val">5 a 10 mg<small>de 12 em 12 horas</small></div>
+  </div>
+  <div class="reg"><b>No slide:</b> nifedipina 10 a 60 mg por dia, com cefaleia, edema e hipotensão. A dose desta apostila é a ensinada em aula.</div>
+  <div class="rows">
+    <div class="row"><div class="k">Cilostazol</div><div class="v">Pode ajudar. 100 a 200 mg por dia; pode causar queixas gastrointestinais.</div></div>
+    <div class="row"><div class="k">Pentoxifilina</div><div class="v">Não é bem um vasodilatador e é pouco usada; pode dar intolerância gástrica.</div></div>
+    <div class="row"><div class="k">Outras do slide</div><div class="v">Drogas que freiam o simpático: reserpina 1 mg por dia; fenoxibenzamina 10 a 20 mg 4 vezes ao dia; guanetidina 10 mg por dia; metildopa 500 mg 2 a 4 vezes ao dia. Também prostaglandina E2.</div></div>
+  </div>
+
+  <div class="box orange"><div class="kick"><span class="dot"></span>Parêntese do professor</div>
+  <p>Toxina botulínica (Botox) na palma da mão, como se faz na hiperidrose, pode dar algum resultado temporário, mas é muito sofrido. “Eu acho que já é melhor fazer uma simpatectomia do que tomar um monte de agulhada na mão. Eu evitaria.”</p></div>
+
+  <h3 data-bm="Simpatectomia">Simpatectomia</h3>
+  <p>Se o problema vem do simpático, cortar a conexão com ele melhora as crises. No tórax, a cirurgia é feita por vídeo: um furo pequeno, a câmera entra e identifica a cadeia simpática ao lado da coluna (paravertebral). Localiza-se o gânglio estrelado, no nível de T1 (primeiro torácico), e abaixo dele se eliminam os gânglios de T2 e T3, para que haja vasodilatação na mão. Os tipos de simpatectomia são cérvico-torácica, lombar e periarterial interdigital.</p>
+  <div class="box"><div class="kick"><span class="dot"></span>O efeito é sempre o mesmo</div>
+  <p>A mão fica <b>mais quente, mais vermelha e mais seca</b>. É a mesma cirurgia usada na hiperidrose (suor excessivo), outra disfunção do simpático, que pode impedir a pessoa de trabalhar: o suor borra o papel que ela tenta assinar.</p></div>
+  <div class="figure lado"><img src="sl14-video.jpg" style="width:175pt" alt="Simpatectomia torácica por vídeo">
+    <div class="olhar"><div class="kick">O que olhar</div><ul>
+      <li><b>Vista da câmera</b> dentro do tórax, sobre a cadeia simpática ao lado da coluna.</li>
+      <li><b>No quadro pequeno,</b> a cadeia de gânglios, do estrelado para baixo.</li>
+    </ul><p class="leg">Imagem dos slides da aula.</p></div>
+  </div>
+  <div class="livros"><b>Nos livros:</b> o gânglio estrelado costuma ser preservado, porque lesá-lo causa a síndrome de Claude Bernard-Horner (pálpebra caída e pupila pequena do mesmo lado).</div>
+</section>
+
+<!-- ======================================================= 04 -->
+<section id="s04">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">04</span></div><div class="corpo"><h2>Acrocianose</h2>
+      <div class="aqui"><span class="feito">Funcionais</span><span class="feito">Raynaud</span><span class="feito">Tratamento</span><span class="on">Acrocianose</span><span>Livedo</span><span>Distrofia</span><span>Ergotismo</span><span class="ramo">Úlceras</span></div></div></div>
+  
+  <div class="simples"><p>Mão e pé roxos e frios o tempo todo, sem dor, piores no inverno. Na moça magra, o vaso se fecha demais; no idoso com o coração fraco, o corpo fecha os vasos da ponta para segurar a pressão. Resolve-se mais fácil que o Raynaud.</p></div>
+
+  <p>Acrocianose é a <b>cianose permanente e indolor das extremidades</b>, por disfunção do sistema nervoso autônomo simpático. É uma queixa muito comum. Aparece no inverno, os pulsos estão presentes e a arteriografia é normal. É bem mais fácil de resolver que o fenômeno de Raynaud, e os ansiolíticos também entram no tratamento.</p>
+  <div class="figure">
+    <div class="duas"><img src="sl15-dedos.jpg" alt="Dedos arroxeados"><img src="sl15-mao.jpg" alt="Mão arroxeada"></div>
+    <div class="olhar"><div class="kick">O que olhar</div><ul>
+      <li><b>Dedos roxos por igual,</b> até a ponta, sem a fase branca do Raynaud.</li>
+      <li><b>A cor não vem em crises:</b> está sempre ali, e piora no frio.</li>
+    </ul><p class="leg">Imagens dos slides da aula.</p></div>
+  </div>
+
+  <h3 data-bm="Duas acrocianoses, duas condutas">Duas acrocianoses, duas condutas <span class="prova">PROVA</span></h3>
+  <div class="cmp">
+    <div class="r h"><div class="k"></div><div class="c">Mulher jovem</div><div class="c">Idoso cardiopata</div></div>
+    <div class="r"><div class="k">Quem</div><div class="c">Magra, alta; mão e pé frios no inverno</div><div class="c">Coração fraco, que não bombeia bem</div></div>
+    <div class="r"><div class="k">Mecanismo</div><div class="c">Vasoconstrição</div><div class="c">Vasoconstrição periférica para compensar e manter a pressão arterial</div></div>
+    <div class="r"><div class="k">Conduta</div><div class="c">Proteger do frio: luva, bota, roupa que cubra o corpo. Exercício físico ativa a circulação</div><div class="c">Fortalecer o coração com cardiotônico (digitálico)</div></div>
+    <div class="r"><div class="k">Vasodilatador</div><div class="c">Pode ajudar, mas dá cefaleia; a maioria reclama e abandona</div><div class="c destaque">Não: a pressão cai mais ainda</div></div>
+  </div>
+</section>
+
+<!-- ======================================================= 05 -->
+<section id="s05">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">05</span></div><div class="corpo"><h2>Livedo reticular e eritromelalgia</h2>
+      <div class="aqui"><span class="feito">Funcionais</span><span class="feito">Raynaud</span><span class="feito">Tratamento</span><span class="feito">Acrocianose</span><span class="on">Livedo</span><span>Distrofia</span><span>Ergotismo</span><span class="ramo">Úlceras</span></div></div></div>
+  
+  <div class="simples"><p>No livedo, a pele fica numa rede arroxeada: uns pontos do vaso se fecham enquanto outros se abrem. Quase sempre é discreto; quando forte, pode esconder doença grave. Na eritromelalgia, a extremidade fica vermelha e dói com o calor.</p></div>
+
+  <h3 data-bm="Livedo reticular">Livedo reticular</h3>
+  <p>A pele fica toda moteada, com aspecto de “pele de defunto”. Há zonas de contração ao lado de zonas de dilatação, e o vaso fica ciclando entre as duas. É uma disfunção mais complexa e mais difícil de entender que a acrocianose. Pode ter relação com doenças graves, principalmente <b>neoplasias, como as do sangue</b>. Nos casos graves, com doença do tecido conjuntivo muito avançada ou neoplasia difícil de controlar, pode evoluir para necrose.</p>
+  <div class="figure lado"><img src="sl17-livedo.jpg" style="width:200pt" alt="Livedo reticular nas pernas">
+    <div class="olhar"><div class="kick">O que olhar</div><ul>
+      <li><b>Rede arroxeada</b> nas coxas e nas pernas.</li>
+      <li><b>Entre as malhas, pele clara:</b> zonas de contração e de dilatação lado a lado.</li>
+    </ul><p class="leg">Imagem dos slides da aula.</p></div>
+  </div>
+  <div class="rows">
+    <div class="row"><div class="k">Quem</div><div class="v">Incidência igual entre homens e mulheres, dos 35 aos 50 anos. É pouco visto e, em geral, discreto.</div></div>
+    <div class="row"><div class="k">Importância</div><div class="v">Sobretudo estética, nos casos discretos.</div></div>
+    <div class="row"><div class="k">Tratamento</div><div class="v">Nos casos discretos, atividade física para diminuir a manifestação. Proteção contra o frio, tratamento da doença de base e vasodilatadores.</div></div>
+  </div>
+
+  <h3 data-bm="Eritromelalgia">Eritromelalgia</h3>
+  <p>Crises de dor e vermelhidão (hiperemia) das extremidades que <b>pioram com o calor e melhoram com o frio</b>. Pode ser primária ou secundária a hipertensão arterial, lúpus eritematoso sistêmico, artrite reumatoide e outras doenças.</p>
+  <div class="rows">
+    <div class="row"><div class="k">Diferença</div><div class="v">A resposta ao ácido acetilsalicílico separa a eritromelalgia (responde) da eritermalgia (não responde).</div></div>
+    <div class="row"><div class="k">Tratamento</div><div class="v">Ácido acetilsalicílico (não funciona na eritermalgia), frio, ergotamina e vitamina B12.</div></div>
+  </div>
+</section>
+
+<!-- ======================================================= 06 -->
+<section id="s06">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">06</span></div><div class="corpo"><h2>Distrofia simpático-reflexa</h2>
+      <div class="aqui"><span class="feito">Funcionais</span><span class="feito">Raynaud</span><span class="feito">Tratamento</span><span class="feito">Acrocianose</span><span class="feito">Livedo</span><span class="on">Distrofia</span><span>Ergotismo</span><span class="ramo">Úlceras</span></div></div></div>
+  
+  <div class="simples"><p>Depois de um trauma, o simpático entra em curto-circuito: o membro queima, não tolera nem o toque da roupa, fica frio e roxo e vai atrofiando. Parece falta de circulação, mas o pulso está lá. Bloquear ou retirar os gânglios simpáticos resolve.</p></div>
+
+  <div class="quote"><p>“Essa aqui vai pegar você que vai fazer ortopedia.”</p><div class="who">Dr. Jeferson, sobre a distrofia simpático-reflexa</div></div>
+  <p>A distrofia simpático-reflexa, também chamada causalgia, é outra disfunção do simpático. É um curto-circuito: depois de um trauma, como uma fratura, o simpático trabalha demais naquele membro. Ninguém sabe por que algumas pessoas (poucas) desenvolvem; existe <b>sempre um vínculo com um trauma</b>, mesmo depois de uma cirurgia ortopédica bem feita.</p>
+
+  <div class="box orange"><div class="kick"><span class="dot"></span>Caso do professor</div>
+  <p>A paciente jogava bola com o filho, pisou na bola e quebrou o tornozelo. A fixação com o ortopedista foi normal. Tempos depois, a perna começou a queimar, como se pegasse fogo; ela não tolerava nada encostando, nem calça comprida, e não conseguia apoiar o pé no chão. A perna foi atrofiando e ganhando um aspecto estranho. A pele era fria e parecia isquêmica, mas o pulso pedioso estava presente.</p></div>
+
+  <div class="box red"><div class="kick"><span class="dot"></span>Pegadinha do professor <span class="prova">PROVA</span></div>
+  <p>Membro frio e com aspecto de isquemia, mas com <b>pulso pedioso presente</b>, não é oclusão arterial: é hiperatividade simpática. Com um trauma ou uma cirurgia no passado, pense em distrofia simpático-reflexa.</p></div>
+
+  <div class="figure lado"><img src="sl19-pes.jpg" style="width:165pt" alt="Pés de paciente com distrofia no pé esquerdo">
+    <div class="olhar"><div class="kick">O que olhar</div><ul>
+      <li><b>Pé esquerdo,</b> o da distrofia: azulado, frio e suado.</li>
+      <li><b>Pé direito</b> para comparar: cor normal.</li>
+          </ul><p class="leg">Imagem dos slides da aula.</p></div>
+  </div>
+
+  <h3 data-bm="Quadro e estágios">Quadro e estágios</h3>
+  <p>Dor intensa em queimação, edema, sudorese, distrofia e atrofia das extremidades, em três estágios:</p>
+  <ol class="flow">
+    <li><b class="t">Primeiro estágio.</b> Hipersensibilidade, hiperidrose (suor excessivo) e edema.</li>
+    <li><b class="t">Segundo estágio.</b> Distrofia: isquemia e atrofia do tecido subcutâneo.</li>
+    <li><b class="t">Terceiro estágio.</b> Atrofia, anidrose (falta de suor), palidez, atrofia de partes moles e perda de função.</li>
+  </ol>
+
+  <h3 data-bm="Tratamento: bloquear ou retirar o simpático">Tratamento: bloquear ou retirar o simpático</h3>
+  <p>O princípio é bloquear o nervo comprometido. No membro inferior, há dois jeitos; no superior, a simpatectomia é feita no tórax, por vídeo, como no Raynaud.</p>
+  <div class="figure lado"><img src="sl14-lombar.jpg" style="width:150pt" alt="Desenho da simpatectomia lombar">
+    <div class="olhar"><div class="kick">O que olhar</div><ul>
+      <li><b>Seta azul no abdome:</b> a incisão pequena na lateral.</li>
+      <li><b>Cadeia amarela</b> ao lado das vértebras lombares: os gânglios retirados.</li>
+    </ul><p class="leg">Imagem dos slides da aula.</p></div>
+  </div>
+  <div class="cmp">
+    <div class="r h"><div class="k"></div><div class="c">Bloqueio simpático lombar</div><div class="c">Simpatectomia lombar</div></div>
+    <div class="r"><div class="k">Como</div><div class="c">Agulha comprida pela região lombar até o plexo simpático, ao lado da coluna, com injeção de toxina botulínica</div><div class="c">Pequena incisão na borda lateral do abdome; pelo retroperitônio, retiram-se os gânglios de L2, L3 e L4</div></div>
+    <div class="r"><div class="k">Efeito</div><div class="c">Simpatectomia química e temporária: repetir a cada 6 meses. Para quem não quer o definitivo</div><div class="c destaque">Definitiva: abolição completa dos sintomas; a maioria fica livre para sempre</div></div>
+  </div>
+</section>
+
+<!-- ======================================================= 07 -->
+<section id="s07">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">07</span></div><div class="corpo"><h2>Ergotismo</h2>
+      <div class="aqui"><span class="feito">Funcionais</span><span class="feito">Raynaud</span><span class="feito">Tratamento</span><span class="feito">Acrocianose</span><span class="feito">Livedo</span><span class="feito">Distrofia</span><span class="on">Ergotismo</span><span class="ramo">Úlceras</span></div></div></div>
+  
+  <div class="simples"><p>Alguns remédios de enxaqueca têm derivado do ergot, que fecha os vasos. Em dose alta, uma artéria inteira entra em espasmo e o membro fica como se um coágulo a tivesse entupido, mas não há coágulo. Suspende-se o remédio e relaxa-se o vaso.</p></div>
+
+  <h3 data-bm="De onde vem o ergot">De onde vem o ergot <span class="prova">PROVA</span></h3>
+  <p>Os derivados do ergot estão nos <b>analgésicos contra enxaqueca</b>. O Cefaliv tem di-hidroergotamina, que é vasoconstritora. A Neosaldina, mais simples e muito mais usada, tem dipirona e cafeína, que também contrai o vaso, mas o pior que ela faz é deixar a pessoa muito acordada. Fora dos remédios, há a dietilamida do ácido lisérgico (LSD).</p>
+  <p>Numa crise forte de enxaqueca, que é desesperadora, a pessoa toma um comprimido, dois, três, até a dor passar. Com derivado do ergot, essa dose tóxica (acima de 10 mg por semana) causa o ergotismo.</p>
+
+  <h3 data-bm="Parece êmbolo, mas é espasmo">Parece êmbolo, mas é espasmo</h3>
+  <p>A dose tóxica causa um vasoespasmo intenso numa artéria periférica, com o quadro de uma oclusão arterial aguda. No exame, o vaso está completamente espasmado.</p>
+  <div class="box red"><div class="kick"><span class="dot"></span>Pegadinha do professor</div>
+  <p>Dá a impressão de que a pessoa fez um êmbolo, mas não fez. Nos casos graves, a angiografia é feita achando que é êmbolo e mostra o espasmo.</p></div>
+  <div class="figure lado"><img src="sl20-angio.jpg" style="width:165pt" alt="Angiografia com artéria em espasmo">
+    <div class="olhar"><div class="kick">O que olhar</div><ul>
+      <li><b>Artéria femoral superficial</b> longa e fina, afilada pelo espasmo.</li>
+      <li><b>O exame</b> foi feito pensando em êmbolo e mostrou o espasmo; pelo mesmo cateter entra o vasodilatador.</li>
+    </ul><p class="leg">Angiografia do membro inferior. Imagem dos slides da aula.</p></div>
+  </div>
+
+  <h3 data-bm="Tratamento">Tratamento</h3>
+  <p>Suspender a droga. Na angiografia, pelo mesmo cateter, injeta-se um vasodilatador como o nitroprussiato, para relaxar o vaso. Hoje é raro, porque as pessoas tomam mais cuidado com os analgésicos.</p>
+  <div class="ref">
+    <div class="txt"><div class="kick"><span class="dot"></span>Nitroprussiato de sódio</div><p>Para relaxar o vaso em espasmo.</p></div>
+    <div class="val">0,5 a 3<small>microgramas/kg/min</small></div>
+  </div>
+</section>
+
+<!-- ======================================================= 08 -->
+<section id="s08">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">08</span></div><div class="corpo"><h2>Úlceras: o lugar da ferida</h2>
+      <div class="aqui"><span class="feito">Funcionais</span><span class="feito">Raynaud</span><span class="feito">Tratamento</span><span class="feito">Acrocianose</span><span class="feito">Livedo</span><span class="feito">Distrofia</span><span class="feito">Ergotismo</span><span class="on ramo">Úlceras</span></div></div></div>
+  
+  <div class="simples"><p>A maior parte das feridas de perna é venosa e fica por dentro do tornozelo; a arterial fica na ponta do pé. Ferida em lugar estranho, com necrose e muita dor, faz pensar em vasculite e pede o reumatologista.</p></div>
+
+  <p>No consultório vascular, a maior parte dos pacientes chega por causa de feridas. Quem tem vasculite quase nunca chega dizendo isso: em geral vem da reumatologia com o diagnóstico feito. Quando vem direto ao vascular, é pela ferida, e é olhando a ferida que se descobre de onde vem o problema. Fora da ferida, uma pista: mulher jovem hipertensa sem causa definida faz suspeitar de vasculite.</p>
+
+  <h3 data-bm="Os tipos de úlcera">Os tipos de úlcera</h3>
+  <div class="rows">
+    <div class="row"><div class="k">Arterial</div><div class="v">Isquêmica, por falta de circulação; na extremidade: ponta do pé, calcâneo.</div></div>
+    <div class="row"><div class="k">Venosa</div><div class="v">Tem uma história antes: dermatite ocre, lipodermatoesclerose, até formar a ferida. Tratada com bota de Unna, com bom resultado.</div></div>
+    <div class="row"><div class="k">Mista</div><div class="v">Venosa e arterial ao mesmo tempo; difícil de tratar.</div></div>
+  </div>
+  <div class="rows">
+    <div class="row"><div class="k">Neuropática</div><div class="v">A úlcera do diabético.</div></div>
+    <div class="row"><div class="k">Hipertensiva</div><div class="v">Em quem tem hipertensão arterial e vasoconstrição periférica muito alta; uma úlcera difícil.</div></div>
+    <div class="row"><div class="k">Infecciosas</div><div class="v">Leishmaniose, erisipela, infecção por germes, loxoscelismo (picada de aranha) e picada de cobra.</div></div>
+    <div class="row"><div class="k">Vasculítica</div><div class="v">Secundária a uma vasculite, em local fora do habitual.</div></div>
+  </div>
+
+  <h3 data-bm="O lugar da ferida">O lugar da ferida <span class="prova">PROVA</span></h3>
+  <div class="figure"><img src="ulceras.svg" alt="Fluxograma: o lugar da ferida separa venosa, arterial e vasculítica"></div>
+  <p>A úlcera venosa fica <b>sempre no maléolo medial</b>, raramente em outro ponto; a arterial, sempre na extremidade (ponta do dedo, calcâneo ou tornozelo). A úlcera vasculítica não segue essa regra: a pele vizinha não tem as marcas da doença venosa, costuma haver necrose (os vasinhos inflamaram e fecharam) e a dor é intensa. Sempre há uma doença de base.</p>
+  <div class="box"><div class="kick"><span class="dot"></span>A exceção da exceção</div>
+  <p>Cerca de 80% das feridas são venosas; o resto se divide entre arteriais e diabéticas, e no pouco que sobra aparece um ou outro caso vasculítico. Úlcera na bolsa escrotal, no joelho ou em outros pontos fora da linha tradicional é o sinal de alerta.</p></div>
+  <div class="quote"><p>“Quando foge daquela linha tradicional, a gente começa a suspeitar, e aí eu peço sempre o parecer do reumatologista.”</p><div class="who">Dr. Jeferson, sobre a úlcera vasculítica</div></div>
+</section>
+
+<!-- ======================================================= 09 -->
+<section id="s09" class="vesp">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">09</span></div><div class="corpo"><h2>O essencial da aula</h2></div></div>
+  <h3 data-bm="Para a véspera">Para a véspera</h3>
+  <div class="item"><span class="prova">PROVA</span><p><b>Raynaud grave imita oclusão arterial aguda:</b> pé frio, pálido e depois roxo, mas as artérias estão pérvias, sem trombo.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p><b>Primário × secundário:</b> o primário é bilateral, disparado pelo frio, com provas inflamatórias e capilaroscopia normais; o secundário tem doença do tecido conjuntivo por trás, exames alterados e é mais grave.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p><b>Vasodilatador na mulher jovem:</b> cefaleia intensa (mais comum) e hipotensão postural. Nifedipina 5 a 10 mg de 12 em 12 horas.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p><b>Acrocianose:</b> na jovem, frio, roupa e exercício; no idoso cardiopata, nada de vasodilatador (a pressão cai): digitálico.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p><b>Distrofia simpático-reflexa:</b> depois de um trauma, dor em queimação e membro frio com pulso pedioso presente. Bloqueio a cada 6 meses ou simpatectomia lombar (L2 a L4).</p></div>
+  <div class="item"><span class="prova">PROVA</span><p><b>Ergotismo:</b> derivado do ergot dos remédios de enxaqueca (Cefaliv, di-hidroergotamina); espasmo que imita êmbolo. Suspender a droga e usar nitroprussiato.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p><b>Úlceras:</b> venosa no maléolo medial (cerca de 80%), arterial na extremidade; fora do lugar, com necrose e muita dor, pense em vasculite e chame o reumatologista.</p></div>
+
+  <h3 data-bm="Números da aula">Números da aula</h3>
+  <div class="tiles">
+    <div class="tile g"><div class="lab">Nifedipina</div><div class="n">5 a 10 mg</div><div class="s">de 12 em 12 horas</div></div>
+    <div class="tile"><div class="lab">Simpatectomia torácica</div><div class="n">T2 e T3</div><div class="s">abaixo do gânglio estrelado (T1)</div></div>
+    <div class="tile"><div class="lab">Simpatectomia lombar</div><div class="n">L2 a L4</div><div class="s">na distrofia simpático-reflexa</div></div>
+  </div>
+  <div class="tiles">
+    <div class="tile"><div class="lab">Feridas venosas</div><div class="n">80%</div><div class="s">das feridas do consultório vascular</div></div>
+    <div class="tile"><div class="lab">Esclerodermia</div><div class="n">90%</div><div class="s">têm Raynaud (lúpus: 10 a 45%)</div></div>
+    <div class="tile"><div class="lab">Bloqueio lombar</div><div class="n">6 meses</div><div class="s">intervalo da simpatectomia química</div></div>
+  </div>
+  <div class="tiles">
+    <div class="tile"><div class="lab">Ergot tóxico</div><div class="n">&gt; 10 mg</div><div class="s">por semana</div></div>
+    <div class="tile g"><div class="lab">Nitroprussiato</div><div class="n">0,5 a 3</div><div class="s">microgramas/kg/min</div></div>
+    <div class="tile"><div class="lab">Allen e Brown</div><div class="n">&gt; 2 anos</div><div class="s">de evolução na doença de Raynaud</div></div>
+  </div>
+
+  <div class="box red"><div class="kick"><span class="dot"></span>Erros comuns</div><ul>
+    <li><span class="medium">Tratar Raynaud grave como trombo.</span> As artérias estão pérvias: é espasmo.</li>
+    <li><span class="medium">Dar vasodilatador ao idoso cardiopata com acrocianose.</span> A pressão cai; trate o coração.</li>
+    <li><span class="medium">Chamar de isquemia o membro frio com pulso, depois de trauma.</span> É distrofia simpático-reflexa.</li>
+    <li><span class="medium">Achar que toda ferida de perna é venosa.</span> Fora do lugar habitual, pense em vasculite.</li>
+  </ul></div>
+
+  <h3 data-bm="Palavras da aula">Palavras da aula em linguagem simples</h3>
+  <div class="rows terms">
+    <div class="row"><div class="k">Arteríola</div><div class="v">A menor artéria, logo antes dos capilares.</div></div>
+    <div class="row"><div class="k">Bota de Unna</div><div class="v">Curativo de compressão enrolado na perna, usado na úlcera venosa.</div></div>
+    <div class="row"><div class="k">Capilaroscopia</div><div class="v">Exame do leito da unha com um tipo de microscópio, para ver os capilares.</div></div>
+    <div class="row"><div class="k">Cardiotônico</div><div class="v">Remédio que aumenta a força do coração, como o digitálico.</div></div>
+  </div>
+  <div class="rows terms">
+    <div class="row"><div class="k">Cianose</div><div class="v">Cor roxa da pele ou das unhas.</div></div>
+    <div class="row"><div class="k">Dermatite ocre</div><div class="v">Mancha acastanhada na perna, na doença venosa de longa data.</div></div>
+    <div class="row"><div class="k">Gânglio estrelado</div><div class="v">Gânglio simpático no alto do tórax, no nível de T1.</div></div>
+    <div class="row"><div class="k">Lipodermatoesclerose</div><div class="v">Endurecimento da pele e da gordura da perna na doença venosa de longa data.</div></div>
+  </div>
+  <div class="rows terms">
+    <div class="row"><div class="k">Loxoscelismo</div><div class="v">Quadro causado pela picada da aranha-marrom.</div></div>
+    <div class="row"><div class="k">Maléolo medial</div><div class="v">O osso saliente do lado de dentro do tornozelo.</div></div>
+    <div class="row"><div class="k">Moteamento</div><div class="v">Manchas em rede, de cores diferentes, na pele.</div></div>
+    <div class="row"><div class="k">Pulso pedioso</div><div class="v">Pulso da artéria do dorso do pé.</div></div>
+  </div>
+  <div class="rows terms">
+    <div class="row"><div class="k">Retroperitônio</div><div class="v">Espaço atrás da cavidade do abdome, onde fica a cadeia simpática lombar.</div></div>
+    <div class="row"><div class="k">Simpatectomia</div><div class="v">Cirurgia que retira gânglios do simpático.</div></div>
+    <div class="row"><div class="k">Vasoespasmo</div><div class="v">Contração forte e passageira do vaso.</div></div>
+  </div>
+  {{NOTAS}}
+</section>
+</body></html>
