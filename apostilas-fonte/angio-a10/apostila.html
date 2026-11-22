@@ -1,0 +1,645 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<title>Angiologia · Aula 10 · Poplítea, rim e intestino</title>
+<meta name="rodape" content="Mauricio Faria · Angiologia · Aula 10 — Poplítea, rim e intestino">
+<link rel="stylesheet" href="apostila.css">
+<style>
+/* ===== componentes do molde novo (em teste na pneumo-a5) ===== */
+.simples { background: #FFFFFF; border: 1px solid #C3D8F8; border-left: 4pt solid #0B5BD3; border-radius: 12pt; padding: 9pt 14pt 10pt; margin: 0 0 10pt; break-inside: avoid; }
+.simples p { font-size: 10.2pt; line-height: 1.5; color: #1F2933; margin: 0; }
+.aqui { display: flex; margin-top: 7pt; }
+.aqui span { flex: 1; border-top: 3pt solid #DCDCE2; padding-top: 2.5pt; margin-right: 2.5pt; font-family: "Inter Medium"; font-size: 6pt; line-height: 1.25; color: #8E8E93; }
+.aqui span:last-child { margin-right: 0; }
+.aqui span.feito { border-top-color: #A9C4EE; color: #6C6C70; }
+.aqui span.on { border-top-color: #0B5BD3; color: #0B5BD3; font-family: "Inter SemiBold"; }
+.aqui span.ramo { border-top-style: dashed; }
+.figure .olhar { margin-top: 8pt; }
+.figure .olhar .kick { margin-bottom: 3pt; }
+.figure .olhar ul { margin: 0; }
+.figure .olhar li { padding-left: 0; font-size: 8.7pt; line-height: 1.45; margin-bottom: 2pt; }
+.figure .olhar li::before { display: none; }
+.figure .olhar li b { color: #0B5BD3; }
+.figure .leg { font-size: 7.8pt; color: #8E8E93; margin: 5pt 0 0; }
+.reg { font-size: 8.3pt; line-height: 1.45; color: #6C6C70; background: #F7F7FA; border: 1px solid #E3E3E8; border-radius: 9pt; padding: 5pt 10pt; margin: 6pt 0 9pt; break-inside: avoid; }
+.reg b { font-family: "Inter SemiBold"; color: #4F5B70; }
+.livros { font-size: 8.3pt; line-height: 1.45; color: #6E3AA7; background: #F4EBFB; border: 1px solid #DEC7F1; border-radius: 9pt; padding: 5pt 10pt; margin: 6pt 0 9pt; break-inside: avoid; }
+.livros b { color: #6E3AA7; }
+.sw.simples-sw { background: #FFFFFF; border-color: #C3D8F8; border-left: 3pt solid #0B5BD3; }
+.sw.aqui-sw { background: linear-gradient(90deg, #A9C4EE 0, #A9C4EE 45%, #0B5BD3 45%, #0B5BD3 70%, #DCDCE2 70%); border: 0; height: 4pt; border-radius: 2pt; }
+.sw.exame-sw { background: #1F2933; border-color: #1F2933; }
+.cmp .destaque { font-family: "Inter SemiBold"; color: #0B5BD3; }
+.cmp.c4 .k { width: 62pt; }
+.cmp.c4 .c { font-size: 8.3pt; padding-right: 8pt; }
+.vesp { break-before: page; }
+.vesp .item { display: flex; align-items: baseline; background: #FFFFFF; border: 1px solid #E3E3E8; border-radius: 12pt; padding: 6.4pt 11pt; margin: 0 0 5.4pt; break-inside: avoid; }
+.vesp .item .prova { flex: none; margin: 0 9pt 0 0; }
+.vesp .item p { margin: 0; font-size: 8.9pt; line-height: 1.5; }
+.tiles.t4 { margin: 6pt 0 8pt; }
+.figure.lado { display: flex; align-items: center; }
+.figure.lado > img { flex: none; }
+.figure.lado .olhar { flex: 1; margin: 0 0 0 12pt; }
+.cover .toc a { padding: 3.6pt 0; }
+</style>
+</head><body>
+
+<div class="cover">
+  <div class="kicker">Angiologia · Aula 10 · Poplítea, rim e intestino</div>
+  <h1>Aneurisma de poplítea, hipertensão renovascular e isquemia mesentérica</h1>
+  <p class="sub">O aneurisma que entope em vez de romper, a pressão alta que nasce de uma artéria renal estreita e o intestino que morre quando o sangue não chega a tempo.</p>
+  <div class="author"><span class="av">A</span><div><b>Dr. Américo Kazuo Kawai</b><span>Cirurgião vascular · 4 de novembro de 2026</span></div></div>
+  <div class="keynums"><div class="kick">Três números para levar</div>
+    <div class="kn-grid">
+      <div class="kn"><div class="n">2 cm</div><div class="l">aneurisma de poplítea sem sintoma: acima disso, opera; com trombo mural, qualquer tamanho</div></div>
+      <div class="kn"><div class="n">180 e 3,5</div><div class="l">no Doppler renal, pico acima de 180 cm/s e relação acima de 3,5, juntos: estenose de 60% ou mais</div></div>
+      <div class="kn"><div class="n">90%</div><div class="l">das embolias mesentéricas vêm do coração, geralmente de arritmia, como a fibrilação atrial</div></div>
+    </div></div>
+  <div class="toc"><div class="kick">Nesta apostila</div>
+    <a href="#s01"><span class="tn">01</span><span class="tt">O aneurisma de poplítea: entope em vez de romper</span><span class="pg">{{s01}}</span></a>
+    <a href="#s02"><span class="tn">02</span><span class="tt">Quadro clínico, exame físico e exames</span><span class="pg">{{s02}}</span></a>
+    <a href="#s03"><span class="tn">03</span><span class="tt">Quando operar</span><span class="pg">{{s03}}</span></a>
+    <a href="#s04"><span class="tn">04</span><span class="tt">Como operar: cirurgia aberta ou endoprótese</span><span class="pg">{{s04}}</span></a>
+    <a href="#s05"><span class="tn">05</span><span class="tt">Hipertensão renovascular: quando suspeitar</span><span class="pg">{{s05}}</span></a>
+    <a href="#s06"><span class="tn">06</span><span class="tt">Hipertensão renovascular: exames e tratamento</span><span class="pg">{{s06}}</span></a>
+    <a href="#s07"><span class="tn">07</span><span class="tt">Isquemia mesentérica aguda</span><span class="pg">{{s07}}</span></a>
+    <a href="#s08"><span class="tn">08</span><span class="tt">Trombose venosa mesentérica</span><span class="pg">{{s08}}</span></a>
+    <a href="#s09"><span class="tn">09</span><span class="tt">Isquemia mesentérica crônica</span><span class="pg">{{s09}}</span></a>
+    <a href="#s10"><span class="tn">10</span><span class="tt">O essencial da aula</span><span class="pg">{{s10}}</span></a>
+    <p class="note">Organizada a partir da aula, com a linguagem ajustada para estudo. A legenda de cores está na página 2.</p>
+  </div>
+</div>
+
+<div class="legend"><div class="kick">Como ler esta apostila</div><div class="lg-grid">
+  <div class="lg"><span class="sw blue"></span><div><b>Azul</b> conteúdo da aula e raciocínio</div></div>
+  <div class="lg"><span class="sw green"></span><div><b>Verde</b> dose ou valor de referência</div></div>
+  <div class="lg"><span class="sw red"></span><div><b>Vermelho</b> alerta, erro comum ou pegadinha do professor</div></div>
+  <div class="lg"><span class="sw orange"></span><div><b>Laranja</b> fala ou parêntese do professor</div></div>
+  <div class="lg"><span class="sw purple"></span><div><b>Roxo</b> complemento que não foi dito em aula</div></div>
+  <div class="lg"><span class="prova">PROVA</span><div><b>Marca de prova</b> o ponto que cai na prova</div></div>
+  <div class="lg"><span class="sw simples-sw"></span><div><b>Em palavras simples</b> o capítulo em duas linhas, no começo</div></div>
+  <div class="lg"><span class="sw aqui-sw"></span><div><b>Você está aqui</b> a etapa da trilha da aula</div></div>
+</div></div>
+
+<div class="prof"><div class="kick">Sobre o professor · Dr. Américo</div>
+<div class="rows">
+  <div class="row"><div class="k">Especialidade</div><div class="v">Cirurgia vascular, aberta e endovascular.</div></div>
+  <div class="row"><div class="k">Formação</div><div class="v">Medicina em Botucatu, num hospital-escola totalmente do Sistema Único de Saúde, onde também foi residente de cirurgia geral. Chegou ao Paraná já formado em cirurgia vascular.</div></div>
+  <div class="row"><div class="k">Atuação</div><div class="v">Professor de Angiologia. Atende no consultório com Doppler à mão e opera urgências vasculares. Apresentou um módulo de workshop sobre endopróteses para cirurgiões vasculares e endovasculares.</div></div>
+</div></div>
+
+<div class="figure"><div class="kick">A trilha da aula</div><img src="trilha.svg" alt="Trilha da aula em três frentes: aneurisma de poplítea, hipertensão renovascular e isquemia intestinal"></div>
+
+<!-- ================================================================ 01 -->
+<section id="s01">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">01</span></div><div class="corpo"><div class="de">Aneurisma de poplítea</div><h2>O aneurisma de poplítea: entope em vez de romper</h2><div class="aqui"><span class="on">Poplítea × aorta</span><span>Clínica e exames</span><span>Quando operar</span><span>Como operar</span><span>Renovascular: suspeita</span><span>Renovascular: conduta</span><span>Isquemia aguda</span><span>Trombose venosa</span><span>Isquemia crônica</span></div></div></div>
+  <div class="simples"><p>É uma dilatação da artéria que passa atrás do joelho. Ao contrário do aneurisma da aorta, quase nunca rompe: o perigo é encher de coágulo, entupir ou soltar pedacinhos para o pé, e a perna pode ser perdida.</p></div>
+
+  <div class="box"><div class="kick"><span class="dot"></span>O caso que abriu a aula</div><p>Numa sexta-feira à tarde, um homem de 80 anos foi ao consultório só para fazer o curativo de uma infecção numa perna. Na outra, a direita, tinha dor, frio, palidez e dormência em todos os dedos do pé, e ainda não tinha diagnóstico. Era um aneurisma de poplítea que tinha entupido de repente (oclusão aguda). Foi operado na mesma noite.</p></div>
+  <div class="box red"><div class="kick"><span class="dot"></span>Pegadinha do professor</div><p><span class="medium">Tratar uma perna e não examinar a outra.</span> O paciente veio pelo curativo de um lado e o aneurisma entupido estava no outro. “Aquela velha história: a gente trata uma coisa e não examina a outra.”</p></div>
+
+  <h3 data-bm="Entre os periféricos, a poplítea é o mais comum">Entre os periféricos, a poplítea é o mais comum <span class="prova">PROVA</span></h3>
+  <p>Os aneurismas se dividem em três grupos que não se misturam: os intracranianos (cerebrais), os da aorta e os periféricos, que são todos os outros: viscerais (esplênico, renal, mesentérico), de ilíaca e dos membros. Entre os periféricos, o da poplítea é o mais comum.</p>
+  <div class="tiles">
+    <div class="tile"><div class="lab">Cerebral</div><div class="n">3 a 5%</div><div class="s">da população: o mais comum de todos</div></div>
+    <div class="tile"><div class="lab">Aorta</div><div class="n">2,1%</div><div class="s">em qualquer ponto; o abdominal, menos de 1%</div></div>
+    <div class="tile"><div class="lab">Poplítea</div><div class="n">0,1 a 1%</div><div class="s">da população: raro, mas o periférico mais comum</div></div>
+  </div>
+  <p>Na aorta, da valva aórtica até a bifurcação, o aneurisma abdominal responde por 75% dos casos. Mesmo presente em menos de 1% da população, ele mata mais de 150.000 pessoas nos Estados Unidos.</p>
+
+  <h3>Quem tem</h3>
+  <div class="rows">
+    <div class="row"><div class="k">Sexo</div><div class="v">Mais em homens. O professor nunca operou uma mulher com aneurisma de poplítea (de aorta, muitas).</div></div>
+    <div class="row"><div class="k">Idade</div><div class="v">Geralmente acima de 65 anos.</div></div>
+    <div class="row"><div class="k">Bilateral</div><div class="v">Em 50 a 60% dos casos. O paciente do caso tinha dos dois lados.</div></div>
+  </div>
+  <div class="rows">
+    <div class="row"><div class="k">Aorta junto</div><div class="v">50 a 60% dos que têm aneurisma de poplítea têm também aneurisma da aorta abdominal (o paciente do caso não tinha).</div></div>
+    <div class="row"><div class="k">No Brasil</div><div class="v">Até 2.200 operados por ano, e os diagnosticados que não foram operados são muito mais.</div></div>
+  </div>
+
+  <h3 data-bm="Poplítea × aorta abdominal: comportamentos opostos">Poplítea × aorta abdominal: comportamentos opostos <span class="prova">PROVA</span></h3>
+  <div class="cmp">
+    <div class="r h"><div class="k"></div><div class="c">Aorta abdominal</div><div class="c">Poplítea</div></div>
+    <div class="r"><div class="k">Complicação principal</div><div class="c">Ruptura</div><div class="c"><span class="destaque">Trombose</span> (cerca de 70%) e embolia para a perna</div></div>
+    <div class="r"><div class="k">Ruptura</div><div class="c">Altamente letal: metade morre antes do hospital e, dos que chegam, metade morre</div><div class="c">Rara (1 a 2%). Espaço fechado: sangra cerca de 1 litro; perde-se a perna, não a vida</div></div>
+    <div class="r"><div class="k">Maior temor</div><div class="c">Morte por sangramento</div><div class="c">Isquemia, perda do membro, amputação</div></div>
+    <div class="r"><div class="k">Trombo mural</div><div class="c">Não indica cirurgia</div><div class="c">Indica cirurgia, com qualquer diâmetro</div></div>
+    <div class="r"><div class="k">Melhor tratamento</div><div class="c">Endovascular</div><div class="c"><span class="destaque">Cirurgia aberta</span> (padrão-ouro)</div></div>
+  </div>
+  <div class="quote"><p>“Um rompe mais; esse trombosa mais.”</p><div class="who">Dr. Américo, comparando a aorta abdominal e a poplítea, os dois grandes dilemas de aneurisma da cirurgia vascular</div></div>
+
+  <h3>O que mostra o registro europeu</h3>
+  <p>O Vascunet é um registro público de cirurgia vascular, concentrado na Europa e ligado à Sociedade Europeia de Cirurgia Vascular: 14 membros alimentam os dados, e o Brasil não participa. Nas operações de aneurisma de poplítea:</p>
+  <div class="tiles">
+    <div class="tile"><div class="lab">Eletivas</div><div class="n">73%</div><div class="s">descobriu, planejou, internou na melhor data</div></div>
+    <div class="tile"><div class="lab">Emergência</div><div class="n">20,2%</div><div class="s">chegou com trombose aguda</div></div>
+    <div class="tile"><div class="lab">Ruptura</div><div class="n">2,2%</div><div class="s">existe, mas é rara</div></div>
+  </div>
+  <p>E 79,5% dos reparos foram por cirurgia aberta. O Brasil tem um pouco de tudo.</p>
+
+  <h3>Veia ou enxerto sintético?</h3>
+  <p>Nas pontes da cirurgia aberta, a veia ficou aberta por mais tempo (patência maior) que o enxerto sintético, embora a diferença estatística seja pequena. A preferida é a veia safena magna, que dura mais que as veias de outros lugares; a do braço pode servir, mas na maioria das vezes não tem diâmetro adequado.</p>
+  <div class="box orange"><div class="kick"><span class="dot"></span>Parêntese do professor</div><p>Dobre uma mangueirinha de chuveiro bem pertinho: ela vira uma dobra e não passa nada. É o que o enxerto sintético faz na dobra do joelho. A veia encurva, mas não dobra; por isso dura mais.</p></div>
+
+  <h3>Causa e complicações</h3>
+  <p>A grande maioria é aterosclerótica, com os mesmos fatores de risco do infarto e do acidente vascular cerebral: tabagismo, hipertensão, dislipidemia, sedentarismo. A aterosclerose estraga a camada média e a íntima do vaso, que dilata em vez de entupir.</p>
+  <p>O maior temor é o fenômeno tromboembólico: isquemia, perda do membro e amputação. A trombose é a complicação mais comum, em cerca de 70% dos casos. A ruptura é rara (1 a 2%) e, quando acontece, também causa isquemia e exige reparo rápido.</p>
+</section>
+
+<!-- ================================================================ 02 -->
+<section id="s02">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">02</span></div><div class="corpo"><div class="de">Aneurisma de poplítea</div><h2>Quadro clínico, exame físico e exames</h2><div class="aqui"><span class="feito">Poplítea × aorta</span><span class="on">Clínica e exames</span><span>Quando operar</span><span>Como operar</span><span>Renovascular: suspeita</span><span>Renovascular: conduta</span><span>Isquemia aguda</span><span>Trombose venosa</span><span>Isquemia crônica</span></div></div></div>
+  <div class="simples"><p>Muitos pacientes não sentem nada. Quando sentem, é por falta de sangue na perna: dor ao andar, dedos frios e roxos. Atrás do joelho o pulso costuma ser difícil de achar; se ele pulsa forte e fácil, pense em aneurisma.</p></div>
+
+  <h3>Com ou sem sintoma</h3>
+  <div class="rows">
+    <div class="row"><div class="k">Sem sintoma</div><div class="v">Vida normal; o aneurisma aparece no exame físico ou num exame de imagem.</div></div>
+    <div class="row"><div class="k">Isquemia</div><div class="v">Dor, claudicação (mancar por dor ao andar), dormência. Todo sintoma vem da isquemia: oclusão aguda ou microêmbolos de repetição.</div></div>
+    <div class="row"><div class="k">Compressão</div><div class="v">Mais raro: o aneurisma muito grande comprime o nervo (formigamento, perda de sensibilidade ou de força na perna) ou a veia (trombose venosa profunda por compressão de fora).</div></div>
+  </div>
+  <p>Sem tratamento, quase um quarto dos assintomáticos passa a ter sintoma em 1 ano, e quase três quartos em 5 anos. Por isso todo aneurisma é acompanhado, com tratamento clínico, até chegar a hora certa de operar, pesando risco e benefício, como em qualquer aneurisma.</p>
+
+  <h3>Por que a claudicação aparece aos poucos</h3>
+  <p>Abaixo do joelho, a poplítea se divide em três artérias: tibial anterior, tibial posterior e fibular. Perder uma delas não tira o sangue da perna de uma vez. Os microêmbolos vão fechando ramo por ramo; quando um ramo passa a suprir dois territórios grandes, a perna começa a doer ao andar.</p>
+
+  <h3>Exame físico: o pulso fácil demais</h3>
+  <p>Na fossa poplítea, procure uma massa visível ou palpável. O cavo poplíteo é um lugar escondido, onde nem sempre se acha o pulso de pronto. No aneurisma, mal se encosta e já se sente uma massa pulsátil, tão grande que devolve o pulso na mão.</p>
+  <div class="quote"><p>“Quando, num lugar desse, você sente pulsação muito ampla, muito fácil, desconfie que seja aneurisma.”</p><div class="who">Dr. Américo, sobre o exame da fossa poplítea</div></div>
+
+  <h3>Síndrome do dedo azul</h3>
+  <p>Todos os pulsos estão palpáveis, mas os dedos estão isquêmicos, roxos e gelados. O êmbolo é tão pequeno que passa pelas artérias grandes (não entope a tibial posterior) e só para nas arteríolas digitais e metatarsianas, na ponta do dedo.</p>
+
+  <h3>Exames</h3>
+  <div class="rows">
+    <div class="row"><div class="k">Doppler</div><div class="v">Primeira escolha: barato, fácil, não invasivo e, na maioria das vezes, dá o diagnóstico. Também acompanha o pós-operatório.</div></div>
+    <div class="row"><div class="k">Angiotomo&shy;grafia</div><div class="v">Também dá o diagnóstico e é o exame do planejamento da endoprótese. Na isquemia aguda, com a cirurgia já decidida, não faz sentido.</div></div>
+    <div class="row"><div class="k">Arteriografia</div><div class="v">Feita na sala de cirurgia, para ver e tentar desentupir as artérias de baixo.</div></div>
+  </div>
+
+  <h3>O que o Doppler mostrou no caso</h3>
+  <ol class="flow">
+    <li><b class="t">Acima do aneurisma:</b> artéria de 8 mm na transição femoropoplítea, no canal dos adutores, ainda pérvia.</li>
+    <li><b class="t">No aneurisma:</b> a artéria dilatava para 3,5 cm, cheia de trombo mural; a luz que sobrava tinha 8 mm, quase a da artéria de cima.</li>
+    <li><b class="t">Logo abaixo:</b> poplítea infrapatelar de diâmetro normal, mas entupida.</li>
+    <li><b class="t">Na perna:</b> tibial anterior toda entupida, já embolizada; fibular e tibial posterior com fluxo lento. O membro ainda podia ser salvo.</li>
+  </ol>
+  <p>Internado em jejum, foi operado à noite, por cirurgia aberta, com arteriografia na sala para tentar desentupir as artérias de baixo. Angiotomografia não entrou no planejamento: já se sabia onde estava entupido e onde estava pérvio, acima e abaixo.</p>
+</section>
+
+<!-- ================================================================ 03 -->
+<section id="s03">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">03</span></div><div class="corpo"><div class="de">Aneurisma de poplítea</div><h2>Quando operar</h2><div class="aqui"><span class="feito">Poplítea × aorta</span><span class="feito">Clínica e exames</span><span class="on">Quando operar</span><span>Como operar</span><span>Renovascular: suspeita</span><span>Renovascular: conduta</span><span>Isquemia aguda</span><span>Trombose venosa</span><span>Isquemia crônica</span></div></div></div>
+  <div class="simples"><p>Com sintoma, opera sempre. Sem sintoma, opera se o aneurisma passou de 2 cm, se tem coágulo grudado na parede (com qualquer tamanho) ou se já sobram poucas artérias abaixo do joelho.</p></div>
+
+  <h3 data-bm="Quem vai para a cirurgia">Quem vai para a cirurgia <span class="prova">PROVA</span></h3>
+  <p><b>Sintomático:</b> é consenso, todos operam. O paciente do caso tinha dor, frio e oclusão aguda; não havia o que discutir.</p>
+  <p><b>Assintomático:</b> há controvérsia. Alguns só operam acima de 2 cm. Mas o aneurisma de 2 cm ou menos com trombo mural tem alto risco de trombose e de embolia distal: com trombo, é cirúrgico em qualquer diâmetro.</p>
+  <div class="quote"><p>“Trombo mural não indica cirurgia em aorta abdominal. Mas aqui indica! Aqui dá muita trombose e embolização.”</p><div class="who">Dr. Américo, sobre o aneurisma de poplítea</div></div>
+
+  <div class="box red"><div class="kick"><span class="dot"></span>Pegadinha do professor</div><p><span class="medium">Levar o trombo mural para a aorta.</span> Trombo mural é critério só na poplítea. Na aorta abdominal, o que indica cirurgia é o diâmetro ou o crescimento rápido, não o trombo.</p></div>
+  <div class="ref">
+    <div class="txt"><div class="kick"><span class="dot"></span>Aorta abdominal: quando operar</div><p>Ou crescimento rápido: 0,5 cm em seis meses, 1 cm em um ano, ou mais.</p></div>
+    <div class="vals"><div class="val"><small>Homem</small>5,5 cm</div><div class="val"><small>Mulher</small>5 cm</div></div>
+  </div>
+
+  <div class="figure"><img src="indicacao.svg" alt="Fluxograma de indicação de cirurgia no aneurisma de poplítea"></div>
+  <h3>Saída ruim também indica</h3>
+  <p>Saída (em inglês, run-off) é por onde o sangue escoa depois da artéria. O assintomático com poucas artérias abaixo do joelho tem mau prognóstico: se não tratar, quando entupir o único vaso que sobrou, é amputação. As artérias de baixo já comprometidas são consequência da mesma doença, então se trata mais cedo, para preservar o membro, mesmo abaixo de 2 cm.</p>
+</section>
+
+<!-- ================================================================ 04 -->
+<section id="s04">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">04</span></div><div class="corpo"><div class="de">Aneurisma de poplítea</div><h2>Como operar: cirurgia aberta ou endoprótese</h2><div class="aqui"><span class="feito">Poplítea × aorta</span><span class="feito">Clínica e exames</span><span class="feito">Quando operar</span><span class="on">Como operar</span><span>Renovascular: suspeita</span><span>Renovascular: conduta</span><span>Isquemia aguda</span><span>Trombose venosa</span><span>Isquemia crônica</span></div></div></div>
+  <div class="simples"><p>Há dois caminhos. Na cirurgia aberta, amarra-se a artéria acima e abaixo do aneurisma e faz-se uma ponte com a veia safena. Na endovascular, um tubo coberto (a endoprótese) entra por um furo na virilha e forra a artéria por dentro.</p></div>
+
+  <h3>Três maneiras de tratar</h3>
+  <p><b>Ponte por acesso medial.</b> Ligadura acima e abaixo do aneurisma, que fica sem fluxo, e uma ponte (bypass, desvio: tudo é sinônimo) da femoral distal até a poplítea abaixo do joelho, com a veia safena magna retirada do próprio paciente. As incisões ficam na face medial da coxa e da perna, não atrás do joelho. Parece simples, e foi a cirurgia do caso.</p>
+  <p><b>Ressecção por acesso posterior.</b> O paciente fica de bruços e se faz um corte grande atrás do joelho; o aneurisma é retirado e um pedaço de veia é interposto. Anatomicamente fica melhor, mas é muito mais agressiva. É a saída para o aneurisma gigante, que faz efeito de massa: há paciente que chega com trombose venosa profunda por compressão, ou com formigamento e perda de movimento do pé por compressão de nervo.</p>
+  <p><b>Endoprótese.</b> Punção anterógrada da femoral perto da virilha, fio-guia atravessando o aneurisma; a endoprótese é posicionada e desencapada, e sai o introdutor. Quando vai tudo bem, não leva meia hora.</p>
+
+  <div class="figure"><img src="tecnicas.svg" alt="Esquema das três técnicas: ponte por acesso medial, ressecção por acesso posterior e endoprótese"><p class="leg">Esquema simplificado. A ponte por acesso medial foi a cirurgia do caso.</p></div>
+
+  <h3 data-bm="Padrão-ouro: cirurgia aberta">Padrão-ouro: cirurgia aberta <span class="prova">PROVA</span></h3>
+  <p>Na poplítea, o padrão-ouro é a cirurgia aberta, ao contrário da aorta abdominal, em que o endovascular é a melhor opção. Ainda assim, a endoprótese pode substituir a cirurgia aberta e, em algumas situações, é até melhor. A escolha depende do paciente:</p>
+  <div class="cmp">
+    <div class="r h"><div class="k"></div><div class="c">Cirurgia aberta com veia</div><div class="c">Endoprótese</div></div>
+    <div class="r"><div class="k">Para quem</div><div class="c">Jovem, de 35 ou 40 anos, sem outras doenças, com a vida inteira pela frente</div><div class="c">Idoso de oitenta e poucos anos, sem doença terminal, com o coração reservado, para quem duas ou três horas de cirurgia seriam ruins</div></div>
+    <div class="r"><div class="k">Duração</div><div class="c">A ponte com veia dura muito mais</div><div class="c">Equivalente nos estudos</div></div>
+    <div class="r"><div class="k">Remédio depois</div><div class="c">Não precisa de antiagregante</div><div class="c">Antiagregante para sempre</div></div>
+  </div>
+  <div class="quote"><p>“Não por facilidade, é porque é melhor para o paciente. Apesar de ser mais agressiva, ela traz mais benefícios.”</p><div class="who">Dr. Américo, sobre a cirurgia aberta no aneurisma de poplítea</div></div>
+
+  <h3>Como é a endoprótese</h3>
+  <div class="grid2">
+    <div class="card"><span class="tag">Esqueleto</span><h4>Nitinol</h4><p>Stents de arame de nitinol (níquel e titânio), muito flexíveis: acompanham o joelho dobrando e esticando.</p></div>
+    <div class="card"><span class="tag">Cobertura</span><h4>Teflon</h4><p>Politetrafluoretileno, o teflon, de alta qualidade: não desfia como o veda-rosca de torneira e é feito para durar a vida inteira.</p></div>
+  </div>
+  <p>Ela vem comprimida dentro de um cateter fino; no lugar certo, é desencapada e se conforma ao vaso, virando um túnel por dentro dele. A Viabahn, da Gore (a mesma do tecido de algumas botas de neve), tem heparina no tecido, o que dificulta a coagulação e a mantém aberta por mais tempo.</p>
+
+  <h3>Vantagens do endovascular</h3>
+  <div class="rows">
+    <div class="row"><div class="k">Tempo</div><div class="v">Cerca de meia hora de cirurgia.</div></div>
+    <div class="row"><div class="k">Internação</div><div class="v">Dá para ir embora no mesmo dia.</div></div>
+    <div class="row"><div class="k">Sangramento</div><div class="v">Quase zero.</div></div>
+    <div class="row"><div class="k">Morbidade</div><div class="v">Mínima: um furo de 2 a 3 mm.</div></div>
+  </div>
+  <p>Nos estudos, cirurgia aberta e endovascular são equivalentes, sem diferença estatística. As variáveis antes vistas como decisivas (com ou sem isquemia, eletiva ou urgência, aneurisma na linha do joelho ou não) vêm caindo por terra.</p>
+
+  <h3>A dobra do joelho</h3>
+  <p>Tudo o que fica fora da dobra do joelho dura mais; o que atravessa a dobra se desgasta mais rápido e pode ocluir por dobra. A endoprótese é crucificada como a que dá mais isquemia, mas a ponte aberta também sofre com a dobra.</p>
+  <div class="box orange"><div class="kick"><span class="dot"></span>Caso do professor</div><p>Um paciente operado com ponte aberta ficou muito tempo de cócoras. Quando levantou, não sentia mais o pé: a ponte tinha ocluído.</p></div>
+
+  <h3>Trombose não impede mais o endovascular</h3>
+  <p>Antes, trombose era impedimento para a via endovascular; hoje não. Dá para aspirar o coágulo, fazer fibrinólise (derreter o coágulo agudo com fibrinolítico) ou fazer uma pequena abertura, retirar o trombo com o cateter de Fogarty e seguir com a endoprótese.</p>
+
+  <h3 data-bm="Antiagregação depois da endoprótese">Antiagregação depois da endoprótese <span class="prova">PROVA</span></h3>
+  <div class="ref">
+    <div class="txt"><div class="kick"><span class="dot"></span>Todo paciente com endoprótese</div><p>Ácido acetilsalicílico e clopidogrel; depois, um só (geralmente o ácido acetilsalicílico, mais simples), um por dia.</p></div>
+    <div class="vals"><div class="val"><small>No mínimo</small>6 meses os dois</div><div class="val"><small>Depois</small>um, para sempre</div></div>
+  </div>
+  <p>Na cirurgia aberta não precisa: faz-se a ponte e o paciente fica livre desse remédio. É mais uma desvantagem do endovascular.</p>
+  <div class="box red"><div class="kick"><span class="dot"></span>Pegadinha do professor</div><p><span class="medium">Parar o antiagregante.</span> “Você para com o antiagregante, ela entope.” Foi mostrado que quem para de tomar entope; é preciso manter antiagregante ou anticoagulante.</p></div>
+
+  <h3>Acompanhamento com Doppler</h3>
+  <div class="ref">
+    <div class="txt"><div class="kick"><span class="dot"></span>Doppler arterial depois da cirurgia</div><p>Depois do primeiro ano, a cada 6 meses ou a cada ano: a cirurgia pode deteriorar ou complicar.</p></div>
+    <div class="val">1, 3 e 6 meses<small>e depois ano a ano</small></div>
+  </div>
+
+  <h3>Regras técnicas da endoprótese</h3>
+  <ol class="flow">
+    <li><b class="t">Âncora em artéria sadia.</b> A endoprótese não fica só no aneurisma: pega pelo menos 2 a 3 cm de parede sadia acima e 2 a 3 cm abaixo. Sem essa margem, a dobra e a extensão do joelho podem fazer a prótese desabar para dentro do aneurisma.</li>
+    <li><b class="t">Cuidado com os ramos.</b> Se o aneurisma termina bem na origem da tibial anterior ou do tronco logo abaixo, cobrir 3 cm fecha os vasos de baixo e deixa um só: sem colo, a âncora complica.</li>
+    <li><b class="t">Evitar sobreposição.</b> Quando uma prótese não cobre todo o comprimento, encaixa-se uma mais fina embaixo e outra por dentro dela, como antena. Funciona, mas quanto menos stent, melhor.</li>
+    <li><b class="t">Saída garantida.</b> É preciso no mínimo uma artéria sadia embaixo; o ideal é fazer angioplastia das artérias de baixo entupidas para melhorar a saída do sangue.</li>
+    <li><b class="t">Planejamento.</b> Angiotomografia com todas as medidas, para escolher o material.</li>
+  </ol>
+</section>
+
+<!-- ================================================================ 05 -->
+<section id="s05">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">05</span></div><div class="corpo"><div class="de">Hipertensão renovascular</div><h2>Hipertensão renovascular: quando suspeitar</h2><div class="aqui"><span class="feito">Poplítea × aorta</span><span class="feito">Clínica e exames</span><span class="feito">Quando operar</span><span class="feito">Como operar</span><span class="on">Renovascular: suspeita</span><span>Renovascular: conduta</span><span>Isquemia aguda</span><span>Trombose venosa</span><span>Isquemia crônica</span></div></div></div>
+  <div class="simples"><p>Uma artéria do rim estreita deixa o rim com pouco sangue. Ele reage como se faltasse pressão e libera renina, que sobe a pressão do corpo todo. É pressão alta com causa: tratando a artéria, a pressão pode curar.</p></div>
+
+  <h3>Primária ou secundária</h3>
+  <div class="cmp">
+    <div class="r h"><div class="k"></div><div class="c">Primária (essencial)</div><div class="c">Secundária</div></div>
+    <div class="r"><div class="k">Causa</div><div class="c">Nenhuma doença levando à pressão alta</div><div class="c">Outra doença causa a pressão alta, como a doença renal</div></div>
+    <div class="r"><div class="k">Exemplo</div><div class="c">Idoso hipertenso sem outra doença</div><div class="c">Hipertensão renovascular, coarctação da aorta</div></div>
+    <div class="r"><div class="k">Tratar a causa</div><div class="c">Não há causa a tratar</div><div class="c">Se for a única causa, cura a pressão alta</div></div>
+  </div>
+  <p>As duas podem se somar: um hipertenso de longa data pode, por azar, desenvolver hipertensão renovascular e piorar a pressão. Na coarctação da aorta, falta sangue não só para as pernas, mas para as vísceras abaixo do estreitamento, e o corpo compensa subindo a pressão para receber um pouco mais.</p>
+
+  <h3 data-bm="Segunda causa de hipertensão secundária">Segunda causa de hipertensão secundária <span class="prova">PROVA</span></h3>
+  <p>A hipertensão renovascular é a segunda causa de hipertensão arterial secundária e está em 5 a 6% dos hipertensos. A maioria é aterosclerótica. Na turma ninguém tomava remédio para pressão: hipertensão em alguém de 20 ou 30 anos, ou pouco mais, faz desconfiar de causa secundária.</p>
+  <div class="quote"><p>“Quando você vê alguém na faixa etária de vocês com pressão alta muito precoce, sempre tem que desconfiar que pode ser secundária a alguma doença.”</p><div class="who">Dr. Américo, depois de perguntar à turma quem tomava remédio para pressão</div></div>
+
+  <h3 data-bm="Em que braço medir">Em que braço medir <span class="prova">PROVA</span></h3>
+  <div class="box red"><div class="kick"><span class="dot"></span>Pegadinha do professor</div><p><span class="medium">“Doutor, eu sempre meço no braço direito, porque no esquerdo dá muito alto.”</span> Errado: vale o braço com a pressão mais alta. Nenhuma doença aumenta a pressão de um braço; o que existe é estenose ou oclusão da subclávia, que diminui o fluxo e a pressão daquele lado.</p></div>
+  <div class="ref">
+    <div class="txt"><div class="kick"><span class="dot"></span>Diferença entre os braços</div><p>A partir daí, investigue o que está acontecendo.</p></div>
+    <div class="val">20 mmHg<small>ou mais</small></div>
+  </div>
+
+  <h3>Antes de pensar em renovascular, exclua</h3>
+  <div class="rows">
+    <div class="row"><div class="k">Medida errada</div><div class="v">Técnica inadequada; hipertensão do avental branco, no paciente nervoso ou ansioso.</div></div>
+    <div class="row"><div class="k">Tratamento errado</div><div class="v">Remédio errado, ou o certo tomado do jeito errado.</div></div>
+  </div>
+  <div class="rows">
+    <div class="row"><div class="k">Não adesão</div><div class="v">“Hoje tomo, amanhã não”, férias dos remédios, medo de tomar dose dobrada e o comum “não sinto nada”.</div></div>
+    <div class="row"><div class="k">Outros</div><div class="v">Progressão das lesões em órgãos-alvo, comorbidades e interações medicamentosas também dão falso diagnóstico.</div></div>
+  </div>
+
+  <h3>O que acontece no rim</h3>
+  <p>A pressão alta é secundária à isquemia do rim, geralmente por estenose grave ou obstrução de uma ou mais artérias renais. O rim em si não está doente: ele sente a falta de sangue e tenta aumentar a pressão.</p>
+  <ol class="flow">
+    <li><b class="t">Renina.</b> O rim mal perfundido produz renina.</li>
+    <li><b class="t">Angiotensina I e II.</b> A renina põe em marcha a cadeia da angiotensina.</li>
+    <li><b class="t">Aldosterona.</b> Retém sódio, aumenta o volume e sobe a pressão.</li>
+    <li><b class="t">Vasoconstrição.</b> Diminui o continente e aumenta a pressão interna; tudo realimenta a renina.</li>
+  </ol>
+  <p>Se o rim fosse retirado, a pressão alta pararia; mas esse não é o objetivo do tratamento.</p>
+
+  <h3 data-bm="Aterosclerótica no óstio, displasia no meio da artéria">Aterosclerótica no óstio, displasia no meio da artéria <span class="prova">PROVA</span></h3>
+  <p>A renovascular tem duas causas: a aterosclerótica, quase 90%, e a displasia fibromuscular, cerca de 10%. Doenças raras que inflamam, comprimem, traumatizam ou deixam hipoplásica uma artéria ramo da aorta, como a arterite de Takayasu, são entidades à parte.</p>
+  <div class="figure"><img src="renal.svg" alt="Esquema da artéria renal: placa no óstio na aterosclerose e colar de contas na displasia fibromuscular">
+    <div class="olhar"><div class="kick">O que olhar na arteriografia</div><ul>
+      <li><b>Aterosclerótica:</b> estenose só na origem (óstio), vinda da placa da aorta; a artéria renal está íntegra lá na frente.</li>
+      <li><b>Displasia fibromuscular:</b> origem poupada e reentrâncias ao longo da artéria, que fica carcomida, em colar de contas.</li>
+    </ul></div></div>
+  <div class="cmp">
+    <div class="r h"><div class="k"></div><div class="c">Aterosclerótica</div><div class="c">Displasia fibromuscular</div></div>
+    <div class="r"><div class="k">Frequência</div><div class="c">Quase 90%</div><div class="c">Cerca de 10%</div></div>
+    <div class="r"><div class="k">Quem</div><div class="c">Idosos brancos (negros e amarelos também podem ter)</div><div class="c">Mulheres brancas jovens, por volta dos 20 anos; homens, às vezes</div></div>
+    <div class="r"><div class="k">Onde</div><div class="c"><span class="destaque">Óstio</span>: a placa da aorta se projeta para dentro da renal e progride pouco</div><div class="c"><span class="destaque">Segmento médio e distal</span>; poupa a origem; atinge a camada média (muscular)</div></div>
+    <div class="r"><div class="k">Evolução</div><div class="c">Progressiva: 40% das estenoses de 75% ou mais estão obstruídas em 5 anos</div><div class="c">Pode passar sem diagnóstico e só aparecer aos 50 ou 60 anos</div></div>
+  </div>
+  <p>Na aterosclerótica, é como no infarto: gordura acumulada ao longo da vida, estenose e, um dia, oclusão. Sem cuidado, a estenose grave leva à perda completa da função renal.</p>
+
+  <h3>Diagnóstico clínico</h3>
+  <p>Conversar e examinar: o que o paciente toma, como a pressão evoluiu, a pressão nos dois braços, se está tudo correto. Às vezes, pedir medidas no posto ou em casa: o aparelho doméstico dá medidas mais fiéis que o consultório, onde o estresse sobe a pressão. Os exames complementares são de imagem.</p>
+
+  <h3>Três hipertensões lado a lado</h3>
+  <div class="cmp c4">
+    <div class="r h"><div class="k"></div><div class="c">Essencial</div><div class="c">Displasia</div><div class="c">Aterosclerótica</div></div>
+    <div class="r"><div class="k">Início</div><div class="c">Pode começar antes dos 20 anos</div><div class="c">Pode começar antes dos 20 anos</div><div class="c">Aos 50 anos ou mais</div></div>
+    <div class="r"><div class="k">Sexo</div><div class="c">Mais em homens</div><div class="c">Mais em mulheres</div><div class="c">Mais em homens</div></div>
+    <div class="r"><div class="k">Cor da pele</div><div class="c">Mais em negros</div><div class="c">Mais em brancos</div><div class="c">Mais em brancos</div></div>
+    <div class="r"><div class="k">Artérias fora do rim</div><div class="c">Menos doença</div><div class="c">Menos doença</div><div class="c">Mais doença</div></div>
+  </div>
+  <div class="cmp c4">
+    <div class="r h"><div class="k"></div><div class="c">Essencial</div><div class="c">Displasia</div><div class="c">Aterosclerótica</div></div>
+    <div class="r"><div class="k">Obesidade</div><div class="c">Não comparada</div><div class="c">Sem muita diferença</div><div class="c">Sem muita diferença</div></div>
+    <div class="r"><div class="k">Fundo de olho</div><div class="c">Não comparado</div><div class="c">Menos alterado</div><div class="c">Pior: aterosclerose generalizada</div></div>
+    <div class="r"><div class="k">Sopro abdominal</div><div class="c">Menos comum</div><div class="c">Mais comum</div><div class="c">Mais comum</div></div>
+  </div>
+  <p>A aterosclerose que causa a doença arterial obstrutiva periférica também pode atingir vasos viscerais, como a artéria renal. O sopro abdominal das renovasculares vem da estenose da artéria renal, da aorta ou das mesentéricas.</p>
+
+</section>
+
+<!-- ================================================================ 06 -->
+<section id="s06">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">06</span></div><div class="corpo"><div class="de">Hipertensão renovascular</div><h2>Hipertensão renovascular: exames e tratamento</h2><div class="aqui"><span class="feito">Poplítea × aorta</span><span class="feito">Clínica e exames</span><span class="feito">Quando operar</span><span class="feito">Como operar</span><span class="feito">Renovascular: suspeita</span><span class="on">Renovascular: conduta</span><span>Isquemia aguda</span><span>Trombose venosa</span><span>Isquemia crônica</span></div></div></div>
+  <div class="simples"><p>O Doppler mede a velocidade do sangue na artéria do rim: se corre rápido demais, é porque está estreita. Hoje quase tudo se trata por cateterismo: balão e stent na aterosclerose, só balão na displasia.</p></div>
+
+  <h3>Cintilografia com tecnécio</h3>
+  <p>O tecnécio é um isótopo radioativo de duração efêmera: perde a radioatividade em segundos, é bem controlado e inócuo para o paciente, menos perigoso que um raio X, ao contrário do que se pensa. O exame mostra a captação nos rins, nas vias urinárias e na bexiga: o rim que capta mal é, provavelmente, o do lado da estenose.</p>
+
+  <h3>Doppler das artérias renais</h3>
+  <p>É o exame do dia a dia. Com o transdutor convexo no abdome, perto das costelas, na altura da primeira e da segunda vértebras lombares, procura-se a saída das artérias renais da aorta (pode haver mais de uma para cada rim: as artérias polares) e avaliam-se a forma e a velocidade do fluxo.</p>
+  <div class="ref">
+    <div class="txt"><div class="kick"><span class="dot"></span>Velocidade normal</div><p>Na renal, geralmente 100 a 120 cm/s: pouco acima da aorta.</p></div>
+    <div class="vals"><div class="val"><small>Aorta</small>50 a 100 cm/s</div><div class="val"><small>Artéria renal</small>até 179 cm/s</div></div>
+  </div>
+
+  <h3 data-bm="Estenose de 60% ou mais: os dois critérios juntos">Estenose de 60% ou mais: os dois critérios juntos <span class="prova">PROVA</span></h3>
+  <div class="es">
+    <div class="kick">Doppler renal: estenose de 60% ou mais</div>
+    <p class="lead">Precisa das duas coisas ao mesmo tempo.</p>
+    <div class="cells">
+      <div class="cell"><div class="lab">Pico de velocidade sistólica na renal</div><p>Acima de 180 cm/s.</p></div>
+      <div class="cell"><div class="lab">Relação reno-aórtica</div><p>Velocidade da renal dividida pela da aorta acima de 3,5.</p></div>
+    </div>
+  </div>
+  <p>No trecho estreito o sangue esguicha e faz picos de velocidade: na renal, três vezes e meia mais rápido que na aorta. Cada artéria tem seu corte, pesando risco e benefício: na carótida, o procedimento entra a partir de 70%; na renal, a partir de 60%. Acima do corte, já se está perdendo o momento; abaixo, corre-se o risco sem ter o benefício.</p>
+  <div class="box red"><div class="kick"><span class="dot"></span>Pegadinha do professor</div><p><span class="medium">Um critério só não basta.</span> Se a velocidade passou de 180 cm/s mas a relação não passou de 3,5 (ou o contrário), a estenose é considerada menor que 60%.</p></div>
+
+  <h3>Arteriografia, angiotomografia e angiorressonância</h3>
+  <p>No cateterismo, o cateter sobe pela femoral até a aorta e entra no “biquinho” da renal. Estenose grave só no óstio, com a artéria normal adiante, é aterosclerose: a placa da aorta se insinua no óstio e não progride. Às vezes a origem já está ocluída, com a artéria renal íntegra lá na frente. A angiorressonância e a angiotomografia com reconstrução tridimensional mostram também os outros ramos: tronco celíaco, artérias esplênica e hepática, mesentérica superior e as duas renais.</p>
+
+  <h3>Tratamento: para todos, o clínico</h3>
+  <p>Todos recebem tratamento clínico, com controle adequado da pressão. O objetivo é manter a função renal e controlar a pressão: com o rim já sem função, em diálise, revascularizar não adianta.</p>
+
+  <h3 data-bm="Balão e stent na aterosclerose, só balão na displasia">Balão e stent na aterosclerose, só balão na displasia <span class="prova">PROVA</span></h3>
+  <div class="cmp">
+    <div class="r h"><div class="k"></div><div class="c">Aterosclerótica</div><div class="c">Displasia fibromuscular</div></div>
+    <div class="r"><div class="k">Lesão</div><div class="c">Estenose curta, só no óstio</div><div class="c">Artéria toda carcomida, em colar de contas, com a origem poupada</div></div>
+    <div class="r"><div class="k">Tratamento</div><div class="c"><span class="destaque">Angioplastia e implante de stent</span></div><div class="c"><span class="destaque">Angioplastia, sem stent</span> na maioria das vezes</div></div>
+    <div class="r"><div class="k">Resultado</div><div class="c">Luz recuperada depois da angioplastia</div><div class="c">A angioplastia sozinha resolve na maioria</div></div>
+  </div>
+  <p>O stent da renal vem montado no balão: o balão infla, o stent fica, o balão murcha e sai. É um stent rígido, expansível por balão, duro como um clipe de papel: se dobrar, não volta. É o oposto da endoprótese flexível da dobra do joelho.</p>
+
+  <h3>Cuidados com a punção femoral</h3>
+  <p>Todo cateterismo exige cuidado com o acesso: não deixar sangrar no pós-operatório, porque pode dar grandes hematomas; evitar oclusão e trombose; e deixar a artéria como estava antes da intervenção.</p>
+
+  <h3>E a cirurgia aberta?</h3>
+  <p>Antes, sem material bom para angioplastia, operava-se aberto: autotransplante do rim (retirado e implantado em outro lugar), reimplante da artéria renal depois de soltá-la e limpá-la, ou endarterectomia (abrir a aorta e a renal, limpar por dentro e fechar com remendo de pericárdio bovino). Tudo isso ainda é possível, mas é uma cirurgia grande: cerca de 3 horas, terapia intensiva, corte grande, íleo paralítico e dias sem comer. Com angioplastia e stent, vai-se para casa no mesmo dia. Hoje quase a totalidade é endovascular.</p>
+</section>
+
+<!-- ================================================================ 07 -->
+<section id="s07">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">07</span></div><div class="corpo"><div class="de">Isquemia intestinal</div><h2>Isquemia mesentérica aguda</h2><div class="aqui"><span class="feito">Poplítea × aorta</span><span class="feito">Clínica e exames</span><span class="feito">Quando operar</span><span class="feito">Como operar</span><span class="feito">Renovascular: suspeita</span><span class="feito">Renovascular: conduta</span><span class="on">Isquemia aguda</span><span>Trombose venosa</span><span>Isquemia crônica</span></div></div></div>
+  <div class="simples"><p>Um coágulo entope de repente a artéria que leva sangue ao intestino. Ele pode ter vindo do coração ou se formado numa artéria já doente. Sem sangue, o intestino morre em poucas horas: quem chega cedo à cirurgia sobrevive.</p></div>
+
+  <h3>Três doenças numa só</h3>
+  <p>Isquemia é falta de oxigenação; isquemia intestinal é a falta de oxigenação no tecido do intestino. É a mesma aula de oclusão arterial aguda, trombótica ou embólica, e de trombose venosa, só que no território intestinal. Pode ser aguda (dor e, em um ou dois dias, morte) ou crônica (dor que se arrasta por anos, com emagrecimento, até alguém pensar em doença circulatória do intestino).</p>
+
+  <h3>Por que a oclusão súbita é tão grave</h3>
+  <p>O intestino precisa de alto fluxo. Quando a artéria entope de repente, não dá tempo de outros vasos suprirem: vêm isquemia e necrose intestinal, com alta mortalidade. Sem diagnóstico, talvez não haja como salvar o paciente.</p>
+
+  <h3 data-bm="Por que é tão difícil de diagnosticar">Por que é tão difícil de diagnosticar <span class="prova">PROVA</span></h3>
+  <p>O sintoma é dor, e quase todo mundo já teve dor de barriga ou cólica: não dá para abrir a barriga de todos. A barriga é uma caixinha de surpresas, e na mulher somam-se as anexites, as cistites e outras doenças ginecológicas. A idade ajuda: num jovem a chance é remota, embora não impossível; pense nela no idoso e no paciente de risco.</p>
+
+  <h3 data-bm="Embólica: 90% vem do coração">Embólica: 90% vem do coração <span class="prova">PROVA</span></h3>
+  <p>O mesmo êmbolo que entope a perna pode entrar numa mesentérica no meio do caminho (dor abdominal), no rim ou subir ao cérebro (acidente vascular cerebral por êmbolo cardíaco).</p>
+  <div class="cmp">
+    <div class="r h"><div class="k"></div><div class="c">Embólica</div><div class="c">Trombótica</div></div>
+    <div class="r"><div class="k">O que é</div><div class="c">Coágulo formado longe, que viaja e entope a artéria</div><div class="c">O próprio vaso, já doente, entope no local</div></div>
+    <div class="r"><div class="k">Origem</div><div class="c"><span class="destaque">90% do coração</span>: arritmia (bem mais que valvopatia), como a fibrilação atrial; 10% da aorta ou de placa de ateroma</div><div class="c">Aterosclerose avançada, com estenoses graves</div></div>
+    <div class="r"><div class="k">Quem</div><div class="c">Qualquer idade: basta uma arritmia</div><div class="c">Idoso com aterosclerose generalizada: sedentário, obeso, diabético, hipertenso, com colesterol alto</div></div>
+    <div class="r"><div class="k">História</div><div class="c">Intestino que nunca teve isquemia: sem colaterais formadas, mais catastrófica</div><div class="c">Isquemia em outros territórios (perna amputada, acidente vascular cerebral, infarto); às vezes, claudicação intestinal</div></div>
+  </div>
+  <div class="box"><div class="kick"><span class="dot"></span>Por que a fibrilação atrial faz coágulo</div><p>O coração perde a sequência de sístole e diástole e bate em salvas: não enche nem esvazia direito o átrio e o ventrículo, e o sangue que sobra coagula com facilidade. Por isso a maioria desses pacientes é anticoagulada. Hoje a ablação do foco da arritmia por cateterismo, antes só para jovens, é feita em qualquer idade e, revertida a arritmia, o anticoagulante pode sair. E os novos anticoagulantes orais são muito mais seguros que os antigos: raramente fazem sangrar.</p></div>
+
+  <h3 data-bm="Os três vasos e as colaterais">Os três vasos e as colaterais <span class="prova">PROVA</span></h3>
+  <p>Três vasos irrigam as vísceras: o tronco celíaco, a artéria mesentérica superior e a artéria mesentérica inferior. Perder um deles aos poucos, por aterosclerose, costuma ser bem tolerado: o prognóstico é melhor para quem foi desenvolvendo colaterais. O problema é a oclusão abrupta, por êmbolo ou trombose aguda. Os três se comunicam por colaterais, as anastomoses fisiológicas, que dão tempo para socorrer obstruções crônicas e agudas.</p>
+  <div class="figure"><img src="colaterais.svg" alt="Esquema das colaterais entre tronco celíaco, mesentérica superior, mesentérica inferior e vasos pélvicos"></div>
+  <div class="box"><div class="kick"><span class="dot"></span>O que guardar</div><ul>
+    <li><span class="medium">Tronco celíaco e mesentérica superior:</span> arcadas pancreaticoduodenais, pelas gastroduodenais.</li>
+    <li><span class="medium">Mesentérica superior e inferior:</span> arcada de Riolan (a maior, que sai direto de uma para a outra) e arcadas marginais de Drummond (as menores, bem perto do intestino grosso).</li>
+      <li><span class="medium">Mesentérica inferior e pelve:</span> ramos da ilíaca interna; a sacral mediana também participa.</li>
+  </ul></div>
+  <div class="quote"><p>“Essas colaterais vocês devem guardar, porque isso cai em qualquer prova de concurso. Qual que é a arcada que comunica a mesentérica superior e inferior? Arcada de Riolan.”</p><div class="who">Dr. Américo</div></div>
+  <p>Oclusão da mesentérica superior: perde-se o jejuno e o íleo, boa parte do intestino delgado, e uma parte do intestino grosso.</p>
+
+  <h3 data-bm="Fase 1 e fase 2">Fase 1 e fase 2 <span class="prova">PROVA</span></h3>
+  <div class="cmp">
+    <div class="r h"><div class="k"></div><div class="c">Fase 1 (inicial)</div><div class="c">Fase 2 (peritonite)</div></div>
+    <div class="r"><div class="k">Dor</div><div class="c">Periumbilical; pode melhorar em 1 a 2 horas</div><div class="c">De irritação peritoneal</div></div>
+    <div class="r"><div class="k">Outros sinais</div><div class="c">Sudorese, diarreia</div><div class="c">Sepse: febre alta, queda de pressão</div></div>
+    <div class="r"><div class="k">Ruídos hidroaéreos</div><div class="c">Aumentados</div><div class="c">Ausentes</div></div>
+    <div class="r"><div class="k">Abdome</div><div class="c">Fácil de palpar, depressível, sem distensão</div><div class="c">Distendido e duro; dor maior ao soltar (sinal de Blumberg)</div></div>
+    <div class="r"><div class="k">Sangue</div><div class="c">Ainda sem grandes alterações</div><div class="c">Leucocitose, acidose metabólica, fosfatase alcalina e amilase altas, disfunção renal: irreversibilidade</div></div>
+    <div class="r"><div class="k">Conduta</div><div class="c">Pensar nela no idoso de risco e encaminhar já ao serviço especializado</div><div class="c"><span class="destaque">Cirurgia imediata</span>; a maioria morre mesmo operada</div></div>
+  </div>
+  <p>O toque retal pode vir com sangue, por isquemia do cólon, mas isso não é patognomônico. Como clínico, encaminhe a um serviço de referência cirúrgica; como cirurgião que recebe o paciente, não dá para esperar: é cirurgia de imediato.</p>
+  <div class="quote"><p>“Peritonite é igual a cirurgia. Ah, e se for apendicite? Cirurgia. Se for anexite? Cirurgia. Se for sepse por isquemia aguda do intestino? Cirurgia.”</p><div class="who">Dr. Américo</div></div>
+  <div class="box red"><div class="kick"><span class="dot"></span>Pegadinha do professor</div><p><span class="medium">Confiar na dor que melhora.</span> Na fase 1, a dor pode melhorar em 1 a 2 horas e a barriga continua mole: ainda não parece grave, e é a fase em que dá para salvar. Na fase 2, qualquer um faz o diagnóstico, mas a maioria morre.</p></div>
+
+  <h3>Exames</h3>
+  <p>A angiotomografia é hoje o melhor exame. A arteriografia mesentérica exige sala e equipe de hemodinâmica, então fica para quem ainda não está na fase 2: o paciente com suspeita e exames sugestivos, mas sem peritonite, em quem às vezes dá para recuperar o fluxo. A tomografia (e também o raio X) mostra nível hidroaéreo e distensão das alças; o sangue, leucocitose e alteração de enzimas.</p>
+
+  <h3>Suporte clínico, junto com a indicação cirúrgica</h3>
+  <ol class="flow">
+    <li><b class="t">Antibiótico de largo espectro,</b> contra a translocação bacteriana.</li>
+    <li><b class="t">Bicarbonato,</b> às vezes logo de cara, contra a acidose metabólica.</li>
+    <li><b class="t">Expansão volêmica com cristaloide,</b> porque o paciente entra em choque séptico.</li>
+    <li><b class="t">Noradrenalina:</b> no choque séptico, só volume não basta; é preciso vasoconstritor para evitar a hipotensão a qualquer custo e chegar vivo à sala de cirurgia.</li>
+  </ol>
+  <p>Há relatos de que o propofol, usado na indução anestésica, ajude o intestino a sobreviver à isquemia aguda; não é obrigatório nem padrão reconhecido.</p>
+
+  <h3>Cirurgia: cedo, agressiva e certeira</h3>
+  <ol class="flow">
+    <li><b class="t">Intestino ainda viável.</b> Só a parte vascular (embolectomia): o intestino reperfunde e volta a viver, sem ressecção.</li>
+    <li><b class="t">Depois de desentupir, conferir.</b> A área que não recuperou é retirada.</li>
+    <li><b class="t">Necrose extensa.</b> Ressecção ampla, mesmo depois de revascularizar.</li>
+    <li><b class="t">Nova abordagem.</b> Às vezes é preciso reoperar para tirar o pedaço que morreu depois.</li>
+  </ol>
+  <p>Na arteriografia, a mesentérica superior aparece com uma parada súbita (um “stop”), sem fluxo abaixo, e as colaterais tentando suprir o intestino. Desentupida antes da necrose, o intestino se mantém vivo sem ressecção.</p>
+  <div class="quote"><p>“É igual você carimbar a sentença de morte no paciente você deixar um intestino podre desse jeito.”</p><div class="who">Dr. Américo, sobre o intestino necrosado, que tem de sair todo</div></div>
+
+  <h3>Trombótica e embólica: a conduta</h3>
+  <p><b>Trombose aguda:</b> pode ser o paciente que já tinha claudicação intestinal (das três artérias, duas entupidas e uma ruim) e a última fechou de vez: corre-se para desentupir. Como é agudo, parte do intestino pode estar necrosada; hoje não se abre só para olhar: faz-se uma laparoscopia (um furo, gás carbônico e câmera) e, se houver necrose, abre-se. Desentope-se, faz-se angioplastia quando possível e resseca-se o que estiver necrosado.</p>
+  <p><b>Embolia:</b> mais catastrófica, porque o intestino nunca teve isquemia. Faz-se a desobstrução, mas geralmente o paciente chega na fase avançada.</p>
+
+  <h3 data-bm="O tempo decide: duas cidades">O tempo decide: duas cidades <span class="prova">PROVA</span></h3>
+  <div class="cmp">
+    <div class="r h"><div class="k"></div><div class="c">Botucatu, hospital-escola</div><div class="c">Marechal Cândido Rondon</div></div>
+    <div class="r"><div class="k">Caminho</div><div class="c">Atendido em outra cidade e transferido pela central de leitos</div><div class="c">O plantonista não toca em dor abdominal: chama o especialista do aparelho digestivo na hora, sem esperar imagem</div></div>
+    <div class="r"><div class="k">Tempo</div><div class="c">Ambulância com médico, saída da cidade e viagem: perto de 2 horas</div><div class="c">Avaliado na fase 1; operado com dor havia uns 20 minutos</div></div>
+    <div class="r"><div class="k">Na chegada</div><div class="c">Peritonite, intubado, droga vasoativa em dose alta, choque</div><div class="c">Pouca dor, ruídos um pouco aumentados, sem peritonite</div></div>
+    <div class="r"><div class="k">Cirurgia</div><div class="c">Ressecção ampla; quase não sobrava intestino</div><div class="c">Artéria desentupida, intestino intacto; quando muito, um pedacinho retirado</div></div>
+    <div class="r"><div class="k">Desfecho</div><div class="c">Morte na terapia intensiva em 24 horas</div><div class="c">“Vivia todo mundo”</div></div>
+  </div>
+  <div class="quote"><p>“Olha, provavelmente é uma isquemia intestinal aguda. Ela tem chance de ser operada agora, mas é baixa a chance de sobreviver operando agora. Se não operar agora, não vai sobreviver. É agora ou nunca.”</p><div class="who">Dr. Américo, contando como o colega falava com a família de uma senhora de 89 anos</div></div>
+  <p>Em isquemia, tudo depende do tempo até o diagnóstico e a conduta, e da extensão da trombose: a segmentar recupera melhor; a longa leva a enterectomia (retirada de intestino) maior. Aos 89 anos, uma enterectomia extensa não se sobrevive: a cirurgia é agressiva e, depois, sem intestino para absorver, o paciente depende de nutrição parenteral, com nutrientes pela veia por um cateter de longa permanência.</p>
+</section>
+
+<!-- ================================================================ 08 -->
+<section id="s08">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">08</span></div><div class="corpo"><div class="de">Isquemia intestinal</div><h2>Trombose venosa mesentérica</h2><div class="aqui"><span class="feito">Poplítea × aorta</span><span class="feito">Clínica e exames</span><span class="feito">Quando operar</span><span class="feito">Como operar</span><span class="feito">Renovascular: suspeita</span><span class="feito">Renovascular: conduta</span><span class="feito">Isquemia aguda</span><span class="on">Trombose venosa</span><span>Isquemia crônica</span></div></div></div>
+  <div class="simples"><p>É a “trombose venosa profunda do intestino”: o sangue chega pela artéria, mas não volta pela veia, e o intestino incha. É a forma mais branda, e na maioria das vezes só o anticoagulante resolve.</p></div>
+
+  <h3>Como a trombose da perna, só que no intestino</h3>
+  <div class="cmp">
+    <div class="r h"><div class="k"></div><div class="c">Trombose venosa da perna</div><div class="c">Trombose venosa mesentérica</div></div>
+    <div class="r"><div class="k">O que entope</div><div class="c">A veia: a artéria manda o sangue, a veia não traz de volta</div><div class="c">As veias do intestino, com as artérias pérvias</div></div>
+    <div class="r"><div class="k">O que aparece</div><div class="c">Perna inchada, roxa, dolorida e congesta; cacifo</div><div class="c">Intestino inchado: desconforto, náuseas, mal-estar</div></div>
+    <div class="r"><div class="k">Tratamento</div><div class="c">Anticoagulante</div><div class="c">Anticoagulante</div></div>
+  </div>
+  <p>O edema das alças do delgado provoca extravasamento serossanguíneo, com líquido na cavidade, e a translocação bacteriana pode levar à sepse.</p>
+
+  <h3 data-bm="Anticoagulante é o tratamento de escolha">Anticoagulante é o tratamento de escolha <span class="prova">PROVA</span></h3>
+  <p>Na fase inicial, como na perna, o anticoagulante sozinho costuma bastar. Na fase hiperaguda, muito extensa, pode-se derreter o coágulo com fibrinólise; com ou sem fibrinolítico, o paciente fica anticoagulado. O coágulo pode ser dissolvido, removido ou aspirado.</p>
+  <div class="quote"><p>“Igual à trombose de perna, igual à trombose venosa de qualquer lugar, o primeiro tratamento de escolha é o anticoagulante, e é o que mais funciona.”</p><div class="who">Dr. Américo</div></div>
+  <div class="box red"><div class="kick"><span class="dot"></span>Pegadinha do professor</div><p><span class="medium">A fibrinólise não entra pela veia.</span> O fibrinolítico é injetado na artéria mesentérica superior: o sangue com o remédio passa pelas artérias e volta muito rápido pelas veias, onde age.</p></div>
+
+  <h3>Procure a causa</h3>
+  <div class="rows">
+    <div class="row"><div class="k">Sangue</div><div class="v">Policitemia vera.</div></div>
+    <div class="row"><div class="k">Câncer</div><div class="v">Algum tipo de carcinoma.</div></div>
+    <div class="row"><div class="k">Trombofilia</div><div class="v">Ainda não diagnosticada.</div></div>
+    <div class="row"><div class="k">Hormônio</div><div class="v">Anticoncepcional: o estrogênio aumenta o risco de trombose venosa profunda.</div></div>
+  </div>
+  <p>São estados de hipercoagulabilidade, comuns em quem tem trombose venosa: quando ela aparece, investigue.</p>
+
+  <h3>O risco do fibrinolítico</h3>
+  <div class="box red"><div class="kick"><span class="dot"></span>Alerta</div><p>O sangramento é previsível e pode ser uma hemorragia cerebral grave, com desvio da linha média. O fibrinolítico dissolve coágulos de até 30 dias, então pese a cirurgia recente: depois de cirurgia de joelho ou de mama, o hematoma se drena e passa; depois de cirurgia neurológica ou cardíaca, ele mata em vez de ajudar. Só em casos muito criteriosos.</p></div>
+  <div class="quote"><p>“Você pode até justificar, mas você vai responder perante a lei por tudo o que você fizer. O ato médico você responde.”</p><div class="who">Dr. Américo, sobre indicar o fibrinolítico</div></div>
+</section>
+
+<!-- ================================================================ 09 -->
+<section id="s09">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">09</span></div><div class="corpo"><div class="de">Isquemia intestinal</div><h2>Isquemia mesentérica crônica</h2><div class="aqui"><span class="feito">Poplítea × aorta</span><span class="feito">Clínica e exames</span><span class="feito">Quando operar</span><span class="feito">Como operar</span><span class="feito">Renovascular: suspeita</span><span class="feito">Renovascular: conduta</span><span class="feito">Isquemia aguda</span><span class="feito">Trombose venosa</span><span class="on">Isquemia crônica</span></div></div></div>
+  <div class="simples"><p>É a aterosclerose fechando aos poucos as artérias do intestino. Comer passa a doer, a pessoa fica com medo de comer e emagrece muito. Quando procura o médico, das três artérias, duas já fecharam.</p></div>
+
+  <h3 data-bm="Claudicação intestinal: come, dói">Claudicação intestinal: come, dói <span class="prova">PROVA</span></h3>
+  <p>É a doença arterial obstrutiva periférica do intestino: claudica o intestino, não a perna. Rara (5% das isquemias intestinais), gradual e progressiva, confunde-se com outras doenças.</p>
+  <ol class="flow">
+    <li><b class="t">Come:</b> começa o peristaltismo e vem uma cólica intensa.</li>
+    <li><b class="t">Digere:</b> enquanto dura a digestão, dói.</li>
+    <li><b class="t">Jejum:</b> acabou a digestão, a dor passa. Sem comer, não dói.</li>
+    <li><b class="t">Medo de comer:</b> passa para líquidos, depois para goles de água, e emagrece muito.</li>
+  </ol>
+  <div class="quote"><p>“Pior do que Mounjaro, que bariátrica: em um mês perde 30, 40 kg, fica um fiapo.”</p><div class="who">Dr. Américo, sobre o medo de comer</div></div>
+
+  <h3 data-bm="Exames: aqui o Doppler enxerga">Exames: aqui o Doppler enxerga <span class="prova">PROVA</span></h3>
+  <div class="cmp">
+    <div class="r h"><div class="k"></div><div class="c">Isquemia aguda</div><div class="c">Isquemia crônica</div></div>
+    <div class="r"><div class="k">Abdome</div><div class="c">Distendido, cheio de gases</div><div class="c">Escavado, magro, intestino vazio (jejum de 30, 40 dias)</div></div>
+    <div class="r"><div class="k">Doppler</div><div class="c">Não consegue ver os vasos</div><div class="c">Enxerga todos os vasos abdominais</div></div>
+  </div>
+  <div class="rows">
+    <div class="row"><div class="k">Arteriografia</div><div class="v">O melhor exame, padrão-ouro, embora o mais invasivo.</div></div>
+    <div class="row"><div class="k">Angiotomo&shy;grafia</div><div class="v">Ótimo substituto: quase substitui a arteriografia.</div></div>
+    <div class="row"><div class="k">Doppler colorido</div><div class="v">A aorta e as artérias viscerais dão boas pistas no paciente emagrecido.</div></div>
+    <div class="row"><div class="k">Angiorresso&shy;nância</div><div class="v">Boa e melhorando, mas soma imagem: a lesão pode parecer maior do que é.</div></div>
+  </div>
+  <p>Quem chega com perda de peso extrema já tem duas das três artérias ocluídas e a última com estenose grave; o que o mantém vivo são as colaterais (pancreaticoduodenais, Drummond e Riolan).</p>
+
+  <h3>Tratamento</h3>
+  <p>Por ser aterosclerótica, o tratamento clínico é o da perna, para prevenir a isquemia aguda: parar de fumar, controlar a pressão e a dislipidemia (triglicerídeos e colesterol), dieta e exercício regular. Até certo ponto, resolve.</p>
+  <div class="ref">
+    <div class="txt"><div class="kick"><span class="dot"></span>Quando intervir</div><p>Doença clinicamente limitante, ou lesão arterial com estenose acima de 70%.</p></div>
+    <div class="val">acima de 70%<small>de estenose</small></div>
+  </div>
+  <p>Pode ser cirurgia aberta (laparotomia com endarterectomia, ou ponte com safena ou tubo sintético) ou angioplastia com stent, hoje a mais usada: o material melhorou e agride menos. O cateter pode vir pelo braço; o balão abre o stent, murcha e sai, e o stent fica com cerca de 0,5 cm para dentro da aorta.</p>
+  <div class="box orange"><div class="kick"><span class="dot"></span>Parêntese do professor: aspiração de coágulo</div><p>Há cateteres de aspiração dos finos, para coronária, aos calibrosos (16 French), para embolia pulmonar maciça. Os antigos aspiravam sem parar e, fora do coágulo, puxavam sangue: havia paciente que precisava de transfusão. Os novos travam no fluxo livre e puxam forte no coágulo. O aparelho sobe de R$ 30.000 para R$ 70.000 e o convênio não quer pagar, mas, bem indicado, dá para justificar.</p></div>
+
+  <h3 style="margin-top: 11pt">As quatro formas lado a lado</h3>
+  <div class="cmp c4">
+    <div class="r h"><div class="k"></div><div class="c">Embólica</div><div class="c">Trombótica aguda</div><div class="c">Venosa</div><div class="c">Crônica</div></div>
+    <div class="r"><div class="k">Causa</div><div class="c">Êmbolo do coração</div><div class="c">Artéria doente fecha</div><div class="c">Trombose das veias</div><div class="c">Aterosclerose lenta</div></div>
+    <div class="r"><div class="k">Clínica</div><div class="c">A mais grave</div><div class="c">Às vezes já claudicava</div><div class="c">A mais branda</div><div class="c">Come, dói</div></div>
+    <div class="r"><div class="k">Conduta</div><div class="c">Desobstruir; ressecar a necrose</div><div class="c">Desentupir e angioplastia</div><div class="c">Anticoagulante</div><div class="c">Angioplastia com stent</div></div>
+  </div>
+</section>
+
+<!-- ================================================================ 10 -->
+<section id="s10" class="vesp">
+  <div class="sec-head"><div class="lado"><span class="k">Capítulo</span><span class="num">10</span></div><div class="corpo"><div class="de">Véspera da prova</div><h2>O essencial da aula</h2></div></div>
+  <div class="item"><span class="prova">PROVA</span><p><b>Poplítea</b>: o aneurisma periférico mais comum; homem idoso, bilateral e com aorta em 50 a 60%.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p><b>Aorta rompe; poplítea trombosa</b> (cerca de 70%; ruptura, 1 a 2%). O medo é perder a perna.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p><b>Opera</b> todo sintomático; sem sintoma, se mais de 2 cm, trombo mural (qualquer diâmetro) ou saída ruim.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p><b>Padrão-ouro na poplítea: cirurgia aberta</b> (ligadura e ponte com safena). Na aorta, o endovascular.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p><b>Endoprótese</b>: dois antiagregantes por no mínimo 6 meses, depois um para sempre. Parou, entope.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p><b>Renovascular</b>: segunda causa de hipertensão secundária, 5 a 6% dos hipertensos; pense no jovem.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p>Vale o <b>braço com a pressão mais alta</b>; diferença de 20 mmHg ou mais, investigue.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p><b>Aterosclerótica</b> (90%, idoso): só o óstio. <b>Displasia</b> (10%, mulher jovem): poupa a origem, colar de contas.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p><b>Doppler renal</b>: pico acima de 180 cm/s e relação acima de 3,5, juntos: estenose de 60% ou mais.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p>Aterosclerótica: <b>angioplastia com stent</b>. Displasia: <b>angioplastia</b>, na maioria <b>sem stent</b>.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p><b>Isquemia intestinal</b>: o sintoma é dor, que todo mundo tem; pense nela no idoso de risco.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p><b>Embólica: 90% do coração</b> (arritmia, fibrilação atrial). Trombótica: idoso com aterosclerose difusa.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p><b>Colaterais</b>: pancreaticoduodenais (celíaco e superior); Riolan e Drummond (superior e inferior).</p></div>
+  <div class="item"><span class="prova">PROVA</span><p><b>Fase 1</b>: dor periumbilical, abdome mole. <b>Fase 2</b>: peritonite é cirurgia; exames alterados, irreversível.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p><b>O tempo decide</b>: operado na fase 1, o intestino se salva; transferido em peritonite, o paciente morre.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p><b>Trombose venosa mesentérica</b>: anticoagulante é a escolha; fibrinólise pela artéria, com critério.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p><b>Crônica</b>: claudicação intestinal (come, dói; jejum, passa), medo de comer, emagrecimento; 5% dos casos.</p></div>
+  <div class="item"><span class="prova">PROVA</span><p><b>Crônica</b>: arteriografia é o padrão-ouro e o Doppler enxerga bem; tratar estenose acima de 70%.</p></div>
+
+  <div class="box red"><div class="kick"><span class="dot"></span>Erros comuns</div><ul>
+    <li><span class="medium">Achar que o aneurisma de poplítea mata por ruptura.</span> Ele trombosa e embolia; o risco é a perna.</li>
+    <li><span class="medium">Usar o trombo mural para indicar cirurgia na aorta abdominal.</span> Lá valem diâmetro e crescimento.</li>
+    <li><span class="medium">Medir a pressão no braço mais baixo.</span> Vale o mais alto.</li>
+    <li><span class="medium">Chamar de 60% com um só critério do Doppler.</span> Precisa dos dois.</li>
+    <li><span class="medium">Esperar a peritonite para pensar em isquemia mesentérica.</span> Aí a maioria morre.</li>
+  </ul></div>
+
+  <h3>Palavras da aula em linguagem simples</h3>
+  <div class="rows terms">
+    <div class="row"><div class="k">Anastomose</div><div class="v">Comunicação entre dois vasos; as fisiológicas formam as colaterais.</div></div>
+    <div class="row"><div class="k">Angioplastia</div><div class="v">Abrir uma artéria estreita por dentro, com um balão levado por cateter.</div></div>
+    <div class="row"><div class="k">Arteriografia</div><div class="v">Imagem das artérias com contraste injetado por cateter.</div></div>
+  </div>
+  <div class="rows terms">
+    <div class="row"><div class="k">Cacifo</div><div class="v">Marca que fica na pele inchada depois de apertar com o dedo.</div></div>
+    <div class="row"><div class="k">Claudicação</div><div class="v">Dor que aparece com o esforço (andar, ou comer, no intestino) e passa com o repouso.</div></div>
+    <div class="row"><div class="k">Colateral</div><div class="v">Caminho alternativo que leva sangue quando a artéria principal fecha.</div></div>
+  </div>
+  <div class="rows terms">
+    <div class="row"><div class="k">Embolectomia</div><div class="v">Retirada cirúrgica do êmbolo que entupiu a artéria.</div></div>
+    <div class="row"><div class="k">Endarterectomia</div><div class="v">Abrir a artéria e retirar a placa de dentro dela.</div></div>
+    <div class="row"><div class="k">Enterectomia</div><div class="v">Retirada de um pedaço do intestino.</div></div>
+  </div>
+  <div class="rows terms">
+    <div class="row"><div class="k">Fibrinólise</div><div class="v">Derreter o coágulo com remédio (fibrinolítico).</div></div>
+    <div class="row"><div class="k">Hipercoagulabilidade</div><div class="v">Sangue com tendência maior a coagular.</div></div>
+    <div class="row"><div class="k">Óstio</div><div class="v">A boca de saída de uma artéria a partir da aorta.</div></div>
+  </div>
+  <div class="rows terms">
+    <div class="row"><div class="k">Patência</div><div class="v">Tempo em que a ponte ou o stent continuam abertos.</div></div>
+    <div class="row"><div class="k">Peristaltismo</div><div class="v">Movimento das alças que empurra o alimento pelo intestino.</div></div>
+    <div class="row"><div class="k">Pérvio</div><div class="v">Aberto, com sangue passando.</div></div>
+  </div>
+  <div class="rows terms">
+    <div class="row"><div class="k">Ruídos hidroaéreos</div><div class="v">Barulhos do intestino ouvidos com o estetoscópio.</div></div>
+    <div class="row"><div class="k">Saída (run-off)</div><div class="v">As artérias por onde o sangue escoa depois do ponto tratado.</div></div>
+    <div class="row"><div class="k">Stent</div><div class="v">Tubo de malha metálica que mantém a artéria aberta por dentro.</div></div>
+  </div>
+  <div class="rows terms">
+    <div class="row"><div class="k">Translocação bacteriana</div><div class="v">Passagem de bactérias do intestino doente para o sangue.</div></div>
+    <div class="row"><div class="k">Trombo mural</div><div class="v">Coágulo grudado na parede do aneurisma.</div></div>
+  </div>
+  {{NOTAS}}
+</section>
+</body></html>
