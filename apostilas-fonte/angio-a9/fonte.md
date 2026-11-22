@@ -473,7 +473,7 @@ Tratamento:
 <!-- parte transcricao 2 | arquivo=correcao-p2-t28-angio-a9.txt | sha=9d329c6e7b75 | palavras=267 | duracao=00:08:29 -->
 
 CORREÇÃO DA P2 T28 DE ANGIOLOGIA (CIRURGIA VASCULAR) — TRECHOS DAS QUESTÕES 8
-Fala do Prof. Dr. Américo corrigindo a prova em sala (arquivo de origem: p2-28.mp4; transcrição inteira em apostilas-fonte/provas/angio-p2-t28-correcao.txt).
+Fala do Prof. Dr. Jeferson Freitas Toregeani (chefe da cadeira) corrigindo a prova em sala (arquivo de origem: p2-28.mp4; transcrição inteira em apostilas-fonte/provas/angio-p2-t28-correcao.txt).
 
 === [07:47 - 08:47] QUESTÃO 8 — DIAGNÓSTICO DIFERENCIAL DE ÚLCERAS DE MEMBRO INFERIOR: ÚLCERA MISTA (VENOSA + ARTERIAL) ===
 

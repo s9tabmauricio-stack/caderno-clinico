@@ -387,7 +387,7 @@ Duração total: 02:17
 <!-- parte transcricao 3 | arquivo=correcao-p2-t28-angio-a3.txt | sha=7711629f887d | palavras=534 | duracao=00:18:50 -->
 
 CORREÇÃO DA P2 T28 DE ANGIOLOGIA (CIRURGIA VASCULAR) — TRECHOS DAS QUESTÕES 1, 19
-Fala do Prof. Dr. Américo corrigindo a prova em sala (arquivo de origem: p2-28.mp4; transcrição inteira em apostilas-fonte/provas/angio-p2-t28-correcao.txt).
+Fala do Prof. Dr. Jeferson Freitas Toregeani (chefe da cadeira) corrigindo a prova em sala (arquivo de origem: p2-28.mp4; transcrição inteira em apostilas-fonte/provas/angio-p2-t28-correcao.txt).
 
 === [00:00 - 01:29] ABERTURA E QUESTÃO 1 — DOENÇA ARTERIAL OBSTRUTIVA PERIFÉRICA (DAOP) E TRATAMENTO CLÍNICO OTIMIZADO ===
 

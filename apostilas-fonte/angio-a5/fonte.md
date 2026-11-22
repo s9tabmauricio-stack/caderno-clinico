@@ -736,7 +736,7 @@ FIM DA TRANSCRIÇÃO
 <!-- parte transcricao 2 | arquivo=correcao-p2-t28-angio-a5.txt | sha=edacbfbb0a1c | palavras=1.148 | duracao=00:20:26 -->
 
 CORREÇÃO DA P2 T28 DE ANGIOLOGIA (CIRURGIA VASCULAR) — TRECHOS DAS QUESTÕES 7, 15, 18
-Fala do Prof. Dr. Américo corrigindo a prova em sala (arquivo de origem: p2-28.mp4; transcrição inteira em apostilas-fonte/provas/angio-p2-t28-correcao.txt).
+Fala do Prof. Dr. Jeferson Freitas Toregeani (chefe da cadeira) corrigindo a prova em sala (arquivo de origem: p2-28.mp4; transcrição inteira em apostilas-fonte/provas/angio-p2-t28-correcao.txt).
 
 === [06:21 - 07:46] QUESTÃO 7 — TRAUMA VASCULAR POR ARMA DE FOGO (FAF): ENXERTO AUTÓLOGO DE SAFENA CONTRALATERAL VS. PRÓTESE SINTÉTICA ===
 

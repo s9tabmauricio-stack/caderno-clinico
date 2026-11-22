@@ -187,7 +187,7 @@ FIM DA TRANSCRIÇÃO
 <!-- parte transcricao 2 | arquivo=correcao-p2-t28-angio-a4.txt | sha=7f8b550d7c6d | palavras=890 | duracao=00:22:03 -->
 
 CORREÇÃO DA P2 T28 DE ANGIOLOGIA (CIRURGIA VASCULAR) — TRECHOS DAS QUESTÕES 2, 11, 22
-Fala do Prof. Dr. Américo corrigindo a prova em sala (arquivo de origem: p2-28.mp4; transcrição inteira em apostilas-fonte/provas/angio-p2-t28-correcao.txt).
+Fala do Prof. Dr. Jeferson Freitas Toregeani (chefe da cadeira) corrigindo a prova em sala (arquivo de origem: p2-28.mp4; transcrição inteira em apostilas-fonte/provas/angio-p2-t28-correcao.txt).
 
 === [01:29 - 03:17] QUESTÃO 2 — OCLUSÃO ARTERIAL AGUDA (OAA) DE ETIOLOGIA TROMBÓTICA E CLASSIFICAÇÃO DE RUTHERFORD ===
 

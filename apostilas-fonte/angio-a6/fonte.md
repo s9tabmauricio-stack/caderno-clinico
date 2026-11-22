@@ -294,7 +294,7 @@ Mas o efeito isolado é baixo. Como é uma terapia que responde pouco, geralment
 <!-- parte transcricao 2 | arquivo=correcao-p2-t28-angio-a6.txt | sha=42bacba23b43 | palavras=380 | duracao=00:20:26 -->
 
 CORREÇÃO DA P2 T28 DE ANGIOLOGIA (CIRURGIA VASCULAR) — TRECHOS DAS QUESTÕES 20
-Fala do Prof. Dr. Américo corrigindo a prova em sala (arquivo de origem: p2-28.mp4; transcrição inteira em apostilas-fonte/provas/angio-p2-t28-correcao.txt).
+Fala do Prof. Dr. Jeferson Freitas Toregeani (chefe da cadeira) corrigindo a prova em sala (arquivo de origem: p2-28.mp4; transcrição inteira em apostilas-fonte/provas/angio-p2-t28-correcao.txt).
 
 === [19:09 - 20:45] QUESTÃO 20 — DIAGNÓSTICO DIFERENCIAL DOS EDEMAS DE MEMBROS INFERIORES E DÚVIDA SOBRE A QUESTÃO 18 ===
 

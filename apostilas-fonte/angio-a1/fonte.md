@@ -13,7 +13,7 @@ Não edite à mão: para juntar material novo, rode o programa com --acrescentar
 <!-- parte transcricao 1 | arquivo=correcao-p2-t28-angio-a1.txt | sha=9c6475bc771d | palavras=157 | duracao=00:13:54 -->
 
 CORREÇÃO DA P2 T28 DE ANGIOLOGIA (CIRURGIA VASCULAR) — TRECHOS DAS QUESTÕES 13
-Fala do Prof. Dr. Américo corrigindo a prova em sala (arquivo de origem: p2-28.mp4; transcrição inteira em apostilas-fonte/provas/angio-p2-t28-correcao.txt).
+Fala do Prof. Dr. Jeferson Freitas Toregeani (chefe da cadeira) corrigindo a prova em sala (arquivo de origem: p2-28.mp4; transcrição inteira em apostilas-fonte/provas/angio-p2-t28-correcao.txt).
 
 === [13:39 - 14:06] QUESTÃO 13 — INTERPRETAÇÃO DE ANTIBIOGRAMA EM INFECÇÃO VASCULAR / PÉ DIABÉTICO ===
 
