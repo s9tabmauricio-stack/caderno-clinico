@@ -8,6 +8,7 @@ Não edite à mão: para juntar material novo, rode o programa com --acrescentar
 ## O que tem aqui
 
 - Transcrição 1: `transcricao.txt` (7.174 palavras, duração até 00:43:43).
+- Slides 1: `slides.pdf` (22 páginas).
 
 ## Transcrição 1 · transcricao.txt
 <!-- parte transcricao 1 | arquivo=transcricao.txt | sha=ef094400c0b3 | palavras=7.174 | duracao=00:43:43 -->
@@ -294,3 +295,385 @@ Transcrição de Aula — Doença Carotídea e Acidente Vascular Cerebral (AVC) 
 [43:29] Professor: Atorvastatina e rosuvastatina. Sinvastatina não é de alta potência; ela tem no SUS amplamente disponível, por isso que se usa muito no Brasil, né? Usei a rosuvastatina e o colesterol não abaixou: qual é o segundo passo?
 
 [43:43] Aluno(a): Ezetimiba.
+
+## Slides 1 · slides.pdf
+<!-- parte slides 1 | arquivo=slides.pdf | sha=02beac09eb04 | paginas=22 -->
+
+### Slide 1 de 22
+<!-- slide 1 -->
+07/11/18
+DOENÇA CEREBRAL DE
+ORIGEM EXTRACRANIANA
+JEFERSON FREITAS TOREGEANI
+UFPR – SERVIÇO ELIAS ABRÃO – HNSG E CAJURU
+TSBACV – MSC UNIOESTE
+DISCIPLINA DE ANGIOLOGIA E CIRURGIA VASCULAR
+UNIOESTE E FAG
+www.institutovascular.com.br
+jeferson@institutovascular.com.br
+Conceito
+Isquemia cerebral
+Diminuição do aporte sanguíneo cerebral
+Obstrução do fluxo arterial: trombos ou
+fragmentos de placas
+Anatomia
+AORTA
+TRONCO BRAQUIOCEFÁLICO ARTÉRIA CARÓTIDA COMUM E
+ARTÉRIA SUBCLÁVIA D ARTÉRIA SUBCLÁVIA E
+ARTÉRIA CARÓTIDA COMUM D ARTÉRIA CARÓTIDA COMUM E
+ARTÉRIA CARÓTIDA INTERNA D ARTÉRIA CARÓTIDA INTERNA E
+ARTÉRIA VERTEBRAL D ARTÉRIA VERTEBRAL E
+POLÍGONO DE WILLIS
+1
+
+### Slide 2 de 22
+<!-- slide 2 -->
+07/11/18
+Dr. Jeferson Freitas Toregeani – ICV - Cascavel
+POLÍGONO DE WILLIS
+AVC
+2
+
+### Slide 3 de 22
+<!-- slide 3 -->
+07/11/18
+Subtipos
+n A- infarto embólico
+n B- infarto zona limítrofe
+n C- infarto ramos perfurantes
+n D- infarto lacunar
+Tromboembolo
+Fisiologia
+n Fluxo sanguíneo cerebral
+n 50 ml/100g/min
+n EEG isoelétrico
+n 18 ml/100g/min
+n Falência energética
+n 8ml/100g/min
+3
+
+### Slide 4 de 22
+<!-- slide 4 -->
+07/11/18
+Pet scan
+INTRODUÇÃO
+Histórico :
+n
+1953 : DeBakey
+Michael Ellis DeBakey
+- September 7, 1908
+- July 11, 2008
+- American cardiac surgeon
+INTRODUÇÃO
+500.000 novos AVC nos EUA por ano
+n
+Custo direto e indireto = 8 bilhões US$ por ano
+n
+Mortalidade inicial – AVC é 20 a 30%
+n
+4
+
+### Slide 5 de 22
+<!-- slide 5 -->
+07/11/18
+TIPOS DE EVENTOS
+ISQUÊMICOS
+Acidente Vascular Cerebral Transitório – A.I.T.
+Acidente Vascular Cerebral Isquêmico
+Acidente Vascular Cerebral Hemorrágico
+Etiologia - AVC
+Etiologia (cid:1) AVC
+Doença Cerebrova scular extracraniana
+Responsável por até 30% dos AVCs isquêmicos
+5
+
+### Slide 6 de 22
+<!-- slide 6 -->
+07/11/18
+Etiopatogenia
+Doença Cérebro Vascular Extra Craniana
+n Aterosclerose :
+Causa mais importante e a mais frequente da EC
+n
+n LOCAL: bifurcação carotídea (38%)
+vertebral (20%)
+tronco supra-aórtico (9%)
+intracraniana (33%)
+Etiopatogenia da Estenose Carotídea
+Aterosclerose :
+n
+Colesterol
++ PLACA
+Parede ATEROMA
+Arterial Reação Inflamatória
++
+Sais de Cálcio Laceração
+Ulceração
+Estenose
+Placa Ulcerada
+6
+
+### Slide 7 de 22
+<!-- slide 7 -->
+07/11/18
+Quadro Clinico
+n a) Sistema Carotídeo
+- Perda da visão de um olho
+- Hemi ou mono paresia
+- Hemi ou mono plegia
+- Disfasia
+Quadro Clinico
+a) Sistema Vertebro-basilar
+n
+- Diplopia
+- Disartria
+- Desequilíbrio
+- Disfagia
+Quadro Clínico
+Exame Físico
+n
+- Sinais Neurológicos
+- Sopros Cervicais e Supra Claviculares
+7
+
+### Slide 8 de 22
+<!-- slide 8 -->
+07/11/18
+EXAMES
+COMPLEMENTARES
+ULTRASSOM
+ULTRASSOM
+8
+
+### Slide 9 de 22
+<!-- slide 9 -->
+07/11/18
+ULTRASSOM
+Medida do Complexo Miointimal
+ULTRASSOM
+ULTRASSOM
+9
+
+### Slide 10 de 22
+<!-- slide 10 -->
+07/11/18
+ULTRASSOM
+ULTRASSOM
+ULTRASSOM
+10
+
+### Slide 11 de 22
+<!-- slide 11 -->
+07/11/18
+ULTRASSOM
+ULTRASSOM
+ULTRASSOM
+11
+
+### Slide 12 de 22
+<!-- slide 12 -->
+07/11/18
+Exames Complementares
+n Angiotomografia – Diagnostico diferencial
+AVCI - AVCH e Tumores
+Exames Complementares
+Ressonância Nuclear Magnética
+Exames Complementares
+Angiografias
+n
+12
+
+### Slide 13 de 22
+<!-- slide 13 -->
+07/11/18
+TRATAMENTO
+CLÍNICO
+X
+CIRÚRGICO
+(ENDO OU CONVENCIONAL)
+Tratamento
+Epidemiologia
+n Estenose > 70% Sint. – Risco de AVC de 10,5%/ano
+n Estenose > 50%Assint. – Risco de AVC 1-3,4%/ano
+n Estenose > 75% AVCs ipsilaterais – 1-2%/ano
+Tratamento
+Epidemiologia
+Estenose > 50% - Homens 7-9%
+Mulheres 5-7%
+Incidência
+População >65a
+Estenose 75-99% - Homens 1-2%
+Mulheres 0,7-1%
+2 a 8%
+13
+
+### Slide 14 de 22
+<!-- slide 14 -->
+07/11/18
+Tratamento
+PRINCIPAL OBJETIVO: prevenção de AIT /AVC
+Estudos Randomizados : Pacientes Assintomáticos
+a) Endarterectomia X Tratamento Clinico
+ACAS (Asymptomatic Carotid Atherosclerosis Study)1987/93
+1662 pac assint. Estenose >60%
+Tx. Mortal. e AVC perioperátorio = 2,3%
+AVC em 5anos: Grupo Clinico = 11%
+Grupo Cirúrgico = 5,1%
+Tratamento
+Estudos Randomizados : Pacientes Assintomáticos
+a) Endarterectomia X Tratamento Clinico
+ACST (Asymptomatic Carotid Surgery Trial )1993/2004
+3120 pac assint. Estenose >60%
+Tx. Mortal. e AVC perioperátorio = 3,1%
+AVC em 5anos: Grupo Clinico = 11,8%
+Grupo Cirúrgico = 5,4%
+Melhores resultados homens <75 anos
+Tratamento
+Estudos Randomizados : Pacientes Sintomáticos
+a) Endarterectomia X Tratamento Clinico
+NASCET (North American Symptomatic Carotid
+Endarterectomy Trial )
+2267 pac. sint. Estenose 30% a 69%
+Estenose 70% a 99%
+Conclusão – Estenose>70% a cirurgia reduz em 65% AVC
+14
+
+### Slide 15 de 22
+<!-- slide 15 -->
+07/11/18
+Tratamento
+Estudos Randomizados :
+a) Endarterectomia X A.T.P.
+CAVATAS (Carotid And Vertebral Artery Transluminal Angioplasty
+Study )
+504 pac. Taxa de AVC e Óbito em 30 dias=10%ATP X 9.9% EAC
+Taxa de ré estenose em 1 ano =14% ATP X 0,4% EAC
+Tratamento
+Estudos Randomizados :
+a) Endarterectomia X A.T.P.
+SAPPHIRE(Stenting and Angioplasty With Protection in Patient With
+High Risk For Endarterectomy )
+307 pac. Taxa de AVC e Óbito em 30 dias=4,4%ATP X 7,0% EAC
+Taxa de AVC/IM/Óbito em 1 ano=16% ATP X 20% EAC
+Tratamento
+a) Clinico – The Best Medical Therapy
+a.1)Intervenção no estilo de vida
+- Parar de fumar
+- Atividade física
+- Alimentação saudável
+- IMC entre 20 e 25Kg/m2
+15
+
+### Slide 16 de 22
+<!-- slide 16 -->
+07/11/18
+Tratamento
+a) Clinico – The Best Medical Therapy
+a.2)Uso de antiplaquetários
+- AAS 75 a 150mg/dia
+- Clopidogrel 75mg/dia
+- Ticlopidina – 250mg 2/dia
+Tratamento
+a) Clinico – The Best Medical Therapy
+a.4) Pesquisa para Diabetes Mellitus
+- Glicemia de Jejum < 100mg/dl
+- Hemog. Glicolisada < 7%
+Tratamento
+a) Clinico – The Best Medical Therapy
+a.5) Pesquisa para H.A.S.
+- Pressão arterial alvo < 130X80 mmHg
+16
+
+### Slide 17 de 22
+<!-- slide 17 -->
+07/11/18
+Tratamento
+a) Clinico – The Best Medical Therapy
+a.6) Controle lipídico
+- L.D.L. < 100mg/dl
+- H.D.L. > 50mg/dl
+- T.G. < 150mg/dl
+- Uso de Estatinas
+Tratamento
+b) Cirúrgico – Endarterectomia Carotídea
+Tratamento
+b) Cirúrgico – Endarterectomia Carotídea
+17
+
+### Slide 18 de 22
+<!-- slide 18 -->
+07/11/18
+Tratamento
+b) Cirúrgico – Endarterectomia Carotídea
+Cirurgia para retirada da placa aterosclerótica.
+Dr. Jeferson Freitas Toregeani – ICV - Cascavel
+PLACA ATEROSCLERÓTICA (cid:2)GORDURA(cid:3)
+Dr. Jeferson Freitas Toregeani – ICV - Cascavel
+18
+
+### Slide 19 de 22
+<!-- slide 19 -->
+07/11/18
+Shunt – Desvio Resultado final da cirurgia
+Tratamento
+b) Cirúrgico – Endarterectomia Carotídea
+Tratamento
+b) Cirúrgico – Angioplastia Transluminal Percutânea
+. . • Angioplastia com stent
+• Dispositivo de proteção
+19
+
+### Slide 20 de 22
+<!-- slide 20 -->
+07/11/18
+Stents
+Dr. Jeferson Freitas Toregeani – ICV - Cascavel
+Mecanismo de Proteção Cerebral - Angioguard®
+1 cm
+Dr. Jeferson Freitas Toregeani – ICV - Cascavel
+b) Cirúrgico
+Angioplastia Transluminal Percutânea
+Stent 7 mm x 30 mm
+Pré Pós
+20
+
+### Slide 21 de 22
+<!-- slide 21 -->
+07/11/18
+Dr. Jeferson Freitas Toregeani – ICV - Cascavel
+Complicações
+COMPLICAÇÕES NEUROLÓGICAS
+PERI-OPERATÓRIAS:
+Embolização (+ comum)
+n
+Síndrome Hiperperfusão
+n
+Isquemia (– frequente)
+n
+Insuficiência Vertebro-Basilar
+Tratamento Cirúrgico
+n
+Estenose severa e sintomática das Art. Vert.
+Estenose Vert. e oclusão carotídea
+Embolização cerebelar
+21
+
+### Slide 22 de 22
+<!-- slide 22 -->
+07/11/18
+Conclusão
+a) O tratamento cirúrgico esta indicado para os pacientes com estenose e sintomas
+neurológicos ou assintomáticos com estenose >70%
+b) O melhor tratamento operatório é a EAC.
+c) Pacientes acima de 70 anos a EAC é o melhor tratamento.
+d) A ATP esta indicada nos pacientes:
+- Doentes de alto risco cirúrgico
+- Oclusão contralateral
+- Pescoço hostil
+- Bifurcação alta (acima de C2)
+- Re-estenose pós operatório
+Conclusão
+Lembrem-se: o tratamento
+deve ser adequado ao paciente
+e não ser um capricho do médico
+22
