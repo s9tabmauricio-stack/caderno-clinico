@@ -38,7 +38,6 @@ Este manual tem só as regras de sempre. Os detalhes ficam onde são usados; lei
 | Aula nova a partir do áudio | skill `aula-nova` |
 | Computador Windows do Mauricio | [`docs/windows.md`](docs/windows.md) |
 | Codex com acesso ao banco (`scripts/sql.mjs`, como configurar o ambiente) | [`docs/codex.md`](docs/codex.md) |
-| Quem está mexendo em quê agora (Claude, Codex, Antigravity) | [`docs/fila.md`](docs/fila.md) |
 | Como publicar (ramos, PR, exceções) | [`docs/publicar.md`](docs/publicar.md) |
 | Quadros de desenho das telas (cópias do claude.ai) | [`docs/quadros/`](docs/quadros/README.md) |
 
@@ -116,7 +115,7 @@ Pelo conector, **incluir dados, alterações curtas e apagar funcionam** (apagar
 ## Claude, Codex e Antigravity (três assistentes no mesmo projeto)
 
 - Este manual vale para os três e é o único: o Codex lê este arquivo direto; o `CLAUDE.md` só tem `@AGENTS.md`; o Antigravity (versão 2.28 em diante) lê a regra `.agents/rules/medgenius.md` (com "s"; a pasta antiga `.agent/` não é mais lida), que só manda ler este arquivo. Regra nova ou mudada vai aqui, nunca no `CLAUDE.md` nem na regra do Antigravity. O `npm test` (`tests/manual-assistentes.test.mjs`) confere essa ligação e o tamanho deste arquivo (até 32 KB, o que o Codex lê).
-- **Qualquer um faz qualquer trabalho, mas passa pela fila** ([`docs/fila.md`](docs/fila.md)): antes de começar, leia a fila no `main` e anote o assunto e onde vai mexer; se outro já está na mesma tela, aula ou arquivo, não comece e avise o Mauricio. Ao publicar, o PR apaga a linha. As regras estão no topo do arquivo.
+- **Qualquer um faz qualquer trabalho, e sem fila** (regra do Mauricio, 23/11/2026: ele mexe em uma coisa de cada vez): não há anotação de "quem está mexendo em quê"; comece direto, sem commit nenhum antes do trabalho.
 
 | | Código e telas | Conteúdo (aulas, apostilas, questões, flashcards, provas) e banco |
 |---|---|---|
@@ -127,13 +126,13 @@ Pelo conector, **incluir dados, alterações curtas e apagar funcionam** (apagar
 - **Conteúdo segue as mesmas regras, venha de quem vier.** As skills e os agentes em `.claude/` são o manual de cada assunto e valem para os três: quem não é o Claude lê o arquivo e segue os passos (onde a receita cita uma ferramenta só do Claude, ela diz o que fazer no lugar). As skills têm uma cópia em `.agents/skills/`, onde o Codex e o Antigravity as acham sozinhos: edite sempre em `.claude/skills/` e rode `node scripts/sincronizar-skills.mjs` (o `npm test` avisa se esquecer). Os agentes de `.claude/agents/` não têm cópia: os outros dois leem o arquivo.
 - O Codex não tem o conector: onde as receitas mandam usar o `execute_sql`, ele roda o mesmo SQL com `node scripts/sql.mjs` (token `SUPABASE_ACCESS_TOKEN` no ambiente do Codex, configurado pelo Mauricio; ver [`docs/codex.md`](docs/codex.md)). Valem as mesmas regras do banco.
 - O conector (Claude e Antigravity; o do Antigravity fica em `~/.gemini/config/mcp_config.json`, preso ao projeto `xtlpmtylifbalzxnfkib`) segue a seção "Limite do conector do Supabase". Mudança na estrutura do banco não precisa mais do "pode" do Mauricio (regra dele, 05/11/2026): leia `supabase/estrutura-atual.sql` antes, atualize a cópia depois e conte a ele em uma frase o que mudou.
-- **Publicar:** ramo `claude/…`, `codex/…` ou `antigravity/…` saído do `main` atualizado, `npm test` e `npx next build`, PR para o `main` (o GitHub junta sozinho se passar; rascunho não é juntado). Nunca empurre direto para o `main`, salvo a fila e as exceções. Passo a passo de cada assistente e exceções: [`docs/publicar.md`](docs/publicar.md).
+- **Publicar:** ramo `claude/…`, `codex/…` ou `antigravity/…` saído do `main` atualizado, `npm test` e `npx next build`, PR para o `main` (o GitHub junta sozinho se passar; rascunho não é juntado). Nunca empurre direto para o `main`, salvo as exceções. Passo a passo de cada assistente e exceções: [`docs/publicar.md`](docs/publicar.md).
 - **Tudo fica no projeto** (regra do Mauricio, 04/11/2026): o que o app precisa mora neste repositório, nunca só na conta de um assistente (skills da conta do Claude, quadros no claude.ai, memória, instruções de projeto). Se a conta do Claude sumir, Antigravity e Codex seguem como se nada tivesse acontecido. Fez algo fora? Copie para cá no mesmo trabalho (quadros de desenho vão em [`docs/quadros/`](docs/quadros/README.md)).
 
 ## Como trabalhar com o Mauricio
 
 - Ele é sensível a custo: prefira o caminho barato (converter arquivos em vez de reescrever conteúdo; não reenviar textos grandes à toa). Trabalho mecânico (gravar rascunhos no banco, converter, cortar texto, contar) vai por programa em `scripts/`, sem agente e sem o modelo reescrever o texto; agente Opus só para escrever, conferir e revisar conteúdo.
-- Mostre o conteúdo (a questão, a tela) antes de pedir uma decisão; um assunto por vez, anotado na fila.
+- Mostre o conteúdo (a questão, a tela) antes de pedir uma decisão; um assunto por vez.
 - Publique e diga em uma ou duas frases o que mudou; diga claramente o que não foi testado.
 - Não deixe lixo: o que for substituído deve poder ser limpo (Conteúdo → Limpeza).
 - Pedido vago ou `/melhorar <pedido>`: skill `melhorar` (melhora o pedido, recomenda modelo e esforço, faz na hora o que é pequeno).

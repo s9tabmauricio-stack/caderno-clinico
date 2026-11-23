@@ -11,10 +11,9 @@ Para conferir as questões ou os flashcards, use `conferir-questoes` ou `conferi
 
 ## 1. Preparar (quem coordena, sem agente)
 
-1. **Fila**: anote "Conferir a apostila da `<aula-id>`" em `docs/fila.md` (regras no topo do arquivo).
-2. **Fonte**: `apostilas-fonte/<aula-id>/fonte.md`. Se não existir (aulas antigas), pare e diga ao Mauricio que a aula não tem fonte: se ele mandar a transcrição ou os slides, guarde com `python3 -I scripts/fonte-aula.py guardar <aula-id> …` ([`apostilas-fonte/README.md`](../../../apostilas-fonte/README.md)) e siga.
-3. **Texto da apostila**: `python3 -I scripts/apostila-texto.py public/apostilas/<aula-id>/apostila.pdf > <scratchpad>/<aula-id>-apostila.txt`.
-4. **Um conferente ou blocos**: fonte com até uns 15 mil palavras (`wc -w`), um conferente só, com a fonte e a apostila inteiras. Maior que isso e com `mapa.md`: 2 ou 3 blocos de capítulos inteiros, cada um com as suas páginas (`apostila-texto.py --paginas`) e o seu trecho da fonte, com 3 minutos de folga para cada lado (`python3 -I scripts/fonte-aula.py trecho <aula-id> --minutos 12-41 --slides 6-15`).
+1. **Fonte**: `apostilas-fonte/<aula-id>/fonte.md`. Se não existir (aulas antigas), pare e diga ao Mauricio que a aula não tem fonte: se ele mandar a transcrição ou os slides, guarde com `python3 -I scripts/fonte-aula.py guardar <aula-id> …` ([`apostilas-fonte/README.md`](../../../apostilas-fonte/README.md)) e siga.
+2. **Texto da apostila**: `python3 -I scripts/apostila-texto.py public/apostilas/<aula-id>/apostila.pdf > <scratchpad>/<aula-id>-apostila.txt`.
+3. **Um conferente ou blocos**: fonte com até uns 15 mil palavras (`wc -w`), um conferente só, com a fonte e a apostila inteiras. Maior que isso e com `mapa.md`: 2 ou 3 blocos de capítulos inteiros, cada um com as suas páginas (`apostila-texto.py --paginas`) e o seu trecho da fonte, com 3 minutos de folga para cada lado (`python3 -I scripts/fonte-aula.py trecho <aula-id> --minutos 12-41 --slides 6-15`).
 
 ## 2. Conferir
 
@@ -52,4 +51,4 @@ Junte as tabelas na ordem das páginas, com o resumo numa linha ("Pneumo 7: 22 p
 2. **Gerar de novo** numa pasta de trabalho (`apostilas-fonte/ferramentas/preparar.sh`, como em [`apostilas-fonte/README.md`](../../../apostilas-fonte/README.md)): mude o HTML, `render.py`, feche os buracos da paginação (escada da skill `apostila-padrao`), `checar.py` e olhe as páginas que mudaram.
 3. **Publicar**: `scripts/publicar-apostila.sh` ("Como publicar depois de gerar" no README; se o número de páginas mudou, refaça o `apostila_html` da aula). Commit do `apostila.html` e de `public/apostilas/<aula-id>/` e PR, como em `docs/publicar.md`.
 4. **Questões e flashcards** que repetem o erro: procure no banco pelo termo do ponto corrigido (`select id, frente, verso from public.flashcards where aula_id = '<aula-id>' and (frente ilike '%<termo>%' or verso ilike '%<termo>%');` e o mesmo em `questoes`, com `substituida_por is null`) e corrija pelo caminho de sempre (seção 4 da `conferir-flashcards`; versão `-v2` da questão, como no manual).
-5. Apague os arquivos temporários e tire a linha da fila no PR.
+5. Apague os arquivos temporários.

@@ -9,11 +9,9 @@ Regra do Mauricio (31/10/2026): ele manda o áudio (ou a transcrição e os slid
 
 **Fonte da aula** (regra do Mauricio, 09/11/2026): a transcrição e os slides viram o arquivo fonte da aula (`apostilas-fonte/<aula-id>/fonte.md`, passo 4), e tudo o que vem depois (apostila, flashcards, questões, revisão) sai dele e é conferido contra ele.
 
-**Economia (regra do Mauricio, 31/10/2026):** uma chamada de agente por etapa, só as desta receita. Não acrescente agentes, workflows, conferências nem correções extras, nem com o modo ultracode ligado. A conversa principal não relê a transcrição, a apostila nem os rascunhos: trabalha com o resumo que cada agente devolve. Enquanto um agente trabalha, espere o aviso de que terminou, sem ficar checando. Etapas mecânicas (fila, publicar imagens, gravar no banco, relatório) ficam na conversa principal, sem agente: não precisam do Opus (regra do Mauricio, 04/11/2026). Os agentes de escrever e revisar continuam no Opus com esforço extra-alto.
+**Economia (regra do Mauricio, 31/10/2026):** uma chamada de agente por etapa, só as desta receita. Não acrescente agentes, workflows, conferências nem correções extras, nem com o modo ultracode ligado. A conversa principal não relê a transcrição, a apostila nem os rascunhos: trabalha com o resumo que cada agente devolve. Enquanto um agente trabalha, espere o aviso de que terminou, sem ficar checando. Etapas mecânicas (publicar imagens, gravar no banco, relatório) ficam na conversa principal, sem agente: não precisam do Opus (regra do Mauricio, 04/11/2026). Os agentes de escrever e revisar continuam no Opus com esforço extra-alto.
 
 **Antigravity e Codex** seguem a mesma receita: onde ela diz "chame o agente X", leia `.claude/agents/X.md` e faça o que ele manda, na mesma ordem; onde diz Monitor, espere conferindo o `.log` de tempos em tempos (`tail -n 3 <arquivo>.log`); onde diz SendUserFile, diga o caminho do PDF. O Codex não tem o conector do Supabase: onde a receita usa o conector, ele roda o mesmo SQL com `node scripts/sql.mjs "<SQL>"` ([`docs/codex.md`](../../../docs/codex.md)); se o programa disser que o ambiente não está configurado, ele faz o que não depende do banco e para dizendo onde parou.
-
-**Fila** (`docs/fila.md`): assim que souber o id da aula, anote a linha ("Aula nova", a aula, a matéria) como diz o topo do arquivo; no último commit da publicação, apague a linha.
 
 Pasta de trabalho: `rascunhos/aulas/<aula-id>/` (fora do Git). Enquanto não souber o id, use `rascunhos/aulas/<AAAA-MM-DD>/` e renomeie depois.
 

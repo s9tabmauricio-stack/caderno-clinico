@@ -45,7 +45,7 @@ Deixe o pedido curto, em geral de 3 a 8 linhas, em português simples, do jeito 
 
 ## 3. Recomendar modelo, esforço e ultracode
 
-Escolha o mais barato que dá conta do pedido (regra dele: custo). Etapa mecânica (gravar rascunhos no banco, converter, contar, anotar a fila) não pede agente nem modelo caro: vai por programa em `scripts/` (ex.: `node scripts/gravar-rascunho.mjs <aula-id>`). Os agentes de conteúdo (`apostila`, `conteudo`, `flashcards`, `questoes`, `revisor`) já rodam em Opus com esforço extra-alto por conta própria, porque está no arquivo de cada um. A conversa principal não precisa subir de modelo nem de esforço por causa deles.
+Escolha o mais barato que dá conta do pedido (regra dele: custo). Etapa mecânica (gravar rascunhos no banco, converter, contar) não pede agente nem modelo caro: vai por programa em `scripts/` (ex.: `node scripts/gravar-rascunho.mjs <aula-id>`). Os agentes de conteúdo (`apostila`, `conteudo`, `flashcards`, `questoes`, `revisor`) já rodam em Opus com esforço extra-alto por conta própria, porque está no arquivo de cada um. A conversa principal não precisa subir de modelo nem de esforço por causa deles.
 
 **Modelo** (`/model <nome>`, ou o seletor de modelo do app). Os custos são por palavra e vêm da tabela de preços da Anthropic.
 
