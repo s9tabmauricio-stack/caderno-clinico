@@ -22,4 +22,3 @@ Claude, Codex e Antigravity podem fazer qualquer trabalho do app. Para dois não
 |---|---|---|---|---|
 | Flashcards da pass-a6 | Claude | claude/happy-darwin-07h2c3 | pass-a6 (flashcards) | 16/11/2026 |
 | Apostila da angio-a8 (Vasculites, 30/09, verdadeira aula 1) | Claude | claude/vigilant-babbage-7ewlcz | angio-a8 e ordem das aulas de angio | 22/11/2026 |
-| Questões dos compilados de Carótida, Trauma vascular, Ultrassom e TVP (P2 Angio) | Claude | claude/serene-newton-5u3ivl | angio-a11, angio-a5, angio-a12, angio-a14 (questões) | 23/11/2026 |
