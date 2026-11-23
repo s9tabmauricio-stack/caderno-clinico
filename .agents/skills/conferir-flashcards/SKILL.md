@@ -19,11 +19,10 @@ Os conferentes seguem a regra dos agentes de conteúdo: Opus com esforço extra-
 
 ## 1. Preparar (quem coordena, uma vez)
 
-1. **Fila**: anote "Conferir flashcards da `<aula-id>`" em `docs/fila.md` (regras no topo do arquivo).
-2. **Mapa dos cards**, sem trazer o texto deles (o texto quem lê é o conferente):
+1. **Mapa dos cards**, sem trazer o texto deles (o texto quem lê é o conferente):
    `select ordem, left(frente, 60) from public.flashcards where aula_id = '<aula-id>' order by ordem;`
    Divida em **3 ou 4 blocos** de assuntos inteiros, de 25 a 40 cards cada (uma aula curta, com menos de 40 cards, vai num bloco só). Cada bloco = faixa de `ordem` + trecho da aula (minutos e slides).
-3. **Trecho da fonte por bloco**: ache os minutos procurando os termos das frentes dos cards do bloco na fonte com `grep` (os cabeçalhos de tempo da transcrição ajudam). Com 3 minutos de folga para cada lado:
+2. **Trecho da fonte por bloco**: ache os minutos procurando os termos das frentes dos cards do bloco na fonte com `grep` (os cabeçalhos de tempo da transcrição ajudam). Com 3 minutos de folga para cada lado:
    `python3 -I scripts/fonte-aula.py trecho <aula-id> --minutos 12-41 --slides 6-15 > <scratchpad>/<aula-id>-bloco1-fonte.txt`
    Transcrição sem marcação de tempo: o bloco recebe a fonte inteira (`apostilas-fonte/<aula-id>/fonte.md`).
 
@@ -65,4 +64,4 @@ O card mantém o mesmo id, para não perder o progresso dos alunos na Revisão.
 - **Tirar card**: mostre a lista ao Mauricio; com o "pode" dele, apague pelo conector (`delete from flashcards where id in (…)`; regra dele, 19/11/2026).
 - **Card novo**: inclua no fim, com a próxima ordem livre: `insert into public.flashcards (id, aula_id, ordem, frente, verso) values ('<aula-id>-f<N>', '<aula-id>', <N>, '…', '…') on conflict (id) do nothing;` (id sem zeros à esquerda a partir do 100).
 - Confira no fim: `select count(*), max(ordem) from public.flashcards where aula_id = '<aula-id>';`
-- Apague os arquivos temporários e tire a linha da fila no PR.
+- Apague os arquivos temporários.
