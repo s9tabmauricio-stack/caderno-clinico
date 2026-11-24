@@ -5,7 +5,7 @@ description: Use quando o Mauricio pedir para conferir, verificar ou revisar os 
 
 # Conferir os flashcards de uma aula (já no banco) contra a fonte da aula
 
-**A referência é a fonte da aula** (regra do Mauricio, 09/11/2026): `apostilas-fonte/<aula-id>/fonte.md`, a transcrição e o texto dos slides. **A apostila não entra** (regra do Mauricio, 10/11/2026): é produto da fonte e pode ter erros; ninguém a abre. Dentro da fonte, a fala manda sobre o slide; termo que a transcrição automática errou, vale o slide ou o termo médico correto. **Aula sem fonte** (as antigas): pare e peça a transcrição ao Mauricio.
+**A referência é a fonte da aula** (regra do Mauricio, 09/11/2026): `apostilas-fonte/<aula-id>/fonte.md` (se não estiver no computador: `node scripts/material.mjs baixar <aula-id>`), a transcrição e o texto dos slides. **A apostila não entra** (regra do Mauricio, 10/11/2026): é produto da fonte e pode ter erros; ninguém a abre. Dentro da fonte, a fala manda sobre o slide; termo que a transcrição automática errou, vale o slide ou o termo médico correto. **Aula sem fonte** (as antigas): pare e peça a transcrição ao Mauricio.
 
 Feita em 04/11/2026 porque a conferência de 115 cards num agente só, card por card, demorava demais. O que deixa rápido:
 - **blocos ao mesmo tempo**: 3 ou 4 conferências em paralelo, uma por trecho da aula;

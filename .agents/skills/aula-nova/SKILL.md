@@ -61,7 +61,7 @@ Primeiro guarde a fonte, sem agente (mecânico):
 python3 -I scripts/fonte-aula.py guardar <aula-id> --transcricao rascunhos/aulas/<aula-id>/transcricao.txt [--slides <arquivo dos slides>]
 ```
 
-Ele cria `apostilas-fonte/<aula-id>/fonte.md` (vai para o Git no commit do passo 5). Se a aula já tem fonte, use `--acrescentar`. O arquivo original dos slides não vai para o Git.
+Ele cria `apostilas-fonte/<aula-id>/fonte.md` e envia sozinho para o Supabase (espaço `material`; a pasta não vai para o Git, regra do Mauricio, 24/11/2026). Se a aula já tem fonte, use `--acrescentar`. O arquivo original dos slides não é guardado.
 
 Depois chame o agente `apostila` no modelo Opus com esforço extra-alto (regra do Mauricio: na chamada, `model: opus` e `effort: xhigh`, que já são o padrão do agente) com: a fonte (`apostilas-fonte/<aula-id>/fonte.md`) e o caminho dos slides originais (se o Mauricio mandou, para as imagens), id da aula, disciplina, número, data, professor e a pasta de trabalho. Ele devolve título, resumo, número de páginas, professor e o que vale conferir.
 
@@ -70,8 +70,8 @@ Depois chame o agente `apostila` no modelo Opus com esforço extra-alto (regra d
 1. `scripts/publicar-apostila.sh rascunhos/aulas/<aula-id>/apostila.pdf <aula-id>` (devolve o número de páginas).
 2. Inclua a aula pelo conector com o SQL da skill `subir-apostila` (`.claude/skills/subir-apostila/SKILL.md`), mas com `publicada = false` (a turma ainda não vê). Use a altura real das páginas no `height` (`python3 -I -c "from PIL import Image; print(Image.open('public/apostilas/<aula-id>/01.webp').size)"`).
 3. Se a `descricao` da matéria não citar o professor, acrescente o nome dele.
-4. Guarde o HTML: copie `apostila.html`, o `mapa.md`, os `*.svg` e os programas das figuras da pasta de trabalho para `apostilas-fonte/<aula-id>/`, onde já está o `fonte.md` (sem o `apostila.css`, que fica na raiz de `apostilas-fonte/`). É o que permite corrigir a apostila depois sem remontá-la do PDF.
-5. Commit (com `public/apostilas/<aula-id>/` e `apostilas-fonte/<aula-id>/`) `Apostila <Matéria> <N>: <tema> (<P> páginas)` e publique no `main` (regra do manual: `git fetch origin main && git rebase origin/main && git push origin HEAD:main`; depois empurre também o ramo da sessão).
+4. Guarde o HTML: copie `apostila.html`, o `mapa.md`, os `*.svg` e os programas das figuras da pasta de trabalho para `apostilas-fonte/<aula-id>/`, onde já está o `fonte.md` (sem o `apostila.css`, que fica na raiz de `apostilas-fonte/`) e envie para o Supabase: `node scripts/material.mjs enviar <aula-id>`. É o que permite corrigir a apostila depois sem remontá-la do PDF.
+5. Commit (só `public/apostilas/<aula-id>/`: a pasta `apostilas-fonte/` fica no Supabase) `Apostila <Matéria> <N>: <tema> (<P> páginas)` e publique no `main` (regra do manual: `git fetch origin main && git rebase origin/main && git push origin HEAD:main`; depois empurre também o ramo da sessão).
 6. Espere a Vercel: repita `curl -s -o /dev/null -w '%{http_code}' https://medgenius.vercel.app/apostilas/<aula-id>/01.webp` (com a ferramenta Monitor) até dar 200.
 
 ## 6. Flashcards e questões (um agente só)
@@ -87,7 +87,7 @@ Chame o agente `revisor` para a `<aula-id>`. Ele confere contra a fonte da aula,
 1. Grave sem agente: `node scripts/gravar-rascunho.mjs <aula-id>` (lê os dois rascunhos, grava e confere as contagens). Se parar com `PAROU:` por formato, corrija o rascunho e rode de novo. Sem a chave `SUPABASE_SECRET_KEY`, use o caminho `--sql` descrito no passo "Incluir" de `.claude/agents/flashcards.md` e `questoes.md`.
 2. Se as contagens bateram: `update public.aulas set publicada = true where id = '<aula-id>';`
 3. Não anote contagens no `AGENTS.md` (regra do manual: conte no banco). Só atualize o manual se a aula trouxer algo que ele precisa saber (matéria nova, id fora do padrão); nesse caso, commit e publique no `main` como no passo 5.
-4. Apague o áudio, o `.log` e os arquivos temporários; deixe os rascunhos na pasta de trabalho. A transcrição já está guardada na fonte da aula, no Git: refazer não precisa transcrever de novo.
+4. Apague o áudio, o `.log` e os arquivos temporários; deixe os rascunhos na pasta de trabalho. A transcrição já está guardada na fonte da aula, no Supabase: refazer não precisa transcrever de novo.
 
 ## 9. Relatório (curto, no chat)
 

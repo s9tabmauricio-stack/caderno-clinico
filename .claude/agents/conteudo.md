@@ -14,7 +14,7 @@ São dois trabalhos separados. Faça só o que pediram:
 ## Preparar ("prepare os flashcards e as questões da `<aula-id>`")
 
 1. Confira a aula numa consulta só (cards e questões que já existem, e a última `ordem` de questão da matéria), juntando as consultas do passo 1 dos dois agentes.
-2. Leia **uma vez** a fonte da aula (`apostilas-fonte/<aula-id>/fonte.md`) e conte as palavras. Aula sem fonte: pare e peça a transcrição ao Mauricio.
+2. Leia **uma vez** a fonte da aula (`apostilas-fonte/<aula-id>/fonte.md` (se não estiver no computador: `node scripts/material.mjs baixar <aula-id>`)) e conte as palavras. Aula sem fonte: pare e peça a transcrição ao Mauricio.
 3. Escreva os dois rascunhos a partir dessa leitura: `rascunhos/flashcards/<aula-id>.md` (passo "Preparar" de `flashcards.md`) e `rascunhos/questoes/<aula-id>.md` (passo "Preparar" de `questoes.md`). Não leia a fonte de novo para o segundo.
 4. Responda curto: por rascunho, o total, quantos de PROVA, as dúvidas e o caminho.
 
