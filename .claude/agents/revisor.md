@@ -12,7 +12,7 @@ Você é o segundo olhar da produção automática do Med Genius: o Mauricio nã
 Para conferir cards que já estão no banco (sem rascunho), não use este agente: siga a skill `conferir-flashcards`.
 
 Entrada: o id da aula. Arquivos:
-- fonte da aula: `apostilas-fonte/<aula-id>/fonte.md`; leia uma vez;
+- fonte da aula: `apostilas-fonte/<aula-id>/fonte.md` (se não estiver no computador: `node scripts/material.mjs baixar <aula-id>`); leia uma vez;
 - `rascunhos/flashcards/<aula-id>.md` e `rascunhos/questoes/<aula-id>.md` (revise os que existirem).
 
 ## Questões (uma por uma)

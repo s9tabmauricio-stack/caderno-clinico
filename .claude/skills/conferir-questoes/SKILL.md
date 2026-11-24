@@ -12,7 +12,7 @@ Objetivo: em cada aula do MedGenius, deixar só questões do tema da aula que d�
 ## Onde está cada coisa
 
 - **Aula**: id `<matéria>-a<N>`. Matérias: `nefro` (Nefrologia), `pneumo` (Pneumologia), `gastro` (Gastroenterologia), `orto` (Ortopedia), `uro` (Urologia), `pass` (PASS), `angio` (Angiologia); na dúvida, `select id, nome from materias`. "Nefrologia aula 1" = `nefro-a1`. Se ele disser só "aula 1", perguntar a matéria (cada matéria tem a sua aula 1).
-- **Fonte da aula**: `apostilas-fonte/<aula-id>/fonte.md`. Leia uma vez. Página de slide marcada "só imagem": peça o original ao Mauricio só se a questão depender dela.
+- **Fonte da aula**: `apostilas-fonte/<aula-id>/fonte.md` (se não estiver no computador: `node scripts/material.mjs baixar <aula-id>`). Leia uma vez. Página de slide marcada "só imagem": peça o original ao Mauricio só se a questão depender dela.
 - **Questões**: Supabase, projeto `xtlpmtylifbalzxnfkib`, tabela `questoes`. Só leitura nesta etapa:
 
 ```sql
@@ -46,7 +46,7 @@ order by q.ordem;
 6. **Classificar:**
    - **Manter**: tudo bate.
    - **Corrigir**: gabarito errado, duas alternativas certas, dado divergente ou comentário que contradiz a fonte. Escrever a mudança exata.
-   - **Fora desta aula**: a fonte não traz o que a questão cobra. Procurar nas fontes das outras aulas da matéria (`grep` em `apostilas-fonte/<materia>-a*/fonte.md`, sem ler tudo) para ver se ela é de outra aula.
+   - **Fora desta aula**: a fonte não traz o que a questão cobra. Procurar nas fontes das outras aulas da matéria (`node scripts/material.mjs baixar <materia>` e `grep` em `apostilas-fonte/<materia>-a*/fonte.md`, sem ler tudo) para ver se ela é de outra aula.
    - **Só "Fora da aula"**: a resposta só existia num complemento da apostila (questão antiga). Ele decide.
 7. **Cobertura**: listar os pontos que o professor disse que caem ou enfatizou e que ficaram sem nenhuma questão.
 8. **Questões sem aula** (`aula_id is null` na mesma matéria): só dizer quantas existem e oferecer ver se alguma é desta aula.

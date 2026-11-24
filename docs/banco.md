@@ -21,3 +21,8 @@ O manual (`AGENTS.md`) tem o resumo e o limite do conector. Aqui ficam as tabela
 - A pasta `supabase/migrations/` guarda só a estrutura (as migrações que só incluíam conteúdo saíram em 02/11/2026) e não reflete tudo o que foi aplicado; a verdade é o banco (`list_migrations`).
 
 - A aula de Angiologia (pé diabético) tem o id `angio-a1`.
+
+## Arquivos (Storage)
+
+- `material` (privado, desde 24/11/2026): o material de trabalho das aulas, com os mesmos caminhos da pasta `apostilas-fonte/` (`<aula-id>/fonte.md`, `mapa.md`, `apostila.html`, figuras; `provas/…`). Sem regras de acesso: só a chave secreta abre, os alunos não veem. Baixar e enviar: `node scripts/material.mjs` ([`apostilas-fonte/README.md`](../apostilas-fonte/README.md)). Sem cópia de segurança no plano gratuito.
+- `apostilas` (privado, vazio): sobra antiga, sem uso.

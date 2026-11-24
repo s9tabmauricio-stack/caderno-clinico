@@ -43,3 +43,10 @@ next-env.d.ts
 
 # rascunhos (flashcards para aprovar antes de ir ao banco)
 /rascunhos/
+
+# material de trabalho das aulas: fica no Supabase (espaço "material"), não no Git
+# (regra do Mauricio, 24/11/2026; scripts/material.mjs baixa e envia)
+/apostilas-fonte/*
+!/apostilas-fonte/README.md
+!/apostilas-fonte/apostila.css
+!/apostilas-fonte/ferramentas/

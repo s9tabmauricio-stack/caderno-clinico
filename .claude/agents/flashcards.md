@@ -31,7 +31,7 @@ Arquivos temporários (lotes de SQL, scripts): ponha o id da aula no nome (ex.: 
 1. **Ache a aula.** "Gastro 1" = `gastro-a1`. Matérias: `nefro`, `pneumo`, `gastro`, `orto`, `uro`, `pass`. Confira numa consulta só:
    `select a.id, a.titulo, m.nome, (select count(*) from public.flashcards f where f.aula_id = a.id) as cards from public.aulas a join public.materias m on m.id = a.materia_id where a.id = '<aula-id>';`
    Se a aula já tiver cards, pare e diga quantos são, a menos que o pedido seja para refazer: aí prepare normalmente, sem ler nem completar os antigos. Antes da inclusão, o Mauricio apaga os antigos em Configurações → Conteúdo → a aula → "Apagar os N flashcards" (ou, se ele pedir, o assistente apaga pelo conector).
-2. **Leia a fonte**, uma vez: `apostilas-fonte/<aula-id>/fonte.md`. Conte as palavras (`| wc -w`) para calibrar o tamanho.
+2. **Leia a fonte**, uma vez: `apostilas-fonte/<aula-id>/fonte.md` (se não estiver no computador: `node scripts/material.mjs baixar <aula-id>`). Conte as palavras (`| wc -w`) para calibrar o tamanho.
 3. **Monte os cards** com as regras abaixo, a partir da fonte, na ordem da aula, cobrindo a aula inteira.
 4. **Escreva o rascunho** em `rascunhos/flashcards/<aula-id>.md` (a pasta fica fora do Git), no formato abaixo.
 5. **Responda curto:** total de cards, quantos com PROVA, quantos fora da aula, as dúvidas (se houver) e o caminho do rascunho. Não cole os cards na resposta: quem chamou você mostra o arquivo ao Mauricio.

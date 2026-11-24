@@ -4,6 +4,27 @@ Aqui ficam, por aula, duas coisas diferentes:
 - a **fonte da aula** (`fonte.md`): a transcrição e o texto dos slides, como vieram. É a base da apostila, das questões e dos flashcards, e é contra ela que tudo se confere (regra do Mauricio, 09/11/2026; seção abaixo);
 - o **HTML da apostila**, que é o arquivo de onde o PDF é gerado.
 
+## Onde fica guardado: no Supabase, não no Git
+
+Regra do Mauricio (24/11/2026): dado de aula não mora no projeto do app. As pastas das aulas (`<aula-id>/`) e a `provas/` ficam guardadas no espaço privado **`material`** do Supabase Storage (só a chave secreta abre; os alunos não veem). No computador fica só uma cópia de trabalho, que o Git ignora. No Git continuam só as ferramentas: este `README.md`, o `apostila.css` e a pasta `ferramentas/`.
+
+```bash
+node scripts/material.mjs baixar <aula-id>
+```
+
+Traz a pasta da aula para `apostilas-fonte/<aula-id>/`. Também aceita `provas`, uma matéria inteira (`angio` = todas as aulas dela) ou `tudo`. Só baixa o que mudou.
+
+```bash
+node scripts/material.mjs enviar <aula-id>
+```
+
+Leva de volta o que você criou ou mudou na pasta (também `provas`, `tudo` ou um arquivo, ex.: `apostilas-fonte/provas/angio-p2-t26-transcricao.txt`). Nunca apaga nada no Supabase. `node scripts/material.mjs listar [aula-id]` mostra o que está guardado.
+
+- **Antes de ler** qualquer coisa daqui (fonte, mapa, HTML, compilado), baixe. O `scripts/fonte-aula.py` baixa sozinho quando a fonte não está no computador.
+- **Depois de mudar**, envie no mesmo trabalho: o que só ficou no computador se perde quando a sessão acaba. O `fonte-aula.py guardar` envia sozinho.
+- Os três programas precisam de `SUPABASE_SECRET_KEY` (no ambiente ou em `.env.local`), a mesma do `gravar-rascunho.mjs`.
+- Não há cópia de segurança no plano gratuito do Supabase: não apague nada de lá. O que existia até 24/11/2026 também ficou no histórico do Git (commit anterior à mudança).
+
 ## Fonte da aula (`fonte.md`)
 
 Cada aula tem um arquivo fonte. Quando chegam a transcrição ou os slides de uma aula, a primeira coisa é guardar, **sem o modelo reescrever nada** (é trabalho mecânico):
@@ -13,10 +34,10 @@ python3 -I scripts/fonte-aula.py guardar <aula-id> --transcricao <arquivo> --sli
 ```
 
 - Transcrição: `.txt`, `.md`, `.srt`, `.vtt`, `.docx` ou `.pdf`; aula em partes = `--transcricao` repetido. Texto colado na conversa: salve num `.txt` antes.
-- Slides: `.pdf` ou `.pptx`. Entra o texto de cada página; a página que é só imagem fica marcada ("só imagem"), para quem conferir olhar o original. O arquivo original dos slides não vai para o Git (pesa).
+- Slides: `.pdf` ou `.pptx`. Entra o texto de cada página; a página que é só imagem fica marcada ("só imagem"), para quem conferir olhar o original. O arquivo original dos slides não é guardado (pesa).
 - Slide em que o professor marcou o que vai focar (ex.: estrela verde desenhada): `--estrelas 2,12,14` junto com `--slides`. A página ganha a linha "★ MARCADO PELO PROFESSOR", que vale como cai na prova (PROVA) para questões e flashcards, igual a ele dizer na fala.
 - O que chega depois (os slides de uma aula que já tem a transcrição) entra com `--acrescentar`; material igual ao que já está é pulado. Não edite o `fonte.md` à mão: os erros da transcrição automática ficam como vieram, e quem corrige é a apostila.
-- Vai para o Git no mesmo commit do trabalho da aula (na aula nova, junto com a apostila).
+- O `guardar` envia a fonte para o Supabase sozinho; não precisa de commit.
 
 **Ler um pedaço** (a conferência em blocos não precisa da aula inteira):
 
@@ -72,11 +93,10 @@ para a pasta de trabalho. Nunca redigite esses arquivos: copie com o `preparar.s
 
 ## Como gerar o PDF de novo
 
-Numa pasta de trabalho fora do repositório (os arquivos auxiliares não devem ser
-commitados):
+Numa pasta de trabalho separada (os arquivos auxiliares não são guardados):
 
 ```bash
-apostilas-fonte/ferramentas/preparar.sh /tmp/gerar && cp -r apostilas-fonte/<aula-id>/* /tmp/gerar/
+node scripts/material.mjs baixar <aula-id> && apostilas-fonte/ferramentas/preparar.sh /tmp/gerar && cp -r apostilas-fonte/<aula-id>/* /tmp/gerar/
 ```
 
 Depois, na pasta `/tmp/gerar`:
@@ -97,12 +117,13 @@ gere cada apostila e refaça a paginação de cada uma (a escada da skill
 
 `scripts/publicar-apostila.sh "<pdf novo>" <aula-id>` troca as imagens e o PDF em
 `public/apostilas/<aula-id>/` e mostra o número de páginas. Antes, apague as
-imagens antigas (`rm -f public/apostilas/<aula-id>/*.webp`). Depois, commit e
-publicação como manda a skill `subir-apostila`. **Se o número de páginas mudou**,
+imagens antigas (`rm -f public/apostilas/<aula-id>/*.webp`). Depois, commit das
+imagens e publicação como manda a skill `subir-apostila`; o HTML novo vai para
+`apostilas-fonte/<aula-id>/` e para o Supabase (`node scripts/material.mjs enviar <aula-id>`). **Se o número de páginas mudou**,
 refaça o `apostila_html` da aula no banco (comando na skill `subir-apostila`),
 senão a última página não aparece no app.
 
-## O que tem aqui hoje
+## Algumas das que têm HTML (lista completa: `node scripts/material.mjs listar`)
 
 | Pasta | Apostila | Páginas |
 |---|---|---|

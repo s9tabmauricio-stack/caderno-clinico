@@ -1,10 +1,14 @@
 #!/usr/bin/env python3
-"""Fonte da aula: a transcrição e os slides guardados num arquivo só, no Git.
+"""Fonte da aula: a transcrição e os slides guardados num arquivo só, no Supabase.
 
 Regra do Mauricio (09/11/2026): cada aula tem um arquivo fonte. A apostila, as
 questões e os flashcards saem dele, e as conferências também são feitas por ele.
 O arquivo fica em apostilas-fonte/<aula-id>/fonte.md, com o texto como veio
 (sem corrigir os erros da transcrição automática: quem corrige é a apostila).
+Desde 24/11/2026 (regra do Mauricio) a pasta não vai para o Git: fica guardada no espaço
+"material" do Supabase. Este programa baixa a fonte quando ela não está no computador e,
+depois de guardar, envia de volta sozinho (pelo scripts/material.mjs, que precisa de
+SUPABASE_SECRET_KEY).
 
 Guardar (a transcrição e os slides que o Mauricio mandou):
   python3 -I scripts/fonte-aula.py guardar <aula-id> --transcricao <arq> [--slides <arq>]
@@ -21,7 +25,7 @@ Ler um pedaço (para a conferência em blocos não ler a aula inteira):
   --minutos: só as falas desse intervalo (minutos, ou 1:05:00-1:20:00); --parte:
   só aquela parte da transcrição; --slides: só aquelas páginas. Sem nada, tudo.
 
-Os slides originais (PDF/PPTX) não entram no Git (pesam): só o texto. Página de slide sem texto (só imagem)
+Os slides originais (PDF/PPTX) não são guardados (pesam): só o texto. Página de slide sem texto (só imagem)
 fica marcada no arquivo, para quem conferir saber que precisa olhar o original.
 """
 import argparse
@@ -194,6 +198,21 @@ def escrever(aula, partes, destino):
     destino.write_text('\n'.join(cab + corpo).rstrip('\n') + '\n', encoding='utf-8', newline='\n')
 
 
+def material(acao, aula):
+    """Baixa ou envia a pasta da aula no Supabase (scripts/material.mjs). Devolve True se deu certo."""
+    try:
+        r = subprocess.run(['node', str(RAIZ / 'scripts' / 'material.mjs'), acao, aula],
+                           capture_output=True, text=True)
+    except FileNotFoundError:
+        sys.stderr.write('AVISO: node não encontrado; não deu para falar com o Supabase.\n')
+        return False
+    if r.returncode != 0:
+        sys.stderr.write((r.stderr or r.stdout).strip() + '\n')
+        return False
+    sys.stderr.write(r.stdout.strip() + '\n')  # no stderr: não suja a saída do trecho
+    return True
+
+
 def guardar(a):
     if not re.fullmatch(r'[a-z]+-a\d+', a.aula):
         parar(f'id de aula fora do padrão: {a.aula} (ex.: pneumo-a7)')
@@ -203,6 +222,8 @@ def guardar(a):
     if estrelas and not a.slides:
         parar('--estrelas vale para os slides: passe --slides junto')
     destino = PASTA / a.aula / 'fonte.md'
+    if not destino.exists():
+        material('baixar', a.aula)  # a fonte pode já estar no Supabase e não neste computador
     partes = []
     if destino.exists():
         if not a.acrescentar:
@@ -259,6 +280,8 @@ def guardar(a):
         return
     escrever(a.aula, partes, destino)
     print(f'fonte guardada: {destino.relative_to(RAIZ)}')
+    if not material('enviar', a.aula):
+        sys.stderr.write(f'AVISO: a fonte ficou só neste computador. Envie depois com: node scripts/material.mjs enviar {a.aula}\n')
     for p in novos:
         m = p['meta']
         if p['tipo'] == 'transcricao':
@@ -277,6 +300,8 @@ def faixa_paginas(texto):
 
 def trecho(a):
     arquivo = PASTA / a.aula / 'fonte.md'
+    if not arquivo.exists():
+        material('baixar', a.aula)
     if not arquivo.exists():
         parar(f'a aula {a.aula} não tem fonte guardada ({arquivo.relative_to(RAIZ)}): confira pela apostila, como antes')
     partes = ler_partes(arquivo)

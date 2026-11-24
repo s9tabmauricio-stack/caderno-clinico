@@ -9,7 +9,7 @@ O passo 1 e o 2 são o que faz `scripts/publicar-apostila.sh <arquivo.pdf> <aula
 
 1. `pdftoppm -scale-to-x 1400 -scale-to-y -1 -jpeg -jpegopt quality=80 arquivo.pdf public/apostilas/<aula-id>/p`
 2. Converter cada página para `NN.webp` (qualidade 78) e apagar os .jpg; copiar o PDF como `public/apostilas/<aula-id>/apostila.pdf`.
-3. Commit + push (as imagens precisam estar no ar).
+3. Commit + push das imagens (precisam estar no ar).
 4. Incluir a aula pelo conector:
 
 ```sql
@@ -25,4 +25,4 @@ Título, resumo e professor saem da capa (`pdftotext -f 1 -l 1`). Atualize a `de
 
 **Fonte da aula:** se a transcrição ou os slides vieram junto, guarde-os também (`python3 -I scripts/fonte-aula.py guardar <aula-id> …`, em [`apostilas-fonte/README.md`](apostilas-fonte/README.md)): é contra ela que a apostila, as questões e os flashcards são conferidos.
 
-**Guarde o HTML da apostila em [`apostilas-fonte/<aula-id>/`](apostilas-fonte/README.md)** (o arquivo de onde o PDF é gerado, com as figuras e os programas que as desenham). Sem ele, mudar o visual obriga a remontar a apostila inteira a partir do PDF. As apostilas anteriores a 31/10/2026 ainda não têm esse arquivo; as de Pneumologia 1 a 4 já têm.
+**Guarde o HTML da apostila em [`apostilas-fonte/<aula-id>/`](apostilas-fonte/README.md)** (o arquivo de onde o PDF é gerado, com as figuras e os programas que as desenham) e envie para o Supabase com `node scripts/material.mjs enviar <aula-id>`: essa pasta não vai para o Git (regra do Mauricio, 24/11/2026). Sem ele, mudar o visual obriga a remontar a apostila inteira a partir do PDF. As apostilas anteriores a 31/10/2026 ainda não têm esse arquivo; as de Pneumologia 1 a 4 já têm.
