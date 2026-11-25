@@ -30,20 +30,20 @@ const MESES: Record<string, number> = {
 
 const EMOJI_MATERIA: [string, string][] = [
   ['🫁', 'pneumo'], ['🍽', 'gastro'], ['🚰', 'nefro'], ['🚻', 'uro'], ['🦴', 'orto'],
-  ['🥼', 'pass'], ['🗣', 'sem'], ['🩸', 'angio'],
+  ['🥼', 'pass'], ['🗣', 'sem'], ['🩸', 'angio'], ['🧠', 'neuro'],
 ]
 const PALAVRA_MATERIA: [RegExp, string][] = [
   [/pneumo/i, 'pneumo'], [/gastro/i, 'gastro'], [/nefro/i, 'nefro'], [/urolog/i, 'uro'],
-  [/ortop/i, 'orto'], [/\bPASS\b/, 'pass'], [/angio/i, 'angio'], [/semin[aá]rio/i, 'sem'],
+  [/ortop/i, 'orto'], [/\bPASS\b/, 'pass'], [/angio/i, 'angio'], [/neuro/i, 'neuro'], [/semin[aá]rio/i, 'sem'],
 ]
 
 export const NOME_MATERIA: Record<string, string> = {
   pneumo: 'Pneumologia', gastro: 'Gastroenterologia', nefro: 'Nefrologia', uro: 'Urologia',
-  orto: 'Ortopedia', pass: 'PASS', sem: 'Seminário', angio: 'Angiologia',
+  orto: 'Ortopedia', pass: 'PASS', sem: 'Seminário', angio: 'Angiologia', neuro: 'Neurologia',
 }
 export const COR_MATERIA: Record<string, string> = {
   pneumo: '#22D3EE', gastro: '#34D399', nefro: '#60A5FA', uro: '#A78BFA',
-  orto: '#FBBF24', pass: '#F472B6', sem: '#9AA3BD', angio: '#FB923C',
+  orto: '#FBBF24', pass: '#F472B6', sem: '#9AA3BD', angio: '#FB923C', neuro: '#A3E635',
 }
 
 const DIA_SEMANA = /^\s*(segunda|ter[cç]a|quarta|quinta|sexta|s[aá]bado|domingo)(?:-feira)?\s*\|\s*(\d{1,2})[º°]?\s*\/\s*([a-zç]+|\d{1,2})(?:\s*[-–—]\s*(.+))?/i
