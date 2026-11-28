@@ -1474,3 +1474,20 @@ h1.big{background:var(--metal-titulo);-webkit-background-clip:text;background-cl
 .msg-sub{margin:0 0 2px;color:var(--muted);font-size:14px}
 .msg-caixa .turma-campo{width:100%;box-sizing:border-box}
 .msg-tit{margin:18px 0 0;padding-top:12px;border-top:1px solid var(--line);font-size:15px;font-weight:700}
+
+/* Desempenho compacto (28/11/2026): cada matéria é um cartão que abre e fecha; temas por dentro */
+.perf-d{padding:0;gap:0}
+.perf-d>summary{list-style:none;cursor:pointer;padding:14px 16px;display:grid;gap:8px;border-radius:inherit}
+.perf-d>summary::-webkit-details-marker{display:none}
+.perf-d>summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.perf-d .pv{display:inline-flex;align-items:center;gap:6px}
+.perf-seta svg{width:16px;height:16px;opacity:.7;transform:rotate(90deg);transition:transform .2s ease}
+.perf-d[open] .perf-seta svg{transform:rotate(-90deg)}
+.perf-d .perf-corpo{display:grid;gap:10px;padding:0 16px 14px}
+.perf-cont{display:flex;flex-wrap:wrap;gap:4px 14px}
+.perf-cont i{display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:6px;vertical-align:0}
+.d-ok{background:var(--ok)}.d-bad{background:var(--bad)}.d-sem{background:var(--seg);box-shadow:inset 0 0 0 1px var(--line)}
+.pa .pa-bad{color:var(--bad)}
+.pa .pa-ok{color:var(--ok)}
+.perf-fracos{padding:8px 16px;gap:0;margin-bottom:4px}
+.pa-m{display:block;font-size:12.5px;color:var(--muted)}
