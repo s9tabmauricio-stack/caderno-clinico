@@ -1,11 +1,16 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { Pagina, Voltar } from '@/components/Pagina'
-import { CriarAluno, LimiteAparelhos, TrocarSenha } from '@/components/AdminForms'
+import { CriarAluno, LimiteAparelhos, TrocarSenha, TurmaAluno } from '@/components/AdminForms'
 import { rotuloLimite } from '@/lib/aparelhos'
 import { chaveConfigurada, clienteAdmin, ehAdmin } from '@/lib/admin'
 import { cpfDoEmail, formatarCpf } from '@/lib/cpf'
 import { sessao } from '@/lib/dados'
+
+/** Turma em texto: vazia = vê as duas (administrador). */
+function rotuloTurma(t: string | null) {
+  return t ? t.toUpperCase() : 'T28 e T29'
+}
 
 export const metadata: Metadata = { title: 'Alunos' }
 
@@ -31,16 +36,17 @@ export default async function AdminPage() {
   const admin = await clienteAdmin()
   const [{ data: usuarios }, { data: perfis }] = await Promise.all([
     admin.auth.admin.listUsers({ perPage: 1000 }),
-    admin.from('perfis').select('id, nome, max_aparelhos'),
+    admin.from('perfis').select('id, nome, max_aparelhos, turma'),
   ])
   const nomes = new Map((perfis ?? []).map((p) => [p.id as string, p.nome as string | null]))
   const limites = new Map((perfis ?? []).map((p) => [p.id as string, p.max_aparelhos as number | null]))
+  const turmas = new Map((perfis ?? []).map((p) => [p.id as string, p.turma as string | null]))
   const alunos = (usuarios?.users ?? [])
     .map((u) => {
       const cpf = cpfDoEmail(u.email ?? '')
       const nome = nomes.get(u.id)
       const ident = cpf ? formatarCpf(cpf) : (u.email ?? '')
-      return { id: u.id, nome: nome && nome !== cpf ? nome : '', ident, ultimo: u.last_sign_in_at, limite: limites.get(u.id) ?? null }
+      return { id: u.id, nome: nome && nome !== cpf ? nome : '', ident, ultimo: u.last_sign_in_at, limite: limites.get(u.id) ?? null, turma: rotuloTurma(turmas.has(u.id) ? (turmas.get(u.id) ?? null) : 't29') }
     })
     .sort((a, b) => (a.nome || a.ident).localeCompare(b.nome || b.ident, 'pt-BR'))
 
@@ -69,6 +75,13 @@ export default async function AdminPage() {
         tempo. Navegador e app instalado no mesmo celular contam como dois.
       </p>
 
+      <div className="sec">Turma por aluno</div>
+      <TurmaAluno alunos={alunos.map((a) => ({ id: a.id, rotulo: `${a.nome ? `${a.nome} · ${a.ident}` : a.ident} (${a.turma})` }))} />
+      <p className="painel-nota">
+        Cada turma só vê as próprias matérias e a própria agenda. Contas novas nascem na T29. De qual turma é cada matéria fica
+        no banco (materias.turmas); uma matéria pode servir às duas.
+      </p>
+
       <div className="sec">
         {alunos.length} {alunos.length === 1 ? 'conta' : 'contas'}
       </div>
@@ -79,6 +92,7 @@ export default async function AdminPage() {
               <span className="t">{a.nome || a.ident}</span>
               <span className="s">
                 {a.nome ? `${a.ident} · ` : ''}
+                {a.turma} · 
                 {rotuloLimite(a.limite)} · 
                 {a.ultimo ? `último acesso ${new Date(a.ultimo).toLocaleDateString('pt-BR', { timeZone: 'America/Sao_Paulo' })}` : 'nunca entrou'}
               </span>

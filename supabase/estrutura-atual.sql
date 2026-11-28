@@ -7,6 +7,7 @@
 -- Limite de aparelhos por conta incluído em 12/11/2026: migração 20261112120000_limite_aparelhos.sql.
 -- Novidades (sininho) incluídas em 17/11/2026: migração 20261117180000_novidades.sql.
 -- Mensagens para o administrador incluídas em 19/11/2026: migração 20261119030000_mensagens.sql.
+-- Turmas (T28 e T29) incluídas em 28/11/2026: migração 20261128120000_turmas.sql (perfis.turma, materias.turmas, agenda_semanas.turma, função ve_turma e regras de leitura por turma).
 -- Suspensão individual aplicada em 03/11/2026: migração 20261103162543_suspensao_individual_flashcards.sql.
 --
 -- Para que serve: é a referência confiável de como o banco está montado
@@ -48,6 +49,7 @@ create table public.agenda_semanas (
   aviso text,
   texto text,
   atualizado_em timestamp with time zone default now() not null,
+  turma text default 't29'::text not null, -- de qual turma é a semana; os eventos seguem a semana
   constraint agenda_semanas_pkey PRIMARY KEY (semana)
 );
 
@@ -109,6 +111,7 @@ create table public.materias (
   cor_inicio text,
   cor_fim text,
   criado_em timestamp with time zone default now() not null,
+  turmas text[] default '{t29}'::text[] not null, -- turmas que veem a matéria (aulas, questões e cards seguem a matéria)
   constraint materias_pkey PRIMARY KEY (id)
 );
 
@@ -119,8 +122,10 @@ create table public.perfis (
   criado_em timestamp with time zone default now() not null,
   grupo integer,
   max_aparelhos smallint default 1, -- aparelhos abertos ao mesmo tempo; null = sem limite (12/11/2026: contas antigas 2, admin null)
+  turma text default 't29'::text, -- 't28' ou 't29'; null = vê todas as turmas (o administrador)
   constraint perfis_pkey PRIMARY KEY (id),
   constraint perfis_grupo_check CHECK (((grupo >= 1) AND (grupo <= 99))),
+  constraint perfis_turma_check CHECK (((turma IS NULL) OR (turma = ANY (ARRAY['t28'::text, 't29'::text])))),
   constraint perfis_max_aparelhos_check CHECK (((max_aparelhos IS NULL) OR ((max_aparelhos >= 1) AND (max_aparelhos <= 10)))),
   constraint perfis_id_fkey FOREIGN KEY (id) REFERENCES auth.users(id) ON DELETE CASCADE
 );
@@ -264,7 +269,7 @@ create table public.flashcards_dia_d (
 );
 create index flashcards_dia_d_aula_idx on public.flashcards_dia_d (aula_id, ordem);
 alter table public.flashcards_dia_d enable row level security;
-create policy "Alunos leem os cards do Dia D" on public.flashcards_dia_d as permissive for select to authenticated using (true);
+create policy "Alunos leem os cards do Dia D da turma" on public.flashcards_dia_d as permissive for select to authenticated using ((aula_id IN ( SELECT a.id FROM aulas a)));
 revoke all on public.flashcards_dia_d from anon, authenticated;
 grant select on public.flashcards_dia_d to authenticated;
 grant all on public.flashcards_dia_d to service_role;
@@ -487,6 +492,19 @@ create or replace view public.questoes_do_aluno with (security_invoker=true) as
 -- ============================================================
 -- Funções
 -- ============================================================
+
+-- Quem entrou vê o que é de uma destas turmas? Sem perfil = T29; perfil com turma vazia = vê tudo (28/11/2026).
+CREATE OR REPLACE FUNCTION public.ve_turma(turmas text[])
+ RETURNS boolean
+ LANGUAGE sql
+ STABLE SECURITY DEFINER
+ SET search_path TO ''
+AS $function$
+  select coalesce(
+    (select p.turma is null or p.turma = any(turmas) from public.perfis p where p.id = (select auth.uid())),
+    't29' = any(turmas))
+$function$;
+-- Só authenticated executa (revoke de public e anon).
 
 -- Números da Central (/admin/central). Só a chave secreta chama (sem execute para anon/authenticated).
 CREATE OR REPLACE FUNCTION public.central_resumo()
@@ -783,20 +801,20 @@ alter table public.recados_uteis enable row level security;
 alter table public.respostas enable row level security;
 alter table public.revisoes enable row level security;
 
-create policy "Alunos leem a agenda" on public.agenda_eventos as permissive for select to authenticated using (true);
-create policy "Alunos leem as semanas" on public.agenda_semanas as permissive for select to authenticated using (true);
-create policy "Alunos leem aulas" on public.aulas as permissive for select to authenticated using (publicada);
-create policy "Alunos leem flashcards" on public.flashcards as permissive for select to authenticated using (true);
+create policy "Alunos leem a agenda da turma" on public.agenda_eventos as permissive for select to authenticated using ((semana IN ( SELECT s.semana FROM agenda_semanas s)));
+create policy "Alunos leem as semanas da turma" on public.agenda_semanas as permissive for select to authenticated using (ve_turma(ARRAY[turma]));
+create policy "Alunos leem as aulas da turma" on public.aulas as permissive for select to authenticated using ((publicada AND (materia_id IN ( SELECT m.id FROM materias m))));
+create policy "Alunos leem os flashcards da turma" on public.flashcards as permissive for select to authenticated using ((aula_id IN ( SELECT a.id FROM aulas a)));
 create policy "Apagar o próprio histórico" on public.historico_respostas as permissive for delete to public using ((( SELECT auth.uid() AS uid) = user_id));
 create policy "Ver o próprio histórico" on public.historico_respostas as permissive for select to public using ((( SELECT auth.uid() AS uid) = user_id));
 create policy "Ver o próprio histórico de revisões" on public.historico_revisoes as permissive for select to public using ((( SELECT auth.uid() AS uid) = user_id));
-create policy "Alunos leem matérias" on public.materias as permissive for select to authenticated using (true);
+create policy "Alunos leem as matérias da turma" on public.materias as permissive for select to authenticated using (ve_turma(turmas));
 create policy "Aluno escreve a própria mensagem" on public.mensagens as permissive for insert to authenticated with check ((( SELECT auth.uid() AS uid) = user_id));
 create policy "Aluno vê as próprias mensagens" on public.mensagens as permissive for select to authenticated using ((( SELECT auth.uid() AS uid) = user_id));
 create policy "Turma lê as novidades" on public.novidades as permissive for select to authenticated using (true);
 create policy "Editar o próprio perfil" on public.perfis as permissive for update to authenticated using ((( SELECT auth.uid() AS uid) = id)) with check ((( SELECT auth.uid() AS uid) = id));
 create policy "Ver o próprio perfil" on public.perfis as permissive for select to authenticated using ((( SELECT auth.uid() AS uid) = id));
-create policy "Alunos leem questões" on public.questoes as permissive for select to authenticated using (true);
+create policy "Alunos leem as questões da turma" on public.questoes as permissive for select to authenticated using ((materia_id IN ( SELECT m.id FROM materias m)));
 create policy "Aluno apaga o próprio recado" on public.recados as permissive for delete to authenticated using ((( SELECT auth.uid() AS uid) = user_id));
 create policy "Aluno escreve o próprio recado" on public.recados as permissive for insert to authenticated with check ((( SELECT auth.uid() AS uid) = user_id));
 create policy "Turma lê os recados" on public.recados as permissive for select to authenticated using (true);
