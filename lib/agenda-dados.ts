@@ -1,6 +1,7 @@
 import type { SupabaseClient } from '@supabase/supabase-js'
 import type { Database } from '@/lib/database.types'
 import { agoraBrasilia, escolherSemana } from '@/lib/agenda'
+import { materiaDaTurma } from '@/lib/periodos'
 
 type Cliente = SupabaseClient<Database>
 export type EventoBanco = Database['public']['Tables']['agenda_eventos']['Row']
@@ -11,6 +12,17 @@ const COLUNAS = 'id, semana, data, inicio, fim, materia, tipo, titulo, professor
 function semProvaRepetida(evs: EventoBanco[]) {
   const ehProva = (e: EventoBanco) => /prova/i.test(e.titulo) && !/vista/i.test(e.titulo)
   return evs.filter((e) => !e.fixo || !evs.some((o) => !o.fixo && o.data === e.data && o.materia === e.materia && ehProva(o)))
+}
+
+/** Cada turma com as suas matérias: a aula "neuro" da agenda da T29 abre a Neurologia da T29 (neuro29), não a da T28. */
+async function comMateriaDaTurma(supabase: Cliente, evs: EventoBanco[]) {
+  if (!evs.some((e) => e.materia)) return evs
+  const [{ data: semanas }, { data: materias }] = await Promise.all([
+    supabase.from('agenda_semanas').select('semana, turma'),
+    supabase.from('materias').select('id, chave_agenda, turmas, periodo'),
+  ])
+  const turmaDa = new Map((semanas ?? []).map((s) => [s.semana, s.turma]))
+  return evs.map((e) => ({ ...e, materia: materiaDaTurma(e.materia, turmaDa.get(e.semana) ?? 't29', materias ?? []) }))
 }
 
 /** Grupo de prática do aluno (null se ainda não informou). */
@@ -28,7 +40,7 @@ export async function agendaDoDia(supabase: Cliente, data: string) {
     .order('inicio', { nullsFirst: true })
     .order('ordem')
   if (error) return []
-  return semProvaRepetida(evs)
+  return semProvaRepetida(await comMateriaDaTurma(supabase, evs))
 }
 
 /** Semana que contém hoje; no sábado e no domingo, a próxima publicada (ou a última). */
@@ -49,7 +61,7 @@ export async function agendaDaSemana(supabase: Cliente) {
     .order('data')
     .order('inicio', { nullsFirst: true })
     .order('ordem')
-  return { ...escolhida, eventos: semProvaRepetida(evs ?? []) }
+  return { ...escolhida, eventos: semProvaRepetida(await comMateriaDaTurma(supabase, evs ?? [])) }
 }
 
 /** Provas incluídas à parte (P2 e outras), de hoje em diante. */
@@ -63,5 +75,5 @@ export async function proximasProvas(supabase: Cliente) {
     .gte('data', hoje)
     .order('data')
     .order('inicio')
-  return evs ?? []
+  return comMateriaDaTurma(supabase, evs ?? [])
 }

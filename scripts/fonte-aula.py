@@ -214,7 +214,7 @@ def material(acao, aula):
 
 
 def guardar(a):
-    if not re.fullmatch(r'[a-z]+-a\d+', a.aula):
+    if not re.fullmatch(r'[a-z0-9]+-a\d+', a.aula):
         parar(f'id de aula fora do padrão: {a.aula} (ex.: pneumo-a7)')
     if not a.transcricao and not a.slides:
         parar('nada para guardar: passe --transcricao e/ou --slides')
