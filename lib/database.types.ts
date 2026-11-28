@@ -214,6 +214,7 @@ export type Database = {
           id: string
           nome: string
           ordem: number
+          turmas: string[]
         }
         Insert: {
           cor_fim?: string | null
@@ -223,6 +224,7 @@ export type Database = {
           id: string
           nome: string
           ordem?: number
+          turmas?: string[]
         }
         Update: {
           cor_fim?: string | null
@@ -232,13 +234,14 @@ export type Database = {
           id?: string
           nome?: string
           ordem?: number
+          turmas?: string[]
         }
         Relationships: []
       }
       agenda_semanas: {
-        Row: { semana: string; titulo: string | null; aviso: string | null; texto: string | null; atualizado_em: string }
-        Insert: { semana: string; titulo?: string | null; aviso?: string | null; texto?: string | null; atualizado_em?: string }
-        Update: { semana?: string; titulo?: string | null; aviso?: string | null; texto?: string | null; atualizado_em?: string }
+        Row: { semana: string; titulo: string | null; aviso: string | null; texto: string | null; atualizado_em: string; turma: string }
+        Insert: { semana: string; titulo?: string | null; aviso?: string | null; texto?: string | null; atualizado_em?: string; turma?: string }
+        Update: { semana?: string; titulo?: string | null; aviso?: string | null; texto?: string | null; atualizado_em?: string; turma?: string }
         Relationships: []
       }
       agenda_eventos: {
@@ -260,9 +263,9 @@ export type Database = {
         Relationships: []
       }
       perfis: {
-        Row: { admin: boolean; criado_em: string; id: string; nome: string | null; grupo: number | null; max_aparelhos: number | null }
-        Insert: { admin?: boolean; criado_em?: string; id: string; nome?: string | null; grupo?: number | null; max_aparelhos?: number | null }
-        Update: { admin?: boolean; criado_em?: string; id?: string; nome?: string | null; grupo?: number | null; max_aparelhos?: number | null }
+        Row: { admin: boolean; criado_em: string; id: string; nome: string | null; grupo: number | null; max_aparelhos: number | null; turma: string | null }
+        Insert: { admin?: boolean; criado_em?: string; id: string; nome?: string | null; grupo?: number | null; max_aparelhos?: number | null; turma?: string | null }
+        Update: { admin?: boolean; criado_em?: string; id?: string; nome?: string | null; grupo?: number | null; max_aparelhos?: number | null; turma?: string | null }
         Relationships: []
       }
       mensagens: {

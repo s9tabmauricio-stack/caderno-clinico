@@ -81,3 +81,20 @@ export async function definirAparelhos(_: Resultado, form: FormData): Promise<Re
   const fim = fechados ? ` ${fechados === 1 ? 'Um aparelho saiu' : `${fechados} aparelhos saíram`} da conta.` : ''
   return { ok: true, texto: `Limite mudado.${fim}` }
 }
+
+/** Muda a turma do aluno (T28 ou T29); "todas" deixa vazio, como o administrador, que vê as duas. */
+export async function definirTurma(_: Resultado, form: FormData): Promise<Resultado> {
+  const id = String(form.get('id') ?? '')
+  const valor = String(form.get('turma') ?? '')
+  if (!id) return { ok: false, texto: 'Escolha o aluno.' }
+  if (!['t28', 't29', 'todas'].includes(valor)) return { ok: false, texto: 'Escolha a turma.' }
+  try {
+    const admin = await clienteAdmin()
+    const { error } = await admin.from('perfis').update({ turma: valor === 'todas' ? null : valor }).eq('id', id)
+    if (error) return { ok: false, texto: `Não deu para mudar: ${error.message}` }
+  } catch (e) {
+    return { ok: false, texto: (e as Error).message }
+  }
+  revalidatePath('/admin')
+  return { ok: true, texto: 'Turma mudada. O aluno vê as matérias da turma nova na próxima tela que abrir.' }
+}

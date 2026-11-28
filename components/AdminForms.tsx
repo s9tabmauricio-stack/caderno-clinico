@@ -1,7 +1,7 @@
 'use client'
 
 import { useActionState, useRef, useState } from 'react'
-import { criarAluno, definirAparelhos, trocarSenhaAluno, type Resultado } from '@/app/admin/acoes'
+import { criarAluno, definirAparelhos, definirTurma, trocarSenhaAluno, type Resultado } from '@/app/admin/acoes'
 import { formatarLogin } from '@/lib/cpf'
 
 function Mensagem({ r }: { r: Resultado }) {
@@ -116,6 +116,39 @@ export function LimiteAparelhos({ alunos }: { alunos: { id: string; rotulo: stri
       </select>
       <button className="btn" type="submit" disabled={enviando}>
         {enviando ? 'Mudando…' : 'Mudar limite'}
+      </button>
+      <Mensagem r={r} />
+    </form>
+  )
+}
+
+export function TurmaAluno({ alunos }: { alunos: { id: string; rotulo: string }[] }) {
+  const [r, acao, enviando] = useActionState(definirTurma, null)
+  return (
+    <form action={acao} className="admin-form" noValidate>
+      <label className="flabel" htmlFor="t-id">
+        Aluno
+      </label>
+      <select id="t-id" name="id" className="campo" defaultValue="">
+        <option value="" disabled>
+          Escolha
+        </option>
+        {alunos.map((a) => (
+          <option key={a.id} value={a.id}>
+            {a.rotulo}
+          </option>
+        ))}
+      </select>
+      <label className="flabel" htmlFor="t-turma">
+        Turma
+      </label>
+      <select id="t-turma" name="turma" className="campo" defaultValue="t29">
+        <option value="t29">T29</option>
+        <option value="t28">T28</option>
+        <option value="todas">As duas (como o administrador)</option>
+      </select>
+      <button className="btn" type="submit" disabled={enviando}>
+        {enviando ? 'Mudando…' : 'Mudar turma'}
       </button>
       <Mensagem r={r} />
     </form>
