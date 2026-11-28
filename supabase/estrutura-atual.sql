@@ -8,6 +8,7 @@
 -- Novidades (sininho) incluídas em 17/11/2026: migração 20261117180000_novidades.sql.
 -- Mensagens para o administrador incluídas em 19/11/2026: migração 20261119030000_mensagens.sql.
 -- Turmas (T28 e T29) incluídas em 28/11/2026: migração 20261128120000_turmas.sql (perfis.turma, materias.turmas, agenda_semanas.turma, função ve_turma e regras de leitura por turma).
+-- Períodos incluídos em 28/11/2026: migração 20261128150000_periodos.sql (tabela turmas, materias.periodo, perfis.turma → turmas).
 -- Suspensão individual aplicada em 03/11/2026: migração 20261103162543_suspensao_individual_flashcards.sql.
 --
 -- Para que serve: é a referência confiável de como o banco está montado
@@ -112,6 +113,8 @@ create table public.materias (
   cor_fim text,
   criado_em timestamp with time zone default now() not null,
   turmas text[] default '{t29}'::text[] not null, -- turmas que veem a matéria (aulas, questões e cards seguem a matéria)
+  periodo smallint, -- período do curso (1–12); vazio = período atual de quem vê (sempre preencha)
+  constraint materias_periodo_check CHECK (((periodo IS NULL) OR ((periodo >= 1) AND (periodo <= 12)))),
   constraint materias_pkey PRIMARY KEY (id)
 );
 
@@ -125,10 +128,24 @@ create table public.perfis (
   turma text default 't29'::text, -- 't28' ou 't29'; null = vê todas as turmas (o administrador)
   constraint perfis_pkey PRIMARY KEY (id),
   constraint perfis_grupo_check CHECK (((grupo >= 1) AND (grupo <= 99))),
-  constraint perfis_turma_check CHECK (((turma IS NULL) OR (turma = ANY (ARRAY['t28'::text, 't29'::text])))),
+  constraint perfis_turma_fkey FOREIGN KEY (turma) REFERENCES turmas(id),
   constraint perfis_max_aparelhos_check CHECK (((max_aparelhos IS NULL) OR ((max_aparelhos >= 1) AND (max_aparelhos <= 10)))),
   constraint perfis_id_fkey FOREIGN KEY (id) REFERENCES auth.users(id) ON DELETE CASCADE
 );
+
+-- Turmas e o período atual de cada uma (28/11/2026). Aluno só lê; o administrador muda em Administração → Alunos.
+create table public.turmas (
+  id text not null,
+  nome text not null,
+  periodo_atual smallint not null,
+  constraint turmas_pkey PRIMARY KEY (id),
+  constraint turmas_periodo_atual_check CHECK (((periodo_atual >= 1) AND (periodo_atual <= 12)))
+);
+alter table public.turmas enable row level security;
+create policy "Alunos leem as turmas" on public.turmas as permissive for select to authenticated using (true);
+revoke all on public.turmas from anon, authenticated;
+grant select on public.turmas to authenticated;
+grant all on public.turmas to service_role;
 
 create table public.questoes (
   id text not null,

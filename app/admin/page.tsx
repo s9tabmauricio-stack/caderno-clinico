@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { Pagina, Voltar } from '@/components/Pagina'
-import { CriarAluno, LimiteAparelhos, TrocarSenha, TurmaAluno } from '@/components/AdminForms'
+import { CriarAluno, LimiteAparelhos, PeriodoTurma, TrocarSenha, TurmaAluno } from '@/components/AdminForms'
 import { rotuloLimite } from '@/lib/aparelhos'
 import { chaveConfigurada, clienteAdmin, ehAdmin } from '@/lib/admin'
 import { cpfDoEmail, formatarCpf } from '@/lib/cpf'
@@ -34,9 +34,10 @@ export default async function AdminPage() {
   }
 
   const admin = await clienteAdmin()
-  const [{ data: usuarios }, { data: perfis }] = await Promise.all([
+  const [{ data: usuarios }, { data: perfis }, { data: listaTurmas }] = await Promise.all([
     admin.auth.admin.listUsers({ perPage: 1000 }),
     admin.from('perfis').select('id, nome, max_aparelhos, turma'),
+    admin.from('turmas').select('id, nome, periodo_atual').order('id'),
   ])
   const nomes = new Map((perfis ?? []).map((p) => [p.id as string, p.nome as string | null]))
   const limites = new Map((perfis ?? []).map((p) => [p.id as string, p.max_aparelhos as number | null]))
@@ -80,6 +81,13 @@ export default async function AdminPage() {
       <p className="painel-nota">
         Cada turma só vê as próprias matérias e a própria agenda. Contas novas nascem na T29. De qual turma é cada matéria fica
         no banco (materias.turmas); uma matéria pode servir às duas.
+      </p>
+
+      <div className="sec">Período atual de cada turma</div>
+      <PeriodoTurma turmas={listaTurmas ?? []} />
+      <p className="painel-nota">
+        A aba Matérias abre no período atual da turma; os anteriores ficam num seletor acima das matérias. Mude aqui quando o
+        semestre virar. De qual período é cada matéria fica no banco (materias.periodo).
       </p>
 
       <div className="sec">

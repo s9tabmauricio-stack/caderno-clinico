@@ -98,3 +98,20 @@ export async function definirTurma(_: Resultado, form: FormData): Promise<Result
   revalidatePath('/admin')
   return { ok: true, texto: 'Turma mudada. O aluno vê as matérias da turma nova na próxima tela que abrir.' }
 }
+
+/** Muda o período atual de uma turma: a aba Matérias passa a abrir nele. */
+export async function definirPeriodo(_: Resultado, form: FormData): Promise<Resultado> {
+  const turma = String(form.get('turma') ?? '')
+  const periodo = Number(form.get('periodo'))
+  if (!['t28', 't29'].includes(turma)) return { ok: false, texto: 'Escolha a turma.' }
+  if (!(Number.isInteger(periodo) && periodo >= 1 && periodo <= 12)) return { ok: false, texto: 'Escolha o período.' }
+  try {
+    const admin = await clienteAdmin()
+    const { error } = await admin.from('turmas').update({ periodo_atual: periodo }).eq('id', turma)
+    if (error) return { ok: false, texto: `Não deu para mudar: ${error.message}` }
+  } catch (e) {
+    return { ok: false, texto: (e as Error).message }
+  }
+  revalidatePath('/admin')
+  return { ok: true, texto: `A ${turma.toUpperCase()} agora está no ${periodo}º período.` }
+}
