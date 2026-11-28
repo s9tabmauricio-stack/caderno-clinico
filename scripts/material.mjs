@@ -135,7 +135,7 @@ if (comando === 'listar') {
   for (const alvo of alvos) {
     const prefixo = normalizarAlvo(alvo)
     let arquivos
-    if (/^[a-z]+$/.test(prefixo) && prefixo !== 'provas') {
+    if (/^[a-z][a-z0-9]*$/.test(prefixo) && prefixo !== 'provas') {
       // Matéria: as pastas <matéria>-aN guardadas.
       arquivos = (await listarRemoto('')).filter((a) => new RegExp(`^${prefixo}-a\\d+/`).test(a.rel))
     } else arquivos = await listarRemoto(prefixo)

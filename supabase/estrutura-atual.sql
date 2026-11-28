@@ -9,6 +9,7 @@
 -- Mensagens para o administrador incluídas em 19/11/2026: migração 20261119030000_mensagens.sql.
 -- Turmas (T28 e T29) incluídas em 28/11/2026: migração 20261128120000_turmas.sql (perfis.turma, materias.turmas, agenda_semanas.turma, função ve_turma e regras de leitura por turma).
 -- Períodos incluídos em 28/11/2026: migração 20261128150000_periodos.sql (tabela turmas, materias.periodo, perfis.turma → turmas).
+-- Matérias por turma em 28/11/2026: migração 20261128180000_materias_por_turma.sql (materias.chave_agenda).
 -- Suspensão individual aplicada em 03/11/2026: migração 20261103162543_suspensao_individual_flashcards.sql.
 --
 -- Para que serve: é a referência confiável de como o banco está montado
@@ -114,6 +115,7 @@ create table public.materias (
   criado_em timestamp with time zone default now() not null,
   turmas text[] default '{t29}'::text[] not null, -- turmas que veem a matéria (aulas, questões e cards seguem a matéria)
   periodo smallint, -- período do curso (1–12); vazio = período atual de quem vê (sempre preencha)
+  chave_agenda text, -- como o cronograma chama a matéria (ex.: 'neuro' para neuro29); vazio = o próprio id
   constraint materias_periodo_check CHECK (((periodo IS NULL) OR ((periodo >= 1) AND (periodo <= 12)))),
   constraint materias_pkey PRIMARY KEY (id)
 );

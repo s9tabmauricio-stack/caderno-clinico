@@ -80,7 +80,7 @@ export default async function AdminPage() {
       <TurmaAluno alunos={alunos.map((a) => ({ id: a.id, rotulo: `${a.nome ? `${a.nome} · ${a.ident}` : a.ident} (${a.turma})` }))} />
       <p className="painel-nota">
         Cada turma só vê as próprias matérias e a própria agenda. Contas novas nascem na T29. De qual turma é cada matéria fica
-        no banco (materias.turmas); uma matéria pode servir às duas.
+        no banco (materias.turmas); cada turma tem as suas matérias, sem misturar.
       </p>
 
       <div className="sec">Período atual de cada turma</div>

@@ -216,6 +216,7 @@ export type Database = {
           ordem: number
           turmas: string[]
           periodo: number | null
+          chave_agenda: string | null
         }
         Insert: {
           cor_fim?: string | null
@@ -227,6 +228,7 @@ export type Database = {
           ordem?: number
           turmas?: string[]
           periodo?: number | null
+          chave_agenda?: string | null
         }
         Update: {
           cor_fim?: string | null
@@ -238,6 +240,7 @@ export type Database = {
           ordem?: number
           turmas?: string[]
           periodo?: number | null
+          chave_agenda?: string | null
         }
         Relationships: []
       }

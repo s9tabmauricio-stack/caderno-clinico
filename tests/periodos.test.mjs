@@ -15,3 +15,17 @@ test('matéria sem período cai no período atual; administrador vê os período
   assert.deepEqual(r.periodos, [7, 6, 5])
   assert.equal(r.materias.find((m) => m.id === 'nova').periodo, 7)
 })
+
+test('cada turma com a sua matéria: "neuro" da agenda da T29 abre neuro29, da T28 abre neuro', async () => {
+  const { materiaDaTurma } = await import('../lib/periodos.ts')
+  const materias = [
+    { id: 'neuro', chave_agenda: null, turmas: ['t28'], periodo: 6 },
+    { id: 'neuro29', chave_agenda: 'neuro', turmas: ['t29'], periodo: 6 },
+    { id: 'nefro', chave_agenda: null, turmas: ['t29'], periodo: 5 },
+  ]
+  assert.equal(materiaDaTurma('neuro', 't29', materias), 'neuro29')
+  assert.equal(materiaDaTurma('neuro', 't28', materias), 'neuro')
+  assert.equal(materiaDaTurma('nefro', 't29', materias), 'nefro')
+  assert.equal(materiaDaTurma('cardio', 't29', materias), 'cardio')
+  assert.equal(materiaDaTurma(null, 't29', materias), null)
+})
