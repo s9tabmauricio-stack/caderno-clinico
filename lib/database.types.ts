@@ -215,6 +215,7 @@ export type Database = {
           nome: string
           ordem: number
           turmas: string[]
+          periodo: number | null
         }
         Insert: {
           cor_fim?: string | null
@@ -225,6 +226,7 @@ export type Database = {
           nome: string
           ordem?: number
           turmas?: string[]
+          periodo?: number | null
         }
         Update: {
           cor_fim?: string | null
@@ -235,7 +237,14 @@ export type Database = {
           nome?: string
           ordem?: number
           turmas?: string[]
+          periodo?: number | null
         }
+        Relationships: []
+      }
+      turmas: {
+        Row: { id: string; nome: string; periodo_atual: number }
+        Insert: { id: string; nome: string; periodo_atual: number }
+        Update: { id?: string; nome?: string; periodo_atual?: number }
         Relationships: []
       }
       agenda_semanas: {

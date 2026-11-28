@@ -13,6 +13,7 @@ export type Materia = {
   ordem: number
   cor_inicio: string | null
   cor_fim: string | null
+  periodo?: number | null
 }
 
 export type ProgressoAula = {
@@ -89,7 +90,7 @@ function falhou(contexto: string, error: { message: string }): never {
 export async function carregarMaterias(supabase: SupabaseServidor): Promise<Materia[]> {
   const { data, error } = await supabase
     .from('materias')
-    .select('id, nome, descricao, ordem, cor_inicio, cor_fim')
+    .select('id, nome, descricao, ordem, cor_inicio, cor_fim, periodo')
     .order('ordem')
   if (error) falhou('as matérias', error)
   return data ?? []

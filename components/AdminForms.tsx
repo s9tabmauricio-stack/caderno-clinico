@@ -1,7 +1,7 @@
 'use client'
 
 import { useActionState, useRef, useState } from 'react'
-import { criarAluno, definirAparelhos, definirTurma, trocarSenhaAluno, type Resultado } from '@/app/admin/acoes'
+import { criarAluno, definirAparelhos, definirPeriodo, definirTurma, trocarSenhaAluno, type Resultado } from '@/app/admin/acoes'
 import { formatarLogin } from '@/lib/cpf'
 
 function Mensagem({ r }: { r: Resultado }) {
@@ -149,6 +149,44 @@ export function TurmaAluno({ alunos }: { alunos: { id: string; rotulo: string }[
       </select>
       <button className="btn" type="submit" disabled={enviando}>
         {enviando ? 'Mudando…' : 'Mudar turma'}
+      </button>
+      <Mensagem r={r} />
+    </form>
+  )
+}
+
+export function PeriodoTurma({ turmas }: { turmas: { id: string; nome: string; periodo_atual: number }[] }) {
+  const [r, acao, enviando] = useActionState(definirPeriodo, null)
+  return (
+    <form action={acao} className="admin-form" noValidate>
+      <label className="flabel" htmlFor="p-turma">
+        Turma
+      </label>
+      <select id="p-turma" name="turma" className="campo" defaultValue="">
+        <option value="" disabled>
+          Escolha
+        </option>
+        {turmas.map((t) => (
+          <option key={t.id} value={t.id}>
+            {t.nome} (hoje no {t.periodo_atual}º período)
+          </option>
+        ))}
+      </select>
+      <label className="flabel" htmlFor="p-periodo">
+        Período atual
+      </label>
+      <select id="p-periodo" name="periodo" className="campo" defaultValue="">
+        <option value="" disabled>
+          Escolha
+        </option>
+        {Array.from({ length: 12 }, (_, i) => i + 1).map((n) => (
+          <option key={n} value={n}>
+            {n}º período
+          </option>
+        ))}
+      </select>
+      <button className="btn" type="submit" disabled={enviando}>
+        {enviando ? 'Mudando…' : 'Mudar período'}
       </button>
       <Mensagem r={r} />
     </form>
