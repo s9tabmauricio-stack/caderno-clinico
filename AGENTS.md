@@ -36,6 +36,7 @@ Este manual tem só as regras de sempre. Os detalhes ficam onde são usados; lei
 | Conferir os flashcards de uma aula (já no banco) contra a fonte da aula, em blocos ao mesmo tempo | skill `conferir-flashcards` (`.claude/skills/conferir-flashcards/SKILL.md`) |
 | Bula de medicamento no chat | skill `bula-padrao` (`.claude/skills/bula-padrao/SKILL.md`) |
 | Lançar provas na Agenda | skill `provas-agenda` |
+| Calendário acadêmico do ano (feriados, semanas de provas) | PDF da FAG → `supabase/calendario/<ano>.sql`, rodado pelo conector; telas em `docs/telas.md` (Agenda) |
 | Publicar o cronograma da semana colado na conversa | `node scripts/publicar-agenda.mjs <arquivo>` (`--conferir` só mostra; precisa de `SUPABASE_SECRET_KEY`; sem ela, o Mauricio cola em `/admin/agenda`) |
 | Aula nova a partir do áudio | skill `aula-nova` |
 | Computador Windows do Mauricio | [`docs/windows.md`](docs/windows.md) |

@@ -274,6 +274,12 @@ export type Database = {
         }
         Relationships: []
       }
+      calendario: {
+        Row: { id: number; inicio: string; fim: string | null; tipo: string; titulo: string }
+        Insert: { id?: never; inicio: string; fim?: string | null; tipo: string; titulo: string }
+        Update: { id?: never; inicio?: string; fim?: string | null; tipo?: string; titulo?: string }
+        Relationships: []
+      }
       perfis: {
         Row: { admin: boolean; criado_em: string; id: string; nome: string | null; grupo: number | null; max_aparelhos: number | null; turma: string | null }
         Insert: { admin?: boolean; criado_em?: string; id: string; nome?: string | null; grupo?: number | null; max_aparelhos?: number | null; turma?: string | null }

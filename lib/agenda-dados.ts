@@ -77,3 +77,9 @@ export async function proximasProvas(supabase: Cliente) {
     .order('inicio')
   return comMateriaDaTurma(supabase, evs ?? [])
 }
+
+/** Calendário acadêmico da FAG (feriados, semanas de provas, eventos), em ordem de data. */
+export async function carregarCalendario(supabase: Cliente) {
+  const { data } = await supabase.from('calendario').select('id, inicio, fim, tipo, titulo').order('inicio').order('id')
+  return data ?? []
+}

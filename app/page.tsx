@@ -9,7 +9,9 @@ import {
 } from '@/lib/dados'
 import { saudacao } from '@/lib/formato'
 import { agoraBrasilia, COR_MATERIA, ehDiaTodo, ehDoAluno, fmtHora, inicioMs, situacoes } from '@/lib/agenda'
-import { agendaDoDia, proximasProvas } from '@/lib/agenda-dados'
+import { agendaDoDia, carregarCalendario, proximasProvas } from '@/lib/agenda-dados'
+import { CalendarioInicio } from '@/components/Calendario'
+import { marcoDoInicio } from '@/lib/calendario'
 import { AgendaAvisos, AgendaDiaTodo, AgendaLista, AgendaProvas } from '@/components/AgendaLista'
 import { ContagemProva } from '@/components/ContagemProva'
 import { CopiarPix } from '@/components/CopiarPix'
@@ -27,13 +29,14 @@ function amanha(data: string) {
 export default async function Inicio() {
   const { supabase, userId, email } = await sessao()
   const agora = agoraBrasilia()
-  const [perfil, materias, progresso, agendaHoje, agendaAmanha, todasProvas] = await Promise.all([
+  const [perfil, materias, progresso, agendaHoje, agendaAmanha, todasProvas, calendario] = await Promise.all([
     supabase.from('perfis').select('nome, grupo').eq('id', userId).maybeSingle(),
     carregarMaterias(supabase),
     carregarProgresso(supabase),
     agendaDoDia(supabase, agora.data),
     agendaDoDia(supabase, amanha(agora.data)),
     proximasProvas(supabase),
+    carregarCalendario(supabase),
   ])
 
   // Agenda de hoje: teóricas e avisos para todos, práticas só do grupo do aluno
@@ -114,6 +117,7 @@ export default async function Inicio() {
               </span>
             </p>
           )}
+          <CalendarioInicio {...marcoDoInicio(calendario, agora.data)} hoje={agora.data} />
           {grupo === null && agendaHoje.length > 0 && (
             <p className="foot">
               <Link href="/agenda">Escolha seu grupo de prática na Agenda</Link> para ver só as suas práticas.

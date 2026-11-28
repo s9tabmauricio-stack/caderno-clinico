@@ -6,6 +6,7 @@
 -- Progresso do Dia D incluído em 10/11/2026: migração 20261110015525_progresso_dia_d.sql.
 -- Limite de aparelhos por conta incluído em 12/11/2026: migração 20261112120000_limite_aparelhos.sql.
 -- Novidades (sininho) incluídas em 17/11/2026: migração 20261117180000_novidades.sql.
+-- Calendário acadêmico (tabela calendario) incluído em 28/11/2026: migração calendario_academico.
 -- Mensagens para o administrador incluídas em 19/11/2026: migração 20261119030000_mensagens.sql.
 -- Turmas (T28 e T29) incluídas em 28/11/2026: migração 20261128120000_turmas.sql (perfis.turma, materias.turmas, agenda_semanas.turma, função ve_turma e regras de leitura por turma).
 -- Períodos incluídos em 28/11/2026: migração 20261128150000_periodos.sql (tabela turmas, materias.periodo, perfis.turma → turmas).
@@ -55,6 +56,19 @@ create table public.agenda_semanas (
   turma text default 't29'::text not null, -- de qual turma é a semana; os eventos seguem a semana
   constraint agenda_semanas_pkey PRIMARY KEY (semana)
 );
+
+create table public.calendario (
+  id bigint generated always as identity not null,
+  inicio date not null,
+  fim date, -- vazio = um dia só
+  tipo text not null,
+  titulo text not null,
+  constraint calendario_pkey PRIMARY KEY (id),
+  constraint calendario_tipo_check CHECK ((tipo = ANY (ARRAY['feriado'::text, 'recesso'::text, 'provas'::text, 'segunda_chamada'::text, 'exames'::text, 'semana_livre'::text, 'letivo'::text, 'evento'::text, 'notas'::text, 'docentes'::text]))),
+  constraint calendario_titulo_check CHECK (((char_length(btrim(titulo)) >= 1) AND (char_length(btrim(titulo)) <= 160))),
+  constraint calendario_check CHECK (((fim IS NULL) OR (fim >= inicio)))
+);
+CREATE INDEX calendario_inicio_idx ON public.calendario USING btree (inicio);
 
 create table public.aulas (
   id text not null,
@@ -815,6 +829,7 @@ alter table public.historico_revisoes enable row level security;
 alter table public.materias enable row level security;
 alter table public.mensagens enable row level security;
 alter table public.novidades enable row level security;
+alter table public.calendario enable row level security;
 alter table public.perfis enable row level security;
 alter table public.questoes enable row level security;
 alter table public.recados enable row level security;
@@ -833,6 +848,7 @@ create policy "Alunos leem as matérias da turma" on public.materias as permissi
 create policy "Aluno escreve a própria mensagem" on public.mensagens as permissive for insert to authenticated with check ((( SELECT auth.uid() AS uid) = user_id));
 create policy "Aluno vê as próprias mensagens" on public.mensagens as permissive for select to authenticated using ((( SELECT auth.uid() AS uid) = user_id));
 create policy "Turma lê as novidades" on public.novidades as permissive for select to authenticated using (true);
+create policy "Turma lê o calendário" on public.calendario as permissive for select to authenticated using (true);
 create policy "Editar o próprio perfil" on public.perfis as permissive for update to authenticated using ((( SELECT auth.uid() AS uid) = id)) with check ((( SELECT auth.uid() AS uid) = id));
 create policy "Ver o próprio perfil" on public.perfis as permissive for select to authenticated using ((( SELECT auth.uid() AS uid) = id));
 create policy "Alunos leem as questões da turma" on public.questoes as permissive for select to authenticated using ((materia_id IN ( SELECT m.id FROM materias m)));
@@ -870,6 +886,8 @@ grant insert, select on public.mensagens to authenticated;
 
 -- Exceção: novidades só para ler (quem escreve é a Administração, com a chave secreta).
 grant select on public.novidades to authenticated;
+-- Exceção: calendário só para ler (quem grava é o conector, com supabase/calendario/<ano>.sql).
+grant select on public.calendario to authenticated;
 
 -- Exceção: perfis sem update geral; o aluno só muda nome e grupo.
 grant delete, insert, references, select, trigger, truncate on public.perfis to anon, authenticated;
