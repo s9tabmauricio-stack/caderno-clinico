@@ -145,7 +145,7 @@ export function TurmaAluno({ alunos }: { alunos: { id: string; rotulo: string }[
       <select id="t-turma" name="turma" className="campo" defaultValue="t29">
         <option value="t29">T29</option>
         <option value="t28">T28</option>
-        <option value="todas">As duas (como o administrador)</option>
+        <option value="todas">As duas misturadas</option>
       </select>
       <button className="btn" type="submit" disabled={enviando}>
         {enviando ? 'Mudando…' : 'Mudar turma'}
