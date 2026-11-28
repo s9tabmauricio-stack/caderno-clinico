@@ -1496,3 +1496,28 @@ h1.big{background:var(--metal-titulo);-webkit-background-clip:text;background-cl
 .pa .pa-ok{color:var(--ok)}
 .perf-fracos{padding:8px 16px;gap:0;margin-bottom:4px}
 .pa-m{display:block;font-size:12.5px;color:var(--muted)}
+
+/* calendário acadêmico (tabela calendario; Agenda e Início, 28/11/2026). Cor pelo tipo: âmbar = feriado/recesso (aviso), azul = provas, verde = semana livre, roxo = evento */
+.cal-aviso{--cal:var(--orange);--cal-soft:var(--orange-soft);--cal-line:var(--orange-line)}
+.cal-azul{--cal:var(--accent);--cal-soft:var(--accent-soft);--cal-line:var(--accent-line)}
+.cal-verde{--cal:var(--ok);--cal-soft:var(--ok-soft);--cal-line:var(--ok-line)}
+.cal-roxo{--cal:var(--purple);--cal-soft:var(--purple-soft);--cal-line:var(--purple-line)}
+.cal-neutro{--cal:var(--muted);--cal-soft:rgba(127,127,127,.08);--cal-line:var(--line-strong)}
+.cal-dia{display:grid;gap:8px;margin:0 0 12px}
+.cal-faixa{display:flex;gap:10px;align-items:flex-start;font-size:14px;line-height:1.4;color:var(--text);background:var(--cal-soft);border:1px solid var(--cal-line);border-radius:var(--r-md);padding:10px 13px}
+.cal-faixa b{color:var(--cal);font-weight:600}
+.cal-s{color:var(--muted)}
+.cal-inicio{display:flex;flex-direction:column;gap:3px;margin:12px 4px 0;font-size:14px;color:var(--text);text-decoration:none}
+.cal-inicio b{color:var(--ink)}
+.cal-inicio b.alerta{color:var(--orange)}
+.cal-mes{margin:0 0 14px}
+.cal-mes-t{font-size:14px;font-weight:600;color:var(--title);margin:0 4px 8px}
+.cal-row{display:flex;gap:12px;align-items:center;cursor:default;border-left:3px solid var(--cal-line)}
+.cal-row .cal-quando{flex:0 0 92px;font-size:13px;font-weight:600;color:var(--ink);font-variant-numeric:tabular-nums}
+.cal-row .main{display:flex;flex-direction:column;gap:2px;min-width:0}
+.cal-row .t{font-size:14.5px;color:var(--text)}
+.cal-row .s{font-size:12.5px;color:var(--muted)}
+.cal-tag{color:var(--cal);font-weight:600}
+.cal-row.passou{opacity:.5}
+.cal-row.valendo{background:var(--cal-soft)}
+.cal-passados summary{cursor:pointer;font-size:14px;color:var(--muted);margin:6px 4px 12px}

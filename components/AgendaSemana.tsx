@@ -6,6 +6,8 @@ import { createClient } from '@/lib/supabase/client'
 import { ehDiaTodo, ehDoAluno, situacoes } from '@/lib/agenda'
 import type { EventoBanco } from '@/lib/agenda-dados'
 import { AgendaAvisos, AgendaDiaTodo, AgendaLista } from './AgendaLista'
+import { CalendarioDia } from './Calendario'
+import { marcosDoDia, type Marco } from '@/lib/calendario'
 
 const DIAS = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb']
 
@@ -17,6 +19,7 @@ export function AgendaSemana({
   agora,
   userId,
   materias,
+  calendario = [],
 }: {
   semana: string
   aviso: string | null
@@ -25,6 +28,7 @@ export function AgendaSemana({
   agora: { data: string; minutos: number }
   userId: string
   materias: string[]
+  calendario?: Marco[]
 }) {
   const supabase = useMemo(() => createClient(), [])
   const router = useRouter()
@@ -139,6 +143,7 @@ export function AgendaSemana({
       <div className="sec" style={{ textTransform: 'none', letterSpacing: 0, fontSize: 14 }}>
         {nomeDia.charAt(0).toUpperCase() + nomeDia.slice(1)}
       </div>
+      <CalendarioDia marcos={marcosDoDia(calendario, dia)} />
       <AgendaDiaTodo eventos={diaTodo} materias={materias} />
       {aulas.length ? (
         <AgendaLista eventos={aulas} grupo={grupoAtual} estados={estados} materias={materias} />

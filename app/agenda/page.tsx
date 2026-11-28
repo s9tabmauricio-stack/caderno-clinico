@@ -3,7 +3,9 @@ import { Pagina } from '@/components/Pagina'
 import { AgendaSemana } from '@/components/AgendaSemana'
 import { AgendaProvas } from '@/components/AgendaLista'
 import { carregarMaterias, carregarProgresso, pendentes, sessao } from '@/lib/dados'
-import { agendaDaSemana, grupoDoAluno, proximasProvas } from '@/lib/agenda-dados'
+import { agendaDaSemana, carregarCalendario, grupoDoAluno, proximasProvas } from '@/lib/agenda-dados'
+import { CalendarioAno, CalendarioDia } from '@/components/Calendario'
+import { marcosDoDia } from '@/lib/calendario'
 import { agoraBrasilia } from '@/lib/agenda'
 
 export const metadata: Metadata = { title: 'Agenda' }
@@ -19,12 +21,13 @@ function periodo(semana: string) {
 
 export default async function AgendaPage() {
   const { supabase, userId } = await sessao()
-  const [semana, grupo, progresso, materias, provas] = await Promise.all([
+  const [semana, grupo, progresso, materias, provas, calendario] = await Promise.all([
     agendaDaSemana(supabase),
     grupoDoAluno(supabase, userId),
     carregarProgresso(supabase),
     carregarMaterias(supabase),
     proximasProvas(supabase),
+    carregarCalendario(supabase),
   ])
   const agora = agoraBrasilia()
   const idsMaterias = materias.map((m) => m.id)
@@ -47,9 +50,13 @@ export default async function AgendaPage() {
           agora={agora}
           userId={userId}
           materias={idsMaterias}
+          calendario={calendario}
         />
       ) : (
-        <p className="vazio">O cronograma da semana ainda não foi publicado.</p>
+        <>
+          <CalendarioDia marcos={marcosDoDia(calendario, agora.data)} />
+          <p className="vazio">O cronograma da semana ainda não foi publicado.</p>
+        </>
       )}
 
       {provas.length > 0 && (
@@ -58,6 +65,15 @@ export default async function AgendaPage() {
             Próximas provas
           </div>
           <AgendaProvas eventos={provas} agora={agora} materias={idsMaterias} />
+        </>
+      )}
+
+      {calendario.length > 0 && (
+        <>
+          <div className="sec" id="calendario">
+            Calendário acadêmico
+          </div>
+          <CalendarioAno marcos={calendario} hoje={agora.data} />
         </>
       )}
     </Pagina>
