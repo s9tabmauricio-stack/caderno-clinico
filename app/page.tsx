@@ -36,14 +36,16 @@ export default async function Inicio() {
     proximasProvas(supabase),
   ])
 
-  // Agenda de hoje (o dia inteiro, as que já passaram ficam apagadas): teóricas e avisos para todos, práticas só do grupo do aluno
+  // Agenda de hoje: teóricas e avisos para todos, práticas só do grupo do aluno
   const grupo = perfil.data?.grupo ?? null
   const ehAula = (e: (typeof agendaHoje)[number]) =>
     !e.cancelado && e.tipo !== 'aviso' && !ehDiaTodo(e) && ehDoAluno(e.grupos, grupo)
   const diaTodo = agendaHoje.filter(ehDiaTodo)
-  const aulasHoje = agendaHoje.filter(ehAula)
+  const aulasHoje = situacoes(agendaHoje.filter(ehAula), agora.minutos)
+  const aulasRestantes = aulasHoje.filter((aula) => aula.situacao !== 'passou').map((aula) => aula.evento)
+  const aulasEncerradas = aulasHoje.filter((aula) => aula.situacao === 'passou').map((aula) => aula.evento)
   const estados = Object.fromEntries(
-    situacoes(aulasHoje, agora.minutos).map((x) => [x.evento.id, { situacao: x.situacao, falta: x.falta, feito: x.feito }]),
+    aulasHoje.map((aula) => [aula.evento.id, aula]),
   )
   const avisosHoje = agendaHoje.filter((e) => e.cancelado)
   const proximaAmanha = agendaAmanha.filter((e) => ehAula(e) && e.inicio).sort((a, b) => (a.inicio ?? '').localeCompare(b.inicio ?? ''))[0]
@@ -83,18 +85,26 @@ export default async function Inicio() {
       </header>
 
       <div className="inicio">
-        <section className="in-agenda" aria-label="Agenda de hoje">
+        <section className="in-agenda" aria-labelledby="agenda-hoje">
           <div className="sec ag-h">
-            <span>{grupo ? 'Sua agenda hoje' : 'Agenda de hoje'}</span>
-            <Link href="/agenda">Semana →</Link>
+            <h2 id="agenda-hoje">{grupo ? 'Sua agenda hoje' : 'Agenda de hoje'}</h2>
+            <Link href="/agenda">Ver semana</Link>
           </div>
           <AgendaDiaTodo eventos={diaTodo} materias={idsMaterias} />
-          {aulasHoje.length > 0 ? (
-            <AgendaLista eventos={aulasHoje} grupo={grupo} estados={estados} materias={idsMaterias} />
+          {aulasRestantes.length > 0 ? (
+            <AgendaLista eventos={aulasRestantes} grupo={grupo} estados={estados} materias={idsMaterias} />
           ) : (
-            <p className="vazio">Nenhuma aula hoje.</p>
+            <p className="vazio">
+              {aulasEncerradas.length > 0 ? 'As aulas de hoje já terminaram.' : 'Nenhuma aula hoje.'}
+            </p>
           )}
           <AgendaAvisos eventos={avisosHoje} />
+          {aulasEncerradas.length > 0 && (
+            <details className="in-encerradas">
+              <summary>Aulas encerradas ({aulasEncerradas.length})</summary>
+              <AgendaLista eventos={aulasEncerradas} grupo={grupo} materias={idsMaterias} />
+            </details>
+          )}
           {proximaAmanha && (
             <p className="in-amanha">
               <span className="in-k">Amanhã</span>
