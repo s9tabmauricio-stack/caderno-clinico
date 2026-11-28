@@ -330,7 +330,7 @@ body{margin:0;min-height:100vh}
 .qmeta .rec{background:var(--orange-soft);color:var(--orange)}
 .qtext{white-space:pre-line}
 .q-imagens{display:flex;flex-wrap:wrap;gap:10px;margin:-4px 0 16px}
-.q-imagens a{flex:1 1 240px;display:block;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:#fff}
+.q-imagens a{flex:1 1 240px;max-width:560px;display:block;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:#fff}
 .q-imagens img{display:block;width:100%;height:auto;max-height:60vh;object-fit:contain}
 .erradas p{white-space:pre-line}
 .erradas{background:var(--card-2);border:1px solid var(--line);border-radius:var(--r-md);padding:12px 14px;font-size:15px;margin-top:10px}

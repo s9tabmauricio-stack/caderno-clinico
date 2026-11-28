@@ -30,20 +30,26 @@ const MESES: Record<string, number> = {
 
 const EMOJI_MATERIA: [string, string][] = [
   ['🫁', 'pneumo'], ['🍽', 'gastro'], ['🚰', 'nefro'], ['🚻', 'uro'], ['🦴', 'orto'],
-  ['🥼', 'pass'], ['🗣', 'sem'], ['🩸', 'angio'], ['🧠', 'neuro'],
+  ['🥼', 'pass'], ['🗣', 'sem'], ['🩸', 'angio'], ['🧠', 'neuro'], ['🫀', 'cardio'],
 ]
 const PALAVRA_MATERIA: [RegExp, string][] = [
-  [/pneumo/i, 'pneumo'], [/gastro/i, 'gastro'], [/nefro/i, 'nefro'], [/urolog/i, 'uro'],
-  [/ortop/i, 'orto'], [/\bPASS\b/, 'pass'], [/angio/i, 'angio'], [/neuro/i, 'neuro'], [/semin[aá]rio/i, 'sem'],
+  [/pneumo/i, 'pneumo'], [/gastro/i, 'gastro'], [/nefro/i, 'nefro'], [/\burolog/i, 'uro'],
+  [/ortop/i, 'orto'], [/\bPASS\b/, 'pass'], [/angio/i, 'angio'], [/neuro/i, 'neuro'],
+  // 6º período da T29 (28/11/2026): radicais longos para não pegar "hematoma" ou "cardiopatia" de outra matéria
+  [/dermato/i, 'derma'], [/reumato/i, 'reumato'], [/hematolog/i, 'hemato'], [/end[oó]crin/i, 'endocrino'],
+  [/cardiolog/i, 'cardio'], [/\bPROEX\b/i, 'proex'], [/semin[aá]rio/i, 'sem'],
 ]
 
 export const NOME_MATERIA: Record<string, string> = {
   pneumo: 'Pneumologia', gastro: 'Gastroenterologia', nefro: 'Nefrologia', uro: 'Urologia',
   orto: 'Ortopedia', pass: 'PASS', sem: 'Seminário', angio: 'Angiologia', neuro: 'Neurologia',
+  derma: 'Dermatologia', reumato: 'Reumatologia', hemato: 'Hematologia', endocrino: 'Endocrinologia',
+  cardio: 'Cardiologia', proex: 'PROEX',
 }
 export const COR_MATERIA: Record<string, string> = {
   pneumo: '#22D3EE', gastro: '#34D399', nefro: '#60A5FA', uro: '#A78BFA',
   orto: '#FBBF24', pass: '#F472B6', sem: '#9AA3BD', angio: '#FB923C', neuro: '#A3E635',
+  derma: '#FACC15', reumato: '#818CF8', hemato: '#FB7185', endocrino: '#2DD4BF', cardio: '#E879F9', proex: '#38BDF8',
 }
 
 const DIA_SEMANA = /^\s*(segunda|ter[cç]a|quarta|quinta|sexta|s[aá]bado|domingo)(?:-feira)?\s*\|\s*(\d{1,2})[º°]?\s*\/\s*([a-zç]+|\d{1,2})(?:\s*[-–—]\s*(.+))?/i
