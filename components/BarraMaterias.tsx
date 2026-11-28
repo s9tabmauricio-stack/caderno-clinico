@@ -51,7 +51,7 @@ export function BarraMaterias({ id, nome, materias, secao, retorno }: {
             className={materia.id === id ? 'on' : undefined}
             aria-current={materia.id === id ? 'page' : undefined}
           >
-            {materia.nome}
+            {materia.id === 'proex' ? 'PROEX' : materia.nome}
           </Link>
         ))}
       </nav>
