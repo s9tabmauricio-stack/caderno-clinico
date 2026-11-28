@@ -1125,6 +1125,15 @@ h1.big{background:var(--metal-titulo);-webkit-background-clip:text;background-cl
    ===================================================================== */
 .inicio{display:grid;grid-template-columns:minmax(0,1fr)}
 .in-agenda>.sec:first-child{margin-top:0}
+.in-agenda .sec h2{margin:0;font:inherit;letter-spacing:inherit}
+.in-encerradas{margin-top:8px}
+.in-encerradas summary{
+  box-sizing:border-box;min-height:44px;padding:11px var(--espaco-card);border-radius:var(--r-md);
+  background:var(--seg);color:var(--accent);font-size:.875rem;font-weight:600;line-height:1.5;
+  list-style-position:inside;cursor:pointer;
+}
+.in-encerradas summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.in-encerradas[open]>.agenda{margin-top:8px}
 .in-card{position:relative;min-width:0;border-radius:var(--r-lg);background:var(--vidro);box-shadow:var(--vidro-sombra);
   -webkit-backdrop-filter:blur(22px) saturate(180%);backdrop-filter:blur(22px) saturate(180%)}
 .in-card{display:flex;flex-direction:column;gap:12px;padding:18px}
