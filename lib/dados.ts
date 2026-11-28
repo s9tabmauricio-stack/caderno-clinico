@@ -51,6 +51,8 @@ export type QuestaoAluno = {
   cai_na_prova: boolean
   // o professor disse com todas as letras que cai (ou marcou o slide com estrela): faixa e placa vermelhas
   professor_disse_que_cai: boolean
+  // imagens da questão (caminhos no Storage "questoes"); vazio na maioria
+  imagens: string[]
   classificacao: ClassificacaoQuestao | null
   resposta: { escolhida: number; acertou: boolean; tentativas: number } | null
 }
@@ -205,6 +207,7 @@ type LinhaQuestao = {
   origem: string | null
   cai_na_prova: boolean | null
   professor_disse_que_cai?: boolean | null
+  imagens?: string[] | null
   classificacao: string | null
   escolhida: number | null
   acertou: boolean | null
@@ -227,6 +230,7 @@ export function paraQuestao(q: LinhaQuestao): QuestaoAluno {
     origem: q.origem,
     cai_na_prova: q.cai_na_prova ?? false,
     professor_disse_que_cai: q.professor_disse_que_cai ?? false,
+    imagens: Array.isArray(q.imagens) ? q.imagens.filter(Boolean) : [],
     classificacao: classificacaoValida(q.classificacao),
     resposta:
       q.escolhida !== null && q.acertou !== null

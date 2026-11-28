@@ -10,6 +10,7 @@
 -- Turmas (T28 e T29) incluídas em 28/11/2026: migração 20261128120000_turmas.sql (perfis.turma, materias.turmas, agenda_semanas.turma, função ve_turma e regras de leitura por turma).
 -- Períodos incluídos em 28/11/2026: migração 20261128150000_periodos.sql (tabela turmas, materias.periodo, perfis.turma → turmas).
 -- Matérias por turma em 28/11/2026: migração 20261128180000_materias_por_turma.sql (materias.chave_agenda).
+-- Imagens nas questões em 28/11/2026: migração 20261128200000_imagens_questoes.sql (questoes.imagens, visão questoes_do_aluno, espaço público questoes no Storage).
 -- Suspensão individual aplicada em 03/11/2026: migração 20261103162543_suspensao_individual_flashcards.sql.
 --
 -- Para que serve: é a referência confiável de como o banco está montado
@@ -166,6 +167,7 @@ create table public.questoes (
   substituida_por text,
   cai_na_prova boolean default false not null,
   professor_disse_que_cai boolean default false not null,
+  imagens text[] default '{}'::text[] not null, -- caminhos no Storage "questoes" (28/11/2026); vazio na maioria
   constraint questoes_pkey PRIMARY KEY (id),
   constraint questoes_alternativas_check CHECK ((jsonb_typeof(alternativas) = 'array'::text)),
   constraint questoes_correta_check CHECK ((correta >= 0)),
@@ -501,7 +503,7 @@ create or replace view public.questoes_do_aluno with (security_invoker=true) as
  select q.id, q.aula_id, q.ordem, q.enunciado, q.alternativas, q.correta, q.comentario,
     r.escolhida, r.correta as acertou, r.tentativas, r.respondida_em,
     q.materia_id, q.por_que_erradas, q.tema, q.prova, q.fonte, q.origem, q.cai_na_prova,
-    c.classificacao, q.professor_disse_que_cai
+    c.classificacao, q.professor_disse_que_cai, q.imagens
  from public.questoes q
  left join public.aulas a on a.id = q.aula_id
  left join public.respostas r on r.questao_id = q.id and r.user_id = (select auth.uid())

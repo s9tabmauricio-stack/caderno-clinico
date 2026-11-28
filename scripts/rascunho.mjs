@@ -78,6 +78,7 @@ export function linhasFlashcards(aulaId, cards) {
  * Questões: "### N · [PROVA ·] tema: …", enunciado, cinco "- A) …" (a certa com *),
  * "**Comentário:** …" e "**Por que as erradas:**" com uma linha por letra.
  * Questão tirada de prova (opcional): linhas "**Prova:** …", "**Fonte:** …" e "**Origem:** …".
+ * Questão com imagem (opcional): uma linha "**Imagem:** arquivo.png" para cada imagem, na ordem (vira `imagens`).
  * Devolve [{ n, prova, tema, enunciado, alternativas, correta, comentario, por_que_erradas }].
  */
 export function lerQuestoes(md) {
@@ -125,6 +126,9 @@ export function lerQuestoes(md) {
     // Questão de prova (opcional): "**Prova:** p2-t28", "**Fonte:** P2 T28 · Dr. Cássio", "**Origem:** adaptada".
     const meta = /^\*\*(Prova|Fonte|Origem):\*\*\s*(.+)$/.exec(linha)
     if (meta) { q[{ Prova: 'nome_prova', Fonte: 'fonte', Origem: 'origem' }[meta[1]]] = meta[2].trim(); parte = null; continue }
+    // Imagem (opcional, uma linha por imagem): "**Imagem:** ecg-q05.png" (arquivo em apostilas-fonte/<aula>/)
+    const img = /^\*\*Imagem:\*\*\s*(.+)$/.exec(linha)
+    if (img) { (q.imagens ??= []).push(img[1].trim().replace(/^`|`$/g, '')); parte = null; continue }
 
     if (!linha.trim()) continue
     if (parte === 'enunciado') q.enunciado = juntar(q.enunciado, linha.trim())
@@ -245,7 +249,7 @@ export function idNovaVersao(id) {
 /**
  * SQL para trocar questões do banco pelas do rascunho (título com "substitui: <id>"),
  * como manda o manual: inclui a versão nova copiando da antiga ordem, tema, fonte, origem,
- * prova, cai_na_prova e professor_disse_que_cai; marca a antiga com substituida_por e leva os recados junto.
+ * prova, cai_na_prova, professor_disse_que_cai e imagens; marca a antiga com substituida_por e leva os recados junto.
  * Só age se a antiga ainda estiver ativa e for montada (questão de prova real não se reescreve),
  * então rodar duas vezes não duplica nada.
  */
@@ -254,8 +258,8 @@ export function sqlSubstituicoes(questoes) {
     if (!q.substitui) throw new Error(`Questão ${q.n}: falta o "substitui: <id>" no título.`)
     const velho = sqlTexto(q.substitui)
     const novo = sqlTexto(idNovaVersao(q.substitui))
-    return `insert into public.questoes (id, materia_id, aula_id, ordem, enunciado, alternativas, correta, comentario, por_que_erradas, tema, prova, fonte, origem, cai_na_prova, professor_disse_que_cai)
-select ${novo}, materia_id, aula_id, ordem, ${sqlMultilinha(q.enunciado)}, ${sqlTexto(JSON.stringify(q.alternativas))}::jsonb, ${q.correta}, ${sqlMultilinha(q.comentario)}, ${sqlMultilinha(q.por_que_erradas)}, tema, prova, fonte, origem, cai_na_prova, professor_disse_que_cai
+    return `insert into public.questoes (id, materia_id, aula_id, ordem, enunciado, alternativas, correta, comentario, por_que_erradas, tema, prova, fonte, origem, cai_na_prova, professor_disse_que_cai, imagens)
+select ${novo}, materia_id, aula_id, ordem, ${sqlMultilinha(q.enunciado)}, ${sqlTexto(JSON.stringify(q.alternativas))}::jsonb, ${q.correta}, ${sqlMultilinha(q.comentario)}, ${sqlMultilinha(q.por_que_erradas)}, tema, prova, fonte, origem, cai_na_prova, professor_disse_que_cai, imagens
 from public.questoes where id = ${velho} and substituida_por is null and origem = 'montada'
 on conflict (id) do nothing;
 update public.questoes set substituida_por = ${novo} where id = ${velho} and substituida_por is null and exists (select 1 from public.questoes where id = ${novo});

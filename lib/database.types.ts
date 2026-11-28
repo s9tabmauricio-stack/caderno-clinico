@@ -313,6 +313,7 @@ export type Database = {
           origem: string | null
           por_que_erradas: string | null
           professor_disse_que_cai: boolean
+          imagens: string[]
           prova: string | null
           substituida_por: string | null
           tema: string | null
@@ -331,6 +332,7 @@ export type Database = {
           origem?: string | null
           por_que_erradas?: string | null
           professor_disse_que_cai?: boolean
+          imagens?: string[]
           prova?: string | null
           substituida_por?: string | null
           tema?: string | null
@@ -340,6 +342,7 @@ export type Database = {
           aula_id?: string | null
           cai_na_prova?: boolean
           professor_disse_que_cai?: boolean
+          imagens?: string[]
           comentario?: string | null
           correta?: number
           enunciado?: string
@@ -514,6 +517,7 @@ export type Database = {
           origem: string | null
           por_que_erradas: string | null
           professor_disse_que_cai: boolean | null
+          imagens: string[] | null
           prova: string | null
           respondida_em: string | null
           tema: string | null
