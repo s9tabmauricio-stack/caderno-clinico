@@ -50,7 +50,7 @@ where data = '<dia>' and tipo in ('teorica', 'pratica') order by inicio;
 - Escolha a aula cujo horário contém (ou fica mais perto de) o início da gravação; teórica vence prática no mesmo horário. A duração do áudio ajuda a desempatar.
 - Confirme pelo começo da transcrição (tema, nome do professor). Se a transcrição contradisser a agenda, vale a transcrição, e isso vai para o relatório.
 - Matéria = `materia` da agenda (`nefro`, `pneumo`, `gastro`, `orto`, `uro`, `pass`, `angio`); disciplina = `materias.nome` (no caso de PASS e PROEX, siga a tabela da skill `apostila-padrao`). Professor = o da agenda.
-- Número da aula e id: `select coalesce(max(ordem), 0) + 1 from public.aulas where materia_id = '<materia>'` → `<materia>-a<N>`. Confira que o id não existe.
+- Id: o próximo número livre nos ids da matéria (`select max(substring(id from '-a(\d+)$')::int) + 1 from public.aulas where materia_id = '<materia>'` → `<materia>-a<N>`); confira que não existe. Número da aula (`ordem`, o que vai na capa da apostila) = a posição dela pela data entre as aulas da matéria (`data_aula`), regra do Mauricio de 28/11/2026: se a data cair no meio, a aula nova pega aquele número, as seguintes sobem um (`ordem + 1`) e as capas das apostilas delas são refeitas (veja "Aulas em ordem de data" no `AGENTS.md`). Grave a `data_aula` junto quando incluir a aula.
 - Sem agenda para o dia: deduza a matéria pelo tema da transcrição e diga no relatório.
 
 ## 4. Fonte da aula e apostila

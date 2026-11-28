@@ -38,7 +38,7 @@ Arquivos temporários (lotes de SQL, scripts): ponha o id da aula no nome (ex.: 
 
 ### O que entra
 
-- **A aula inteira, com folga:** tudo o que o professor ensinou na fonte. Referência: Pneumo 1 (8.300 palavras de apostila) tem 171 cards; Pneumo 2 (6.000), 101; Pneumo 3 (7.100), 113. Uma transcrição tem umas duas vezes mais palavras que a apostila: conte uns 8 a 10 cards a cada mil palavras de fonte. Todo fato, número, critério, classificação, conduta e armadilha da aula vira card.
+- **A aula inteira, com folga:** tudo o que o professor ensinou na fonte. Referência: `pneumo-a1` (8.300 palavras de apostila) tem 171 cards; `pneumo-a2` (6.000), 101; `pneumo-a3` (7.100), 113. Uma transcrição tem umas duas vezes mais palavras que a apostila: conte uns 8 a 10 cards a cada mil palavras de fonte. Todo fato, número, critério, classificação, conduta e armadilha da aula vira card.
 - **Pule** a conversa de sala que não ensina nada (chamada, avisos, piadas) e o que o professor diz que não cobra; não repita em dois cards o mesmo ponto que ele falou duas vezes.
 - **Só o que está na fonte.** Não acrescente nada de fora (nada de "Fora da aula"). Se algo parecer errado, confuso ou contraditório (trecho ininteligível, o professor se corrigindo, fala e slide divergindo), não faça o card no escuro: siga a fala, e anote em "Dúvidas para o Mauricio", com o minuto ou o slide.
 - **Erro da transcrição automática** (termo trocado por outro parecido): escreva o termo certo no card; se não tiver certeza de qual é, anote em "Dúvidas".
@@ -52,7 +52,7 @@ Arquivos temporários (lotes de SQL, scripts): ponha o id da aula no nome (ex.: 
 - **"PROVA · "** no começo da frente quando o professor diz que cai na prova ou que é importante: seção com o selo PROVA no título (o texto sai como "Regra de Goodsall PROVA"), "cai em prova", "a prova gosta", "muito cobrada", "isso vocês precisam saber", "a definição importa muito", slides de "questões de prova". Marque também tudo o que o professor só dá a entender que é importante: fez questão de perguntar à turma ("o professor fez questão de perguntar cada tríade"), repetiu, frisou, insistiu, chamou a atenção. Na seção com o selo, todos os cards do assunto dela levam PROVA. Na dúvida, marque como PROVA, sem perguntar ao Mauricio: a regra é dele.
 - Siglas por extenso na primeira vez. Nada de "o aluno deve saber": vá direto ao conteúdo.
 
-Exemplos aprovados (Pneumo 2 e 3):
+Exemplos aprovados (`pneumo-a2` e `pneumo-a3`):
 - "O que é pneumonia?" → "Infecção aguda do parênquima pulmonar. Em geral pega os alvéolos e o interstício, com resposta inflamatória e piora das trocas gasosas: por isso aparece hipoxemia."
 - "PROVA · O que é pneumonia "adquirida na comunidade"?" → "Infecção pulmonar aguda adquirida fora do hospital, que aparece antes da internação ou nas primeiras 48 horas depois da admissão. O professor frisou: a definição importa muito."
 - "Paciente internou hoje e a pneumonia apareceu 30 horas depois. É comunitária?" → "Sim. Até 48 horas após a admissão, ainda é pneumonia adquirida na comunidade."

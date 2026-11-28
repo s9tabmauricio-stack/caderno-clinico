@@ -82,6 +82,7 @@ Este manual tem só as regras de sempre. Os detalhes ficam onde são usados; lei
 ## Banco de dados
 
 - Conteúdo: `materias` (`nefro`, `pneumo`, `gastro`, `orto`, `uro`, `pass`…), `aulas` (id `<materia>-a<N>`, `publicada`), `questoes`, `flashcards`. Progresso do aluno: `respostas`, `revisoes` e os históricos. Também `perfis`, `recados` e a agenda. Detalhes em `docs/banco.md`.
+- **Aulas em ordem de data** (regra do Mauricio, 28/11/2026): o número na tela ("Aula 5", "Pneumo 5", e o da capa da apostila) é `aulas.ordem`, contado pela `data_aula`; o N do id não muda e não é o número da aula. Quando ele falar "Pneumo 7", ache o id com `select id from aulas where materia_id = 'pneumo' and ordem = 7`. Aula que entra com data no meio: renumere as seguintes e refaça a capa das apostilas delas (troque o número no HTML, gere o PDF com o `render.py` e publique).
 - As visões das telas escondem aulas não publicadas e questões com `substituida_por` preenchido.
 - RLS: alunos leem conteúdo e só gravam o próprio progresso. Escrita de conteúdo: só pelo conector (Claude ou Antigravity), pelo `scripts/sql.mjs` (Codex), pelo `scripts/gravar-rascunho.mjs` ou pelas telas de admin (os dois com a chave secreta).
 - A estrutura completa do banco (tabelas, visões, funções, gatilhos, regras de acesso) está copiada em `supabase/estrutura-atual.sql`: leia ali antes de consultar o banco. A pasta `supabase/migrations/` não reflete tudo o que foi aplicado. Mudou a estrutura? Atualize a cópia no mesmo trabalho (como em `docs/banco.md`).
