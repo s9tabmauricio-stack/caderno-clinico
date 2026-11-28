@@ -101,3 +101,24 @@ _16/novembro — 20/novembro_
   assert.equal(sexta.titulo, 'Dia Nacional de Zumbi e da Consciência Negra')
   assert.deepEqual(sexta.notas, ['Não haverá nenhuma atividade.'])
 })
+
+test('agenda: matérias do 6º período da T29 são reconhecidas pelo nome', () => {
+  const s = lerCronograma(`*TERÇA-FEIRA | 1/dezembro*
+
+13h30: aula teórica de dermatologia com Dra. Ana.
+
+15h: aula teórica de reumatologia com Dr. Beto.
+
+16h: aula teórica de hematologia com Dra. Carla.
+
+17h: aula teórica de endocrinologia com Dr. Davi.
+
+19h: aula teórica de cardiologia com Dr. Edu.
+
+20h: PROEX no B1.
+
+21h: aula teórica de neurologia sobre hematoma subdural com Dr. Fábio.
+`, 2026)
+  const materias = s.eventos.map((e) => e.materia)
+  assert.deepEqual(materias, ['derma', 'reumato', 'hemato', 'endocrino', 'cardio', 'proex', 'neuro'])
+})
