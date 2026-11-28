@@ -552,7 +552,13 @@ with hoje as (select (now() at time zone 'America/Sao_Paulo')::date as data)
 select jsonb_build_object(
   'alunos', (
     select coalesce(jsonb_agg(x order by x.ultimo_acesso desc nulls last), '[]'::jsonb) from (
-      select u.id, u.email, p.nome, p.grupo, u.last_sign_in_at as ultimo_acesso,
+      select u.id, u.email, p.nome, p.grupo,
+        -- último acesso = a atividade mais recente: login, sessão renovada, resposta ou revisão
+        -- (last_sign_in_at só muda no login, e quem fica logado nunca aparece como ativo)
+        greatest(u.last_sign_in_at,
+          (select max(coalesce(s.updated_at, s.created_at)) from auth.sessions s where s.user_id = u.id),
+          (select max(h.respondida_em) from historico_respostas h where h.user_id = u.id),
+          (select max(h.revisada_em) from historico_revisoes h where h.user_id = u.id)) as ultimo_acesso,
         (select count(*) from respostas r where r.user_id = u.id) as questoes,
         (select count(*) from respostas r where r.user_id = u.id and r.correta) as certas,
         (select count(*) from revisoes v where v.user_id = u.id) as cards
