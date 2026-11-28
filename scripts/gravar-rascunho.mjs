@@ -17,6 +17,7 @@ import {
   lerFlashcards, lerQuestoes, linhasFlashcards, linhasQuestoes, lotes, materiaDaAula,
   normalizar, sqlFlashcards, sqlQuestoes, ultimoNumeroDosIds,
 } from './rascunho.mjs'
+import { acharArquivo, enviarImagens } from './imagens-questoes.mjs'
 
 const URL_PADRAO = 'https://xtlpmtylifbalzxnfkib.supabase.co' // igual a lib/supabase/config.ts
 
@@ -51,10 +52,17 @@ if (!cards && !questoes) parar(`não achei ${fazCards ? arqCards : ''}${fazCards
 
 if (cards) console.log(`Rascunho de flashcards: ${cards.length} cards, ${cards.filter((c) => c.frente.startsWith('PROVA')).length} com PROVA.`)
 if (questoes) console.log(`Rascunho de questões: ${questoes.length} questões, ${questoes.filter((q) => q.prova).length} de PROVA.`)
+// Imagens (linha **Imagem:**): confere que cada arquivo existe antes de gravar qualquer coisa
+const comImagem = (questoes ?? []).filter((q) => q.imagens?.length)
+for (const q of comImagem) {
+  q.arquivos = q.imagens.map((a) => acharArquivo(a, aulaId) ?? parar(`questão ${q.n}: não achei a imagem ${a} (nem em apostilas-fonte/${aulaId}/).`))
+}
+if (comImagem.length) console.log(`Questões com imagem: ${comImagem.map((q) => q.n).join(', ')}.`)
 if (tem('--conferir')) process.exit(0)
 
 // ---------- Só SQL (sem a chave) ----------
 if (tem('--sql')) {
+  if (comImagem.length) parar('questões com imagem precisam da chave SUPABASE_SECRET_KEY (o SQL não envia arquivos).')
   mkdirSync('rascunhos/sql', { recursive: true })
   const feitos = []
   const ultimaOrdem = valor('--ultima-ordem')
@@ -150,4 +158,13 @@ if (linhasQ) {
     db.from('questoes').select('id', { count: 'exact', head: true }).eq('aula_id', aulaId).is('substituida_por', null), 'conferir as questões')
   if (count !== antesQ + questoes.length) parar(`gravei ${n} questões, mas a aula tem ${count} ativas (esperava ${antesQ + questoes.length}).`)
   console.log(`Questões gravadas: ${n} (${linhasQ[0].id} a ${linhasQ.at(-1).id}); a aula tem ${count} ativas.`)
+  for (const [i, q] of questoes.entries()) {
+    if (!q.arquivos) continue
+    try {
+      const imagens = await enviarImagens(db, linhasQ[i].id, q.arquivos, { trocar: true })
+      console.log(`Imagem: ${linhasQ[i].id} ← ${imagens.join(', ')}`)
+    } catch (e) {
+      parar(`${e.message} As questões já foram gravadas; rode node scripts/imagem-questao.mjs ${linhasQ[i].id} <arquivo> para as que faltarem.`)
+    }
+  }
 }

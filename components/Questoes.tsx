@@ -13,6 +13,7 @@ import { ConversaTurma } from './ConversaTurma'
 import { FaixaProva } from './FaixaProva'
 import { PlacaPrioridade } from './PlacaPrioridade'
 import { EditorQuestao } from './admin/Editores'
+import { urlImagemQuestao } from '@/lib/imagens-questoes'
 
 export type Resposta = NonNullable<QuestaoAluno['resposta']>
 const LETRAS = 'ABCDEFGH'
@@ -86,7 +87,7 @@ export function Questoes({ questoes, userId, ativo, mostrarTema = true, vazio, a
 
   // Copia só o enunciado e as alternativas (sem gabarito nem comentário), para o aluno conferir em outra IA
   async function copiarQuestao() {
-    const texto = [q.enunciado.trim(), '', ...q.alternativas.map((t, i) => `${LETRAS[i]}) ${t}`)].join('\n')
+    const texto = [q.enunciado.trim(), ...(q.imagens.length ? ['', `(A questão tem ${q.imagens.length > 1 ? 'imagens' : 'uma imagem'}: ${q.imagens.map(urlImagemQuestao).join(' ')})`] : []), '', ...q.alternativas.map((t, i) => `${LETRAS[i]}) ${t}`)].join('\n')
     let ok = false
     try {
       await navigator.clipboard.writeText(texto)
@@ -431,6 +432,17 @@ export function Questoes({ questoes, userId, ativo, mostrarTema = true, vazio, a
           ) : (
             <>
               <p className="qtext">{q.enunciado}</p>
+              {q.imagens.length > 0 && (
+                <div className="q-imagens">
+                  {q.imagens.map((caminho, i) => (
+                    // Tocar abre a imagem inteira em outra aba, para dar zoom
+                    <a key={caminho} href={urlImagemQuestao(caminho)} target="_blank" rel="noreferrer" title="Abrir a imagem inteira">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img src={urlImagemQuestao(caminho)} alt={`Imagem ${q.imagens.length > 1 ? `${i + 1} ` : ''}da questão`} loading="lazy" />
+                    </a>
+                  ))}
+                </div>
+              )}
               <div className="opts">
                 {q.alternativas.map((texto, i) => {
                   const cortada = cortadas.includes(i)
